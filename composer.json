@@ -1,0 +1,21 @@
+{
+    "require": {
+        "microsoft/microsoft-graph": "^1.20",
+        "google/apiclient": "^2.9",
+        "ovh/ovh": "^2.0",
+        "lcobucci/jwt": "^3.3",
+        "lcobucci/clock": "^2.0",
+        "swiftmailer/swiftmailer": "^6.0",
+        "league/oauth2-client": "^2.6",
+        "stevenmaguire/oauth2-microsoft": "^2.2",
+        "league/oauth2-google": "^4.0",
+        "sarhan/oauth2-docusign": "^2.0",
+        "cache/filesystem-adapter": "^1.1"
+    },
+    "require-dev": {
+        "php-parallel-lint/php-parallel-lint": "^0",
+        "php-parallel-lint/php-console-highlighter": "^0",
+        "php-parallel-lint/php-var-dump-check": "~0.4",
+        "squizlabs/php_codesniffer": "^3"
+    }
+}
