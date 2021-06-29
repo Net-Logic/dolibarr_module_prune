@@ -7,17 +7,15 @@ namespace Composer\Autoload;
 class ComposerStaticInit94ce9732684a3117a6d278a54b74f632
 {
     public static $files = array (
-        'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
-        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
-        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
+        'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
+        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
+        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
-        'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
-        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
+        '1f87db08236948d07391152dccb70f04' => __DIR__ . '/..' . '/google/apiclient-services/autoload.php',
         'a8d3953fd9959404dd22d3dfcd0a79f0' => __DIR__ . '/..' . '/google/apiclient/src/aliases.php',
         '256c1545158fc915c75e51a931bdba60' => __DIR__ . '/..' . '/lcobucci/jwt/compat/class-aliases.php',
         '0d273777b2b0d96e49fb3d800c6b0e81' => __DIR__ . '/..' . '/lcobucci/jwt/compat/json-exception-polyfill.php',
@@ -32,10 +30,8 @@ class ComposerStaticInit94ce9732684a3117a6d278a54b74f632
         'S' => 
         array (
             'Symfony\\Polyfill\\Php72\\' => 23,
-            'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Intl\\Normalizer\\' => 33,
             'Symfony\\Polyfill\\Intl\\Idn\\' => 26,
-            'Symfony\\Polyfill\\Iconv\\' => 23,
             'Stevenmaguire\\OAuth2\\Client\\' => 28,
             'Sarhan\\OAuth2\\Client\\' => 21,
         ),
@@ -58,6 +54,7 @@ class ComposerStaticInit94ce9732684a3117a6d278a54b74f632
         ),
         'L' => 
         array (
+            'LoicBoursin\\OAuth2\\Client\\' => 26,
             'League\\OAuth2\\Client\\' => 21,
             'League\\MimeTypeDetection\\' => 25,
             'League\\Flysystem\\' => 17,
@@ -75,20 +72,13 @@ class ComposerStaticInit94ce9732684a3117a6d278a54b74f632
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
+            'Google\\Service\\' => 15,
             'Google\\Auth\\' => 12,
             'Google\\' => 7,
         ),
         'F' => 
         array (
             'Firebase\\JWT\\' => 13,
-        ),
-        'E' => 
-        array (
-            'Egulias\\EmailValidator\\' => 23,
-        ),
-        'D' => 
-        array (
-            'Doctrine\\Common\\Lexer\\' => 22,
         ),
         'C' => 
         array (
@@ -111,10 +101,6 @@ class ComposerStaticInit94ce9732684a3117a6d278a54b74f632
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php72',
         ),
-        'Symfony\\Polyfill\\Mbstring\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
-        ),
         'Symfony\\Polyfill\\Intl\\Normalizer\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer',
@@ -122,10 +108,6 @@ class ComposerStaticInit94ce9732684a3117a6d278a54b74f632
         'Symfony\\Polyfill\\Intl\\Idn\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-intl-idn',
-        ),
-        'Symfony\\Polyfill\\Iconv\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-iconv',
         ),
         'Stevenmaguire\\OAuth2\\Client\\' => 
         array (
@@ -166,6 +148,10 @@ class ComposerStaticInit94ce9732684a3117a6d278a54b74f632
         'Microsoft\\Graph\\' => 
         array (
             0 => __DIR__ . '/..' . '/microsoft/microsoft-graph/src',
+        ),
+        'LoicBoursin\\OAuth2\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/loicboursin/oauth2-microsoft-graph/src',
         ),
         'League\\OAuth2\\Client\\' => 
         array (
@@ -212,6 +198,10 @@ class ComposerStaticInit94ce9732684a3117a6d278a54b74f632
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
+        'Google\\Service\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/google/apiclient-services/src',
+        ),
         'Google\\Auth\\' => 
         array (
             0 => __DIR__ . '/..' . '/google/auth/src',
@@ -223,14 +213,6 @@ class ComposerStaticInit94ce9732684a3117a6d278a54b74f632
         'Firebase\\JWT\\' => 
         array (
             0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
-        ),
-        'Egulias\\EmailValidator\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/egulias/email-validator/src',
-        ),
-        'Doctrine\\Common\\Lexer\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer',
         ),
         'Cache\\TagInterop\\' => 
         array (
@@ -247,16 +229,6 @@ class ComposerStaticInit94ce9732684a3117a6d278a54b74f632
         'Beta\\Microsoft\\Graph\\' => 
         array (
             0 => __DIR__ . '/..' . '/microsoft/microsoft-graph/src/Beta/Microsoft/Graph',
-        ),
-    );
-
-    public static $prefixesPsr0 = array (
-        'G' => 
-        array (
-            'Google_Service_' => 
-            array (
-                0 => __DIR__ . '/..' . '/google/apiclient-services/src',
-            ),
         ),
     );
 
@@ -322,7 +294,6 @@ class ComposerStaticInit94ce9732684a3117a6d278a54b74f632
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit94ce9732684a3117a6d278a54b74f632::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit94ce9732684a3117a6d278a54b74f632::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit94ce9732684a3117a6d278a54b74f632::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit94ce9732684a3117a6d278a54b74f632::$classMap;
 
         }, null, ClassLoader::class);

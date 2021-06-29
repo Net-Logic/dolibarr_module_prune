@@ -5,9 +5,9 @@
         "ovh/ovh": "^2.0",
         "lcobucci/jwt": "^3.3",
         "lcobucci/clock": "^2.0",
-        "swiftmailer/swiftmailer": "^6.0",
         "league/oauth2-client": "^2.6",
         "stevenmaguire/oauth2-microsoft": "^2.2",
+        "loicboursin/oauth2-microsoft-graph": "^0",
         "league/oauth2-google": "^4.0",
         "sarhan/oauth2-docusign": "^2.0",
         "cache/filesystem-adapter": "^1.1"
