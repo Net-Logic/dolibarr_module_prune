@@ -17,11 +17,13 @@
 
 namespace Google\Service\CloudFunctions;
 
-class CloudFunction extends \Google\Model
+class CloudFunction extends \Google\Collection
 {
+  protected $collection_key = 'secretVolumes';
   public $availableMemoryMb;
   public $buildEnvironmentVariables;
   public $buildId;
+  public $buildName;
   public $buildWorkerPool;
   public $description;
   public $entryPoint;
@@ -33,9 +35,14 @@ class CloudFunction extends \Google\Model
   public $ingressSettings;
   public $labels;
   public $maxInstances;
+  public $minInstances;
   public $name;
   public $network;
   public $runtime;
+  protected $secretEnvironmentVariablesType = SecretEnvVar::class;
+  protected $secretEnvironmentVariablesDataType = 'array';
+  protected $secretVolumesType = SecretVolume::class;
+  protected $secretVolumesDataType = 'array';
   public $serviceAccountEmail;
   public $sourceArchiveUrl;
   protected $sourceRepositoryType = SourceRepository::class;
@@ -72,6 +79,14 @@ class CloudFunction extends \Google\Model
   public function getBuildId()
   {
     return $this->buildId;
+  }
+  public function setBuildName($buildName)
+  {
+    $this->buildName = $buildName;
+  }
+  public function getBuildName()
+  {
+    return $this->buildName;
   }
   public function setBuildWorkerPool($buildWorkerPool)
   {
@@ -157,6 +172,14 @@ class CloudFunction extends \Google\Model
   {
     return $this->maxInstances;
   }
+  public function setMinInstances($minInstances)
+  {
+    $this->minInstances = $minInstances;
+  }
+  public function getMinInstances()
+  {
+    return $this->minInstances;
+  }
   public function setName($name)
   {
     $this->name = $name;
@@ -180,6 +203,34 @@ class CloudFunction extends \Google\Model
   public function getRuntime()
   {
     return $this->runtime;
+  }
+  /**
+   * @param SecretEnvVar[]
+   */
+  public function setSecretEnvironmentVariables($secretEnvironmentVariables)
+  {
+    $this->secretEnvironmentVariables = $secretEnvironmentVariables;
+  }
+  /**
+   * @return SecretEnvVar[]
+   */
+  public function getSecretEnvironmentVariables()
+  {
+    return $this->secretEnvironmentVariables;
+  }
+  /**
+   * @param SecretVolume[]
+   */
+  public function setSecretVolumes($secretVolumes)
+  {
+    $this->secretVolumes = $secretVolumes;
+  }
+  /**
+   * @return SecretVolume[]
+   */
+  public function getSecretVolumes()
+  {
+    return $this->secretVolumes;
   }
   public function setServiceAccountEmail($serviceAccountEmail)
   {

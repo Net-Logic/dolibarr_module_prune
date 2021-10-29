@@ -34,10 +34,10 @@ use Google\Client;
  */
 class Dns extends \Google\Service
 {
-  /** See, edit, configure, and delete your Google Cloud Platform data. */
+  /** See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.. */
   const CLOUD_PLATFORM =
       "https://www.googleapis.com/auth/cloud-platform";
-  /** View your data across Google Cloud Platform services. */
+  /** View your data across Google Cloud services and see the email address of your Google Account. */
   const CLOUD_PLATFORM_READ_ONLY =
       "https://www.googleapis.com/auth/cloud-platform.read-only";
   /** View your DNS records hosted by Google Cloud DNS. */
@@ -53,7 +53,6 @@ class Dns extends \Google\Service
   public $managedZones;
   public $policies;
   public $projects;
-  public $projects_managedZones_rrsets;
   public $resourceRecordSets;
 
   /**
@@ -546,10 +545,10 @@ class Dns extends \Google\Service
           ]
         ]
     );
-    $this->projects_managedZones_rrsets = new Dns\Resource\ProjectsManagedZonesRrsets(
+    $this->resourceRecordSets = new Dns\Resource\ResourceRecordSets(
         $this,
         $this->serviceName,
-        'rrsets',
+        'resourceRecordSets',
         [
           'methods' => [
             'create' => [
@@ -629,46 +628,7 @@ class Dns extends \Google\Service
                   'type' => 'string',
                 ],
               ],
-            ],'patch' => [
-              'path' => 'dns/v1/projects/{project}/managedZones/{managedZone}/rrsets/{name}/{type}',
-              'httpMethod' => 'PATCH',
-              'parameters' => [
-                'project' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'managedZone' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'type' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'clientOperationId' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],
-          ]
-        ]
-    );
-    $this->resourceRecordSets = new Dns\Resource\ResourceRecordSets(
-        $this,
-        $this->serviceName,
-        'resourceRecordSets',
-        [
-          'methods' => [
-            'list' => [
+            ],'list' => [
               'path' => 'dns/v1/projects/{project}/managedZones/{managedZone}/rrsets',
               'httpMethod' => 'GET',
               'parameters' => [
@@ -695,6 +655,35 @@ class Dns extends \Google\Service
                   'type' => 'string',
                 ],
                 'type' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+              ],
+            ],'patch' => [
+              'path' => 'dns/v1/projects/{project}/managedZones/{managedZone}/rrsets/{name}/{type}',
+              'httpMethod' => 'PATCH',
+              'parameters' => [
+                'project' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'managedZone' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'type' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'clientOperationId' => [
                   'location' => 'query',
                   'type' => 'string',
                 ],

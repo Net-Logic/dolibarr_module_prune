@@ -19,9 +19,11 @@ namespace Google\Service\CloudAsset;
 
 class ResourceSearchResult extends \Google\Collection
 {
-  protected $collection_key = 'networkTags';
+  protected $collection_key = 'versionedResources';
   public $additionalAttributes;
   public $assetType;
+  protected $attachedResourcesType = AttachedResource::class;
+  protected $attachedResourcesDataType = 'array';
   public $createTime;
   public $description;
   public $displayName;
@@ -35,8 +37,12 @@ class ResourceSearchResult extends \Google\Collection
   public $parentAssetType;
   public $parentFullResourceName;
   public $project;
+  protected $relationshipsType = RelatedResources::class;
+  protected $relationshipsDataType = 'map';
   public $state;
   public $updateTime;
+  protected $versionedResourcesType = VersionedResource::class;
+  protected $versionedResourcesDataType = 'array';
 
   public function setAdditionalAttributes($additionalAttributes)
   {
@@ -53,6 +59,20 @@ class ResourceSearchResult extends \Google\Collection
   public function getAssetType()
   {
     return $this->assetType;
+  }
+  /**
+   * @param AttachedResource[]
+   */
+  public function setAttachedResources($attachedResources)
+  {
+    $this->attachedResources = $attachedResources;
+  }
+  /**
+   * @return AttachedResource[]
+   */
+  public function getAttachedResources()
+  {
+    return $this->attachedResources;
   }
   public function setCreateTime($createTime)
   {
@@ -158,6 +178,20 @@ class ResourceSearchResult extends \Google\Collection
   {
     return $this->project;
   }
+  /**
+   * @param RelatedResources[]
+   */
+  public function setRelationships($relationships)
+  {
+    $this->relationships = $relationships;
+  }
+  /**
+   * @return RelatedResources[]
+   */
+  public function getRelationships()
+  {
+    return $this->relationships;
+  }
   public function setState($state)
   {
     $this->state = $state;
@@ -173,6 +207,20 @@ class ResourceSearchResult extends \Google\Collection
   public function getUpdateTime()
   {
     return $this->updateTime;
+  }
+  /**
+   * @param VersionedResource[]
+   */
+  public function setVersionedResources($versionedResources)
+  {
+    $this->versionedResources = $versionedResources;
+  }
+  /**
+   * @return VersionedResource[]
+   */
+  public function getVersionedResources()
+  {
+    return $this->versionedResources;
   }
 }
 

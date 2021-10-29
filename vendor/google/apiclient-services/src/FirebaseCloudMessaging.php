@@ -35,9 +35,12 @@ use Google\Client;
  */
 class FirebaseCloudMessaging extends \Google\Service
 {
-  /** See, edit, configure, and delete your Google Cloud Platform data. */
+  /** See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.. */
   const CLOUD_PLATFORM =
       "https://www.googleapis.com/auth/cloud-platform";
+  /** Send messages and manage messaging subscriptions for your Firebase applications. */
+  const FIREBASE_MESSAGING =
+      "https://www.googleapis.com/auth/firebase.messaging";
 
   public $projects_messages;
 

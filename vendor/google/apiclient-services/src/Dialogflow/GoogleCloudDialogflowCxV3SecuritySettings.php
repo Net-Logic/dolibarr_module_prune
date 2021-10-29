@@ -20,7 +20,10 @@ namespace Google\Service\Dialogflow;
 class GoogleCloudDialogflowCxV3SecuritySettings extends \Google\Collection
 {
   protected $collection_key = 'purgeDataTypes';
+  public $deidentifyTemplate;
   public $displayName;
+  protected $insightsExportSettingsType = GoogleCloudDialogflowCxV3SecuritySettingsInsightsExportSettings::class;
+  protected $insightsExportSettingsDataType = '';
   public $inspectTemplate;
   public $name;
   public $purgeDataTypes;
@@ -28,6 +31,14 @@ class GoogleCloudDialogflowCxV3SecuritySettings extends \Google\Collection
   public $redactionStrategy;
   public $retentionWindowDays;
 
+  public function setDeidentifyTemplate($deidentifyTemplate)
+  {
+    $this->deidentifyTemplate = $deidentifyTemplate;
+  }
+  public function getDeidentifyTemplate()
+  {
+    return $this->deidentifyTemplate;
+  }
   public function setDisplayName($displayName)
   {
     $this->displayName = $displayName;
@@ -35,6 +46,20 @@ class GoogleCloudDialogflowCxV3SecuritySettings extends \Google\Collection
   public function getDisplayName()
   {
     return $this->displayName;
+  }
+  /**
+   * @param GoogleCloudDialogflowCxV3SecuritySettingsInsightsExportSettings
+   */
+  public function setInsightsExportSettings(GoogleCloudDialogflowCxV3SecuritySettingsInsightsExportSettings $insightsExportSettings)
+  {
+    $this->insightsExportSettings = $insightsExportSettings;
+  }
+  /**
+   * @return GoogleCloudDialogflowCxV3SecuritySettingsInsightsExportSettings
+   */
+  public function getInsightsExportSettings()
+  {
+    return $this->insightsExportSettings;
   }
   public function setInspectTemplate($inspectTemplate)
   {

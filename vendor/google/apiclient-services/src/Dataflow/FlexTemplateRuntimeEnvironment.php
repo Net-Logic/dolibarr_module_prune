@@ -22,14 +22,19 @@ class FlexTemplateRuntimeEnvironment extends \Google\Collection
   protected $collection_key = 'additionalExperiments';
   public $additionalExperiments;
   public $additionalUserLabels;
+  public $autoscalingAlgorithm;
+  public $diskSizeGb;
+  public $dumpHeapOnOom;
   public $enableStreamingEngine;
   public $flexrsGoal;
   public $ipConfiguration;
   public $kmsKeyName;
+  public $launcherMachineType;
   public $machineType;
   public $maxWorkers;
   public $network;
   public $numWorkers;
+  public $saveHeapDumpsToGcsPath;
   public $sdkContainerImage;
   public $serviceAccountEmail;
   public $stagingLocation;
@@ -54,6 +59,30 @@ class FlexTemplateRuntimeEnvironment extends \Google\Collection
   public function getAdditionalUserLabels()
   {
     return $this->additionalUserLabels;
+  }
+  public function setAutoscalingAlgorithm($autoscalingAlgorithm)
+  {
+    $this->autoscalingAlgorithm = $autoscalingAlgorithm;
+  }
+  public function getAutoscalingAlgorithm()
+  {
+    return $this->autoscalingAlgorithm;
+  }
+  public function setDiskSizeGb($diskSizeGb)
+  {
+    $this->diskSizeGb = $diskSizeGb;
+  }
+  public function getDiskSizeGb()
+  {
+    return $this->diskSizeGb;
+  }
+  public function setDumpHeapOnOom($dumpHeapOnOom)
+  {
+    $this->dumpHeapOnOom = $dumpHeapOnOom;
+  }
+  public function getDumpHeapOnOom()
+  {
+    return $this->dumpHeapOnOom;
   }
   public function setEnableStreamingEngine($enableStreamingEngine)
   {
@@ -87,6 +116,14 @@ class FlexTemplateRuntimeEnvironment extends \Google\Collection
   {
     return $this->kmsKeyName;
   }
+  public function setLauncherMachineType($launcherMachineType)
+  {
+    $this->launcherMachineType = $launcherMachineType;
+  }
+  public function getLauncherMachineType()
+  {
+    return $this->launcherMachineType;
+  }
   public function setMachineType($machineType)
   {
     $this->machineType = $machineType;
@@ -118,6 +155,14 @@ class FlexTemplateRuntimeEnvironment extends \Google\Collection
   public function getNumWorkers()
   {
     return $this->numWorkers;
+  }
+  public function setSaveHeapDumpsToGcsPath($saveHeapDumpsToGcsPath)
+  {
+    $this->saveHeapDumpsToGcsPath = $saveHeapDumpsToGcsPath;
+  }
+  public function getSaveHeapDumpsToGcsPath()
+  {
+    return $this->saveHeapDumpsToGcsPath;
   }
   public function setSdkContainerImage($sdkContainerImage)
   {

@@ -34,7 +34,7 @@ use Google\Client;
  */
 class CloudAsset extends \Google\Service
 {
-  /** See, edit, configure, and delete your Google Cloud Platform data. */
+  /** See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.. */
   const CLOUD_PLATFORM =
       "https://www.googleapis.com/auth/cloud-platform";
 
@@ -94,6 +94,11 @@ class CloudAsset extends \Google\Service
                 'readTime' => [
                   'location' => 'query',
                   'type' => 'string',
+                ],
+                'relationshipTypes' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
                 ],
               ],
             ],
@@ -300,6 +305,11 @@ class CloudAsset extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
+                'relationshipTypes' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ],
               ],
             ],'exportAssets' => [
               'path' => 'v1/{+parent}:exportAssets',
@@ -369,6 +379,10 @@ class CloudAsset extends \Google\Service
                   'type' => 'string',
                 ],
                 'query' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+                'readMask' => [
                   'location' => 'query',
                   'type' => 'string',
                 ],

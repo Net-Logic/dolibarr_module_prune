@@ -233,7 +233,7 @@ class Files extends \Google\Service\Resource
    * @opt_param string q A query for filtering the file results. See the "Search
    * for Files" guide for supported syntax.
    * @opt_param string spaces A comma-separated list of spaces to query within the
-   * corpus. Supported values are 'drive', 'appDataFolder' and 'photos'.
+   * corpus. Supported values are 'drive' and 'appDataFolder'.
    * @opt_param bool supportsAllDrives Whether the requesting application supports
    * both My Drives and shared drives.
    * @opt_param bool supportsTeamDrives Deprecated use supportsAllDrives instead.
@@ -247,8 +247,10 @@ class Files extends \Google\Service\Resource
     return $this->call('list', [$params], FileList::class);
   }
   /**
-   * Updates a file's metadata and/or content. This method supports patch
-   * semantics. (files.update)
+   * Updates a file's metadata and/or content. When calling this method, only
+   * populate fields in the request that you want to modify. When updating fields,
+   * some fields might change automatically, such as modifiedDate. This method
+   * supports patch semantics. (files.update)
    *
    * @param string $fileId The ID of the file.
    * @param DriveFile $postBody

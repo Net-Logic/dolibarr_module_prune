@@ -20,7 +20,7 @@ namespace Google\Service;
 use Google\Client;
 
 /**
- * Service definition for SQLAdmin (v1beta4).
+ * Service definition for SQLAdmin (v1).
  *
  * <p>
  * API for Cloud SQL database instance management</p>
@@ -34,7 +34,7 @@ use Google\Client;
  */
 class SQLAdmin extends \Google\Service
 {
-  /** See, edit, configure, and delete your Google Cloud Platform data. */
+  /** See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.. */
   const CLOUD_PLATFORM =
       "https://www.googleapis.com/auth/cloud-platform";
   /** Manage your Google SQL Service instances. */
@@ -42,6 +42,7 @@ class SQLAdmin extends \Google\Service
       "https://www.googleapis.com/auth/sqlservice.admin";
 
   public $backupRuns;
+  public $connect;
   public $databases;
   public $flags;
   public $instances;
@@ -64,7 +65,7 @@ class SQLAdmin extends \Google\Service
     $this->rootUrl = $rootUrl ?: 'https://sqladmin.googleapis.com/';
     $this->servicePath = '';
     $this->batchPath = 'batch';
-    $this->version = 'v1beta4';
+    $this->version = 'v1';
     $this->serviceName = 'sqladmin';
 
     $this->backupRuns = new SQLAdmin\Resource\BackupRuns(
@@ -74,7 +75,7 @@ class SQLAdmin extends \Google\Service
         [
           'methods' => [
             'delete' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/backupRuns/{id}',
+              'path' => 'v1/projects/{project}/instances/{instance}/backupRuns/{id}',
               'httpMethod' => 'DELETE',
               'parameters' => [
                 'project' => [
@@ -94,7 +95,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'get' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/backupRuns/{id}',
+              'path' => 'v1/projects/{project}/instances/{instance}/backupRuns/{id}',
               'httpMethod' => 'GET',
               'parameters' => [
                 'project' => [
@@ -114,7 +115,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'insert' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/backupRuns',
+              'path' => 'v1/projects/{project}/instances/{instance}/backupRuns',
               'httpMethod' => 'POST',
               'parameters' => [
                 'project' => [
@@ -129,7 +130,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'list' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/backupRuns',
+              'path' => 'v1/projects/{project}/instances/{instance}/backupRuns',
               'httpMethod' => 'GET',
               'parameters' => [
                 'project' => [
@@ -155,6 +156,50 @@ class SQLAdmin extends \Google\Service
           ]
         ]
     );
+    $this->connect = new SQLAdmin\Resource\Connect(
+        $this,
+        $this->serviceName,
+        'connect',
+        [
+          'methods' => [
+            'generateEphemeralCert' => [
+              'path' => 'v1/projects/{project}/instances/{instance}:generateEphemeralCert',
+              'httpMethod' => 'POST',
+              'parameters' => [
+                'project' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'instance' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+              ],
+            ],'get' => [
+              'path' => 'v1/projects/{project}/instances/{instance}/connectSettings',
+              'httpMethod' => 'GET',
+              'parameters' => [
+                'project' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'instance' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'readTime' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+              ],
+            ],
+          ]
+        ]
+    );
     $this->databases = new SQLAdmin\Resource\Databases(
         $this,
         $this->serviceName,
@@ -162,7 +207,7 @@ class SQLAdmin extends \Google\Service
         [
           'methods' => [
             'delete' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/databases/{database}',
+              'path' => 'v1/projects/{project}/instances/{instance}/databases/{database}',
               'httpMethod' => 'DELETE',
               'parameters' => [
                 'project' => [
@@ -182,7 +227,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'get' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/databases/{database}',
+              'path' => 'v1/projects/{project}/instances/{instance}/databases/{database}',
               'httpMethod' => 'GET',
               'parameters' => [
                 'project' => [
@@ -202,7 +247,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'insert' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/databases',
+              'path' => 'v1/projects/{project}/instances/{instance}/databases',
               'httpMethod' => 'POST',
               'parameters' => [
                 'project' => [
@@ -217,7 +262,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'list' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/databases',
+              'path' => 'v1/projects/{project}/instances/{instance}/databases',
               'httpMethod' => 'GET',
               'parameters' => [
                 'project' => [
@@ -232,7 +277,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'patch' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/databases/{database}',
+              'path' => 'v1/projects/{project}/instances/{instance}/databases/{database}',
               'httpMethod' => 'PATCH',
               'parameters' => [
                 'project' => [
@@ -252,7 +297,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'update' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/databases/{database}',
+              'path' => 'v1/projects/{project}/instances/{instance}/databases/{database}',
               'httpMethod' => 'PUT',
               'parameters' => [
                 'project' => [
@@ -282,7 +327,7 @@ class SQLAdmin extends \Google\Service
         [
           'methods' => [
             'list' => [
-              'path' => 'sql/v1beta4/flags',
+              'path' => 'v1/flags',
               'httpMethod' => 'GET',
               'parameters' => [
                 'databaseVersion' => [
@@ -301,7 +346,7 @@ class SQLAdmin extends \Google\Service
         [
           'methods' => [
             'addServerCa' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/addServerCa',
+              'path' => 'v1/projects/{project}/instances/{instance}/addServerCa',
               'httpMethod' => 'POST',
               'parameters' => [
                 'project' => [
@@ -316,7 +361,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'clone' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/clone',
+              'path' => 'v1/projects/{project}/instances/{instance}/clone',
               'httpMethod' => 'POST',
               'parameters' => [
                 'project' => [
@@ -331,7 +376,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'delete' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}',
+              'path' => 'v1/projects/{project}/instances/{instance}',
               'httpMethod' => 'DELETE',
               'parameters' => [
                 'project' => [
@@ -346,7 +391,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'demoteMaster' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/demoteMaster',
+              'path' => 'v1/projects/{project}/instances/{instance}/demoteMaster',
               'httpMethod' => 'POST',
               'parameters' => [
                 'project' => [
@@ -361,7 +406,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'export' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/export',
+              'path' => 'v1/projects/{project}/instances/{instance}/export',
               'httpMethod' => 'POST',
               'parameters' => [
                 'project' => [
@@ -376,7 +421,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'failover' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/failover',
+              'path' => 'v1/projects/{project}/instances/{instance}/failover',
               'httpMethod' => 'POST',
               'parameters' => [
                 'project' => [
@@ -391,7 +436,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'get' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}',
+              'path' => 'v1/projects/{project}/instances/{instance}',
               'httpMethod' => 'GET',
               'parameters' => [
                 'project' => [
@@ -406,7 +451,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'import' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/import',
+              'path' => 'v1/projects/{project}/instances/{instance}/import',
               'httpMethod' => 'POST',
               'parameters' => [
                 'project' => [
@@ -421,7 +466,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'insert' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances',
+              'path' => 'v1/projects/{project}/instances',
               'httpMethod' => 'POST',
               'parameters' => [
                 'project' => [
@@ -431,7 +476,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'list' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances',
+              'path' => 'v1/projects/{project}/instances',
               'httpMethod' => 'GET',
               'parameters' => [
                 'project' => [
@@ -453,7 +498,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'listServerCas' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/listServerCas',
+              'path' => 'v1/projects/{project}/instances/{instance}/listServerCas',
               'httpMethod' => 'GET',
               'parameters' => [
                 'project' => [
@@ -468,7 +513,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'patch' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}',
+              'path' => 'v1/projects/{project}/instances/{instance}',
               'httpMethod' => 'PATCH',
               'parameters' => [
                 'project' => [
@@ -483,7 +528,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'promoteReplica' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/promoteReplica',
+              'path' => 'v1/projects/{project}/instances/{instance}/promoteReplica',
               'httpMethod' => 'POST',
               'parameters' => [
                 'project' => [
@@ -498,7 +543,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'resetSslConfig' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/resetSslConfig',
+              'path' => 'v1/projects/{project}/instances/{instance}/resetSslConfig',
               'httpMethod' => 'POST',
               'parameters' => [
                 'project' => [
@@ -513,7 +558,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'restart' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/restart',
+              'path' => 'v1/projects/{project}/instances/{instance}/restart',
               'httpMethod' => 'POST',
               'parameters' => [
                 'project' => [
@@ -528,7 +573,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'restoreBackup' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/restoreBackup',
+              'path' => 'v1/projects/{project}/instances/{instance}/restoreBackup',
               'httpMethod' => 'POST',
               'parameters' => [
                 'project' => [
@@ -543,7 +588,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'rotateServerCa' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/rotateServerCa',
+              'path' => 'v1/projects/{project}/instances/{instance}/rotateServerCa',
               'httpMethod' => 'POST',
               'parameters' => [
                 'project' => [
@@ -558,7 +603,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'startReplica' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/startReplica',
+              'path' => 'v1/projects/{project}/instances/{instance}/startReplica',
               'httpMethod' => 'POST',
               'parameters' => [
                 'project' => [
@@ -573,7 +618,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'stopReplica' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/stopReplica',
+              'path' => 'v1/projects/{project}/instances/{instance}/stopReplica',
               'httpMethod' => 'POST',
               'parameters' => [
                 'project' => [
@@ -588,7 +633,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'truncateLog' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/truncateLog',
+              'path' => 'v1/projects/{project}/instances/{instance}/truncateLog',
               'httpMethod' => 'POST',
               'parameters' => [
                 'project' => [
@@ -603,7 +648,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'update' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}',
+              'path' => 'v1/projects/{project}/instances/{instance}',
               'httpMethod' => 'PUT',
               'parameters' => [
                 'project' => [
@@ -628,7 +673,7 @@ class SQLAdmin extends \Google\Service
         [
           'methods' => [
             'get' => [
-              'path' => 'sql/v1beta4/projects/{project}/operations/{operation}',
+              'path' => 'v1/projects/{project}/operations/{operation}',
               'httpMethod' => 'GET',
               'parameters' => [
                 'project' => [
@@ -643,7 +688,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'list' => [
-              'path' => 'sql/v1beta4/projects/{project}/operations',
+              'path' => 'v1/projects/{project}/operations',
               'httpMethod' => 'GET',
               'parameters' => [
                 'project' => [
@@ -675,7 +720,7 @@ class SQLAdmin extends \Google\Service
         [
           'methods' => [
             'rescheduleMaintenance' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/rescheduleMaintenance',
+              'path' => 'v1/projects/{project}/instances/{instance}/rescheduleMaintenance',
               'httpMethod' => 'POST',
               'parameters' => [
                 'project' => [
@@ -690,7 +735,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'startExternalSync' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/startExternalSync',
+              'path' => 'v1/projects/{project}/instances/{instance}/startExternalSync',
               'httpMethod' => 'POST',
               'parameters' => [
                 'project' => [
@@ -702,18 +747,10 @@ class SQLAdmin extends \Google\Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ],
-                'skipVerification' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
-                'syncMode' => [
-                  'location' => 'query',
-                  'type' => 'string',
                 ],
               ],
             ],'verifyExternalSyncSettings' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/verifyExternalSyncSettings',
+              'path' => 'v1/projects/{project}/instances/{instance}/verifyExternalSyncSettings',
               'httpMethod' => 'POST',
               'parameters' => [
                 'project' => [
@@ -725,14 +762,6 @@ class SQLAdmin extends \Google\Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ],
-                'syncMode' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'verifyConnectionOnly' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
               ],
             ],
@@ -746,7 +775,7 @@ class SQLAdmin extends \Google\Service
         [
           'methods' => [
             'createEphemeral' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/createEphemeral',
+              'path' => 'v1/projects/{project}/instances/{instance}/createEphemeral',
               'httpMethod' => 'POST',
               'parameters' => [
                 'project' => [
@@ -761,7 +790,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'delete' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/sslCerts/{sha1Fingerprint}',
+              'path' => 'v1/projects/{project}/instances/{instance}/sslCerts/{sha1Fingerprint}',
               'httpMethod' => 'DELETE',
               'parameters' => [
                 'project' => [
@@ -781,7 +810,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'get' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/sslCerts/{sha1Fingerprint}',
+              'path' => 'v1/projects/{project}/instances/{instance}/sslCerts/{sha1Fingerprint}',
               'httpMethod' => 'GET',
               'parameters' => [
                 'project' => [
@@ -801,7 +830,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'insert' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/sslCerts',
+              'path' => 'v1/projects/{project}/instances/{instance}/sslCerts',
               'httpMethod' => 'POST',
               'parameters' => [
                 'project' => [
@@ -816,7 +845,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'list' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/sslCerts',
+              'path' => 'v1/projects/{project}/instances/{instance}/sslCerts',
               'httpMethod' => 'GET',
               'parameters' => [
                 'project' => [
@@ -841,7 +870,7 @@ class SQLAdmin extends \Google\Service
         [
           'methods' => [
             'list' => [
-              'path' => 'sql/v1beta4/projects/{project}/tiers',
+              'path' => 'v1/projects/{project}/tiers',
               'httpMethod' => 'GET',
               'parameters' => [
                 'project' => [
@@ -861,7 +890,7 @@ class SQLAdmin extends \Google\Service
         [
           'methods' => [
             'delete' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/users',
+              'path' => 'v1/projects/{project}/instances/{instance}/users',
               'httpMethod' => 'DELETE',
               'parameters' => [
                 'project' => [
@@ -884,7 +913,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'insert' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/users',
+              'path' => 'v1/projects/{project}/instances/{instance}/users',
               'httpMethod' => 'POST',
               'parameters' => [
                 'project' => [
@@ -899,7 +928,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'list' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/users',
+              'path' => 'v1/projects/{project}/instances/{instance}/users',
               'httpMethod' => 'GET',
               'parameters' => [
                 'project' => [
@@ -914,7 +943,7 @@ class SQLAdmin extends \Google\Service
                 ],
               ],
             ],'update' => [
-              'path' => 'sql/v1beta4/projects/{project}/instances/{instance}/users',
+              'path' => 'v1/projects/{project}/instances/{instance}/users',
               'httpMethod' => 'PUT',
               'parameters' => [
                 'project' => [

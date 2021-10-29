@@ -34,16 +34,20 @@ use Google\Client;
  */
 class CloudBuild extends \Google\Service
 {
-  /** See, edit, configure, and delete your Google Cloud Platform data. */
+  /** See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.. */
   const CLOUD_PLATFORM =
       "https://www.googleapis.com/auth/cloud-platform";
 
   public $operations;
   public $projects_builds;
+  public $projects_githubEnterpriseConfigs;
   public $projects_locations_builds;
+  public $projects_locations_githubEnterpriseConfigs;
   public $projects_locations_operations;
   public $projects_locations_triggers;
+  public $projects_locations_workerPools;
   public $projects_triggers;
+  public $v1;
 
   /**
    * Constructs the internal representation of the CloudBuild service.
@@ -97,7 +101,17 @@ class CloudBuild extends \Google\Service
         'builds',
         [
           'methods' => [
-            'cancel' => [
+            'approve' => [
+              'path' => 'v1/{+name}:approve',
+              'httpMethod' => 'POST',
+              'parameters' => [
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+              ],
+            ],'cancel' => [
               'path' => 'v1/projects/{projectId}/builds/{id}:cancel',
               'httpMethod' => 'POST',
               'parameters' => [
@@ -190,13 +204,115 @@ class CloudBuild extends \Google\Service
           ]
         ]
     );
+    $this->projects_githubEnterpriseConfigs = new CloudBuild\Resource\ProjectsGithubEnterpriseConfigs(
+        $this,
+        $this->serviceName,
+        'githubEnterpriseConfigs',
+        [
+          'methods' => [
+            'create' => [
+              'path' => 'v1/{+parent}/githubEnterpriseConfigs',
+              'httpMethod' => 'POST',
+              'parameters' => [
+                'parent' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'gheConfigId' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+                'projectId' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+              ],
+            ],'delete' => [
+              'path' => 'v1/{+name}',
+              'httpMethod' => 'DELETE',
+              'parameters' => [
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'configId' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+                'projectId' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+              ],
+            ],'get' => [
+              'path' => 'v1/{+name}',
+              'httpMethod' => 'GET',
+              'parameters' => [
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'configId' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+                'projectId' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+              ],
+            ],'list' => [
+              'path' => 'v1/{+parent}/githubEnterpriseConfigs',
+              'httpMethod' => 'GET',
+              'parameters' => [
+                'parent' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'projectId' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+              ],
+            ],'patch' => [
+              'path' => 'v1/{+name}',
+              'httpMethod' => 'PATCH',
+              'parameters' => [
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'updateMask' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+              ],
+            ],
+          ]
+        ]
+    );
     $this->projects_locations_builds = new CloudBuild\Resource\ProjectsLocationsBuilds(
         $this,
         $this->serviceName,
         'builds',
         [
           'methods' => [
-            'cancel' => [
+            'approve' => [
+              'path' => 'v1/{+name}:approve',
+              'httpMethod' => 'POST',
+              'parameters' => [
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+              ],
+            ],'cancel' => [
               'path' => 'v1/{+name}:cancel',
               'httpMethod' => 'POST',
               'parameters' => [
@@ -272,6 +388,98 @@ class CloudBuild extends \Google\Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
+                ],
+              ],
+            ],
+          ]
+        ]
+    );
+    $this->projects_locations_githubEnterpriseConfigs = new CloudBuild\Resource\ProjectsLocationsGithubEnterpriseConfigs(
+        $this,
+        $this->serviceName,
+        'githubEnterpriseConfigs',
+        [
+          'methods' => [
+            'create' => [
+              'path' => 'v1/{+parent}/githubEnterpriseConfigs',
+              'httpMethod' => 'POST',
+              'parameters' => [
+                'parent' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'gheConfigId' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+                'projectId' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+              ],
+            ],'delete' => [
+              'path' => 'v1/{+name}',
+              'httpMethod' => 'DELETE',
+              'parameters' => [
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'configId' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+                'projectId' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+              ],
+            ],'get' => [
+              'path' => 'v1/{+name}',
+              'httpMethod' => 'GET',
+              'parameters' => [
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'configId' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+                'projectId' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+              ],
+            ],'list' => [
+              'path' => 'v1/{+parent}/githubEnterpriseConfigs',
+              'httpMethod' => 'GET',
+              'parameters' => [
+                'parent' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'projectId' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+              ],
+            ],'patch' => [
+              'path' => 'v1/{+name}',
+              'httpMethod' => 'PATCH',
+              'parameters' => [
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'updateMask' => [
+                  'location' => 'query',
+                  'type' => 'string',
                 ],
               ],
             ],
@@ -440,6 +648,102 @@ class CloudBuild extends \Google\Service
           ]
         ]
     );
+    $this->projects_locations_workerPools = new CloudBuild\Resource\ProjectsLocationsWorkerPools(
+        $this,
+        $this->serviceName,
+        'workerPools',
+        [
+          'methods' => [
+            'create' => [
+              'path' => 'v1/{+parent}/workerPools',
+              'httpMethod' => 'POST',
+              'parameters' => [
+                'parent' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'validateOnly' => [
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ],
+                'workerPoolId' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+              ],
+            ],'delete' => [
+              'path' => 'v1/{+name}',
+              'httpMethod' => 'DELETE',
+              'parameters' => [
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'allowMissing' => [
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ],
+                'etag' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+                'validateOnly' => [
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ],
+              ],
+            ],'get' => [
+              'path' => 'v1/{+name}',
+              'httpMethod' => 'GET',
+              'parameters' => [
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+              ],
+            ],'list' => [
+              'path' => 'v1/{+parent}/workerPools',
+              'httpMethod' => 'GET',
+              'parameters' => [
+                'parent' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'pageSize' => [
+                  'location' => 'query',
+                  'type' => 'integer',
+                ],
+                'pageToken' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+              ],
+            ],'patch' => [
+              'path' => 'v1/{+name}',
+              'httpMethod' => 'PATCH',
+              'parameters' => [
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'updateMask' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+                'validateOnly' => [
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ],
+              ],
+            ],
+          ]
+        ]
+    );
     $this->projects_triggers = new CloudBuild\Resource\ProjectsTriggers(
         $this,
         $this->serviceName,
@@ -573,6 +877,25 @@ class CloudBuild extends \Google\Service
                   'type' => 'string',
                 ],
                 'secret' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+              ],
+            ],
+          ]
+        ]
+    );
+    $this->v1 = new CloudBuild\Resource\V1(
+        $this,
+        $this->serviceName,
+        'v1',
+        [
+          'methods' => [
+            'webhook' => [
+              'path' => 'v1/webhook',
+              'httpMethod' => 'POST',
+              'parameters' => [
+                'webhookKey' => [
                   'location' => 'query',
                   'type' => 'string',
                 ],

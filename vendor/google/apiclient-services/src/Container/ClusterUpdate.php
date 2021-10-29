@@ -22,6 +22,8 @@ class ClusterUpdate extends \Google\Collection
   protected $collection_key = 'desiredLocations';
   protected $desiredAddonsConfigType = AddonsConfig::class;
   protected $desiredAddonsConfigDataType = '';
+  protected $desiredAuthenticatorGroupsConfigType = AuthenticatorGroupsConfig::class;
+  protected $desiredAuthenticatorGroupsConfigDataType = '';
   protected $desiredAutopilotType = Autopilot::class;
   protected $desiredAutopilotDataType = '';
   protected $desiredBinaryAuthorizationType = BinaryAuthorization::class;
@@ -39,10 +41,16 @@ class ClusterUpdate extends \Google\Collection
   protected $desiredL4ilbSubsettingConfigType = ILBSubsettingConfig::class;
   protected $desiredL4ilbSubsettingConfigDataType = '';
   public $desiredLocations;
+  protected $desiredLoggingConfigType = LoggingConfig::class;
+  protected $desiredLoggingConfigDataType = '';
   public $desiredLoggingService;
   protected $desiredMasterAuthorizedNetworksConfigType = MasterAuthorizedNetworksConfig::class;
   protected $desiredMasterAuthorizedNetworksConfigDataType = '';
   public $desiredMasterVersion;
+  protected $desiredMeshCertificatesType = MeshCertificates::class;
+  protected $desiredMeshCertificatesDataType = '';
+  protected $desiredMonitoringConfigType = MonitoringConfig::class;
+  protected $desiredMonitoringConfigDataType = '';
   public $desiredMonitoringService;
   protected $desiredNodePoolAutoscalingType = NodePoolAutoscaling::class;
   protected $desiredNodePoolAutoscalingDataType = '';
@@ -77,6 +85,20 @@ class ClusterUpdate extends \Google\Collection
   public function getDesiredAddonsConfig()
   {
     return $this->desiredAddonsConfig;
+  }
+  /**
+   * @param AuthenticatorGroupsConfig
+   */
+  public function setDesiredAuthenticatorGroupsConfig(AuthenticatorGroupsConfig $desiredAuthenticatorGroupsConfig)
+  {
+    $this->desiredAuthenticatorGroupsConfig = $desiredAuthenticatorGroupsConfig;
+  }
+  /**
+   * @return AuthenticatorGroupsConfig
+   */
+  public function getDesiredAuthenticatorGroupsConfig()
+  {
+    return $this->desiredAuthenticatorGroupsConfig;
   }
   /**
    * @param Autopilot
@@ -200,6 +222,20 @@ class ClusterUpdate extends \Google\Collection
   {
     return $this->desiredLocations;
   }
+  /**
+   * @param LoggingConfig
+   */
+  public function setDesiredLoggingConfig(LoggingConfig $desiredLoggingConfig)
+  {
+    $this->desiredLoggingConfig = $desiredLoggingConfig;
+  }
+  /**
+   * @return LoggingConfig
+   */
+  public function getDesiredLoggingConfig()
+  {
+    return $this->desiredLoggingConfig;
+  }
   public function setDesiredLoggingService($desiredLoggingService)
   {
     $this->desiredLoggingService = $desiredLoggingService;
@@ -229,6 +265,34 @@ class ClusterUpdate extends \Google\Collection
   public function getDesiredMasterVersion()
   {
     return $this->desiredMasterVersion;
+  }
+  /**
+   * @param MeshCertificates
+   */
+  public function setDesiredMeshCertificates(MeshCertificates $desiredMeshCertificates)
+  {
+    $this->desiredMeshCertificates = $desiredMeshCertificates;
+  }
+  /**
+   * @return MeshCertificates
+   */
+  public function getDesiredMeshCertificates()
+  {
+    return $this->desiredMeshCertificates;
+  }
+  /**
+   * @param MonitoringConfig
+   */
+  public function setDesiredMonitoringConfig(MonitoringConfig $desiredMonitoringConfig)
+  {
+    $this->desiredMonitoringConfig = $desiredMonitoringConfig;
+  }
+  /**
+   * @return MonitoringConfig
+   */
+  public function getDesiredMonitoringConfig()
+  {
+    return $this->desiredMonitoringConfig;
   }
   public function setDesiredMonitoringService($desiredMonitoringService)
   {

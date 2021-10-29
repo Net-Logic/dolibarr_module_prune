@@ -17,28 +17,13 @@
 
 namespace Google\Service\ManagedServiceforMicrosoftActiveDirectoryConsumerAPI;
 
-class GoogleCloudSaasacceleratorManagementProvidersV1NodeSloMetadata extends \Google\Collection
+class GoogleCloudSaasacceleratorManagementProvidersV1NodeSloMetadata extends \Google\Model
 {
-  protected $collection_key = 'exclusions';
-  protected $exclusionsType = GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion::class;
-  protected $exclusionsDataType = 'array';
   public $location;
   public $nodeId;
+  protected $perSliEligibilityType = GoogleCloudSaasacceleratorManagementProvidersV1PerSliSloEligibility::class;
+  protected $perSliEligibilityDataType = '';
 
-  /**
-   * @param GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion[]
-   */
-  public function setExclusions($exclusions)
-  {
-    $this->exclusions = $exclusions;
-  }
-  /**
-   * @return GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion[]
-   */
-  public function getExclusions()
-  {
-    return $this->exclusions;
-  }
   public function setLocation($location)
   {
     $this->location = $location;
@@ -54,6 +39,20 @@ class GoogleCloudSaasacceleratorManagementProvidersV1NodeSloMetadata extends \Go
   public function getNodeId()
   {
     return $this->nodeId;
+  }
+  /**
+   * @param GoogleCloudSaasacceleratorManagementProvidersV1PerSliSloEligibility
+   */
+  public function setPerSliEligibility(GoogleCloudSaasacceleratorManagementProvidersV1PerSliSloEligibility $perSliEligibility)
+  {
+    $this->perSliEligibility = $perSliEligibility;
+  }
+  /**
+   * @return GoogleCloudSaasacceleratorManagementProvidersV1PerSliSloEligibility
+   */
+  public function getPerSliEligibility()
+  {
+    return $this->perSliEligibility;
   }
 }
 

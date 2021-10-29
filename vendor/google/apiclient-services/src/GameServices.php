@@ -34,7 +34,7 @@ use Google\Client;
  */
 class GameServices extends \Google\Service
 {
-  /** See, edit, configure, and delete your Google Cloud Platform data. */
+  /** See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.. */
   const CLOUD_PLATFORM =
       "https://www.googleapis.com/auth/cloud-platform";
 
@@ -550,6 +550,10 @@ class GameServices extends \Google\Service
                   'type' => 'string',
                   'required' => true,
                 ],
+                'view' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
               ],
             ],'list' => [
               'path' => 'v1/{+parent}/gameServerClusters',
@@ -573,6 +577,10 @@ class GameServices extends \Google\Service
                   'type' => 'integer',
                 ],
                 'pageToken' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+                'view' => [
                   'location' => 'query',
                   'type' => 'string',
                 ],
@@ -605,6 +613,10 @@ class GameServices extends \Google\Service
                   'type' => 'string',
                 ],
                 'previewTime' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+                'view' => [
                   'location' => 'query',
                   'type' => 'string',
                 ],

@@ -58,6 +58,37 @@ class DriveItem extends BaseItem
     }
     
     /**
+    * Gets the bundle
+    *
+    * @return Bundle|null The bundle
+    */
+    public function getBundle()
+    {
+        if (array_key_exists("bundle", $this->_propDict)) {
+            if (is_a($this->_propDict["bundle"], "\Microsoft\Graph\Model\Bundle") || is_null($this->_propDict["bundle"])) {
+                return $this->_propDict["bundle"];
+            } else {
+                $this->_propDict["bundle"] = new Bundle($this->_propDict["bundle"]);
+                return $this->_propDict["bundle"];
+            }
+        }
+        return null;
+    }
+    
+    /**
+    * Sets the bundle
+    *
+    * @param Bundle $val The bundle
+    *
+    * @return DriveItem
+    */
+    public function setBundle($val)
+    {
+        $this->_propDict["bundle"] = $val;
+        return $this;
+    }
+    
+    /**
     * Gets the content
     * The content stream, if the item represents a file.
     *
@@ -69,7 +100,7 @@ class DriveItem extends BaseItem
             if (is_a($this->_propDict["content"], "\GuzzleHttp\Psr7\Stream") || is_null($this->_propDict["content"])) {
                 return $this->_propDict["content"];
             } else {
-                $this->_propDict["content"] = \GuzzleHttp\Psr7\stream_for($this->_propDict["content"]);
+                $this->_propDict["content"] = \GuzzleHttp\Psr7\Utils::streamFor($this->_propDict["content"]);
                 return $this->_propDict["content"];
             }
         }
@@ -318,6 +349,39 @@ class DriveItem extends BaseItem
     }
     
     /**
+    * Gets the malware
+    * Malware metadata, if the item was detected to contain malware. Read-only.
+    *
+    * @return Malware|null The malware
+    */
+    public function getMalware()
+    {
+        if (array_key_exists("malware", $this->_propDict)) {
+            if (is_a($this->_propDict["malware"], "\Microsoft\Graph\Model\Malware") || is_null($this->_propDict["malware"])) {
+                return $this->_propDict["malware"];
+            } else {
+                $this->_propDict["malware"] = new Malware($this->_propDict["malware"]);
+                return $this->_propDict["malware"];
+            }
+        }
+        return null;
+    }
+    
+    /**
+    * Sets the malware
+    * Malware metadata, if the item was detected to contain malware. Read-only.
+    *
+    * @param Malware $val The malware
+    *
+    * @return DriveItem
+    */
+    public function setMalware($val)
+    {
+        $this->_propDict["malware"] = $val;
+        return $this;
+    }
+    
+    /**
     * Gets the package
     * If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
     *
@@ -352,7 +416,7 @@ class DriveItem extends BaseItem
     
     /**
     * Gets the pendingOperations
-    * If present, indicates that indicates that one or more operations that may affect the state of the driveItem are pending completion. Read-only.
+    * If present, indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.
     *
     * @return PendingOperations|null The pendingOperations
     */
@@ -371,7 +435,7 @@ class DriveItem extends BaseItem
     
     /**
     * Sets the pendingOperations
-    * If present, indicates that indicates that one or more operations that may affect the state of the driveItem are pending completion. Read-only.
+    * If present, indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.
     *
     * @param PendingOperations $val The pendingOperations
     *

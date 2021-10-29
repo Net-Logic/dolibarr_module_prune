@@ -27,7 +27,8 @@ use Google\Client;
  * associated with a Workspace, with a few exceptions as noted on the individual
  * method pages. The table entries below are presented in alphabetical order,
  * not in order of common use. For explanations of the concepts found in the
- * table entries, read the Cloud Monitoring documentation.</p>
+ * table entries, read the Cloud Monitoring documentation
+ * (https://cloud.google.com/monitoring/docs).</p>
  *
  * <p>
  * For more information about this service, see the API
@@ -38,7 +39,7 @@ use Google\Client;
  */
 class Monitoring extends \Google\Service
 {
-  /** See, edit, configure, and delete your Google Cloud Platform data. */
+  /** See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.. */
   const CLOUD_PLATFORM =
       "https://www.googleapis.com/auth/cloud-platform";
   /** View and write monitoring data for all of your Google and third-party Cloud and API projects. */
@@ -743,6 +744,16 @@ class Monitoring extends \Google\Service
           'methods' => [
             'create' => [
               'path' => 'v3/{+name}/timeSeries',
+              'httpMethod' => 'POST',
+              'parameters' => [
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+              ],
+            ],'createService' => [
+              'path' => 'v3/{+name}/timeSeries:createService',
               'httpMethod' => 'POST',
               'parameters' => [
                 'name' => [

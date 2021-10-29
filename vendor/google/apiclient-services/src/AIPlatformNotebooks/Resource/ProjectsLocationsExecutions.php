@@ -32,8 +32,7 @@ use Google\Service\AIPlatformNotebooks\Operation;
 class ProjectsLocationsExecutions extends \Google\Service\Resource
 {
   /**
-   * Creates a new Scheduled Notebook in a given project and location.
-   * (executions.create)
+   * Creates a new Execution in a given project and location. (executions.create)
    *
    * @param string $parent Required. Format:
    * `parent=projects/{project_id}/locations/{location}`
@@ -68,7 +67,7 @@ class ProjectsLocationsExecutions extends \Google\Service\Resource
    * Gets details of executions (executions.get)
    *
    * @param string $name Required. Format:
-   * `projects/{project_id}/locations/{location}/schedules/{execution_id}`
+   * `projects/{project_id}/locations/{location}/executions/{execution_id}`
    * @param array $optParams Optional parameters.
    * @return Execution
    */

@@ -80,15 +80,19 @@ class Inappproducts extends \Google\Service\Resource
     return $this->call('insert', [$params], InAppProduct::class);
   }
   /**
-   * Lists all in-app products - both managed products and subscriptions.
-   * (inappproducts.listInappproducts)
+   * Lists all in-app products - both managed products and subscriptions. If an
+   * app has a large number of in-app products, the response may be paginated. In
+   * this case the response field `tokenPagination.nextPageToken` will be set and
+   * the caller should provide its value as a `token` request parameter to
+   * retrieve the next page. (inappproducts.listInappproducts)
    *
    * @param string $packageName Package name of the app.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string maxResults How many results the list operation should
-   * return.
-   * @opt_param string startIndex The index of the first element to return.
+   * @opt_param string maxResults Deprecated and ignored. The page size is
+   * determined by the server.
+   * @opt_param string startIndex Deprecated and ignored. Set the `token`
+   * parameter to rertieve the next page.
    * @opt_param string token Pagination token. If empty, list starts at the first
    * product.
    * @return InappproductsListResponse
@@ -129,6 +133,8 @@ class Inappproducts extends \Google\Service\Resource
    * @param InAppProduct $postBody
    * @param array $optParams Optional parameters.
    *
+   * @opt_param bool allowMissing If set to true, and the in-app product with the
+   * given package_name and sku doesn't exist, the in-app product will be created.
    * @opt_param bool autoConvertMissingPrices If true the prices for all regions
    * targeted by the parent app that don't have a price specified for this in-app
    * product will be auto converted to the target currency based on the default

@@ -41,7 +41,7 @@ use Google\Service\SQLAdmin\Operation;
 class Instances extends \Google\Service\Resource
 {
   /**
-   * Add a new trusted Certificate Authority (CA) version for the specified
+   * Adds a new trusted Certificate Authority (CA) version for the specified
    * instance. Required to prepare for a certificate rotation. If a CA version was
    * previously added but never used in a certificate rotation, this operation
    * replaces that version. There cannot be more than one CA version waiting to be
@@ -128,8 +128,12 @@ class Instances extends \Google\Service\Resource
     return $this->call('export', [$params], Operation::class);
   }
   /**
-   * Failover the instance to its failover replica instance. Using this operation
-   * might cause your instance to restart. (instances.failover)
+   * Initiates a manual failover of a high availability (HA) primary instance to a
+   * standby instance, which becomes the primary instance. Users are then rerouted
+   * to the new primary. For more information, see the Overview of high
+   * availability page in the Cloud SQL documentation. If using Legacy HA (MySQL
+   * only), this causes the instance to failover to its failover replica instance.
+   * (instances.failover)
    *
    * @param string $project ID of the project that contains the read replica.
    * @param string $instance Cloud SQL instance ID. This does not include the

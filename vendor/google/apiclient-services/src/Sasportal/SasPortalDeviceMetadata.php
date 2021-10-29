@@ -19,6 +19,34 @@ namespace Google\Service\Sasportal;
 
 class SasPortalDeviceMetadata extends \Google\Model
 {
+  public $antennaModel;
+  public $commonChannelGroup;
+  public $interferenceCoordinationGroup;
+
+  public function setAntennaModel($antennaModel)
+  {
+    $this->antennaModel = $antennaModel;
+  }
+  public function getAntennaModel()
+  {
+    return $this->antennaModel;
+  }
+  public function setCommonChannelGroup($commonChannelGroup)
+  {
+    $this->commonChannelGroup = $commonChannelGroup;
+  }
+  public function getCommonChannelGroup()
+  {
+    return $this->commonChannelGroup;
+  }
+  public function setInterferenceCoordinationGroup($interferenceCoordinationGroup)
+  {
+    $this->interferenceCoordinationGroup = $interferenceCoordinationGroup;
+  }
+  public function getInterferenceCoordinationGroup()
+  {
+    return $this->interferenceCoordinationGroup;
+  }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

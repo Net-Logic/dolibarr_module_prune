@@ -211,7 +211,7 @@ class GraphRequest
     public function setReturnType($returnClass)
     {
         $this->returnType = $returnClass;
-        if ($this->returnType == "GuzzleHttp\Psr7\Stream") {
+        if ($this->returnType == "GuzzleHttp\Psr7\Stream" || $this->returnType === \Psr\Http\Message\StreamInterface::class) {
             $this->returnsStream  = true;
         } else {
             $this->returnsStream = false;
@@ -253,7 +253,7 @@ class GraphRequest
     public function attachBody($obj)
     {
         // Attach streams & JSON automatically
-        if (is_string($obj) || is_a($obj, 'GuzzleHttp\\Psr7\\Stream')) {
+        if (is_string($obj) || is_a($obj, \Psr\Http\Message\StreamInterface::class)) {
             $this->requestBody = $obj;
         }
         // By default, JSON-encode
@@ -466,7 +466,7 @@ class GraphRequest
         try {
             if (file_exists($path) && is_readable($path)) {
                 $file = fopen($path, 'r');
-                $stream = \GuzzleHttp\Psr7\stream_for($file);
+                $stream = \GuzzleHttp\Psr7\Utils::streamFor($file);
                 $this->requestBody = $stream;
                 return $this->execute($client);
             } else {

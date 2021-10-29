@@ -27,6 +27,7 @@ class VirtualEndpoint extends Entity
 
      /** 
      * Gets the auditEvents
+    * Cloud PC audit event.
      *
      * @return array|null The auditEvents
      */
@@ -41,6 +42,7 @@ class VirtualEndpoint extends Entity
     
     /** 
     * Sets the auditEvents
+    * Cloud PC audit event.
     *
     * @param CloudPcAuditEvent $val The auditEvents
     *
@@ -85,7 +87,7 @@ class VirtualEndpoint extends Entity
 
      /** 
      * Gets the deviceImages
-    * The image resource on cloud PC.
+    * The image resource on Cloud PC.
      *
      * @return array|null The deviceImages
      */
@@ -100,7 +102,7 @@ class VirtualEndpoint extends Entity
     
     /** 
     * Sets the deviceImages
-    * The image resource on cloud PC.
+    * The image resource on Cloud PC.
     *
     * @param CloudPcDeviceImage $val The deviceImages
     *
@@ -114,8 +116,36 @@ class VirtualEndpoint extends Entity
     
 
      /** 
+     * Gets the galleryImages
+     *
+     * @return array|null The galleryImages
+     */
+    public function getGalleryImages()
+    {
+        if (array_key_exists("galleryImages", $this->_propDict)) {
+           return $this->_propDict["galleryImages"];
+        } else {
+            return null;
+        }
+    }
+    
+    /** 
+    * Sets the galleryImages
+    *
+    * @param CloudPcGalleryImage $val The galleryImages
+    *
+    * @return VirtualEndpoint
+    */
+    public function setGalleryImages($val)
+    {
+        $this->_propDict["galleryImages"] = $val;
+        return $this;
+    }
+    
+
+     /** 
      * Gets the onPremisesConnections
-    * A defined collection of Azure resource information that can be used to establish on-premises network connectivity for cloud PCs.
+    * A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
      *
      * @return array|null The onPremisesConnections
      */
@@ -130,7 +160,7 @@ class VirtualEndpoint extends Entity
     
     /** 
     * Sets the onPremisesConnections
-    * A defined collection of Azure resource information that can be used to establish on-premises network connectivity for cloud PCs.
+    * A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
     *
     * @param CloudPcOnPremisesConnection $val The onPremisesConnections
     *
@@ -145,7 +175,7 @@ class VirtualEndpoint extends Entity
 
      /** 
      * Gets the provisioningPolicies
-    * cloud PC provisioning policy.
+    * Cloud PC provisioning policy.
      *
      * @return array|null The provisioningPolicies
      */
@@ -160,7 +190,7 @@ class VirtualEndpoint extends Entity
     
     /** 
     * Sets the provisioningPolicies
-    * cloud PC provisioning policy.
+    * Cloud PC provisioning policy.
     *
     * @param CloudPcProvisioningPolicy $val The provisioningPolicies
     *
@@ -174,7 +204,66 @@ class VirtualEndpoint extends Entity
     
 
      /** 
+     * Gets the servicePlans
+     *
+     * @return array|null The servicePlans
+     */
+    public function getServicePlans()
+    {
+        if (array_key_exists("servicePlans", $this->_propDict)) {
+           return $this->_propDict["servicePlans"];
+        } else {
+            return null;
+        }
+    }
+    
+    /** 
+    * Sets the servicePlans
+    *
+    * @param CloudPcServicePlan $val The servicePlans
+    *
+    * @return VirtualEndpoint
+    */
+    public function setServicePlans($val)
+    {
+        $this->_propDict["servicePlans"] = $val;
+        return $this;
+    }
+    
+
+     /** 
+     * Gets the supportedRegions
+    * Cloud PC supported regions.
+     *
+     * @return array|null The supportedRegions
+     */
+    public function getSupportedRegions()
+    {
+        if (array_key_exists("supportedRegions", $this->_propDict)) {
+           return $this->_propDict["supportedRegions"];
+        } else {
+            return null;
+        }
+    }
+    
+    /** 
+    * Sets the supportedRegions
+    * Cloud PC supported regions.
+    *
+    * @param CloudPcSupportedRegion $val The supportedRegions
+    *
+    * @return VirtualEndpoint
+    */
+    public function setSupportedRegions($val)
+    {
+        $this->_propDict["supportedRegions"] = $val;
+        return $this;
+    }
+    
+
+     /** 
      * Gets the userSettings
+    * Cloud PC user settings.
      *
      * @return array|null The userSettings
      */
@@ -189,6 +278,7 @@ class VirtualEndpoint extends Entity
     
     /** 
     * Sets the userSettings
+    * Cloud PC user settings.
     *
     * @param CloudPcUserSetting $val The userSettings
     *

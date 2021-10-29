@@ -20,6 +20,9 @@ namespace Google\Service\CloudBuild;
 class BuildTrigger extends \Google\Collection
 {
   protected $collection_key = 'tags';
+  protected $approvalConfigType = ApprovalConfig::class;
+  protected $approvalConfigDataType = '';
+  public $autodetect;
   protected $buildType = Build::class;
   protected $buildDataType = '';
   public $createTime;
@@ -27,6 +30,8 @@ class BuildTrigger extends \Google\Collection
   public $disabled;
   public $filename;
   public $filter;
+  protected $gitFileSourceType = GitFileSource::class;
+  protected $gitFileSourceDataType = '';
   protected $githubType = GitHubEventsConfig::class;
   protected $githubDataType = '';
   public $id;
@@ -36,6 +41,9 @@ class BuildTrigger extends \Google\Collection
   protected $pubsubConfigType = PubsubConfig::class;
   protected $pubsubConfigDataType = '';
   public $resourceName;
+  public $serviceAccount;
+  protected $sourceToBuildType = GitRepoSource::class;
+  protected $sourceToBuildDataType = '';
   public $substitutions;
   public $tags;
   protected $triggerTemplateType = RepoSource::class;
@@ -43,6 +51,28 @@ class BuildTrigger extends \Google\Collection
   protected $webhookConfigType = WebhookConfig::class;
   protected $webhookConfigDataType = '';
 
+  /**
+   * @param ApprovalConfig
+   */
+  public function setApprovalConfig(ApprovalConfig $approvalConfig)
+  {
+    $this->approvalConfig = $approvalConfig;
+  }
+  /**
+   * @return ApprovalConfig
+   */
+  public function getApprovalConfig()
+  {
+    return $this->approvalConfig;
+  }
+  public function setAutodetect($autodetect)
+  {
+    $this->autodetect = $autodetect;
+  }
+  public function getAutodetect()
+  {
+    return $this->autodetect;
+  }
   /**
    * @param Build
    */
@@ -96,6 +126,20 @@ class BuildTrigger extends \Google\Collection
   public function getFilter()
   {
     return $this->filter;
+  }
+  /**
+   * @param GitFileSource
+   */
+  public function setGitFileSource(GitFileSource $gitFileSource)
+  {
+    $this->gitFileSource = $gitFileSource;
+  }
+  /**
+   * @return GitFileSource
+   */
+  public function getGitFileSource()
+  {
+    return $this->gitFileSource;
   }
   /**
    * @param GitHubEventsConfig
@@ -164,6 +208,28 @@ class BuildTrigger extends \Google\Collection
   public function getResourceName()
   {
     return $this->resourceName;
+  }
+  public function setServiceAccount($serviceAccount)
+  {
+    $this->serviceAccount = $serviceAccount;
+  }
+  public function getServiceAccount()
+  {
+    return $this->serviceAccount;
+  }
+  /**
+   * @param GitRepoSource
+   */
+  public function setSourceToBuild(GitRepoSource $sourceToBuild)
+  {
+    $this->sourceToBuild = $sourceToBuild;
+  }
+  /**
+   * @return GitRepoSource
+   */
+  public function getSourceToBuild()
+  {
+    return $this->sourceToBuild;
   }
   public function setSubstitutions($substitutions)
   {

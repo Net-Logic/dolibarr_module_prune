@@ -26,6 +26,7 @@ class ExternalConnection extends \Beta\Microsoft\Graph\Model\Entity
 {
     /**
     * Gets the configuration
+    * Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
     *
     * @return Configuration|null The configuration
     */
@@ -44,6 +45,7 @@ class ExternalConnection extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Sets the configuration
+    * Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
     *
     * @param Configuration $val The configuration
     *
@@ -56,7 +58,37 @@ class ExternalConnection extends \Beta\Microsoft\Graph\Model\Entity
     }
     
     /**
+    * Gets the connectorId
+    * The Teams App ID. Optional.
+    *
+    * @return string|null The connectorId
+    */
+    public function getConnectorId()
+    {
+        if (array_key_exists("connectorId", $this->_propDict)) {
+            return $this->_propDict["connectorId"];
+        } else {
+            return null;
+        }
+    }
+    
+    /**
+    * Sets the connectorId
+    * The Teams App ID. Optional.
+    *
+    * @param string $val The connectorId
+    *
+    * @return ExternalConnection
+    */
+    public function setConnectorId($val)
+    {
+        $this->_propDict["connectorId"] = $val;
+        return $this;
+    }
+    
+    /**
     * Gets the description
+    * Description of the connection displayed in the Microsoft 365 admin center. Optional.
     *
     * @return string|null The description
     */
@@ -71,6 +103,7 @@ class ExternalConnection extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Sets the description
+    * Description of the connection displayed in the Microsoft 365 admin center. Optional.
     *
     * @param string $val The description
     *
@@ -84,6 +117,7 @@ class ExternalConnection extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Gets the name
+    * The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
     *
     * @return string|null The name
     */
@@ -98,6 +132,7 @@ class ExternalConnection extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Sets the name
+    * The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
     *
     * @param string $val The name
     *
@@ -110,7 +145,41 @@ class ExternalConnection extends \Beta\Microsoft\Graph\Model\Entity
     }
     
     /**
+    * Gets the searchSettings
+    * The settings configuring the search experience for content in this connection, such as the display templates for search results.
+    *
+    * @return SearchSettings|null The searchSettings
+    */
+    public function getSearchSettings()
+    {
+        if (array_key_exists("searchSettings", $this->_propDict)) {
+            if (is_a($this->_propDict["searchSettings"], "\Beta\Microsoft\Graph\ExternalConnectors\Model\SearchSettings") || is_null($this->_propDict["searchSettings"])) {
+                return $this->_propDict["searchSettings"];
+            } else {
+                $this->_propDict["searchSettings"] = new SearchSettings($this->_propDict["searchSettings"]);
+                return $this->_propDict["searchSettings"];
+            }
+        }
+        return null;
+    }
+    
+    /**
+    * Sets the searchSettings
+    * The settings configuring the search experience for content in this connection, such as the display templates for search results.
+    *
+    * @param SearchSettings $val The searchSettings
+    *
+    * @return ExternalConnection
+    */
+    public function setSearchSettings($val)
+    {
+        $this->_propDict["searchSettings"] = $val;
+        return $this;
+    }
+    
+    /**
     * Gets the state
+    * Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
     *
     * @return ConnectionState|null The state
     */
@@ -129,6 +198,7 @@ class ExternalConnection extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Sets the state
+    * Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
     *
     * @param ConnectionState $val The state
     *
@@ -143,6 +213,7 @@ class ExternalConnection extends \Beta\Microsoft\Graph\Model\Entity
 
      /** 
      * Gets the groups
+    * Read-only. Nullable.
      *
      * @return array|null The groups
      */
@@ -157,6 +228,7 @@ class ExternalConnection extends \Beta\Microsoft\Graph\Model\Entity
     
     /** 
     * Sets the groups
+    * Read-only. Nullable.
     *
     * @param ExternalGroup $val The groups
     *
@@ -171,6 +243,7 @@ class ExternalConnection extends \Beta\Microsoft\Graph\Model\Entity
 
      /** 
      * Gets the items
+    * Read-only. Nullable.
      *
      * @return array|null The items
      */
@@ -185,6 +258,7 @@ class ExternalConnection extends \Beta\Microsoft\Graph\Model\Entity
     
     /** 
     * Sets the items
+    * Read-only. Nullable.
     *
     * @param ExternalItem $val The items
     *
@@ -199,6 +273,7 @@ class ExternalConnection extends \Beta\Microsoft\Graph\Model\Entity
 
      /** 
      * Gets the operations
+    * Read-only. Nullable.
      *
      * @return array|null The operations
      */
@@ -213,6 +288,7 @@ class ExternalConnection extends \Beta\Microsoft\Graph\Model\Entity
     
     /** 
     * Sets the operations
+    * Read-only. Nullable.
     *
     * @param ConnectionOperation $val The operations
     *
@@ -226,6 +302,7 @@ class ExternalConnection extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Gets the schema
+    * Read-only. Nullable.
     *
     * @return Schema|null The schema
     */
@@ -244,6 +321,7 @@ class ExternalConnection extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Sets the schema
+    * Read-only. Nullable.
     *
     * @param Schema $val The schema
     *

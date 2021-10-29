@@ -20,12 +20,16 @@ namespace Google\Service\CloudBuild;
 class Build extends \Google\Collection
 {
   protected $collection_key = 'warnings';
+  protected $approvalType = BuildApproval::class;
+  protected $approvalDataType = '';
   protected $artifactsType = Artifacts::class;
   protected $artifactsDataType = '';
   protected $availableSecretsType = Secrets::class;
   protected $availableSecretsDataType = '';
   public $buildTriggerId;
   public $createTime;
+  protected $failureInfoType = FailureInfo::class;
+  protected $failureInfoDataType = '';
   public $finishTime;
   public $id;
   public $images;
@@ -58,6 +62,20 @@ class Build extends \Google\Collection
   protected $warningsType = Warning::class;
   protected $warningsDataType = 'array';
 
+  /**
+   * @param BuildApproval
+   */
+  public function setApproval(BuildApproval $approval)
+  {
+    $this->approval = $approval;
+  }
+  /**
+   * @return BuildApproval
+   */
+  public function getApproval()
+  {
+    return $this->approval;
+  }
   /**
    * @param Artifacts
    */
@@ -101,6 +119,20 @@ class Build extends \Google\Collection
   public function getCreateTime()
   {
     return $this->createTime;
+  }
+  /**
+   * @param FailureInfo
+   */
+  public function setFailureInfo(FailureInfo $failureInfo)
+  {
+    $this->failureInfo = $failureInfo;
+  }
+  /**
+   * @return FailureInfo
+   */
+  public function getFailureInfo()
+  {
+    return $this->failureInfo;
   }
   public function setFinishTime($finishTime)
   {

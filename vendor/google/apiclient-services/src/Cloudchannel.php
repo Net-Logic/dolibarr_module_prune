@@ -23,7 +23,9 @@ use Google\Client;
  * Service definition for Cloudchannel (v1).
  *
  * <p>
-</p>
+ * The Cloud Channel API enables Google Cloud partners to have a single unified
+ * resale platform and APIs across all of Google Cloud including GCP, Workspace,
+ * Maps and Chrome.</p>
  *
  * <p>
  * For more information about this service, see the API
@@ -244,6 +246,16 @@ class Cloudchannel extends \Google\Service
                   'required' => true,
                 ],
               ],
+            ],'import' => [
+              'path' => 'v1/{+parent}/customers:import',
+              'httpMethod' => 'POST',
+              'parameters' => [
+                'parent' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+              ],
             ],'list' => [
               'path' => 'v1/{+parent}/customers',
               'httpMethod' => 'GET',
@@ -311,6 +323,16 @@ class Cloudchannel extends \Google\Service
               'httpMethod' => 'GET',
               'parameters' => [
                 'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+              ],
+            ],'import' => [
+              'path' => 'v1/{+parent}/customers:import',
+              'httpMethod' => 'POST',
+              'parameters' => [
+                'parent' => [
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,

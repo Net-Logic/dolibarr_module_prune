@@ -38,7 +38,7 @@ class AdvertisersTargetingTypesAssignedTargetingOptions extends \Google\Service\
    * @param string $advertiserId Required. The ID of the advertiser.
    * @param string $targetingType Required. Identifies the type of this assigned
    * targeting option. Supported targeting types: * `TARGETING_TYPE_CHANNEL` *
-   * `TARGETING_TYPE_DIGITAL_CONTENT_LABEL_EXCLUSION` *
+   * `TARGETING_TYPE_DIGITAL_CONTENT_LABEL_EXCLUSION` * `TARGETING_TYPE_OMID` *
    * `TARGETING_TYPE_SENSITIVE_CATEGORY_EXCLUSION`
    * @param AssignedTargetingOption $postBody
    * @param array $optParams Optional parameters.
@@ -57,7 +57,7 @@ class AdvertisersTargetingTypesAssignedTargetingOptions extends \Google\Service\
    * @param string $advertiserId Required. The ID of the advertiser.
    * @param string $targetingType Required. Identifies the type of this assigned
    * targeting option. Supported targeting types: * `TARGETING_TYPE_CHANNEL` *
-   * `TARGETING_TYPE_DIGITAL_CONTENT_LABEL_EXCLUSION` *
+   * `TARGETING_TYPE_DIGITAL_CONTENT_LABEL_EXCLUSION` * `TARGETING_TYPE_OMID` *
    * `TARGETING_TYPE_SENSITIVE_CATEGORY_EXCLUSION`
    * @param string $assignedTargetingOptionId Required. The ID of the assigned
    * targeting option to delete.
@@ -77,7 +77,7 @@ class AdvertisersTargetingTypesAssignedTargetingOptions extends \Google\Service\
    * @param string $advertiserId Required. The ID of the advertiser.
    * @param string $targetingType Required. Identifies the type of this assigned
    * targeting option. Supported targeting types: * `TARGETING_TYPE_CHANNEL` *
-   * `TARGETING_TYPE_DIGITAL_CONTENT_LABEL_EXCLUSION` *
+   * `TARGETING_TYPE_DIGITAL_CONTENT_LABEL_EXCLUSION` * `TARGETING_TYPE_OMID` *
    * `TARGETING_TYPE_SENSITIVE_CATEGORY_EXCLUSION`
    * @param string $assignedTargetingOptionId Required. An identifier unique to
    * the targeting type in this advertiser that identifies the assigned targeting
@@ -99,7 +99,7 @@ class AdvertisersTargetingTypesAssignedTargetingOptions extends \Google\Service\
    * @param string $targetingType Required. Identifies the type of assigned
    * targeting options to list. Supported targeting types: *
    * `TARGETING_TYPE_CHANNEL` * `TARGETING_TYPE_DIGITAL_CONTENT_LABEL_EXCLUSION` *
-   * `TARGETING_TYPE_SENSITIVE_CATEGORY_EXCLUSION`
+   * `TARGETING_TYPE_OMID` * `TARGETING_TYPE_SENSITIVE_CATEGORY_EXCLUSION`
    * @param array $optParams Optional parameters.
    *
    * @opt_param string filter Allows filtering by assigned targeting option
@@ -114,7 +114,7 @@ class AdvertisersTargetingTypesAssignedTargetingOptions extends \Google\Service\
    * are: * `assignedTargetingOptionId` (default) The default sorting order is
    * ascending. To specify descending order for a field, a suffix "desc" should be
    * added to the field name. Example: `assignedTargetingOptionId desc`.
-   * @opt_param int pageSize Requested page size. Must be between `1` and `100`.
+   * @opt_param int pageSize Requested page size. Must be between `1` and `5000`.
    * If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT`
    * if an invalid value is specified.
    * @opt_param string pageToken A token identifying a page of results the server

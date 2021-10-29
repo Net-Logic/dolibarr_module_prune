@@ -21,8 +21,10 @@ class Inventory extends \Google\Model
 {
   protected $itemsType = InventoryItem::class;
   protected $itemsDataType = 'map';
+  public $name;
   protected $osInfoType = InventoryOsInfo::class;
   protected $osInfoDataType = '';
+  public $updateTime;
 
   /**
    * @param InventoryItem[]
@@ -38,6 +40,14 @@ class Inventory extends \Google\Model
   {
     return $this->items;
   }
+  public function setName($name)
+  {
+    $this->name = $name;
+  }
+  public function getName()
+  {
+    return $this->name;
+  }
   /**
    * @param InventoryOsInfo
    */
@@ -51,6 +61,14 @@ class Inventory extends \Google\Model
   public function getOsInfo()
   {
     return $this->osInfo;
+  }
+  public function setUpdateTime($updateTime)
+  {
+    $this->updateTime = $updateTime;
+  }
+  public function getUpdateTime()
+  {
+    return $this->updateTime;
   }
 }
 
