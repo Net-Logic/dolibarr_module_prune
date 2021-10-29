@@ -25,6 +25,7 @@ class Dataset extends \Google\Collection
   public $creationTime;
   protected $datasetReferenceType = DatasetReference::class;
   protected $datasetReferenceDataType = '';
+  public $defaultCollation;
   protected $defaultEncryptionConfigurationType = EncryptionConfiguration::class;
   protected $defaultEncryptionConfigurationDataType = '';
   public $defaultPartitionExpirationMs;
@@ -33,6 +34,7 @@ class Dataset extends \Google\Collection
   public $etag;
   public $friendlyName;
   public $id;
+  public $isCaseInsensitive;
   public $kind;
   public $labels;
   public $lastModifiedTime;
@@ -75,6 +77,14 @@ class Dataset extends \Google\Collection
   public function getDatasetReference()
   {
     return $this->datasetReference;
+  }
+  public function setDefaultCollation($defaultCollation)
+  {
+    $this->defaultCollation = $defaultCollation;
+  }
+  public function getDefaultCollation()
+  {
+    return $this->defaultCollation;
   }
   /**
    * @param EncryptionConfiguration
@@ -137,6 +147,14 @@ class Dataset extends \Google\Collection
   public function getId()
   {
     return $this->id;
+  }
+  public function setIsCaseInsensitive($isCaseInsensitive)
+  {
+    $this->isCaseInsensitive = $isCaseInsensitive;
+  }
+  public function getIsCaseInsensitive()
+  {
+    return $this->isCaseInsensitive;
   }
   public function setKind($kind)
   {

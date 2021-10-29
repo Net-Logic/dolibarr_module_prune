@@ -20,44 +20,12 @@ namespace Google\Service\CloudFilestore;
 class GoogleCloudSaasacceleratorManagementProvidersV1SloMetadata extends \Google\Collection
 {
   protected $collection_key = 'nodes';
-  protected $eligibilityType = GoogleCloudSaasacceleratorManagementProvidersV1SloEligibility::class;
-  protected $eligibilityDataType = '';
-  protected $exclusionsType = GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion::class;
-  protected $exclusionsDataType = 'array';
   protected $nodesType = GoogleCloudSaasacceleratorManagementProvidersV1NodeSloMetadata::class;
   protected $nodesDataType = 'array';
   protected $perSliEligibilityType = GoogleCloudSaasacceleratorManagementProvidersV1PerSliSloEligibility::class;
   protected $perSliEligibilityDataType = '';
   public $tier;
 
-  /**
-   * @param GoogleCloudSaasacceleratorManagementProvidersV1SloEligibility
-   */
-  public function setEligibility(GoogleCloudSaasacceleratorManagementProvidersV1SloEligibility $eligibility)
-  {
-    $this->eligibility = $eligibility;
-  }
-  /**
-   * @return GoogleCloudSaasacceleratorManagementProvidersV1SloEligibility
-   */
-  public function getEligibility()
-  {
-    return $this->eligibility;
-  }
-  /**
-   * @param GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion[]
-   */
-  public function setExclusions($exclusions)
-  {
-    $this->exclusions = $exclusions;
-  }
-  /**
-   * @return GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion[]
-   */
-  public function getExclusions()
-  {
-    return $this->exclusions;
-  }
   /**
    * @param GoogleCloudSaasacceleratorManagementProvidersV1NodeSloMetadata[]
    */

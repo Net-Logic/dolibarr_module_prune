@@ -24,6 +24,9 @@ class Finding extends \Google\Model
   public $createTime;
   public $eventTime;
   public $externalUri;
+  public $findingClass;
+  protected $indicatorType = Indicator::class;
+  protected $indicatorDataType = '';
   public $name;
   public $parent;
   public $resourceName;
@@ -32,6 +35,8 @@ class Finding extends \Google\Model
   public $severity;
   public $sourceProperties;
   public $state;
+  protected $vulnerabilityType = Vulnerability::class;
+  protected $vulnerabilityDataType = '';
 
   public function setCanonicalName($canonicalName)
   {
@@ -72,6 +77,28 @@ class Finding extends \Google\Model
   public function getExternalUri()
   {
     return $this->externalUri;
+  }
+  public function setFindingClass($findingClass)
+  {
+    $this->findingClass = $findingClass;
+  }
+  public function getFindingClass()
+  {
+    return $this->findingClass;
+  }
+  /**
+   * @param Indicator
+   */
+  public function setIndicator(Indicator $indicator)
+  {
+    $this->indicator = $indicator;
+  }
+  /**
+   * @return Indicator
+   */
+  public function getIndicator()
+  {
+    return $this->indicator;
   }
   public function setName($name)
   {
@@ -134,6 +161,20 @@ class Finding extends \Google\Model
   public function getState()
   {
     return $this->state;
+  }
+  /**
+   * @param Vulnerability
+   */
+  public function setVulnerability(Vulnerability $vulnerability)
+  {
+    $this->vulnerability = $vulnerability;
+  }
+  /**
+   * @return Vulnerability
+   */
+  public function getVulnerability()
+  {
+    return $this->vulnerability;
   }
 }
 

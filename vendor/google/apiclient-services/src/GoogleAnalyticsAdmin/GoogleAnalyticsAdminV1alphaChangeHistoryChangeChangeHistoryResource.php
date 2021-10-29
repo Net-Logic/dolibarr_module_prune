@@ -29,6 +29,12 @@ class GoogleAnalyticsAdminV1alphaChangeHistoryChangeChangeHistoryResource extend
   protected $customDimensionDataType = '';
   protected $customMetricType = GoogleAnalyticsAdminV1alphaCustomMetric::class;
   protected $customMetricDataType = '';
+  protected $dataRetentionSettingsType = GoogleAnalyticsAdminV1alphaDataRetentionSettings::class;
+  protected $dataRetentionSettingsDataType = '';
+  protected $displayVideo360AdvertiserLinkType = GoogleAnalyticsAdminV1alphaDisplayVideo360AdvertiserLink::class;
+  protected $displayVideo360AdvertiserLinkDataType = '';
+  protected $displayVideo360AdvertiserLinkProposalType = GoogleAnalyticsAdminV1alphaDisplayVideo360AdvertiserLinkProposal::class;
+  protected $displayVideo360AdvertiserLinkProposalDataType = '';
   protected $firebaseLinkType = GoogleAnalyticsAdminV1alphaFirebaseLink::class;
   protected $firebaseLinkDataType = '';
   protected $googleAdsLinkType = GoogleAnalyticsAdminV1alphaGoogleAdsLink::class;
@@ -113,6 +119,48 @@ class GoogleAnalyticsAdminV1alphaChangeHistoryChangeChangeHistoryResource extend
   public function getCustomMetric()
   {
     return $this->customMetric;
+  }
+  /**
+   * @param GoogleAnalyticsAdminV1alphaDataRetentionSettings
+   */
+  public function setDataRetentionSettings(GoogleAnalyticsAdminV1alphaDataRetentionSettings $dataRetentionSettings)
+  {
+    $this->dataRetentionSettings = $dataRetentionSettings;
+  }
+  /**
+   * @return GoogleAnalyticsAdminV1alphaDataRetentionSettings
+   */
+  public function getDataRetentionSettings()
+  {
+    return $this->dataRetentionSettings;
+  }
+  /**
+   * @param GoogleAnalyticsAdminV1alphaDisplayVideo360AdvertiserLink
+   */
+  public function setDisplayVideo360AdvertiserLink(GoogleAnalyticsAdminV1alphaDisplayVideo360AdvertiserLink $displayVideo360AdvertiserLink)
+  {
+    $this->displayVideo360AdvertiserLink = $displayVideo360AdvertiserLink;
+  }
+  /**
+   * @return GoogleAnalyticsAdminV1alphaDisplayVideo360AdvertiserLink
+   */
+  public function getDisplayVideo360AdvertiserLink()
+  {
+    return $this->displayVideo360AdvertiserLink;
+  }
+  /**
+   * @param GoogleAnalyticsAdminV1alphaDisplayVideo360AdvertiserLinkProposal
+   */
+  public function setDisplayVideo360AdvertiserLinkProposal(GoogleAnalyticsAdminV1alphaDisplayVideo360AdvertiserLinkProposal $displayVideo360AdvertiserLinkProposal)
+  {
+    $this->displayVideo360AdvertiserLinkProposal = $displayVideo360AdvertiserLinkProposal;
+  }
+  /**
+   * @return GoogleAnalyticsAdminV1alphaDisplayVideo360AdvertiserLinkProposal
+   */
+  public function getDisplayVideo360AdvertiserLinkProposal()
+  {
+    return $this->displayVideo360AdvertiserLinkProposal;
   }
   /**
    * @param GoogleAnalyticsAdminV1alphaFirebaseLink

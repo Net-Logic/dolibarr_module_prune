@@ -59,6 +59,8 @@ class Cluster extends \Google\Collection
   protected $legacyAbacDataType = '';
   public $location;
   public $locations;
+  protected $loggingConfigType = LoggingConfig::class;
+  protected $loggingConfigDataType = '';
   public $loggingService;
   protected $maintenancePolicyType = MaintenancePolicy::class;
   protected $maintenancePolicyDataType = '';
@@ -66,6 +68,10 @@ class Cluster extends \Google\Collection
   protected $masterAuthDataType = '';
   protected $masterAuthorizedNetworksConfigType = MasterAuthorizedNetworksConfig::class;
   protected $masterAuthorizedNetworksConfigDataType = '';
+  protected $meshCertificatesType = MeshCertificates::class;
+  protected $meshCertificatesDataType = '';
+  protected $monitoringConfigType = MonitoringConfig::class;
+  protected $monitoringConfigDataType = '';
   public $monitoringService;
   public $name;
   public $network;
@@ -391,6 +397,20 @@ class Cluster extends \Google\Collection
   {
     return $this->locations;
   }
+  /**
+   * @param LoggingConfig
+   */
+  public function setLoggingConfig(LoggingConfig $loggingConfig)
+  {
+    $this->loggingConfig = $loggingConfig;
+  }
+  /**
+   * @return LoggingConfig
+   */
+  public function getLoggingConfig()
+  {
+    return $this->loggingConfig;
+  }
   public function setLoggingService($loggingService)
   {
     $this->loggingService = $loggingService;
@@ -440,6 +460,34 @@ class Cluster extends \Google\Collection
   public function getMasterAuthorizedNetworksConfig()
   {
     return $this->masterAuthorizedNetworksConfig;
+  }
+  /**
+   * @param MeshCertificates
+   */
+  public function setMeshCertificates(MeshCertificates $meshCertificates)
+  {
+    $this->meshCertificates = $meshCertificates;
+  }
+  /**
+   * @return MeshCertificates
+   */
+  public function getMeshCertificates()
+  {
+    return $this->meshCertificates;
+  }
+  /**
+   * @param MonitoringConfig
+   */
+  public function setMonitoringConfig(MonitoringConfig $monitoringConfig)
+  {
+    $this->monitoringConfig = $monitoringConfig;
+  }
+  /**
+   * @return MonitoringConfig
+   */
+  public function getMonitoringConfig()
+  {
+    return $this->monitoringConfig;
   }
   public function setMonitoringService($monitoringService)
   {

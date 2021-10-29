@@ -21,6 +21,8 @@ class GoogleCloudApigeeV1AddonsConfig extends \Google\Model
 {
   protected $advancedApiOpsConfigType = GoogleCloudApigeeV1AdvancedApiOpsConfig::class;
   protected $advancedApiOpsConfigDataType = '';
+  protected $connectorsPlatformConfigType = GoogleCloudApigeeV1ConnectorsPlatformConfig::class;
+  protected $connectorsPlatformConfigDataType = '';
   protected $integrationConfigType = GoogleCloudApigeeV1IntegrationConfig::class;
   protected $integrationConfigDataType = '';
   protected $monetizationConfigType = GoogleCloudApigeeV1MonetizationConfig::class;
@@ -39,6 +41,20 @@ class GoogleCloudApigeeV1AddonsConfig extends \Google\Model
   public function getAdvancedApiOpsConfig()
   {
     return $this->advancedApiOpsConfig;
+  }
+  /**
+   * @param GoogleCloudApigeeV1ConnectorsPlatformConfig
+   */
+  public function setConnectorsPlatformConfig(GoogleCloudApigeeV1ConnectorsPlatformConfig $connectorsPlatformConfig)
+  {
+    $this->connectorsPlatformConfig = $connectorsPlatformConfig;
+  }
+  /**
+   * @return GoogleCloudApigeeV1ConnectorsPlatformConfig
+   */
+  public function getConnectorsPlatformConfig()
+  {
+    return $this->connectorsPlatformConfig;
   }
   /**
    * @param GoogleCloudApigeeV1IntegrationConfig

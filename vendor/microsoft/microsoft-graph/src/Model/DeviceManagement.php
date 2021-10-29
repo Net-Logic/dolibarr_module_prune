@@ -26,7 +26,7 @@ class DeviceManagement extends Entity
 {
     /**
     * Gets the intuneAccountId
-    * Intune Account ID for given tenant
+    * Intune Account Id for given tenant
     *
     * @return string|null The intuneAccountId
     */
@@ -41,7 +41,7 @@ class DeviceManagement extends Entity
     
     /**
     * Sets the intuneAccountId
-    * Intune Account ID for given tenant
+    * Intune Account Id for given tenant
     *
     * @param string $val The intuneAccountId
     *
@@ -947,6 +947,39 @@ class DeviceManagement extends Entity
     public function setRemoteAssistancePartners($val)
     {
         $this->_propDict["remoteAssistancePartners"] = $val;
+        return $this;
+    }
+    
+    /**
+    * Gets the reports
+    * Reports singleton
+    *
+    * @return DeviceManagementReports|null The reports
+    */
+    public function getReports()
+    {
+        if (array_key_exists("reports", $this->_propDict)) {
+            if (is_a($this->_propDict["reports"], "\Microsoft\Graph\Model\DeviceManagementReports") || is_null($this->_propDict["reports"])) {
+                return $this->_propDict["reports"];
+            } else {
+                $this->_propDict["reports"] = new DeviceManagementReports($this->_propDict["reports"]);
+                return $this->_propDict["reports"];
+            }
+        }
+        return null;
+    }
+    
+    /**
+    * Sets the reports
+    * Reports singleton
+    *
+    * @param DeviceManagementReports $val The reports
+    *
+    * @return DeviceManagement
+    */
+    public function setReports($val)
+    {
+        $this->_propDict["reports"] = $val;
         return $this;
     }
     

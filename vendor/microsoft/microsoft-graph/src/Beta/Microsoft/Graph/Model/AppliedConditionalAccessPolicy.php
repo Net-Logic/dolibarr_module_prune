@@ -25,6 +25,37 @@ class AppliedConditionalAccessPolicy extends Entity
 {
 
     /**
+    * Gets the authenticationStrength
+    *
+    * @return AuthenticationStrength|null The authenticationStrength
+    */
+    public function getAuthenticationStrength()
+    {
+        if (array_key_exists("authenticationStrength", $this->_propDict)) {
+            if (is_a($this->_propDict["authenticationStrength"], "\Beta\Microsoft\Graph\Model\AuthenticationStrength") || is_null($this->_propDict["authenticationStrength"])) {
+                return $this->_propDict["authenticationStrength"];
+            } else {
+                $this->_propDict["authenticationStrength"] = new AuthenticationStrength($this->_propDict["authenticationStrength"]);
+                return $this->_propDict["authenticationStrength"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the authenticationStrength
+    *
+    * @param AuthenticationStrength $val The value to assign to the authenticationStrength
+    *
+    * @return AppliedConditionalAccessPolicy The AppliedConditionalAccessPolicy
+    */
+    public function setAuthenticationStrength($val)
+    {
+        $this->_propDict["authenticationStrength"] = $val;
+         return $this;
+    }
+
+    /**
     * Gets the conditionsNotSatisfied
     * Refers to the conditional access policy conditions that are not satisfied. Possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client.
     *
@@ -206,7 +237,7 @@ class AppliedConditionalAccessPolicy extends Entity
     }
     /**
     * Gets the id
-    * Identifier of the conditional access policy.
+    * An identifier of the conditional access policy.
     *
     * @return string|null The id
     */
@@ -221,7 +252,7 @@ class AppliedConditionalAccessPolicy extends Entity
 
     /**
     * Sets the id
-    * Identifier of the conditional access policy.
+    * An identifier of the conditional access policy.
     *
     * @param string $val The value of the id
     *
@@ -266,7 +297,7 @@ class AppliedConditionalAccessPolicy extends Entity
 
     /**
     * Gets the result
-    * Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue, reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted
+    * Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue.
     *
     * @return AppliedConditionalAccessPolicyResult|null The result
     */
@@ -285,7 +316,7 @@ class AppliedConditionalAccessPolicy extends Entity
 
     /**
     * Sets the result
-    * Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue, reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted
+    * Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue.
     *
     * @param AppliedConditionalAccessPolicyResult $val The value to assign to the result
     *

@@ -25,37 +25,8 @@ namespace Beta\Microsoft\Graph\Model;
 class SignIn extends Entity
 {
     /**
-    * Gets the alternateSignInName
-    * The alternate sign-in identity whenever you use phone number to sign-in. Supports $filter (eq and startsWith operators only).
-    *
-    * @return string|null The alternateSignInName
-    */
-    public function getAlternateSignInName()
-    {
-        if (array_key_exists("alternateSignInName", $this->_propDict)) {
-            return $this->_propDict["alternateSignInName"];
-        } else {
-            return null;
-        }
-    }
-    
-    /**
-    * Sets the alternateSignInName
-    * The alternate sign-in identity whenever you use phone number to sign-in. Supports $filter (eq and startsWith operators only).
-    *
-    * @param string $val The alternateSignInName
-    *
-    * @return SignIn
-    */
-    public function setAlternateSignInName($val)
-    {
-        $this->_propDict["alternateSignInName"] = $val;
-        return $this;
-    }
-    
-    /**
     * Gets the appDisplayName
-    * The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
+    * App name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
     *
     * @return string|null The appDisplayName
     */
@@ -70,7 +41,7 @@ class SignIn extends Entity
     
     /**
     * Sets the appDisplayName
-    * The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
+    * App name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
     *
     * @param string $val The appDisplayName
     *
@@ -84,7 +55,7 @@ class SignIn extends Entity
     
     /**
     * Gets the appId
-    * The application identifier in Azure Active Directory. Supports $filter (eq operator only).
+    * Unique GUID representing the app ID in the Azure Active Directory. Supports $filter (eq operator only).
     *
     * @return string|null The appId
     */
@@ -99,7 +70,7 @@ class SignIn extends Entity
     
     /**
     * Sets the appId
-    * The application identifier in Azure Active Directory. Supports $filter (eq operator only).
+    * Unique GUID representing the app ID in the Azure Active Directory. Supports $filter (eq operator only).
     *
     * @param string $val The appId
     *
@@ -231,6 +202,37 @@ class SignIn extends Entity
     }
     
     /**
+    * Gets the authenticationProtocol
+    *
+    * @return ProtocolType|null The authenticationProtocol
+    */
+    public function getAuthenticationProtocol()
+    {
+        if (array_key_exists("authenticationProtocol", $this->_propDict)) {
+            if (is_a($this->_propDict["authenticationProtocol"], "\Beta\Microsoft\Graph\Model\ProtocolType") || is_null($this->_propDict["authenticationProtocol"])) {
+                return $this->_propDict["authenticationProtocol"];
+            } else {
+                $this->_propDict["authenticationProtocol"] = new ProtocolType($this->_propDict["authenticationProtocol"]);
+                return $this->_propDict["authenticationProtocol"];
+            }
+        }
+        return null;
+    }
+    
+    /**
+    * Sets the authenticationProtocol
+    *
+    * @param ProtocolType $val The authenticationProtocol
+    *
+    * @return SignIn
+    */
+    public function setAuthenticationProtocol($val)
+    {
+        $this->_propDict["authenticationProtocol"] = $val;
+        return $this;
+    }
+    
+    /**
     * Gets the authenticationRequirement
     * This holds the highest level of authentication needed through all the sign-in steps, for sign-in to succeed. Supports $filter (eq and startsWith operators only).
     *
@@ -288,8 +290,35 @@ class SignIn extends Entity
     }
     
     /**
+    * Gets the autonomousSystemNumber
+    *
+    * @return int|null The autonomousSystemNumber
+    */
+    public function getAutonomousSystemNumber()
+    {
+        if (array_key_exists("autonomousSystemNumber", $this->_propDict)) {
+            return $this->_propDict["autonomousSystemNumber"];
+        } else {
+            return null;
+        }
+    }
+    
+    /**
+    * Sets the autonomousSystemNumber
+    *
+    * @param int $val The autonomousSystemNumber
+    *
+    * @return SignIn
+    */
+    public function setAutonomousSystemNumber($val)
+    {
+        $this->_propDict["autonomousSystemNumber"] = intval($val);
+        return $this;
+    }
+    
+    /**
     * Gets the clientAppUsed
-    * The legacy client used for sign-in activity. For example: Browser, Exchange Active Sync, Modern clients, IMAP, MAPI, SMTP, or POP. Supports $filter (eq operator only).
+    * Identifies the legacy client used for sign-in activity.  Includes Browser, Exchange Active Sync, modern clients, IMAP, MAPI, SMTP, and POP. Supports $filter (eq operator only).
     *
     * @return string|null The clientAppUsed
     */
@@ -304,7 +333,7 @@ class SignIn extends Entity
     
     /**
     * Sets the clientAppUsed
-    * The legacy client used for sign-in activity. For example: Browser, Exchange Active Sync, Modern clients, IMAP, MAPI, SMTP, or POP. Supports $filter (eq operator only).
+    * Identifies the legacy client used for sign-in activity.  Includes Browser, Exchange Active Sync, modern clients, IMAP, MAPI, SMTP, and POP. Supports $filter (eq operator only).
     *
     * @param string $val The clientAppUsed
     *
@@ -318,7 +347,7 @@ class SignIn extends Entity
     
     /**
     * Gets the conditionalAccessStatus
-    * The status of the conditional access policy triggered. Possible values: success, failure, notApplied, or unknownFutureValue. Supports $filter (eq operator only).
+    * Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue. Supports $filter (eq operator only).
     *
     * @return ConditionalAccessStatus|null The conditionalAccessStatus
     */
@@ -337,7 +366,7 @@ class SignIn extends Entity
     
     /**
     * Sets the conditionalAccessStatus
-    * The status of the conditional access policy triggered. Possible values: success, failure, notApplied, or unknownFutureValue. Supports $filter (eq operator only).
+    * Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue. Supports $filter (eq operator only).
     *
     * @param ConditionalAccessStatus $val The conditionalAccessStatus
     *
@@ -351,7 +380,7 @@ class SignIn extends Entity
     
     /**
     * Gets the correlationId
-    * The identifier that's sent from the client when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support. Supports $filter (eq operator only).
+    * The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity. Supports $filter (eq operator only).
     *
     * @return string|null The correlationId
     */
@@ -366,7 +395,7 @@ class SignIn extends Entity
     
     /**
     * Sets the correlationId
-    * The identifier that's sent from the client when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support. Supports $filter (eq operator only).
+    * The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity. Supports $filter (eq operator only).
     *
     * @param string $val The correlationId
     *
@@ -380,7 +409,7 @@ class SignIn extends Entity
     
     /**
     * Gets the createdDateTime
-    * The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).
+    * Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).
     *
     * @return \DateTime|null The createdDateTime
     */
@@ -399,7 +428,7 @@ class SignIn extends Entity
     
     /**
     * Sets the createdDateTime
-    * The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).
+    * Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).
     *
     * @param \DateTime $val The createdDateTime
     *
@@ -412,8 +441,39 @@ class SignIn extends Entity
     }
     
     /**
+    * Gets the crossTenantAccessType
+    *
+    * @return SignInAccessType|null The crossTenantAccessType
+    */
+    public function getCrossTenantAccessType()
+    {
+        if (array_key_exists("crossTenantAccessType", $this->_propDict)) {
+            if (is_a($this->_propDict["crossTenantAccessType"], "\Beta\Microsoft\Graph\Model\SignInAccessType") || is_null($this->_propDict["crossTenantAccessType"])) {
+                return $this->_propDict["crossTenantAccessType"];
+            } else {
+                $this->_propDict["crossTenantAccessType"] = new SignInAccessType($this->_propDict["crossTenantAccessType"]);
+                return $this->_propDict["crossTenantAccessType"];
+            }
+        }
+        return null;
+    }
+    
+    /**
+    * Sets the crossTenantAccessType
+    *
+    * @param SignInAccessType $val The crossTenantAccessType
+    *
+    * @return SignIn
+    */
+    public function setCrossTenantAccessType($val)
+    {
+        $this->_propDict["crossTenantAccessType"] = $val;
+        return $this;
+    }
+    
+    /**
     * Gets the deviceDetail
-    * The device information from where the sign-in occurred. Includes information such as deviceId, OS, and browser. Supports $filter (eq and startsWith operators only) on browser and operatingSytem properties.
+    * Device information from where the sign-in occurred; includes device ID, operating system, and browser. Supports $filter (eq and startsWith operators only) on browser and operatingSytem properties.
     *
     * @return DeviceDetail|null The deviceDetail
     */
@@ -432,7 +492,7 @@ class SignIn extends Entity
     
     /**
     * Sets the deviceDetail
-    * The device information from where the sign-in occurred. Includes information such as deviceId, OS, and browser. Supports $filter (eq and startsWith operators only) on browser and operatingSytem properties.
+    * Device information from where the sign-in occurred; includes device ID, operating system, and browser. Supports $filter (eq and startsWith operators only) on browser and operatingSytem properties.
     *
     * @param DeviceDetail $val The deviceDetail
     *
@@ -499,8 +559,66 @@ class SignIn extends Entity
     }
     
     /**
+    * Gets the homeTenantName
+    *
+    * @return string|null The homeTenantName
+    */
+    public function getHomeTenantName()
+    {
+        if (array_key_exists("homeTenantName", $this->_propDict)) {
+            return $this->_propDict["homeTenantName"];
+        } else {
+            return null;
+        }
+    }
+    
+    /**
+    * Sets the homeTenantName
+    *
+    * @param string $val The homeTenantName
+    *
+    * @return SignIn
+    */
+    public function setHomeTenantName($val)
+    {
+        $this->_propDict["homeTenantName"] = $val;
+        return $this;
+    }
+    
+    /**
+    * Gets the incomingTokenType
+    *
+    * @return IncomingTokenType|null The incomingTokenType
+    */
+    public function getIncomingTokenType()
+    {
+        if (array_key_exists("incomingTokenType", $this->_propDict)) {
+            if (is_a($this->_propDict["incomingTokenType"], "\Beta\Microsoft\Graph\Model\IncomingTokenType") || is_null($this->_propDict["incomingTokenType"])) {
+                return $this->_propDict["incomingTokenType"];
+            } else {
+                $this->_propDict["incomingTokenType"] = new IncomingTokenType($this->_propDict["incomingTokenType"]);
+                return $this->_propDict["incomingTokenType"];
+            }
+        }
+        return null;
+    }
+    
+    /**
+    * Sets the incomingTokenType
+    *
+    * @param IncomingTokenType $val The incomingTokenType
+    *
+    * @return SignIn
+    */
+    public function setIncomingTokenType($val)
+    {
+        $this->_propDict["incomingTokenType"] = $val;
+        return $this;
+    }
+    
+    /**
     * Gets the ipAddress
-    * The IP address of the client from where the sign-in occurred. Supports $filter (eq and startsWith operators only).
+    * IP address of the client used to sign in. Supports $filter (eq and startsWith operators only).
     *
     * @return string|null The ipAddress
     */
@@ -515,7 +633,7 @@ class SignIn extends Entity
     
     /**
     * Sets the ipAddress
-    * The IP address of the client from where the sign-in occurred. Supports $filter (eq and startsWith operators only).
+    * IP address of the client used to sign in. Supports $filter (eq and startsWith operators only).
     *
     * @param string $val The ipAddress
     *
@@ -556,7 +674,7 @@ class SignIn extends Entity
     
     /**
     * Gets the isInteractive
-    * Indicates whether a sign-in is interactive or not.
+    * Indicates if a sign-in is interactive or not.
     *
     * @return bool|null The isInteractive
     */
@@ -571,7 +689,7 @@ class SignIn extends Entity
     
     /**
     * Sets the isInteractive
-    * Indicates whether a sign-in is interactive or not.
+    * Indicates if a sign-in is interactive or not.
     *
     * @param bool $val The isInteractive
     *
@@ -584,8 +702,35 @@ class SignIn extends Entity
     }
     
     /**
+    * Gets the isTenantRestricted
+    *
+    * @return bool|null The isTenantRestricted
+    */
+    public function getIsTenantRestricted()
+    {
+        if (array_key_exists("isTenantRestricted", $this->_propDict)) {
+            return $this->_propDict["isTenantRestricted"];
+        } else {
+            return null;
+        }
+    }
+    
+    /**
+    * Sets the isTenantRestricted
+    *
+    * @param bool $val The isTenantRestricted
+    *
+    * @return SignIn
+    */
+    public function setIsTenantRestricted($val)
+    {
+        $this->_propDict["isTenantRestricted"] = boolval($val);
+        return $this;
+    }
+    
+    /**
     * Gets the location
-    * The city, state, and 2 letter country code from where the sign-in occurred. Supports $filter (eq and startsWith operators only) on city, state, and countryOrRegion properties.
+    * Provides the city, state, and country code where the sign-in originated. Supports $filter (eq and startsWith operators only) on city, state, and countryOrRegion properties.
     *
     * @return SignInLocation|null The location
     */
@@ -604,7 +749,7 @@ class SignIn extends Entity
     
     /**
     * Sets the location
-    * The city, state, and 2 letter country code from where the sign-in occurred. Supports $filter (eq and startsWith operators only) on city, state, and countryOrRegion properties.
+    * Provides the city, state, and country code where the sign-in originated. Supports $filter (eq and startsWith operators only) on city, state, and countryOrRegion properties.
     *
     * @param SignInLocation $val The location
     *
@@ -707,6 +852,37 @@ class SignIn extends Entity
     }
     
     /**
+    * Gets the privateLinkDetails
+    *
+    * @return PrivateLinkDetails|null The privateLinkDetails
+    */
+    public function getPrivateLinkDetails()
+    {
+        if (array_key_exists("privateLinkDetails", $this->_propDict)) {
+            if (is_a($this->_propDict["privateLinkDetails"], "\Beta\Microsoft\Graph\Model\PrivateLinkDetails") || is_null($this->_propDict["privateLinkDetails"])) {
+                return $this->_propDict["privateLinkDetails"];
+            } else {
+                $this->_propDict["privateLinkDetails"] = new PrivateLinkDetails($this->_propDict["privateLinkDetails"]);
+                return $this->_propDict["privateLinkDetails"];
+            }
+        }
+        return null;
+    }
+    
+    /**
+    * Sets the privateLinkDetails
+    *
+    * @param PrivateLinkDetails $val The privateLinkDetails
+    *
+    * @return SignIn
+    */
+    public function setPrivateLinkDetails($val)
+    {
+        $this->_propDict["privateLinkDetails"] = $val;
+        return $this;
+    }
+    
+    /**
     * Gets the processingTimeInMilliseconds
     * The request processing time in milliseconds in AD STS.
     *
@@ -737,7 +913,7 @@ class SignIn extends Entity
     
     /**
     * Gets the resourceDisplayName
-    * The name of the resource that the user signed in to. Supports $filter (eq operator only).
+    * Name of the resource the user signed into. Supports $filter (eq operator only).
     *
     * @return string|null The resourceDisplayName
     */
@@ -752,7 +928,7 @@ class SignIn extends Entity
     
     /**
     * Sets the resourceDisplayName
-    * The name of the resource that the user signed in to. Supports $filter (eq operator only).
+    * Name of the resource the user signed into. Supports $filter (eq operator only).
     *
     * @param string $val The resourceDisplayName
     *
@@ -766,7 +942,7 @@ class SignIn extends Entity
     
     /**
     * Gets the resourceId
-    * The identifier of the resource that the user signed in to. Supports $filter (eq operator only).
+    * ID of the resource that the user signed into. Supports $filter (eq operator only).
     *
     * @return string|null The resourceId
     */
@@ -781,7 +957,7 @@ class SignIn extends Entity
     
     /**
     * Sets the resourceId
-    * The identifier of the resource that the user signed in to. Supports $filter (eq operator only).
+    * ID of the resource that the user signed into. Supports $filter (eq operator only).
     *
     * @param string $val The resourceId
     *
@@ -822,7 +998,7 @@ class SignIn extends Entity
     
     /**
     * Gets the riskDetail
-    * The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+    * Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq operator only).Note: Details for this property require an Azure AD Premium P2 license. Other licenses return the value hidden.
     *
     * @return RiskDetail|null The riskDetail
     */
@@ -841,7 +1017,7 @@ class SignIn extends Entity
     
     /**
     * Sets the riskDetail
-    * The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+    * Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq operator only).Note: Details for this property require an Azure AD Premium P2 license. Other licenses return the value hidden.
     *
     * @param RiskDetail $val The riskDetail
     *
@@ -850,36 +1026,6 @@ class SignIn extends Entity
     public function setRiskDetail($val)
     {
         $this->_propDict["riskDetail"] = $val;
-        return $this;
-    }
-    
-
-     /** 
-     * Gets the riskEventTypes
-    * The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq operator only).
-     *
-     * @return array|null The riskEventTypes
-     */
-    public function getRiskEventTypes()
-    {
-        if (array_key_exists("riskEventTypes", $this->_propDict)) {
-           return $this->_propDict["riskEventTypes"];
-        } else {
-            return null;
-        }
-    }
-    
-    /** 
-    * Sets the riskEventTypes
-    * The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq operator only).
-    *
-    * @param RiskEventType $val The riskEventTypes
-    *
-    * @return SignIn
-    */
-    public function setRiskEventTypes($val)
-    {
-        $this->_propDict["riskEventTypes"] = $val;
         return $this;
     }
     
@@ -914,7 +1060,7 @@ class SignIn extends Entity
     
     /**
     * Gets the riskLevelAggregated
-    * The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+    * Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
     *
     * @return RiskLevel|null The riskLevelAggregated
     */
@@ -933,7 +1079,7 @@ class SignIn extends Entity
     
     /**
     * Sets the riskLevelAggregated
-    * The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+    * Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
     *
     * @param RiskLevel $val The riskLevelAggregated
     *
@@ -947,7 +1093,7 @@ class SignIn extends Entity
     
     /**
     * Gets the riskLevelDuringSignIn
-    * The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+    * Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
     *
     * @return RiskLevel|null The riskLevelDuringSignIn
     */
@@ -966,7 +1112,7 @@ class SignIn extends Entity
     
     /**
     * Sets the riskLevelDuringSignIn
-    * The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+    * Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
     *
     * @param RiskLevel $val The riskLevelDuringSignIn
     *
@@ -980,7 +1126,7 @@ class SignIn extends Entity
     
     /**
     * Gets the riskState
-    * The risk state of a risky user, sign-in, or a risk event. Possible values: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, or unknownFutureValue. Supports $filter (eq operator only).
+    * Reports status of the risky user, sign-in, or a risk event. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue. Supports $filter (eq operator only).
     *
     * @return RiskState|null The riskState
     */
@@ -999,7 +1145,7 @@ class SignIn extends Entity
     
     /**
     * Sets the riskState
-    * The risk state of a risky user, sign-in, or a risk event. Possible values: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, or unknownFutureValue. Supports $filter (eq operator only).
+    * Reports status of the risky user, sign-in, or a risk event. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue. Supports $filter (eq operator only).
     *
     * @param RiskState $val The riskState
     *
@@ -1008,6 +1154,60 @@ class SignIn extends Entity
     public function setRiskState($val)
     {
         $this->_propDict["riskState"] = $val;
+        return $this;
+    }
+    
+    /**
+    * Gets the servicePrincipalCredentialKeyId
+    *
+    * @return string|null The servicePrincipalCredentialKeyId
+    */
+    public function getServicePrincipalCredentialKeyId()
+    {
+        if (array_key_exists("servicePrincipalCredentialKeyId", $this->_propDict)) {
+            return $this->_propDict["servicePrincipalCredentialKeyId"];
+        } else {
+            return null;
+        }
+    }
+    
+    /**
+    * Sets the servicePrincipalCredentialKeyId
+    *
+    * @param string $val The servicePrincipalCredentialKeyId
+    *
+    * @return SignIn
+    */
+    public function setServicePrincipalCredentialKeyId($val)
+    {
+        $this->_propDict["servicePrincipalCredentialKeyId"] = $val;
+        return $this;
+    }
+    
+    /**
+    * Gets the servicePrincipalCredentialThumbprint
+    *
+    * @return string|null The servicePrincipalCredentialThumbprint
+    */
+    public function getServicePrincipalCredentialThumbprint()
+    {
+        if (array_key_exists("servicePrincipalCredentialThumbprint", $this->_propDict)) {
+            return $this->_propDict["servicePrincipalCredentialThumbprint"];
+        } else {
+            return null;
+        }
+    }
+    
+    /**
+    * Sets the servicePrincipalCredentialThumbprint
+    *
+    * @param string $val The servicePrincipalCredentialThumbprint
+    *
+    * @return SignIn
+    */
+    public function setServicePrincipalCredentialThumbprint($val)
+    {
+        $this->_propDict["servicePrincipalCredentialThumbprint"] = $val;
         return $this;
     }
     
@@ -1156,7 +1356,7 @@ class SignIn extends Entity
     
     /**
     * Gets the status
-    * The sign-in status. Includes the error code and description of the error (in case of a sign-in failure). Supports $filter (eq operator only) on errorCode property.
+    * Sign-in status. Includes the error code and description of the error (in case of a sign-in failure). Supports $filter (eq operator only) on errorCode property.
     *
     * @return SignInStatus|null The status
     */
@@ -1175,7 +1375,7 @@ class SignIn extends Entity
     
     /**
     * Sets the status
-    * The sign-in status. Includes the error code and description of the error (in case of a sign-in failure). Supports $filter (eq operator only) on errorCode property.
+    * Sign-in status. Includes the error code and description of the error (in case of a sign-in failure). Supports $filter (eq operator only) on errorCode property.
     *
     * @param SignInStatus $val The status
     *
@@ -1250,6 +1450,33 @@ class SignIn extends Entity
     }
     
     /**
+    * Gets the uniqueTokenIdentifier
+    *
+    * @return string|null The uniqueTokenIdentifier
+    */
+    public function getUniqueTokenIdentifier()
+    {
+        if (array_key_exists("uniqueTokenIdentifier", $this->_propDict)) {
+            return $this->_propDict["uniqueTokenIdentifier"];
+        } else {
+            return null;
+        }
+    }
+    
+    /**
+    * Sets the uniqueTokenIdentifier
+    *
+    * @param string $val The uniqueTokenIdentifier
+    *
+    * @return SignIn
+    */
+    public function setUniqueTokenIdentifier($val)
+    {
+        $this->_propDict["uniqueTokenIdentifier"] = $val;
+        return $this;
+    }
+    
+    /**
     * Gets the userAgent
     * The user agent information related to sign-in. Supports $filter (eq and startsWith operators only).
     *
@@ -1280,7 +1507,7 @@ class SignIn extends Entity
     
     /**
     * Gets the userDisplayName
-    * The display name of the user. Supports $filter (eq and startsWith operators only).
+    * Display name of the user that initiated the sign-in. Supports $filter (eq and startsWith operators only).
     *
     * @return string|null The userDisplayName
     */
@@ -1295,7 +1522,7 @@ class SignIn extends Entity
     
     /**
     * Sets the userDisplayName
-    * The display name of the user. Supports $filter (eq and startsWith operators only).
+    * Display name of the user that initiated the sign-in. Supports $filter (eq and startsWith operators only).
     *
     * @param string $val The userDisplayName
     *
@@ -1309,7 +1536,7 @@ class SignIn extends Entity
     
     /**
     * Gets the userId
-    * The identifier of the user. Supports $filter (eq operator only).
+    * ID of the user that initiated the sign-in. Supports $filter (eq operator only).
     *
     * @return string|null The userId
     */
@@ -1324,7 +1551,7 @@ class SignIn extends Entity
     
     /**
     * Sets the userId
-    * The identifier of the user. Supports $filter (eq operator only).
+    * ID of the user that initiated the sign-in. Supports $filter (eq operator only).
     *
     * @param string $val The userId
     *
@@ -1338,7 +1565,7 @@ class SignIn extends Entity
     
     /**
     * Gets the userPrincipalName
-    * The UPN of the user. Supports $filter (eq and startsWith operators only).
+    * User principal name of the user that initiated the sign-in. Supports $filter (eq and startsWith operators only).
     *
     * @return string|null The userPrincipalName
     */
@@ -1353,7 +1580,7 @@ class SignIn extends Entity
     
     /**
     * Sets the userPrincipalName
-    * The UPN of the user. Supports $filter (eq and startsWith operators only).
+    * User principal name of the user that initiated the sign-in. Supports $filter (eq and startsWith operators only).
     *
     * @param string $val The userPrincipalName
     *

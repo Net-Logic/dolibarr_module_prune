@@ -29,7 +29,7 @@ use Google\Client;
  *
  * <p>
  * For more information about this service, see the API
- * <a href="http://developers.google.com/admin-sdk/" target="_blank">Documentation</a>
+ * <a href="https://developers.google.com/admin-sdk/" target="_blank">Documentation</a>
  * </p>
  *
  * @author Google, Inc.
@@ -120,7 +120,7 @@ class Directory extends \Google\Service
   /** View user schemas on your domain. */
   const ADMIN_DIRECTORY_USERSCHEMA_READONLY =
       "https://www.googleapis.com/auth/admin.directory.userschema.readonly";
-  /** See, edit, configure, and delete your Google Cloud Platform data. */
+  /** See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.. */
   const CLOUD_PLATFORM =
       "https://www.googleapis.com/auth/cloud-platform";
 
@@ -1082,10 +1082,6 @@ class Directory extends \Google\Service
                   'type' => 'string',
                   'required' => true,
                 ],
-                'allowPlus' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],'get' => [
               'path' => 'admin/directory/v1/customer/{customerId}/orgunits/{+orgUnitPath}',
@@ -1100,10 +1096,6 @@ class Directory extends \Google\Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ],
-                'allowPlus' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
               ],
             ],'insert' => [
@@ -1148,10 +1140,6 @@ class Directory extends \Google\Service
                   'type' => 'string',
                   'required' => true,
                 ],
-                'allowPlus' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],'update' => [
               'path' => 'admin/directory/v1/customer/{customerId}/orgunits/{+orgUnitPath}',
@@ -1166,10 +1154,6 @@ class Directory extends \Google\Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ],
-                'allowPlus' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
               ],
             ],

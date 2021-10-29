@@ -21,6 +21,7 @@ class GoogleSearchIdeahubV1alphaTopic extends \Google\Model
 {
   public $displayName;
   public $mid;
+  public $name;
 
   public function setDisplayName($displayName)
   {
@@ -37,6 +38,14 @@ class GoogleSearchIdeahubV1alphaTopic extends \Google\Model
   public function getMid()
   {
     return $this->mid;
+  }
+  public function setName($name)
+  {
+    $this->name = $name;
+  }
+  public function getName()
+  {
+    return $this->name;
   }
 }
 

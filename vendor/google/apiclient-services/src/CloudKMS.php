@@ -35,7 +35,7 @@ use Google\Client;
  */
 class CloudKMS extends \Google\Service
 {
-  /** See, edit, configure, and delete your Google Cloud Platform data. */
+  /** See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.. */
   const CLOUD_PLATFORM =
       "https://www.googleapis.com/auth/cloud-platform";
   /** View and manage your keys and secrets stored in Cloud Key Management Service. */
@@ -70,7 +70,17 @@ class CloudKMS extends \Google\Service
         'locations',
         [
           'methods' => [
-            'get' => [
+            'generateRandomBytes' => [
+              'path' => 'v1/{+location}:generateRandomBytes',
+              'httpMethod' => 'POST',
+              'parameters' => [
+                'location' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+              ],
+            ],'get' => [
               'path' => 'v1/{+name}',
               'httpMethod' => 'GET',
               'parameters' => [
@@ -450,6 +460,26 @@ class CloudKMS extends \Google\Service
                 'view' => [
                   'location' => 'query',
                   'type' => 'string',
+                ],
+              ],
+            ],'macSign' => [
+              'path' => 'v1/{+name}:macSign',
+              'httpMethod' => 'POST',
+              'parameters' => [
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+              ],
+            ],'macVerify' => [
+              'path' => 'v1/{+name}:macVerify',
+              'httpMethod' => 'POST',
+              'parameters' => [
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
                 ],
               ],
             ],'patch' => [

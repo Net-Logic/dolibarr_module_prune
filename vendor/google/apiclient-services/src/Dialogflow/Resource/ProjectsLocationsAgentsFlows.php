@@ -38,7 +38,10 @@ use Google\Service\Dialogflow\GoogleProtobufEmpty;
 class ProjectsLocationsAgentsFlows extends \Google\Service\Resource
 {
   /**
-   * Creates a flow in the specified agent. (flows.create)
+   * Creates a flow in the specified agent. Note: You should always train a flow
+   * prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   * (flows.create)
    *
    * @param string $parent Required. The agent to create a flow for. Format:
    * `projects//locations//agents/`.
@@ -84,9 +87,13 @@ class ProjectsLocationsAgentsFlows extends \Google\Service\Resource
     return $this->call('delete', [$params], GoogleProtobufEmpty::class);
   }
   /**
-   * Exports the specified flow to a binary file. Note that resources (e.g.
-   * intents, entities, webhooks) that the flow references will also be exported.
-   * (flows.export)
+   * Exports the specified flow to a binary file. This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-
+   * operation). The returned `Operation` type has the following method-specific
+   * fields: - `metadata`: An empty [Struct message](https://developers.google.com
+   * /protocol-buffers/docs/reference/google.protobuf#struct) - `response`:
+   * ExportFlowResponse Note that resources (e.g. intents, entities, webhooks)
+   * that the flow references will also be exported. (flows.export)
    *
    * @param string $name Required. The name of the flow to export. Format:
    * `projects//locations//agents//flows/`.
@@ -144,7 +151,15 @@ class ProjectsLocationsAgentsFlows extends \Google\Service\Resource
     return $this->call('getValidationResult', [$params], GoogleCloudDialogflowCxV3FlowValidationResult::class);
   }
   /**
-   * Imports the specified flow to the specified agent from a binary file.
+   * Imports the specified flow to the specified agent from a binary file. This
+   * method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-
+   * operation). The returned `Operation` type has the following method-specific
+   * fields: - `metadata`: An empty [Struct message](https://developers.google.com
+   * /protocol-buffers/docs/reference/google.protobuf#struct) - `response`:
+   * ImportFlowResponse Note: You should always train a flow prior to sending it
+   * queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    * (flows.import)
    *
    * @param string $parent Required. The agent to import the flow into. Format:
@@ -190,7 +205,10 @@ class ProjectsLocationsAgentsFlows extends \Google\Service\Resource
     return $this->call('list', [$params], GoogleCloudDialogflowCxV3ListFlowsResponse::class);
   }
   /**
-   * Updates the specified flow. (flows.patch)
+   * Updates the specified flow. Note: You should always train a flow prior to
+   * sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   * (flows.patch)
    *
    * @param string $name The unique identifier of the flow. Format:
    * `projects//locations//agents//flows/`.
@@ -206,8 +224,8 @@ class ProjectsLocationsAgentsFlows extends \Google\Service\Resource
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
    * are supported. Note: languages must be enabled in the agent before they can
    * be used.
-   * @opt_param string updateMask Required. The mask to control which fields get
-   * updated. If `update_mask` is not specified, an error will be returned.
+   * @opt_param string updateMask The mask to control which fields get updated. If
+   * the mask is not present, all fields will be updated.
    * @return GoogleCloudDialogflowCxV3Flow
    */
   public function patch($name, GoogleCloudDialogflowCxV3Flow $postBody, $optParams = [])
@@ -218,7 +236,16 @@ class ProjectsLocationsAgentsFlows extends \Google\Service\Resource
   }
   /**
    * Trains the specified flow. Note that only the flow in 'draft' environment is
-   * trained. (flows.train)
+   * trained. This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-
+   * operation). The returned `Operation` type has the following method-specific
+   * fields: - `metadata`: An empty [Struct message](https://developers.google.com
+   * /protocol-buffers/docs/reference/google.protobuf#struct) - `response`: An
+   * [Empty message](https://developers.google.com/protocol-
+   * buffers/docs/reference/google.protobuf#empty) Note: You should always train a
+   * flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+   * (flows.train)
    *
    * @param string $name Required. The flow to train. Format:
    * `projects//locations//agents//flows/`.

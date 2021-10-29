@@ -1276,7 +1276,7 @@ class Windows10GeneralConfiguration extends DeviceConfiguration
     
     /**
     * Gets the defenderSystemScanSchedule
-    * Defender day of the week for the system scan. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday, noScheduledScan.
+    * Defender day of the week for the system scan. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday.
     *
     * @return WeeklySchedule|null The defenderSystemScanSchedule
     */
@@ -1295,7 +1295,7 @@ class Windows10GeneralConfiguration extends DeviceConfiguration
     
     /**
     * Sets the defenderSystemScanSchedule
-    * Defender day of the week for the system scan. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday, noScheduledScan.
+    * Defender day of the week for the system scan. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday.
     *
     * @param WeeklySchedule $val The defenderSystemScanSchedule
     *
@@ -4806,7 +4806,7 @@ class Windows10GeneralConfiguration extends DeviceConfiguration
             if (is_a($this->_propDict["startMenuLayoutEdgeAssetsXml"], "\GuzzleHttp\Psr7\Stream") || is_null($this->_propDict["startMenuLayoutEdgeAssetsXml"])) {
                 return $this->_propDict["startMenuLayoutEdgeAssetsXml"];
             } else {
-                $this->_propDict["startMenuLayoutEdgeAssetsXml"] = \GuzzleHttp\Psr7\stream_for($this->_propDict["startMenuLayoutEdgeAssetsXml"]);
+                $this->_propDict["startMenuLayoutEdgeAssetsXml"] = \GuzzleHttp\Psr7\Utils::streamFor($this->_propDict["startMenuLayoutEdgeAssetsXml"]);
                 return $this->_propDict["startMenuLayoutEdgeAssetsXml"];
             }
         }
@@ -4839,7 +4839,7 @@ class Windows10GeneralConfiguration extends DeviceConfiguration
             if (is_a($this->_propDict["startMenuLayoutXml"], "\GuzzleHttp\Psr7\Stream") || is_null($this->_propDict["startMenuLayoutXml"])) {
                 return $this->_propDict["startMenuLayoutXml"];
             } else {
-                $this->_propDict["startMenuLayoutXml"] = \GuzzleHttp\Psr7\stream_for($this->_propDict["startMenuLayoutXml"]);
+                $this->_propDict["startMenuLayoutXml"] = \GuzzleHttp\Psr7\Utils::streamFor($this->_propDict["startMenuLayoutXml"]);
                 return $this->_propDict["startMenuLayoutXml"];
             }
         }

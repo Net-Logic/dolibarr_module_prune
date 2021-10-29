@@ -146,8 +146,7 @@ class V1 extends \Google\Service\Resource
    * This method implements the google.longrunning.Operation, which allows you to
    * track the operation status. We recommend intervals of at least 2 seconds with
    * exponential backoff retry to poll the operation result. The metadata contains
-   * the request to help callers to map responses to requests.
-   * (v1.analyzeIamPolicyLongrunning)
+   * the metadata for the long-running operation. (v1.analyzeIamPolicyLongrunning)
    *
    * @param string $scope Required. The relative name of the root asset. Only
    * resources and IAM policies within the scope will be analyzed. This can only
@@ -221,6 +220,18 @@ class V1 extends \Google\Service\Resource
    * (inclusive). If not specified, the current timestamp is used instead.
    * @opt_param string readTimeWindow.startTime Start time of the time window
    * (exclusive).
+   * @opt_param string relationshipTypes Optional. A list of relationship types to
+   * output, for example: `INSTANCE_TO_INSTANCEGROUP`. This field should only be
+   * specified if content_type=RELATIONSHIP. * If specified: it outputs specified
+   * relationships' history on the [asset_names]. It returns an error if any of
+   * the [relationship_types] doesn't belong to the supported relationship types
+   * of the [asset_names] or if any of the [asset_names]'s types doesn't belong to
+   * the source types of the [relationship_types]. * Otherwise: it outputs the
+   * supported relationships' history on the [asset_names] or returns an error if
+   * any of the [asset_names]'s types has no relationship support. See
+   * [Introduction to Cloud Asset Inventory](https://cloud.google.com/asset-
+   * inventory/docs/overview) for all supported asset types and relationship
+   * types.
    * @return BatchGetAssetsHistoryResponse
    */
   public function batchGetAssetsHistory($parent, $optParams = [])
@@ -234,12 +245,12 @@ class V1 extends \Google\Service\Resource
    * location/BigQuery table. For Cloud Storage location destinations, the output
    * format is newline-delimited JSON. Each line represents a
    * google.cloud.asset.v1.Asset in the JSON format; for BigQuery table
-   * destinations, the output table stores the fields in asset proto as columns.
-   * This API implements the google.longrunning.Operation API , which allows you
-   * to keep track of the export. We recommend intervals of at least 2 seconds
-   * with exponential retry to poll the export operation result. For regular-size
-   * resource parent, the export operation usually finishes within 5 minutes.
-   * (v1.exportAssets)
+   * destinations, the output table stores the fields in asset Protobuf as
+   * columns. This API implements the google.longrunning.Operation API, which
+   * allows you to keep track of the export. We recommend intervals of at least 2
+   * seconds with exponential retry to poll the export operation result. For
+   * regular-size resource parent, the export operation usually finishes within 5
+   * minutes. (v1.exportAssets)
    *
    * @param string $parent Required. The relative name of the root asset. This can
    * only be an organization number (such as "organizations/123"), a project ID
@@ -401,19 +412,30 @@ class V1 extends \Google\Service\Resource
    * Cloud resources that have a label "env". * `kmsKey:key` to find Cloud
    * resources encrypted with a customer-managed encryption key whose name
    * contains the word "key". * `state:ACTIVE` to find Cloud resources whose state
-   * contains "ACTIVE" as a word. * `NOT state:ACTIVE` to find {{gcp_name}}
-   * resources whose state doesn't contain "ACTIVE" as a word. *
-   * `createTime<1609459200` to find Cloud resources that were created before
+   * contains "ACTIVE" as a word. * `NOT state:ACTIVE` to find Cloud resources
+   * whose state doesn't contain "ACTIVE" as a word. * `createTime<1609459200` to
+   * find Cloud resources that were created before "2021-01-01 00:00:00 UTC".
+   * 1609459200 is the epoch timestamp of "2021-01-01 00:00:00 UTC" in seconds. *
+   * `updateTime>1609459200` to find Cloud resources that were updated after
    * "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of "2021-01-01
-   * 00:00:00 UTC" in seconds. * `updateTime>1609459200` to find Cloud resources
-   * that were updated after "2021-01-01 00:00:00 UTC". 1609459200 is the epoch
-   * timestamp of "2021-01-01 00:00:00 UTC" in seconds. * `Important` to find
-   * Cloud resources that contain "Important" as a word in any of the searchable
-   * fields. * `Impor*` to find Cloud resources that contain "Impor" as a prefix
-   * of any word in any of the searchable fields. * `Important location:(us-west1
-   * OR global)` to find Cloud resources that contain "Important" as a word in any
-   * of the searchable fields and are also located in the "us-west1" region or the
-   * "global" location.
+   * 00:00:00 UTC" in seconds. * `Important` to find Cloud resources that contain
+   * "Important" as a word in any of the searchable fields. * `Impor*` to find
+   * Cloud resources that contain "Impor" as a prefix of any word in any of the
+   * searchable fields. * `Important location:(us-west1 OR global)` to find Cloud
+   * resources that contain "Important" as a word in any of the searchable fields
+   * and are also located in the "us-west1" region or the "global" location.
+   * @opt_param string readMask Optional. A comma-separated list of fields
+   * specifying which fields to be returned in ResourceSearchResult. Only '*' or
+   * combination of top level fields can be specified. Field names of both
+   * snake_case and camelCase are supported. Examples: `"*"`, `"name,location"`,
+   * `"name,versionedResources"`. The read_mask paths must be valid field paths
+   * listed but not limited to (both snake_case and camelCase are supported): *
+   * name * assetType * project * displayName * description * location * labels *
+   * networkTags * kmsKey * createTime * updateTime * state * additionalAttributes
+   * * versionedResources If read_mask is not specified, all fields except
+   * versionedResources will be returned. If only '*' is specified, all fields
+   * including versionedResources will be returned. Any invalid field path will
+   * trigger INVALID_ARGUMENT error.
    * @return SearchAllResourcesResponse
    */
   public function searchAllResources($scope, $optParams = [])

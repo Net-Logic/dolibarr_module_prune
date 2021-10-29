@@ -341,8 +341,38 @@ class Site extends BaseItem
     
 
      /** 
+     * Gets the externalColumns
+    * The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+     *
+     * @return array|null The externalColumns
+     */
+    public function getExternalColumns()
+    {
+        if (array_key_exists("externalColumns", $this->_propDict)) {
+           return $this->_propDict["externalColumns"];
+        } else {
+            return null;
+        }
+    }
+    
+    /** 
+    * Sets the externalColumns
+    * The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+    *
+    * @param ColumnDefinition $val The externalColumns
+    *
+    * @return Site
+    */
+    public function setExternalColumns($val)
+    {
+        $this->_propDict["externalColumns"] = $val;
+        return $this;
+    }
+    
+
+     /** 
      * Gets the items
-    * Used to address any item contained in this site. This collection cannot be enumerated.
+    * Used to address any item contained in this site. This collection can't be enumerated.
      *
      * @return array|null The items
      */
@@ -357,7 +387,7 @@ class Site extends BaseItem
     
     /** 
     * Sets the items
-    * Used to address any item contained in this site. This collection cannot be enumerated.
+    * Used to address any item contained in this site. This collection can't be enumerated.
     *
     * @param BaseItem $val The items
     *
@@ -456,6 +486,69 @@ class Site extends BaseItem
     public function setSites($val)
     {
         $this->_propDict["sites"] = $val;
+        return $this;
+    }
+    
+    /**
+    * Gets the termStore
+    * The default termStore under this site.
+    *
+    * @return \Microsoft\Graph\TermStore\Model\Store|null The termStore
+    */
+    public function getTermStore()
+    {
+        if (array_key_exists("termStore", $this->_propDict)) {
+            if (is_a($this->_propDict["termStore"], "\Microsoft\Graph\TermStore\Model\Store") || is_null($this->_propDict["termStore"])) {
+                return $this->_propDict["termStore"];
+            } else {
+                $this->_propDict["termStore"] = new \Microsoft\Graph\TermStore\Model\Store($this->_propDict["termStore"]);
+                return $this->_propDict["termStore"];
+            }
+        }
+        return null;
+    }
+    
+    /**
+    * Sets the termStore
+    * The default termStore under this site.
+    *
+    * @param \Microsoft\Graph\TermStore\Model\Store $val The termStore
+    *
+    * @return Site
+    */
+    public function setTermStore($val)
+    {
+        $this->_propDict["termStore"] = $val;
+        return $this;
+    }
+    
+
+     /** 
+     * Gets the termStores
+    * The collection of termStores under this site.
+     *
+     * @return array|null The termStores
+     */
+    public function getTermStores()
+    {
+        if (array_key_exists("termStores", $this->_propDict)) {
+           return $this->_propDict["termStores"];
+        } else {
+            return null;
+        }
+    }
+    
+    /** 
+    * Sets the termStores
+    * The collection of termStores under this site.
+    *
+    * @param \Microsoft\Graph\TermStore\Model\Store $val The termStores
+    *
+    * @return Site
+    */
+    public function setTermStores($val)
+    {
+        $this->_propDict["termStores"] = $val;
         return $this;
     }
     
