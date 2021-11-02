@@ -223,10 +223,10 @@ class modPrune extends DolibarrModules
 	 * @param   string  $options    Options when enabling module ('', 'noboxes')
 	 * @return  int                 1 if OK, 0 if KO
 	 */
-	public function remove($options= '')
+	public function remove($options = '')
 	{
 		$sql = [];
 
-		return $this->_remove($sql,$options);
+		return $this->_remove($sql, $options);
 	}
 }
