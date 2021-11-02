@@ -40,7 +40,7 @@ class modPrune extends DolibarrModules
 	 */
 	public function __construct($db)
 	{
-		global $langs, $conf;
+		global $langs,$conf;
 
 		$this->db = $db;
 
