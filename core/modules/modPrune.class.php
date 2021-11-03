@@ -226,6 +226,6 @@ class modPrune extends DolibarrModules
 	public function remove($options= '') {
 		$sql = [];
 
-		return $this->_remove($sql, $options);
+		return $this->_remove($sql,$options);
 	}
 }
