@@ -21,6 +21,7 @@ CREATE TABLE llx_prune_oauth_token (
 	token 	        text,									-- token in serialize() format, of an object
 	refreshtoken 	text,									-- refreshtoken
 	fk_user         integer,								-- Id of user in llx_user
+	email			varchar(255) NULL DEFAULT NULL,			-- email in case no user
 	tms		        timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	entity	        integer DEFAULT 1
 )ENGINE=innodb;
