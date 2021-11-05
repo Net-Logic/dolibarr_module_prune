@@ -89,6 +89,7 @@ function retrieveRefreshTokenBackup($service, $userid, $email = null)
  * @param string $token token
  * @param string $refreshtoken refreshtoken backup
  * @param string $userid user id
+ * @param string $email email
  * @return void
  */
 function storeAccessToken($service, $token, $refreshtoken, $userid, $email = null)
@@ -121,7 +122,6 @@ function storeAccessToken($service, $token, $refreshtoken, $userid, $email = nul
 		if (! $resql) {
 			dol_print_error($db);
 		}
-
 	} else {
 		// save
 		$sql = "INSERT INTO ".MAIN_DB_PREFIX."prune_oauth_token (service, token, refreshtoken, fk_user, email, entity)";
@@ -131,7 +131,6 @@ function storeAccessToken($service, $token, $refreshtoken, $userid, $email = nul
 		if (! $resql) {
 			dol_print_error($db);
 		}
-
 	}
 }
 
@@ -139,6 +138,7 @@ function storeAccessToken($service, $token, $refreshtoken, $userid, $email = nul
  * Function clearToken
  * @param string $service service
  * @param string $userid user id
+ * @param string $email email
  * @return void
  */
 function clearToken($service, $userid, $email = null)
@@ -149,7 +149,7 @@ function clearToken($service, $userid, $email = null)
 	$sql.= " WHERE service='".$db->escape($service)."'";
 	$sql .= " AND fk_user=".(int) $userid." AND entity=".(int) $conf->entity;
 	if (!empty($email)) {
-		$sql .= " AND email=".$db->escape($email);
+		$sql .= " AND email='".$db->escape($email)."'";
 	}
 	$resql = $db->query($sql);
 	return $resql;
