@@ -116,7 +116,7 @@ function storeAccessToken($service, $token, $refreshtoken, $userid, $email = nul
 		$sql = "UPDATE ".MAIN_DB_PREFIX."prune_oauth_token";
 		$sql.= " SET token='".$db->escape($serializedToken)."'";
 		$sql.= ", refreshtoken='".$db->escape($refreshtoken)."'";
-		$sql.= " WHERE rowid='".$obj['rowid']."'";
+		$sql.= " WHERE rowid='".(int) $obj['rowid']."'";
 
 		$resql = $db->query($sql);
 		if (! $resql) {
