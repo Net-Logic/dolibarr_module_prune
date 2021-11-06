@@ -1,34 +1,7 @@
 <?php
 namespace JakubOnderka\PhpParallelLint;
 
-/*
-Copyright (c) 2012, Jakub Onderka
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-1. Redistributions of source code must retain the above copyright notice, this
-   list of conditions and the following disclaimer.
-2. Redistributions in binary form must reproduce the above copyright notice,
-   this list of conditions and the following disclaimer in the documentation
-   and/or other materials provided with the distribution.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
-ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-The views and conclusions contained in the software and documentation are those
-of the authors and should not be interpreted as representing official policies,
-either expressed or implied, of the FreeBSD Project.
- */
+use ReturnTypeWillChange;
 
 class Error implements \JsonSerializable
 {
@@ -69,7 +42,14 @@ class Error implements \JsonSerializable
      */
     public function getShortFilePath()
     {
-        return str_replace(getcwd(), '', $this->filePath);
+        $cwd = getcwd();
+
+        if ($cwd === '/') {
+            // For root directory in unix, do not modify path
+            return $this->filePath;
+        }
+
+        return preg_replace('/' . preg_quote($cwd, '/') . '/', '', $this->filePath, 1);
     }
 
     /**
@@ -79,6 +59,7 @@ class Error implements \JsonSerializable
      * @return mixed data which can be serialized by <b>json_encode</b>,
      * which is a value of any type other than a resource.
      */
+    #[ReturnTypeWillChange]
     public function jsonSerialize()
     {
         return array(
@@ -109,6 +90,7 @@ class Blame implements \JsonSerializable
      * @return mixed data which can be serialized by <b>json_encode</b>,
      * which is a value of any type other than a resource.
      */
+    #[ReturnTypeWillChange]
     function jsonSerialize()
     {
         return array(
@@ -133,7 +115,7 @@ class SyntaxError extends Error
      */
     public function getLine()
     {
-        preg_match('~on line ([0-9]*)~', $this->message, $matches);
+        preg_match('~on line ([0-9]+)$~', $this->message, $matches);
 
         if ($matches && isset($matches[1])) {
             $onLine = (int) $matches[1];
@@ -149,9 +131,9 @@ class SyntaxError extends Error
      */
     public function getNormalizedMessage($translateTokens = false)
     {
-        $message = preg_replace('~(Parse|Fatal) error: syntax error, ~', '', $this->message);
+        $message = preg_replace('~^(Parse|Fatal) error: (syntax error, )?~', '', $this->message);
+        $message = preg_replace('~ in ' . preg_quote(basename($this->filePath)) . ' on line [0-9]+$~', '', $message);
         $message = ucfirst($message);
-        $message = preg_replace('~ in (.*) on line [0-9]*~', '', $message);
 
         if ($translateTokens) {
             $message = $this->translateTokens($message);

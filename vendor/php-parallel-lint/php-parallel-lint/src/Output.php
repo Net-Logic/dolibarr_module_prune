@@ -1,35 +1,6 @@
 <?php
 namespace JakubOnderka\PhpParallelLint;
 
-/*
-Copyright (c) 2012, Jakub Onderka
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-1. Redistributions of source code must retain the above copyright notice, this
-   list of conditions and the following disclaimer.
-2. Redistributions in binary form must reproduce the above copyright notice,
-   this list of conditions and the following disclaimer in the documentation
-   and/or other materials provided with the distribution.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
-ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-The views and conclusions contained in the software and documentation are those
-of the authors and should not be interpreted as representing official policies,
-either expressed or implied, of the FreeBSD Project.
- */
-
 interface Output
 {
     public function __construct(IWriter $writer);
@@ -114,15 +85,94 @@ class JsonOutput implements Output
     }
 }
 
+class GitLabOutput implements Output
+{
+    /** @var IWriter */
+    protected $writer;
+
+    /**
+     * @param IWriter $writer
+     */
+    public function __construct(IWriter $writer)
+    {
+        $this->writer = $writer;
+    }
+
+    public function ok()
+    {
+
+    }
+
+    public function skip()
+    {
+
+    }
+
+    public function error()
+    {
+
+    }
+
+    public function fail()
+    {
+
+    }
+
+    public function setTotalFileCount($count)
+    {
+
+    }
+
+    public function writeHeader($phpVersion, $parallelJobs, $hhvmVersion = null)
+    {
+
+    }
+
+    public function writeResult(Result $result, ErrorFormatter $errorFormatter, $ignoreFails)
+    {
+        $errors = array();
+        foreach ($result->getErrors() as $error) {
+            $message = $error->getMessage();
+            $line = 1;
+            if ($error instanceof SyntaxError) {
+                $line = $error->getLine();
+            }
+            $filePath = $error->getFilePath();
+            $result = array(
+                'type' => 'issue',
+                'check_name' => 'Parse error',
+                'description' => $message,
+                'categories' => 'Style',
+                'fingerprint' => md5($filePath . $message . $line),
+                'severity' => 'minor',
+                'location' => array(
+                    'path' => $filePath,
+                    'lines' => array(
+                        'begin' => $line,
+                    ),
+                ),
+            );
+            array_push($errors, $result);
+        }
+
+        $string = json_encode($errors) . PHP_EOL;
+        $this->writer->write($string);
+    }
+}
+
 class TextOutput implements Output
 {
     const TYPE_DEFAULT = 'default',
         TYPE_SKIP = 'skip',
         TYPE_ERROR = 'error',
+        TYPE_FAIL = 'fail',
         TYPE_OK = 'ok';
 
     /** @var int */
     public $filesPerLine = 60;
+
+    /** @var bool */
+    public $showProgress = true;
 
     /** @var int */
     protected $checkedFiles;
@@ -143,26 +193,22 @@ class TextOutput implements Output
 
     public function ok()
     {
-        $this->writer->write('.');
-        $this->progress();
+        $this->writeMark(self::TYPE_OK);
     }
 
     public function skip()
     {
-        $this->write('S', self::TYPE_SKIP);
-        $this->progress();
+        $this->writeMark(self::TYPE_SKIP);
     }
 
     public function error()
     {
-        $this->write('X', self::TYPE_ERROR);
-        $this->progress();
+        $this->writeMark(self::TYPE_ERROR);
     }
 
     public function fail()
     {
-        $this->writer->write('-');
-        $this->progress();
+        $this->writeMark(self::TYPE_FAIL);
     }
 
     /**
@@ -227,13 +273,15 @@ class TextOutput implements Output
      */
     public function writeResult(Result $result, ErrorFormatter $errorFormatter, $ignoreFails)
     {
-        if ($this->checkedFiles % $this->filesPerLine !== 0) {
-            $rest = $this->filesPerLine - ($this->checkedFiles % $this->filesPerLine);
-            $this->write(str_repeat(' ', $rest));
-            $this->writeProgress();
-        }
+        if ($this->showProgress) {
+            if ($this->checkedFiles % $this->filesPerLine !== 0) {
+                $rest = $this->filesPerLine - ($this->checkedFiles % $this->filesPerLine);
+                $this->write(str_repeat(' ', $rest));
+                $this->writePercent();
+            }
 
-        $this->writeNewLine(2);
+            $this->writeNewLine(2);
+        }
 
         $testTime = round($result->getTestTime(), 1);
         $message = "Checked {$result->getCheckedFilesCount()} files in $testTime ";
@@ -274,16 +322,31 @@ class TextOutput implements Output
         }
     }
 
-    protected function progress()
+    protected function writeMark($type)
     {
         ++$this->checkedFiles;
 
-        if ($this->checkedFiles % $this->filesPerLine === 0) {
-            $this->writeProgress();
+        if ($this->showProgress) {
+            if ($type === self::TYPE_OK) {
+                $this->writer->write('.');
+
+            } else if ($type === self::TYPE_SKIP) {
+                $this->write('S', self::TYPE_SKIP);
+
+            } else if ($type === self::TYPE_ERROR) {
+                $this->write('X', self::TYPE_ERROR);
+
+            } else if ($type === self::TYPE_FAIL) {
+                $this->writer->write('-');
+            }
+
+            if ($this->checkedFiles % $this->filesPerLine === 0) {
+                $this->writePercent();
+            }
         }
     }
 
-    protected function writeProgress()
+    protected function writePercent()
     {
         $percent = floor($this->checkedFiles / $this->totalFileCount * 100);
         $current = $this->stringWidth($this->checkedFiles, strlen($this->totalFileCount));
@@ -315,18 +378,94 @@ class TextOutput implements Output
     }
 }
 
+class CheckstyleOutput implements Output
+{
+    private $writer;
+
+    public function __construct(IWriter $writer)
+    {
+        $this->writer = $writer;
+    }
+
+    public function ok()
+    {
+    }
+
+    public function skip()
+    {
+    }
+
+    public function error()
+    {
+    }
+
+    public function fail()
+    {
+    }
+
+    public function setTotalFileCount($count)
+    {
+    }
+
+    public function writeHeader($phpVersion, $parallelJobs, $hhvmVersion = null)
+    {
+        $this->writer->write('<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL);
+    }
+
+    public function writeResult(Result $result, ErrorFormatter $errorFormatter, $ignoreFails)
+    {
+        $this->writer->write('<checkstyle>' . PHP_EOL);
+        $errors = array();
+
+        foreach ($result->getErrors() as $error) {
+            $message = $error->getMessage();
+            if ($error instanceof SyntaxError) {
+                $line = $error->getLine();
+                $source = "Syntax Error";
+            } else {
+                $line = 1;
+                $source = "Linter Error";
+            }
+
+            $errors[$error->getShortFilePath()][] = array(
+                'message' => $message,
+                'line' => $line,
+                'source' => $source
+            );
+        }
+
+        foreach ($errors as $file => $fileErrors) {
+            $this->writer->write(sprintf('    <file name="%s">', $file) . PHP_EOL);
+            foreach ($fileErrors as $fileError) {
+                $this->writer->write(
+                    sprintf(
+                        '        <error line="%d" severity="ERROR" message="%s" source="%s" />',
+                        $fileError['line'],
+                        $fileError['message'],
+                        $fileError['source']
+                    ) .
+                    PHP_EOL
+                );
+            }
+            $this->writer->write('    </file>' . PHP_EOL);
+        }
+
+        $this->writer->write('</checkstyle>' . PHP_EOL);
+    }
+}
+
 class TextOutputColored extends TextOutput
 {
     /** @var \JakubOnderka\PhpConsoleColor\ConsoleColor */
     private $colors;
 
-    public function __construct(IWriter $writer)
+    public function __construct(IWriter $writer, $colors = Settings::AUTODETECT)
     {
         parent::__construct($writer);
 
         if (class_exists('\JakubOnderka\PhpConsoleColor\ConsoleColor')) {
             $this->colors = new \JakubOnderka\PhpConsoleColor\ConsoleColor();
-            $this->colors->setForceStyle(true);
+            $this->colors->setForceStyle($colors === Settings::FORCED);
         }
     }
 

@@ -10,10 +10,11 @@
 	<exclude-pattern type="relative">build/html</exclude-pattern>
 
 	<!-- List of all tests -->
-	<rule ref="PSR2">
+	<rule ref="PSR12">
 		<exclude name="Generic.WhiteSpace.DisallowTabIndent"/>
 		<exclude name="PSR1.Files.SideEffects.FoundWithSymbols" />
 		<exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace" />
+		<exclude name="PSR12.Files.FileHeader.SpacingAfterBlock" />
 	</rule>
 
 	<!-- Disallow usage of space -->
