@@ -47,7 +47,7 @@ function retrieveAccessToken($service, $userid, $email = null)
 
 	$resql = $db->query($sql);
 	if (! $resql) {
-		dol_print_error($db);
+		dol_syslog("lib prune retrieveAccessToken error = ".$db->lasterror, LOG_ERR);
 	}
 	$result = $db->fetch_array($resql);
 	$token = unserialize($result['token']);
@@ -74,7 +74,7 @@ function retrieveRefreshTokenBackup($service, $userid, $email = null)
 
 	$resql = $db->query($sql);
 	if (! $resql) {
-		dol_print_error($db);
+		dol_syslog("lib prune retrieveRefreshToken error = ".$db->lasterror, LOG_ERR);
 	}
 	$result = $db->fetch_array($resql);
 	$tokenrefreshbackup = $result['refreshtoken'] ?? '';
@@ -90,7 +90,7 @@ function retrieveRefreshTokenBackup($service, $userid, $email = null)
  * @param string $refreshtoken refreshtoken backup
  * @param string $userid user id
  * @param string $email email
- * @return void
+ * @return boolean
  */
 function storeAccessToken($service, $token, $refreshtoken, $userid, $email = null)
 {
@@ -108,7 +108,7 @@ function storeAccessToken($service, $token, $refreshtoken, $userid, $email = nul
 	}
 	$resql = $db->query($sql);
 	if (! $resql) {
-		dol_print_error($db);
+		dol_syslog("lib prune storeAccessToken error = ".$db->lasterror, LOG_ERR);
 	}
 	$obj = $db->fetch_array($resql);
 	if ($obj) {
@@ -120,7 +120,7 @@ function storeAccessToken($service, $token, $refreshtoken, $userid, $email = nul
 
 		$resql = $db->query($sql);
 		if (! $resql) {
-			dol_print_error($db);
+			dol_syslog("lib prune storeAccessToken error = ".$db->lasterror, LOG_ERR);
 		}
 	} else {
 		// save
@@ -129,9 +129,10 @@ function storeAccessToken($service, $token, $refreshtoken, $userid, $email = nul
 
 		$resql = $db->query($sql);
 		if (! $resql) {
-			dol_print_error($db);
+			dol_syslog("lib prune storeAccessToken error = ".$db->lasterror, LOG_ERR);
 		}
 	}
+	return  (!$resql ? false : true);
 }
 
 /**
@@ -139,7 +140,7 @@ function storeAccessToken($service, $token, $refreshtoken, $userid, $email = nul
  * @param string $service service
  * @param string $userid user id
  * @param string $email email
- * @return void
+ * @return boolean
  */
 function clearToken($service, $userid, $email = null)
 {
@@ -152,5 +153,8 @@ function clearToken($service, $userid, $email = null)
 		$sql .= " AND email='".$db->escape($email)."'";
 	}
 	$resql = $db->query($sql);
-	return $resql;
+	if (! $resql) {
+		dol_syslog("lib prune clearToken error = ".$db->lasterror, LOG_ERR);
+	}
+	return (!$resql ? false : true);
 }
