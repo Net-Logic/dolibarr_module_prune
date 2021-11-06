@@ -1,35 +1,7 @@
 <?php
 namespace JakubOnderka\PhpParallelLint;
 
-/*
-Copyright (c) 2012, Jakub Onderka
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-1. Redistributions of source code must retain the above copyright notice, this
-   list of conditions and the following disclaimer.
-2. Redistributions in binary form must reproduce the above copyright notice,
-   this list of conditions and the following disclaimer in the documentation
-   and/or other materials provided with the distribution.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
-ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-The views and conclusions contained in the software and documentation are those
-of the authors and should not be interpreted as representing official policies,
-either expressed or implied, of the FreeBSD Project.
- */
-
+use JakubOnderka\PhpParallelLint\Contracts\SyntaxErrorCallback;
 use JakubOnderka\PhpParallelLint\Process\LintProcess;
 use JakubOnderka\PhpParallelLint\Process\PhpExecutable;
 use JakubOnderka\PhpParallelLint\Process\SkipLintProcess;
@@ -56,6 +28,12 @@ class ParallelLint
     /** @var callable */
     private $processCallback;
 
+    /** @var bool */
+    private $showDeprecated = false;
+
+    /** @var SyntaxErrorCallback|null */
+    private $syntaxErrorCallback = null;
+
     public function __construct(PhpExecutable $phpExecutable, $parallelJobs = 10)
     {
         $this->phpExecutable = $phpExecutable;
@@ -73,7 +51,8 @@ class ParallelLint
 
         $skipLintProcess = new SkipLintProcess($this->phpExecutable, $files);
 
-        $processCallback = is_callable($this->processCallback) ? $this->processCallback : function() {};
+        $processCallback = is_callable($this->processCallback) ? $this->processCallback : function () {
+        };
 
         /**
          * @var LintProcess[] $running
@@ -94,7 +73,8 @@ class ParallelLint
                         $this->phpExecutable,
                         $file,
                         $this->aspTagsEnabled,
-                        $this->shortTagEnabled
+                        $this->shortTagEnabled,
+                        $this->showDeprecated
                     );
                 }
             }
@@ -110,18 +90,19 @@ class ParallelLint
                     if ($skipStatus === null) {
                         $waiting[$file] = $process;
 
-                    } elseif ($skipStatus === true) {
+                    } else if ($skipStatus === true) {
                         $skippedFiles[] = $file;
                         $processCallback(self::STATUS_SKIP, $file);
 
-                    } elseif ($process->isSuccess()) {
+                    } else if ($process->containsError()) {
+                        $checkedFiles[] = $file;
+                        $errors[] = $this->triggerSyntaxErrorCallback(new SyntaxError($file, $process->getSyntaxError()));
+                        $processCallback(self::STATUS_ERROR, $file);
+
+                    } else if ($process->isSuccess()) {
                         $checkedFiles[] = $file;
                         $processCallback(self::STATUS_OK, $file);
 
-                    } elseif ($process->hasSyntaxError()) {
-                        $checkedFiles[] = $file;
-                        $errors[] = new SyntaxError($file, $process->getSyntaxError());
-                        $processCallback(self::STATUS_ERROR, $file);
 
                     } else {
                         $errors[] = new Error($file, $process->getOutput());
@@ -134,22 +115,27 @@ class ParallelLint
         if (!empty($waiting)) {
             $skipLintProcess->waitForFinish();
 
+            if ($skipLintProcess->isFail()) {
+                $message = "Error in skip-linting.php process\nError output: {$skipLintProcess->getErrorOutput()}";
+                throw new \Exception($message);
+            }
+
             foreach ($waiting as $file => $process) {
                 $skipStatus = $skipLintProcess->isSkipped($file);
                 if ($skipStatus === null) {
-                    throw new \Exception("File $file has empty skip status. Please contact PHP Parallel Lint author.");
+                    throw new \Exception("File $file has empty skip status. Please contact the author of PHP Parallel Lint.");
 
-                } elseif ($skipStatus === true) {
+                } else if ($skipStatus === true) {
                     $skippedFiles[] = $file;
                     $processCallback(self::STATUS_SKIP, $file);
 
-                } elseif ($process->isSuccess()) {
+                } else if ($process->isSuccess()) {
                     $checkedFiles[] = $file;
                     $processCallback(self::STATUS_OK, $file);
 
-                } elseif ($process->hasSyntaxError()) {
+                } else if ($process->containsError()) {
                     $checkedFiles[] = $file;
-                    $errors[] = new SyntaxError($file, $process->getSyntaxError());
+                    $errors[] = $this->triggerSyntaxErrorCallback(new SyntaxError($file, $process->getSyntaxError()));
                     $processCallback(self::STATUS_ERROR, $file);
 
                 } else {
@@ -255,6 +241,45 @@ class ParallelLint
     public function setShortTagEnabled($shortTagEnabled)
     {
         $this->shortTagEnabled = $shortTagEnabled;
+
+        return $this;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isShowDeprecated()
+    {
+        return $this->showDeprecated;
+    }
+
+    /**
+     * @param $showDeprecated
+     * @return ParallelLint
+     */
+    public function setShowDeprecated($showDeprecated)
+    {
+        $this->showDeprecated = $showDeprecated;
+
+        return $this;
+    }
+
+    public function triggerSyntaxErrorCallback($syntaxError)
+    {
+        if ($this->syntaxErrorCallback === null) {
+            return $syntaxError;
+        }
+
+        return $this->syntaxErrorCallback->errorFound($syntaxError);
+    }
+
+    /**
+     * @param SyntaxErrorCallback|null $syntaxErrorCallback
+     * @return ParallelLint
+     */
+    public function setSyntaxErrorCallback($syntaxErrorCallback)
+    {
+        $this->syntaxErrorCallback = $syntaxErrorCallback;
 
         return $this;
     }

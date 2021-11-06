@@ -1,37 +1,10 @@
 <?php
 namespace JakubOnderka\PhpParallelLint;
 
-/*
-Copyright (c) 2012, Jakub Onderka
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-1. Redistributions of source code must retain the above copyright notice, this
-   list of conditions and the following disclaimer.
-2. Redistributions in binary form must reproduce the above copyright notice,
-   this list of conditions and the following disclaimer in the documentation
-   and/or other materials provided with the distribution.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
-ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-The views and conclusions contained in the software and documentation are those
-of the authors and should not be interpreted as representing official policies,
-either expressed or implied, of the FreeBSD Project.
- */
-
+use JakubOnderka\PhpParallelLint\Contracts\SyntaxErrorCallback;
 use JakubOnderka\PhpParallelLint\Process\GitBlameProcess;
 use JakubOnderka\PhpParallelLint\Process\PhpExecutable;
+use ReturnTypeWillChange;
 
 class Manager
 {
@@ -41,6 +14,7 @@ class Manager
     /**
      * @param null|Settings $settings
      * @return Result
+     * @throws Exception
      * @throws \Exception
      */
     public function run(Settings $settings = null)
@@ -49,7 +23,8 @@ class Manager
         $output = $this->output ?: $this->getDefaultOutput($settings);
 
         $phpExecutable = PhpExecutable::getPhpExecutable($settings->phpExecutable);
-        $translateTokens = $phpExecutable->isIsHhvmType() || $phpExecutable->getVersionId() < 50400; // From PHP version 5.4 are tokens translated by default
+        $olderThanPhp54 = $phpExecutable->getVersionId() < 50400; // From PHP version 5.4 are tokens translated by default
+        $translateTokens = $phpExecutable->isIsHhvmType() || $olderThanPhp54;
 
         $output->writeHeader($phpExecutable->getVersionId(), $settings->parallelJobs, $phpExecutable->getHhvmVersion());
 
@@ -64,13 +39,15 @@ class Manager
         $parallelLint = new ParallelLint($phpExecutable, $settings->parallelJobs);
         $parallelLint->setAspTagsEnabled($settings->aspTags);
         $parallelLint->setShortTagEnabled($settings->shortTag);
+        $parallelLint->setShowDeprecated($settings->showDeprecated);
+        $parallelLint->setSyntaxErrorCallback($this->createSyntaxErrorCallback($settings));
 
         $parallelLint->setProcessCallback(function ($status, $file) use ($output) {
             if ($status === ParallelLint::STATUS_OK) {
                 $output->ok();
-            } elseif ($status === ParallelLint::STATUS_SKIP) {
+            } else if ($status === ParallelLint::STATUS_SKIP) {
                 $output->skip();
-            } elseif ($status === ParallelLint::STATUS_ERROR) {
+            } else if ($status === ParallelLint::STATUS_ERROR) {
                 $output->error();
             } else {
                 $output->fail();
@@ -103,11 +80,24 @@ class Manager
     protected function getDefaultOutput(Settings $settings)
     {
         $writer = new ConsoleWriter;
-        if ($settings->json) {
-            return new JsonOutput($writer);
-        } else {
-            return ($settings->colors ? new TextOutputColored($writer) : new TextOutput($writer));
+        switch ($settings->format) {
+            case Settings::FORMAT_JSON:
+                return new JsonOutput($writer);
+            case Settings::FORMAT_GITLAB:
+                return new GitLabOutput($writer);
+            case Settings::FORMAT_CHECKSTYLE:
+                return new CheckstyleOutput($writer);
         }
+
+        if ($settings->colors === Settings::DISABLED) {
+            $output = new TextOutput($writer);
+        } else {
+            $output = new TextOutputColored($writer, $settings->colors);
+        }
+
+        $output->showProgress = $settings->showProgress;
+
+        return $output;
     }
 
     /**
@@ -149,13 +139,14 @@ class Manager
      */
     protected function getFilesFromPaths(array $paths, array $extensions, array $excluded = array())
     {
-        $extensions = array_flip($extensions);
+        $extensions = array_map('preg_quote', $extensions, array_fill(0, count($extensions), '`'));
+        $regex = '`\.(?:' . implode('|', $extensions) . ')$`iD';
         $files = array();
 
         foreach ($paths as $path) {
             if (is_file($path)) {
                 $files[] = $path;
-            } elseif (is_dir($path)) {
+            } else if (is_dir($path)) {
                 $iterator = new \RecursiveDirectoryIterator($path, \FilesystemIterator::SKIP_DOTS);
                 if (!empty($excluded)) {
                     $iterator = new RecursiveDirectoryFilterIterator($iterator, $excluded);
@@ -166,11 +157,11 @@ class Manager
                     \RecursiveIteratorIterator::CATCH_GET_CHILD
                 );
 
+                $iterator = new \RegexIterator($iterator, $regex);
+
                 /** @var \SplFileInfo[] $iterator */
                 foreach ($iterator as $directoryFile) {
-                    if (isset($extensions[pathinfo($directoryFile->getFilename(), PATHINFO_EXTENSION)])) {
-                        $files[] = (string) $directoryFile;
-                    }
+                    $files[] = (string) $directoryFile;
                 }
             } else {
                 throw new NotExistsPathException($path);
@@ -180,6 +171,33 @@ class Manager
         $files = array_unique($files);
 
         return $files;
+    }
+
+    protected function createSyntaxErrorCallback(Settings $settings)
+    {
+        if ($settings->syntaxErrorCallbackFile === null) {
+            return null;
+        }
+
+        $fullFilePath = realpath($settings->syntaxErrorCallbackFile);
+        if ($fullFilePath === false) {
+            throw new NotExistsPathException($settings->syntaxErrorCallbackFile);
+        }
+
+        require_once $fullFilePath;
+
+        $expectedClassName = basename($fullFilePath, '.php');
+        if (!class_exists($expectedClassName)) {
+            throw new NotExistsClassException($expectedClassName, $settings->syntaxErrorCallbackFile);
+        }
+
+        $callbackInstance = new $expectedClassName;
+
+        if (!($callbackInstance instanceof SyntaxErrorCallback)) {
+            throw new NotImplementCallbackException($expectedClassName);
+        }
+
+        return $callbackInstance;
     }
 }
 
@@ -209,6 +227,7 @@ class RecursiveDirectoryFilterIterator extends \RecursiveFilterIterator
      * @link http://php.net/manual/en/filteriterator.accept.php
      * @return bool true if the current element is acceptable, otherwise false.
      */
+    #[ReturnTypeWillChange]
     public function accept()
     {
         $current = $this->current()->getPathname();
@@ -228,6 +247,7 @@ class RecursiveDirectoryFilterIterator extends \RecursiveFilterIterator
      * @link http://php.net/manual/en/recursivefilteriterator.haschildren.php
      * @return bool true if the inner iterator has children, otherwise false
      */
+    #[ReturnTypeWillChange]
     public function hasChildren()
     {
         return $this->iterator->hasChildren();
@@ -240,6 +260,7 @@ class RecursiveDirectoryFilterIterator extends \RecursiveFilterIterator
      * @link http://php.net/manual/en/recursivefilteriterator.getchildren.php
      * @return \RecursiveFilterIterator containing the inner iterator's children.
      */
+    #[ReturnTypeWillChange]
     public function getChildren()
     {
         return new self($this->iterator->getChildren(), $this->excluded);
