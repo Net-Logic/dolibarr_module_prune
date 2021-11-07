@@ -125,7 +125,8 @@ function storeAccessToken($service, $token, $refreshtoken, $userid, $email = nul
 	} else {
 		// save
 		$sql = "INSERT INTO " . MAIN_DB_PREFIX . "prune_oauth_token (service, token, refreshtoken, fk_user, email, entity)";
-		$sql .= " VALUES ('" . $db->escape($service) . "', '" . $db->escape($serializedToken) . "', '" . $db->escape($refreshtoken) . "', " . (int) $userid . ", '" . $db->escape($email) . "', " . (int) $conf->entity . ")";
+		$sql .= " VALUES ('" . $db->escape($service) . "', '" . $db->escape($serializedToken) . "', '" . $db->escape($refreshtoken) . "', ";
+		$sql .= (int) $userid . ", " . (empty($email) ? "null" : "'" . $db->escape($email) . "'") . ", " . (int) $conf->entity . ")";
 
 		$resql = $db->query($sql);
 		if (!$resql) {
