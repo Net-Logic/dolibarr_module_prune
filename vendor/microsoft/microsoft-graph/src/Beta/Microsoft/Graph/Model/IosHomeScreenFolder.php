@@ -26,11 +26,9 @@ class IosHomeScreenFolder extends IosHomeScreenItem
     /**
     * Set the @odata.type since this type is immediately descended from an abstract
     * type that is referenced as the type in an entity.
-    * @param array $propDict The property dictionary
     */
-    public function __construct($propDict = array())
+    public function __construct()
     {
-        parent::__construct($propDict);
         $this->setODataType("#microsoft.graph.iosHomeScreenFolder");
     }
 
@@ -39,12 +37,12 @@ class IosHomeScreenFolder extends IosHomeScreenItem
     * Gets the pages
     * Pages of Home Screen Layout Icons which must be applications or web clips. This collection can contain a maximum of 500 elements.
     *
-    * @return IosHomeScreenFolderPage|null The pages
+    * @return IosHomeScreenFolderPage The pages
     */
     public function getPages()
     {
         if (array_key_exists("pages", $this->_propDict)) {
-            if (is_a($this->_propDict["pages"], "\Beta\Microsoft\Graph\Model\IosHomeScreenFolderPage") || is_null($this->_propDict["pages"])) {
+            if (is_a($this->_propDict["pages"], "Beta\Microsoft\Graph\Model\IosHomeScreenFolderPage")) {
                 return $this->_propDict["pages"];
             } else {
                 $this->_propDict["pages"] = new IosHomeScreenFolderPage($this->_propDict["pages"]);

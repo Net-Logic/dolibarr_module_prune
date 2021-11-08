@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 
 namespace Lcobucci\JWT\Signer;
 
@@ -8,7 +7,12 @@ use Lcobucci\JWT\Exception;
 
 final class CannotSignPayload extends InvalidArgumentException implements Exception
 {
-    public static function errorHappened(string $error): self
+    /**
+     * @pararm string $error
+     *
+     * @return self
+     */
+    public static function errorHappened($error)
     {
         return new self('There was an error while creating the signature: ' . $error);
     }

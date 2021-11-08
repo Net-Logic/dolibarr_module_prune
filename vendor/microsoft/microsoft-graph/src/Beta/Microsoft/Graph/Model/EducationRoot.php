@@ -22,44 +22,13 @@ namespace Beta\Microsoft\Graph\Model;
 * @license   https://opensource.org/licenses/MIT MIT License
 * @link      https://graph.microsoft.com
 */
-class EducationRoot implements \JsonSerializable
+class EducationRoot extends Entity
 {
-    /**
-    * The array of properties available
-    * to the model
-    *
-    * @var array $_propDict
-    */
-    protected $_propDict;
-    
-    /**
-    * Construct a new EducationRoot
-    *
-    * @param array $propDict A list of properties to set
-    */
-    function __construct($propDict = array())
-    {
-        if (!is_array($propDict)) {
-           $propDict = array();
-        }
-        $this->_propDict = $propDict;
-    }
-
-    /**
-    * Gets the property dictionary of the EducationRoot
-    *
-    * @return array The list of properties
-    */
-    public function getProperties()
-    {
-        return $this->_propDict;
-    }
-    
 
      /** 
      * Gets the synchronizationProfiles
      *
-     * @return array|null The synchronizationProfiles
+     * @return array The synchronizationProfiles
      */
     public function getSynchronizationProfiles()
     {
@@ -79,15 +48,16 @@ class EducationRoot implements \JsonSerializable
     */
     public function setSynchronizationProfiles($val)
     {
-        $this->_propDict["synchronizationProfiles"] = $val;
+		$this->_propDict["synchronizationProfiles"] = $val;
         return $this;
     }
     
 
      /** 
      * Gets the classes
+    * Read-only. Nullable.
      *
-     * @return array|null The classes
+     * @return array The classes
      */
     public function getClasses()
     {
@@ -100,6 +70,7 @@ class EducationRoot implements \JsonSerializable
     
     /** 
     * Sets the classes
+    * Read-only. Nullable.
     *
     * @param EducationClass $val The classes
     *
@@ -107,19 +78,20 @@ class EducationRoot implements \JsonSerializable
     */
     public function setClasses($val)
     {
-        $this->_propDict["classes"] = $val;
+		$this->_propDict["classes"] = $val;
         return $this;
     }
     
     /**
     * Gets the me
+    * Read-only. Nullable.
     *
-    * @return EducationUser|null The me
+    * @return EducationUser The me
     */
     public function getMe()
     {
         if (array_key_exists("me", $this->_propDict)) {
-            if (is_a($this->_propDict["me"], "\Beta\Microsoft\Graph\Model\EducationUser") || is_null($this->_propDict["me"])) {
+            if (is_a($this->_propDict["me"], "Beta\Microsoft\Graph\Model\EducationUser")) {
                 return $this->_propDict["me"];
             } else {
                 $this->_propDict["me"] = new EducationUser($this->_propDict["me"]);
@@ -131,6 +103,7 @@ class EducationRoot implements \JsonSerializable
     
     /**
     * Sets the me
+    * Read-only. Nullable.
     *
     * @param EducationUser $val The me
     *
@@ -145,8 +118,9 @@ class EducationRoot implements \JsonSerializable
 
      /** 
      * Gets the schools
+    * Read-only. Nullable.
      *
-     * @return array|null The schools
+     * @return array The schools
      */
     public function getSchools()
     {
@@ -159,6 +133,7 @@ class EducationRoot implements \JsonSerializable
     
     /** 
     * Sets the schools
+    * Read-only. Nullable.
     *
     * @param EducationSchool $val The schools
     *
@@ -166,15 +141,16 @@ class EducationRoot implements \JsonSerializable
     */
     public function setSchools($val)
     {
-        $this->_propDict["schools"] = $val;
+		$this->_propDict["schools"] = $val;
         return $this;
     }
     
 
      /** 
      * Gets the users
+    * Read-only. Nullable.
      *
-     * @return array|null The users
+     * @return array The users
      */
     public function getUsers()
     {
@@ -187,6 +163,7 @@ class EducationRoot implements \JsonSerializable
     
     /** 
     * Sets the users
+    * Read-only. Nullable.
     *
     * @param EducationUser $val The users
     *
@@ -194,52 +171,8 @@ class EducationRoot implements \JsonSerializable
     */
     public function setUsers($val)
     {
-        $this->_propDict["users"] = $val;
+		$this->_propDict["users"] = $val;
         return $this;
     }
     
-    /**
-    * Gets the ODataType
-    *
-    * @return string|null The ODataType
-    */
-    public function getODataType()
-    {
-        if (array_key_exists('@odata.type', $this->_propDict)) {
-            return $this->_propDict["@odata.type"];
-        }
-        return null;
-    }
-    
-    /**
-    * Sets the ODataType
-    *
-    * @param string $val The ODataType
-    *
-    * @return EducationRoot
-    */
-    public function setODataType($val)
-    {
-        $this->_propDict["@odata.type"] = $val;
-        return $this;
-    }
-    
-    /**
-    * Serializes the object by property array
-    * Manually serialize DateTime into RFC3339 format
-    *
-    * @return array The list of properties
-    */
-    public function jsonSerialize()
-    {
-        $serializableProperties = $this->getProperties();
-        foreach ($serializableProperties as $property => $val) {
-            if (is_a($val, "\DateTime")) {
-                $serializableProperties[$property] = $val->format(\DateTime::RFC3339);
-            } else if (is_a($val, "\Microsoft\Graph\Core\Enum")) {
-                $serializableProperties[$property] = $val->value();
-            }
-        }
-        return $serializableProperties;
-    }
 }

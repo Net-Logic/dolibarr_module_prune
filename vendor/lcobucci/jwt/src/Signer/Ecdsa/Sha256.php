@@ -1,25 +1,42 @@
 <?php
-declare(strict_types=1);
+/**
+ * This file is part of Lcobucci\JWT, a simple library to handle JWT and JWS
+ *
+ * @license http://opensource.org/licenses/BSD-3-Clause BSD-3-Clause
+ */
 
 namespace Lcobucci\JWT\Signer\Ecdsa;
 
 use Lcobucci\JWT\Signer\Ecdsa;
 
-use const OPENSSL_ALGO_SHA256;
-
-final class Sha256 extends Ecdsa
+/**
+ * Signer for ECDSA SHA-256
+ *
+ * @author Luís Otávio Cobucci Oblonczyk <lcobucci@gmail.com>
+ * @since 2.1.0
+ */
+class Sha256 extends Ecdsa
 {
-    public function algorithmId(): string
+    /**
+     * {@inheritdoc}
+     */
+    public function getAlgorithmId()
     {
         return 'ES256';
     }
 
-    public function algorithm(): int
+    /**
+     * {@inheritdoc}
+     */
+    public function getAlgorithm()
     {
-        return OPENSSL_ALGO_SHA256;
+        return 'sha256';
     }
 
-    public function keyLength(): int
+    /**
+     * {@inheritdoc}
+     */
+    public function getKeyLength()
     {
         return 64;
     }

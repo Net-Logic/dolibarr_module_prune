@@ -26,11 +26,9 @@ class IosCredentialSingleSignOnExtension extends IosSingleSignOnExtension
     /**
     * Set the @odata.type since this type is immediately descended from an abstract
     * type that is referenced as the type in an entity.
-    * @param array $propDict The property dictionary
     */
-    public function __construct($propDict = array())
+    public function __construct()
     {
-        parent::__construct($propDict);
         $this->setODataType("#microsoft.graph.iosCredentialSingleSignOnExtension");
     }
 
@@ -39,12 +37,12 @@ class IosCredentialSingleSignOnExtension extends IosSingleSignOnExtension
     * Gets the configurations
     * Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.
     *
-    * @return KeyTypedValuePair|null The configurations
+    * @return KeyTypedValuePair The configurations
     */
     public function getConfigurations()
     {
         if (array_key_exists("configurations", $this->_propDict)) {
-            if (is_a($this->_propDict["configurations"], "\Beta\Microsoft\Graph\Model\KeyTypedValuePair") || is_null($this->_propDict["configurations"])) {
+            if (is_a($this->_propDict["configurations"], "Beta\Microsoft\Graph\Model\KeyTypedValuePair")) {
                 return $this->_propDict["configurations"];
             } else {
                 $this->_propDict["configurations"] = new KeyTypedValuePair($this->_propDict["configurations"]);
@@ -71,7 +69,7 @@ class IosCredentialSingleSignOnExtension extends IosSingleSignOnExtension
     * Gets the domains
     * Gets or sets a list of hosts or domain names for which the app extension performs SSO.
     *
-    * @return string|null The domains
+    * @return string The domains
     */
     public function getDomains()
     {
@@ -99,7 +97,7 @@ class IosCredentialSingleSignOnExtension extends IosSingleSignOnExtension
     * Gets the extensionIdentifier
     * Gets or sets the bundle ID of the app extension that performs SSO for the specified URLs.
     *
-    * @return string|null The extensionIdentifier
+    * @return string The extensionIdentifier
     */
     public function getExtensionIdentifier()
     {
@@ -127,7 +125,7 @@ class IosCredentialSingleSignOnExtension extends IosSingleSignOnExtension
     * Gets the realm
     * Gets or sets the case-sensitive realm name for this profile.
     *
-    * @return string|null The realm
+    * @return string The realm
     */
     public function getRealm()
     {
@@ -155,7 +153,7 @@ class IosCredentialSingleSignOnExtension extends IosSingleSignOnExtension
     * Gets the teamIdentifier
     * Gets or sets the team ID of the app extension that performs SSO for the specified URLs.
     *
-    * @return string|null The teamIdentifier
+    * @return string The teamIdentifier
     */
     public function getTeamIdentifier()
     {

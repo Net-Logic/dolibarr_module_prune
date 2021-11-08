@@ -27,7 +27,7 @@ class OfficeClientCheckinStatus extends Entity
     * Gets the appliedPolicies
     * List of policies delivered to the device as last checkin.
     *
-    * @return string|null The appliedPolicies
+    * @return string The appliedPolicies
     */
     public function getAppliedPolicies()
     {
@@ -56,12 +56,12 @@ class OfficeClientCheckinStatus extends Entity
     * Gets the checkinDateTime
     * Last device check-in time in UTC.
     *
-    * @return \DateTime|null The checkinDateTime
+    * @return \DateTime The checkinDateTime
     */
     public function getCheckinDateTime()
     {
         if (array_key_exists("checkinDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["checkinDateTime"], "\DateTime") || is_null($this->_propDict["checkinDateTime"])) {
+            if (is_a($this->_propDict["checkinDateTime"], "\DateTime")) {
                 return $this->_propDict["checkinDateTime"];
             } else {
                 $this->_propDict["checkinDateTime"] = new \DateTime($this->_propDict["checkinDateTime"]);
@@ -88,7 +88,7 @@ class OfficeClientCheckinStatus extends Entity
     * Gets the deviceName
     * Device name trying to check-in.
     *
-    * @return string|null The deviceName
+    * @return string The deviceName
     */
     public function getDeviceName()
     {
@@ -116,7 +116,7 @@ class OfficeClientCheckinStatus extends Entity
     * Gets the devicePlatform
     * Device platform trying to check-in.
     *
-    * @return string|null The devicePlatform
+    * @return string The devicePlatform
     */
     public function getDevicePlatform()
     {
@@ -144,7 +144,7 @@ class OfficeClientCheckinStatus extends Entity
     * Gets the devicePlatformVersion
     * Device platform version trying to check-in.
     *
-    * @return string|null The devicePlatformVersion
+    * @return string The devicePlatformVersion
     */
     public function getDevicePlatformVersion()
     {
@@ -172,7 +172,7 @@ class OfficeClientCheckinStatus extends Entity
     * Gets the errorMessage
     * Error message if any associated for the last checkin.
     *
-    * @return string|null The errorMessage
+    * @return string The errorMessage
     */
     public function getErrorMessage()
     {
@@ -200,7 +200,7 @@ class OfficeClientCheckinStatus extends Entity
     * Gets the userId
     * User identifier using the device.
     *
-    * @return string|null The userId
+    * @return string The userId
     */
     public function getUserId()
     {
@@ -228,7 +228,7 @@ class OfficeClientCheckinStatus extends Entity
     * Gets the userPrincipalName
     * User principal name using the device.
     *
-    * @return string|null The userPrincipalName
+    * @return string The userPrincipalName
     */
     public function getUserPrincipalName()
     {
@@ -256,7 +256,7 @@ class OfficeClientCheckinStatus extends Entity
     * Gets the wasSuccessful
     * If the last checkin was successful.
     *
-    * @return bool|null The wasSuccessful
+    * @return bool The wasSuccessful
     */
     public function getWasSuccessful()
     {

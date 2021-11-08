@@ -1,25 +1,20 @@
 <?php
-declare(strict_types=1);
 
 namespace Lcobucci\JWT\Signer;
 
-use Lcobucci\JWT\Signer;
-
-final class None implements Signer
+final class None extends BaseSigner
 {
-    public function algorithmId(): string
+    public function getAlgorithmId()
     {
         return 'none';
     }
 
-    // @phpcs:ignore SlevomatCodingStandard.Functions.UnusedParameter.UnusedParameter
-    public function sign(string $payload, Key $key): string
+    public function createHash($payload, Key $key)
     {
         return '';
     }
 
-    // @phpcs:ignore SlevomatCodingStandard.Functions.UnusedParameter.UnusedParameter
-    public function verify(string $expected, string $payload, Key $key): bool
+    public function doVerify($expected, $payload, Key $key)
     {
         return $expected === '';
     }

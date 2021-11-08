@@ -26,14 +26,13 @@ class TeamsDeviceUsageUserDetail extends Entity
 {
     /**
     * Gets the deletedDate
-    * The date when the delete operation happened. Default value is 'null' when the user has not been deleted.
     *
-    * @return \DateTime|null The deletedDate
+    * @return \DateTime The deletedDate
     */
     public function getDeletedDate()
     {
         if (array_key_exists("deletedDate", $this->_propDict)) {
-            if (is_a($this->_propDict["deletedDate"], "\DateTime") || is_null($this->_propDict["deletedDate"])) {
+            if (is_a($this->_propDict["deletedDate"], "\DateTime")) {
                 return $this->_propDict["deletedDate"];
             } else {
                 $this->_propDict["deletedDate"] = new \DateTime($this->_propDict["deletedDate"]);
@@ -45,7 +44,6 @@ class TeamsDeviceUsageUserDetail extends Entity
     
     /**
     * Sets the deletedDate
-    * The date when the delete operation happened. Default value is 'null' when the user has not been deleted.
     *
     * @param \DateTime $val The deletedDate
     *
@@ -59,9 +57,8 @@ class TeamsDeviceUsageUserDetail extends Entity
     
     /**
     * Gets the isDeleted
-    * Whether this user has been deleted or soft deleted.
     *
-    * @return bool|null The isDeleted
+    * @return bool The isDeleted
     */
     public function getIsDeleted()
     {
@@ -74,7 +71,6 @@ class TeamsDeviceUsageUserDetail extends Entity
     
     /**
     * Sets the isDeleted
-    * Whether this user has been deleted or soft deleted.
     *
     * @param bool $val The isDeleted
     *
@@ -87,44 +83,14 @@ class TeamsDeviceUsageUserDetail extends Entity
     }
     
     /**
-    * Gets the isLicensed
-    * Whether the user has been assigned a Teams license.
-    *
-    * @return bool|null The isLicensed
-    */
-    public function getIsLicensed()
-    {
-        if (array_key_exists("isLicensed", $this->_propDict)) {
-            return $this->_propDict["isLicensed"];
-        } else {
-            return null;
-        }
-    }
-    
-    /**
-    * Sets the isLicensed
-    * Whether the user has been assigned a Teams license.
-    *
-    * @param bool $val The isLicensed
-    *
-    * @return TeamsDeviceUsageUserDetail
-    */
-    public function setIsLicensed($val)
-    {
-        $this->_propDict["isLicensed"] = boolval($val);
-        return $this;
-    }
-    
-    /**
     * Gets the lastActivityDate
-    * The last date that the user participated in a Microsoft Teams activity.
     *
-    * @return \DateTime|null The lastActivityDate
+    * @return \DateTime The lastActivityDate
     */
     public function getLastActivityDate()
     {
         if (array_key_exists("lastActivityDate", $this->_propDict)) {
-            if (is_a($this->_propDict["lastActivityDate"], "\DateTime") || is_null($this->_propDict["lastActivityDate"])) {
+            if (is_a($this->_propDict["lastActivityDate"], "\DateTime")) {
                 return $this->_propDict["lastActivityDate"];
             } else {
                 $this->_propDict["lastActivityDate"] = new \DateTime($this->_propDict["lastActivityDate"]);
@@ -136,7 +102,6 @@ class TeamsDeviceUsageUserDetail extends Entity
     
     /**
     * Sets the lastActivityDate
-    * The last date that the user participated in a Microsoft Teams activity.
     *
     * @param \DateTime $val The lastActivityDate
     *
@@ -150,9 +115,8 @@ class TeamsDeviceUsageUserDetail extends Entity
     
     /**
     * Gets the reportPeriod
-    * The number of days the report covers.
     *
-    * @return string|null The reportPeriod
+    * @return string The reportPeriod
     */
     public function getReportPeriod()
     {
@@ -165,7 +129,6 @@ class TeamsDeviceUsageUserDetail extends Entity
     
     /**
     * Sets the reportPeriod
-    * The number of days the report covers.
     *
     * @param string $val The reportPeriod
     *
@@ -179,14 +142,13 @@ class TeamsDeviceUsageUserDetail extends Entity
     
     /**
     * Gets the reportRefreshDate
-    * The latest date of the content.
     *
-    * @return \DateTime|null The reportRefreshDate
+    * @return \DateTime The reportRefreshDate
     */
     public function getReportRefreshDate()
     {
         if (array_key_exists("reportRefreshDate", $this->_propDict)) {
-            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime") || is_null($this->_propDict["reportRefreshDate"])) {
+            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime")) {
                 return $this->_propDict["reportRefreshDate"];
             } else {
                 $this->_propDict["reportRefreshDate"] = new \DateTime($this->_propDict["reportRefreshDate"]);
@@ -198,7 +160,6 @@ class TeamsDeviceUsageUserDetail extends Entity
     
     /**
     * Sets the reportRefreshDate
-    * The latest date of the content.
     *
     * @param \DateTime $val The reportRefreshDate
     *
@@ -212,9 +173,8 @@ class TeamsDeviceUsageUserDetail extends Entity
     
     /**
     * Gets the usedAndroidPhone
-    * Whether the user was active on the Teams mobile client for Android.
     *
-    * @return bool|null The usedAndroidPhone
+    * @return bool The usedAndroidPhone
     */
     public function getUsedAndroidPhone()
     {
@@ -227,7 +187,6 @@ class TeamsDeviceUsageUserDetail extends Entity
     
     /**
     * Sets the usedAndroidPhone
-    * Whether the user was active on the Teams mobile client for Android.
     *
     * @param bool $val The usedAndroidPhone
     *
@@ -240,39 +199,9 @@ class TeamsDeviceUsageUserDetail extends Entity
     }
     
     /**
-    * Gets the usedChromeOS
-    * Whether the user was active in the Teams desktop client on a ChromeOS computer.
-    *
-    * @return bool|null The usedChromeOS
-    */
-    public function getUsedChromeOS()
-    {
-        if (array_key_exists("usedChromeOS", $this->_propDict)) {
-            return $this->_propDict["usedChromeOS"];
-        } else {
-            return null;
-        }
-    }
-    
-    /**
-    * Sets the usedChromeOS
-    * Whether the user was active in the Teams desktop client on a ChromeOS computer.
-    *
-    * @param bool $val The usedChromeOS
-    *
-    * @return TeamsDeviceUsageUserDetail
-    */
-    public function setUsedChromeOS($val)
-    {
-        $this->_propDict["usedChromeOS"] = boolval($val);
-        return $this;
-    }
-    
-    /**
     * Gets the usediOS
-    * Whether the user was active on the Teams mobile client for iOS.
     *
-    * @return bool|null The usediOS
+    * @return bool The usediOS
     */
     public function getUsediOS()
     {
@@ -285,7 +214,6 @@ class TeamsDeviceUsageUserDetail extends Entity
     
     /**
     * Sets the usediOS
-    * Whether the user was active on the Teams mobile client for iOS.
     *
     * @param bool $val The usediOS
     *
@@ -298,39 +226,9 @@ class TeamsDeviceUsageUserDetail extends Entity
     }
     
     /**
-    * Gets the usedLinux
-    * Whether the user was active in the Teams desktop client on a Linux computer.
-    *
-    * @return bool|null The usedLinux
-    */
-    public function getUsedLinux()
-    {
-        if (array_key_exists("usedLinux", $this->_propDict)) {
-            return $this->_propDict["usedLinux"];
-        } else {
-            return null;
-        }
-    }
-    
-    /**
-    * Sets the usedLinux
-    * Whether the user was active in the Teams desktop client on a Linux computer.
-    *
-    * @param bool $val The usedLinux
-    *
-    * @return TeamsDeviceUsageUserDetail
-    */
-    public function setUsedLinux($val)
-    {
-        $this->_propDict["usedLinux"] = boolval($val);
-        return $this;
-    }
-    
-    /**
     * Gets the usedMac
-    * Whether the user was active in the Teams desktop client on a macOS computer.
     *
-    * @return bool|null The usedMac
+    * @return bool The usedMac
     */
     public function getUsedMac()
     {
@@ -343,7 +241,6 @@ class TeamsDeviceUsageUserDetail extends Entity
     
     /**
     * Sets the usedMac
-    * Whether the user was active in the Teams desktop client on a macOS computer.
     *
     * @param bool $val The usedMac
     *
@@ -357,9 +254,8 @@ class TeamsDeviceUsageUserDetail extends Entity
     
     /**
     * Gets the usedWeb
-    * Whether the user was active in the Teams web client on devices.
     *
-    * @return bool|null The usedWeb
+    * @return bool The usedWeb
     */
     public function getUsedWeb()
     {
@@ -372,7 +268,6 @@ class TeamsDeviceUsageUserDetail extends Entity
     
     /**
     * Sets the usedWeb
-    * Whether the user was active in the Teams web client on devices.
     *
     * @param bool $val The usedWeb
     *
@@ -386,9 +281,8 @@ class TeamsDeviceUsageUserDetail extends Entity
     
     /**
     * Gets the usedWindows
-    * Whether the user was active in the Teams desktop client on a Windows-based computer.
     *
-    * @return bool|null The usedWindows
+    * @return bool The usedWindows
     */
     public function getUsedWindows()
     {
@@ -401,7 +295,6 @@ class TeamsDeviceUsageUserDetail extends Entity
     
     /**
     * Sets the usedWindows
-    * Whether the user was active in the Teams desktop client on a Windows-based computer.
     *
     * @param bool $val The usedWindows
     *
@@ -415,9 +308,8 @@ class TeamsDeviceUsageUserDetail extends Entity
     
     /**
     * Gets the usedWindowsPhone
-    * Whether the user was active on the Teams mobile client for Windows phone.
     *
-    * @return bool|null The usedWindowsPhone
+    * @return bool The usedWindowsPhone
     */
     public function getUsedWindowsPhone()
     {
@@ -430,7 +322,6 @@ class TeamsDeviceUsageUserDetail extends Entity
     
     /**
     * Sets the usedWindowsPhone
-    * Whether the user was active on the Teams mobile client for Windows phone.
     *
     * @param bool $val The usedWindowsPhone
     *
@@ -444,9 +335,8 @@ class TeamsDeviceUsageUserDetail extends Entity
     
     /**
     * Gets the userPrincipalName
-    * The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant’s collection of verified domains. This property is required when a user is created.
     *
-    * @return string|null The userPrincipalName
+    * @return string The userPrincipalName
     */
     public function getUserPrincipalName()
     {
@@ -459,7 +349,6 @@ class TeamsDeviceUsageUserDetail extends Entity
     
     /**
     * Sets the userPrincipalName
-    * The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant’s collection of verified domains. This property is required when a user is created.
     *
     * @param string $val The userPrincipalName
     *

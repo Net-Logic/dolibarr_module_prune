@@ -25,9 +25,8 @@ class EducationSynchronizationConnectionSettings extends Entity
 {
     /**
     * Gets the clientId
-    * Client ID used to connect to the provider.
     *
-    * @return string|null The clientId
+    * @return string The clientId
     */
     public function getClientId()
     {
@@ -40,7 +39,6 @@ class EducationSynchronizationConnectionSettings extends Entity
 
     /**
     * Sets the clientId
-    * Client ID used to connect to the provider.
     *
     * @param string $val The value of the clientId
     *
@@ -53,9 +51,8 @@ class EducationSynchronizationConnectionSettings extends Entity
     }
     /**
     * Gets the clientSecret
-    * Client secret to authenticate the connection to the provider.
     *
-    * @return string|null The clientSecret
+    * @return string The clientSecret
     */
     public function getClientSecret()
     {
@@ -68,7 +65,6 @@ class EducationSynchronizationConnectionSettings extends Entity
 
     /**
     * Sets the clientSecret
-    * Client secret to authenticate the connection to the provider.
     *
     * @param string $val The value of the clientSecret
     *

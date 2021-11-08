@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 
 namespace Lcobucci\JWT\Validation\Constraint;
 
@@ -10,14 +9,15 @@ use Lcobucci\JWT\Validation\ConstraintViolation;
 final class IssuedBy implements Constraint
 {
     /** @var string[] */
-    private array $issuers;
+    private $issuers;
 
-    public function __construct(string ...$issuers)
+    /** @param list<string> $issuers */
+    public function __construct(...$issuers)
     {
         $this->issuers = $issuers;
     }
 
-    public function assert(Token $token): void
+    public function assert(Token $token)
     {
         if (! $token->hasBeenIssuedBy(...$this->issuers)) {
             throw new ConstraintViolation(

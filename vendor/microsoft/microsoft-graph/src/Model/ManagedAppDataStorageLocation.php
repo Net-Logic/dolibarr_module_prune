@@ -31,6 +31,5 @@ class ManagedAppDataStorageLocation extends Enum
     */
     const ONE_DRIVE_FOR_BUSINESS = "oneDriveForBusiness";
     const SHARE_POINT = "sharePoint";
-    const BOX = "box";
     const LOCAL_STORAGE = "localStorage";
 }

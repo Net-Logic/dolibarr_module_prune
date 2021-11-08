@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 
 namespace Lcobucci\JWT\Validation\Constraint;
 
@@ -9,14 +8,16 @@ use Lcobucci\JWT\Validation\ConstraintViolation;
 
 final class IdentifiedBy implements Constraint
 {
-    private string $id;
+    /** @var string */
+    private $id;
 
-    public function __construct(string $id)
+    /** @param string $id */
+    public function __construct($id)
     {
         $this->id = $id;
     }
 
-    public function assert(Token $token): void
+    public function assert(Token $token)
     {
         if (! $token->isIdentifiedBy($this->id)) {
             throw new ConstraintViolation(

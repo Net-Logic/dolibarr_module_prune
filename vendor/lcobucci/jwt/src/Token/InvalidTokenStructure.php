@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 
 namespace Lcobucci\JWT\Token;
 
@@ -8,17 +7,28 @@ use Lcobucci\JWT\Exception;
 
 final class InvalidTokenStructure extends InvalidArgumentException implements Exception
 {
-    public static function missingOrNotEnoughSeparators(): self
+    /** @return self */
+    public static function missingOrNotEnoughSeparators()
     {
         return new self('The JWT string must have two dots');
     }
 
-    public static function arrayExpected(string $part): self
+    /**
+     * @param string $part
+     *
+     * @return self
+     */
+    public static function arrayExpected($part)
     {
         return new self($part . ' must be an array');
     }
 
-    public static function dateIsNotParseable(string $value): self
+    /**
+     * @param string $value
+     *
+     * @return self
+     */
+    public static function dateIsNotParseable($value)
     {
         return new self('Value is not in the allowed date format: ' . $value);
     }

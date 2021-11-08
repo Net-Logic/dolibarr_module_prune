@@ -22,12 +22,12 @@ namespace Beta\Microsoft\Graph\Model;
 * @license   https://opensource.org/licenses/MIT MIT License
 * @link      https://graph.microsoft.com
 */
-class ExactMatchSession extends ExactMatchSessionBase
+class ExactMatchSession extends ExactMatchJobBase
 {
     /**
     * Gets the checksum
     *
-    * @return string|null The checksum
+    * @return string The checksum
     */
     public function getChecksum()
     {
@@ -52,9 +52,36 @@ class ExactMatchSession extends ExactMatchSessionBase
     }
     
     /**
+    * Gets the datastoreId
+    *
+    * @return string The datastoreId
+    */
+    public function getDatastoreId()
+    {
+        if (array_key_exists("datastoreId", $this->_propDict)) {
+            return $this->_propDict["datastoreId"];
+        } else {
+            return null;
+        }
+    }
+    
+    /**
+    * Sets the datastoreId
+    *
+    * @param string $val The datastoreId
+    *
+    * @return ExactMatchSession
+    */
+    public function setDatastoreId($val)
+    {
+        $this->_propDict["datastoreId"] = $val;
+        return $this;
+    }
+    
+    /**
     * Gets the dataUploadURI
     *
-    * @return string|null The dataUploadURI
+    * @return string The dataUploadURI
     */
     public function getDataUploadURI()
     {
@@ -81,7 +108,7 @@ class ExactMatchSession extends ExactMatchSessionBase
     /**
     * Gets the fields
     *
-    * @return string|null The fields
+    * @return string The fields
     */
     public function getFields()
     {
@@ -108,7 +135,7 @@ class ExactMatchSession extends ExactMatchSessionBase
     /**
     * Gets the fileName
     *
-    * @return string|null The fileName
+    * @return string The fileName
     */
     public function getFileName()
     {
@@ -133,9 +160,94 @@ class ExactMatchSession extends ExactMatchSessionBase
     }
     
     /**
+    * Gets the processingCompletionDateTime
+    *
+    * @return \DateTime The processingCompletionDateTime
+    */
+    public function getProcessingCompletionDateTime()
+    {
+        if (array_key_exists("processingCompletionDateTime", $this->_propDict)) {
+            if (is_a($this->_propDict["processingCompletionDateTime"], "\DateTime")) {
+                return $this->_propDict["processingCompletionDateTime"];
+            } else {
+                $this->_propDict["processingCompletionDateTime"] = new \DateTime($this->_propDict["processingCompletionDateTime"]);
+                return $this->_propDict["processingCompletionDateTime"];
+            }
+        }
+        return null;
+    }
+    
+    /**
+    * Sets the processingCompletionDateTime
+    *
+    * @param \DateTime $val The processingCompletionDateTime
+    *
+    * @return ExactMatchSession
+    */
+    public function setProcessingCompletionDateTime($val)
+    {
+        $this->_propDict["processingCompletionDateTime"] = $val;
+        return $this;
+    }
+    
+    /**
+    * Gets the remainingBlockCount
+    *
+    * @return int The remainingBlockCount
+    */
+    public function getRemainingBlockCount()
+    {
+        if (array_key_exists("remainingBlockCount", $this->_propDict)) {
+            return $this->_propDict["remainingBlockCount"];
+        } else {
+            return null;
+        }
+    }
+    
+    /**
+    * Sets the remainingBlockCount
+    *
+    * @param int $val The remainingBlockCount
+    *
+    * @return ExactMatchSession
+    */
+    public function setRemainingBlockCount($val)
+    {
+        $this->_propDict["remainingBlockCount"] = intval($val);
+        return $this;
+    }
+    
+    /**
+    * Gets the remainingJobCount
+    *
+    * @return int The remainingJobCount
+    */
+    public function getRemainingJobCount()
+    {
+        if (array_key_exists("remainingJobCount", $this->_propDict)) {
+            return $this->_propDict["remainingJobCount"];
+        } else {
+            return null;
+        }
+    }
+    
+    /**
+    * Sets the remainingJobCount
+    *
+    * @param int $val The remainingJobCount
+    *
+    * @return ExactMatchSession
+    */
+    public function setRemainingJobCount($val)
+    {
+        $this->_propDict["remainingJobCount"] = intval($val);
+        return $this;
+    }
+    
+    /**
     * Gets the rowsPerBlock
     *
-    * @return int|null The rowsPerBlock
+    * @return int The rowsPerBlock
     */
     public function getRowsPerBlock()
     {
@@ -162,7 +274,7 @@ class ExactMatchSession extends ExactMatchSessionBase
     /**
     * Gets the salt
     *
-    * @return string|null The salt
+    * @return string The salt
     */
     public function getSalt()
     {
@@ -187,9 +299,90 @@ class ExactMatchSession extends ExactMatchSessionBase
     }
     
     /**
+    * Gets the state
+    *
+    * @return string The state
+    */
+    public function getState()
+    {
+        if (array_key_exists("state", $this->_propDict)) {
+            return $this->_propDict["state"];
+        } else {
+            return null;
+        }
+    }
+    
+    /**
+    * Sets the state
+    *
+    * @param string $val The state
+    *
+    * @return ExactMatchSession
+    */
+    public function setState($val)
+    {
+        $this->_propDict["state"] = $val;
+        return $this;
+    }
+    
+    /**
+    * Gets the totalBlockCount
+    *
+    * @return int The totalBlockCount
+    */
+    public function getTotalBlockCount()
+    {
+        if (array_key_exists("totalBlockCount", $this->_propDict)) {
+            return $this->_propDict["totalBlockCount"];
+        } else {
+            return null;
+        }
+    }
+    
+    /**
+    * Sets the totalBlockCount
+    *
+    * @param int $val The totalBlockCount
+    *
+    * @return ExactMatchSession
+    */
+    public function setTotalBlockCount($val)
+    {
+        $this->_propDict["totalBlockCount"] = intval($val);
+        return $this;
+    }
+    
+    /**
+    * Gets the totalJobCount
+    *
+    * @return int The totalJobCount
+    */
+    public function getTotalJobCount()
+    {
+        if (array_key_exists("totalJobCount", $this->_propDict)) {
+            return $this->_propDict["totalJobCount"];
+        } else {
+            return null;
+        }
+    }
+    
+    /**
+    * Sets the totalJobCount
+    *
+    * @param int $val The totalJobCount
+    *
+    * @return ExactMatchSession
+    */
+    public function setTotalJobCount($val)
+    {
+        $this->_propDict["totalJobCount"] = intval($val);
+        return $this;
+    }
+    
+    /**
     * Gets the uploadAgentId
     *
-    * @return string|null The uploadAgentId
+    * @return string The uploadAgentId
     */
     public function getUploadAgentId()
     {
@@ -214,14 +407,45 @@ class ExactMatchSession extends ExactMatchSessionBase
     }
     
     /**
+    * Gets the uploadCompletionDateTime
+    *
+    * @return \DateTime The uploadCompletionDateTime
+    */
+    public function getUploadCompletionDateTime()
+    {
+        if (array_key_exists("uploadCompletionDateTime", $this->_propDict)) {
+            if (is_a($this->_propDict["uploadCompletionDateTime"], "\DateTime")) {
+                return $this->_propDict["uploadCompletionDateTime"];
+            } else {
+                $this->_propDict["uploadCompletionDateTime"] = new \DateTime($this->_propDict["uploadCompletionDateTime"]);
+                return $this->_propDict["uploadCompletionDateTime"];
+            }
+        }
+        return null;
+    }
+    
+    /**
+    * Sets the uploadCompletionDateTime
+    *
+    * @param \DateTime $val The uploadCompletionDateTime
+    *
+    * @return ExactMatchSession
+    */
+    public function setUploadCompletionDateTime($val)
+    {
+        $this->_propDict["uploadCompletionDateTime"] = $val;
+        return $this;
+    }
+    
+    /**
     * Gets the uploadAgent
     *
-    * @return ExactMatchUploadAgent|null The uploadAgent
+    * @return ExactMatchUploadAgent The uploadAgent
     */
     public function getUploadAgent()
     {
         if (array_key_exists("uploadAgent", $this->_propDict)) {
-            if (is_a($this->_propDict["uploadAgent"], "\Beta\Microsoft\Graph\Model\ExactMatchUploadAgent") || is_null($this->_propDict["uploadAgent"])) {
+            if (is_a($this->_propDict["uploadAgent"], "Beta\Microsoft\Graph\Model\ExactMatchUploadAgent")) {
                 return $this->_propDict["uploadAgent"];
             } else {
                 $this->_propDict["uploadAgent"] = new ExactMatchUploadAgent($this->_propDict["uploadAgent"]);

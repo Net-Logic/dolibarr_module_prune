@@ -26,9 +26,9 @@ class UserSettings extends Entity
 {
     /**
     * Gets the contributionToContentDiscoveryAsOrganizationDisabled
-    * Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
+    * Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn't have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
     *
-    * @return bool|null The contributionToContentDiscoveryAsOrganizationDisabled
+    * @return bool The contributionToContentDiscoveryAsOrganizationDisabled
     */
     public function getContributionToContentDiscoveryAsOrganizationDisabled()
     {
@@ -41,7 +41,7 @@ class UserSettings extends Entity
     
     /**
     * Sets the contributionToContentDiscoveryAsOrganizationDisabled
-    * Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
+    * Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn't have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
     *
     * @param bool $val The contributionToContentDiscoveryAsOrganizationDisabled
     *
@@ -55,9 +55,9 @@ class UserSettings extends Entity
     
     /**
     * Gets the contributionToContentDiscoveryDisabled
-    * When set to true, documents in the user's Office Delve are disabled. Users can control this setting in Office Delve.
+    * When set to true, the delegate access to the user's trending API is disabled. When set to true, documents in the user's Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.
     *
-    * @return bool|null The contributionToContentDiscoveryDisabled
+    * @return bool The contributionToContentDiscoveryDisabled
     */
     public function getContributionToContentDiscoveryDisabled()
     {
@@ -70,7 +70,7 @@ class UserSettings extends Entity
     
     /**
     * Sets the contributionToContentDiscoveryDisabled
-    * When set to true, documents in the user's Office Delve are disabled. Users can control this setting in Office Delve.
+    * When set to true, the delegate access to the user's trending API is disabled. When set to true, documents in the user's Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.
     *
     * @param bool $val The contributionToContentDiscoveryDisabled
     *
@@ -86,12 +86,12 @@ class UserSettings extends Entity
     * Gets the shiftPreferences
     * The shift preferences for the user.
     *
-    * @return ShiftPreferences|null The shiftPreferences
+    * @return ShiftPreferences The shiftPreferences
     */
     public function getShiftPreferences()
     {
         if (array_key_exists("shiftPreferences", $this->_propDict)) {
-            if (is_a($this->_propDict["shiftPreferences"], "\Microsoft\Graph\Model\ShiftPreferences") || is_null($this->_propDict["shiftPreferences"])) {
+            if (is_a($this->_propDict["shiftPreferences"], "Microsoft\Graph\Model\ShiftPreferences")) {
                 return $this->_propDict["shiftPreferences"];
             } else {
                 $this->_propDict["shiftPreferences"] = new ShiftPreferences($this->_propDict["shiftPreferences"]);

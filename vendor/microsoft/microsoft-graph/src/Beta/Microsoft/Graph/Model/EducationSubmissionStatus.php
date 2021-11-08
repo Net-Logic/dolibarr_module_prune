@@ -34,5 +34,4 @@ class EducationSubmissionStatus extends Enum
     const RELEASED = "released";
     const RETURNED = "returned";
     const UNKNOWN_FUTURE_VALUE = "unknownFutureValue";
-    const REASSIGNED = "reassigned";
 }

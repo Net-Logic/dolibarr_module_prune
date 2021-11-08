@@ -27,7 +27,7 @@ class ResourceAccess extends Entity
     * Gets the id
     * The unique identifier for one of the oauth2PermissionScopes or appRole instances that the resource application exposes.
     *
-    * @return string|null The id
+    * @return string The id
     */
     public function getId()
     {
@@ -53,9 +53,9 @@ class ResourceAccess extends Entity
     }
     /**
     * Gets the type
-    * Specifies whether the id property references an oauth2PermissionScopes or an appRole. The possible values are: Scope (for OAuth 2.0 permission scopes) or Role (for app roles).
+    * Specifies whether the id property references an oauth2PermissionScopes or an appRole. Possible values are Scope or Role.
     *
-    * @return string|null The type
+    * @return string The type
     */
     public function getType()
     {
@@ -68,7 +68,7 @@ class ResourceAccess extends Entity
 
     /**
     * Sets the type
-    * Specifies whether the id property references an oauth2PermissionScopes or an appRole. The possible values are: Scope (for OAuth 2.0 permission scopes) or Role (for app roles).
+    * Specifies whether the id property references an oauth2PermissionScopes or an appRole. Possible values are Scope or Role.
     *
     * @param string $val The value of the type
     *

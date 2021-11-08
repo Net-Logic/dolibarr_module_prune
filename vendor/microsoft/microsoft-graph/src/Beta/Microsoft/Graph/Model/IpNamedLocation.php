@@ -27,9 +27,9 @@ class IpNamedLocation extends NamedLocation
 
      /** 
      * Gets the ipRanges
-    * List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC596. Required.
+    * List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC596.
      *
-     * @return array|null The ipRanges
+     * @return array The ipRanges
      */
     public function getIpRanges()
     {
@@ -42,7 +42,7 @@ class IpNamedLocation extends NamedLocation
     
     /** 
     * Sets the ipRanges
-    * List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC596. Required.
+    * List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC596.
     *
     * @param IpRange $val The ipRanges
     *
@@ -50,15 +50,15 @@ class IpNamedLocation extends NamedLocation
     */
     public function setIpRanges($val)
     {
-        $this->_propDict["ipRanges"] = $val;
+		$this->_propDict["ipRanges"] = $val;
         return $this;
     }
     
     /**
     * Gets the isTrusted
-    * true if this location is explicitly trusted. Optional. Default value is false.
+    * True if this location is explicitly trusted.
     *
-    * @return bool|null The isTrusted
+    * @return bool The isTrusted
     */
     public function getIsTrusted()
     {
@@ -71,7 +71,7 @@ class IpNamedLocation extends NamedLocation
     
     /**
     * Sets the isTrusted
-    * true if this location is explicitly trusted. Optional. Default value is false.
+    * True if this location is explicitly trusted.
     *
     * @param bool $val The isTrusted
     *

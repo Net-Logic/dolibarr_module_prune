@@ -26,9 +26,8 @@ class TeamsUserActivityUserCounts extends Entity
 {
     /**
     * Gets the calls
-    * The number of users who participated in 1:1 calls.
     *
-    * @return int|null The calls
+    * @return int The calls
     */
     public function getCalls()
     {
@@ -41,7 +40,6 @@ class TeamsUserActivityUserCounts extends Entity
     
     /**
     * Sets the calls
-    * The number of users who participated in 1:1 calls.
     *
     * @param int $val The calls
     *
@@ -55,9 +53,8 @@ class TeamsUserActivityUserCounts extends Entity
     
     /**
     * Gets the meetings
-    * The number of users who participated in online meetings.
     *
-    * @return int|null The meetings
+    * @return int The meetings
     */
     public function getMeetings()
     {
@@ -70,7 +67,6 @@ class TeamsUserActivityUserCounts extends Entity
     
     /**
     * Sets the meetings
-    * The number of users who participated in online meetings.
     *
     * @param int $val The meetings
     *
@@ -84,9 +80,8 @@ class TeamsUserActivityUserCounts extends Entity
     
     /**
     * Gets the otherActions
-    * The number of users who were active but performed other activities than exposed action types offered in the report (sending or replying to channel messages and chat messages, scheduling or participating in 1:1 calls and meetings). Examples actions are when a user changes the Teams status or the Teams status message or opens a Channel Message post but does not reply.
     *
-    * @return int|null The otherActions
+    * @return int The otherActions
     */
     public function getOtherActions()
     {
@@ -99,7 +94,6 @@ class TeamsUserActivityUserCounts extends Entity
     
     /**
     * Sets the otherActions
-    * The number of users who were active but performed other activities than exposed action types offered in the report (sending or replying to channel messages and chat messages, scheduling or participating in 1:1 calls and meetings). Examples actions are when a user changes the Teams status or the Teams status message or opens a Channel Message post but does not reply.
     *
     * @param int $val The otherActions
     *
@@ -113,9 +107,8 @@ class TeamsUserActivityUserCounts extends Entity
     
     /**
     * Gets the privateChatMessages
-    * The number of users who posted message in a private chat.
     *
-    * @return int|null The privateChatMessages
+    * @return int The privateChatMessages
     */
     public function getPrivateChatMessages()
     {
@@ -128,7 +121,6 @@ class TeamsUserActivityUserCounts extends Entity
     
     /**
     * Sets the privateChatMessages
-    * The number of users who posted message in a private chat.
     *
     * @param int $val The privateChatMessages
     *
@@ -142,14 +134,13 @@ class TeamsUserActivityUserCounts extends Entity
     
     /**
     * Gets the reportDate
-    * The date on which the users performed the activities.
     *
-    * @return \DateTime|null The reportDate
+    * @return \DateTime The reportDate
     */
     public function getReportDate()
     {
         if (array_key_exists("reportDate", $this->_propDict)) {
-            if (is_a($this->_propDict["reportDate"], "\DateTime") || is_null($this->_propDict["reportDate"])) {
+            if (is_a($this->_propDict["reportDate"], "\DateTime")) {
                 return $this->_propDict["reportDate"];
             } else {
                 $this->_propDict["reportDate"] = new \DateTime($this->_propDict["reportDate"]);
@@ -161,7 +152,6 @@ class TeamsUserActivityUserCounts extends Entity
     
     /**
     * Sets the reportDate
-    * The date on which the users performed the activities.
     *
     * @param \DateTime $val The reportDate
     *
@@ -175,9 +165,8 @@ class TeamsUserActivityUserCounts extends Entity
     
     /**
     * Gets the reportPeriod
-    * The number of days the report covers.
     *
-    * @return string|null The reportPeriod
+    * @return string The reportPeriod
     */
     public function getReportPeriod()
     {
@@ -190,7 +179,6 @@ class TeamsUserActivityUserCounts extends Entity
     
     /**
     * Sets the reportPeriod
-    * The number of days the report covers.
     *
     * @param string $val The reportPeriod
     *
@@ -204,14 +192,13 @@ class TeamsUserActivityUserCounts extends Entity
     
     /**
     * Gets the reportRefreshDate
-    * The latest date of the content.
     *
-    * @return \DateTime|null The reportRefreshDate
+    * @return \DateTime The reportRefreshDate
     */
     public function getReportRefreshDate()
     {
         if (array_key_exists("reportRefreshDate", $this->_propDict)) {
-            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime") || is_null($this->_propDict["reportRefreshDate"])) {
+            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime")) {
                 return $this->_propDict["reportRefreshDate"];
             } else {
                 $this->_propDict["reportRefreshDate"] = new \DateTime($this->_propDict["reportRefreshDate"]);
@@ -223,7 +210,6 @@ class TeamsUserActivityUserCounts extends Entity
     
     /**
     * Sets the reportRefreshDate
-    * The latest date of the content.
     *
     * @param \DateTime $val The reportRefreshDate
     *
@@ -237,9 +223,8 @@ class TeamsUserActivityUserCounts extends Entity
     
     /**
     * Gets the teamChatMessages
-    * The number of users who posted message in a team chat.
     *
-    * @return int|null The teamChatMessages
+    * @return int The teamChatMessages
     */
     public function getTeamChatMessages()
     {
@@ -252,7 +237,6 @@ class TeamsUserActivityUserCounts extends Entity
     
     /**
     * Sets the teamChatMessages
-    * The number of users who posted message in a team chat.
     *
     * @param int $val The teamChatMessages
     *

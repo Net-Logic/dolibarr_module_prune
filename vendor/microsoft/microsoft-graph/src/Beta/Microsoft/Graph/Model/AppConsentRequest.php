@@ -26,9 +26,8 @@ class AppConsentRequest extends Entity
 {
     /**
     * Gets the appDisplayName
-    * The display name of the app for which consent is requested. Required. Supports $filter (eq only) and $orderby.
     *
-    * @return string|null The appDisplayName
+    * @return string The appDisplayName
     */
     public function getAppDisplayName()
     {
@@ -41,7 +40,6 @@ class AppConsentRequest extends Entity
     
     /**
     * Sets the appDisplayName
-    * The display name of the app for which consent is requested. Required. Supports $filter (eq only) and $orderby.
     *
     * @param string $val The appDisplayName
     *
@@ -55,9 +53,8 @@ class AppConsentRequest extends Entity
     
     /**
     * Gets the appId
-    * The identifier of the application. Required. Supports $filter (eq only) and $orderby.
     *
-    * @return string|null The appId
+    * @return string The appId
     */
     public function getAppId()
     {
@@ -70,7 +67,6 @@ class AppConsentRequest extends Entity
     
     /**
     * Sets the appId
-    * The identifier of the application. Required. Supports $filter (eq only) and $orderby.
     *
     * @param string $val The appId
     *
@@ -84,9 +80,8 @@ class AppConsentRequest extends Entity
     
     /**
     * Gets the consentType
-    * The consent type of the request. Possible values are: Static and Dynamic. These represent static and dynamic permissions, respectively, requested in the consent workflow. Supports $filter (eq only) and $orderby. Required.
     *
-    * @return string|null The consentType
+    * @return string The consentType
     */
     public function getConsentType()
     {
@@ -99,7 +94,6 @@ class AppConsentRequest extends Entity
     
     /**
     * Sets the consentType
-    * The consent type of the request. Possible values are: Static and Dynamic. These represent static and dynamic permissions, respectively, requested in the consent workflow. Supports $filter (eq only) and $orderby. Required.
     *
     * @param string $val The consentType
     *
@@ -114,9 +108,8 @@ class AppConsentRequest extends Entity
 
      /** 
      * Gets the pendingScopes
-    * A list of pending scopes waiting for approval. Required.
      *
-     * @return array|null The pendingScopes
+     * @return array The pendingScopes
      */
     public function getPendingScopes()
     {
@@ -129,7 +122,6 @@ class AppConsentRequest extends Entity
     
     /** 
     * Sets the pendingScopes
-    * A list of pending scopes waiting for approval. Required.
     *
     * @param AppConsentRequestScope $val The pendingScopes
     *
@@ -137,16 +129,15 @@ class AppConsentRequest extends Entity
     */
     public function setPendingScopes($val)
     {
-        $this->_propDict["pendingScopes"] = $val;
+		$this->_propDict["pendingScopes"] = $val;
         return $this;
     }
     
 
      /** 
      * Gets the userConsentRequests
-    * A list of pending user consent requests.
      *
-     * @return array|null The userConsentRequests
+     * @return array The userConsentRequests
      */
     public function getUserConsentRequests()
     {
@@ -159,7 +150,6 @@ class AppConsentRequest extends Entity
     
     /** 
     * Sets the userConsentRequests
-    * A list of pending user consent requests.
     *
     * @param UserConsentRequest $val The userConsentRequests
     *
@@ -167,7 +157,7 @@ class AppConsentRequest extends Entity
     */
     public function setUserConsentRequests($val)
     {
-        $this->_propDict["userConsentRequests"] = $val;
+		$this->_propDict["userConsentRequests"] = $val;
         return $this;
     }
     

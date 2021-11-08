@@ -26,11 +26,9 @@ class IPv4Range extends IpRange
     /**
     * Set the @odata.type since this type is immediately descended from an abstract
     * type that is referenced as the type in an entity.
-    * @param array $propDict The property dictionary
     */
-    public function __construct($propDict = array())
+    public function __construct()
     {
-        parent::__construct($propDict);
         $this->setODataType("#microsoft.graph.iPv4Range");
     }
 
@@ -38,7 +36,7 @@ class IPv4Range extends IpRange
     * Gets the lowerAddress
     * Lower address.
     *
-    * @return string|null The lowerAddress
+    * @return string The lowerAddress
     */
     public function getLowerAddress()
     {
@@ -66,7 +64,7 @@ class IPv4Range extends IpRange
     * Gets the upperAddress
     * Upper address.
     *
-    * @return string|null The upperAddress
+    * @return string The upperAddress
     */
     public function getUpperAddress()
     {

@@ -28,7 +28,7 @@ class RelyingPartyDetailedSummary extends Entity
     * Gets the failedSignInCount
     * Number of failed sign in on Active Directory Federation Service in the period specified.
     *
-    * @return int|null The failedSignInCount
+    * @return int The failedSignInCount
     */
     public function getFailedSignInCount()
     {
@@ -55,14 +55,14 @@ class RelyingPartyDetailedSummary extends Entity
     
     /**
     * Gets the migrationStatus
-    * Indication of whether the application can be moved to Azure AD or require more investigation. Possible values are: ready, needsReview, additionalStepsRequired, unknownFutureValue.
+    * Indication of whether the application can be moved to Azure AD or require more investigation. Possible values are: ready, needsReview, additionalStepsRequired.
     *
-    * @return MigrationStatus|null The migrationStatus
+    * @return MigrationStatus The migrationStatus
     */
     public function getMigrationStatus()
     {
         if (array_key_exists("migrationStatus", $this->_propDict)) {
-            if (is_a($this->_propDict["migrationStatus"], "\Beta\Microsoft\Graph\Model\MigrationStatus") || is_null($this->_propDict["migrationStatus"])) {
+            if (is_a($this->_propDict["migrationStatus"], "Beta\Microsoft\Graph\Model\MigrationStatus")) {
                 return $this->_propDict["migrationStatus"];
             } else {
                 $this->_propDict["migrationStatus"] = new MigrationStatus($this->_propDict["migrationStatus"]);
@@ -74,7 +74,7 @@ class RelyingPartyDetailedSummary extends Entity
     
     /**
     * Sets the migrationStatus
-    * Indication of whether the application can be moved to Azure AD or require more investigation. Possible values are: ready, needsReview, additionalStepsRequired, unknownFutureValue.
+    * Indication of whether the application can be moved to Azure AD or require more investigation. Possible values are: ready, needsReview, additionalStepsRequired.
     *
     * @param MigrationStatus $val The migrationStatus
     *
@@ -89,9 +89,9 @@ class RelyingPartyDetailedSummary extends Entity
 
      /** 
      * Gets the migrationValidationDetails
-    * Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.
+    * Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult. Possible result values are 0, 1, or 2. 0 when the validation check passed, 1 when the validation check failed and 2 when the validation check is a warning.
      *
-     * @return array|null The migrationValidationDetails
+     * @return array The migrationValidationDetails
      */
     public function getMigrationValidationDetails()
     {
@@ -104,7 +104,7 @@ class RelyingPartyDetailedSummary extends Entity
     
     /** 
     * Sets the migrationValidationDetails
-    * Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.
+    * Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult. Possible result values are 0, 1, or 2. 0 when the validation check passed, 1 when the validation check failed and 2 when the validation check is a warning.
     *
     * @param KeyValuePair $val The migrationValidationDetails
     *
@@ -112,7 +112,7 @@ class RelyingPartyDetailedSummary extends Entity
     */
     public function setMigrationValidationDetails($val)
     {
-        $this->_propDict["migrationValidationDetails"] = $val;
+		$this->_propDict["migrationValidationDetails"] = $val;
         return $this;
     }
     
@@ -120,7 +120,7 @@ class RelyingPartyDetailedSummary extends Entity
     * Gets the relyingPartyId
     * This identifier is used to identify the relying party to this Federation Service. It is used when issuing claims to the relying party.
     *
-    * @return string|null The relyingPartyId
+    * @return string The relyingPartyId
     */
     public function getRelyingPartyId()
     {
@@ -149,7 +149,7 @@ class RelyingPartyDetailedSummary extends Entity
     * Gets the relyingPartyName
     * Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to log in.
     *
-    * @return string|null The relyingPartyName
+    * @return string The relyingPartyName
     */
     public function getRelyingPartyName()
     {
@@ -178,7 +178,7 @@ class RelyingPartyDetailedSummary extends Entity
     * Gets the replyUrls
     * Specifies where the relying party expects to receive the token.
     *
-    * @return string|null The replyUrls
+    * @return string The replyUrls
     */
     public function getReplyUrls()
     {
@@ -207,7 +207,7 @@ class RelyingPartyDetailedSummary extends Entity
     * Gets the serviceId
     * Uniquely identifies the Active Directory forest.
     *
-    * @return string|null The serviceId
+    * @return string The serviceId
     */
     public function getServiceId()
     {
@@ -236,7 +236,7 @@ class RelyingPartyDetailedSummary extends Entity
     * Gets the signInSuccessRate
     * Number of successful / (number of successful + number of failed sign ins) on Active Directory Federation Service in the period specified.
     *
-    * @return float|null The signInSuccessRate
+    * @return float The signInSuccessRate
     */
     public function getSignInSuccessRate()
     {
@@ -257,7 +257,7 @@ class RelyingPartyDetailedSummary extends Entity
     */
     public function setSignInSuccessRate($val)
     {
-        $this->_propDict["signInSuccessRate"] = floatval($val);
+        $this->_propDict["signInSuccessRate"] = $val;
         return $this;
     }
     
@@ -265,7 +265,7 @@ class RelyingPartyDetailedSummary extends Entity
     * Gets the successfulSignInCount
     * Number of successful sign ins on Active Directory Federation Service.
     *
-    * @return int|null The successfulSignInCount
+    * @return int The successfulSignInCount
     */
     public function getSuccessfulSignInCount()
     {
@@ -294,7 +294,7 @@ class RelyingPartyDetailedSummary extends Entity
     * Gets the totalSignInCount
     * Number of successful + failed sign ins failed sign ins on Active Directory Federation Service in the period specified.
     *
-    * @return int|null The totalSignInCount
+    * @return int The totalSignInCount
     */
     public function getTotalSignInCount()
     {
@@ -323,7 +323,7 @@ class RelyingPartyDetailedSummary extends Entity
     * Gets the uniqueUserCount
     * Number of unique users that have signed into the application.
     *
-    * @return int|null The uniqueUserCount
+    * @return int The uniqueUserCount
     */
     public function getUniqueUserCount()
     {

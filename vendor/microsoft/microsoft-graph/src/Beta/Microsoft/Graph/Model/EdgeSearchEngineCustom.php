@@ -26,11 +26,9 @@ class EdgeSearchEngineCustom extends EdgeSearchEngineBase
     /**
     * Set the @odata.type since this type is immediately descended from an abstract
     * type that is referenced as the type in an entity.
-    * @param array $propDict The property dictionary
     */
-    public function __construct($propDict = array())
+    public function __construct()
     {
-        parent::__construct($propDict);
         $this->setODataType("#microsoft.graph.edgeSearchEngineCustom");
     }
 
@@ -38,7 +36,7 @@ class EdgeSearchEngineCustom extends EdgeSearchEngineBase
     * Gets the edgeSearchEngineOpenSearchXmlUrl
     * Points to a https link containing the OpenSearch xml file that contains, at minimum, the short name and the URL to the search Engine.
     *
-    * @return string|null The edgeSearchEngineOpenSearchXmlUrl
+    * @return string The edgeSearchEngineOpenSearchXmlUrl
     */
     public function getEdgeSearchEngineOpenSearchXmlUrl()
     {

@@ -26,11 +26,9 @@ class IosWebContentFilterAutoFilter extends IosWebContentFilterBase
     /**
     * Set the @odata.type since this type is immediately descended from an abstract
     * type that is referenced as the type in an entity.
-    * @param array $propDict The property dictionary
     */
-    public function __construct($propDict = array())
+    public function __construct()
     {
-        parent::__construct($propDict);
         $this->setODataType("#microsoft.graph.iosWebContentFilterAutoFilter");
     }
 
@@ -38,7 +36,7 @@ class IosWebContentFilterAutoFilter extends IosWebContentFilterBase
     * Gets the allowedUrls
     * Additional URLs allowed for access
     *
-    * @return string|null The allowedUrls
+    * @return string The allowedUrls
     */
     public function getAllowedUrls()
     {
@@ -66,7 +64,7 @@ class IosWebContentFilterAutoFilter extends IosWebContentFilterBase
     * Gets the blockedUrls
     * Additional URLs blocked for access
     *
-    * @return string|null The blockedUrls
+    * @return string The blockedUrls
     */
     public function getBlockedUrls()
     {

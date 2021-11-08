@@ -28,7 +28,7 @@ class IdentityContainer implements \JsonSerializable
     * The array of properties available
     * to the model
     *
-    * @var array $_propDict
+    * @var array(string => string)
     */
     protected $_propDict;
     
@@ -39,10 +39,7 @@ class IdentityContainer implements \JsonSerializable
     */
     function __construct($propDict = array())
     {
-        if (!is_array($propDict)) {
-           $propDict = array();
-        }
-        $this->_propDict = $propDict;
+		$this->_propDict = $propDict;
     }
 
     /**
@@ -57,14 +54,13 @@ class IdentityContainer implements \JsonSerializable
     
     /**
     * Gets the conditionalAccess
-    * the entry point for the Conditional Access (CA) object model.
     *
-    * @return ConditionalAccessRoot|null The conditionalAccess
+    * @return ConditionalAccessRoot The conditionalAccess
     */
     public function getConditionalAccess()
     {
         if (array_key_exists("conditionalAccess", $this->_propDict)) {
-            if (is_a($this->_propDict["conditionalAccess"], "\Beta\Microsoft\Graph\Model\ConditionalAccessRoot") || is_null($this->_propDict["conditionalAccess"])) {
+            if (is_a($this->_propDict["conditionalAccess"], "Beta\Microsoft\Graph\Model\ConditionalAccessRoot")) {
                 return $this->_propDict["conditionalAccess"];
             } else {
                 $this->_propDict["conditionalAccess"] = new ConditionalAccessRoot($this->_propDict["conditionalAccess"]);
@@ -76,7 +72,6 @@ class IdentityContainer implements \JsonSerializable
     
     /**
     * Sets the conditionalAccess
-    * the entry point for the Conditional Access (CA) object model.
     *
     * @param ConditionalAccessRoot $val The conditionalAccess
     *
@@ -91,9 +86,8 @@ class IdentityContainer implements \JsonSerializable
 
      /** 
      * Gets the apiConnectors
-    * Represents entry point for API connectors.
      *
-     * @return array|null The apiConnectors
+     * @return array The apiConnectors
      */
     public function getApiConnectors()
     {
@@ -106,7 +100,6 @@ class IdentityContainer implements \JsonSerializable
     
     /** 
     * Sets the apiConnectors
-    * Represents entry point for API connectors.
     *
     * @param IdentityApiConnector $val The apiConnectors
     *
@@ -114,16 +107,15 @@ class IdentityContainer implements \JsonSerializable
     */
     public function setApiConnectors($val)
     {
-        $this->_propDict["apiConnectors"] = $val;
+		$this->_propDict["apiConnectors"] = $val;
         return $this;
     }
     
 
      /** 
      * Gets the b2cUserFlows
-    * Represents entry point for B2C identity userflows.
      *
-     * @return array|null The b2cUserFlows
+     * @return array The b2cUserFlows
      */
     public function getB2cUserFlows()
     {
@@ -136,7 +128,6 @@ class IdentityContainer implements \JsonSerializable
     
     /** 
     * Sets the b2cUserFlows
-    * Represents entry point for B2C identity userflows.
     *
     * @param B2cIdentityUserFlow $val The b2cUserFlows
     *
@@ -144,16 +135,15 @@ class IdentityContainer implements \JsonSerializable
     */
     public function setB2cUserFlows($val)
     {
-        $this->_propDict["b2cUserFlows"] = $val;
+		$this->_propDict["b2cUserFlows"] = $val;
         return $this;
     }
     
 
      /** 
      * Gets the b2xUserFlows
-    * Represents entry point for B2X/self-service sign-up identity userflows.
      *
-     * @return array|null The b2xUserFlows
+     * @return array The b2xUserFlows
      */
     public function getB2xUserFlows()
     {
@@ -166,7 +156,6 @@ class IdentityContainer implements \JsonSerializable
     
     /** 
     * Sets the b2xUserFlows
-    * Represents entry point for B2X/self-service sign-up identity userflows.
     *
     * @param B2xIdentityUserFlow $val The b2xUserFlows
     *
@@ -174,46 +163,15 @@ class IdentityContainer implements \JsonSerializable
     */
     public function setB2xUserFlows($val)
     {
-        $this->_propDict["b2xUserFlows"] = $val;
-        return $this;
-    }
-    
-
-     /** 
-     * Gets the identityProviders
-    * Represents entry point for identity provider base.
-     *
-     * @return array|null The identityProviders
-     */
-    public function getIdentityProviders()
-    {
-        if (array_key_exists("identityProviders", $this->_propDict)) {
-           return $this->_propDict["identityProviders"];
-        } else {
-            return null;
-        }
-    }
-    
-    /** 
-    * Sets the identityProviders
-    * Represents entry point for identity provider base.
-    *
-    * @param IdentityProviderBase $val The identityProviders
-    *
-    * @return IdentityContainer
-    */
-    public function setIdentityProviders($val)
-    {
-        $this->_propDict["identityProviders"] = $val;
+		$this->_propDict["b2xUserFlows"] = $val;
         return $this;
     }
     
 
      /** 
      * Gets the userFlowAttributes
-    * Represents entry point for identity userflow attributes.
      *
-     * @return array|null The userFlowAttributes
+     * @return array The userFlowAttributes
      */
     public function getUserFlowAttributes()
     {
@@ -226,7 +184,6 @@ class IdentityContainer implements \JsonSerializable
     
     /** 
     * Sets the userFlowAttributes
-    * Represents entry point for identity userflow attributes.
     *
     * @param IdentityUserFlowAttribute $val The userFlowAttributes
     *
@@ -234,7 +191,7 @@ class IdentityContainer implements \JsonSerializable
     */
     public function setUserFlowAttributes($val)
     {
-        $this->_propDict["userFlowAttributes"] = $val;
+		$this->_propDict["userFlowAttributes"] = $val;
         return $this;
     }
     
@@ -242,7 +199,7 @@ class IdentityContainer implements \JsonSerializable
      /** 
      * Gets the userFlows
      *
-     * @return array|null The userFlows
+     * @return array The userFlows
      */
     public function getUserFlows()
     {
@@ -262,20 +219,19 @@ class IdentityContainer implements \JsonSerializable
     */
     public function setUserFlows($val)
     {
-        $this->_propDict["userFlows"] = $val;
+		$this->_propDict["userFlows"] = $val;
         return $this;
     }
     
     /**
     * Gets the continuousAccessEvaluationPolicy
-    * Represents entry point for continuous access evaluation policy.
     *
-    * @return ContinuousAccessEvaluationPolicy|null The continuousAccessEvaluationPolicy
+    * @return ContinuousAccessEvaluationPolicy The continuousAccessEvaluationPolicy
     */
     public function getContinuousAccessEvaluationPolicy()
     {
         if (array_key_exists("continuousAccessEvaluationPolicy", $this->_propDict)) {
-            if (is_a($this->_propDict["continuousAccessEvaluationPolicy"], "\Beta\Microsoft\Graph\Model\ContinuousAccessEvaluationPolicy") || is_null($this->_propDict["continuousAccessEvaluationPolicy"])) {
+            if (is_a($this->_propDict["continuousAccessEvaluationPolicy"], "Beta\Microsoft\Graph\Model\ContinuousAccessEvaluationPolicy")) {
                 return $this->_propDict["continuousAccessEvaluationPolicy"];
             } else {
                 $this->_propDict["continuousAccessEvaluationPolicy"] = new ContinuousAccessEvaluationPolicy($this->_propDict["continuousAccessEvaluationPolicy"]);
@@ -287,7 +243,6 @@ class IdentityContainer implements \JsonSerializable
     
     /**
     * Sets the continuousAccessEvaluationPolicy
-    * Represents entry point for continuous access evaluation policy.
     *
     * @param ContinuousAccessEvaluationPolicy $val The continuousAccessEvaluationPolicy
     *
@@ -302,22 +257,19 @@ class IdentityContainer implements \JsonSerializable
     /**
     * Gets the ODataType
     *
-    * @return string|null The ODataType
+    * @return string The ODataType
     */
     public function getODataType()
     {
-        if (array_key_exists('@odata.type', $this->_propDict)) {
-            return $this->_propDict["@odata.type"];
-        }
-        return null;
+        return $this->_propDict["@odata.type"];
     }
     
     /**
     * Sets the ODataType
     *
-    * @param string $val The ODataType
+    * @param string The ODataType
     *
-    * @return IdentityContainer
+    * @return Entity
     */
     public function setODataType($val)
     {
@@ -327,7 +279,7 @@ class IdentityContainer implements \JsonSerializable
     
     /**
     * Serializes the object by property array
-    * Manually serialize DateTime into RFC3339 format
+	* Manually serialize DateTime into RFC3339 format
     *
     * @return array The list of properties
     */

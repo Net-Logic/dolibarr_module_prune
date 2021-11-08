@@ -28,15 +28,15 @@ class TermsExpiration extends Entity
     * Gets the frequency
     * Represents the frequency at which the terms will expire, after its first expiration as set in startDateTime. The value is represented in ISO 8601 format for durations. For example, PT1M represents a time period of 1 month.
     *
-    * @return \DateInterval|null The frequency
+    * @return Duration The frequency
     */
     public function getFrequency()
     {
         if (array_key_exists("frequency", $this->_propDict)) {
-            if (is_a($this->_propDict["frequency"], "\DateInterval") || is_null($this->_propDict["frequency"])) {
+            if (is_a($this->_propDict["frequency"], "Microsoft\Graph\Model\Duration")) {
                 return $this->_propDict["frequency"];
             } else {
-                $this->_propDict["frequency"] = new \DateInterval($this->_propDict["frequency"]);
+                $this->_propDict["frequency"] = new Duration($this->_propDict["frequency"]);
                 return $this->_propDict["frequency"];
             }
         }
@@ -47,7 +47,7 @@ class TermsExpiration extends Entity
     * Sets the frequency
     * Represents the frequency at which the terms will expire, after its first expiration as set in startDateTime. The value is represented in ISO 8601 format for durations. For example, PT1M represents a time period of 1 month.
     *
-    * @param \DateInterval $val The value to assign to the frequency
+    * @param Duration $val The value to assign to the frequency
     *
     * @return TermsExpiration The TermsExpiration
     */
@@ -61,12 +61,12 @@ class TermsExpiration extends Entity
     * Gets the startDateTime
     * The DateTime when the agreement is set to expire for all users. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     *
-    * @return \DateTime|null The startDateTime
+    * @return \DateTime The startDateTime
     */
     public function getStartDateTime()
     {
         if (array_key_exists("startDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["startDateTime"], "\DateTime") || is_null($this->_propDict["startDateTime"])) {
+            if (is_a($this->_propDict["startDateTime"], "\DateTime")) {
                 return $this->_propDict["startDateTime"];
             } else {
                 $this->_propDict["startDateTime"] = new \DateTime($this->_propDict["startDateTime"]);

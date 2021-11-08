@@ -25,9 +25,8 @@ class OcrSettings extends \Beta\Microsoft\Graph\Model\Entity
 {
     /**
     * Gets the isEnabled
-    * Indicates whether or not OCR is enabled for the case.
     *
-    * @return bool|null The isEnabled
+    * @return bool The isEnabled
     */
     public function getIsEnabled()
     {
@@ -40,7 +39,6 @@ class OcrSettings extends \Beta\Microsoft\Graph\Model\Entity
 
     /**
     * Sets the isEnabled
-    * Indicates whether or not OCR is enabled for the case.
     *
     * @param bool $val The value of the isEnabled
     *
@@ -53,9 +51,8 @@ class OcrSettings extends \Beta\Microsoft\Graph\Model\Entity
     }
     /**
     * Gets the maxImageSize
-    * Maximum image size that will be processed in KB).
     *
-    * @return int|null The maxImageSize
+    * @return int The maxImageSize
     */
     public function getMaxImageSize()
     {
@@ -68,7 +65,6 @@ class OcrSettings extends \Beta\Microsoft\Graph\Model\Entity
 
     /**
     * Sets the maxImageSize
-    * Maximum image size that will be processed in KB).
     *
     * @param int $val The value of the maxImageSize
     *
@@ -82,17 +78,16 @@ class OcrSettings extends \Beta\Microsoft\Graph\Model\Entity
 
     /**
     * Gets the timeout
-    * The timeout duration for the OCR engine. A longer timeout may increase success of OCR, but may add to the total processing time.
     *
-    * @return \DateInterval|null The timeout
+    * @return Beta\Microsoft\Graph\Model\Duration The timeout
     */
     public function getTimeout()
     {
         if (array_key_exists("timeout", $this->_propDict)) {
-            if (is_a($this->_propDict["timeout"], "\DateInterval") || is_null($this->_propDict["timeout"])) {
+            if (is_a($this->_propDict["timeout"], "Beta\Microsoft\Graph\Model\Duration")) {
                 return $this->_propDict["timeout"];
             } else {
-                $this->_propDict["timeout"] = new \DateInterval($this->_propDict["timeout"]);
+                $this->_propDict["timeout"] = new Beta\Microsoft\Graph\Model\Duration($this->_propDict["timeout"]);
                 return $this->_propDict["timeout"];
             }
         }
@@ -101,9 +96,8 @@ class OcrSettings extends \Beta\Microsoft\Graph\Model\Entity
 
     /**
     * Sets the timeout
-    * The timeout duration for the OCR engine. A longer timeout may increase success of OCR, but may add to the total processing time.
     *
-    * @param \DateInterval $val The value to assign to the timeout
+    * @param Beta\Microsoft\Graph\Model\Duration $val The value to assign to the timeout
     *
     * @return OcrSettings The OcrSettings
     */

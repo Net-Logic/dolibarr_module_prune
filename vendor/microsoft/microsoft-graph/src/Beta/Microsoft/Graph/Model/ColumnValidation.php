@@ -25,9 +25,8 @@ class ColumnValidation extends Entity
 {
     /**
     * Gets the defaultLanguage
-    * Default BCP 47 language tag for the description.
     *
-    * @return string|null The defaultLanguage
+    * @return string The defaultLanguage
     */
     public function getDefaultLanguage()
     {
@@ -40,7 +39,6 @@ class ColumnValidation extends Entity
 
     /**
     * Sets the defaultLanguage
-    * Default BCP 47 language tag for the description.
     *
     * @param string $val The value of the defaultLanguage
     *
@@ -54,14 +52,13 @@ class ColumnValidation extends Entity
 
     /**
     * Gets the descriptions
-    * Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
     *
-    * @return DisplayNameLocalization|null The descriptions
+    * @return DisplayNameLocalization The descriptions
     */
     public function getDescriptions()
     {
         if (array_key_exists("descriptions", $this->_propDict)) {
-            if (is_a($this->_propDict["descriptions"], "\Beta\Microsoft\Graph\Model\DisplayNameLocalization") || is_null($this->_propDict["descriptions"])) {
+            if (is_a($this->_propDict["descriptions"], "Beta\Microsoft\Graph\Model\DisplayNameLocalization")) {
                 return $this->_propDict["descriptions"];
             } else {
                 $this->_propDict["descriptions"] = new DisplayNameLocalization($this->_propDict["descriptions"]);
@@ -73,7 +70,6 @@ class ColumnValidation extends Entity
 
     /**
     * Sets the descriptions
-    * Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
     *
     * @param DisplayNameLocalization $val The value to assign to the descriptions
     *
@@ -86,9 +82,8 @@ class ColumnValidation extends Entity
     }
     /**
     * Gets the formula
-    * The formula to validate column value. For examples, see Examples of common formulas in lists.
     *
-    * @return string|null The formula
+    * @return string The formula
     */
     public function getFormula()
     {
@@ -101,7 +96,6 @@ class ColumnValidation extends Entity
 
     /**
     * Sets the formula
-    * The formula to validate column value. For examples, see Examples of common formulas in lists.
     *
     * @param string $val The value of the formula
     *

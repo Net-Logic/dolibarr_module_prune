@@ -26,9 +26,9 @@ class UserSettings extends Entity
 {
     /**
     * Gets the contributionToContentDiscoveryAsOrganizationDisabled
-    * Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
+    * Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn't have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
     *
-    * @return bool|null The contributionToContentDiscoveryAsOrganizationDisabled
+    * @return bool The contributionToContentDiscoveryAsOrganizationDisabled
     */
     public function getContributionToContentDiscoveryAsOrganizationDisabled()
     {
@@ -41,7 +41,7 @@ class UserSettings extends Entity
     
     /**
     * Sets the contributionToContentDiscoveryAsOrganizationDisabled
-    * Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
+    * Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn't have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
     *
     * @param bool $val The contributionToContentDiscoveryAsOrganizationDisabled
     *
@@ -55,9 +55,9 @@ class UserSettings extends Entity
     
     /**
     * Gets the contributionToContentDiscoveryDisabled
-    * When set to true, documents in the user's Office Delve are disabled. Users can control this setting in Office Delve.
+    * When set to true, the delegate access to the user's trending API is disabled. When set to true, documents in the user's Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.
     *
-    * @return bool|null The contributionToContentDiscoveryDisabled
+    * @return bool The contributionToContentDiscoveryDisabled
     */
     public function getContributionToContentDiscoveryDisabled()
     {
@@ -70,7 +70,7 @@ class UserSettings extends Entity
     
     /**
     * Sets the contributionToContentDiscoveryDisabled
-    * When set to true, documents in the user's Office Delve are disabled. Users can control this setting in Office Delve.
+    * When set to true, the delegate access to the user's trending API is disabled. When set to true, documents in the user's Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.
     *
     * @param bool $val The contributionToContentDiscoveryDisabled
     *
@@ -83,48 +83,15 @@ class UserSettings extends Entity
     }
     
     /**
-    * Gets the itemInsights
-    * The user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
-    *
-    * @return UserInsightsSettings|null The itemInsights
-    */
-    public function getItemInsights()
-    {
-        if (array_key_exists("itemInsights", $this->_propDict)) {
-            if (is_a($this->_propDict["itemInsights"], "\Beta\Microsoft\Graph\Model\UserInsightsSettings") || is_null($this->_propDict["itemInsights"])) {
-                return $this->_propDict["itemInsights"];
-            } else {
-                $this->_propDict["itemInsights"] = new UserInsightsSettings($this->_propDict["itemInsights"]);
-                return $this->_propDict["itemInsights"];
-            }
-        }
-        return null;
-    }
-    
-    /**
-    * Sets the itemInsights
-    * The user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
-    *
-    * @param UserInsightsSettings $val The itemInsights
-    *
-    * @return UserSettings
-    */
-    public function setItemInsights($val)
-    {
-        $this->_propDict["itemInsights"] = $val;
-        return $this;
-    }
-    
-    /**
     * Gets the regionalAndLanguageSettings
     * The user's preferences for languages, regional locale and date/time formatting.
     *
-    * @return RegionalAndLanguageSettings|null The regionalAndLanguageSettings
+    * @return RegionalAndLanguageSettings The regionalAndLanguageSettings
     */
     public function getRegionalAndLanguageSettings()
     {
         if (array_key_exists("regionalAndLanguageSettings", $this->_propDict)) {
-            if (is_a($this->_propDict["regionalAndLanguageSettings"], "\Beta\Microsoft\Graph\Model\RegionalAndLanguageSettings") || is_null($this->_propDict["regionalAndLanguageSettings"])) {
+            if (is_a($this->_propDict["regionalAndLanguageSettings"], "Beta\Microsoft\Graph\Model\RegionalAndLanguageSettings")) {
                 return $this->_propDict["regionalAndLanguageSettings"];
             } else {
                 $this->_propDict["regionalAndLanguageSettings"] = new RegionalAndLanguageSettings($this->_propDict["regionalAndLanguageSettings"]);
@@ -152,12 +119,12 @@ class UserSettings extends Entity
     * Gets the shiftPreferences
     * The shift preferences for the user.
     *
-    * @return ShiftPreferences|null The shiftPreferences
+    * @return ShiftPreferences The shiftPreferences
     */
     public function getShiftPreferences()
     {
         if (array_key_exists("shiftPreferences", $this->_propDict)) {
-            if (is_a($this->_propDict["shiftPreferences"], "\Beta\Microsoft\Graph\Model\ShiftPreferences") || is_null($this->_propDict["shiftPreferences"])) {
+            if (is_a($this->_propDict["shiftPreferences"], "Beta\Microsoft\Graph\Model\ShiftPreferences")) {
                 return $this->_propDict["shiftPreferences"];
             } else {
                 $this->_propDict["shiftPreferences"] = new ShiftPreferences($this->_propDict["shiftPreferences"]);

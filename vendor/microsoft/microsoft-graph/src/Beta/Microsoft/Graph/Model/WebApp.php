@@ -26,9 +26,9 @@ class WebApp extends MobileApp
 {
     /**
     * Gets the appUrl
-    * The web app URL. This property cannot be PATCHed.
+    * The web app URL.
     *
-    * @return string|null The appUrl
+    * @return string The appUrl
     */
     public function getAppUrl()
     {
@@ -41,7 +41,7 @@ class WebApp extends MobileApp
     
     /**
     * Sets the appUrl
-    * The web app URL. This property cannot be PATCHed.
+    * The web app URL.
     *
     * @param string $val The appUrl
     *
@@ -57,7 +57,7 @@ class WebApp extends MobileApp
     * Gets the useManagedBrowser
     * Whether or not to use managed browser. This property is only applicable for Android and IOS.
     *
-    * @return bool|null The useManagedBrowser
+    * @return bool The useManagedBrowser
     */
     public function getUseManagedBrowser()
     {
