@@ -27,7 +27,7 @@ class Windows10NetworkProxyServer extends Entity
     * Gets the address
     * Address to the proxy server. Specify an address in the format [':']
     *
-    * @return string|null The address
+    * @return string The address
     */
     public function getAddress()
     {
@@ -55,7 +55,7 @@ class Windows10NetworkProxyServer extends Entity
     * Gets the exceptions
     * Addresses that should not use the proxy server. The system will not use the proxy server for addresses beginning with what is specified in this node.
     *
-    * @return string|null The exceptions
+    * @return string The exceptions
     */
     public function getExceptions()
     {
@@ -83,7 +83,7 @@ class Windows10NetworkProxyServer extends Entity
     * Gets the useForLocalAddresses
     * Specifies whether the proxy server should be used for local (intranet) addresses.
     *
-    * @return bool|null The useForLocalAddresses
+    * @return bool The useForLocalAddresses
     */
     public function getUseForLocalAddresses()
     {

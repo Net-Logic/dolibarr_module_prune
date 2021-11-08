@@ -26,9 +26,8 @@ class TeamsDeviceUsageDistributionUserCounts extends Entity
 {
     /**
     * Gets the androidPhone
-    * The number of users who were active on the Teams mobile client for Android.
     *
-    * @return int|null The androidPhone
+    * @return int The androidPhone
     */
     public function getAndroidPhone()
     {
@@ -41,7 +40,6 @@ class TeamsDeviceUsageDistributionUserCounts extends Entity
     
     /**
     * Sets the androidPhone
-    * The number of users who were active on the Teams mobile client for Android.
     *
     * @param int $val The androidPhone
     *
@@ -54,39 +52,9 @@ class TeamsDeviceUsageDistributionUserCounts extends Entity
     }
     
     /**
-    * Gets the chromeOS
-    * The number of users who were active in the Teams desktop client on a ChromeOS computer.
-    *
-    * @return int|null The chromeOS
-    */
-    public function getChromeOS()
-    {
-        if (array_key_exists("chromeOS", $this->_propDict)) {
-            return $this->_propDict["chromeOS"];
-        } else {
-            return null;
-        }
-    }
-    
-    /**
-    * Sets the chromeOS
-    * The number of users who were active in the Teams desktop client on a ChromeOS computer.
-    *
-    * @param int $val The chromeOS
-    *
-    * @return TeamsDeviceUsageDistributionUserCounts
-    */
-    public function setChromeOS($val)
-    {
-        $this->_propDict["chromeOS"] = intval($val);
-        return $this;
-    }
-    
-    /**
     * Gets the ios
-    * The number of users who were active on the Teams mobile client for iOS.
     *
-    * @return int|null The ios
+    * @return int The ios
     */
     public function getIos()
     {
@@ -99,7 +67,6 @@ class TeamsDeviceUsageDistributionUserCounts extends Entity
     
     /**
     * Sets the ios
-    * The number of users who were active on the Teams mobile client for iOS.
     *
     * @param int $val The ios
     *
@@ -112,39 +79,9 @@ class TeamsDeviceUsageDistributionUserCounts extends Entity
     }
     
     /**
-    * Gets the linux
-    * The number of users who were active in the Teams desktop client on a Linux computer.
-    *
-    * @return int|null The linux
-    */
-    public function getLinux()
-    {
-        if (array_key_exists("linux", $this->_propDict)) {
-            return $this->_propDict["linux"];
-        } else {
-            return null;
-        }
-    }
-    
-    /**
-    * Sets the linux
-    * The number of users who were active in the Teams desktop client on a Linux computer.
-    *
-    * @param int $val The linux
-    *
-    * @return TeamsDeviceUsageDistributionUserCounts
-    */
-    public function setLinux($val)
-    {
-        $this->_propDict["linux"] = intval($val);
-        return $this;
-    }
-    
-    /**
     * Gets the mac
-    * The number of users who were active in the Teams desktop client on a macOS computer.
     *
-    * @return int|null The mac
+    * @return int The mac
     */
     public function getMac()
     {
@@ -157,7 +94,6 @@ class TeamsDeviceUsageDistributionUserCounts extends Entity
     
     /**
     * Sets the mac
-    * The number of users who were active in the Teams desktop client on a macOS computer.
     *
     * @param int $val The mac
     *
@@ -171,9 +107,8 @@ class TeamsDeviceUsageDistributionUserCounts extends Entity
     
     /**
     * Gets the reportPeriod
-    * The number of days the report covers.
     *
-    * @return string|null The reportPeriod
+    * @return string The reportPeriod
     */
     public function getReportPeriod()
     {
@@ -186,7 +121,6 @@ class TeamsDeviceUsageDistributionUserCounts extends Entity
     
     /**
     * Sets the reportPeriod
-    * The number of days the report covers.
     *
     * @param string $val The reportPeriod
     *
@@ -200,14 +134,13 @@ class TeamsDeviceUsageDistributionUserCounts extends Entity
     
     /**
     * Gets the reportRefreshDate
-    * The latest date of the content.
     *
-    * @return \DateTime|null The reportRefreshDate
+    * @return \DateTime The reportRefreshDate
     */
     public function getReportRefreshDate()
     {
         if (array_key_exists("reportRefreshDate", $this->_propDict)) {
-            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime") || is_null($this->_propDict["reportRefreshDate"])) {
+            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime")) {
                 return $this->_propDict["reportRefreshDate"];
             } else {
                 $this->_propDict["reportRefreshDate"] = new \DateTime($this->_propDict["reportRefreshDate"]);
@@ -219,7 +152,6 @@ class TeamsDeviceUsageDistributionUserCounts extends Entity
     
     /**
     * Sets the reportRefreshDate
-    * The latest date of the content.
     *
     * @param \DateTime $val The reportRefreshDate
     *
@@ -233,9 +165,8 @@ class TeamsDeviceUsageDistributionUserCounts extends Entity
     
     /**
     * Gets the web
-    * The number of users who were active in the Teams web client on devices.
     *
-    * @return int|null The web
+    * @return int The web
     */
     public function getWeb()
     {
@@ -248,7 +179,6 @@ class TeamsDeviceUsageDistributionUserCounts extends Entity
     
     /**
     * Sets the web
-    * The number of users who were active in the Teams web client on devices.
     *
     * @param int $val The web
     *
@@ -262,9 +192,8 @@ class TeamsDeviceUsageDistributionUserCounts extends Entity
     
     /**
     * Gets the windows
-    * The number of users who were active in the Teams desktop client on a Windows-based computer.
     *
-    * @return int|null The windows
+    * @return int The windows
     */
     public function getWindows()
     {
@@ -277,7 +206,6 @@ class TeamsDeviceUsageDistributionUserCounts extends Entity
     
     /**
     * Sets the windows
-    * The number of users who were active in the Teams desktop client on a Windows-based computer.
     *
     * @param int $val The windows
     *
@@ -291,9 +219,8 @@ class TeamsDeviceUsageDistributionUserCounts extends Entity
     
     /**
     * Gets the windowsPhone
-    * The number of users who were active on the Teams mobile client for Windows phone.
     *
-    * @return int|null The windowsPhone
+    * @return int The windowsPhone
     */
     public function getWindowsPhone()
     {
@@ -306,7 +233,6 @@ class TeamsDeviceUsageDistributionUserCounts extends Entity
     
     /**
     * Sets the windowsPhone
-    * The number of users who were active on the Teams mobile client for Windows phone.
     *
     * @param int $val The windowsPhone
     *

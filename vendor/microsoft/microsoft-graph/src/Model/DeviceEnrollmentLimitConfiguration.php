@@ -28,7 +28,7 @@ class DeviceEnrollmentLimitConfiguration extends DeviceEnrollmentConfiguration
     * Gets the limit
     * The maximum number of devices that a user can enroll
     *
-    * @return int|null The limit
+    * @return int The limit
     */
     public function getLimit()
     {

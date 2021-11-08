@@ -28,7 +28,7 @@ class B2cAuthenticationMethodsPolicy extends Entity
     * Gets the isEmailPasswordAuthenticationEnabled
     * The tenant admin can configure local accounts using email if the email and password authentication method is enabled.
     *
-    * @return bool|null The isEmailPasswordAuthenticationEnabled
+    * @return bool The isEmailPasswordAuthenticationEnabled
     */
     public function getIsEmailPasswordAuthenticationEnabled()
     {
@@ -55,9 +55,8 @@ class B2cAuthenticationMethodsPolicy extends Entity
     
     /**
     * Gets the isPhoneOneTimePasswordAuthenticationEnabled
-    * The tenant admin can configure local accounts using phone number if the phone number and one-time password authentication method is enabled.
     *
-    * @return bool|null The isPhoneOneTimePasswordAuthenticationEnabled
+    * @return bool The isPhoneOneTimePasswordAuthenticationEnabled
     */
     public function getIsPhoneOneTimePasswordAuthenticationEnabled()
     {
@@ -70,7 +69,6 @@ class B2cAuthenticationMethodsPolicy extends Entity
     
     /**
     * Sets the isPhoneOneTimePasswordAuthenticationEnabled
-    * The tenant admin can configure local accounts using phone number if the phone number and one-time password authentication method is enabled.
     *
     * @param bool $val The isPhoneOneTimePasswordAuthenticationEnabled
     *
@@ -86,7 +84,7 @@ class B2cAuthenticationMethodsPolicy extends Entity
     * Gets the isUserNameAuthenticationEnabled
     * The tenant admin can configure local accounts using username if the username and password authentication method is enabled.
     *
-    * @return bool|null The isUserNameAuthenticationEnabled
+    * @return bool The isUserNameAuthenticationEnabled
     */
     public function getIsUserNameAuthenticationEnabled()
     {

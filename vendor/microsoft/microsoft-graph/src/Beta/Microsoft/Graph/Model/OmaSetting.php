@@ -27,7 +27,7 @@ class OmaSetting extends Entity
     * Gets the description
     * Description.
     *
-    * @return string|null The description
+    * @return string The description
     */
     public function getDescription()
     {
@@ -55,7 +55,7 @@ class OmaSetting extends Entity
     * Gets the displayName
     * Display Name.
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -81,9 +81,9 @@ class OmaSetting extends Entity
     }
     /**
     * Gets the isEncrypted
-    * Indicates whether the value field is encrypted. This property is read-only.
+    * Indicates whether the value field is encrypted.
     *
-    * @return bool|null The isEncrypted
+    * @return bool The isEncrypted
     */
     public function getIsEncrypted()
     {
@@ -96,7 +96,7 @@ class OmaSetting extends Entity
 
     /**
     * Sets the isEncrypted
-    * Indicates whether the value field is encrypted. This property is read-only.
+    * Indicates whether the value field is encrypted.
     *
     * @param bool $val The value of the isEncrypted
     *
@@ -111,7 +111,7 @@ class OmaSetting extends Entity
     * Gets the omaUri
     * OMA.
     *
-    * @return string|null The omaUri
+    * @return string The omaUri
     */
     public function getOmaUri()
     {
@@ -133,34 +133,6 @@ class OmaSetting extends Entity
     public function setOmaUri($val)
     {
         $this->_propDict["omaUri"] = $val;
-        return $this;
-    }
-    /**
-    * Gets the secretReferenceValueId
-    * ReferenceId for looking up secret for decryption. This property is read-only.
-    *
-    * @return string|null The secretReferenceValueId
-    */
-    public function getSecretReferenceValueId()
-    {
-        if (array_key_exists("secretReferenceValueId", $this->_propDict)) {
-            return $this->_propDict["secretReferenceValueId"];
-        } else {
-            return null;
-        }
-    }
-
-    /**
-    * Sets the secretReferenceValueId
-    * ReferenceId for looking up secret for decryption. This property is read-only.
-    *
-    * @param string $val The value of the secretReferenceValueId
-    *
-    * @return OmaSetting
-    */
-    public function setSecretReferenceValueId($val)
-    {
-        $this->_propDict["secretReferenceValueId"] = $val;
         return $this;
     }
 }

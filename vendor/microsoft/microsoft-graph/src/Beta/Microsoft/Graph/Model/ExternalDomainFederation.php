@@ -26,11 +26,9 @@ class ExternalDomainFederation extends IdentitySource
     /**
     * Set the @odata.type since this type is immediately descended from an abstract
     * type that is referenced as the type in an entity.
-    * @param array $propDict The property dictionary
     */
-    public function __construct($propDict = array())
+    public function __construct()
     {
-        parent::__construct($propDict);
         $this->setODataType("#microsoft.graph.externalDomainFederation");
     }
 
@@ -38,7 +36,7 @@ class ExternalDomainFederation extends IdentitySource
     * Gets the displayName
     * The name of the identity source, typically also the domain name. Read only.
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -66,7 +64,7 @@ class ExternalDomainFederation extends IdentitySource
     * Gets the domainName
     * The domain name. Read only.
     *
-    * @return string|null The domainName
+    * @return string The domainName
     */
     public function getDomainName()
     {
@@ -94,7 +92,7 @@ class ExternalDomainFederation extends IdentitySource
     * Gets the issuerUri
     * The issuerURI of the incoming federation. Read only.
     *
-    * @return string|null The issuerUri
+    * @return string The issuerUri
     */
     public function getIssuerUri()
     {

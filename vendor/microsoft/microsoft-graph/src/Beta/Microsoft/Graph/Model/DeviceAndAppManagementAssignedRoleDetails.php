@@ -25,9 +25,9 @@ class DeviceAndAppManagementAssignedRoleDetails extends Entity
 {
     /**
     * Gets the roleAssignmentIds
-    * Role Assignment IDs for the specifc Role Assignments assigned to a user. This property is read-only.
+    * Role Assignment IDs for the specifc Role Assignments assigned to a user.
     *
-    * @return string|null The roleAssignmentIds
+    * @return string The roleAssignmentIds
     */
     public function getRoleAssignmentIds()
     {
@@ -40,7 +40,7 @@ class DeviceAndAppManagementAssignedRoleDetails extends Entity
 
     /**
     * Sets the roleAssignmentIds
-    * Role Assignment IDs for the specifc Role Assignments assigned to a user. This property is read-only.
+    * Role Assignment IDs for the specifc Role Assignments assigned to a user.
     *
     * @param string $val The value of the roleAssignmentIds
     *
@@ -53,9 +53,9 @@ class DeviceAndAppManagementAssignedRoleDetails extends Entity
     }
     /**
     * Gets the roleDefinitionIds
-    * Role Definition IDs for the specifc Role Definitions assigned to a user. This property is read-only.
+    * Role Definition IDs for the specifc Role Definitions assigned to a user.
     *
-    * @return string|null The roleDefinitionIds
+    * @return string The roleDefinitionIds
     */
     public function getRoleDefinitionIds()
     {
@@ -68,7 +68,7 @@ class DeviceAndAppManagementAssignedRoleDetails extends Entity
 
     /**
     * Sets the roleDefinitionIds
-    * Role Definition IDs for the specifc Role Definitions assigned to a user. This property is read-only.
+    * Role Definition IDs for the specifc Role Definitions assigned to a user.
     *
     * @param string $val The value of the roleDefinitionIds
     *

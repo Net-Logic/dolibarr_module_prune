@@ -26,11 +26,9 @@ class DeviceManagementSettingProfileConstraint extends DeviceManagementConstrain
     /**
     * Set the @odata.type since this type is immediately descended from an abstract
     * type that is referenced as the type in an entity.
-    * @param array $propDict The property dictionary
     */
-    public function __construct($propDict = array())
+    public function __construct()
     {
-        parent::__construct($propDict);
         $this->setODataType("#microsoft.graph.deviceManagementSettingProfileConstraint");
     }
 
@@ -38,7 +36,7 @@ class DeviceManagementSettingProfileConstraint extends DeviceManagementConstrain
     * Gets the source
     * The source of the entity
     *
-    * @return string|null The source
+    * @return string The source
     */
     public function getSource()
     {
@@ -66,7 +64,7 @@ class DeviceManagementSettingProfileConstraint extends DeviceManagementConstrain
     * Gets the types
     * A collection of types this entity carries
     *
-    * @return string|null The types
+    * @return string The types
     */
     public function getTypes()
     {

@@ -25,39 +25,9 @@ namespace Beta\Microsoft\Graph\Model;
 class UnifiedRoleManagementPolicyNotificationRule extends UnifiedRoleManagementPolicyRule
 {
     /**
-    * Gets the isDefaultRecipientsEnabled
-    * Whether default recipient is receiving the email or not.
-    *
-    * @return bool|null The isDefaultRecipientsEnabled
-    */
-    public function getIsDefaultRecipientsEnabled()
-    {
-        if (array_key_exists("isDefaultRecipientsEnabled", $this->_propDict)) {
-            return $this->_propDict["isDefaultRecipientsEnabled"];
-        } else {
-            return null;
-        }
-    }
-    
-    /**
-    * Sets the isDefaultRecipientsEnabled
-    * Whether default recipient is receiving the email or not.
-    *
-    * @param bool $val The isDefaultRecipientsEnabled
-    *
-    * @return UnifiedRoleManagementPolicyNotificationRule
-    */
-    public function setIsDefaultRecipientsEnabled($val)
-    {
-        $this->_propDict["isDefaultRecipientsEnabled"] = boolval($val);
-        return $this;
-    }
-    
-    /**
     * Gets the notificationLevel
-    * The level of notification. One of None, Critical, All.
     *
-    * @return string|null The notificationLevel
+    * @return string The notificationLevel
     */
     public function getNotificationLevel()
     {
@@ -70,7 +40,6 @@ class UnifiedRoleManagementPolicyNotificationRule extends UnifiedRoleManagementP
     
     /**
     * Sets the notificationLevel
-    * The level of notification. One of None, Critical, All.
     *
     * @param string $val The notificationLevel
     *
@@ -84,9 +53,8 @@ class UnifiedRoleManagementPolicyNotificationRule extends UnifiedRoleManagementP
     
     /**
     * Gets the notificationRecipients
-    * The list of notification recepients like email.
     *
-    * @return string|null The notificationRecipients
+    * @return string The notificationRecipients
     */
     public function getNotificationRecipients()
     {
@@ -99,7 +67,6 @@ class UnifiedRoleManagementPolicyNotificationRule extends UnifiedRoleManagementP
     
     /**
     * Sets the notificationRecipients
-    * The list of notification recepients like email.
     *
     * @param string $val The notificationRecipients
     *
@@ -113,9 +80,8 @@ class UnifiedRoleManagementPolicyNotificationRule extends UnifiedRoleManagementP
     
     /**
     * Gets the notificationType
-    * The type of notification. One of Email.
     *
-    * @return string|null The notificationType
+    * @return string The notificationType
     */
     public function getNotificationType()
     {
@@ -128,7 +94,6 @@ class UnifiedRoleManagementPolicyNotificationRule extends UnifiedRoleManagementP
     
     /**
     * Sets the notificationType
-    * The type of notification. One of Email.
     *
     * @param string $val The notificationType
     *
@@ -142,9 +107,8 @@ class UnifiedRoleManagementPolicyNotificationRule extends UnifiedRoleManagementP
     
     /**
     * Gets the recipientType
-    * The type of recipient. One of Requestor, Approver, Admin.
     *
-    * @return string|null The recipientType
+    * @return string The recipientType
     */
     public function getRecipientType()
     {
@@ -157,7 +121,6 @@ class UnifiedRoleManagementPolicyNotificationRule extends UnifiedRoleManagementP
     
     /**
     * Sets the recipientType
-    * The type of recipient. One of Requestor, Approver, Admin.
     *
     * @param string $val The recipientType
     *

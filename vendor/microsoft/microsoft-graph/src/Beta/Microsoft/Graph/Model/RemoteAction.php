@@ -52,5 +52,4 @@ class RemoteAction extends Enum
     const ROTATE_FILE_VAULT_KEY = "rotateFileVaultKey";
     const GET_FILE_VAULT_KEY = "getFileVaultKey";
     const SET_DEVICE_NAME = "setDeviceName";
-    const ACTIVATE_DEVICE_ESIM = "activateDeviceEsim";
 }

@@ -37,5 +37,4 @@ class TeamsAsyncOperationType extends Enum
     const UNKNOWN_FUTURE_VALUE = "unknownFutureValue";
     const TEAMIFY_GROUP = "teamifyGroup";
     const CREATE_CHANNEL = "createChannel";
-    const CREATE_CHAT = "createChat";
 }

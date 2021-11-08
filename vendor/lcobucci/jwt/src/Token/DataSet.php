@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 
 namespace Lcobucci\JWT\Token;
 
@@ -8,38 +7,49 @@ use function array_key_exists;
 final class DataSet
 {
     /** @var array<string, mixed> */
-    private array $data;
-    private string $encoded;
+    private $data;
+    /** @var string */
+    private $encoded;
 
-    /** @param mixed[] $data */
-    public function __construct(array $data, string $encoded)
+    /**
+     * @param array<string, mixed> $data
+     * @param string               $encoded
+     */
+    public function __construct(array $data, $encoded)
     {
         $this->data    = $data;
         $this->encoded = $encoded;
     }
 
     /**
+     * @param string     $name
      * @param mixed|null $default
      *
      * @return mixed|null
      */
-    public function get(string $name, $default = null)
+    public function get($name, $default = null)
     {
-        return $this->data[$name] ?? $default;
+        return $this->has($name) ? $this->data[$name] : $default;
     }
 
-    public function has(string $name): bool
+    /**
+     * @param string $name
+     *
+     * @return bool
+     */
+    public function has($name)
     {
         return array_key_exists($name, $this->data);
     }
 
-    /** @return mixed[] */
-    public function all(): array
+    /** @return array<string, mixed> */
+    public function all()
     {
         return $this->data;
     }
 
-    public function toString(): string
+    /** @return string */
+    public function toString()
     {
         return $this->encoded;
     }

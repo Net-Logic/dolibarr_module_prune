@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 
 namespace Lcobucci\JWT\Validation;
 
@@ -12,9 +11,13 @@ use function implode;
 final class RequiredConstraintsViolated extends RuntimeException implements Exception
 {
     /** @var ConstraintViolation[] */
-    private array $violations = [];
+    private $violations = [];
 
-    public static function fromViolations(ConstraintViolation ...$violations): self
+    /**
+     * @param ConstraintViolation ...$violations
+     * @return self
+     */
+    public static function fromViolations(ConstraintViolation ...$violations)
     {
         $exception             = new self(self::buildMessage($violations));
         $exception->violations = $violations;
@@ -22,11 +25,15 @@ final class RequiredConstraintsViolated extends RuntimeException implements Exce
         return $exception;
     }
 
-    /** @param ConstraintViolation[] $violations */
-    private static function buildMessage(array $violations): string
+    /**
+     * @param ConstraintViolation[] $violations
+     *
+     * @return string
+     */
+    private static function buildMessage(array $violations)
     {
         $violations = array_map(
-            static function (ConstraintViolation $violation): string {
+            static function (ConstraintViolation $violation) {
                 return '- ' . $violation->getMessage();
             },
             $violations
@@ -39,7 +46,7 @@ final class RequiredConstraintsViolated extends RuntimeException implements Exce
     }
 
     /** @return ConstraintViolation[] */
-    public function violations(): array
+    public function violations()
     {
         return $this->violations;
     }

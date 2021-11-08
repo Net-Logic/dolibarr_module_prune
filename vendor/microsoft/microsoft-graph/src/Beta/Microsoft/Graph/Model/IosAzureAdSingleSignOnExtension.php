@@ -26,11 +26,9 @@ class IosAzureAdSingleSignOnExtension extends IosSingleSignOnExtension
     /**
     * Set the @odata.type since this type is immediately descended from an abstract
     * type that is referenced as the type in an entity.
-    * @param array $propDict The property dictionary
     */
-    public function __construct($propDict = array())
+    public function __construct()
     {
-        parent::__construct($propDict);
         $this->setODataType("#microsoft.graph.iosAzureAdSingleSignOnExtension");
     }
 
@@ -38,7 +36,7 @@ class IosAzureAdSingleSignOnExtension extends IosSingleSignOnExtension
     * Gets the bundleIdAccessControlList
     * An optional list of additional bundle IDs allowed to use the AAD extension for single sign-on.
     *
-    * @return string|null The bundleIdAccessControlList
+    * @return string The bundleIdAccessControlList
     */
     public function getBundleIdAccessControlList()
     {
@@ -67,12 +65,12 @@ class IosAzureAdSingleSignOnExtension extends IosSingleSignOnExtension
     * Gets the configurations
     * Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.
     *
-    * @return KeyTypedValuePair|null The configurations
+    * @return KeyTypedValuePair The configurations
     */
     public function getConfigurations()
     {
         if (array_key_exists("configurations", $this->_propDict)) {
-            if (is_a($this->_propDict["configurations"], "\Beta\Microsoft\Graph\Model\KeyTypedValuePair") || is_null($this->_propDict["configurations"])) {
+            if (is_a($this->_propDict["configurations"], "Beta\Microsoft\Graph\Model\KeyTypedValuePair")) {
                 return $this->_propDict["configurations"];
             } else {
                 $this->_propDict["configurations"] = new KeyTypedValuePair($this->_propDict["configurations"]);
@@ -99,7 +97,7 @@ class IosAzureAdSingleSignOnExtension extends IosSingleSignOnExtension
     * Gets the enableSharedDeviceMode
     * Enables or disables shared device mode.
     *
-    * @return bool|null The enableSharedDeviceMode
+    * @return bool The enableSharedDeviceMode
     */
     public function getEnableSharedDeviceMode()
     {

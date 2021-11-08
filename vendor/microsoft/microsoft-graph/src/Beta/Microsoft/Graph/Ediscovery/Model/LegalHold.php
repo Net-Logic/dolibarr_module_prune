@@ -26,9 +26,8 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
 {
     /**
     * Gets the contentQuery
-    * KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.
     *
-    * @return string|null The contentQuery
+    * @return string The contentQuery
     */
     public function getContentQuery()
     {
@@ -41,7 +40,6 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Sets the contentQuery
-    * KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.
     *
     * @param string $val The contentQuery
     *
@@ -55,17 +53,16 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Gets the createdBy
-    * The user who created the legal hold.
     *
-    * @return \Beta\Microsoft\Graph\Model\IdentitySet|null The createdBy
+    * @return Beta\Microsoft\Graph\Model\IdentitySet The createdBy
     */
     public function getCreatedBy()
     {
         if (array_key_exists("createdBy", $this->_propDict)) {
-            if (is_a($this->_propDict["createdBy"], "\Beta\Microsoft\Graph\Model\IdentitySet") || is_null($this->_propDict["createdBy"])) {
+            if (is_a($this->_propDict["createdBy"], "Beta\Microsoft\Graph\Model\IdentitySet")) {
                 return $this->_propDict["createdBy"];
             } else {
-                $this->_propDict["createdBy"] = new \Beta\Microsoft\Graph\Model\IdentitySet($this->_propDict["createdBy"]);
+                $this->_propDict["createdBy"] = new Beta\Microsoft\Graph\Model\IdentitySet($this->_propDict["createdBy"]);
                 return $this->_propDict["createdBy"];
             }
         }
@@ -74,9 +71,8 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Sets the createdBy
-    * The user who created the legal hold.
     *
-    * @param \Beta\Microsoft\Graph\Model\IdentitySet $val The createdBy
+    * @param Beta\Microsoft\Graph\Model\IdentitySet $val The createdBy
     *
     * @return LegalHold
     */
@@ -88,14 +84,13 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Gets the createdDateTime
-    * The date and time the legal hold was created.
     *
-    * @return \DateTime|null The createdDateTime
+    * @return \DateTime The createdDateTime
     */
     public function getCreatedDateTime()
     {
         if (array_key_exists("createdDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["createdDateTime"], "\DateTime") || is_null($this->_propDict["createdDateTime"])) {
+            if (is_a($this->_propDict["createdDateTime"], "\DateTime")) {
                 return $this->_propDict["createdDateTime"];
             } else {
                 $this->_propDict["createdDateTime"] = new \DateTime($this->_propDict["createdDateTime"]);
@@ -107,7 +102,6 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Sets the createdDateTime
-    * The date and time the legal hold was created.
     *
     * @param \DateTime $val The createdDateTime
     *
@@ -121,9 +115,8 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Gets the description
-    * The legal hold description.
     *
-    * @return string|null The description
+    * @return string The description
     */
     public function getDescription()
     {
@@ -136,7 +129,6 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Sets the description
-    * The legal hold description.
     *
     * @param string $val The description
     *
@@ -150,9 +142,8 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Gets the displayName
-    * The display name of the legal hold.
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -165,7 +156,6 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Sets the displayName
-    * The display name of the legal hold.
     *
     * @param string $val The displayName
     *
@@ -179,9 +169,8 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Gets the errors
-    * Lists any errors that happened while placing the hold.
     *
-    * @return string|null The errors
+    * @return string The errors
     */
     public function getErrors()
     {
@@ -194,7 +183,6 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Sets the errors
-    * Lists any errors that happened while placing the hold.
     *
     * @param string $val The errors
     *
@@ -208,9 +196,8 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Gets the isEnabled
-    * Indicates whether the hold is enabled and actively holding content.
     *
-    * @return bool|null The isEnabled
+    * @return bool The isEnabled
     */
     public function getIsEnabled()
     {
@@ -223,7 +210,6 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Sets the isEnabled
-    * Indicates whether the hold is enabled and actively holding content.
     *
     * @param bool $val The isEnabled
     *
@@ -237,17 +223,16 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Gets the lastModifiedBy
-    * the user who last modified the legal hold.
     *
-    * @return \Beta\Microsoft\Graph\Model\IdentitySet|null The lastModifiedBy
+    * @return Beta\Microsoft\Graph\Model\IdentitySet The lastModifiedBy
     */
     public function getLastModifiedBy()
     {
         if (array_key_exists("lastModifiedBy", $this->_propDict)) {
-            if (is_a($this->_propDict["lastModifiedBy"], "\Beta\Microsoft\Graph\Model\IdentitySet") || is_null($this->_propDict["lastModifiedBy"])) {
+            if (is_a($this->_propDict["lastModifiedBy"], "Beta\Microsoft\Graph\Model\IdentitySet")) {
                 return $this->_propDict["lastModifiedBy"];
             } else {
-                $this->_propDict["lastModifiedBy"] = new \Beta\Microsoft\Graph\Model\IdentitySet($this->_propDict["lastModifiedBy"]);
+                $this->_propDict["lastModifiedBy"] = new Beta\Microsoft\Graph\Model\IdentitySet($this->_propDict["lastModifiedBy"]);
                 return $this->_propDict["lastModifiedBy"];
             }
         }
@@ -256,9 +241,8 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Sets the lastModifiedBy
-    * the user who last modified the legal hold.
     *
-    * @param \Beta\Microsoft\Graph\Model\IdentitySet $val The lastModifiedBy
+    * @param Beta\Microsoft\Graph\Model\IdentitySet $val The lastModifiedBy
     *
     * @return LegalHold
     */
@@ -270,14 +254,13 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Gets the lastModifiedDateTime
-    * The date and time the legal hold was last modified.
     *
-    * @return \DateTime|null The lastModifiedDateTime
+    * @return \DateTime The lastModifiedDateTime
     */
     public function getLastModifiedDateTime()
     {
         if (array_key_exists("lastModifiedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime") || is_null($this->_propDict["lastModifiedDateTime"])) {
+            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime")) {
                 return $this->_propDict["lastModifiedDateTime"];
             } else {
                 $this->_propDict["lastModifiedDateTime"] = new \DateTime($this->_propDict["lastModifiedDateTime"]);
@@ -289,7 +272,6 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Sets the lastModifiedDateTime
-    * The date and time the legal hold was last modified.
     *
     * @param \DateTime $val The lastModifiedDateTime
     *
@@ -303,14 +285,13 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Gets the status
-    * The status of the legal hold. Possible values are: Pending, Error, Success, UnknownFutureValue.
     *
-    * @return LegalHoldStatus|null The status
+    * @return LegalHoldStatus The status
     */
     public function getStatus()
     {
         if (array_key_exists("status", $this->_propDict)) {
-            if (is_a($this->_propDict["status"], "\Beta\Microsoft\Graph\Ediscovery\Model\LegalHoldStatus") || is_null($this->_propDict["status"])) {
+            if (is_a($this->_propDict["status"], "Beta\Microsoft\Graph\Ediscovery\Model\LegalHoldStatus")) {
                 return $this->_propDict["status"];
             } else {
                 $this->_propDict["status"] = new LegalHoldStatus($this->_propDict["status"]);
@@ -322,7 +303,6 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Sets the status
-    * The status of the legal hold. Possible values are: Pending, Error, Success, UnknownFutureValue.
     *
     * @param LegalHoldStatus $val The status
     *
@@ -337,9 +317,8 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
 
      /** 
      * Gets the siteSources
-    * Data source entity for SharePoint sites associated with the legal hold.
      *
-     * @return array|null The siteSources
+     * @return array The siteSources
      */
     public function getSiteSources()
     {
@@ -352,7 +331,6 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
     
     /** 
     * Sets the siteSources
-    * Data source entity for SharePoint sites associated with the legal hold.
     *
     * @param SiteSource $val The siteSources
     *
@@ -360,7 +338,7 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
     */
     public function setSiteSources($val)
     {
-        $this->_propDict["siteSources"] = $val;
+		$this->_propDict["siteSources"] = $val;
         return $this;
     }
     
@@ -368,7 +346,7 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
      /** 
      * Gets the unifiedGroupSources
      *
-     * @return array|null The unifiedGroupSources
+     * @return array The unifiedGroupSources
      */
     public function getUnifiedGroupSources()
     {
@@ -388,16 +366,15 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
     */
     public function setUnifiedGroupSources($val)
     {
-        $this->_propDict["unifiedGroupSources"] = $val;
+		$this->_propDict["unifiedGroupSources"] = $val;
         return $this;
     }
     
 
      /** 
      * Gets the userSources
-    * Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
      *
-     * @return array|null The userSources
+     * @return array The userSources
      */
     public function getUserSources()
     {
@@ -410,7 +387,6 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
     
     /** 
     * Sets the userSources
-    * Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
     *
     * @param UserSource $val The userSources
     *
@@ -418,7 +394,7 @@ class LegalHold extends \Beta\Microsoft\Graph\Model\Entity
     */
     public function setUserSources($val)
     {
-        $this->_propDict["userSources"] = $val;
+		$this->_propDict["userSources"] = $val;
         return $this;
     }
     

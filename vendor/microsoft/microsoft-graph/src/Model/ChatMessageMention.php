@@ -27,7 +27,7 @@ class ChatMessageMention extends Entity
     * Gets the id
     * Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding &amp;lt;at id='{index}'&amp;gt; tag in the message body.
     *
-    * @return int|null The id
+    * @return int The id
     */
     public function getId()
     {
@@ -54,17 +54,17 @@ class ChatMessageMention extends Entity
 
     /**
     * Gets the mentioned
-    * The entity (user, application, team, or channel) that was @mentioned.
+    * The entity (user, application, team, or channel) that was mentioned.  If it was a channel or team that was @mentioned, the identitySet contains a conversation property giving the ID of the team/channel, and a conversationIdentityType property that represents either the team or channel.
     *
-    * @return ChatMessageMentionedIdentitySet|null The mentioned
+    * @return IdentitySet The mentioned
     */
     public function getMentioned()
     {
         if (array_key_exists("mentioned", $this->_propDict)) {
-            if (is_a($this->_propDict["mentioned"], "\Microsoft\Graph\Model\ChatMessageMentionedIdentitySet") || is_null($this->_propDict["mentioned"])) {
+            if (is_a($this->_propDict["mentioned"], "Microsoft\Graph\Model\IdentitySet")) {
                 return $this->_propDict["mentioned"];
             } else {
-                $this->_propDict["mentioned"] = new ChatMessageMentionedIdentitySet($this->_propDict["mentioned"]);
+                $this->_propDict["mentioned"] = new IdentitySet($this->_propDict["mentioned"]);
                 return $this->_propDict["mentioned"];
             }
         }
@@ -73,9 +73,9 @@ class ChatMessageMention extends Entity
 
     /**
     * Sets the mentioned
-    * The entity (user, application, team, or channel) that was @mentioned.
+    * The entity (user, application, team, or channel) that was mentioned.  If it was a channel or team that was @mentioned, the identitySet contains a conversation property giving the ID of the team/channel, and a conversationIdentityType property that represents either the team or channel.
     *
-    * @param ChatMessageMentionedIdentitySet $val The value to assign to the mentioned
+    * @param IdentitySet $val The value to assign to the mentioned
     *
     * @return ChatMessageMention The ChatMessageMention
     */
@@ -88,7 +88,7 @@ class ChatMessageMention extends Entity
     * Gets the mentionText
     * String used to represent the mention. For example, a user's display name, a team name.
     *
-    * @return string|null The mentionText
+    * @return string The mentionText
     */
     public function getMentionText()
     {

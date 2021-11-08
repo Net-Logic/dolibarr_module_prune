@@ -25,73 +25,15 @@ namespace Microsoft\Graph\Model;
 class OnlineMeeting extends Entity
 {
     /**
-    * Gets the allowAttendeeToEnableCamera
-    * Indicates whether attendees can turn on their camera.
-    *
-    * @return bool|null The allowAttendeeToEnableCamera
-    */
-    public function getAllowAttendeeToEnableCamera()
-    {
-        if (array_key_exists("allowAttendeeToEnableCamera", $this->_propDict)) {
-            return $this->_propDict["allowAttendeeToEnableCamera"];
-        } else {
-            return null;
-        }
-    }
-    
-    /**
-    * Sets the allowAttendeeToEnableCamera
-    * Indicates whether attendees can turn on their camera.
-    *
-    * @param bool $val The allowAttendeeToEnableCamera
-    *
-    * @return OnlineMeeting
-    */
-    public function setAllowAttendeeToEnableCamera($val)
-    {
-        $this->_propDict["allowAttendeeToEnableCamera"] = boolval($val);
-        return $this;
-    }
-    
-    /**
-    * Gets the allowAttendeeToEnableMic
-    * Indicates whether attendees can turn on their microphone.
-    *
-    * @return bool|null The allowAttendeeToEnableMic
-    */
-    public function getAllowAttendeeToEnableMic()
-    {
-        if (array_key_exists("allowAttendeeToEnableMic", $this->_propDict)) {
-            return $this->_propDict["allowAttendeeToEnableMic"];
-        } else {
-            return null;
-        }
-    }
-    
-    /**
-    * Sets the allowAttendeeToEnableMic
-    * Indicates whether attendees can turn on their microphone.
-    *
-    * @param bool $val The allowAttendeeToEnableMic
-    *
-    * @return OnlineMeeting
-    */
-    public function setAllowAttendeeToEnableMic($val)
-    {
-        $this->_propDict["allowAttendeeToEnableMic"] = boolval($val);
-        return $this;
-    }
-    
-    /**
     * Gets the allowedPresenters
-    * Specifies who can be a presenter in a meeting. Possible values are listed in the following table.
+    * Specifies who can be a presenter in a meeting. Possible values are everyone, organization, roleIsPresenter, organizer, and unknownFutureValue.
     *
-    * @return OnlineMeetingPresenters|null The allowedPresenters
+    * @return OnlineMeetingPresenters The allowedPresenters
     */
     public function getAllowedPresenters()
     {
         if (array_key_exists("allowedPresenters", $this->_propDict)) {
-            if (is_a($this->_propDict["allowedPresenters"], "\Microsoft\Graph\Model\OnlineMeetingPresenters") || is_null($this->_propDict["allowedPresenters"])) {
+            if (is_a($this->_propDict["allowedPresenters"], "Microsoft\Graph\Model\OnlineMeetingPresenters")) {
                 return $this->_propDict["allowedPresenters"];
             } else {
                 $this->_propDict["allowedPresenters"] = new OnlineMeetingPresenters($this->_propDict["allowedPresenters"]);
@@ -103,7 +45,7 @@ class OnlineMeeting extends Entity
     
     /**
     * Sets the allowedPresenters
-    * Specifies who can be a presenter in a meeting. Possible values are listed in the following table.
+    * Specifies who can be a presenter in a meeting. Possible values are everyone, organization, roleIsPresenter, organizer, and unknownFutureValue.
     *
     * @param OnlineMeetingPresenters $val The allowedPresenters
     *
@@ -116,110 +58,15 @@ class OnlineMeeting extends Entity
     }
     
     /**
-    * Gets the allowMeetingChat
-    * Specifies the mode of meeting chat.
-    *
-    * @return MeetingChatMode|null The allowMeetingChat
-    */
-    public function getAllowMeetingChat()
-    {
-        if (array_key_exists("allowMeetingChat", $this->_propDict)) {
-            if (is_a($this->_propDict["allowMeetingChat"], "\Microsoft\Graph\Model\MeetingChatMode") || is_null($this->_propDict["allowMeetingChat"])) {
-                return $this->_propDict["allowMeetingChat"];
-            } else {
-                $this->_propDict["allowMeetingChat"] = new MeetingChatMode($this->_propDict["allowMeetingChat"]);
-                return $this->_propDict["allowMeetingChat"];
-            }
-        }
-        return null;
-    }
-    
-    /**
-    * Sets the allowMeetingChat
-    * Specifies the mode of meeting chat.
-    *
-    * @param MeetingChatMode $val The allowMeetingChat
-    *
-    * @return OnlineMeeting
-    */
-    public function setAllowMeetingChat($val)
-    {
-        $this->_propDict["allowMeetingChat"] = $val;
-        return $this;
-    }
-    
-    /**
-    * Gets the allowTeamworkReactions
-    * Indicates whether Teams reactions are enabled for the meeting.
-    *
-    * @return bool|null The allowTeamworkReactions
-    */
-    public function getAllowTeamworkReactions()
-    {
-        if (array_key_exists("allowTeamworkReactions", $this->_propDict)) {
-            return $this->_propDict["allowTeamworkReactions"];
-        } else {
-            return null;
-        }
-    }
-    
-    /**
-    * Sets the allowTeamworkReactions
-    * Indicates whether Teams reactions are enabled for the meeting.
-    *
-    * @param bool $val The allowTeamworkReactions
-    *
-    * @return OnlineMeeting
-    */
-    public function setAllowTeamworkReactions($val)
-    {
-        $this->_propDict["allowTeamworkReactions"] = boolval($val);
-        return $this;
-    }
-    
-    /**
-    * Gets the attendeeReport
-    * The content stream of the attendee report of a Microsoft Teams live event. Read-only.
-    *
-    * @return \GuzzleHttp\Psr7\Stream|null The attendeeReport
-    */
-    public function getAttendeeReport()
-    {
-        if (array_key_exists("attendeeReport", $this->_propDict)) {
-            if (is_a($this->_propDict["attendeeReport"], "\GuzzleHttp\Psr7\Stream") || is_null($this->_propDict["attendeeReport"])) {
-                return $this->_propDict["attendeeReport"];
-            } else {
-                $this->_propDict["attendeeReport"] = \GuzzleHttp\Psr7\Utils::streamFor($this->_propDict["attendeeReport"]);
-                return $this->_propDict["attendeeReport"];
-            }
-        }
-        return null;
-    }
-    
-    /**
-    * Sets the attendeeReport
-    * The content stream of the attendee report of a Microsoft Teams live event. Read-only.
-    *
-    * @param \GuzzleHttp\Psr7\Stream $val The attendeeReport
-    *
-    * @return OnlineMeeting
-    */
-    public function setAttendeeReport($val)
-    {
-        $this->_propDict["attendeeReport"] = $val;
-        return $this;
-    }
-    
-    /**
     * Gets the audioConferencing
     * The phone access (dial-in) information for an online meeting. Read-only.
     *
-    * @return AudioConferencing|null The audioConferencing
+    * @return AudioConferencing The audioConferencing
     */
     public function getAudioConferencing()
     {
         if (array_key_exists("audioConferencing", $this->_propDict)) {
-            if (is_a($this->_propDict["audioConferencing"], "\Microsoft\Graph\Model\AudioConferencing") || is_null($this->_propDict["audioConferencing"])) {
+            if (is_a($this->_propDict["audioConferencing"], "Microsoft\Graph\Model\AudioConferencing")) {
                 return $this->_propDict["audioConferencing"];
             } else {
                 $this->_propDict["audioConferencing"] = new AudioConferencing($this->_propDict["audioConferencing"]);
@@ -244,48 +91,15 @@ class OnlineMeeting extends Entity
     }
     
     /**
-    * Gets the broadcastSettings
-    * Settings related to a live event.
-    *
-    * @return BroadcastMeetingSettings|null The broadcastSettings
-    */
-    public function getBroadcastSettings()
-    {
-        if (array_key_exists("broadcastSettings", $this->_propDict)) {
-            if (is_a($this->_propDict["broadcastSettings"], "\Microsoft\Graph\Model\BroadcastMeetingSettings") || is_null($this->_propDict["broadcastSettings"])) {
-                return $this->_propDict["broadcastSettings"];
-            } else {
-                $this->_propDict["broadcastSettings"] = new BroadcastMeetingSettings($this->_propDict["broadcastSettings"]);
-                return $this->_propDict["broadcastSettings"];
-            }
-        }
-        return null;
-    }
-    
-    /**
-    * Sets the broadcastSettings
-    * Settings related to a live event.
-    *
-    * @param BroadcastMeetingSettings $val The broadcastSettings
-    *
-    * @return OnlineMeeting
-    */
-    public function setBroadcastSettings($val)
-    {
-        $this->_propDict["broadcastSettings"] = $val;
-        return $this;
-    }
-    
-    /**
     * Gets the chatInfo
     * The chat information associated with this online meeting.
     *
-    * @return ChatInfo|null The chatInfo
+    * @return ChatInfo The chatInfo
     */
     public function getChatInfo()
     {
         if (array_key_exists("chatInfo", $this->_propDict)) {
-            if (is_a($this->_propDict["chatInfo"], "\Microsoft\Graph\Model\ChatInfo") || is_null($this->_propDict["chatInfo"])) {
+            if (is_a($this->_propDict["chatInfo"], "Microsoft\Graph\Model\ChatInfo")) {
                 return $this->_propDict["chatInfo"];
             } else {
                 $this->_propDict["chatInfo"] = new ChatInfo($this->_propDict["chatInfo"]);
@@ -313,12 +127,12 @@ class OnlineMeeting extends Entity
     * Gets the creationDateTime
     * The meeting creation time in UTC. Read-only.
     *
-    * @return \DateTime|null The creationDateTime
+    * @return \DateTime The creationDateTime
     */
     public function getCreationDateTime()
     {
         if (array_key_exists("creationDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["creationDateTime"], "\DateTime") || is_null($this->_propDict["creationDateTime"])) {
+            if (is_a($this->_propDict["creationDateTime"], "\DateTime")) {
                 return $this->_propDict["creationDateTime"];
             } else {
                 $this->_propDict["creationDateTime"] = new \DateTime($this->_propDict["creationDateTime"]);
@@ -346,12 +160,12 @@ class OnlineMeeting extends Entity
     * Gets the endDateTime
     * The meeting end time in UTC.
     *
-    * @return \DateTime|null The endDateTime
+    * @return \DateTime The endDateTime
     */
     public function getEndDateTime()
     {
         if (array_key_exists("endDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["endDateTime"], "\DateTime") || is_null($this->_propDict["endDateTime"])) {
+            if (is_a($this->_propDict["endDateTime"], "\DateTime")) {
                 return $this->_propDict["endDateTime"];
             } else {
                 $this->_propDict["endDateTime"] = new \DateTime($this->_propDict["endDateTime"]);
@@ -379,7 +193,7 @@ class OnlineMeeting extends Entity
     * Gets the externalId
     * The external ID. A custom ID. Optional.
     *
-    * @return string|null The externalId
+    * @return string The externalId
     */
     public function getExternalId()
     {
@@ -405,39 +219,10 @@ class OnlineMeeting extends Entity
     }
     
     /**
-    * Gets the isBroadcast
-    * Indicates if this is a Teams live event.
-    *
-    * @return bool|null The isBroadcast
-    */
-    public function getIsBroadcast()
-    {
-        if (array_key_exists("isBroadcast", $this->_propDict)) {
-            return $this->_propDict["isBroadcast"];
-        } else {
-            return null;
-        }
-    }
-    
-    /**
-    * Sets the isBroadcast
-    * Indicates if this is a Teams live event.
-    *
-    * @param bool $val The isBroadcast
-    *
-    * @return OnlineMeeting
-    */
-    public function setIsBroadcast($val)
-    {
-        $this->_propDict["isBroadcast"] = boolval($val);
-        return $this;
-    }
-    
-    /**
     * Gets the isEntryExitAnnounced
-    * Indicates whether to announce when callers join or leave.
+    * Whether or not to announce when callers join or leave.
     *
-    * @return bool|null The isEntryExitAnnounced
+    * @return bool The isEntryExitAnnounced
     */
     public function getIsEntryExitAnnounced()
     {
@@ -450,7 +235,7 @@ class OnlineMeeting extends Entity
     
     /**
     * Sets the isEntryExitAnnounced
-    * Indicates whether to announce when callers join or leave.
+    * Whether or not to announce when callers join or leave.
     *
     * @param bool $val The isEntryExitAnnounced
     *
@@ -464,14 +249,14 @@ class OnlineMeeting extends Entity
     
     /**
     * Gets the joinInformation
-    * The join information in the language and locale variant specified in the Accept-Language request HTTP header. Read-only.
+    * The join information in the language and locale variant specified in 'Accept-Language' request HTTP header. Read-only
     *
-    * @return ItemBody|null The joinInformation
+    * @return ItemBody The joinInformation
     */
     public function getJoinInformation()
     {
         if (array_key_exists("joinInformation", $this->_propDict)) {
-            if (is_a($this->_propDict["joinInformation"], "\Microsoft\Graph\Model\ItemBody") || is_null($this->_propDict["joinInformation"])) {
+            if (is_a($this->_propDict["joinInformation"], "Microsoft\Graph\Model\ItemBody")) {
                 return $this->_propDict["joinInformation"];
             } else {
                 $this->_propDict["joinInformation"] = new ItemBody($this->_propDict["joinInformation"]);
@@ -483,7 +268,7 @@ class OnlineMeeting extends Entity
     
     /**
     * Sets the joinInformation
-    * The join information in the language and locale variant specified in the Accept-Language request HTTP header. Read-only.
+    * The join information in the language and locale variant specified in 'Accept-Language' request HTTP header. Read-only
     *
     * @param ItemBody $val The joinInformation
     *
@@ -499,7 +284,7 @@ class OnlineMeeting extends Entity
     * Gets the joinWebUrl
     * The join URL of the online meeting. Read-only.
     *
-    * @return string|null The joinWebUrl
+    * @return string The joinWebUrl
     */
     public function getJoinWebUrl()
     {
@@ -526,14 +311,14 @@ class OnlineMeeting extends Entity
     
     /**
     * Gets the lobbyBypassSettings
-    * Specifies which participants can bypass the meeting   lobby.
+    * Specifies which participants can bypass the meeting lobby.
     *
-    * @return LobbyBypassSettings|null The lobbyBypassSettings
+    * @return LobbyBypassSettings The lobbyBypassSettings
     */
     public function getLobbyBypassSettings()
     {
         if (array_key_exists("lobbyBypassSettings", $this->_propDict)) {
-            if (is_a($this->_propDict["lobbyBypassSettings"], "\Microsoft\Graph\Model\LobbyBypassSettings") || is_null($this->_propDict["lobbyBypassSettings"])) {
+            if (is_a($this->_propDict["lobbyBypassSettings"], "Microsoft\Graph\Model\LobbyBypassSettings")) {
                 return $this->_propDict["lobbyBypassSettings"];
             } else {
                 $this->_propDict["lobbyBypassSettings"] = new LobbyBypassSettings($this->_propDict["lobbyBypassSettings"]);
@@ -545,7 +330,7 @@ class OnlineMeeting extends Entity
     
     /**
     * Sets the lobbyBypassSettings
-    * Specifies which participants can bypass the meeting   lobby.
+    * Specifies which participants can bypass the meeting lobby.
     *
     * @param LobbyBypassSettings $val The lobbyBypassSettings
     *
@@ -561,12 +346,12 @@ class OnlineMeeting extends Entity
     * Gets the participants
     * The participants associated with the online meeting.  This includes the organizer and the attendees.
     *
-    * @return MeetingParticipants|null The participants
+    * @return MeetingParticipants The participants
     */
     public function getParticipants()
     {
         if (array_key_exists("participants", $this->_propDict)) {
-            if (is_a($this->_propDict["participants"], "\Microsoft\Graph\Model\MeetingParticipants") || is_null($this->_propDict["participants"])) {
+            if (is_a($this->_propDict["participants"], "Microsoft\Graph\Model\MeetingParticipants")) {
                 return $this->_propDict["participants"];
             } else {
                 $this->_propDict["participants"] = new MeetingParticipants($this->_propDict["participants"]);
@@ -591,44 +376,15 @@ class OnlineMeeting extends Entity
     }
     
     /**
-    * Gets the recordAutomatically
-    * Indicates whether to record the meeting automatically.
-    *
-    * @return bool|null The recordAutomatically
-    */
-    public function getRecordAutomatically()
-    {
-        if (array_key_exists("recordAutomatically", $this->_propDict)) {
-            return $this->_propDict["recordAutomatically"];
-        } else {
-            return null;
-        }
-    }
-    
-    /**
-    * Sets the recordAutomatically
-    * Indicates whether to record the meeting automatically.
-    *
-    * @param bool $val The recordAutomatically
-    *
-    * @return OnlineMeeting
-    */
-    public function setRecordAutomatically($val)
-    {
-        $this->_propDict["recordAutomatically"] = boolval($val);
-        return $this;
-    }
-    
-    /**
     * Gets the startDateTime
     * The meeting start time in UTC.
     *
-    * @return \DateTime|null The startDateTime
+    * @return \DateTime The startDateTime
     */
     public function getStartDateTime()
     {
         if (array_key_exists("startDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["startDateTime"], "\DateTime") || is_null($this->_propDict["startDateTime"])) {
+            if (is_a($this->_propDict["startDateTime"], "\DateTime")) {
                 return $this->_propDict["startDateTime"];
             } else {
                 $this->_propDict["startDateTime"] = new \DateTime($this->_propDict["startDateTime"]);
@@ -656,7 +412,7 @@ class OnlineMeeting extends Entity
     * Gets the subject
     * The subject of the online meeting.
     *
-    * @return string|null The subject
+    * @return string The subject
     */
     public function getSubject()
     {
@@ -685,7 +441,7 @@ class OnlineMeeting extends Entity
     * Gets the videoTeleconferenceId
     * The video teleconferencing ID. Read-only.
     *
-    * @return string|null The videoTeleconferenceId
+    * @return string The videoTeleconferenceId
     */
     public function getVideoTeleconferenceId()
     {

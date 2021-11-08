@@ -26,11 +26,9 @@ class DeliveryOptimizationGroupIdCustom extends DeliveryOptimizationGroupIdSourc
     /**
     * Set the @odata.type since this type is immediately descended from an abstract
     * type that is referenced as the type in an entity.
-    * @param array $propDict The property dictionary
     */
-    public function __construct($propDict = array())
+    public function __construct()
     {
-        parent::__construct($propDict);
         $this->setODataType("#microsoft.graph.deliveryOptimizationGroupIdCustom");
     }
 
@@ -38,7 +36,7 @@ class DeliveryOptimizationGroupIdCustom extends DeliveryOptimizationGroupIdSourc
     * Gets the groupIdCustom
     * Specifies an arbitrary group ID that the device belongs to
     *
-    * @return string|null The groupIdCustom
+    * @return string The groupIdCustom
     */
     public function getGroupIdCustom()
     {

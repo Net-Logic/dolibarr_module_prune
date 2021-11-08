@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 
 namespace Lcobucci\JWT\Encoding;
 
@@ -9,7 +8,12 @@ use RuntimeException;
 
 final class CannotEncodeContent extends RuntimeException implements Exception
 {
-    public static function jsonIssues(JsonException $previous): self
+    /**
+     * @param JsonException $previous
+     *
+     * @return self
+     */
+    public static function jsonIssues(JsonException $previous)
     {
         return new self('Error while encoding to JSON', 0, $previous);
     }

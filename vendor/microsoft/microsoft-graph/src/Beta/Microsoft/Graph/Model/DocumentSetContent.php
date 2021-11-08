@@ -26,14 +26,13 @@ class DocumentSetContent extends Entity
 
     /**
     * Gets the contentType
-    * Content type information of the file.
     *
-    * @return ContentTypeInfo|null The contentType
+    * @return ContentTypeInfo The contentType
     */
     public function getContentType()
     {
         if (array_key_exists("contentType", $this->_propDict)) {
-            if (is_a($this->_propDict["contentType"], "\Beta\Microsoft\Graph\Model\ContentTypeInfo") || is_null($this->_propDict["contentType"])) {
+            if (is_a($this->_propDict["contentType"], "Beta\Microsoft\Graph\Model\ContentTypeInfo")) {
                 return $this->_propDict["contentType"];
             } else {
                 $this->_propDict["contentType"] = new ContentTypeInfo($this->_propDict["contentType"]);
@@ -45,7 +44,6 @@ class DocumentSetContent extends Entity
 
     /**
     * Sets the contentType
-    * Content type information of the file.
     *
     * @param ContentTypeInfo $val The value to assign to the contentType
     *
@@ -58,9 +56,8 @@ class DocumentSetContent extends Entity
     }
     /**
     * Gets the fileName
-    * Name of the file in resource folder that should be added as a default content or a template in the document set.
     *
-    * @return string|null The fileName
+    * @return string The fileName
     */
     public function getFileName()
     {
@@ -73,7 +70,6 @@ class DocumentSetContent extends Entity
 
     /**
     * Sets the fileName
-    * Name of the file in resource folder that should be added as a default content or a template in the document set.
     *
     * @param string $val The value of the fileName
     *
@@ -86,9 +82,8 @@ class DocumentSetContent extends Entity
     }
     /**
     * Gets the folderName
-    * Folder name in which the file will be placed when a new document set is created in the library.
     *
-    * @return string|null The folderName
+    * @return string The folderName
     */
     public function getFolderName()
     {
@@ -101,7 +96,6 @@ class DocumentSetContent extends Entity
 
     /**
     * Sets the folderName
-    * Folder name in which the file will be placed when a new document set is created in the library.
     *
     * @param string $val The value of the folderName
     *

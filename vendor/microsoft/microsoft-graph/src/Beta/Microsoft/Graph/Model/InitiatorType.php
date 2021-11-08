@@ -30,7 +30,7 @@ class InitiatorType extends Enum
     * The Enum InitiatorType
     */
     const USER = "user";
-    const APPLICATION = "application";
+    const APP = "app";
     const SYSTEM = "system";
     const UNKNOWN_FUTURE_VALUE = "unknownFutureValue";
 }

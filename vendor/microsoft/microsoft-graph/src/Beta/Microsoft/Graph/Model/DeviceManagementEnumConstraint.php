@@ -26,11 +26,9 @@ class DeviceManagementEnumConstraint extends DeviceManagementConstraint
     /**
     * Set the @odata.type since this type is immediately descended from an abstract
     * type that is referenced as the type in an entity.
-    * @param array $propDict The property dictionary
     */
-    public function __construct($propDict = array())
+    public function __construct()
     {
-        parent::__construct($propDict);
         $this->setODataType("#microsoft.graph.deviceManagementEnumConstraint");
     }
 
@@ -39,12 +37,12 @@ class DeviceManagementEnumConstraint extends DeviceManagementConstraint
     * Gets the values
     * List of valid values for this string
     *
-    * @return DeviceManagementEnumValue|null The values
+    * @return DeviceManagementEnumValue The values
     */
     public function getValues()
     {
         if (array_key_exists("values", $this->_propDict)) {
-            if (is_a($this->_propDict["values"], "\Beta\Microsoft\Graph\Model\DeviceManagementEnumValue") || is_null($this->_propDict["values"])) {
+            if (is_a($this->_propDict["values"], "Beta\Microsoft\Graph\Model\DeviceManagementEnumValue")) {
                 return $this->_propDict["values"];
             } else {
                 $this->_propDict["values"] = new DeviceManagementEnumValue($this->_propDict["values"]);

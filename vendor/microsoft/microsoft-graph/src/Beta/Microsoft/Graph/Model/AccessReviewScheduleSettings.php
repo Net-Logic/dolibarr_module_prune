@@ -26,14 +26,14 @@ class AccessReviewScheduleSettings extends Entity
 
     /**
     * Gets the applyActions
-    * Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.
+    * Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction. See accessReviewApplyAction.
     *
-    * @return AccessReviewApplyAction|null The applyActions
+    * @return AccessReviewApplyAction The applyActions
     */
     public function getApplyActions()
     {
         if (array_key_exists("applyActions", $this->_propDict)) {
-            if (is_a($this->_propDict["applyActions"], "\Beta\Microsoft\Graph\Model\AccessReviewApplyAction") || is_null($this->_propDict["applyActions"])) {
+            if (is_a($this->_propDict["applyActions"], "Beta\Microsoft\Graph\Model\AccessReviewApplyAction")) {
                 return $this->_propDict["applyActions"];
             } else {
                 $this->_propDict["applyActions"] = new AccessReviewApplyAction($this->_propDict["applyActions"]);
@@ -45,7 +45,7 @@ class AccessReviewScheduleSettings extends Entity
 
     /**
     * Sets the applyActions
-    * Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.
+    * Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction. See accessReviewApplyAction.
     *
     * @param AccessReviewApplyAction $val The value to assign to the applyActions
     *
@@ -58,9 +58,9 @@ class AccessReviewScheduleSettings extends Entity
     }
     /**
     * Gets the autoApplyDecisionsEnabled
-    * Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.
+    * Flag to indicate whether auto-apply feature is enabled.
     *
-    * @return bool|null The autoApplyDecisionsEnabled
+    * @return bool The autoApplyDecisionsEnabled
     */
     public function getAutoApplyDecisionsEnabled()
     {
@@ -73,7 +73,7 @@ class AccessReviewScheduleSettings extends Entity
 
     /**
     * Sets the autoApplyDecisionsEnabled
-    * Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.
+    * Flag to indicate whether auto-apply feature is enabled.
     *
     * @param bool $val The value of the autoApplyDecisionsEnabled
     *
@@ -86,9 +86,9 @@ class AccessReviewScheduleSettings extends Entity
     }
     /**
     * Gets the defaultDecision
-    * Decision chosen if defaultDecisionEnabled is true. Can be one of Approve, Deny, or Recommendation.
+    * Decision chosen if defaultDecisionEnabled is enabled. Can be one of 'Approve', 'Deny', or 'Recommendation'.
     *
-    * @return string|null The defaultDecision
+    * @return string The defaultDecision
     */
     public function getDefaultDecision()
     {
@@ -101,7 +101,7 @@ class AccessReviewScheduleSettings extends Entity
 
     /**
     * Sets the defaultDecision
-    * Decision chosen if defaultDecisionEnabled is true. Can be one of Approve, Deny, or Recommendation.
+    * Decision chosen if defaultDecisionEnabled is enabled. Can be one of 'Approve', 'Deny', or 'Recommendation'.
     *
     * @param string $val The value of the defaultDecision
     *
@@ -114,9 +114,9 @@ class AccessReviewScheduleSettings extends Entity
     }
     /**
     * Gets the defaultDecisionEnabled
-    * Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
+    * Flag to indicate whether default decision is enabled/disabled when reviewers do not respond.
     *
-    * @return bool|null The defaultDecisionEnabled
+    * @return bool The defaultDecisionEnabled
     */
     public function getDefaultDecisionEnabled()
     {
@@ -129,7 +129,7 @@ class AccessReviewScheduleSettings extends Entity
 
     /**
     * Sets the defaultDecisionEnabled
-    * Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
+    * Flag to indicate whether default decision is enabled/disabled when reviewers do not respond.
     *
     * @param bool $val The value of the defaultDecisionEnabled
     *
@@ -144,7 +144,7 @@ class AccessReviewScheduleSettings extends Entity
     * Gets the instanceDurationInDays
     * Duration of each recurrence of review (accessReviewInstance) in number of days.
     *
-    * @return int|null The instanceDurationInDays
+    * @return int The instanceDurationInDays
     */
     public function getInstanceDurationInDays()
     {
@@ -170,9 +170,9 @@ class AccessReviewScheduleSettings extends Entity
     }
     /**
     * Gets the justificationRequiredOnApproval
-    * Indicates whether reviewers are required to provide justification with their decision. Default value is false.
+    * Flag to indicate whether reviewers are required to provide justification with their decision.
     *
-    * @return bool|null The justificationRequiredOnApproval
+    * @return bool The justificationRequiredOnApproval
     */
     public function getJustificationRequiredOnApproval()
     {
@@ -185,7 +185,7 @@ class AccessReviewScheduleSettings extends Entity
 
     /**
     * Sets the justificationRequiredOnApproval
-    * Indicates whether reviewers are required to provide justification with their decision. Default value is false.
+    * Flag to indicate whether reviewers are required to provide justification with their decision.
     *
     * @param bool $val The value of the justificationRequiredOnApproval
     *
@@ -198,9 +198,9 @@ class AccessReviewScheduleSettings extends Entity
     }
     /**
     * Gets the mailNotificationsEnabled
-    * Indicates whether emails are enabled or disabled. Default value is false.
+    * Flag to indicate whether emails are enabled/disabled.
     *
-    * @return bool|null The mailNotificationsEnabled
+    * @return bool The mailNotificationsEnabled
     */
     public function getMailNotificationsEnabled()
     {
@@ -213,7 +213,7 @@ class AccessReviewScheduleSettings extends Entity
 
     /**
     * Sets the mailNotificationsEnabled
-    * Indicates whether emails are enabled or disabled. Default value is false.
+    * Flag to indicate whether emails are enabled/disabled.
     *
     * @param bool $val The value of the mailNotificationsEnabled
     *
@@ -224,44 +224,11 @@ class AccessReviewScheduleSettings extends Entity
         $this->_propDict["mailNotificationsEnabled"] = $val;
         return $this;
     }
-
-    /**
-    * Gets the recommendationLookBackDuration
-    * Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days.
-    *
-    * @return \DateInterval|null The recommendationLookBackDuration
-    */
-    public function getRecommendationLookBackDuration()
-    {
-        if (array_key_exists("recommendationLookBackDuration", $this->_propDict)) {
-            if (is_a($this->_propDict["recommendationLookBackDuration"], "\DateInterval") || is_null($this->_propDict["recommendationLookBackDuration"])) {
-                return $this->_propDict["recommendationLookBackDuration"];
-            } else {
-                $this->_propDict["recommendationLookBackDuration"] = new \DateInterval($this->_propDict["recommendationLookBackDuration"]);
-                return $this->_propDict["recommendationLookBackDuration"];
-            }
-        }
-        return null;
-    }
-
-    /**
-    * Sets the recommendationLookBackDuration
-    * Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days.
-    *
-    * @param \DateInterval $val The value to assign to the recommendationLookBackDuration
-    *
-    * @return AccessReviewScheduleSettings The AccessReviewScheduleSettings
-    */
-    public function setRecommendationLookBackDuration($val)
-    {
-        $this->_propDict["recommendationLookBackDuration"] = $val;
-         return $this;
-    }
     /**
     * Gets the recommendationsEnabled
-    * Indicates whether decision recommendations are enabled or disabled.
+    * Flag to indicate whether decision recommendations are enabled/disabled.
     *
-    * @return bool|null The recommendationsEnabled
+    * @return bool The recommendationsEnabled
     */
     public function getRecommendationsEnabled()
     {
@@ -274,7 +241,7 @@ class AccessReviewScheduleSettings extends Entity
 
     /**
     * Sets the recommendationsEnabled
-    * Indicates whether decision recommendations are enabled or disabled.
+    * Flag to indicate whether decision recommendations are enabled/disabled.
     *
     * @param bool $val The value of the recommendationsEnabled
     *
@@ -288,14 +255,14 @@ class AccessReviewScheduleSettings extends Entity
 
     /**
     * Gets the recurrence
-    * Detailed settings for recurrence using the standard Outlook recurrence object. Only weekly and absoluteMonthly on recurrencePattern are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
+    * Detailed settings for recurrence. Using standard Outlook recurrence object.
     *
-    * @return PatternedRecurrence|null The recurrence
+    * @return PatternedRecurrence The recurrence
     */
     public function getRecurrence()
     {
         if (array_key_exists("recurrence", $this->_propDict)) {
-            if (is_a($this->_propDict["recurrence"], "\Beta\Microsoft\Graph\Model\PatternedRecurrence") || is_null($this->_propDict["recurrence"])) {
+            if (is_a($this->_propDict["recurrence"], "Beta\Microsoft\Graph\Model\PatternedRecurrence")) {
                 return $this->_propDict["recurrence"];
             } else {
                 $this->_propDict["recurrence"] = new PatternedRecurrence($this->_propDict["recurrence"]);
@@ -307,7 +274,7 @@ class AccessReviewScheduleSettings extends Entity
 
     /**
     * Sets the recurrence
-    * Detailed settings for recurrence using the standard Outlook recurrence object. Only weekly and absoluteMonthly on recurrencePattern are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
+    * Detailed settings for recurrence. Using standard Outlook recurrence object.
     *
     * @param PatternedRecurrence $val The value to assign to the recurrence
     *
@@ -320,9 +287,9 @@ class AccessReviewScheduleSettings extends Entity
     }
     /**
     * Gets the reminderNotificationsEnabled
-    * Indicates whether reminders are enabled or disabled. Default value is false.
+    * Flag to indicate whether reminders are enabled/disabled.
     *
-    * @return bool|null The reminderNotificationsEnabled
+    * @return bool The reminderNotificationsEnabled
     */
     public function getReminderNotificationsEnabled()
     {
@@ -335,7 +302,7 @@ class AccessReviewScheduleSettings extends Entity
 
     /**
     * Sets the reminderNotificationsEnabled
-    * Indicates whether reminders are enabled or disabled. Default value is false.
+    * Flag to indicate whether reminders are enabled/disabled.
     *
     * @param bool $val The value of the reminderNotificationsEnabled
     *

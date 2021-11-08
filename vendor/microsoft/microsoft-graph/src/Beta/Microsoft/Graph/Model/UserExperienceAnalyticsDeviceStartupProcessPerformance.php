@@ -28,7 +28,7 @@ class UserExperienceAnalyticsDeviceStartupProcessPerformance extends Entity
     * Gets the deviceCount
     * User experience analytics device startup process summarized count.
     *
-    * @return int|null The deviceCount
+    * @return int The deviceCount
     */
     public function getDeviceCount()
     {
@@ -57,7 +57,7 @@ class UserExperienceAnalyticsDeviceStartupProcessPerformance extends Entity
     * Gets the medianImpactInMs
     * User experience analytics device startup process median impact in milliseconds.
     *
-    * @return int|null The medianImpactInMs
+    * @return int The medianImpactInMs
     */
     public function getMedianImpactInMs()
     {
@@ -83,39 +83,10 @@ class UserExperienceAnalyticsDeviceStartupProcessPerformance extends Entity
     }
     
     /**
-    * Gets the medianImpactInMs2
-    * User experience analytics device startup process median impact in milliseconds.
-    *
-    * @return int|null The medianImpactInMs2
-    */
-    public function getMedianImpactInMs2()
-    {
-        if (array_key_exists("medianImpactInMs2", $this->_propDict)) {
-            return $this->_propDict["medianImpactInMs2"];
-        } else {
-            return null;
-        }
-    }
-    
-    /**
-    * Sets the medianImpactInMs2
-    * User experience analytics device startup process median impact in milliseconds.
-    *
-    * @param int $val The medianImpactInMs2
-    *
-    * @return UserExperienceAnalyticsDeviceStartupProcessPerformance
-    */
-    public function setMedianImpactInMs2($val)
-    {
-        $this->_propDict["medianImpactInMs2"] = intval($val);
-        return $this;
-    }
-    
-    /**
     * Gets the processName
     * User experience analytics device startup process name.
     *
-    * @return string|null The processName
+    * @return string The processName
     */
     public function getProcessName()
     {
@@ -144,7 +115,7 @@ class UserExperienceAnalyticsDeviceStartupProcessPerformance extends Entity
     * Gets the productName
     * The user experience analytics device startup process product name.
     *
-    * @return string|null The productName
+    * @return string The productName
     */
     public function getProductName()
     {
@@ -173,7 +144,7 @@ class UserExperienceAnalyticsDeviceStartupProcessPerformance extends Entity
     * Gets the publisher
     * The User experience analytics device startup process publisher.
     *
-    * @return string|null The publisher
+    * @return string The publisher
     */
     public function getPublisher()
     {
@@ -202,7 +173,7 @@ class UserExperienceAnalyticsDeviceStartupProcessPerformance extends Entity
     * Gets the totalImpactInMs
     * User experience analytics device startup process total impact in milliseconds.
     *
-    * @return int|null The totalImpactInMs
+    * @return int The totalImpactInMs
     */
     public function getTotalImpactInMs()
     {
@@ -224,35 +195,6 @@ class UserExperienceAnalyticsDeviceStartupProcessPerformance extends Entity
     public function setTotalImpactInMs($val)
     {
         $this->_propDict["totalImpactInMs"] = intval($val);
-        return $this;
-    }
-    
-    /**
-    * Gets the totalImpactInMs2
-    * User experience analytics device startup process total impact in milliseconds.
-    *
-    * @return int|null The totalImpactInMs2
-    */
-    public function getTotalImpactInMs2()
-    {
-        if (array_key_exists("totalImpactInMs2", $this->_propDict)) {
-            return $this->_propDict["totalImpactInMs2"];
-        } else {
-            return null;
-        }
-    }
-    
-    /**
-    * Sets the totalImpactInMs2
-    * User experience analytics device startup process total impact in milliseconds.
-    *
-    * @param int $val The totalImpactInMs2
-    *
-    * @return UserExperienceAnalyticsDeviceStartupProcessPerformance
-    */
-    public function setTotalImpactInMs2($val)
-    {
-        $this->_propDict["totalImpactInMs2"] = intval($val);
         return $this;
     }
     

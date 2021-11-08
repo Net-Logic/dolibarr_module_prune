@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 
 namespace Lcobucci\JWT;
 
@@ -13,8 +12,12 @@ interface Validator
      * @throws RequiredConstraintsViolated
      * @throws NoConstraintsGiven
      */
-    public function assert(Token $token, Constraint ...$constraints): void;
+    public function assert(Token $token, Constraint ...$constraints);
 
-    /** @throws NoConstraintsGiven */
-    public function validate(Token $token, Constraint ...$constraints): bool;
+    /**
+     * @return bool
+     *
+     * @throws NoConstraintsGiven
+     */
+    public function validate(Token $token, Constraint ...$constraints);
 }
