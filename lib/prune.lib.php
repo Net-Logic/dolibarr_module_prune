@@ -138,6 +138,7 @@ function storeAccessToken($service, $token, $refreshtoken, $userid, $email = nul
 
 /**
  * Function clearToken
+ *
  * @param string $service service
  * @param string $userid user id
  * @param string $email email
