@@ -8,15 +8,15 @@ pipeline {
     }
     stage('Test') {
       parallel {
-        stage('PHP 5.6') {
+        stage('PHP 7.2') {
           agent {
             docker {
-              image 'php:5.6-cli'
+              image 'php:7.2-cli'
               args '-u root:sudo'
             }
           }
           steps {
-            echo 'Running PHP 5.6 tests...'
+            echo 'Running PHP 7.2 tests...'
             sh 'php -v'
             echo 'Installing Composer'
             sh 'curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer'
