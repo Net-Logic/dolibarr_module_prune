@@ -24,6 +24,9 @@ pipeline {
             sh 'cd $WORKSPACE && composer install --no-progress'
             echo 'Running PHPUnit tests...'
             //sh 'php $WORKSPACE/vendor/bin/phpunit --coverage-html $WORKSPACE/report/clover --coverage-clover $WORKSPACE/report/clover.xml --log-junit $WORKSPACE/report/junit.xml'
+            //sh 'php $WORKSPACE/vendor/bin/phpunit --coverage-html $WORKSPACE/report/clover --coverage-clover $WORKSPACE/report/clover.xml --log-junit $WORKSPACE/report/junit.xml'
+            sh 'php $WORKSPACE/vendor/bin/parallel-lint --checkstyle --exclude $WORKSPACE/vendor/ . > $WORKSPACE/build/logs/pll-checkstyle.xml'
+            sh 'php $WORKSPACE/vendor/bin/phpcs --report=checkstyle --report-file=$WORKSPACE/build/logs/checkstyle.xml -s -p --standard=$WORKSPACE/codesniffer/ruleset.xml --colors --extensions=php,inc --ignore=autoload.php --ignore=$WORKSPACE/vendor/ --runtime-set ignore_warnings_on_exit true .'
             sh 'chmod -R a+w $PWD && chmod -R a+w $WORKSPACE'
             //junit 'report/*.xml'
           }
