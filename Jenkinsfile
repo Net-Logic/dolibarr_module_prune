@@ -28,6 +28,8 @@ pipeline {
             sh 'php $WORKSPACE/vendor/bin/parallel-lint --exclude vendor/ .'
             echo 'Running PHPcs tests...'
             sh 'php $WORKSPACE/vendor/bin/phpcs --report=checkstyle --report-file=build/logs/checkstyle.xml -s -p --standard=codesniffer/ruleset.xml --colors --extensions=php,inc --ignore=autoload.php --ignore=vendor/ --runtime-set ignore_warnings_on_exit true .'
+            echo 'Running check remaining debug...'
+            sh 'php $WORKSPACE/vendor/bin/var-dump-check --extensions php --tracy --exclude vendor/ .'
             sh 'chmod -R a+w $PWD && chmod -R a+w $WORKSPACE'
             //junit 'report/*.xml'
           }
