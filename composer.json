@@ -12,7 +12,8 @@
         "loicboursin/oauth2-microsoft-graph": "^0",
         "league/oauth2-google": "^3.0.4",
         "sarhan/oauth2-docusign": "^2.0",
-        "cache/filesystem-adapter": "^1.1"
+        "cache/filesystem-adapter": "^1.1",
+        "symfony/cache": "^4.4.0"
     },
     "require-dev": {
         "php-parallel-lint/php-parallel-lint": "^1.3",

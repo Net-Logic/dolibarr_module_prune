@@ -26,13 +26,14 @@ class Tag extends \Beta\Microsoft\Graph\Model\Entity
 {
     /**
     * Gets the childSelectability
+    * Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
     *
-    * @return ChildSelectability The childSelectability
+    * @return ChildSelectability|null The childSelectability
     */
     public function getChildSelectability()
     {
         if (array_key_exists("childSelectability", $this->_propDict)) {
-            if (is_a($this->_propDict["childSelectability"], "Beta\Microsoft\Graph\Ediscovery\Model\ChildSelectability")) {
+            if (is_a($this->_propDict["childSelectability"], "\Beta\Microsoft\Graph\Ediscovery\Model\ChildSelectability") || is_null($this->_propDict["childSelectability"])) {
                 return $this->_propDict["childSelectability"];
             } else {
                 $this->_propDict["childSelectability"] = new ChildSelectability($this->_propDict["childSelectability"]);
@@ -44,6 +45,7 @@ class Tag extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Sets the childSelectability
+    * Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
     *
     * @param ChildSelectability $val The childSelectability
     *
@@ -57,16 +59,17 @@ class Tag extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Gets the createdBy
+    * The user who created the tag.
     *
-    * @return Beta\Microsoft\Graph\Model\IdentitySet The createdBy
+    * @return \Beta\Microsoft\Graph\Model\IdentitySet|null The createdBy
     */
     public function getCreatedBy()
     {
         if (array_key_exists("createdBy", $this->_propDict)) {
-            if (is_a($this->_propDict["createdBy"], "Beta\Microsoft\Graph\Model\IdentitySet")) {
+            if (is_a($this->_propDict["createdBy"], "\Beta\Microsoft\Graph\Model\IdentitySet") || is_null($this->_propDict["createdBy"])) {
                 return $this->_propDict["createdBy"];
             } else {
-                $this->_propDict["createdBy"] = new Beta\Microsoft\Graph\Model\IdentitySet($this->_propDict["createdBy"]);
+                $this->_propDict["createdBy"] = new \Beta\Microsoft\Graph\Model\IdentitySet($this->_propDict["createdBy"]);
                 return $this->_propDict["createdBy"];
             }
         }
@@ -75,8 +78,9 @@ class Tag extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Sets the createdBy
+    * The user who created the tag.
     *
-    * @param Beta\Microsoft\Graph\Model\IdentitySet $val The createdBy
+    * @param \Beta\Microsoft\Graph\Model\IdentitySet $val The createdBy
     *
     * @return Tag
     */
@@ -88,8 +92,9 @@ class Tag extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Gets the description
+    * The description for the tag.
     *
-    * @return string The description
+    * @return string|null The description
     */
     public function getDescription()
     {
@@ -102,6 +107,7 @@ class Tag extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Sets the description
+    * The description for the tag.
     *
     * @param string $val The description
     *
@@ -115,8 +121,9 @@ class Tag extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Gets the displayName
+    * Display name of the tag.
     *
-    * @return string The displayName
+    * @return string|null The displayName
     */
     public function getDisplayName()
     {
@@ -129,6 +136,7 @@ class Tag extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Sets the displayName
+    * Display name of the tag.
     *
     * @param string $val The displayName
     *
@@ -142,13 +150,14 @@ class Tag extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Gets the lastModifiedDateTime
+    * The date and time the tag was last modified.
     *
-    * @return \DateTime The lastModifiedDateTime
+    * @return \DateTime|null The lastModifiedDateTime
     */
     public function getLastModifiedDateTime()
     {
         if (array_key_exists("lastModifiedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime")) {
+            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime") || is_null($this->_propDict["lastModifiedDateTime"])) {
                 return $this->_propDict["lastModifiedDateTime"];
             } else {
                 $this->_propDict["lastModifiedDateTime"] = new \DateTime($this->_propDict["lastModifiedDateTime"]);
@@ -160,6 +169,7 @@ class Tag extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Sets the lastModifiedDateTime
+    * The date and time the tag was last modified.
     *
     * @param \DateTime $val The lastModifiedDateTime
     *
@@ -174,8 +184,9 @@ class Tag extends \Beta\Microsoft\Graph\Model\Entity
 
      /** 
      * Gets the childTags
+    * Returns the tags that are a child of a tag.
      *
-     * @return array The childTags
+     * @return array|null The childTags
      */
     public function getChildTags()
     {
@@ -188,6 +199,7 @@ class Tag extends \Beta\Microsoft\Graph\Model\Entity
     
     /** 
     * Sets the childTags
+    * Returns the tags that are a child of a tag.
     *
     * @param Tag $val The childTags
     *
@@ -195,19 +207,20 @@ class Tag extends \Beta\Microsoft\Graph\Model\Entity
     */
     public function setChildTags($val)
     {
-		$this->_propDict["childTags"] = $val;
+        $this->_propDict["childTags"] = $val;
         return $this;
     }
     
     /**
     * Gets the parent
+    * Returns the parent tag of the specified tag.
     *
-    * @return Tag The parent
+    * @return Tag|null The parent
     */
     public function getParent()
     {
         if (array_key_exists("parent", $this->_propDict)) {
-            if (is_a($this->_propDict["parent"], "Beta\Microsoft\Graph\Ediscovery\Model\Tag")) {
+            if (is_a($this->_propDict["parent"], "\Beta\Microsoft\Graph\Ediscovery\Model\Tag") || is_null($this->_propDict["parent"])) {
                 return $this->_propDict["parent"];
             } else {
                 $this->_propDict["parent"] = new Tag($this->_propDict["parent"]);
@@ -219,6 +232,7 @@ class Tag extends \Beta\Microsoft\Graph\Model\Entity
     
     /**
     * Sets the parent
+    * Returns the parent tag of the specified tag.
     *
     * @param Tag $val The parent
     *

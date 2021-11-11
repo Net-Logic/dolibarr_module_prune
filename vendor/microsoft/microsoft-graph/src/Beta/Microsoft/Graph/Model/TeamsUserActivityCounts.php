@@ -26,8 +26,9 @@ class TeamsUserActivityCounts extends Entity
 {
     /**
     * Gets the calls
+    * The number of unique 1:1 calls that users participated in.
     *
-    * @return int The calls
+    * @return int|null The calls
     */
     public function getCalls()
     {
@@ -40,6 +41,7 @@ class TeamsUserActivityCounts extends Entity
     
     /**
     * Sets the calls
+    * The number of unique 1:1 calls that users participated in.
     *
     * @param int $val The calls
     *
@@ -53,8 +55,9 @@ class TeamsUserActivityCounts extends Entity
     
     /**
     * Gets the meetings
+    * The number of unique online meetings that users participated in.
     *
-    * @return int The meetings
+    * @return int|null The meetings
     */
     public function getMeetings()
     {
@@ -67,6 +70,7 @@ class TeamsUserActivityCounts extends Entity
     
     /**
     * Sets the meetings
+    * The number of unique online meetings that users participated in.
     *
     * @param int $val The meetings
     *
@@ -80,8 +84,9 @@ class TeamsUserActivityCounts extends Entity
     
     /**
     * Gets the privateChatMessages
+    * The number of unique messages that users posted in a private chat.
     *
-    * @return int The privateChatMessages
+    * @return int|null The privateChatMessages
     */
     public function getPrivateChatMessages()
     {
@@ -94,6 +99,7 @@ class TeamsUserActivityCounts extends Entity
     
     /**
     * Sets the privateChatMessages
+    * The number of unique messages that users posted in a private chat.
     *
     * @param int $val The privateChatMessages
     *
@@ -107,13 +113,14 @@ class TeamsUserActivityCounts extends Entity
     
     /**
     * Gets the reportDate
+    * The date on which the users performed the activities.
     *
-    * @return \DateTime The reportDate
+    * @return \DateTime|null The reportDate
     */
     public function getReportDate()
     {
         if (array_key_exists("reportDate", $this->_propDict)) {
-            if (is_a($this->_propDict["reportDate"], "\DateTime")) {
+            if (is_a($this->_propDict["reportDate"], "\DateTime") || is_null($this->_propDict["reportDate"])) {
                 return $this->_propDict["reportDate"];
             } else {
                 $this->_propDict["reportDate"] = new \DateTime($this->_propDict["reportDate"]);
@@ -125,6 +132,7 @@ class TeamsUserActivityCounts extends Entity
     
     /**
     * Sets the reportDate
+    * The date on which the users performed the activities.
     *
     * @param \DateTime $val The reportDate
     *
@@ -138,8 +146,9 @@ class TeamsUserActivityCounts extends Entity
     
     /**
     * Gets the reportPeriod
+    * The number of days the report covers.
     *
-    * @return string The reportPeriod
+    * @return string|null The reportPeriod
     */
     public function getReportPeriod()
     {
@@ -152,6 +161,7 @@ class TeamsUserActivityCounts extends Entity
     
     /**
     * Sets the reportPeriod
+    * The number of days the report covers.
     *
     * @param string $val The reportPeriod
     *
@@ -165,13 +175,14 @@ class TeamsUserActivityCounts extends Entity
     
     /**
     * Gets the reportRefreshDate
+    * The latest date of the content.
     *
-    * @return \DateTime The reportRefreshDate
+    * @return \DateTime|null The reportRefreshDate
     */
     public function getReportRefreshDate()
     {
         if (array_key_exists("reportRefreshDate", $this->_propDict)) {
-            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime")) {
+            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime") || is_null($this->_propDict["reportRefreshDate"])) {
                 return $this->_propDict["reportRefreshDate"];
             } else {
                 $this->_propDict["reportRefreshDate"] = new \DateTime($this->_propDict["reportRefreshDate"]);
@@ -183,6 +194,7 @@ class TeamsUserActivityCounts extends Entity
     
     /**
     * Sets the reportRefreshDate
+    * The latest date of the content.
     *
     * @param \DateTime $val The reportRefreshDate
     *
@@ -196,8 +208,9 @@ class TeamsUserActivityCounts extends Entity
     
     /**
     * Gets the teamChatMessages
+    * The number of unique messages that users posted in a team chat.
     *
-    * @return int The teamChatMessages
+    * @return int|null The teamChatMessages
     */
     public function getTeamChatMessages()
     {
@@ -210,6 +223,7 @@ class TeamsUserActivityCounts extends Entity
     
     /**
     * Sets the teamChatMessages
+    * The number of unique messages that users posted in a team chat.
     *
     * @param int $val The teamChatMessages
     *

@@ -25,9 +25,9 @@ class AuthenticationDetail extends Entity
 {
     /**
     * Gets the authenticationMethod
-    * The type of authentication method used to perform this step of authentication. Possible values: Password, SMS, Voice, Authenticator App, Software OATH token, Satisfied by token.
+    * The type of authentication method used to perform this step of authentication. Possible values: Password, SMS, Voice, Authenticator App, Software OATH token, Satisfied by token, Previously satisfied.
     *
-    * @return string The authenticationMethod
+    * @return string|null The authenticationMethod
     */
     public function getAuthenticationMethod()
     {
@@ -40,7 +40,7 @@ class AuthenticationDetail extends Entity
 
     /**
     * Sets the authenticationMethod
-    * The type of authentication method used to perform this step of authentication. Possible values: Password, SMS, Voice, Authenticator App, Software OATH token, Satisfied by token.
+    * The type of authentication method used to perform this step of authentication. Possible values: Password, SMS, Voice, Authenticator App, Software OATH token, Satisfied by token, Previously satisfied.
     *
     * @param string $val The value of the authenticationMethod
     *
@@ -55,7 +55,7 @@ class AuthenticationDetail extends Entity
     * Gets the authenticationMethodDetail
     * Details about the authentication method used to perform this authentication step. For example, phone number (for SMS and voice), device name (for Authenticator app), and password source (e.g. cloud, AD FS, PTA, PHS).
     *
-    * @return string The authenticationMethodDetail
+    * @return string|null The authenticationMethodDetail
     */
     public function getAuthenticationMethodDetail()
     {
@@ -82,14 +82,14 @@ class AuthenticationDetail extends Entity
 
     /**
     * Gets the authenticationStepDateTime
-    * Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+    * Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     *
-    * @return \DateTime The authenticationStepDateTime
+    * @return \DateTime|null The authenticationStepDateTime
     */
     public function getAuthenticationStepDateTime()
     {
         if (array_key_exists("authenticationStepDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["authenticationStepDateTime"], "\DateTime")) {
+            if (is_a($this->_propDict["authenticationStepDateTime"], "\DateTime") || is_null($this->_propDict["authenticationStepDateTime"])) {
                 return $this->_propDict["authenticationStepDateTime"];
             } else {
                 $this->_propDict["authenticationStepDateTime"] = new \DateTime($this->_propDict["authenticationStepDateTime"]);
@@ -101,7 +101,7 @@ class AuthenticationDetail extends Entity
 
     /**
     * Sets the authenticationStepDateTime
-    * Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+    * Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     *
     * @param \DateTime $val The value to assign to the authenticationStepDateTime
     *
@@ -116,7 +116,7 @@ class AuthenticationDetail extends Entity
     * Gets the authenticationStepRequirement
     * The step of authentication that this satisfied. For example, primary authentication, or multi-factor authentication.
     *
-    * @return string The authenticationStepRequirement
+    * @return string|null The authenticationStepRequirement
     */
     public function getAuthenticationStepRequirement()
     {
@@ -144,7 +144,7 @@ class AuthenticationDetail extends Entity
     * Gets the authenticationStepResultDetail
     * Details about why the step succeeded or failed. For examples, user is blocked, fraud code entered, no phone input - timed out, phone unreachable, or claim in token.
     *
-    * @return string The authenticationStepResultDetail
+    * @return string|null The authenticationStepResultDetail
     */
     public function getAuthenticationStepResultDetail()
     {
@@ -172,7 +172,7 @@ class AuthenticationDetail extends Entity
     * Gets the succeeded
     * Indicates the status of the authentication step. Possible values: succeeded, failed.
     *
-    * @return bool The succeeded
+    * @return bool|null The succeeded
     */
     public function getSucceeded()
     {

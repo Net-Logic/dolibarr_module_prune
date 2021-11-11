@@ -28,7 +28,7 @@ class BookingStaffMember extends BookingPerson
     * Gets the availabilityIsAffectedByPersonalCalendar
     * True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member's availability in their personal calendar in Microsoft 365, before making a booking.
     *
-    * @return bool The availabilityIsAffectedByPersonalCalendar
+    * @return bool|null The availabilityIsAffectedByPersonalCalendar
     */
     public function getAvailabilityIsAffectedByPersonalCalendar()
     {
@@ -57,7 +57,7 @@ class BookingStaffMember extends BookingPerson
     * Gets the colorIndex
     * Identifies a color to represent the staff member. The color corresponds to the color palette in the Staff details page in the Bookings app.
     *
-    * @return int The colorIndex
+    * @return int|null The colorIndex
     */
     public function getColorIndex()
     {
@@ -86,12 +86,12 @@ class BookingStaffMember extends BookingPerson
     * Gets the role
     * The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest. Required.
     *
-    * @return BookingStaffRole The role
+    * @return BookingStaffRole|null The role
     */
     public function getRole()
     {
         if (array_key_exists("role", $this->_propDict)) {
-            if (is_a($this->_propDict["role"], "Beta\Microsoft\Graph\Model\BookingStaffRole")) {
+            if (is_a($this->_propDict["role"], "\Beta\Microsoft\Graph\Model\BookingStaffRole") || is_null($this->_propDict["role"])) {
                 return $this->_propDict["role"];
             } else {
                 $this->_propDict["role"] = new BookingStaffRole($this->_propDict["role"]);
@@ -116,10 +116,39 @@ class BookingStaffMember extends BookingPerson
     }
     
     /**
+    * Gets the timeZone
+    * The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
+    *
+    * @return string|null The timeZone
+    */
+    public function getTimeZone()
+    {
+        if (array_key_exists("timeZone", $this->_propDict)) {
+            return $this->_propDict["timeZone"];
+        } else {
+            return null;
+        }
+    }
+    
+    /**
+    * Sets the timeZone
+    * The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
+    *
+    * @param string $val The timeZone
+    *
+    * @return BookingStaffMember
+    */
+    public function setTimeZone($val)
+    {
+        $this->_propDict["timeZone"] = $val;
+        return $this;
+    }
+    
+    /**
     * Gets the useBusinessHours
     * True means the staff member's availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member's workingHours property setting.
     *
-    * @return bool The useBusinessHours
+    * @return bool|null The useBusinessHours
     */
     public function getUseBusinessHours()
     {
@@ -149,7 +178,7 @@ class BookingStaffMember extends BookingPerson
      * Gets the workingHours
     * The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
      *
-     * @return array The workingHours
+     * @return array|null The workingHours
      */
     public function getWorkingHours()
     {
@@ -170,7 +199,7 @@ class BookingStaffMember extends BookingPerson
     */
     public function setWorkingHours($val)
     {
-		$this->_propDict["workingHours"] = $val;
+        $this->_propDict["workingHours"] = $val;
         return $this;
     }
     

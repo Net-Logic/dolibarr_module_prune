@@ -27,8 +27,9 @@ class ConditionalAccessRoot extends Entity
 
      /** 
      * Gets the namedLocations
+    * Read-only. Nullable. Returns a collection of the specified named locations.
      *
-     * @return array The namedLocations
+     * @return array|null The namedLocations
      */
     public function getNamedLocations()
     {
@@ -41,6 +42,7 @@ class ConditionalAccessRoot extends Entity
     
     /** 
     * Sets the namedLocations
+    * Read-only. Nullable. Returns a collection of the specified named locations.
     *
     * @param NamedLocation $val The namedLocations
     *
@@ -48,15 +50,16 @@ class ConditionalAccessRoot extends Entity
     */
     public function setNamedLocations($val)
     {
-		$this->_propDict["namedLocations"] = $val;
+        $this->_propDict["namedLocations"] = $val;
         return $this;
     }
     
 
      /** 
      * Gets the policies
+    * Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
      *
-     * @return array The policies
+     * @return array|null The policies
      */
     public function getPolicies()
     {
@@ -69,6 +72,7 @@ class ConditionalAccessRoot extends Entity
     
     /** 
     * Sets the policies
+    * Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
     *
     * @param ConditionalAccessPolicy $val The policies
     *
@@ -76,7 +80,7 @@ class ConditionalAccessRoot extends Entity
     */
     public function setPolicies($val)
     {
-		$this->_propDict["policies"] = $val;
+        $this->_propDict["policies"] = $val;
         return $this;
     }
     

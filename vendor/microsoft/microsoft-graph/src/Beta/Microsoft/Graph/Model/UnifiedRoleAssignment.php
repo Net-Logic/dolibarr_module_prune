@@ -26,9 +26,9 @@ class UnifiedRoleAssignment extends Entity
 {
     /**
     * Gets the appScopeId
-    * Id of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use '/' for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.
+    * Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).
     *
-    * @return string The appScopeId
+    * @return string|null The appScopeId
     */
     public function getAppScopeId()
     {
@@ -41,7 +41,7 @@ class UnifiedRoleAssignment extends Entity
     
     /**
     * Sets the appScopeId
-    * Id of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use '/' for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.
+    * Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).
     *
     * @param string $val The appScopeId
     *
@@ -56,7 +56,7 @@ class UnifiedRoleAssignment extends Entity
     /**
     * Gets the condition
     *
-    * @return string The condition
+    * @return string|null The condition
     */
     public function getCondition()
     {
@@ -82,9 +82,9 @@ class UnifiedRoleAssignment extends Entity
     
     /**
     * Gets the directoryScopeId
-    * Id of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
+    * Identifier of the directory object representing the scope of the assignment.  Either this property or appScopeId is required. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, in).
     *
-    * @return string The directoryScopeId
+    * @return string|null The directoryScopeId
     */
     public function getDirectoryScopeId()
     {
@@ -97,7 +97,7 @@ class UnifiedRoleAssignment extends Entity
     
     /**
     * Sets the directoryScopeId
-    * Id of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
+    * Identifier of the directory object representing the scope of the assignment.  Either this property or appScopeId is required. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, in).
     *
     * @param string $val The directoryScopeId
     *
@@ -111,9 +111,9 @@ class UnifiedRoleAssignment extends Entity
     
     /**
     * Gets the principalId
-    * Objectid of the principal to which the assignment is granted.
+    * Identifier of the principal to which the assignment is granted. Supports $filter (eq, in).
     *
-    * @return string The principalId
+    * @return string|null The principalId
     */
     public function getPrincipalId()
     {
@@ -126,7 +126,7 @@ class UnifiedRoleAssignment extends Entity
     
     /**
     * Sets the principalId
-    * Objectid of the principal to which the assignment is granted.
+    * Identifier of the principal to which the assignment is granted. Supports $filter (eq, in).
     *
     * @param string $val The principalId
     *
@@ -139,10 +139,37 @@ class UnifiedRoleAssignment extends Entity
     }
     
     /**
-    * Gets the resourceScope
-    * The scope at which the unifiedRoleAssignment applies. This is '/' for service-wide. DO NOT USE. This property will be deprecated soon.
+    * Gets the principalOrganizationId
     *
-    * @return string The resourceScope
+    * @return string|null The principalOrganizationId
+    */
+    public function getPrincipalOrganizationId()
+    {
+        if (array_key_exists("principalOrganizationId", $this->_propDict)) {
+            return $this->_propDict["principalOrganizationId"];
+        } else {
+            return null;
+        }
+    }
+    
+    /**
+    * Sets the principalOrganizationId
+    *
+    * @param string $val The principalOrganizationId
+    *
+    * @return UnifiedRoleAssignment
+    */
+    public function setPrincipalOrganizationId($val)
+    {
+        $this->_propDict["principalOrganizationId"] = $val;
+        return $this;
+    }
+    
+    /**
+    * Gets the resourceScope
+    * The scope at which the unifiedRoleAssignment applies. This is / for service-wide. DO NOT USE. This property will be deprecated soon.
+    *
+    * @return string|null The resourceScope
     */
     public function getResourceScope()
     {
@@ -155,7 +182,7 @@ class UnifiedRoleAssignment extends Entity
     
     /**
     * Sets the resourceScope
-    * The scope at which the unifiedRoleAssignment applies. This is '/' for service-wide. DO NOT USE. This property will be deprecated soon.
+    * The scope at which the unifiedRoleAssignment applies. This is / for service-wide. DO NOT USE. This property will be deprecated soon.
     *
     * @param string $val The resourceScope
     *
@@ -169,9 +196,9 @@ class UnifiedRoleAssignment extends Entity
     
     /**
     * Gets the roleDefinitionId
-    * ID of the unifiedRoleDefinition the assignment is for. Read only.
+    * Identifier of the role definition the assignment is for. Read only. Supports $filter (eq, in).
     *
-    * @return string The roleDefinitionId
+    * @return string|null The roleDefinitionId
     */
     public function getRoleDefinitionId()
     {
@@ -184,7 +211,7 @@ class UnifiedRoleAssignment extends Entity
     
     /**
     * Sets the roleDefinitionId
-    * ID of the unifiedRoleDefinition the assignment is for. Read only.
+    * Identifier of the role definition the assignment is for. Read only. Supports $filter (eq, in).
     *
     * @param string $val The roleDefinitionId
     *
@@ -198,13 +225,14 @@ class UnifiedRoleAssignment extends Entity
     
     /**
     * Gets the appScope
+    * Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
     *
-    * @return AppScope The appScope
+    * @return AppScope|null The appScope
     */
     public function getAppScope()
     {
         if (array_key_exists("appScope", $this->_propDict)) {
-            if (is_a($this->_propDict["appScope"], "Beta\Microsoft\Graph\Model\AppScope")) {
+            if (is_a($this->_propDict["appScope"], "\Beta\Microsoft\Graph\Model\AppScope") || is_null($this->_propDict["appScope"])) {
                 return $this->_propDict["appScope"];
             } else {
                 $this->_propDict["appScope"] = new AppScope($this->_propDict["appScope"]);
@@ -216,6 +244,7 @@ class UnifiedRoleAssignment extends Entity
     
     /**
     * Sets the appScope
+    * Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
     *
     * @param AppScope $val The appScope
     *
@@ -229,13 +258,14 @@ class UnifiedRoleAssignment extends Entity
     
     /**
     * Gets the directoryScope
+    * The directory object that is the scope of the assignment. Read-only. Supports $expand.
     *
-    * @return DirectoryObject The directoryScope
+    * @return DirectoryObject|null The directoryScope
     */
     public function getDirectoryScope()
     {
         if (array_key_exists("directoryScope", $this->_propDict)) {
-            if (is_a($this->_propDict["directoryScope"], "Beta\Microsoft\Graph\Model\DirectoryObject")) {
+            if (is_a($this->_propDict["directoryScope"], "\Beta\Microsoft\Graph\Model\DirectoryObject") || is_null($this->_propDict["directoryScope"])) {
                 return $this->_propDict["directoryScope"];
             } else {
                 $this->_propDict["directoryScope"] = new DirectoryObject($this->_propDict["directoryScope"]);
@@ -247,6 +277,7 @@ class UnifiedRoleAssignment extends Entity
     
     /**
     * Sets the directoryScope
+    * The directory object that is the scope of the assignment. Read-only. Supports $expand.
     *
     * @param DirectoryObject $val The directoryScope
     *
@@ -260,13 +291,14 @@ class UnifiedRoleAssignment extends Entity
     
     /**
     * Gets the principal
+    * Referencing the assigned principal. Read-only. Supports $expand.
     *
-    * @return DirectoryObject The principal
+    * @return DirectoryObject|null The principal
     */
     public function getPrincipal()
     {
         if (array_key_exists("principal", $this->_propDict)) {
-            if (is_a($this->_propDict["principal"], "Beta\Microsoft\Graph\Model\DirectoryObject")) {
+            if (is_a($this->_propDict["principal"], "\Beta\Microsoft\Graph\Model\DirectoryObject") || is_null($this->_propDict["principal"])) {
                 return $this->_propDict["principal"];
             } else {
                 $this->_propDict["principal"] = new DirectoryObject($this->_propDict["principal"]);
@@ -278,6 +310,7 @@ class UnifiedRoleAssignment extends Entity
     
     /**
     * Sets the principal
+    * Referencing the assigned principal. Read-only. Supports $expand.
     *
     * @param DirectoryObject $val The principal
     *
@@ -291,13 +324,14 @@ class UnifiedRoleAssignment extends Entity
     
     /**
     * Gets the roleDefinition
+    * The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
     *
-    * @return UnifiedRoleDefinition The roleDefinition
+    * @return UnifiedRoleDefinition|null The roleDefinition
     */
     public function getRoleDefinition()
     {
         if (array_key_exists("roleDefinition", $this->_propDict)) {
-            if (is_a($this->_propDict["roleDefinition"], "Beta\Microsoft\Graph\Model\UnifiedRoleDefinition")) {
+            if (is_a($this->_propDict["roleDefinition"], "\Beta\Microsoft\Graph\Model\UnifiedRoleDefinition") || is_null($this->_propDict["roleDefinition"])) {
                 return $this->_propDict["roleDefinition"];
             } else {
                 $this->_propDict["roleDefinition"] = new UnifiedRoleDefinition($this->_propDict["roleDefinition"]);
@@ -309,6 +343,7 @@ class UnifiedRoleAssignment extends Entity
     
     /**
     * Sets the roleDefinition
+    * The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
     *
     * @param UnifiedRoleDefinition $val The roleDefinition
     *

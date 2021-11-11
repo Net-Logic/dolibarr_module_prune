@@ -27,9 +27,9 @@ class ConversationThread extends Entity
 
      /** 
      * Gets the ccRecipients
-    * The Cc: recipients for the thread.
+    * The Cc: recipients for the thread. Returned only on $select.
      *
-     * @return array The ccRecipients
+     * @return array|null The ccRecipients
      */
     public function getCcRecipients()
     {
@@ -42,7 +42,7 @@ class ConversationThread extends Entity
     
     /** 
     * Sets the ccRecipients
-    * The Cc: recipients for the thread.
+    * The Cc: recipients for the thread. Returned only on $select.
     *
     * @param Recipient $val The ccRecipients
     *
@@ -50,15 +50,15 @@ class ConversationThread extends Entity
     */
     public function setCcRecipients($val)
     {
-		$this->_propDict["ccRecipients"] = $val;
+        $this->_propDict["ccRecipients"] = $val;
         return $this;
     }
     
     /**
     * Gets the hasAttachments
-    * Indicates whether any of the posts within this thread has at least one attachment.
+    * Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
     *
-    * @return bool The hasAttachments
+    * @return bool|null The hasAttachments
     */
     public function getHasAttachments()
     {
@@ -71,7 +71,7 @@ class ConversationThread extends Entity
     
     /**
     * Sets the hasAttachments
-    * Indicates whether any of the posts within this thread has at least one attachment.
+    * Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
     *
     * @param bool $val The hasAttachments
     *
@@ -85,9 +85,9 @@ class ConversationThread extends Entity
     
     /**
     * Gets the isLocked
-    * Indicates if the thread is locked.
+    * Indicates if the thread is locked. Returned by default.
     *
-    * @return bool The isLocked
+    * @return bool|null The isLocked
     */
     public function getIsLocked()
     {
@@ -100,7 +100,7 @@ class ConversationThread extends Entity
     
     /**
     * Sets the isLocked
-    * Indicates if the thread is locked.
+    * Indicates if the thread is locked. Returned by default.
     *
     * @param bool $val The isLocked
     *
@@ -114,14 +114,14 @@ class ConversationThread extends Entity
     
     /**
     * Gets the lastDeliveredDateTime
-    * The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    * The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.Returned by default.
     *
-    * @return \DateTime The lastDeliveredDateTime
+    * @return \DateTime|null The lastDeliveredDateTime
     */
     public function getLastDeliveredDateTime()
     {
         if (array_key_exists("lastDeliveredDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastDeliveredDateTime"], "\DateTime")) {
+            if (is_a($this->_propDict["lastDeliveredDateTime"], "\DateTime") || is_null($this->_propDict["lastDeliveredDateTime"])) {
                 return $this->_propDict["lastDeliveredDateTime"];
             } else {
                 $this->_propDict["lastDeliveredDateTime"] = new \DateTime($this->_propDict["lastDeliveredDateTime"]);
@@ -133,7 +133,7 @@ class ConversationThread extends Entity
     
     /**
     * Sets the lastDeliveredDateTime
-    * The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    * The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.Returned by default.
     *
     * @param \DateTime $val The lastDeliveredDateTime
     *
@@ -147,9 +147,9 @@ class ConversationThread extends Entity
     
     /**
     * Gets the preview
-    * A short summary from the body of the latest post in this conversation.
+    * A short summary from the body of the latest post in this conversation. Returned by default.
     *
-    * @return string The preview
+    * @return string|null The preview
     */
     public function getPreview()
     {
@@ -162,7 +162,7 @@ class ConversationThread extends Entity
     
     /**
     * Sets the preview
-    * A short summary from the body of the latest post in this conversation.
+    * A short summary from the body of the latest post in this conversation. Returned by default.
     *
     * @param string $val The preview
     *
@@ -176,9 +176,9 @@ class ConversationThread extends Entity
     
     /**
     * Gets the topic
-    * The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
+    * The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated. Returned by default.
     *
-    * @return string The topic
+    * @return string|null The topic
     */
     public function getTopic()
     {
@@ -191,7 +191,7 @@ class ConversationThread extends Entity
     
     /**
     * Sets the topic
-    * The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
+    * The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated. Returned by default.
     *
     * @param string $val The topic
     *
@@ -206,9 +206,9 @@ class ConversationThread extends Entity
 
      /** 
      * Gets the toRecipients
-    * The To: recipients for the thread.
+    * The To: recipients for the thread. Returned only on $select.
      *
-     * @return array The toRecipients
+     * @return array|null The toRecipients
      */
     public function getToRecipients()
     {
@@ -221,7 +221,7 @@ class ConversationThread extends Entity
     
     /** 
     * Sets the toRecipients
-    * The To: recipients for the thread.
+    * The To: recipients for the thread. Returned only on $select.
     *
     * @param Recipient $val The toRecipients
     *
@@ -229,15 +229,15 @@ class ConversationThread extends Entity
     */
     public function setToRecipients($val)
     {
-		$this->_propDict["toRecipients"] = $val;
+        $this->_propDict["toRecipients"] = $val;
         return $this;
     }
     
     /**
     * Gets the uniqueSenders
-    * All the users that sent a message to this thread.
+    * All the users that sent a message to this thread. Returned by default.
     *
-    * @return string The uniqueSenders
+    * @return string|null The uniqueSenders
     */
     public function getUniqueSenders()
     {
@@ -250,7 +250,7 @@ class ConversationThread extends Entity
     
     /**
     * Sets the uniqueSenders
-    * All the users that sent a message to this thread.
+    * All the users that sent a message to this thread. Returned by default.
     *
     * @param string $val The uniqueSenders
     *
@@ -267,7 +267,7 @@ class ConversationThread extends Entity
      * Gets the posts
     * Read-only. Nullable.
      *
-     * @return array The posts
+     * @return array|null The posts
      */
     public function getPosts()
     {
@@ -288,7 +288,7 @@ class ConversationThread extends Entity
     */
     public function setPosts($val)
     {
-		$this->_propDict["posts"] = $val;
+        $this->_propDict["posts"] = $val;
         return $this;
     }
     

@@ -5,18 +5,26 @@ namespace Lcobucci\Clock;
 
 use DateTimeImmutable;
 use DateTimeZone;
+
 use function date_default_timezone_get;
 
 final class SystemClock implements Clock
 {
-    /**
-     * @var DateTimeZone
-     */
-    private $timezone;
+    private DateTimeZone $timezone;
 
     public function __construct(?DateTimeZone $timezone = null)
     {
-        $this->timezone = $timezone ?: new DateTimeZone(date_default_timezone_get());
+        $this->timezone = $timezone ?? new DateTimeZone(date_default_timezone_get());
+    }
+
+    public static function fromUTC(): self
+    {
+        return new self(new DateTimeZone('UTC'));
+    }
+
+    public static function fromSystemTimezone(): self
+    {
+        return new self(new DateTimeZone(date_default_timezone_get()));
     }
 
     public function now(): DateTimeImmutable

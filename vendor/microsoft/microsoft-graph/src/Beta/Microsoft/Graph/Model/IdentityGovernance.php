@@ -28,7 +28,7 @@ class IdentityGovernance implements \JsonSerializable
     * The array of properties available
     * to the model
     *
-    * @var array(string => string)
+    * @var array $_propDict
     */
     protected $_propDict;
     
@@ -39,7 +39,10 @@ class IdentityGovernance implements \JsonSerializable
     */
     function __construct($propDict = array())
     {
-		$this->_propDict = $propDict;
+        if (!is_array($propDict)) {
+           $propDict = array();
+        }
+        $this->_propDict = $propDict;
     }
 
     /**
@@ -55,12 +58,12 @@ class IdentityGovernance implements \JsonSerializable
     /**
     * Gets the accessReviews
     *
-    * @return AccessReviewSet The accessReviews
+    * @return AccessReviewSet|null The accessReviews
     */
     public function getAccessReviews()
     {
         if (array_key_exists("accessReviews", $this->_propDict)) {
-            if (is_a($this->_propDict["accessReviews"], "Beta\Microsoft\Graph\Model\AccessReviewSet")) {
+            if (is_a($this->_propDict["accessReviews"], "\Beta\Microsoft\Graph\Model\AccessReviewSet") || is_null($this->_propDict["accessReviews"])) {
                 return $this->_propDict["accessReviews"];
             } else {
                 $this->_propDict["accessReviews"] = new AccessReviewSet($this->_propDict["accessReviews"]);
@@ -86,12 +89,12 @@ class IdentityGovernance implements \JsonSerializable
     /**
     * Gets the appConsent
     *
-    * @return AppConsentApprovalRoute The appConsent
+    * @return AppConsentApprovalRoute|null The appConsent
     */
     public function getAppConsent()
     {
         if (array_key_exists("appConsent", $this->_propDict)) {
-            if (is_a($this->_propDict["appConsent"], "Beta\Microsoft\Graph\Model\AppConsentApprovalRoute")) {
+            if (is_a($this->_propDict["appConsent"], "\Beta\Microsoft\Graph\Model\AppConsentApprovalRoute") || is_null($this->_propDict["appConsent"])) {
                 return $this->_propDict["appConsent"];
             } else {
                 $this->_propDict["appConsent"] = new AppConsentApprovalRoute($this->_propDict["appConsent"]);
@@ -117,12 +120,12 @@ class IdentityGovernance implements \JsonSerializable
     /**
     * Gets the termsOfUse
     *
-    * @return TermsOfUseContainer The termsOfUse
+    * @return TermsOfUseContainer|null The termsOfUse
     */
     public function getTermsOfUse()
     {
         if (array_key_exists("termsOfUse", $this->_propDict)) {
-            if (is_a($this->_propDict["termsOfUse"], "Beta\Microsoft\Graph\Model\TermsOfUseContainer")) {
+            if (is_a($this->_propDict["termsOfUse"], "\Beta\Microsoft\Graph\Model\TermsOfUseContainer") || is_null($this->_propDict["termsOfUse"])) {
                 return $this->_propDict["termsOfUse"];
             } else {
                 $this->_propDict["termsOfUse"] = new TermsOfUseContainer($this->_propDict["termsOfUse"]);
@@ -148,12 +151,12 @@ class IdentityGovernance implements \JsonSerializable
     /**
     * Gets the entitlementManagement
     *
-    * @return EntitlementManagement The entitlementManagement
+    * @return EntitlementManagement|null The entitlementManagement
     */
     public function getEntitlementManagement()
     {
         if (array_key_exists("entitlementManagement", $this->_propDict)) {
-            if (is_a($this->_propDict["entitlementManagement"], "Beta\Microsoft\Graph\Model\EntitlementManagement")) {
+            if (is_a($this->_propDict["entitlementManagement"], "\Beta\Microsoft\Graph\Model\EntitlementManagement") || is_null($this->_propDict["entitlementManagement"])) {
                 return $this->_propDict["entitlementManagement"];
             } else {
                 $this->_propDict["entitlementManagement"] = new EntitlementManagement($this->_propDict["entitlementManagement"]);
@@ -179,19 +182,22 @@ class IdentityGovernance implements \JsonSerializable
     /**
     * Gets the ODataType
     *
-    * @return string The ODataType
+    * @return string|null The ODataType
     */
     public function getODataType()
     {
-        return $this->_propDict["@odata.type"];
+        if (array_key_exists('@odata.type', $this->_propDict)) {
+            return $this->_propDict["@odata.type"];
+        }
+        return null;
     }
     
     /**
     * Sets the ODataType
     *
-    * @param string The ODataType
+    * @param string $val The ODataType
     *
-    * @return Entity
+    * @return IdentityGovernance
     */
     public function setODataType($val)
     {
@@ -201,7 +207,7 @@ class IdentityGovernance implements \JsonSerializable
     
     /**
     * Serializes the object by property array
-	* Manually serialize DateTime into RFC3339 format
+    * Manually serialize DateTime into RFC3339 format
     *
     * @return array The list of properties
     */

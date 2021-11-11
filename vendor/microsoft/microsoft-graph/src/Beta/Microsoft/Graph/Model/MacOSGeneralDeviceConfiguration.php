@@ -25,10 +25,39 @@ namespace Beta\Microsoft\Graph\Model;
 class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
 {
     /**
+    * Gets the addingGameCenterFriendsBlocked
+    * Yes prevents users from adding friends to Game Center. Available for devices running macOS versions 10.13 and later.
+    *
+    * @return bool|null The addingGameCenterFriendsBlocked
+    */
+    public function getAddingGameCenterFriendsBlocked()
+    {
+        if (array_key_exists("addingGameCenterFriendsBlocked", $this->_propDict)) {
+            return $this->_propDict["addingGameCenterFriendsBlocked"];
+        } else {
+            return null;
+        }
+    }
+    
+    /**
+    * Sets the addingGameCenterFriendsBlocked
+    * Yes prevents users from adding friends to Game Center. Available for devices running macOS versions 10.13 and later.
+    *
+    * @param bool $val The addingGameCenterFriendsBlocked
+    *
+    * @return MacOSGeneralDeviceConfiguration
+    */
+    public function setAddingGameCenterFriendsBlocked($val)
+    {
+        $this->_propDict["addingGameCenterFriendsBlocked"] = boolval($val);
+        return $this;
+    }
+    
+    /**
     * Gets the airDropBlocked
     * Indicates whether or not to allow AirDrop.
     *
-    * @return bool The airDropBlocked
+    * @return bool|null The airDropBlocked
     */
     public function getAirDropBlocked()
     {
@@ -54,97 +83,10 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     }
     
     /**
-    * Gets the airPrintBlocked
-    * Indicates whether or not AirPrint is blocked (macOS 10.12 and later).
-    *
-    * @return bool The airPrintBlocked
-    */
-    public function getAirPrintBlocked()
-    {
-        if (array_key_exists("airPrintBlocked", $this->_propDict)) {
-            return $this->_propDict["airPrintBlocked"];
-        } else {
-            return null;
-        }
-    }
-    
-    /**
-    * Sets the airPrintBlocked
-    * Indicates whether or not AirPrint is blocked (macOS 10.12 and later).
-    *
-    * @param bool $val The airPrintBlocked
-    *
-    * @return MacOSGeneralDeviceConfiguration
-    */
-    public function setAirPrintBlocked($val)
-    {
-        $this->_propDict["airPrintBlocked"] = boolval($val);
-        return $this;
-    }
-    
-    /**
-    * Gets the airPrintBlockiBeaconDiscovery
-    * Indicates whether or not iBeacon discovery of AirPrint printers is blocked. This prevents spurious AirPrint Bluetooth beacons from phishing for network traffic (macOS 10.3 and later).
-    *
-    * @return bool The airPrintBlockiBeaconDiscovery
-    */
-    public function getAirPrintBlockiBeaconDiscovery()
-    {
-        if (array_key_exists("airPrintBlockiBeaconDiscovery", $this->_propDict)) {
-            return $this->_propDict["airPrintBlockiBeaconDiscovery"];
-        } else {
-            return null;
-        }
-    }
-    
-    /**
-    * Sets the airPrintBlockiBeaconDiscovery
-    * Indicates whether or not iBeacon discovery of AirPrint printers is blocked. This prevents spurious AirPrint Bluetooth beacons from phishing for network traffic (macOS 10.3 and later).
-    *
-    * @param bool $val The airPrintBlockiBeaconDiscovery
-    *
-    * @return MacOSGeneralDeviceConfiguration
-    */
-    public function setAirPrintBlockiBeaconDiscovery($val)
-    {
-        $this->_propDict["airPrintBlockiBeaconDiscovery"] = boolval($val);
-        return $this;
-    }
-    
-    /**
-    * Gets the airPrintForceTrustedTLS
-    * Indicates if trusted certificates are required for TLS printing communication (macOS 10.13 and later).
-    *
-    * @return bool The airPrintForceTrustedTLS
-    */
-    public function getAirPrintForceTrustedTLS()
-    {
-        if (array_key_exists("airPrintForceTrustedTLS", $this->_propDict)) {
-            return $this->_propDict["airPrintForceTrustedTLS"];
-        } else {
-            return null;
-        }
-    }
-    
-    /**
-    * Sets the airPrintForceTrustedTLS
-    * Indicates if trusted certificates are required for TLS printing communication (macOS 10.13 and later).
-    *
-    * @param bool $val The airPrintForceTrustedTLS
-    *
-    * @return MacOSGeneralDeviceConfiguration
-    */
-    public function setAirPrintForceTrustedTLS($val)
-    {
-        $this->_propDict["airPrintForceTrustedTLS"] = boolval($val);
-        return $this;
-    }
-    
-    /**
     * Gets the appleWatchBlockAutoUnlock
     * Indicates whether or to block users from unlocking their Mac with Apple Watch.
     *
-    * @return bool The appleWatchBlockAutoUnlock
+    * @return bool|null The appleWatchBlockAutoUnlock
     */
     public function getAppleWatchBlockAutoUnlock()
     {
@@ -173,7 +115,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the cameraBlocked
     * Indicates whether or not to block the user from accessing the camera of the device.
     *
-    * @return bool The cameraBlocked
+    * @return bool|null The cameraBlocked
     */
     public function getCameraBlocked()
     {
@@ -202,7 +144,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the classroomAppBlockRemoteScreenObservation
     * Indicates whether or not to allow remote screen observation by Classroom app. Requires MDM enrollment via Apple School Manager or Apple Business Manager.
     *
-    * @return bool The classroomAppBlockRemoteScreenObservation
+    * @return bool|null The classroomAppBlockRemoteScreenObservation
     */
     public function getClassroomAppBlockRemoteScreenObservation()
     {
@@ -231,7 +173,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the classroomAppForceUnpromptedScreenObservation
     * Indicates whether or not to automatically give permission to the teacher of a managed course on the Classroom app to view a student's screen without prompting. Requires MDM enrollment via Apple School Manager or Apple Business Manager.
     *
-    * @return bool The classroomAppForceUnpromptedScreenObservation
+    * @return bool|null The classroomAppForceUnpromptedScreenObservation
     */
     public function getClassroomAppForceUnpromptedScreenObservation()
     {
@@ -260,7 +202,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the classroomForceAutomaticallyJoinClasses
     * Indicates whether or not to automatically give permission to the teacher's requests, without prompting the student. Requires MDM enrollment via Apple School Manager or Apple Business Manager.
     *
-    * @return bool The classroomForceAutomaticallyJoinClasses
+    * @return bool|null The classroomForceAutomaticallyJoinClasses
     */
     public function getClassroomForceAutomaticallyJoinClasses()
     {
@@ -289,7 +231,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the classroomForceRequestPermissionToLeaveClasses
     * Indicates whether a student enrolled in an unmanaged course via Classroom will be required to request permission from the teacher when attempting to leave the course. Requires MDM enrollment via Apple School Manager or Apple Business Manager.
     *
-    * @return bool The classroomForceRequestPermissionToLeaveClasses
+    * @return bool|null The classroomForceRequestPermissionToLeaveClasses
     */
     public function getClassroomForceRequestPermissionToLeaveClasses()
     {
@@ -318,7 +260,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the classroomForceUnpromptedAppAndDeviceLock
     * Indicates whether or not to allow the teacher to lock apps or the device without prompting the student. Requires MDM enrollment via Apple School Manager or Apple Business Manager.
     *
-    * @return bool The classroomForceUnpromptedAppAndDeviceLock
+    * @return bool|null The classroomForceUnpromptedAppAndDeviceLock
     */
     public function getClassroomForceUnpromptedAppAndDeviceLock()
     {
@@ -347,12 +289,12 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the compliantAppListType
     * List that is in the CompliantAppsList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.
     *
-    * @return AppListType The compliantAppListType
+    * @return AppListType|null The compliantAppListType
     */
     public function getCompliantAppListType()
     {
         if (array_key_exists("compliantAppListType", $this->_propDict)) {
-            if (is_a($this->_propDict["compliantAppListType"], "Beta\Microsoft\Graph\Model\AppListType")) {
+            if (is_a($this->_propDict["compliantAppListType"], "\Beta\Microsoft\Graph\Model\AppListType") || is_null($this->_propDict["compliantAppListType"])) {
                 return $this->_propDict["compliantAppListType"];
             } else {
                 $this->_propDict["compliantAppListType"] = new AppListType($this->_propDict["compliantAppListType"]);
@@ -381,7 +323,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
      * Gets the compliantAppsList
     * List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
      *
-     * @return array The compliantAppsList
+     * @return array|null The compliantAppsList
      */
     public function getCompliantAppsList()
     {
@@ -402,7 +344,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     */
     public function setCompliantAppsList($val)
     {
-		$this->_propDict["compliantAppsList"] = $val;
+        $this->_propDict["compliantAppsList"] = $val;
         return $this;
     }
     
@@ -410,7 +352,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the contentCachingBlocked
     * Indicates whether or not to allow content caching.
     *
-    * @return bool The contentCachingBlocked
+    * @return bool|null The contentCachingBlocked
     */
     public function getContentCachingBlocked()
     {
@@ -439,7 +381,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the definitionLookupBlocked
     * Indicates whether or not to block definition lookup.
     *
-    * @return bool The definitionLookupBlocked
+    * @return bool|null The definitionLookupBlocked
     */
     public function getDefinitionLookupBlocked()
     {
@@ -468,7 +410,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the emailInDomainSuffixes
     * An email address lacking a suffix that matches any of these strings will be considered out-of-domain.
     *
-    * @return string The emailInDomainSuffixes
+    * @return string|null The emailInDomainSuffixes
     */
     public function getEmailInDomainSuffixes()
     {
@@ -494,10 +436,68 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     }
     
     /**
+    * Gets the eraseContentAndSettingsBlocked
+    * TRUE disables the reset option on supervised devices. FALSE enables the reset option on supervised devices. Available for devices running macOS versions 12.0 and later.
+    *
+    * @return bool|null The eraseContentAndSettingsBlocked
+    */
+    public function getEraseContentAndSettingsBlocked()
+    {
+        if (array_key_exists("eraseContentAndSettingsBlocked", $this->_propDict)) {
+            return $this->_propDict["eraseContentAndSettingsBlocked"];
+        } else {
+            return null;
+        }
+    }
+    
+    /**
+    * Sets the eraseContentAndSettingsBlocked
+    * TRUE disables the reset option on supervised devices. FALSE enables the reset option on supervised devices. Available for devices running macOS versions 12.0 and later.
+    *
+    * @param bool $val The eraseContentAndSettingsBlocked
+    *
+    * @return MacOSGeneralDeviceConfiguration
+    */
+    public function setEraseContentAndSettingsBlocked($val)
+    {
+        $this->_propDict["eraseContentAndSettingsBlocked"] = boolval($val);
+        return $this;
+    }
+    
+    /**
+    * Gets the gameCenterBlocked
+    * Yes disables Game Center, and the Game Center icon is removed from the Home screen. Available for devices running macOS versions 10.13 and later.
+    *
+    * @return bool|null The gameCenterBlocked
+    */
+    public function getGameCenterBlocked()
+    {
+        if (array_key_exists("gameCenterBlocked", $this->_propDict)) {
+            return $this->_propDict["gameCenterBlocked"];
+        } else {
+            return null;
+        }
+    }
+    
+    /**
+    * Sets the gameCenterBlocked
+    * Yes disables Game Center, and the Game Center icon is removed from the Home screen. Available for devices running macOS versions 10.13 and later.
+    *
+    * @param bool $val The gameCenterBlocked
+    *
+    * @return MacOSGeneralDeviceConfiguration
+    */
+    public function setGameCenterBlocked($val)
+    {
+        $this->_propDict["gameCenterBlocked"] = boolval($val);
+        return $this;
+    }
+    
+    /**
     * Gets the iCloudBlockActivityContinuation
     * Indicates whether or not to block the user from continuing work that they started on a MacOS device on another iOS or MacOS device (MacOS 10.15 or later).
     *
-    * @return bool The iCloudBlockActivityContinuation
+    * @return bool|null The iCloudBlockActivityContinuation
     */
     public function getICloudBlockActivityContinuation()
     {
@@ -526,7 +526,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the iCloudBlockAddressBook
     * Indicates whether or not to block iCloud from syncing contacts.
     *
-    * @return bool The iCloudBlockAddressBook
+    * @return bool|null The iCloudBlockAddressBook
     */
     public function getICloudBlockAddressBook()
     {
@@ -555,7 +555,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the iCloudBlockBookmarks
     * Indicates whether or not to block iCloud from syncing bookmarks.
     *
-    * @return bool The iCloudBlockBookmarks
+    * @return bool|null The iCloudBlockBookmarks
     */
     public function getICloudBlockBookmarks()
     {
@@ -584,7 +584,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the iCloudBlockCalendar
     * Indicates whether or not to block iCloud from syncing calendars.
     *
-    * @return bool The iCloudBlockCalendar
+    * @return bool|null The iCloudBlockCalendar
     */
     public function getICloudBlockCalendar()
     {
@@ -613,7 +613,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the iCloudBlockDocumentSync
     * Indicates whether or not to block iCloud document sync.
     *
-    * @return bool The iCloudBlockDocumentSync
+    * @return bool|null The iCloudBlockDocumentSync
     */
     public function getICloudBlockDocumentSync()
     {
@@ -642,7 +642,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the iCloudBlockMail
     * Indicates whether or not to block iCloud from syncing mail.
     *
-    * @return bool The iCloudBlockMail
+    * @return bool|null The iCloudBlockMail
     */
     public function getICloudBlockMail()
     {
@@ -671,7 +671,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the iCloudBlockNotes
     * Indicates whether or not to block iCloud from syncing notes.
     *
-    * @return bool The iCloudBlockNotes
+    * @return bool|null The iCloudBlockNotes
     */
     public function getICloudBlockNotes()
     {
@@ -700,7 +700,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the iCloudBlockPhotoLibrary
     * Indicates whether or not to block iCloud Photo Library.
     *
-    * @return bool The iCloudBlockPhotoLibrary
+    * @return bool|null The iCloudBlockPhotoLibrary
     */
     public function getICloudBlockPhotoLibrary()
     {
@@ -729,7 +729,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the iCloudBlockReminders
     * Indicates whether or not to block iCloud from syncing reminders.
     *
-    * @return bool The iCloudBlockReminders
+    * @return bool|null The iCloudBlockReminders
     */
     public function getICloudBlockReminders()
     {
@@ -758,7 +758,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the iTunesBlockFileSharing
     * Indicates whether or not to block files from being transferred using iTunes.
     *
-    * @return bool The iTunesBlockFileSharing
+    * @return bool|null The iTunesBlockFileSharing
     */
     public function getITunesBlockFileSharing()
     {
@@ -787,7 +787,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the iTunesBlockMusicService
     * Indicates whether or not to block Music service and revert Music app to classic mode.
     *
-    * @return bool The iTunesBlockMusicService
+    * @return bool|null The iTunesBlockMusicService
     */
     public function getITunesBlockMusicService()
     {
@@ -816,7 +816,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the keyboardBlockDictation
     * Indicates whether or not to block the user from using dictation input.
     *
-    * @return bool The keyboardBlockDictation
+    * @return bool|null The keyboardBlockDictation
     */
     public function getKeyboardBlockDictation()
     {
@@ -845,7 +845,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the keychainBlockCloudSync
     * Indicates whether or not iCloud keychain synchronization is blocked (macOS 10.12 and later).
     *
-    * @return bool The keychainBlockCloudSync
+    * @return bool|null The keychainBlockCloudSync
     */
     public function getKeychainBlockCloudSync()
     {
@@ -871,10 +871,39 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     }
     
     /**
+    * Gets the multiplayerGamingBlocked
+    * TRUE prevents multiplayer gaming when using Game Center. FALSE allows multiplayer gaming when using Game Center. Available for devices running macOS versions 10.13 and later.
+    *
+    * @return bool|null The multiplayerGamingBlocked
+    */
+    public function getMultiplayerGamingBlocked()
+    {
+        if (array_key_exists("multiplayerGamingBlocked", $this->_propDict)) {
+            return $this->_propDict["multiplayerGamingBlocked"];
+        } else {
+            return null;
+        }
+    }
+    
+    /**
+    * Sets the multiplayerGamingBlocked
+    * TRUE prevents multiplayer gaming when using Game Center. FALSE allows multiplayer gaming when using Game Center. Available for devices running macOS versions 10.13 and later.
+    *
+    * @param bool $val The multiplayerGamingBlocked
+    *
+    * @return MacOSGeneralDeviceConfiguration
+    */
+    public function setMultiplayerGamingBlocked($val)
+    {
+        $this->_propDict["multiplayerGamingBlocked"] = boolval($val);
+        return $this;
+    }
+    
+    /**
     * Gets the passwordBlockAirDropSharing
     * Indicates whether or not to block sharing passwords with the AirDrop passwords feature.
     *
-    * @return bool The passwordBlockAirDropSharing
+    * @return bool|null The passwordBlockAirDropSharing
     */
     public function getPasswordBlockAirDropSharing()
     {
@@ -903,7 +932,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the passwordBlockAutoFill
     * Indicates whether or not to block the AutoFill Passwords feature.
     *
-    * @return bool The passwordBlockAutoFill
+    * @return bool|null The passwordBlockAutoFill
     */
     public function getPasswordBlockAutoFill()
     {
@@ -932,7 +961,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the passwordBlockFingerprintUnlock
     * Indicates whether or not to block fingerprint unlock.
     *
-    * @return bool The passwordBlockFingerprintUnlock
+    * @return bool|null The passwordBlockFingerprintUnlock
     */
     public function getPasswordBlockFingerprintUnlock()
     {
@@ -961,7 +990,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the passwordBlockModification
     * Indicates whether or not to allow passcode modification.
     *
-    * @return bool The passwordBlockModification
+    * @return bool|null The passwordBlockModification
     */
     public function getPasswordBlockModification()
     {
@@ -990,7 +1019,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the passwordBlockProximityRequests
     * Indicates whether or not to block requesting passwords from nearby devices.
     *
-    * @return bool The passwordBlockProximityRequests
+    * @return bool|null The passwordBlockProximityRequests
     */
     public function getPasswordBlockProximityRequests()
     {
@@ -1019,7 +1048,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the passwordBlockSimple
     * Block simple passwords.
     *
-    * @return bool The passwordBlockSimple
+    * @return bool|null The passwordBlockSimple
     */
     public function getPasswordBlockSimple()
     {
@@ -1048,7 +1077,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the passwordExpirationDays
     * Number of days before the password expires.
     *
-    * @return int The passwordExpirationDays
+    * @return int|null The passwordExpirationDays
     */
     public function getPasswordExpirationDays()
     {
@@ -1077,7 +1106,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the passwordMaximumAttemptCount
     * The number of allowed failed attempts to enter the passcode at the device's lock screen. Valid values 2 to 11
     *
-    * @return int The passwordMaximumAttemptCount
+    * @return int|null The passwordMaximumAttemptCount
     */
     public function getPasswordMaximumAttemptCount()
     {
@@ -1106,7 +1135,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the passwordMinimumCharacterSetCount
     * Number of character sets a password must contain. Valid values 0 to 4
     *
-    * @return int The passwordMinimumCharacterSetCount
+    * @return int|null The passwordMinimumCharacterSetCount
     */
     public function getPasswordMinimumCharacterSetCount()
     {
@@ -1135,7 +1164,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the passwordMinimumLength
     * Minimum length of passwords.
     *
-    * @return int The passwordMinimumLength
+    * @return int|null The passwordMinimumLength
     */
     public function getPasswordMinimumLength()
     {
@@ -1164,7 +1193,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the passwordMinutesOfInactivityBeforeLock
     * Minutes of inactivity required before a password is required.
     *
-    * @return int The passwordMinutesOfInactivityBeforeLock
+    * @return int|null The passwordMinutesOfInactivityBeforeLock
     */
     public function getPasswordMinutesOfInactivityBeforeLock()
     {
@@ -1193,7 +1222,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the passwordMinutesOfInactivityBeforeScreenTimeout
     * Minutes of inactivity required before the screen times out.
     *
-    * @return int The passwordMinutesOfInactivityBeforeScreenTimeout
+    * @return int|null The passwordMinutesOfInactivityBeforeScreenTimeout
     */
     public function getPasswordMinutesOfInactivityBeforeScreenTimeout()
     {
@@ -1222,7 +1251,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the passwordMinutesUntilFailedLoginReset
     * The number of minutes before the login is reset after the maximum number of unsuccessful login attempts is reached.
     *
-    * @return int The passwordMinutesUntilFailedLoginReset
+    * @return int|null The passwordMinutesUntilFailedLoginReset
     */
     public function getPasswordMinutesUntilFailedLoginReset()
     {
@@ -1251,7 +1280,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the passwordPreviousPasswordBlockCount
     * Number of previous passwords to block.
     *
-    * @return int The passwordPreviousPasswordBlockCount
+    * @return int|null The passwordPreviousPasswordBlockCount
     */
     public function getPasswordPreviousPasswordBlockCount()
     {
@@ -1280,7 +1309,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the passwordRequired
     * Whether or not to require a password.
     *
-    * @return bool The passwordRequired
+    * @return bool|null The passwordRequired
     */
     public function getPasswordRequired()
     {
@@ -1309,12 +1338,12 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the passwordRequiredType
     * Type of password that is required. Possible values are: deviceDefault, alphanumeric, numeric.
     *
-    * @return RequiredPasswordType The passwordRequiredType
+    * @return RequiredPasswordType|null The passwordRequiredType
     */
     public function getPasswordRequiredType()
     {
         if (array_key_exists("passwordRequiredType", $this->_propDict)) {
-            if (is_a($this->_propDict["passwordRequiredType"], "Beta\Microsoft\Graph\Model\RequiredPasswordType")) {
+            if (is_a($this->_propDict["passwordRequiredType"], "\Beta\Microsoft\Graph\Model\RequiredPasswordType") || is_null($this->_propDict["passwordRequiredType"])) {
                 return $this->_propDict["passwordRequiredType"];
             } else {
                 $this->_propDict["passwordRequiredType"] = new RequiredPasswordType($this->_propDict["passwordRequiredType"]);
@@ -1343,7 +1372,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
      * Gets the privacyAccessControls
     * List of privacy preference policy controls. This collection can contain a maximum of 10000 elements.
      *
-     * @return array The privacyAccessControls
+     * @return array|null The privacyAccessControls
      */
     public function getPrivacyAccessControls()
     {
@@ -1364,7 +1393,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     */
     public function setPrivacyAccessControls($val)
     {
-		$this->_propDict["privacyAccessControls"] = $val;
+        $this->_propDict["privacyAccessControls"] = $val;
         return $this;
     }
     
@@ -1372,7 +1401,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the safariBlockAutofill
     * Indicates whether or not to block the user from using Auto fill in Safari.
     *
-    * @return bool The safariBlockAutofill
+    * @return bool|null The safariBlockAutofill
     */
     public function getSafariBlockAutofill()
     {
@@ -1401,7 +1430,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the screenCaptureBlocked
     * Indicates whether or not to block the user from taking Screenshots.
     *
-    * @return bool The screenCaptureBlocked
+    * @return bool|null The screenCaptureBlocked
     */
     public function getScreenCaptureBlocked()
     {
@@ -1427,10 +1456,97 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     }
     
     /**
+    * Gets the softwareUpdateMajorOSDeferredInstallDelayInDays
+    * Specify the number of days (1-90) to delay visibility of major OS software updates. Available for devices running macOS versions 11.3 and later. Valid values 0 to 90
+    *
+    * @return int|null The softwareUpdateMajorOSDeferredInstallDelayInDays
+    */
+    public function getSoftwareUpdateMajorOSDeferredInstallDelayInDays()
+    {
+        if (array_key_exists("softwareUpdateMajorOSDeferredInstallDelayInDays", $this->_propDict)) {
+            return $this->_propDict["softwareUpdateMajorOSDeferredInstallDelayInDays"];
+        } else {
+            return null;
+        }
+    }
+    
+    /**
+    * Sets the softwareUpdateMajorOSDeferredInstallDelayInDays
+    * Specify the number of days (1-90) to delay visibility of major OS software updates. Available for devices running macOS versions 11.3 and later. Valid values 0 to 90
+    *
+    * @param int $val The softwareUpdateMajorOSDeferredInstallDelayInDays
+    *
+    * @return MacOSGeneralDeviceConfiguration
+    */
+    public function setSoftwareUpdateMajorOSDeferredInstallDelayInDays($val)
+    {
+        $this->_propDict["softwareUpdateMajorOSDeferredInstallDelayInDays"] = intval($val);
+        return $this;
+    }
+    
+    /**
+    * Gets the softwareUpdateMinorOSDeferredInstallDelayInDays
+    * Specify the number of days (1-90) to delay visibility of minor OS software updates. Available for devices running macOS versions 11.3 and later. Valid values 0 to 90
+    *
+    * @return int|null The softwareUpdateMinorOSDeferredInstallDelayInDays
+    */
+    public function getSoftwareUpdateMinorOSDeferredInstallDelayInDays()
+    {
+        if (array_key_exists("softwareUpdateMinorOSDeferredInstallDelayInDays", $this->_propDict)) {
+            return $this->_propDict["softwareUpdateMinorOSDeferredInstallDelayInDays"];
+        } else {
+            return null;
+        }
+    }
+    
+    /**
+    * Sets the softwareUpdateMinorOSDeferredInstallDelayInDays
+    * Specify the number of days (1-90) to delay visibility of minor OS software updates. Available for devices running macOS versions 11.3 and later. Valid values 0 to 90
+    *
+    * @param int $val The softwareUpdateMinorOSDeferredInstallDelayInDays
+    *
+    * @return MacOSGeneralDeviceConfiguration
+    */
+    public function setSoftwareUpdateMinorOSDeferredInstallDelayInDays($val)
+    {
+        $this->_propDict["softwareUpdateMinorOSDeferredInstallDelayInDays"] = intval($val);
+        return $this;
+    }
+    
+    /**
+    * Gets the softwareUpdateNonOSDeferredInstallDelayInDays
+    * Specify the number of days (1-90) to delay visibility of non-OS software updates. Available for devices running macOS versions 11.3 and later. Valid values 0 to 90
+    *
+    * @return int|null The softwareUpdateNonOSDeferredInstallDelayInDays
+    */
+    public function getSoftwareUpdateNonOSDeferredInstallDelayInDays()
+    {
+        if (array_key_exists("softwareUpdateNonOSDeferredInstallDelayInDays", $this->_propDict)) {
+            return $this->_propDict["softwareUpdateNonOSDeferredInstallDelayInDays"];
+        } else {
+            return null;
+        }
+    }
+    
+    /**
+    * Sets the softwareUpdateNonOSDeferredInstallDelayInDays
+    * Specify the number of days (1-90) to delay visibility of non-OS software updates. Available for devices running macOS versions 11.3 and later. Valid values 0 to 90
+    *
+    * @param int $val The softwareUpdateNonOSDeferredInstallDelayInDays
+    *
+    * @return MacOSGeneralDeviceConfiguration
+    */
+    public function setSoftwareUpdateNonOSDeferredInstallDelayInDays($val)
+    {
+        $this->_propDict["softwareUpdateNonOSDeferredInstallDelayInDays"] = intval($val);
+        return $this;
+    }
+    
+    /**
     * Gets the softwareUpdatesEnforcedDelayInDays
     * Sets how many days a software update will be delyed for a supervised device. Valid values 0 to 90
     *
-    * @return int The softwareUpdatesEnforcedDelayInDays
+    * @return int|null The softwareUpdatesEnforcedDelayInDays
     */
     public function getSoftwareUpdatesEnforcedDelayInDays()
     {
@@ -1459,7 +1575,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     * Gets the spotlightBlockInternetResults
     * Indicates whether or not to block Spotlight from returning any results from an Internet search.
     *
-    * @return bool The spotlightBlockInternetResults
+    * @return bool|null The spotlightBlockInternetResults
     */
     public function getSpotlightBlockInternetResults()
     {
@@ -1486,14 +1602,14 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     
     /**
     * Gets the updateDelayPolicy
-    * Determines whether to delay OS and/or app updates for macOS. Possible values are: none, delayOSUpdateVisibility, delayAppUpdateVisibility.
+    * Determines whether to delay OS and/or app updates for macOS. Possible values are: none, delayOSUpdateVisibility, delayAppUpdateVisibility, unknownFutureValue, delayMajorOsUpdateVisibility.
     *
-    * @return MacOSSoftwareUpdateDelayPolicy The updateDelayPolicy
+    * @return MacOSSoftwareUpdateDelayPolicy|null The updateDelayPolicy
     */
     public function getUpdateDelayPolicy()
     {
         if (array_key_exists("updateDelayPolicy", $this->_propDict)) {
-            if (is_a($this->_propDict["updateDelayPolicy"], "Beta\Microsoft\Graph\Model\MacOSSoftwareUpdateDelayPolicy")) {
+            if (is_a($this->_propDict["updateDelayPolicy"], "\Beta\Microsoft\Graph\Model\MacOSSoftwareUpdateDelayPolicy") || is_null($this->_propDict["updateDelayPolicy"])) {
                 return $this->_propDict["updateDelayPolicy"];
             } else {
                 $this->_propDict["updateDelayPolicy"] = new MacOSSoftwareUpdateDelayPolicy($this->_propDict["updateDelayPolicy"]);
@@ -1505,7 +1621,7 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     
     /**
     * Sets the updateDelayPolicy
-    * Determines whether to delay OS and/or app updates for macOS. Possible values are: none, delayOSUpdateVisibility, delayAppUpdateVisibility.
+    * Determines whether to delay OS and/or app updates for macOS. Possible values are: none, delayOSUpdateVisibility, delayAppUpdateVisibility, unknownFutureValue, delayMajorOsUpdateVisibility.
     *
     * @param MacOSSoftwareUpdateDelayPolicy $val The updateDelayPolicy
     *
@@ -1514,6 +1630,35 @@ class MacOSGeneralDeviceConfiguration extends DeviceConfiguration
     public function setUpdateDelayPolicy($val)
     {
         $this->_propDict["updateDelayPolicy"] = $val;
+        return $this;
+    }
+    
+    /**
+    * Gets the wallpaperModificationBlocked
+    * TRUE prevents the wallpaper from being changed. FALSE allows the wallpaper to be changed. Available for devices running macOS versions 10.13 and later.
+    *
+    * @return bool|null The wallpaperModificationBlocked
+    */
+    public function getWallpaperModificationBlocked()
+    {
+        if (array_key_exists("wallpaperModificationBlocked", $this->_propDict)) {
+            return $this->_propDict["wallpaperModificationBlocked"];
+        } else {
+            return null;
+        }
+    }
+    
+    /**
+    * Sets the wallpaperModificationBlocked
+    * TRUE prevents the wallpaper from being changed. FALSE allows the wallpaper to be changed. Available for devices running macOS versions 10.13 and later.
+    *
+    * @param bool $val The wallpaperModificationBlocked
+    *
+    * @return MacOSGeneralDeviceConfiguration
+    */
+    public function setWallpaperModificationBlocked($val)
+    {
+        $this->_propDict["wallpaperModificationBlocked"] = boolval($val);
         return $this;
     }
     

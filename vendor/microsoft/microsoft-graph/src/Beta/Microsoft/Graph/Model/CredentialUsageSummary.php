@@ -26,14 +26,14 @@ class CredentialUsageSummary extends Entity
 {
     /**
     * Gets the authMethod
-    * Represents the authentication method that the user used. Possible values are: email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, and  alternateMobileCall (only supported for registration).
+    * Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword, unknownFutureValue.
     *
-    * @return UsageAuthMethod The authMethod
+    * @return UsageAuthMethod|null The authMethod
     */
     public function getAuthMethod()
     {
         if (array_key_exists("authMethod", $this->_propDict)) {
-            if (is_a($this->_propDict["authMethod"], "Beta\Microsoft\Graph\Model\UsageAuthMethod")) {
+            if (is_a($this->_propDict["authMethod"], "\Beta\Microsoft\Graph\Model\UsageAuthMethod") || is_null($this->_propDict["authMethod"])) {
                 return $this->_propDict["authMethod"];
             } else {
                 $this->_propDict["authMethod"] = new UsageAuthMethod($this->_propDict["authMethod"]);
@@ -45,7 +45,7 @@ class CredentialUsageSummary extends Entity
     
     /**
     * Sets the authMethod
-    * Represents the authentication method that the user used. Possible values are: email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, and  alternateMobileCall (only supported for registration).
+    * Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword, unknownFutureValue.
     *
     * @param UsageAuthMethod $val The authMethod
     *
@@ -61,7 +61,7 @@ class CredentialUsageSummary extends Entity
     * Gets the failureActivityCount
     * Provides the count of failed resets or registration data.
     *
-    * @return int The failureActivityCount
+    * @return int|null The failureActivityCount
     */
     public function getFailureActivityCount()
     {
@@ -88,14 +88,14 @@ class CredentialUsageSummary extends Entity
     
     /**
     * Gets the feature
-    * Defines the feature to report. Possible values are: registration and reset.
+    * Defines the feature to report. Possible values are: registration, reset, unknownFutureValue.
     *
-    * @return FeatureType The feature
+    * @return FeatureType|null The feature
     */
     public function getFeature()
     {
         if (array_key_exists("feature", $this->_propDict)) {
-            if (is_a($this->_propDict["feature"], "Beta\Microsoft\Graph\Model\FeatureType")) {
+            if (is_a($this->_propDict["feature"], "\Beta\Microsoft\Graph\Model\FeatureType") || is_null($this->_propDict["feature"])) {
                 return $this->_propDict["feature"];
             } else {
                 $this->_propDict["feature"] = new FeatureType($this->_propDict["feature"]);
@@ -107,7 +107,7 @@ class CredentialUsageSummary extends Entity
     
     /**
     * Sets the feature
-    * Defines the feature to report. Possible values are: registration and reset.
+    * Defines the feature to report. Possible values are: registration, reset, unknownFutureValue.
     *
     * @param FeatureType $val The feature
     *
@@ -123,7 +123,7 @@ class CredentialUsageSummary extends Entity
     * Gets the successfulActivityCount
     * Provides the count of successful registrations or resets.
     *
-    * @return int The successfulActivityCount
+    * @return int|null The successfulActivityCount
     */
     public function getSuccessfulActivityCount()
     {

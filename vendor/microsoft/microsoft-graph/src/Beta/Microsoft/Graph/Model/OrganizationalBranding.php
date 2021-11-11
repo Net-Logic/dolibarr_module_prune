@@ -27,8 +27,9 @@ class OrganizationalBranding extends OrganizationalBrandingProperties
 
      /** 
      * Gets the localizations
+    * Add different branding based on a locale.
      *
-     * @return array The localizations
+     * @return array|null The localizations
      */
     public function getLocalizations()
     {
@@ -41,6 +42,7 @@ class OrganizationalBranding extends OrganizationalBrandingProperties
     
     /** 
     * Sets the localizations
+    * Add different branding based on a locale.
     *
     * @param OrganizationalBrandingLocalization $val The localizations
     *
@@ -48,7 +50,7 @@ class OrganizationalBranding extends OrganizationalBrandingProperties
     */
     public function setLocalizations($val)
     {
-		$this->_propDict["localizations"] = $val;
+        $this->_propDict["localizations"] = $val;
         return $this;
     }
     

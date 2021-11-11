@@ -27,7 +27,7 @@ class PreAuthorizedApplication extends Entity
     * Gets the appId
     * The unique identifier for the application.
     *
-    * @return string The appId
+    * @return string|null The appId
     */
     public function getAppId()
     {
@@ -53,9 +53,8 @@ class PreAuthorizedApplication extends Entity
     }
     /**
     * Gets the delegatedPermissionIds
-    * The unique identifier for the oauth2PermissionScopes the application requires.
     *
-    * @return string The delegatedPermissionIds
+    * @return string|null The delegatedPermissionIds
     */
     public function getDelegatedPermissionIds()
     {
@@ -68,7 +67,6 @@ class PreAuthorizedApplication extends Entity
 
     /**
     * Sets the delegatedPermissionIds
-    * The unique identifier for the oauth2PermissionScopes the application requires.
     *
     * @param string $val The value of the delegatedPermissionIds
     *

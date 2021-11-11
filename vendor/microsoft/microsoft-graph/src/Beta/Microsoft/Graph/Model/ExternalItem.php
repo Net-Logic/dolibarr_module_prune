@@ -27,9 +27,8 @@ class ExternalItem extends Entity
 
      /** 
      * Gets the acl
-    * An array of access control entries. Each entry specifies the access granted to a user or group. Required.
      *
-     * @return array The acl
+     * @return array|null The acl
      */
     public function getAcl()
     {
@@ -42,7 +41,6 @@ class ExternalItem extends Entity
     
     /** 
     * Sets the acl
-    * An array of access control entries. Each entry specifies the access granted to a user or group. Required.
     *
     * @param Acl $val The acl
     *
@@ -50,20 +48,19 @@ class ExternalItem extends Entity
     */
     public function setAcl($val)
     {
-		$this->_propDict["acl"] = $val;
+        $this->_propDict["acl"] = $val;
         return $this;
     }
     
     /**
     * Gets the content
-    * A plain-text  representation of the contents of the item. The text in this property is full-text indexed. Optional.
     *
-    * @return ExternalItemContent The content
+    * @return ExternalItemContent|null The content
     */
     public function getContent()
     {
         if (array_key_exists("content", $this->_propDict)) {
-            if (is_a($this->_propDict["content"], "Beta\Microsoft\Graph\Model\ExternalItemContent")) {
+            if (is_a($this->_propDict["content"], "\Beta\Microsoft\Graph\Model\ExternalItemContent") || is_null($this->_propDict["content"])) {
                 return $this->_propDict["content"];
             } else {
                 $this->_propDict["content"] = new ExternalItemContent($this->_propDict["content"]);
@@ -75,7 +72,6 @@ class ExternalItem extends Entity
     
     /**
     * Sets the content
-    * A plain-text  representation of the contents of the item. The text in this property is full-text indexed. Optional.
     *
     * @param ExternalItemContent $val The content
     *
@@ -89,14 +85,13 @@ class ExternalItem extends Entity
     
     /**
     * Gets the externalItemProperties
-    * A property bag with the properties of the item. The properties MUST conform to the schema defined for the externalConnection. Required.
     *
-    * @return Properties The externalItemProperties
+    * @return Properties|null The externalItemProperties
     */
     public function getExternalItemProperties()
     {
         if (array_key_exists("properties", $this->_propDict)) {
-            if (is_a($this->_propDict["properties"], "Beta\Microsoft\Graph\Model\Properties")) {
+            if (is_a($this->_propDict["properties"], "\Beta\Microsoft\Graph\Model\Properties") || is_null($this->_propDict["properties"])) {
                 return $this->_propDict["properties"];
             } else {
                 $this->_propDict["properties"] = new Properties($this->_propDict["properties"]);
@@ -108,7 +103,6 @@ class ExternalItem extends Entity
     
     /**
     * Sets the externalItemProperties
-    * A property bag with the properties of the item. The properties MUST conform to the schema defined for the externalConnection. Required.
     *
     * @param Properties $val The externalItemProperties
     *

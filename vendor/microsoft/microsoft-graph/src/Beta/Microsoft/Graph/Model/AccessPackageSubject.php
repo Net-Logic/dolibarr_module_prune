@@ -27,7 +27,7 @@ class AccessPackageSubject extends Entity
     /**
     * Gets the altSecId
     *
-    * @return string The altSecId
+    * @return string|null The altSecId
     */
     public function getAltSecId()
     {
@@ -53,8 +53,9 @@ class AccessPackageSubject extends Entity
     
     /**
     * Gets the connectedOrganizationId
+    * The identifier of the connected organization of the subject.
     *
-    * @return string The connectedOrganizationId
+    * @return string|null The connectedOrganizationId
     */
     public function getConnectedOrganizationId()
     {
@@ -67,6 +68,7 @@ class AccessPackageSubject extends Entity
     
     /**
     * Sets the connectedOrganizationId
+    * The identifier of the connected organization of the subject.
     *
     * @param string $val The connectedOrganizationId
     *
@@ -82,7 +84,7 @@ class AccessPackageSubject extends Entity
     * Gets the displayName
     * The display name of the subject.
     *
-    * @return string The displayName
+    * @return string|null The displayName
     */
     public function getDisplayName()
     {
@@ -111,7 +113,7 @@ class AccessPackageSubject extends Entity
     * Gets the email
     * The email address of the subject.
     *
-    * @return string The email
+    * @return string|null The email
     */
     public function getEmail()
     {
@@ -138,9 +140,9 @@ class AccessPackageSubject extends Entity
     
     /**
     * Gets the objectId
-    * The object ID of the subject.
+    * The object identifier of the subject. null if the subject is not yet a user in the tenant.
     *
-    * @return string The objectId
+    * @return string|null The objectId
     */
     public function getObjectId()
     {
@@ -153,7 +155,7 @@ class AccessPackageSubject extends Entity
     
     /**
     * Sets the objectId
-    * The object ID of the subject.
+    * The object identifier of the subject. null if the subject is not yet a user in the tenant.
     *
     * @param string $val The objectId
     *
@@ -168,7 +170,7 @@ class AccessPackageSubject extends Entity
     /**
     * Gets the onPremisesSecurityIdentifier
     *
-    * @return string The onPremisesSecurityIdentifier
+    * @return string|null The onPremisesSecurityIdentifier
     */
     public function getOnPremisesSecurityIdentifier()
     {
@@ -196,7 +198,7 @@ class AccessPackageSubject extends Entity
     * Gets the principalName
     * The principal name, if known, of the subject.
     *
-    * @return string The principalName
+    * @return string|null The principalName
     */
     public function getPrincipalName()
     {
@@ -225,7 +227,7 @@ class AccessPackageSubject extends Entity
     * Gets the type
     * The resource type of the subject.
     *
-    * @return string The type
+    * @return string|null The type
     */
     public function getType()
     {
@@ -252,13 +254,14 @@ class AccessPackageSubject extends Entity
     
     /**
     * Gets the connectedOrganization
+    * The connected organization of the subject. Read-only. Nullable.
     *
-    * @return ConnectedOrganization The connectedOrganization
+    * @return ConnectedOrganization|null The connectedOrganization
     */
     public function getConnectedOrganization()
     {
         if (array_key_exists("connectedOrganization", $this->_propDict)) {
-            if (is_a($this->_propDict["connectedOrganization"], "Beta\Microsoft\Graph\Model\ConnectedOrganization")) {
+            if (is_a($this->_propDict["connectedOrganization"], "\Beta\Microsoft\Graph\Model\ConnectedOrganization") || is_null($this->_propDict["connectedOrganization"])) {
                 return $this->_propDict["connectedOrganization"];
             } else {
                 $this->_propDict["connectedOrganization"] = new ConnectedOrganization($this->_propDict["connectedOrganization"]);
@@ -270,6 +273,7 @@ class AccessPackageSubject extends Entity
     
     /**
     * Sets the connectedOrganization
+    * The connected organization of the subject. Read-only. Nullable.
     *
     * @param ConnectedOrganization $val The connectedOrganization
     *
