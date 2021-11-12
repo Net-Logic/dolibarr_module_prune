@@ -18,11 +18,115 @@
 
 /**
  *      \file       htdocs/prune/lib/prune.lib.php
- *      \ingroup    oauth
- *      \brief      Dolibarr token storage functions
+ *      \ingroup    prune
+ *      \brief      Dolibarr prune functions
  */
 
+dol_include_once('/prune/vendor/autoload.php');
 
+use Symfony\Component\Cache\Adapter\FilesystemAdapter;
+use Symfony\Component\Cache\Adapter\MemcachedAdapter;
+
+if (!function_exists('getDolGlobalString')) {
+	/**
+	 * Return dolibarr global constant string value
+	 * @param string $key key to return value, return '' if not set
+	 * @param string $default value to return
+	 * @return string
+	 */
+	function getDolGlobalString($key, $default = '')
+	{
+		global $conf;
+		// return $conf->global->$key ?? $default;
+		return (string) ($conf->global->$key ?? $default);
+	}
+}
+
+if (!function_exists('getDolGlobalInt')) {
+	/**
+	 * Return dolibarr global constant int value
+	 * @param string $key key to return value, return 0 if not set
+	 * @param int $default value to return
+	 * @return int
+	 */
+	function getDolGlobalInt($key, $default = 0)
+	{
+		global $conf;
+		// return $conf->global->$key ?? $default;
+		return (int) ($conf->global->$key ?? $default);
+	}
+}
+
+/**
+ * Prepare admin pages header
+ *
+ * @return array
+ */
+function pruneAdminPrepareHead()
+{
+	global $langs, $conf;
+
+	$langs->load("prune@prune");
+
+	$h = 0;
+	$head = array();
+
+	$head[$h][0] = dol_buildpath("/prune/admin/setup.php", 1);
+	$head[$h][1] = $langs->trans("PruneSettings");
+	$head[$h][2] = 'settings';
+	$h++;
+	$head[$h][0] = dol_buildpath("/prune/admin/about.php", 1);
+	$head[$h][1] = $langs->trans("About");
+	$head[$h][2] = 'about';
+	$h++;
+
+	complete_head_from_modules($conf, $langs, null, $head, $h, 'pruneadmin');
+
+	return $head;
+}
+
+/**
+ * getcache
+ *
+ * @param string $namespace     a string prefixed to the keys of the items stored in this cache
+ * @param int $defaultLifetime  the default lifetime (in seconds) for cache items that do not define their
+ *                              own lifetime, with a value 0 causing items to be stored indefinitely (i.e.
+ *                              until the files are deleted)
+ * @return Symfony\Component\Cache\Adapter\AbstractAdapter
+ */
+function getCache($namespace = '', $defaultLifetime = 0)
+{
+	global $conf;
+	// $cache = new FilesystemAdapter(
+	// 	// a string used as the subdirectory of the root cache directory, where cache
+	// 	// items will be stored
+	// 	$namespace = '',
+	// 	// the default lifetime (in seconds) for cache items that do not define their
+	// 	// own lifetime, with a value 0 causing items to be stored indefinitely (i.e.
+	// 	// until the files are deleted)
+	// 	$defaultLifetime = 0,
+	// 	// the main cache directory (the application needs read-write permissions on it)
+	// 	// if none is specified, a directory is created inside the system temporary directory
+	// 	$directory = DOL_DATA_ROOT . '/prune/temp'
+	// );
+	$client = MemcachedAdapter::createConnection([
+		'memcached://127.0.0.1:11211',
+		// 'memcached://10.0.0.101',
+		// 'memcached://10.0.0.102',
+		// etc...
+	]);
+	$cache = new MemcachedAdapter(
+		// the client object that sets options and adds the server instance(s)
+		$client,
+		// a string prefixed to the keys of the items stored in this cache
+		$namespace,
+		// the default lifetime (in seconds) for cache items that do not define their
+		// own lifetime, with a value 0 causing items to be stored indefinitely (i.e.
+		// until MemcachedAdapter::clear() is invoked or the server(s) are restarted)
+		$defaultLifetime
+	);
+	return $cache;
+}
 /**
  * Function retrieveAccessToken
  *

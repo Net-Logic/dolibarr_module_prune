@@ -138,7 +138,7 @@ class modPrune extends DolibarrModules
 		];
 
 		// Config pages. Put here list of php page, stored into prune/admin directory, to use to setup module.
-		$this->config_page_url = [];
+		$this->config_page_url = ['setup.php@prune'];
 
 		// Dependencies
 		// A condition to hide module
