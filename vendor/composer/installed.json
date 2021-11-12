@@ -727,37 +727,30 @@
     },
     {
         "name": "lcobucci/clock",
-        "version": "1.4.0",
-        "version_normalized": "1.4.0.0",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/lcobucci/clock.git",
-            "reference": "fa02578087595043169e9f898d048802da510105"
+            "reference": "d11d20b6a3df872d34f3b18d5bf4cbe5a01a2451"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/lcobucci/clock/zipball/fa02578087595043169e9f898d048802da510105",
-            "reference": "fa02578087595043169e9f898d048802da510105",
+            "url": "https://api.github.com/repos/lcobucci/clock/zipball/d11d20b6a3df872d34f3b18d5bf4cbe5a01a2451",
+            "reference": "d11d20b6a3df872d34f3b18d5bf4cbe5a01a2451",
             "shasum": ""
         },
         "require": {
-            "php": "^7.4 || ^8.0"
+            "php": "^7.1"
         },
         "require-dev": {
-            "infection/infection": "^0.17",
-            "lcobucci/coding-standard": "^6.0",
-            "phpstan/extension-installer": "^1.0",
-            "phpstan/phpstan": "^0.12",
-            "phpstan/phpstan-deprecation-rules": "^0.12",
-            "phpstan/phpstan-phpunit": "^0.12",
-            "phpstan/phpstan-strict-rules": "^0.12",
-            "phpunit/phpunit": "^9.3"
+            "phpunit/phpunit": "^6.1"
         },
-        "time": "2020-08-27T17:13:08+00:00",
+        "time": "2018-01-19T15:38:44+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.4-dev"
+                "dev-master": "1.1-dev"
             }
         },
         "installation-source": "dist",
@@ -776,17 +769,7 @@
                 "email": "lcobucci@gmail.com"
             }
         ],
-        "description": "Yet another clock abstraction",
-        "funding": [
-            {
-                "url": "https://github.com/lcobucci",
-                "type": "github"
-            },
-            {
-                "url": "https://www.patreon.com/lcobucci",
-                "type": "patreon"
-            }
-        ]
+        "description": "Yet another clock abstraction"
     },
     {
         "name": "lcobucci/jwt",
@@ -1185,17 +1168,17 @@
     },
     {
         "name": "microsoft/microsoft-graph",
-        "version": "1.43.0",
-        "version_normalized": "1.43.0.0",
+        "version": "1.44.0",
+        "version_normalized": "1.44.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/microsoftgraph/msgraph-sdk-php.git",
-            "reference": "8a4ac252ac1f114d884a9c142b971f1f8ac63f85"
+            "reference": "94518be70f07e9a7b574ae014ff6d8c0370d0f1c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/microsoftgraph/msgraph-sdk-php/zipball/8a4ac252ac1f114d884a9c142b971f1f8ac63f85",
-            "reference": "8a4ac252ac1f114d884a9c142b971f1f8ac63f85",
+            "url": "https://api.github.com/repos/microsoftgraph/msgraph-sdk-php/zipball/94518be70f07e9a7b574ae014ff6d8c0370d0f1c",
+            "reference": "94518be70f07e9a7b574ae014ff6d8c0370d0f1c",
             "shasum": ""
         },
         "require": {
@@ -1209,7 +1192,7 @@
             "phpstan/phpstan": "^0.12.90 || ^1.0.0",
             "phpunit/phpunit": "^8.0 || ^9.0"
         },
-        "time": "2021-11-04T11:05:50+00:00",
+        "time": "2021-11-12T09:30:55+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {

@@ -6,7 +6,7 @@
         "ovh/ovh": "^2.0",
         "docusign/esign-client": "^5.7.0",
         "lcobucci/jwt": "^3.4.6",
-        "lcobucci/clock": "^1.1.0",
+        "lcobucci/clock": "1.1.0",
         "league/oauth2-client": "^2.6",
         "stevenmaguire/oauth2-microsoft": "^2.2",
         "loicboursin/oauth2-microsoft-graph": "^0",

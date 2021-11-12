@@ -10,17 +10,10 @@
         }
     ],
     "require": {
-        "php": "^7.4 || ^8.0"
+        "php": "^7.1"
     },
     "require-dev": {
-        "infection/infection": "^0.17",
-        "lcobucci/coding-standard": "^6.0",
-        "phpstan/extension-installer": "^1.0",
-        "phpstan/phpstan": "^0.12",
-        "phpstan/phpstan-deprecation-rules": "^0.12",
-        "phpstan/phpstan-phpunit": "^0.12",
-        "phpstan/phpstan-strict-rules": "^0.12",
-        "phpunit/phpunit": "^9.3"
+        "phpunit/phpunit": "^6.1"
     },
     "autoload": {
         "psr-4": {
@@ -29,7 +22,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Lcobucci\\Clock\\": "test"
+            "Lcobucci\\Clock\\": "src"
         }
     },
     "config": {
@@ -38,7 +31,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.4-dev"
+            "dev-master": "1.1-dev"
         }
     }
 }
