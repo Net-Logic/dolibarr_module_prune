@@ -26,8 +26,9 @@ class Request extends Entity
 {
     /**
     * Gets the approvalId
+    * The identifier of the approval of the request.
     *
-    * @return string The approvalId
+    * @return string|null The approvalId
     */
     public function getApprovalId()
     {
@@ -40,6 +41,7 @@ class Request extends Entity
     
     /**
     * Sets the approvalId
+    * The identifier of the approval of the request.
     *
     * @param string $val The approvalId
     *
@@ -53,13 +55,14 @@ class Request extends Entity
     
     /**
     * Gets the completedDateTime
+    * The request completion date time.
     *
-    * @return \DateTime The completedDateTime
+    * @return \DateTime|null The completedDateTime
     */
     public function getCompletedDateTime()
     {
         if (array_key_exists("completedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["completedDateTime"], "\DateTime")) {
+            if (is_a($this->_propDict["completedDateTime"], "\DateTime") || is_null($this->_propDict["completedDateTime"])) {
                 return $this->_propDict["completedDateTime"];
             } else {
                 $this->_propDict["completedDateTime"] = new \DateTime($this->_propDict["completedDateTime"]);
@@ -71,6 +74,7 @@ class Request extends Entity
     
     /**
     * Sets the completedDateTime
+    * The request completion date time.
     *
     * @param \DateTime $val The completedDateTime
     *
@@ -84,13 +88,14 @@ class Request extends Entity
     
     /**
     * Gets the createdBy
+    * The user who created this request.
     *
-    * @return IdentitySet The createdBy
+    * @return IdentitySet|null The createdBy
     */
     public function getCreatedBy()
     {
         if (array_key_exists("createdBy", $this->_propDict)) {
-            if (is_a($this->_propDict["createdBy"], "Beta\Microsoft\Graph\Model\IdentitySet")) {
+            if (is_a($this->_propDict["createdBy"], "\Beta\Microsoft\Graph\Model\IdentitySet") || is_null($this->_propDict["createdBy"])) {
                 return $this->_propDict["createdBy"];
             } else {
                 $this->_propDict["createdBy"] = new IdentitySet($this->_propDict["createdBy"]);
@@ -102,6 +107,7 @@ class Request extends Entity
     
     /**
     * Sets the createdBy
+    * The user who created this request.
     *
     * @param IdentitySet $val The createdBy
     *
@@ -115,13 +121,14 @@ class Request extends Entity
     
     /**
     * Gets the createdDateTime
+    * The request creation date time.
     *
-    * @return \DateTime The createdDateTime
+    * @return \DateTime|null The createdDateTime
     */
     public function getCreatedDateTime()
     {
         if (array_key_exists("createdDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["createdDateTime"], "\DateTime")) {
+            if (is_a($this->_propDict["createdDateTime"], "\DateTime") || is_null($this->_propDict["createdDateTime"])) {
                 return $this->_propDict["createdDateTime"];
             } else {
                 $this->_propDict["createdDateTime"] = new \DateTime($this->_propDict["createdDateTime"]);
@@ -133,6 +140,7 @@ class Request extends Entity
     
     /**
     * Sets the createdDateTime
+    * The request creation date time.
     *
     * @param \DateTime $val The createdDateTime
     *
@@ -146,8 +154,9 @@ class Request extends Entity
     
     /**
     * Gets the customData
+    * Free text field to define any custom data for the request. Not used.
     *
-    * @return string The customData
+    * @return string|null The customData
     */
     public function getCustomData()
     {
@@ -160,6 +169,7 @@ class Request extends Entity
     
     /**
     * Sets the customData
+    * Free text field to define any custom data for the request. Not used.
     *
     * @param string $val The customData
     *
@@ -173,8 +183,9 @@ class Request extends Entity
     
     /**
     * Gets the status
+    * The status of the request. Not nullable. The possible values are: Canceled, Denied, Failed, Granted, PendingAdminDecision, PendingApproval, PendingProvisioning, PendingScheduleCreation, Provisioned, Revoked, and ScheduleCreated. Not nullable.
     *
-    * @return string The status
+    * @return string|null The status
     */
     public function getStatus()
     {
@@ -187,6 +198,7 @@ class Request extends Entity
     
     /**
     * Sets the status
+    * The status of the request. Not nullable. The possible values are: Canceled, Denied, Failed, Granted, PendingAdminDecision, PendingApproval, PendingProvisioning, PendingScheduleCreation, Provisioned, Revoked, and ScheduleCreated. Not nullable.
     *
     * @param string $val The status
     *

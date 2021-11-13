@@ -26,8 +26,9 @@ class ContentType extends Entity
 {
     /**
     * Gets the associatedHubsUrls
+    * List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
     *
-    * @return string The associatedHubsUrls
+    * @return string|null The associatedHubsUrls
     */
     public function getAssociatedHubsUrls()
     {
@@ -40,6 +41,7 @@ class ContentType extends Entity
     
     /**
     * Sets the associatedHubsUrls
+    * List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
     *
     * @param string $val The associatedHubsUrls
     *
@@ -55,7 +57,7 @@ class ContentType extends Entity
     * Gets the description
     * The descriptive text for the item.
     *
-    * @return string The description
+    * @return string|null The description
     */
     public function getDescription()
     {
@@ -82,13 +84,14 @@ class ContentType extends Entity
     
     /**
     * Gets the documentSet
+    * Document Set metadata.
     *
-    * @return DocumentSet The documentSet
+    * @return DocumentSet|null The documentSet
     */
     public function getDocumentSet()
     {
         if (array_key_exists("documentSet", $this->_propDict)) {
-            if (is_a($this->_propDict["documentSet"], "Beta\Microsoft\Graph\Model\DocumentSet")) {
+            if (is_a($this->_propDict["documentSet"], "\Beta\Microsoft\Graph\Model\DocumentSet") || is_null($this->_propDict["documentSet"])) {
                 return $this->_propDict["documentSet"];
             } else {
                 $this->_propDict["documentSet"] = new DocumentSet($this->_propDict["documentSet"]);
@@ -100,6 +103,7 @@ class ContentType extends Entity
     
     /**
     * Sets the documentSet
+    * Document Set metadata.
     *
     * @param DocumentSet $val The documentSet
     *
@@ -113,13 +117,14 @@ class ContentType extends Entity
     
     /**
     * Gets the documentTemplate
+    * Document template metadata. To make sure that documents have consistent content across a site and its subsites, you can associate a Word, Excel, or PowerPoint template with a site content type.
     *
-    * @return DocumentSetContent The documentTemplate
+    * @return DocumentSetContent|null The documentTemplate
     */
     public function getDocumentTemplate()
     {
         if (array_key_exists("documentTemplate", $this->_propDict)) {
-            if (is_a($this->_propDict["documentTemplate"], "Beta\Microsoft\Graph\Model\DocumentSetContent")) {
+            if (is_a($this->_propDict["documentTemplate"], "\Beta\Microsoft\Graph\Model\DocumentSetContent") || is_null($this->_propDict["documentTemplate"])) {
                 return $this->_propDict["documentTemplate"];
             } else {
                 $this->_propDict["documentTemplate"] = new DocumentSetContent($this->_propDict["documentTemplate"]);
@@ -131,6 +136,7 @@ class ContentType extends Entity
     
     /**
     * Sets the documentTemplate
+    * Document template metadata. To make sure that documents have consistent content across a site and its subsites, you can associate a Word, Excel, or PowerPoint template with a site content type.
     *
     * @param DocumentSetContent $val The documentTemplate
     *
@@ -146,7 +152,7 @@ class ContentType extends Entity
     * Gets the group
     * The name of the group this content type belongs to. Helps organize related content types.
     *
-    * @return string The group
+    * @return string|null The group
     */
     public function getGroup()
     {
@@ -175,7 +181,7 @@ class ContentType extends Entity
     * Gets the hidden
     * Indicates whether the content type is hidden in the list's 'New' menu.
     *
-    * @return bool The hidden
+    * @return bool|null The hidden
     */
     public function getHidden()
     {
@@ -204,12 +210,12 @@ class ContentType extends Entity
     * Gets the inheritedFrom
     * If this content type is inherited from another scope (like a site), provides a reference to the item where the content type is defined.
     *
-    * @return ItemReference The inheritedFrom
+    * @return ItemReference|null The inheritedFrom
     */
     public function getInheritedFrom()
     {
         if (array_key_exists("inheritedFrom", $this->_propDict)) {
-            if (is_a($this->_propDict["inheritedFrom"], "Beta\Microsoft\Graph\Model\ItemReference")) {
+            if (is_a($this->_propDict["inheritedFrom"], "\Beta\Microsoft\Graph\Model\ItemReference") || is_null($this->_propDict["inheritedFrom"])) {
                 return $this->_propDict["inheritedFrom"];
             } else {
                 $this->_propDict["inheritedFrom"] = new ItemReference($this->_propDict["inheritedFrom"]);
@@ -235,8 +241,9 @@ class ContentType extends Entity
     
     /**
     * Gets the isBuiltIn
+    * Specifies if a content type is a built-in content type.
     *
-    * @return bool The isBuiltIn
+    * @return bool|null The isBuiltIn
     */
     public function getIsBuiltIn()
     {
@@ -249,6 +256,7 @@ class ContentType extends Entity
     
     /**
     * Sets the isBuiltIn
+    * Specifies if a content type is a built-in content type.
     *
     * @param bool $val The isBuiltIn
     *
@@ -264,7 +272,7 @@ class ContentType extends Entity
     * Gets the name
     * The name of the content type.
     *
-    * @return string The name
+    * @return string|null The name
     */
     public function getName()
     {
@@ -293,12 +301,12 @@ class ContentType extends Entity
     * Gets the order
     * Specifies the order in which the content type appears in the selection UI.
     *
-    * @return ContentTypeOrder The order
+    * @return ContentTypeOrder|null The order
     */
     public function getOrder()
     {
         if (array_key_exists("order", $this->_propDict)) {
-            if (is_a($this->_propDict["order"], "Beta\Microsoft\Graph\Model\ContentTypeOrder")) {
+            if (is_a($this->_propDict["order"], "\Beta\Microsoft\Graph\Model\ContentTypeOrder") || is_null($this->_propDict["order"])) {
                 return $this->_propDict["order"];
             } else {
                 $this->_propDict["order"] = new ContentTypeOrder($this->_propDict["order"]);
@@ -326,7 +334,7 @@ class ContentType extends Entity
     * Gets the parentId
     * The unique identifier of the content type.
     *
-    * @return string The parentId
+    * @return string|null The parentId
     */
     public function getParentId()
     {
@@ -353,8 +361,9 @@ class ContentType extends Entity
     
     /**
     * Gets the propagateChanges
+    * If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
     *
-    * @return bool The propagateChanges
+    * @return bool|null The propagateChanges
     */
     public function getPropagateChanges()
     {
@@ -367,6 +376,7 @@ class ContentType extends Entity
     
     /**
     * Sets the propagateChanges
+    * If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
     *
     * @param bool $val The propagateChanges
     *
@@ -380,9 +390,9 @@ class ContentType extends Entity
     
     /**
     * Gets the readOnly
-    * If true, the content type cannot be modified unless this value is first set to false.
+    * If true, the content type can't be modified unless this value is first set to false.
     *
-    * @return bool The readOnly
+    * @return bool|null The readOnly
     */
     public function getReadOnly()
     {
@@ -395,7 +405,7 @@ class ContentType extends Entity
     
     /**
     * Sets the readOnly
-    * If true, the content type cannot be modified unless this value is first set to false.
+    * If true, the content type can't be modified unless this value is first set to false.
     *
     * @param bool $val The readOnly
     *
@@ -409,9 +419,9 @@ class ContentType extends Entity
     
     /**
     * Gets the sealed
-    * If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
+    * If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
     *
-    * @return bool The sealed
+    * @return bool|null The sealed
     */
     public function getSealed()
     {
@@ -424,7 +434,7 @@ class ContentType extends Entity
     
     /**
     * Sets the sealed
-    * If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
+    * If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
     *
     * @param bool $val The sealed
     *
@@ -438,13 +448,14 @@ class ContentType extends Entity
     
     /**
     * Gets the base
+    * Parent contentType from which this content type is derived.
     *
-    * @return ContentType The base
+    * @return ContentType|null The base
     */
     public function getBase()
     {
         if (array_key_exists("base", $this->_propDict)) {
-            if (is_a($this->_propDict["base"], "Beta\Microsoft\Graph\Model\ContentType")) {
+            if (is_a($this->_propDict["base"], "\Beta\Microsoft\Graph\Model\ContentType") || is_null($this->_propDict["base"])) {
                 return $this->_propDict["base"];
             } else {
                 $this->_propDict["base"] = new ContentType($this->_propDict["base"]);
@@ -456,6 +467,7 @@ class ContentType extends Entity
     
     /**
     * Sets the base
+    * Parent contentType from which this content type is derived.
     *
     * @param ContentType $val The base
     *
@@ -470,8 +482,9 @@ class ContentType extends Entity
 
      /** 
      * Gets the baseTypes
+    * The collection of content types that are ancestors of this content type.
      *
-     * @return array The baseTypes
+     * @return array|null The baseTypes
      */
     public function getBaseTypes()
     {
@@ -484,6 +497,7 @@ class ContentType extends Entity
     
     /** 
     * Sets the baseTypes
+    * The collection of content types that are ancestors of this content type.
     *
     * @param ContentType $val The baseTypes
     *
@@ -491,16 +505,16 @@ class ContentType extends Entity
     */
     public function setBaseTypes($val)
     {
-		$this->_propDict["baseTypes"] = $val;
+        $this->_propDict["baseTypes"] = $val;
         return $this;
     }
     
 
      /** 
      * Gets the columnLinks
-    * The collection of columns that are required by this content type
+    * The collection of columns that are required by this content type.
      *
-     * @return array The columnLinks
+     * @return array|null The columnLinks
      */
     public function getColumnLinks()
     {
@@ -513,7 +527,7 @@ class ContentType extends Entity
     
     /** 
     * Sets the columnLinks
-    * The collection of columns that are required by this content type
+    * The collection of columns that are required by this content type.
     *
     * @param ColumnLink $val The columnLinks
     *
@@ -521,15 +535,16 @@ class ContentType extends Entity
     */
     public function setColumnLinks($val)
     {
-		$this->_propDict["columnLinks"] = $val;
+        $this->_propDict["columnLinks"] = $val;
         return $this;
     }
     
 
      /** 
      * Gets the columnPositions
+    * Column order information in a content type.
      *
-     * @return array The columnPositions
+     * @return array|null The columnPositions
      */
     public function getColumnPositions()
     {
@@ -542,6 +557,7 @@ class ContentType extends Entity
     
     /** 
     * Sets the columnPositions
+    * Column order information in a content type.
     *
     * @param ColumnDefinition $val The columnPositions
     *
@@ -549,15 +565,16 @@ class ContentType extends Entity
     */
     public function setColumnPositions($val)
     {
-		$this->_propDict["columnPositions"] = $val;
+        $this->_propDict["columnPositions"] = $val;
         return $this;
     }
     
 
      /** 
      * Gets the columns
+    * The collection of column definitions for this contentType.
      *
-     * @return array The columns
+     * @return array|null The columns
      */
     public function getColumns()
     {
@@ -570,6 +587,7 @@ class ContentType extends Entity
     
     /** 
     * Sets the columns
+    * The collection of column definitions for this contentType.
     *
     * @param ColumnDefinition $val The columns
     *
@@ -577,7 +595,7 @@ class ContentType extends Entity
     */
     public function setColumns($val)
     {
-		$this->_propDict["columns"] = $val;
+        $this->_propDict["columns"] = $val;
         return $this;
     }
     

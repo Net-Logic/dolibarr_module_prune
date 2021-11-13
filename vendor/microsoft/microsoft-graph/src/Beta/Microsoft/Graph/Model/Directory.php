@@ -27,8 +27,9 @@ class Directory extends Entity
 
      /** 
      * Gets the administrativeUnits
+    * Conceptual container for user and group directory objects.
      *
-     * @return array The administrativeUnits
+     * @return array|null The administrativeUnits
      */
     public function getAdministrativeUnits()
     {
@@ -41,6 +42,7 @@ class Directory extends Entity
     
     /** 
     * Sets the administrativeUnits
+    * Conceptual container for user and group directory objects.
     *
     * @param AdministrativeUnit $val The administrativeUnits
     *
@@ -48,7 +50,63 @@ class Directory extends Entity
     */
     public function setAdministrativeUnits($val)
     {
-		$this->_propDict["administrativeUnits"] = $val;
+        $this->_propDict["administrativeUnits"] = $val;
+        return $this;
+    }
+    
+
+     /** 
+     * Gets the attributeSets
+     *
+     * @return array|null The attributeSets
+     */
+    public function getAttributeSets()
+    {
+        if (array_key_exists("attributeSets", $this->_propDict)) {
+           return $this->_propDict["attributeSets"];
+        } else {
+            return null;
+        }
+    }
+    
+    /** 
+    * Sets the attributeSets
+    *
+    * @param AttributeSet $val The attributeSets
+    *
+    * @return Directory
+    */
+    public function setAttributeSets($val)
+    {
+        $this->_propDict["attributeSets"] = $val;
+        return $this;
+    }
+    
+
+     /** 
+     * Gets the customSecurityAttributeDefinitions
+     *
+     * @return array|null The customSecurityAttributeDefinitions
+     */
+    public function getCustomSecurityAttributeDefinitions()
+    {
+        if (array_key_exists("customSecurityAttributeDefinitions", $this->_propDict)) {
+           return $this->_propDict["customSecurityAttributeDefinitions"];
+        } else {
+            return null;
+        }
+    }
+    
+    /** 
+    * Sets the customSecurityAttributeDefinitions
+    *
+    * @param CustomSecurityAttributeDefinition $val The customSecurityAttributeDefinitions
+    *
+    * @return Directory
+    */
+    public function setCustomSecurityAttributeDefinitions($val)
+    {
+        $this->_propDict["customSecurityAttributeDefinitions"] = $val;
         return $this;
     }
     
@@ -57,7 +115,7 @@ class Directory extends Entity
      * Gets the deletedItems
     * Recently deleted items. Read-only. Nullable.
      *
-     * @return array The deletedItems
+     * @return array|null The deletedItems
      */
     public function getDeletedItems()
     {
@@ -78,7 +136,37 @@ class Directory extends Entity
     */
     public function setDeletedItems($val)
     {
-		$this->_propDict["deletedItems"] = $val;
+        $this->_propDict["deletedItems"] = $val;
+        return $this;
+    }
+    
+
+     /** 
+     * Gets the federationConfigurations
+    * Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
+     *
+     * @return array|null The federationConfigurations
+     */
+    public function getFederationConfigurations()
+    {
+        if (array_key_exists("federationConfigurations", $this->_propDict)) {
+           return $this->_propDict["federationConfigurations"];
+        } else {
+            return null;
+        }
+    }
+    
+    /** 
+    * Sets the federationConfigurations
+    * Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
+    *
+    * @param IdentityProviderBase $val The federationConfigurations
+    *
+    * @return Directory
+    */
+    public function setFederationConfigurations($val)
+    {
+        $this->_propDict["federationConfigurations"] = $val;
         return $this;
     }
     
@@ -86,7 +174,7 @@ class Directory extends Entity
      /** 
      * Gets the sharedEmailDomains
      *
-     * @return array The sharedEmailDomains
+     * @return array|null The sharedEmailDomains
      */
     public function getSharedEmailDomains()
     {
@@ -106,7 +194,7 @@ class Directory extends Entity
     */
     public function setSharedEmailDomains($val)
     {
-		$this->_propDict["sharedEmailDomains"] = $val;
+        $this->_propDict["sharedEmailDomains"] = $val;
         return $this;
     }
     
@@ -115,7 +203,7 @@ class Directory extends Entity
      * Gets the featureRolloutPolicies
     * Nullable.
      *
-     * @return array The featureRolloutPolicies
+     * @return array|null The featureRolloutPolicies
      */
     public function getFeatureRolloutPolicies()
     {
@@ -136,7 +224,7 @@ class Directory extends Entity
     */
     public function setFeatureRolloutPolicies($val)
     {
-		$this->_propDict["featureRolloutPolicies"] = $val;
+        $this->_propDict["featureRolloutPolicies"] = $val;
         return $this;
     }
     

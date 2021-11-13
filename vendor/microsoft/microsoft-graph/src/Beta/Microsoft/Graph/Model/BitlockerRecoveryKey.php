@@ -26,14 +26,14 @@ class BitlockerRecoveryKey extends Entity
 {
     /**
     * Gets the createdDateTime
-    * The date and time when the key was originally backed up to Azure Active Directory.
+    * The date and time when the key was originally backed up to Azure Active Directory. Not nullable.
     *
-    * @return \DateTime The createdDateTime
+    * @return \DateTime|null The createdDateTime
     */
     public function getCreatedDateTime()
     {
         if (array_key_exists("createdDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["createdDateTime"], "\DateTime")) {
+            if (is_a($this->_propDict["createdDateTime"], "\DateTime") || is_null($this->_propDict["createdDateTime"])) {
                 return $this->_propDict["createdDateTime"];
             } else {
                 $this->_propDict["createdDateTime"] = new \DateTime($this->_propDict["createdDateTime"]);
@@ -45,7 +45,7 @@ class BitlockerRecoveryKey extends Entity
     
     /**
     * Sets the createdDateTime
-    * The date and time when the key was originally backed up to Azure Active Directory.
+    * The date and time when the key was originally backed up to Azure Active Directory. Not nullable.
     *
     * @param \DateTime $val The createdDateTime
     *
@@ -59,9 +59,9 @@ class BitlockerRecoveryKey extends Entity
     
     /**
     * Gets the deviceId
-    * ID of the device the BitLocker key is originally backed up from.
+    * Identifier of the device the BitLocker key is originally backed up from. Supports $filter (eq).
     *
-    * @return string The deviceId
+    * @return string|null The deviceId
     */
     public function getDeviceId()
     {
@@ -74,7 +74,7 @@ class BitlockerRecoveryKey extends Entity
     
     /**
     * Sets the deviceId
-    * ID of the device the BitLocker key is originally backed up from.
+    * Identifier of the device the BitLocker key is originally backed up from. Supports $filter (eq).
     *
     * @param string $val The deviceId
     *
@@ -88,9 +88,9 @@ class BitlockerRecoveryKey extends Entity
     
     /**
     * Gets the key
-    * The BitLocker recovery key.
+    * The BitLocker recovery key. Returned only on $select. Not nullable.
     *
-    * @return string The key
+    * @return string|null The key
     */
     public function getKey()
     {
@@ -103,7 +103,7 @@ class BitlockerRecoveryKey extends Entity
     
     /**
     * Sets the key
-    * The BitLocker recovery key.
+    * The BitLocker recovery key. Returned only on $select. Not nullable.
     *
     * @param string $val The key
     *
@@ -117,14 +117,14 @@ class BitlockerRecoveryKey extends Entity
     
     /**
     * Gets the volumeType
-    * Indicates the type of volume the BitLocker key is associated with. Possible values are: operatingSystemVolume, fixedDataVolume, removableDataVolume, unknownFutureValue.
+    * Indicates the type of volume the BitLocker key is associated with. The possible values are: 1 (for operatingSystemVolume), 2 (for fixedDataVolume), 3 (for removableDataVolume), and 4 (for unknownFutureValue).
     *
-    * @return VolumeType The volumeType
+    * @return VolumeType|null The volumeType
     */
     public function getVolumeType()
     {
         if (array_key_exists("volumeType", $this->_propDict)) {
-            if (is_a($this->_propDict["volumeType"], "Beta\Microsoft\Graph\Model\VolumeType")) {
+            if (is_a($this->_propDict["volumeType"], "\Beta\Microsoft\Graph\Model\VolumeType") || is_null($this->_propDict["volumeType"])) {
                 return $this->_propDict["volumeType"];
             } else {
                 $this->_propDict["volumeType"] = new VolumeType($this->_propDict["volumeType"]);
@@ -136,7 +136,7 @@ class BitlockerRecoveryKey extends Entity
     
     /**
     * Sets the volumeType
-    * Indicates the type of volume the BitLocker key is associated with. Possible values are: operatingSystemVolume, fixedDataVolume, removableDataVolume, unknownFutureValue.
+    * Indicates the type of volume the BitLocker key is associated with. The possible values are: 1 (for operatingSystemVolume), 2 (for fixedDataVolume), 3 (for removableDataVolume), and 4 (for unknownFutureValue).
     *
     * @param VolumeType $val The volumeType
     *

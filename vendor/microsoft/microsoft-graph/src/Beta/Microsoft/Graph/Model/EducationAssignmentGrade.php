@@ -28,12 +28,12 @@ class EducationAssignmentGrade extends Entity
     * Gets the gradedBy
     * User who did the grading.
     *
-    * @return IdentitySet The gradedBy
+    * @return IdentitySet|null The gradedBy
     */
     public function getGradedBy()
     {
         if (array_key_exists("gradedBy", $this->_propDict)) {
-            if (is_a($this->_propDict["gradedBy"], "Beta\Microsoft\Graph\Model\IdentitySet")) {
+            if (is_a($this->_propDict["gradedBy"], "\Beta\Microsoft\Graph\Model\IdentitySet") || is_null($this->_propDict["gradedBy"])) {
                 return $this->_propDict["gradedBy"];
             } else {
                 $this->_propDict["gradedBy"] = new IdentitySet($this->_propDict["gradedBy"]);
@@ -59,14 +59,14 @@ class EducationAssignmentGrade extends Entity
 
     /**
     * Gets the gradedDateTime
-    * Moment in time when the grade was applied to this submission object. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+    * Moment in time when the grade was applied to this submission object. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     *
-    * @return \DateTime The gradedDateTime
+    * @return \DateTime|null The gradedDateTime
     */
     public function getGradedDateTime()
     {
         if (array_key_exists("gradedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["gradedDateTime"], "\DateTime")) {
+            if (is_a($this->_propDict["gradedDateTime"], "\DateTime") || is_null($this->_propDict["gradedDateTime"])) {
                 return $this->_propDict["gradedDateTime"];
             } else {
                 $this->_propDict["gradedDateTime"] = new \DateTime($this->_propDict["gradedDateTime"]);
@@ -78,7 +78,7 @@ class EducationAssignmentGrade extends Entity
 
     /**
     * Sets the gradedDateTime
-    * Moment in time when the grade was applied to this submission object. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+    * Moment in time when the grade was applied to this submission object. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     *
     * @param \DateTime $val The value to assign to the gradedDateTime
     *

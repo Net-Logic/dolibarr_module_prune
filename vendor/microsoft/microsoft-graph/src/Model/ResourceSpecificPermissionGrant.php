@@ -26,8 +26,9 @@ class ResourceSpecificPermissionGrant extends DirectoryObject
 {
     /**
     * Gets the clientAppId
+    * ID of the service principal of the Azure AD app that has been granted access. Read-only.
     *
-    * @return string The clientAppId
+    * @return string|null The clientAppId
     */
     public function getClientAppId()
     {
@@ -40,6 +41,7 @@ class ResourceSpecificPermissionGrant extends DirectoryObject
     
     /**
     * Sets the clientAppId
+    * ID of the service principal of the Azure AD app that has been granted access. Read-only.
     *
     * @param string $val The clientAppId
     *
@@ -53,8 +55,9 @@ class ResourceSpecificPermissionGrant extends DirectoryObject
     
     /**
     * Gets the clientId
+    * ID of the Azure AD app that has been granted access. Read-only.
     *
-    * @return string The clientId
+    * @return string|null The clientId
     */
     public function getClientId()
     {
@@ -67,6 +70,7 @@ class ResourceSpecificPermissionGrant extends DirectoryObject
     
     /**
     * Sets the clientId
+    * ID of the Azure AD app that has been granted access. Read-only.
     *
     * @param string $val The clientId
     *
@@ -80,8 +84,9 @@ class ResourceSpecificPermissionGrant extends DirectoryObject
     
     /**
     * Gets the permission
+    * The name of the resource-specific permission. Read-only.
     *
-    * @return string The permission
+    * @return string|null The permission
     */
     public function getPermission()
     {
@@ -94,6 +99,7 @@ class ResourceSpecificPermissionGrant extends DirectoryObject
     
     /**
     * Sets the permission
+    * The name of the resource-specific permission. Read-only.
     *
     * @param string $val The permission
     *
@@ -107,8 +113,9 @@ class ResourceSpecificPermissionGrant extends DirectoryObject
     
     /**
     * Gets the permissionType
+    * The type of permission. Possible values are: Application, Delegated. Read-only.
     *
-    * @return string The permissionType
+    * @return string|null The permissionType
     */
     public function getPermissionType()
     {
@@ -121,6 +128,7 @@ class ResourceSpecificPermissionGrant extends DirectoryObject
     
     /**
     * Sets the permissionType
+    * The type of permission. Possible values are: Application, Delegated. Read-only.
     *
     * @param string $val The permissionType
     *
@@ -134,8 +142,9 @@ class ResourceSpecificPermissionGrant extends DirectoryObject
     
     /**
     * Gets the resourceAppId
+    * ID of the Azure AD app that is hosting the resource. Read-only.
     *
-    * @return string The resourceAppId
+    * @return string|null The resourceAppId
     */
     public function getResourceAppId()
     {
@@ -148,6 +157,7 @@ class ResourceSpecificPermissionGrant extends DirectoryObject
     
     /**
     * Sets the resourceAppId
+    * ID of the Azure AD app that is hosting the resource. Read-only.
     *
     * @param string $val The resourceAppId
     *

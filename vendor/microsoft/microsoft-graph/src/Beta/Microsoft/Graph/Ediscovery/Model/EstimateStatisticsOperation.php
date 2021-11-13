@@ -26,8 +26,9 @@ class EstimateStatisticsOperation extends CaseOperation
 {
     /**
     * Gets the indexedItemCount
+    * The estimated count of items for the sourceCollection that matched the content query.
     *
-    * @return int The indexedItemCount
+    * @return int|null The indexedItemCount
     */
     public function getIndexedItemCount()
     {
@@ -40,6 +41,7 @@ class EstimateStatisticsOperation extends CaseOperation
     
     /**
     * Sets the indexedItemCount
+    * The estimated count of items for the sourceCollection that matched the content query.
     *
     * @param int $val The indexedItemCount
     *
@@ -53,8 +55,9 @@ class EstimateStatisticsOperation extends CaseOperation
     
     /**
     * Gets the indexedItemsSize
+    * The estimated size of items for the sourceCollection that matched the content query.
     *
-    * @return int The indexedItemsSize
+    * @return int|null The indexedItemsSize
     */
     public function getIndexedItemsSize()
     {
@@ -67,6 +70,7 @@ class EstimateStatisticsOperation extends CaseOperation
     
     /**
     * Sets the indexedItemsSize
+    * The estimated size of items for the sourceCollection that matched the content query.
     *
     * @param int $val The indexedItemsSize
     *
@@ -80,8 +84,9 @@ class EstimateStatisticsOperation extends CaseOperation
     
     /**
     * Gets the mailboxCount
+    * The number of mailboxes that had search hits.
     *
-    * @return int The mailboxCount
+    * @return int|null The mailboxCount
     */
     public function getMailboxCount()
     {
@@ -94,6 +99,7 @@ class EstimateStatisticsOperation extends CaseOperation
     
     /**
     * Sets the mailboxCount
+    * The number of mailboxes that had search hits.
     *
     * @param int $val The mailboxCount
     *
@@ -107,8 +113,9 @@ class EstimateStatisticsOperation extends CaseOperation
     
     /**
     * Gets the siteCount
+    * The number of mailboxes that had search hits.
     *
-    * @return int The siteCount
+    * @return int|null The siteCount
     */
     public function getSiteCount()
     {
@@ -121,6 +128,7 @@ class EstimateStatisticsOperation extends CaseOperation
     
     /**
     * Sets the siteCount
+    * The number of mailboxes that had search hits.
     *
     * @param int $val The siteCount
     *
@@ -134,8 +142,9 @@ class EstimateStatisticsOperation extends CaseOperation
     
     /**
     * Gets the unindexedItemCount
+    * The estimated count of unindexed items for the collection.
     *
-    * @return int The unindexedItemCount
+    * @return int|null The unindexedItemCount
     */
     public function getUnindexedItemCount()
     {
@@ -148,6 +157,7 @@ class EstimateStatisticsOperation extends CaseOperation
     
     /**
     * Sets the unindexedItemCount
+    * The estimated count of unindexed items for the collection.
     *
     * @param int $val The unindexedItemCount
     *
@@ -161,8 +171,9 @@ class EstimateStatisticsOperation extends CaseOperation
     
     /**
     * Gets the unindexedItemsSize
+    * The estimated size of unindexed items for the collection.
     *
-    * @return int The unindexedItemsSize
+    * @return int|null The unindexedItemsSize
     */
     public function getUnindexedItemsSize()
     {
@@ -175,6 +186,7 @@ class EstimateStatisticsOperation extends CaseOperation
     
     /**
     * Sets the unindexedItemsSize
+    * The estimated size of unindexed items for the collection.
     *
     * @param int $val The unindexedItemsSize
     *
@@ -188,13 +200,14 @@ class EstimateStatisticsOperation extends CaseOperation
     
     /**
     * Gets the sourceCollection
+    * eDiscovery collection, commonly known as a search.
     *
-    * @return SourceCollection The sourceCollection
+    * @return SourceCollection|null The sourceCollection
     */
     public function getSourceCollection()
     {
         if (array_key_exists("sourceCollection", $this->_propDict)) {
-            if (is_a($this->_propDict["sourceCollection"], "Beta\Microsoft\Graph\Ediscovery\Model\SourceCollection")) {
+            if (is_a($this->_propDict["sourceCollection"], "\Beta\Microsoft\Graph\Ediscovery\Model\SourceCollection") || is_null($this->_propDict["sourceCollection"])) {
                 return $this->_propDict["sourceCollection"];
             } else {
                 $this->_propDict["sourceCollection"] = new SourceCollection($this->_propDict["sourceCollection"]);
@@ -206,6 +219,7 @@ class EstimateStatisticsOperation extends CaseOperation
     
     /**
     * Sets the sourceCollection
+    * eDiscovery collection, commonly known as a search.
     *
     * @param SourceCollection $val The sourceCollection
     *

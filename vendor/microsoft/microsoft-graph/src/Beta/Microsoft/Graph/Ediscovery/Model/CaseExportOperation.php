@@ -26,8 +26,9 @@ class CaseExportOperation extends CaseOperation
 {
     /**
     * Gets the azureBlobContainer
+    * The name of the Azure storage location where the export will be stored. This only applies to exports stored in your own Azure storage location.
     *
-    * @return string The azureBlobContainer
+    * @return string|null The azureBlobContainer
     */
     public function getAzureBlobContainer()
     {
@@ -40,6 +41,7 @@ class CaseExportOperation extends CaseOperation
     
     /**
     * Sets the azureBlobContainer
+    * The name of the Azure storage location where the export will be stored. This only applies to exports stored in your own Azure storage location.
     *
     * @param string $val The azureBlobContainer
     *
@@ -53,8 +55,9 @@ class CaseExportOperation extends CaseOperation
     
     /**
     * Gets the azureBlobToken
+    * The SAS token for the Azure storage location.  This only applies to exports stored in your own Azure storage location.
     *
-    * @return string The azureBlobToken
+    * @return string|null The azureBlobToken
     */
     public function getAzureBlobToken()
     {
@@ -67,6 +70,7 @@ class CaseExportOperation extends CaseOperation
     
     /**
     * Sets the azureBlobToken
+    * The SAS token for the Azure storage location.  This only applies to exports stored in your own Azure storage location.
     *
     * @param string $val The azureBlobToken
     *
@@ -80,8 +84,9 @@ class CaseExportOperation extends CaseOperation
     
     /**
     * Gets the description
+    * The description provided for the export.
     *
-    * @return string The description
+    * @return string|null The description
     */
     public function getDescription()
     {
@@ -94,6 +99,7 @@ class CaseExportOperation extends CaseOperation
     
     /**
     * Sets the description
+    * The description provided for the export.
     *
     * @param string $val The description
     *
@@ -107,13 +113,14 @@ class CaseExportOperation extends CaseOperation
     
     /**
     * Gets the exportOptions
+    * The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
     *
-    * @return ExportOptions The exportOptions
+    * @return ExportOptions|null The exportOptions
     */
     public function getExportOptions()
     {
         if (array_key_exists("exportOptions", $this->_propDict)) {
-            if (is_a($this->_propDict["exportOptions"], "Beta\Microsoft\Graph\Ediscovery\Model\ExportOptions")) {
+            if (is_a($this->_propDict["exportOptions"], "\Beta\Microsoft\Graph\Ediscovery\Model\ExportOptions") || is_null($this->_propDict["exportOptions"])) {
                 return $this->_propDict["exportOptions"];
             } else {
                 $this->_propDict["exportOptions"] = new ExportOptions($this->_propDict["exportOptions"]);
@@ -125,6 +132,7 @@ class CaseExportOperation extends CaseOperation
     
     /**
     * Sets the exportOptions
+    * The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
     *
     * @param ExportOptions $val The exportOptions
     *
@@ -138,13 +146,14 @@ class CaseExportOperation extends CaseOperation
     
     /**
     * Gets the exportStructure
+    * The options provided that specify the structure of the export. For more details, see reviewSet: export. Possible values are: none, directory, pst.
     *
-    * @return ExportFileStructure The exportStructure
+    * @return ExportFileStructure|null The exportStructure
     */
     public function getExportStructure()
     {
         if (array_key_exists("exportStructure", $this->_propDict)) {
-            if (is_a($this->_propDict["exportStructure"], "Beta\Microsoft\Graph\Ediscovery\Model\ExportFileStructure")) {
+            if (is_a($this->_propDict["exportStructure"], "\Beta\Microsoft\Graph\Ediscovery\Model\ExportFileStructure") || is_null($this->_propDict["exportStructure"])) {
                 return $this->_propDict["exportStructure"];
             } else {
                 $this->_propDict["exportStructure"] = new ExportFileStructure($this->_propDict["exportStructure"]);
@@ -156,6 +165,7 @@ class CaseExportOperation extends CaseOperation
     
     /**
     * Sets the exportStructure
+    * The options provided that specify the structure of the export. For more details, see reviewSet: export. Possible values are: none, directory, pst.
     *
     * @param ExportFileStructure $val The exportStructure
     *
@@ -170,7 +180,7 @@ class CaseExportOperation extends CaseOperation
     /**
     * Gets the outputFolderId
     *
-    * @return string The outputFolderId
+    * @return string|null The outputFolderId
     */
     public function getOutputFolderId()
     {
@@ -196,8 +206,9 @@ class CaseExportOperation extends CaseOperation
     
     /**
     * Gets the outputName
+    * The name provided for the export.
     *
-    * @return string The outputName
+    * @return string|null The outputName
     */
     public function getOutputName()
     {
@@ -210,6 +221,7 @@ class CaseExportOperation extends CaseOperation
     
     /**
     * Sets the outputName
+    * The name provided for the export.
     *
     * @param string $val The outputName
     *
@@ -223,13 +235,14 @@ class CaseExportOperation extends CaseOperation
     
     /**
     * Gets the reviewSet
+    * The review set the content is being exported from.
     *
-    * @return ReviewSet The reviewSet
+    * @return ReviewSet|null The reviewSet
     */
     public function getReviewSet()
     {
         if (array_key_exists("reviewSet", $this->_propDict)) {
-            if (is_a($this->_propDict["reviewSet"], "Beta\Microsoft\Graph\Ediscovery\Model\ReviewSet")) {
+            if (is_a($this->_propDict["reviewSet"], "\Beta\Microsoft\Graph\Ediscovery\Model\ReviewSet") || is_null($this->_propDict["reviewSet"])) {
                 return $this->_propDict["reviewSet"];
             } else {
                 $this->_propDict["reviewSet"] = new ReviewSet($this->_propDict["reviewSet"]);
@@ -241,6 +254,7 @@ class CaseExportOperation extends CaseOperation
     
     /**
     * Sets the reviewSet
+    * The review set the content is being exported from.
     *
     * @param ReviewSet $val The reviewSet
     *

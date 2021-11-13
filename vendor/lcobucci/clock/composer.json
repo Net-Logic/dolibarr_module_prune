@@ -10,16 +10,10 @@
         }
     ],
     "require": {
-        "php": "^7.2"
+        "php": "^7.1"
     },
     "require-dev": {
-        "infection/infection": "^0.10",
-        "lcobucci/coding-standard": "^1.0",
-        "phpstan/phpstan": "^0.10",
-        "phpstan/phpstan-deprecation-rules": "^0.10",
-        "phpstan/phpstan-phpunit": "^0.10",
-        "phpstan/phpstan-strict-rules": "^0.10",
-        "phpunit/phpunit": "^7.3"
+        "phpunit/phpunit": "^6.1"
     },
     "autoload": {
         "psr-4": {
@@ -28,7 +22,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Lcobucci\\Clock\\": "test"
+            "Lcobucci\\Clock\\": "src"
         }
     },
     "config": {
@@ -37,7 +31,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.2-dev"
+            "dev-master": "1.1-dev"
         }
     }
 }

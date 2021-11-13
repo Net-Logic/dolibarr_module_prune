@@ -26,8 +26,9 @@ class AdminConsentRequestPolicy extends Entity
 {
     /**
     * Gets the isEnabled
+    * Specifies whether the admin consent request feature is enabled or disabled. Required.
     *
-    * @return bool The isEnabled
+    * @return bool|null The isEnabled
     */
     public function getIsEnabled()
     {
@@ -40,6 +41,7 @@ class AdminConsentRequestPolicy extends Entity
     
     /**
     * Sets the isEnabled
+    * Specifies whether the admin consent request feature is enabled or disabled. Required.
     *
     * @param bool $val The isEnabled
     *
@@ -53,8 +55,9 @@ class AdminConsentRequestPolicy extends Entity
     
     /**
     * Gets the notifyReviewers
+    * Specifies whether reviewers will receive notifications. Required.
     *
-    * @return bool The notifyReviewers
+    * @return bool|null The notifyReviewers
     */
     public function getNotifyReviewers()
     {
@@ -67,6 +70,7 @@ class AdminConsentRequestPolicy extends Entity
     
     /**
     * Sets the notifyReviewers
+    * Specifies whether reviewers will receive notifications. Required.
     *
     * @param bool $val The notifyReviewers
     *
@@ -80,8 +84,9 @@ class AdminConsentRequestPolicy extends Entity
     
     /**
     * Gets the remindersEnabled
+    * Specifies whether reviewers will receive reminder emails. Required.
     *
-    * @return bool The remindersEnabled
+    * @return bool|null The remindersEnabled
     */
     public function getRemindersEnabled()
     {
@@ -94,6 +99,7 @@ class AdminConsentRequestPolicy extends Entity
     
     /**
     * Sets the remindersEnabled
+    * Specifies whether reviewers will receive reminder emails. Required.
     *
     * @param bool $val The remindersEnabled
     *
@@ -107,8 +113,9 @@ class AdminConsentRequestPolicy extends Entity
     
     /**
     * Gets the requestDurationInDays
+    * Specifies the duration the request is active before it automatically expires if no decision is applied.
     *
-    * @return int The requestDurationInDays
+    * @return int|null The requestDurationInDays
     */
     public function getRequestDurationInDays()
     {
@@ -121,6 +128,7 @@ class AdminConsentRequestPolicy extends Entity
     
     /**
     * Sets the requestDurationInDays
+    * Specifies the duration the request is active before it automatically expires if no decision is applied.
     *
     * @param int $val The requestDurationInDays
     *
@@ -135,8 +143,9 @@ class AdminConsentRequestPolicy extends Entity
 
      /** 
      * Gets the reviewers
+    * The list of reviewers for the admin consent. Required.
      *
-     * @return array The reviewers
+     * @return array|null The reviewers
      */
     public function getReviewers()
     {
@@ -149,21 +158,23 @@ class AdminConsentRequestPolicy extends Entity
     
     /** 
     * Sets the reviewers
+    * The list of reviewers for the admin consent. Required.
     *
-    * @param AccessReviewScope $val The reviewers
+    * @param AccessReviewReviewerScope $val The reviewers
     *
     * @return AdminConsentRequestPolicy
     */
     public function setReviewers($val)
     {
-		$this->_propDict["reviewers"] = $val;
+        $this->_propDict["reviewers"] = $val;
         return $this;
     }
     
     /**
     * Gets the version
+    * Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.
     *
-    * @return int The version
+    * @return int|null The version
     */
     public function getVersion()
     {
@@ -176,6 +187,7 @@ class AdminConsentRequestPolicy extends Entity
     
     /**
     * Sets the version
+    * Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.
     *
     * @param int $val The version
     *

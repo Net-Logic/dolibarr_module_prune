@@ -26,8 +26,9 @@ class UserSource extends DataSource
 {
     /**
     * Gets the email
+    * Email address of the user's mailbox.
     *
-    * @return string The email
+    * @return string|null The email
     */
     public function getEmail()
     {
@@ -40,6 +41,7 @@ class UserSource extends DataSource
     
     /**
     * Sets the email
+    * Email address of the user's mailbox.
     *
     * @param string $val The email
     *
@@ -53,13 +55,14 @@ class UserSource extends DataSource
     
     /**
     * Gets the includedSources
+    * Specifies which sources are included in this group. Possible values are: mailbox, site.
     *
-    * @return SourceType The includedSources
+    * @return SourceType|null The includedSources
     */
     public function getIncludedSources()
     {
         if (array_key_exists("includedSources", $this->_propDict)) {
-            if (is_a($this->_propDict["includedSources"], "Beta\Microsoft\Graph\Ediscovery\Model\SourceType")) {
+            if (is_a($this->_propDict["includedSources"], "\Beta\Microsoft\Graph\Ediscovery\Model\SourceType") || is_null($this->_propDict["includedSources"])) {
                 return $this->_propDict["includedSources"];
             } else {
                 $this->_propDict["includedSources"] = new SourceType($this->_propDict["includedSources"]);
@@ -71,6 +74,7 @@ class UserSource extends DataSource
     
     /**
     * Sets the includedSources
+    * Specifies which sources are included in this group. Possible values are: mailbox, site.
     *
     * @param SourceType $val The includedSources
     *

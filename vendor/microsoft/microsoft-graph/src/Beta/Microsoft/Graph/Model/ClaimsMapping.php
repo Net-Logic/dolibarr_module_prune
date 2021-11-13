@@ -25,9 +25,9 @@ class ClaimsMapping extends Entity
 {
     /**
     * Gets the displayName
-    * The claim that provides the display name or full name for the user. It is a required propoerty.
+    * The claim that provides the display name or full name for the user. Required.
     *
-    * @return string The displayName
+    * @return string|null The displayName
     */
     public function getDisplayName()
     {
@@ -40,7 +40,7 @@ class ClaimsMapping extends Entity
 
     /**
     * Sets the displayName
-    * The claim that provides the display name or full name for the user. It is a required propoerty.
+    * The claim that provides the display name or full name for the user. Required.
     *
     * @param string $val The value of the displayName
     *
@@ -55,7 +55,7 @@ class ClaimsMapping extends Entity
     * Gets the email
     * The claim that provides the email address of the user.
     *
-    * @return string The email
+    * @return string|null The email
     */
     public function getEmail()
     {
@@ -83,7 +83,7 @@ class ClaimsMapping extends Entity
     * Gets the givenName
     * The claim that provides the first name of the user.
     *
-    * @return string The givenName
+    * @return string|null The givenName
     */
     public function getGivenName()
     {
@@ -111,7 +111,7 @@ class ClaimsMapping extends Entity
     * Gets the surname
     * The claim that provides the last name of the user.
     *
-    * @return string The surname
+    * @return string|null The surname
     */
     public function getSurname()
     {
@@ -137,9 +137,9 @@ class ClaimsMapping extends Entity
     }
     /**
     * Gets the userId
-    * The claim that provides the unique identifier for the signed-in user. It is a required propoerty.
+    * The claim that provides the unique identifier for the signed-in user. Required.
     *
-    * @return string The userId
+    * @return string|null The userId
     */
     public function getUserId()
     {
@@ -152,7 +152,7 @@ class ClaimsMapping extends Entity
 
     /**
     * Sets the userId
-    * The claim that provides the unique identifier for the signed-in user. It is a required propoerty.
+    * The claim that provides the unique identifier for the signed-in user. Required.
     *
     * @param string $val The value of the userId
     *

@@ -26,8 +26,9 @@ class PrintUsageByUser extends PrintUsage
 {
     /**
     * Gets the userPrincipalName
+    * The UPN of the user represented by these statistics.
     *
-    * @return string The userPrincipalName
+    * @return string|null The userPrincipalName
     */
     public function getUserPrincipalName()
     {
@@ -40,6 +41,7 @@ class PrintUsageByUser extends PrintUsage
     
     /**
     * Sets the userPrincipalName
+    * The UPN of the user represented by these statistics.
     *
     * @param string $val The userPrincipalName
     *

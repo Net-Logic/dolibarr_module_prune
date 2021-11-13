@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
     'Google_AccessToken_Revoke' => $vendorDir . '/google/apiclient/src/aliases.php',
     'Google_AccessToken_Verify' => $vendorDir . '/google/apiclient/src/aliases.php',
     'Google_AuthHandler_AuthHandlerFactory' => $vendorDir . '/google/apiclient/src/aliases.php',
@@ -62,6 +63,10 @@ return array(
     'JakubOnderka\\PhpParallelLint\\SyntaxError' => $vendorDir . '/php-parallel-lint/php-parallel-lint/src/Error.php',
     'JakubOnderka\\PhpParallelLint\\TextOutput' => $vendorDir . '/php-parallel-lint/php-parallel-lint/src/Output.php',
     'JakubOnderka\\PhpParallelLint\\TextOutputColored' => $vendorDir . '/php-parallel-lint/php-parallel-lint/src/Output.php',
+    'JsonException' => $vendorDir . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
     'JsonSerializable' => $vendorDir . '/php-parallel-lint/php-parallel-lint/src/polyfill.php',
     'Normalizer' => $vendorDir . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
+    'Stringable' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
+    'UnhandledMatchError' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
+    'ValueError' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
 );
