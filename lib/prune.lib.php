@@ -97,34 +97,38 @@ function pruneAdminPrepareHead()
 function getCache($namespace = '', $defaultLifetime = 0)
 {
 	global $conf;
-	// $cache = new FilesystemAdapter(
-	// 	// a string used as the subdirectory of the root cache directory, where cache
-	// 	// items will be stored
-	// 	$namespace = '',
-	// 	// the default lifetime (in seconds) for cache items that do not define their
-	// 	// own lifetime, with a value 0 causing items to be stored indefinitely (i.e.
-	// 	// until the files are deleted)
-	// 	$defaultLifetime = 0,
-	// 	// the main cache directory (the application needs read-write permissions on it)
-	// 	// if none is specified, a directory is created inside the system temporary directory
-	// 	$directory = DOL_DATA_ROOT . '/prune/temp'
-	// );
-	$client = MemcachedAdapter::createConnection([
-		'memcached://127.0.0.1:11211',
-		// 'memcached://10.0.0.101',
-		// 'memcached://10.0.0.102',
-		// etc...
-	]);
-	$cache = new MemcachedAdapter(
-		// the client object that sets options and adds the server instance(s)
-		$client,
-		// a string prefixed to the keys of the items stored in this cache
-		$namespace,
-		// the default lifetime (in seconds) for cache items that do not define their
-		// own lifetime, with a value 0 causing items to be stored indefinitely (i.e.
-		// until MemcachedAdapter::clear() is invoked or the server(s) are restarted)
-		$defaultLifetime
-	);
+	$typeCache = getDolGlobalInt('PRUNE_CACHE_TYPE');
+	if ($typeCache == 2) {
+		$client = MemcachedAdapter::createConnection([
+			'memcached://127.0.0.1:11211',
+			// 'memcached://10.0.0.101',
+			// 'memcached://10.0.0.102',
+			// etc...
+		]);
+		$cache = new MemcachedAdapter(
+			// the client object that sets options and adds the server instance(s)
+			$client,
+			// a string prefixed to the keys of the items stored in this cache
+			$namespace,
+			// the default lifetime (in seconds) for cache items that do not define their
+			// own lifetime, with a value 0 causing items to be stored indefinitely (i.e.
+			// until MemcachedAdapter::clear() is invoked or the server(s) are restarted)
+			$defaultLifetime
+		);
+	} else {
+		$cache = new FilesystemAdapter(
+			// a string used as the subdirectory of the root cache directory, where cache
+			// items will be stored
+			$namespace,
+			// the default lifetime (in seconds) for cache items that do not define their
+			// own lifetime, with a value 0 causing items to be stored indefinitely (i.e.
+			// until the files are deleted)
+			$defaultLifetime,
+			// the main cache directory (the application needs read-write permissions on it)
+			// if none is specified, a directory is created inside the system temporary directory
+			DOL_DATA_ROOT . '/prune/temp'
+		);
+	}
 	return $cache;
 }
 /**
