@@ -24,7 +24,7 @@ class Validation extends \Google\Collection
   public $description;
   protected $messageType = ValidationMessage::class;
   protected $messageDataType = 'array';
-  public $status;
+  public $state;
 
   public function setCode($code)
   {
@@ -56,13 +56,13 @@ class Validation extends \Google\Collection
   {
     return $this->message;
   }
-  public function setStatus($status)
+  public function setState($state)
   {
-    $this->status = $status;
+    $this->state = $state;
   }
-  public function getStatus()
+  public function getState()
   {
-    return $this->status;
+    return $this->state;
   }
 }
 

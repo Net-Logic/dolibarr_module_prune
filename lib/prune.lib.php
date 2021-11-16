@@ -96,7 +96,6 @@ function pruneAdminPrepareHead()
  */
 function getCache($namespace = '', $defaultLifetime = 0)
 {
-	global $conf;
 	$typeCache = getDolGlobalInt('PRUNE_CACHE_TYPE');
 	if ($typeCache == 2) {
 		$client = MemcachedAdapter::createConnection([
