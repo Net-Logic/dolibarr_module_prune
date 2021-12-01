@@ -26,18 +26,16 @@ class ProtectGroup extends LabelActionBase
     /**
     * Set the @odata.type since this type is immediately descended from an abstract
     * type that is referenced as the type in an entity.
-    * @param array $propDict The property dictionary
     */
-    public function __construct($propDict = array())
+    public function __construct()
     {
-        parent::__construct($propDict);
         $this->setODataType("#microsoft.graph.protectGroup");
     }
 
     /**
     * Gets the allowEmailFromGuestUsers
     *
-    * @return bool|null The allowEmailFromGuestUsers
+    * @return bool The allowEmailFromGuestUsers
     */
     public function getAllowEmailFromGuestUsers()
     {
@@ -63,7 +61,7 @@ class ProtectGroup extends LabelActionBase
     /**
     * Gets the allowGuestUsers
     *
-    * @return bool|null The allowGuestUsers
+    * @return bool The allowGuestUsers
     */
     public function getAllowGuestUsers()
     {
@@ -90,12 +88,12 @@ class ProtectGroup extends LabelActionBase
     /**
     * Gets the privacy
     *
-    * @return GroupPrivacy|null The privacy
+    * @return GroupPrivacy The privacy
     */
     public function getPrivacy()
     {
         if (array_key_exists("privacy", $this->_propDict)) {
-            if (is_a($this->_propDict["privacy"], "\Beta\Microsoft\Graph\Model\GroupPrivacy") || is_null($this->_propDict["privacy"])) {
+            if (is_a($this->_propDict["privacy"], "Beta\Microsoft\Graph\Model\GroupPrivacy")) {
                 return $this->_propDict["privacy"];
             } else {
                 $this->_propDict["privacy"] = new GroupPrivacy($this->_propDict["privacy"]);

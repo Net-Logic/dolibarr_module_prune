@@ -28,7 +28,7 @@ class UserExperienceAnalyticsMetricHistory extends Entity
     * Gets the deviceId
     * The user experience analytics device id.
     *
-    * @return string|null The deviceId
+    * @return string The deviceId
     */
     public function getDeviceId()
     {
@@ -38,7 +38,7 @@ class UserExperienceAnalyticsMetricHistory extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the deviceId
     * The user experience analytics device id.
@@ -52,17 +52,17 @@ class UserExperienceAnalyticsMetricHistory extends Entity
         $this->_propDict["deviceId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the metricDateTime
     * The user experience analytics metric date time.
     *
-    * @return \DateTime|null The metricDateTime
+    * @return \DateTime The metricDateTime
     */
     public function getMetricDateTime()
     {
         if (array_key_exists("metricDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["metricDateTime"], "\DateTime") || is_null($this->_propDict["metricDateTime"])) {
+            if (is_a($this->_propDict["metricDateTime"], "\DateTime")) {
                 return $this->_propDict["metricDateTime"];
             } else {
                 $this->_propDict["metricDateTime"] = new \DateTime($this->_propDict["metricDateTime"]);
@@ -71,7 +71,7 @@ class UserExperienceAnalyticsMetricHistory extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the metricDateTime
     * The user experience analytics metric date time.
@@ -85,12 +85,12 @@ class UserExperienceAnalyticsMetricHistory extends Entity
         $this->_propDict["metricDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the metricType
     * The user experience analytics metric type.
     *
-    * @return string|null The metricType
+    * @return string The metricType
     */
     public function getMetricType()
     {
@@ -100,7 +100,7 @@ class UserExperienceAnalyticsMetricHistory extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the metricType
     * The user experience analytics metric type.
@@ -114,17 +114,17 @@ class UserExperienceAnalyticsMetricHistory extends Entity
         $this->_propDict["metricType"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the userExperienceAnalyticsMetric
     * User experience analytics metric.
     *
-    * @return UserExperienceAnalyticsMetric|null The userExperienceAnalyticsMetric
+    * @return UserExperienceAnalyticsMetric The userExperienceAnalyticsMetric
     */
     public function getUserExperienceAnalyticsMetric()
     {
         if (array_key_exists("userExperienceAnalyticsMetric", $this->_propDict)) {
-            if (is_a($this->_propDict["userExperienceAnalyticsMetric"], "\Beta\Microsoft\Graph\Model\UserExperienceAnalyticsMetric") || is_null($this->_propDict["userExperienceAnalyticsMetric"])) {
+            if (is_a($this->_propDict["userExperienceAnalyticsMetric"], "Beta\Microsoft\Graph\Model\UserExperienceAnalyticsMetric")) {
                 return $this->_propDict["userExperienceAnalyticsMetric"];
             } else {
                 $this->_propDict["userExperienceAnalyticsMetric"] = new UserExperienceAnalyticsMetric($this->_propDict["userExperienceAnalyticsMetric"]);
@@ -133,7 +133,7 @@ class UserExperienceAnalyticsMetricHistory extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the userExperienceAnalyticsMetric
     * User experience analytics metric.
@@ -147,5 +147,5 @@ class UserExperienceAnalyticsMetricHistory extends Entity
         $this->_propDict["userExperienceAnalyticsMetric"] = $val;
         return $this;
     }
-
+    
 }

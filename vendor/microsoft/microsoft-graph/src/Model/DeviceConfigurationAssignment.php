@@ -28,12 +28,12 @@ class DeviceConfigurationAssignment extends Entity
     * Gets the target
     * The assignment target for the device configuration.
     *
-    * @return DeviceAndAppManagementAssignmentTarget|null The target
+    * @return DeviceAndAppManagementAssignmentTarget The target
     */
     public function getTarget()
     {
         if (array_key_exists("target", $this->_propDict)) {
-            if (is_a($this->_propDict["target"], "\Microsoft\Graph\Model\DeviceAndAppManagementAssignmentTarget") || is_null($this->_propDict["target"])) {
+            if (is_a($this->_propDict["target"], "Microsoft\Graph\Model\DeviceAndAppManagementAssignmentTarget")) {
                 return $this->_propDict["target"];
             } else {
                 $this->_propDict["target"] = new DeviceAndAppManagementAssignmentTarget($this->_propDict["target"]);
@@ -42,7 +42,7 @@ class DeviceConfigurationAssignment extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the target
     * The assignment target for the device configuration.
@@ -56,5 +56,5 @@ class DeviceConfigurationAssignment extends Entity
         $this->_propDict["target"] = $val;
         return $this;
     }
-
+    
 }

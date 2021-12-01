@@ -26,14 +26,14 @@ class UserCredentialUsageDetails extends Entity
 {
     /**
     * Gets the authMethod
-    * Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword,unknownFutureValue
+    * Represents the authentication method that the user used. Possible values are: email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, and alternateMobileCall (supported only in registration).
     *
-    * @return UsageAuthMethod|null The authMethod
+    * @return UsageAuthMethod The authMethod
     */
     public function getAuthMethod()
     {
         if (array_key_exists("authMethod", $this->_propDict)) {
-            if (is_a($this->_propDict["authMethod"], "\Beta\Microsoft\Graph\Model\UsageAuthMethod") || is_null($this->_propDict["authMethod"])) {
+            if (is_a($this->_propDict["authMethod"], "Beta\Microsoft\Graph\Model\UsageAuthMethod")) {
                 return $this->_propDict["authMethod"];
             } else {
                 $this->_propDict["authMethod"] = new UsageAuthMethod($this->_propDict["authMethod"]);
@@ -42,10 +42,10 @@ class UserCredentialUsageDetails extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the authMethod
-    * Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword,unknownFutureValue
+    * Represents the authentication method that the user used. Possible values are: email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, and alternateMobileCall (supported only in registration).
     *
     * @param UsageAuthMethod $val The authMethod
     *
@@ -56,17 +56,17 @@ class UserCredentialUsageDetails extends Entity
         $this->_propDict["authMethod"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the eventDateTime
-    * The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    * The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
     *
-    * @return \DateTime|null The eventDateTime
+    * @return \DateTime The eventDateTime
     */
     public function getEventDateTime()
     {
         if (array_key_exists("eventDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["eventDateTime"], "\DateTime") || is_null($this->_propDict["eventDateTime"])) {
+            if (is_a($this->_propDict["eventDateTime"], "\DateTime")) {
                 return $this->_propDict["eventDateTime"];
             } else {
                 $this->_propDict["eventDateTime"] = new \DateTime($this->_propDict["eventDateTime"]);
@@ -75,10 +75,10 @@ class UserCredentialUsageDetails extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the eventDateTime
-    * The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    * The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
     *
     * @param \DateTime $val The eventDateTime
     *
@@ -89,12 +89,12 @@ class UserCredentialUsageDetails extends Entity
         $this->_propDict["eventDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the failureReason
     * Provides the failure reason for the corresponding reset or registration workflow.
     *
-    * @return string|null The failureReason
+    * @return string The failureReason
     */
     public function getFailureReason()
     {
@@ -104,7 +104,7 @@ class UserCredentialUsageDetails extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the failureReason
     * Provides the failure reason for the corresponding reset or registration workflow.
@@ -118,17 +118,17 @@ class UserCredentialUsageDetails extends Entity
         $this->_propDict["failureReason"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the feature
-    * Possible values are: registration, reset, unknownFutureValue.
+    * Possible values are: registration and reset.
     *
-    * @return FeatureType|null The feature
+    * @return FeatureType The feature
     */
     public function getFeature()
     {
         if (array_key_exists("feature", $this->_propDict)) {
-            if (is_a($this->_propDict["feature"], "\Beta\Microsoft\Graph\Model\FeatureType") || is_null($this->_propDict["feature"])) {
+            if (is_a($this->_propDict["feature"], "Beta\Microsoft\Graph\Model\FeatureType")) {
                 return $this->_propDict["feature"];
             } else {
                 $this->_propDict["feature"] = new FeatureType($this->_propDict["feature"]);
@@ -137,10 +137,10 @@ class UserCredentialUsageDetails extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the feature
-    * Possible values are: registration, reset, unknownFutureValue.
+    * Possible values are: registration and reset.
     *
     * @param FeatureType $val The feature
     *
@@ -151,12 +151,12 @@ class UserCredentialUsageDetails extends Entity
         $this->_propDict["feature"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the isSuccess
     * Indicates success or failure of the workflow.
     *
-    * @return bool|null The isSuccess
+    * @return bool The isSuccess
     */
     public function getIsSuccess()
     {
@@ -166,7 +166,7 @@ class UserCredentialUsageDetails extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the isSuccess
     * Indicates success or failure of the workflow.
@@ -180,12 +180,12 @@ class UserCredentialUsageDetails extends Entity
         $this->_propDict["isSuccess"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the userDisplayName
     * User name of the user performing the reset or registration workflow.
     *
-    * @return string|null The userDisplayName
+    * @return string The userDisplayName
     */
     public function getUserDisplayName()
     {
@@ -195,7 +195,7 @@ class UserCredentialUsageDetails extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the userDisplayName
     * User name of the user performing the reset or registration workflow.
@@ -209,12 +209,12 @@ class UserCredentialUsageDetails extends Entity
         $this->_propDict["userDisplayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the userPrincipalName
     * User principal name of the user performing the reset or registration workflow.
     *
-    * @return string|null The userPrincipalName
+    * @return string The userPrincipalName
     */
     public function getUserPrincipalName()
     {
@@ -224,7 +224,7 @@ class UserCredentialUsageDetails extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the userPrincipalName
     * User principal name of the user performing the reset or registration workflow.
@@ -238,5 +238,5 @@ class UserCredentialUsageDetails extends Entity
         $this->_propDict["userPrincipalName"] = $val;
         return $this;
     }
-
+    
 }

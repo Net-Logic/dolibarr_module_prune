@@ -26,14 +26,13 @@ class UnifiedRoleManagementPolicyRule extends Entity
 {
     /**
     * Gets the target
-    * The target for the policy rule.
     *
-    * @return UnifiedRoleManagementPolicyRuleTarget|null The target
+    * @return UnifiedRoleManagementPolicyRuleTarget The target
     */
     public function getTarget()
     {
         if (array_key_exists("target", $this->_propDict)) {
-            if (is_a($this->_propDict["target"], "\Beta\Microsoft\Graph\Model\UnifiedRoleManagementPolicyRuleTarget") || is_null($this->_propDict["target"])) {
+            if (is_a($this->_propDict["target"], "Beta\Microsoft\Graph\Model\UnifiedRoleManagementPolicyRuleTarget")) {
                 return $this->_propDict["target"];
             } else {
                 $this->_propDict["target"] = new UnifiedRoleManagementPolicyRuleTarget($this->_propDict["target"]);
@@ -42,10 +41,9 @@ class UnifiedRoleManagementPolicyRule extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the target
-    * The target for the policy rule.
     *
     * @param UnifiedRoleManagementPolicyRuleTarget $val The target
     *
@@ -56,5 +54,5 @@ class UnifiedRoleManagementPolicyRule extends Entity
         $this->_propDict["target"] = $val;
         return $this;
     }
-
+    
 }

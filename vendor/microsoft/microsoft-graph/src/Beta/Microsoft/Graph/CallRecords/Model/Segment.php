@@ -28,12 +28,12 @@ class Segment extends \Beta\Microsoft\Graph\Model\Entity
     * Gets the callee
     * Endpoint that answered this segment.
     *
-    * @return Endpoint|null The callee
+    * @return Endpoint The callee
     */
     public function getCallee()
     {
         if (array_key_exists("callee", $this->_propDict)) {
-            if (is_a($this->_propDict["callee"], "\Beta\Microsoft\Graph\CallRecords\Model\Endpoint") || is_null($this->_propDict["callee"])) {
+            if (is_a($this->_propDict["callee"], "Beta\Microsoft\Graph\CallRecords\Model\Endpoint")) {
                 return $this->_propDict["callee"];
             } else {
                 $this->_propDict["callee"] = new Endpoint($this->_propDict["callee"]);
@@ -42,7 +42,7 @@ class Segment extends \Beta\Microsoft\Graph\Model\Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the callee
     * Endpoint that answered this segment.
@@ -56,17 +56,17 @@ class Segment extends \Beta\Microsoft\Graph\Model\Entity
         $this->_propDict["callee"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the caller
     * Endpoint that initiated this segment.
     *
-    * @return Endpoint|null The caller
+    * @return Endpoint The caller
     */
     public function getCaller()
     {
         if (array_key_exists("caller", $this->_propDict)) {
-            if (is_a($this->_propDict["caller"], "\Beta\Microsoft\Graph\CallRecords\Model\Endpoint") || is_null($this->_propDict["caller"])) {
+            if (is_a($this->_propDict["caller"], "Beta\Microsoft\Graph\CallRecords\Model\Endpoint")) {
                 return $this->_propDict["caller"];
             } else {
                 $this->_propDict["caller"] = new Endpoint($this->_propDict["caller"]);
@@ -75,7 +75,7 @@ class Segment extends \Beta\Microsoft\Graph\Model\Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the caller
     * Endpoint that initiated this segment.
@@ -89,17 +89,17 @@ class Segment extends \Beta\Microsoft\Graph\Model\Entity
         $this->_propDict["caller"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the endDateTime
-    * UTC time when the segment ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    * UTC time when the segment ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
     *
-    * @return \DateTime|null The endDateTime
+    * @return \DateTime The endDateTime
     */
     public function getEndDateTime()
     {
         if (array_key_exists("endDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["endDateTime"], "\DateTime") || is_null($this->_propDict["endDateTime"])) {
+            if (is_a($this->_propDict["endDateTime"], "\DateTime")) {
                 return $this->_propDict["endDateTime"];
             } else {
                 $this->_propDict["endDateTime"] = new \DateTime($this->_propDict["endDateTime"]);
@@ -108,10 +108,10 @@ class Segment extends \Beta\Microsoft\Graph\Model\Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the endDateTime
-    * UTC time when the segment ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    * UTC time when the segment ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
     *
     * @param \DateTime $val The endDateTime
     *
@@ -122,17 +122,17 @@ class Segment extends \Beta\Microsoft\Graph\Model\Entity
         $this->_propDict["endDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the failureInfo
     * Failure information associated with the segment if it failed.
     *
-    * @return FailureInfo|null The failureInfo
+    * @return FailureInfo The failureInfo
     */
     public function getFailureInfo()
     {
         if (array_key_exists("failureInfo", $this->_propDict)) {
-            if (is_a($this->_propDict["failureInfo"], "\Beta\Microsoft\Graph\CallRecords\Model\FailureInfo") || is_null($this->_propDict["failureInfo"])) {
+            if (is_a($this->_propDict["failureInfo"], "Beta\Microsoft\Graph\CallRecords\Model\FailureInfo")) {
                 return $this->_propDict["failureInfo"];
             } else {
                 $this->_propDict["failureInfo"] = new FailureInfo($this->_propDict["failureInfo"]);
@@ -141,7 +141,7 @@ class Segment extends \Beta\Microsoft\Graph\Model\Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the failureInfo
     * Failure information associated with the segment if it failed.
@@ -155,13 +155,13 @@ class Segment extends \Beta\Microsoft\Graph\Model\Entity
         $this->_propDict["failureInfo"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the media
     * Media associated with this segment.
      *
-     * @return array|null The media
+     * @return array The media
      */
     public function getMedia()
     {
@@ -171,31 +171,31 @@ class Segment extends \Beta\Microsoft\Graph\Model\Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the media
     * Media associated with this segment.
     *
-    * @param Media[] $val The media
+    * @param Media $val The media
     *
     * @return Segment
     */
     public function setMedia($val)
     {
-        $this->_propDict["media"] = $val;
+		$this->_propDict["media"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the startDateTime
-    * UTC time when the segment started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    * UTC time when the segment started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
     *
-    * @return \DateTime|null The startDateTime
+    * @return \DateTime The startDateTime
     */
     public function getStartDateTime()
     {
         if (array_key_exists("startDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["startDateTime"], "\DateTime") || is_null($this->_propDict["startDateTime"])) {
+            if (is_a($this->_propDict["startDateTime"], "\DateTime")) {
                 return $this->_propDict["startDateTime"];
             } else {
                 $this->_propDict["startDateTime"] = new \DateTime($this->_propDict["startDateTime"]);
@@ -204,10 +204,10 @@ class Segment extends \Beta\Microsoft\Graph\Model\Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the startDateTime
-    * UTC time when the segment started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    * UTC time when the segment started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
     *
     * @param \DateTime $val The startDateTime
     *
@@ -218,5 +218,5 @@ class Segment extends \Beta\Microsoft\Graph\Model\Entity
         $this->_propDict["startDateTime"] = $val;
         return $this;
     }
-
+    
 }

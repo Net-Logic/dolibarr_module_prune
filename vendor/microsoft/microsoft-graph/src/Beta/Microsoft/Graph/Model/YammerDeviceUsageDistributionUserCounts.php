@@ -27,7 +27,7 @@ class YammerDeviceUsageDistributionUserCounts extends Entity
     /**
     * Gets the androidPhone
     *
-    * @return int|null The androidPhone
+    * @return int The androidPhone
     */
     public function getAndroidPhone()
     {
@@ -37,7 +37,7 @@ class YammerDeviceUsageDistributionUserCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the androidPhone
     *
@@ -50,11 +50,11 @@ class YammerDeviceUsageDistributionUserCounts extends Entity
         $this->_propDict["androidPhone"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the iPad
     *
-    * @return int|null The iPad
+    * @return int The iPad
     */
     public function getIPad()
     {
@@ -64,7 +64,7 @@ class YammerDeviceUsageDistributionUserCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the iPad
     *
@@ -77,11 +77,11 @@ class YammerDeviceUsageDistributionUserCounts extends Entity
         $this->_propDict["iPad"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the iPhone
     *
-    * @return int|null The iPhone
+    * @return int The iPhone
     */
     public function getIPhone()
     {
@@ -91,7 +91,7 @@ class YammerDeviceUsageDistributionUserCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the iPhone
     *
@@ -104,11 +104,11 @@ class YammerDeviceUsageDistributionUserCounts extends Entity
         $this->_propDict["iPhone"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the other
     *
-    * @return int|null The other
+    * @return int The other
     */
     public function getOther()
     {
@@ -118,7 +118,7 @@ class YammerDeviceUsageDistributionUserCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the other
     *
@@ -131,11 +131,11 @@ class YammerDeviceUsageDistributionUserCounts extends Entity
         $this->_propDict["other"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the reportPeriod
     *
-    * @return string|null The reportPeriod
+    * @return string The reportPeriod
     */
     public function getReportPeriod()
     {
@@ -145,7 +145,7 @@ class YammerDeviceUsageDistributionUserCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the reportPeriod
     *
@@ -158,16 +158,16 @@ class YammerDeviceUsageDistributionUserCounts extends Entity
         $this->_propDict["reportPeriod"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the reportRefreshDate
     *
-    * @return \DateTime|null The reportRefreshDate
+    * @return \DateTime The reportRefreshDate
     */
     public function getReportRefreshDate()
     {
         if (array_key_exists("reportRefreshDate", $this->_propDict)) {
-            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime") || is_null($this->_propDict["reportRefreshDate"])) {
+            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime")) {
                 return $this->_propDict["reportRefreshDate"];
             } else {
                 $this->_propDict["reportRefreshDate"] = new \DateTime($this->_propDict["reportRefreshDate"]);
@@ -176,7 +176,7 @@ class YammerDeviceUsageDistributionUserCounts extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the reportRefreshDate
     *
@@ -189,11 +189,11 @@ class YammerDeviceUsageDistributionUserCounts extends Entity
         $this->_propDict["reportRefreshDate"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the web
     *
-    * @return int|null The web
+    * @return int The web
     */
     public function getWeb()
     {
@@ -203,7 +203,7 @@ class YammerDeviceUsageDistributionUserCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the web
     *
@@ -216,11 +216,11 @@ class YammerDeviceUsageDistributionUserCounts extends Entity
         $this->_propDict["web"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the windowsPhone
     *
-    * @return int|null The windowsPhone
+    * @return int The windowsPhone
     */
     public function getWindowsPhone()
     {
@@ -230,7 +230,7 @@ class YammerDeviceUsageDistributionUserCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the windowsPhone
     *
@@ -243,5 +243,5 @@ class YammerDeviceUsageDistributionUserCounts extends Entity
         $this->_propDict["windowsPhone"] = intval($val);
         return $this;
     }
-
+    
 }

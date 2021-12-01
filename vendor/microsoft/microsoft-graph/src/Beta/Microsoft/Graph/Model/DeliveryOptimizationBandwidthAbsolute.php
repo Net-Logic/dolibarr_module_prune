@@ -26,11 +26,9 @@ class DeliveryOptimizationBandwidthAbsolute extends DeliveryOptimizationBandwidt
     /**
     * Set the @odata.type since this type is immediately descended from an abstract
     * type that is referenced as the type in an entity.
-    * @param array $propDict The property dictionary
     */
-    public function __construct($propDict = array())
+    public function __construct()
     {
-        parent::__construct($propDict);
         $this->setODataType("#microsoft.graph.deliveryOptimizationBandwidthAbsolute");
     }
 
@@ -38,7 +36,7 @@ class DeliveryOptimizationBandwidthAbsolute extends DeliveryOptimizationBandwidt
     * Gets the maximumDownloadBandwidthInKilobytesPerSecond
     * The value 0 (zero) means that Delivery Optimization dynamically adjusts to use the available bandwidth for downloads. Valid values 0 to 4294967295
     *
-    * @return int|null The maximumDownloadBandwidthInKilobytesPerSecond
+    * @return int The maximumDownloadBandwidthInKilobytesPerSecond
     */
     public function getMaximumDownloadBandwidthInKilobytesPerSecond()
     {
@@ -66,7 +64,7 @@ class DeliveryOptimizationBandwidthAbsolute extends DeliveryOptimizationBandwidt
     * Gets the maximumUploadBandwidthInKilobytesPerSecond
     * The default value is 0, which permits unlimited possible bandwidth (optimized for minimal usage of upload bandwidth). Valid values 0 to 4000000
     *
-    * @return int|null The maximumUploadBandwidthInKilobytesPerSecond
+    * @return int The maximumUploadBandwidthInKilobytesPerSecond
     */
     public function getMaximumUploadBandwidthInKilobytesPerSecond()
     {

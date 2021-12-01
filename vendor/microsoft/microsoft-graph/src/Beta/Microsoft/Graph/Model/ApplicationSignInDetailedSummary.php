@@ -26,14 +26,14 @@ class ApplicationSignInDetailedSummary extends Entity
 {
     /**
     * Gets the aggregatedEventDateTime
-    * The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    * The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
     *
-    * @return \DateTime|null The aggregatedEventDateTime
+    * @return \DateTime The aggregatedEventDateTime
     */
     public function getAggregatedEventDateTime()
     {
         if (array_key_exists("aggregatedEventDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["aggregatedEventDateTime"], "\DateTime") || is_null($this->_propDict["aggregatedEventDateTime"])) {
+            if (is_a($this->_propDict["aggregatedEventDateTime"], "\DateTime")) {
                 return $this->_propDict["aggregatedEventDateTime"];
             } else {
                 $this->_propDict["aggregatedEventDateTime"] = new \DateTime($this->_propDict["aggregatedEventDateTime"]);
@@ -42,10 +42,10 @@ class ApplicationSignInDetailedSummary extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the aggregatedEventDateTime
-    * The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    * The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
     *
     * @param \DateTime $val The aggregatedEventDateTime
     *
@@ -56,12 +56,12 @@ class ApplicationSignInDetailedSummary extends Entity
         $this->_propDict["aggregatedEventDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the appDisplayName
     * Name of the application that the user signed in to.
     *
-    * @return string|null The appDisplayName
+    * @return string The appDisplayName
     */
     public function getAppDisplayName()
     {
@@ -71,7 +71,7 @@ class ApplicationSignInDetailedSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the appDisplayName
     * Name of the application that the user signed in to.
@@ -85,12 +85,12 @@ class ApplicationSignInDetailedSummary extends Entity
         $this->_propDict["appDisplayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the appId
     * ID of the application that the user signed in to.
     *
-    * @return string|null The appId
+    * @return string The appId
     */
     public function getAppId()
     {
@@ -100,7 +100,7 @@ class ApplicationSignInDetailedSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the appId
     * ID of the application that the user signed in to.
@@ -114,12 +114,12 @@ class ApplicationSignInDetailedSummary extends Entity
         $this->_propDict["appId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the signInCount
     * Count of sign-ins made by the application.
     *
-    * @return int|null The signInCount
+    * @return int The signInCount
     */
     public function getSignInCount()
     {
@@ -129,7 +129,7 @@ class ApplicationSignInDetailedSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the signInCount
     * Count of sign-ins made by the application.
@@ -143,17 +143,17 @@ class ApplicationSignInDetailedSummary extends Entity
         $this->_propDict["signInCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the status
     * Details of the sign-in status.
     *
-    * @return SignInStatus|null The status
+    * @return SignInStatus The status
     */
     public function getStatus()
     {
         if (array_key_exists("status", $this->_propDict)) {
-            if (is_a($this->_propDict["status"], "\Beta\Microsoft\Graph\Model\SignInStatus") || is_null($this->_propDict["status"])) {
+            if (is_a($this->_propDict["status"], "Beta\Microsoft\Graph\Model\SignInStatus")) {
                 return $this->_propDict["status"];
             } else {
                 $this->_propDict["status"] = new SignInStatus($this->_propDict["status"]);
@@ -162,7 +162,7 @@ class ApplicationSignInDetailedSummary extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the status
     * Details of the sign-in status.
@@ -176,5 +176,5 @@ class ApplicationSignInDetailedSummary extends Entity
         $this->_propDict["status"] = $val;
         return $this;
     }
-
+    
 }

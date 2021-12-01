@@ -26,11 +26,9 @@ class DeviceManagementConfigurationGroupSettingCollectionInstance extends Device
     /**
     * Set the @odata.type since this type is immediately descended from an abstract
     * type that is referenced as the type in an entity.
-    * @param array $propDict The property dictionary
     */
-    public function __construct($propDict = array())
+    public function __construct()
     {
-        parent::__construct($propDict);
         $this->setODataType("#microsoft.graph.deviceManagementConfigurationGroupSettingCollectionInstance");
     }
 
@@ -39,12 +37,12 @@ class DeviceManagementConfigurationGroupSettingCollectionInstance extends Device
     * Gets the groupSettingCollectionValue
     * A collection of GroupSetting values
     *
-    * @return DeviceManagementConfigurationGroupSettingValue|null The groupSettingCollectionValue
+    * @return DeviceManagementConfigurationGroupSettingValue The groupSettingCollectionValue
     */
     public function getGroupSettingCollectionValue()
     {
         if (array_key_exists("groupSettingCollectionValue", $this->_propDict)) {
-            if (is_a($this->_propDict["groupSettingCollectionValue"], "\Beta\Microsoft\Graph\Model\DeviceManagementConfigurationGroupSettingValue") || is_null($this->_propDict["groupSettingCollectionValue"])) {
+            if (is_a($this->_propDict["groupSettingCollectionValue"], "Beta\Microsoft\Graph\Model\DeviceManagementConfigurationGroupSettingValue")) {
                 return $this->_propDict["groupSettingCollectionValue"];
             } else {
                 $this->_propDict["groupSettingCollectionValue"] = new DeviceManagementConfigurationGroupSettingValue($this->_propDict["groupSettingCollectionValue"]);

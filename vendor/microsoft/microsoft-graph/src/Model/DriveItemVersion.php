@@ -26,26 +26,24 @@ class DriveItemVersion extends BaseItemVersion
 {
     /**
     * Gets the content
-    * The content stream for this version of the item.
     *
-    * @return \GuzzleHttp\Psr7\Stream|null The content
+    * @return \GuzzleHttp\Psr7\Stream The content
     */
     public function getContent()
     {
         if (array_key_exists("content", $this->_propDict)) {
-            if (is_a($this->_propDict["content"], "\GuzzleHttp\Psr7\Stream") || is_null($this->_propDict["content"])) {
+            if (is_a($this->_propDict["content"], "\GuzzleHttp\Psr7\Stream")) {
                 return $this->_propDict["content"];
             } else {
-                $this->_propDict["content"] = \GuzzleHttp\Psr7\Utils::streamFor($this->_propDict["content"]);
+                $this->_propDict["content"] = \GuzzleHttp\Psr7\stream_for($this->_propDict["content"]);
                 return $this->_propDict["content"];
             }
         }
         return null;
     }
-
+    
     /**
     * Sets the content
-    * The content stream for this version of the item.
     *
     * @param \GuzzleHttp\Psr7\Stream $val The content
     *
@@ -56,12 +54,12 @@ class DriveItemVersion extends BaseItemVersion
         $this->_propDict["content"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the size
     * Indicates the size of the content stream for this version of the item.
     *
-    * @return int|null The size
+    * @return int The size
     */
     public function getSize()
     {
@@ -71,7 +69,7 @@ class DriveItemVersion extends BaseItemVersion
             return null;
         }
     }
-
+    
     /**
     * Sets the size
     * Indicates the size of the content stream for this version of the item.
@@ -85,5 +83,5 @@ class DriveItemVersion extends BaseItemVersion
         $this->_propDict["size"] = intval($val);
         return $this;
     }
-
+    
 }

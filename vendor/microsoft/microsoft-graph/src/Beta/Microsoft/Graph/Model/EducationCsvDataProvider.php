@@ -26,11 +26,9 @@ class EducationCsvDataProvider extends EducationSynchronizationDataProvider
     /**
     * Set the @odata.type since this type is immediately descended from an abstract
     * type that is referenced as the type in an entity.
-    * @param array $propDict The property dictionary
     */
-    public function __construct($propDict = array())
+    public function __construct()
     {
-        parent::__construct($propDict);
         $this->setODataType("#microsoft.graph.educationCsvDataProvider");
     }
 
@@ -39,12 +37,12 @@ class EducationCsvDataProvider extends EducationSynchronizationDataProvider
     * Gets the customizations
     * Optional customizations to be applied to the synchronization profile.
     *
-    * @return EducationSynchronizationCustomizations|null The customizations
+    * @return EducationSynchronizationCustomizations The customizations
     */
     public function getCustomizations()
     {
         if (array_key_exists("customizations", $this->_propDict)) {
-            if (is_a($this->_propDict["customizations"], "\Beta\Microsoft\Graph\Model\EducationSynchronizationCustomizations") || is_null($this->_propDict["customizations"])) {
+            if (is_a($this->_propDict["customizations"], "Beta\Microsoft\Graph\Model\EducationSynchronizationCustomizations")) {
                 return $this->_propDict["customizations"];
             } else {
                 $this->_propDict["customizations"] = new EducationSynchronizationCustomizations($this->_propDict["customizations"]);

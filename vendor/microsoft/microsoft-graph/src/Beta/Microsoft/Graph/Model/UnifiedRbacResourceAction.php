@@ -27,7 +27,7 @@ class UnifiedRbacResourceAction extends Entity
     /**
     * Gets the actionVerb
     *
-    * @return string|null The actionVerb
+    * @return string The actionVerb
     */
     public function getActionVerb()
     {
@@ -37,7 +37,7 @@ class UnifiedRbacResourceAction extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the actionVerb
     *
@@ -50,11 +50,11 @@ class UnifiedRbacResourceAction extends Entity
         $this->_propDict["actionVerb"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the description
     *
-    * @return string|null The description
+    * @return string The description
     */
     public function getDescription()
     {
@@ -64,7 +64,7 @@ class UnifiedRbacResourceAction extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the description
     *
@@ -77,11 +77,11 @@ class UnifiedRbacResourceAction extends Entity
         $this->_propDict["description"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the name
     *
-    * @return string|null The name
+    * @return string The name
     */
     public function getName()
     {
@@ -91,7 +91,7 @@ class UnifiedRbacResourceAction extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the name
     *
@@ -104,11 +104,11 @@ class UnifiedRbacResourceAction extends Entity
         $this->_propDict["name"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the resourceScopeId
     *
-    * @return string|null The resourceScopeId
+    * @return string The resourceScopeId
     */
     public function getResourceScopeId()
     {
@@ -118,7 +118,7 @@ class UnifiedRbacResourceAction extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the resourceScopeId
     *
@@ -131,16 +131,16 @@ class UnifiedRbacResourceAction extends Entity
         $this->_propDict["resourceScopeId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the resourceScope
     *
-    * @return UnifiedRbacResourceScope|null The resourceScope
+    * @return UnifiedRbacResourceScope The resourceScope
     */
     public function getResourceScope()
     {
         if (array_key_exists("resourceScope", $this->_propDict)) {
-            if (is_a($this->_propDict["resourceScope"], "\Beta\Microsoft\Graph\Model\UnifiedRbacResourceScope") || is_null($this->_propDict["resourceScope"])) {
+            if (is_a($this->_propDict["resourceScope"], "Beta\Microsoft\Graph\Model\UnifiedRbacResourceScope")) {
                 return $this->_propDict["resourceScope"];
             } else {
                 $this->_propDict["resourceScope"] = new UnifiedRbacResourceScope($this->_propDict["resourceScope"]);
@@ -149,7 +149,7 @@ class UnifiedRbacResourceAction extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the resourceScope
     *
@@ -162,5 +162,5 @@ class UnifiedRbacResourceAction extends Entity
         $this->_propDict["resourceScope"] = $val;
         return $this;
     }
-
+    
 }

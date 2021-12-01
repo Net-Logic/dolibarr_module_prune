@@ -26,9 +26,8 @@ class UnifiedRoleAssignmentSchedule extends UnifiedRoleScheduleBase
 {
     /**
     * Gets the assignmentType
-    * Type of the assignment. It can either be Assigned or Activated.
     *
-    * @return string|null The assignmentType
+    * @return string The assignmentType
     */
     public function getAssignmentType()
     {
@@ -38,10 +37,9 @@ class UnifiedRoleAssignmentSchedule extends UnifiedRoleScheduleBase
             return null;
         }
     }
-
+    
     /**
     * Sets the assignmentType
-    * Type of the assignment. It can either be Assigned or Activated.
     *
     * @param string $val The assignmentType
     *
@@ -52,12 +50,11 @@ class UnifiedRoleAssignmentSchedule extends UnifiedRoleScheduleBase
         $this->_propDict["assignmentType"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the memberType
-    * Membership type of the assignment. It can either be Inherited, Direct, or Group.
     *
-    * @return string|null The memberType
+    * @return string The memberType
     */
     public function getMemberType()
     {
@@ -67,10 +64,9 @@ class UnifiedRoleAssignmentSchedule extends UnifiedRoleScheduleBase
             return null;
         }
     }
-
+    
     /**
     * Sets the memberType
-    * Membership type of the assignment. It can either be Inherited, Direct, or Group.
     *
     * @param string $val The memberType
     *
@@ -81,17 +77,16 @@ class UnifiedRoleAssignmentSchedule extends UnifiedRoleScheduleBase
         $this->_propDict["memberType"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the scheduleInfo
-    * The schedule object of the role assignment request.
     *
-    * @return RequestSchedule|null The scheduleInfo
+    * @return RequestSchedule The scheduleInfo
     */
     public function getScheduleInfo()
     {
         if (array_key_exists("scheduleInfo", $this->_propDict)) {
-            if (is_a($this->_propDict["scheduleInfo"], "\Beta\Microsoft\Graph\Model\RequestSchedule") || is_null($this->_propDict["scheduleInfo"])) {
+            if (is_a($this->_propDict["scheduleInfo"], "Beta\Microsoft\Graph\Model\RequestSchedule")) {
                 return $this->_propDict["scheduleInfo"];
             } else {
                 $this->_propDict["scheduleInfo"] = new RequestSchedule($this->_propDict["scheduleInfo"]);
@@ -100,10 +95,9 @@ class UnifiedRoleAssignmentSchedule extends UnifiedRoleScheduleBase
         }
         return null;
     }
-
+    
     /**
     * Sets the scheduleInfo
-    * The schedule object of the role assignment request.
     *
     * @param RequestSchedule $val The scheduleInfo
     *
@@ -114,17 +108,16 @@ class UnifiedRoleAssignmentSchedule extends UnifiedRoleScheduleBase
         $this->_propDict["scheduleInfo"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the activatedUsing
-    * If the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.
     *
-    * @return UnifiedRoleEligibilitySchedule|null The activatedUsing
+    * @return UnifiedRoleEligibilitySchedule The activatedUsing
     */
     public function getActivatedUsing()
     {
         if (array_key_exists("activatedUsing", $this->_propDict)) {
-            if (is_a($this->_propDict["activatedUsing"], "\Beta\Microsoft\Graph\Model\UnifiedRoleEligibilitySchedule") || is_null($this->_propDict["activatedUsing"])) {
+            if (is_a($this->_propDict["activatedUsing"], "Beta\Microsoft\Graph\Model\UnifiedRoleEligibilitySchedule")) {
                 return $this->_propDict["activatedUsing"];
             } else {
                 $this->_propDict["activatedUsing"] = new UnifiedRoleEligibilitySchedule($this->_propDict["activatedUsing"]);
@@ -133,10 +126,9 @@ class UnifiedRoleAssignmentSchedule extends UnifiedRoleScheduleBase
         }
         return null;
     }
-
+    
     /**
     * Sets the activatedUsing
-    * If the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.
     *
     * @param UnifiedRoleEligibilitySchedule $val The activatedUsing
     *
@@ -147,5 +139,5 @@ class UnifiedRoleAssignmentSchedule extends UnifiedRoleScheduleBase
         $this->_propDict["activatedUsing"] = $val;
         return $this;
     }
-
+    
 }

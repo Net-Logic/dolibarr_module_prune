@@ -27,7 +27,7 @@ class SharePointActivityUserDetail extends Entity
     /**
     * Gets the assignedProducts
     *
-    * @return string|null The assignedProducts
+    * @return string The assignedProducts
     */
     public function getAssignedProducts()
     {
@@ -37,7 +37,7 @@ class SharePointActivityUserDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the assignedProducts
     *
@@ -50,16 +50,16 @@ class SharePointActivityUserDetail extends Entity
         $this->_propDict["assignedProducts"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the deletedDate
     *
-    * @return \DateTime|null The deletedDate
+    * @return \DateTime The deletedDate
     */
     public function getDeletedDate()
     {
         if (array_key_exists("deletedDate", $this->_propDict)) {
-            if (is_a($this->_propDict["deletedDate"], "\DateTime") || is_null($this->_propDict["deletedDate"])) {
+            if (is_a($this->_propDict["deletedDate"], "\DateTime")) {
                 return $this->_propDict["deletedDate"];
             } else {
                 $this->_propDict["deletedDate"] = new \DateTime($this->_propDict["deletedDate"]);
@@ -68,7 +68,7 @@ class SharePointActivityUserDetail extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the deletedDate
     *
@@ -81,11 +81,11 @@ class SharePointActivityUserDetail extends Entity
         $this->_propDict["deletedDate"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the isDeleted
     *
-    * @return bool|null The isDeleted
+    * @return bool The isDeleted
     */
     public function getIsDeleted()
     {
@@ -95,7 +95,7 @@ class SharePointActivityUserDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the isDeleted
     *
@@ -108,16 +108,16 @@ class SharePointActivityUserDetail extends Entity
         $this->_propDict["isDeleted"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the lastActivityDate
     *
-    * @return \DateTime|null The lastActivityDate
+    * @return \DateTime The lastActivityDate
     */
     public function getLastActivityDate()
     {
         if (array_key_exists("lastActivityDate", $this->_propDict)) {
-            if (is_a($this->_propDict["lastActivityDate"], "\DateTime") || is_null($this->_propDict["lastActivityDate"])) {
+            if (is_a($this->_propDict["lastActivityDate"], "\DateTime")) {
                 return $this->_propDict["lastActivityDate"];
             } else {
                 $this->_propDict["lastActivityDate"] = new \DateTime($this->_propDict["lastActivityDate"]);
@@ -126,7 +126,7 @@ class SharePointActivityUserDetail extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastActivityDate
     *
@@ -139,11 +139,11 @@ class SharePointActivityUserDetail extends Entity
         $this->_propDict["lastActivityDate"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the reportPeriod
     *
-    * @return string|null The reportPeriod
+    * @return string The reportPeriod
     */
     public function getReportPeriod()
     {
@@ -153,7 +153,7 @@ class SharePointActivityUserDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the reportPeriod
     *
@@ -166,16 +166,16 @@ class SharePointActivityUserDetail extends Entity
         $this->_propDict["reportPeriod"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the reportRefreshDate
     *
-    * @return \DateTime|null The reportRefreshDate
+    * @return \DateTime The reportRefreshDate
     */
     public function getReportRefreshDate()
     {
         if (array_key_exists("reportRefreshDate", $this->_propDict)) {
-            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime") || is_null($this->_propDict["reportRefreshDate"])) {
+            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime")) {
                 return $this->_propDict["reportRefreshDate"];
             } else {
                 $this->_propDict["reportRefreshDate"] = new \DateTime($this->_propDict["reportRefreshDate"]);
@@ -184,7 +184,7 @@ class SharePointActivityUserDetail extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the reportRefreshDate
     *
@@ -197,11 +197,11 @@ class SharePointActivityUserDetail extends Entity
         $this->_propDict["reportRefreshDate"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the sharedExternallyFileCount
     *
-    * @return int|null The sharedExternallyFileCount
+    * @return int The sharedExternallyFileCount
     */
     public function getSharedExternallyFileCount()
     {
@@ -211,7 +211,7 @@ class SharePointActivityUserDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the sharedExternallyFileCount
     *
@@ -224,11 +224,11 @@ class SharePointActivityUserDetail extends Entity
         $this->_propDict["sharedExternallyFileCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the sharedInternallyFileCount
     *
-    * @return int|null The sharedInternallyFileCount
+    * @return int The sharedInternallyFileCount
     */
     public function getSharedInternallyFileCount()
     {
@@ -238,7 +238,7 @@ class SharePointActivityUserDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the sharedInternallyFileCount
     *
@@ -251,11 +251,11 @@ class SharePointActivityUserDetail extends Entity
         $this->_propDict["sharedInternallyFileCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the syncedFileCount
     *
-    * @return int|null The syncedFileCount
+    * @return int The syncedFileCount
     */
     public function getSyncedFileCount()
     {
@@ -265,7 +265,7 @@ class SharePointActivityUserDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the syncedFileCount
     *
@@ -278,11 +278,11 @@ class SharePointActivityUserDetail extends Entity
         $this->_propDict["syncedFileCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the userPrincipalName
     *
-    * @return string|null The userPrincipalName
+    * @return string The userPrincipalName
     */
     public function getUserPrincipalName()
     {
@@ -292,7 +292,7 @@ class SharePointActivityUserDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the userPrincipalName
     *
@@ -305,11 +305,11 @@ class SharePointActivityUserDetail extends Entity
         $this->_propDict["userPrincipalName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the viewedOrEditedFileCount
     *
-    * @return int|null The viewedOrEditedFileCount
+    * @return int The viewedOrEditedFileCount
     */
     public function getViewedOrEditedFileCount()
     {
@@ -319,7 +319,7 @@ class SharePointActivityUserDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the viewedOrEditedFileCount
     *
@@ -332,11 +332,11 @@ class SharePointActivityUserDetail extends Entity
         $this->_propDict["viewedOrEditedFileCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the visitedPageCount
     *
-    * @return int|null The visitedPageCount
+    * @return int The visitedPageCount
     */
     public function getVisitedPageCount()
     {
@@ -346,7 +346,7 @@ class SharePointActivityUserDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the visitedPageCount
     *
@@ -359,5 +359,5 @@ class SharePointActivityUserDetail extends Entity
         $this->_propDict["visitedPageCount"] = intval($val);
         return $this;
     }
-
+    
 }

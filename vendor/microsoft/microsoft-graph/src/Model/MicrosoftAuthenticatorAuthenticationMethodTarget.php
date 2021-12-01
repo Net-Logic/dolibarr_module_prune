@@ -26,14 +26,13 @@ class MicrosoftAuthenticatorAuthenticationMethodTarget extends AuthenticationMet
 {
     /**
     * Gets the authenticationMode
-    * Determines which types of notifications can be used for sign-in. Possible values are: any, deviceBasedPush (passwordless only), push.
     *
-    * @return MicrosoftAuthenticatorAuthenticationMode|null The authenticationMode
+    * @return MicrosoftAuthenticatorAuthenticationMode The authenticationMode
     */
     public function getAuthenticationMode()
     {
         if (array_key_exists("authenticationMode", $this->_propDict)) {
-            if (is_a($this->_propDict["authenticationMode"], "\Microsoft\Graph\Model\MicrosoftAuthenticatorAuthenticationMode") || is_null($this->_propDict["authenticationMode"])) {
+            if (is_a($this->_propDict["authenticationMode"], "Microsoft\Graph\Model\MicrosoftAuthenticatorAuthenticationMode")) {
                 return $this->_propDict["authenticationMode"];
             } else {
                 $this->_propDict["authenticationMode"] = new MicrosoftAuthenticatorAuthenticationMode($this->_propDict["authenticationMode"]);
@@ -42,10 +41,9 @@ class MicrosoftAuthenticatorAuthenticationMethodTarget extends AuthenticationMet
         }
         return null;
     }
-
+    
     /**
     * Sets the authenticationMode
-    * Determines which types of notifications can be used for sign-in. Possible values are: any, deviceBasedPush (passwordless only), push.
     *
     * @param MicrosoftAuthenticatorAuthenticationMode $val The authenticationMode
     *
@@ -56,5 +54,36 @@ class MicrosoftAuthenticatorAuthenticationMethodTarget extends AuthenticationMet
         $this->_propDict["authenticationMode"] = $val;
         return $this;
     }
-
+    
+    /**
+    * Gets the featureSettings
+    *
+    * @return AuthenticatorAppFeatureSettings The featureSettings
+    */
+    public function getFeatureSettings()
+    {
+        if (array_key_exists("featureSettings", $this->_propDict)) {
+            if (is_a($this->_propDict["featureSettings"], "Microsoft\Graph\Model\AuthenticatorAppFeatureSettings")) {
+                return $this->_propDict["featureSettings"];
+            } else {
+                $this->_propDict["featureSettings"] = new AuthenticatorAppFeatureSettings($this->_propDict["featureSettings"]);
+                return $this->_propDict["featureSettings"];
+            }
+        }
+        return null;
+    }
+    
+    /**
+    * Sets the featureSettings
+    *
+    * @param AuthenticatorAppFeatureSettings $val The featureSettings
+    *
+    * @return MicrosoftAuthenticatorAuthenticationMethodTarget
+    */
+    public function setFeatureSettings($val)
+    {
+        $this->_propDict["featureSettings"] = $val;
+        return $this;
+    }
+    
 }

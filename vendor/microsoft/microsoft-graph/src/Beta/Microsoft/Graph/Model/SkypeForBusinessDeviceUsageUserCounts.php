@@ -27,7 +27,7 @@ class SkypeForBusinessDeviceUsageUserCounts extends Entity
     /**
     * Gets the androidPhone
     *
-    * @return int|null The androidPhone
+    * @return int The androidPhone
     */
     public function getAndroidPhone()
     {
@@ -37,7 +37,7 @@ class SkypeForBusinessDeviceUsageUserCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the androidPhone
     *
@@ -50,11 +50,11 @@ class SkypeForBusinessDeviceUsageUserCounts extends Entity
         $this->_propDict["androidPhone"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the iPad
     *
-    * @return int|null The iPad
+    * @return int The iPad
     */
     public function getIPad()
     {
@@ -64,7 +64,7 @@ class SkypeForBusinessDeviceUsageUserCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the iPad
     *
@@ -77,11 +77,11 @@ class SkypeForBusinessDeviceUsageUserCounts extends Entity
         $this->_propDict["iPad"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the iPhone
     *
-    * @return int|null The iPhone
+    * @return int The iPhone
     */
     public function getIPhone()
     {
@@ -91,7 +91,7 @@ class SkypeForBusinessDeviceUsageUserCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the iPhone
     *
@@ -104,16 +104,16 @@ class SkypeForBusinessDeviceUsageUserCounts extends Entity
         $this->_propDict["iPhone"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the reportDate
     *
-    * @return \DateTime|null The reportDate
+    * @return \DateTime The reportDate
     */
     public function getReportDate()
     {
         if (array_key_exists("reportDate", $this->_propDict)) {
-            if (is_a($this->_propDict["reportDate"], "\DateTime") || is_null($this->_propDict["reportDate"])) {
+            if (is_a($this->_propDict["reportDate"], "\DateTime")) {
                 return $this->_propDict["reportDate"];
             } else {
                 $this->_propDict["reportDate"] = new \DateTime($this->_propDict["reportDate"]);
@@ -122,7 +122,7 @@ class SkypeForBusinessDeviceUsageUserCounts extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the reportDate
     *
@@ -135,11 +135,11 @@ class SkypeForBusinessDeviceUsageUserCounts extends Entity
         $this->_propDict["reportDate"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the reportPeriod
     *
-    * @return string|null The reportPeriod
+    * @return string The reportPeriod
     */
     public function getReportPeriod()
     {
@@ -149,7 +149,7 @@ class SkypeForBusinessDeviceUsageUserCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the reportPeriod
     *
@@ -162,16 +162,16 @@ class SkypeForBusinessDeviceUsageUserCounts extends Entity
         $this->_propDict["reportPeriod"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the reportRefreshDate
     *
-    * @return \DateTime|null The reportRefreshDate
+    * @return \DateTime The reportRefreshDate
     */
     public function getReportRefreshDate()
     {
         if (array_key_exists("reportRefreshDate", $this->_propDict)) {
-            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime") || is_null($this->_propDict["reportRefreshDate"])) {
+            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime")) {
                 return $this->_propDict["reportRefreshDate"];
             } else {
                 $this->_propDict["reportRefreshDate"] = new \DateTime($this->_propDict["reportRefreshDate"]);
@@ -180,7 +180,7 @@ class SkypeForBusinessDeviceUsageUserCounts extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the reportRefreshDate
     *
@@ -193,11 +193,11 @@ class SkypeForBusinessDeviceUsageUserCounts extends Entity
         $this->_propDict["reportRefreshDate"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the windows
     *
-    * @return int|null The windows
+    * @return int The windows
     */
     public function getWindows()
     {
@@ -207,7 +207,7 @@ class SkypeForBusinessDeviceUsageUserCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the windows
     *
@@ -220,11 +220,11 @@ class SkypeForBusinessDeviceUsageUserCounts extends Entity
         $this->_propDict["windows"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the windowsPhone
     *
-    * @return int|null The windowsPhone
+    * @return int The windowsPhone
     */
     public function getWindowsPhone()
     {
@@ -234,7 +234,7 @@ class SkypeForBusinessDeviceUsageUserCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the windowsPhone
     *
@@ -247,5 +247,5 @@ class SkypeForBusinessDeviceUsageUserCounts extends Entity
         $this->_propDict["windowsPhone"] = intval($val);
         return $this;
     }
-
+    
 }

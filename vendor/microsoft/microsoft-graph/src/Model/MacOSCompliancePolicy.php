@@ -28,7 +28,7 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
     * Gets the deviceThreatProtectionEnabled
     * Require that devices have enabled device threat protection.
     *
-    * @return bool|null The deviceThreatProtectionEnabled
+    * @return bool The deviceThreatProtectionEnabled
     */
     public function getDeviceThreatProtectionEnabled()
     {
@@ -38,7 +38,7 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the deviceThreatProtectionEnabled
     * Require that devices have enabled device threat protection.
@@ -52,17 +52,17 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["deviceThreatProtectionEnabled"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the deviceThreatProtectionRequiredSecurityLevel
     * Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
     *
-    * @return DeviceThreatProtectionLevel|null The deviceThreatProtectionRequiredSecurityLevel
+    * @return DeviceThreatProtectionLevel The deviceThreatProtectionRequiredSecurityLevel
     */
     public function getDeviceThreatProtectionRequiredSecurityLevel()
     {
         if (array_key_exists("deviceThreatProtectionRequiredSecurityLevel", $this->_propDict)) {
-            if (is_a($this->_propDict["deviceThreatProtectionRequiredSecurityLevel"], "\Microsoft\Graph\Model\DeviceThreatProtectionLevel") || is_null($this->_propDict["deviceThreatProtectionRequiredSecurityLevel"])) {
+            if (is_a($this->_propDict["deviceThreatProtectionRequiredSecurityLevel"], "Microsoft\Graph\Model\DeviceThreatProtectionLevel")) {
                 return $this->_propDict["deviceThreatProtectionRequiredSecurityLevel"];
             } else {
                 $this->_propDict["deviceThreatProtectionRequiredSecurityLevel"] = new DeviceThreatProtectionLevel($this->_propDict["deviceThreatProtectionRequiredSecurityLevel"]);
@@ -71,7 +71,7 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
         }
         return null;
     }
-
+    
     /**
     * Sets the deviceThreatProtectionRequiredSecurityLevel
     * Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
@@ -85,12 +85,12 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["deviceThreatProtectionRequiredSecurityLevel"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the firewallBlockAllIncoming
     * Corresponds to the 'Block all incoming connections' option.
     *
-    * @return bool|null The firewallBlockAllIncoming
+    * @return bool The firewallBlockAllIncoming
     */
     public function getFirewallBlockAllIncoming()
     {
@@ -100,7 +100,7 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the firewallBlockAllIncoming
     * Corresponds to the 'Block all incoming connections' option.
@@ -114,12 +114,12 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["firewallBlockAllIncoming"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the firewallEnabled
     * Whether the firewall should be enabled or not.
     *
-    * @return bool|null The firewallEnabled
+    * @return bool The firewallEnabled
     */
     public function getFirewallEnabled()
     {
@@ -129,7 +129,7 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the firewallEnabled
     * Whether the firewall should be enabled or not.
@@ -143,12 +143,12 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["firewallEnabled"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the firewallEnableStealthMode
     * Corresponds to 'Enable stealth mode.'
     *
-    * @return bool|null The firewallEnableStealthMode
+    * @return bool The firewallEnableStealthMode
     */
     public function getFirewallEnableStealthMode()
     {
@@ -158,7 +158,7 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the firewallEnableStealthMode
     * Corresponds to 'Enable stealth mode.'
@@ -172,12 +172,12 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["firewallEnableStealthMode"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the osMaximumVersion
     * Maximum MacOS version.
     *
-    * @return string|null The osMaximumVersion
+    * @return string The osMaximumVersion
     */
     public function getOsMaximumVersion()
     {
@@ -187,7 +187,7 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the osMaximumVersion
     * Maximum MacOS version.
@@ -201,12 +201,12 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["osMaximumVersion"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the osMinimumVersion
     * Minimum MacOS version.
     *
-    * @return string|null The osMinimumVersion
+    * @return string The osMinimumVersion
     */
     public function getOsMinimumVersion()
     {
@@ -216,7 +216,7 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the osMinimumVersion
     * Minimum MacOS version.
@@ -230,12 +230,12 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["osMinimumVersion"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the passwordBlockSimple
     * Indicates whether or not to block simple passwords.
     *
-    * @return bool|null The passwordBlockSimple
+    * @return bool The passwordBlockSimple
     */
     public function getPasswordBlockSimple()
     {
@@ -245,7 +245,7 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordBlockSimple
     * Indicates whether or not to block simple passwords.
@@ -259,12 +259,12 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["passwordBlockSimple"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordExpirationDays
     * Number of days before the password expires. Valid values 1 to 65535
     *
-    * @return int|null The passwordExpirationDays
+    * @return int The passwordExpirationDays
     */
     public function getPasswordExpirationDays()
     {
@@ -274,7 +274,7 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordExpirationDays
     * Number of days before the password expires. Valid values 1 to 65535
@@ -288,12 +288,12 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["passwordExpirationDays"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordMinimumCharacterSetCount
     * The number of character sets required in the password.
     *
-    * @return int|null The passwordMinimumCharacterSetCount
+    * @return int The passwordMinimumCharacterSetCount
     */
     public function getPasswordMinimumCharacterSetCount()
     {
@@ -303,7 +303,7 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordMinimumCharacterSetCount
     * The number of character sets required in the password.
@@ -317,12 +317,12 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["passwordMinimumCharacterSetCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordMinimumLength
     * Minimum length of password. Valid values 4 to 14
     *
-    * @return int|null The passwordMinimumLength
+    * @return int The passwordMinimumLength
     */
     public function getPasswordMinimumLength()
     {
@@ -332,7 +332,7 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordMinimumLength
     * Minimum length of password. Valid values 4 to 14
@@ -346,12 +346,12 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["passwordMinimumLength"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordMinutesOfInactivityBeforeLock
     * Minutes of inactivity before a password is required.
     *
-    * @return int|null The passwordMinutesOfInactivityBeforeLock
+    * @return int The passwordMinutesOfInactivityBeforeLock
     */
     public function getPasswordMinutesOfInactivityBeforeLock()
     {
@@ -361,7 +361,7 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordMinutesOfInactivityBeforeLock
     * Minutes of inactivity before a password is required.
@@ -375,12 +375,12 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["passwordMinutesOfInactivityBeforeLock"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordPreviousPasswordBlockCount
     * Number of previous passwords to block. Valid values 1 to 24
     *
-    * @return int|null The passwordPreviousPasswordBlockCount
+    * @return int The passwordPreviousPasswordBlockCount
     */
     public function getPasswordPreviousPasswordBlockCount()
     {
@@ -390,7 +390,7 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordPreviousPasswordBlockCount
     * Number of previous passwords to block. Valid values 1 to 24
@@ -404,12 +404,12 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["passwordPreviousPasswordBlockCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordRequired
     * Whether or not to require a password.
     *
-    * @return bool|null The passwordRequired
+    * @return bool The passwordRequired
     */
     public function getPasswordRequired()
     {
@@ -419,7 +419,7 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordRequired
     * Whether or not to require a password.
@@ -433,17 +433,17 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["passwordRequired"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordRequiredType
     * The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
     *
-    * @return RequiredPasswordType|null The passwordRequiredType
+    * @return RequiredPasswordType The passwordRequiredType
     */
     public function getPasswordRequiredType()
     {
         if (array_key_exists("passwordRequiredType", $this->_propDict)) {
-            if (is_a($this->_propDict["passwordRequiredType"], "\Microsoft\Graph\Model\RequiredPasswordType") || is_null($this->_propDict["passwordRequiredType"])) {
+            if (is_a($this->_propDict["passwordRequiredType"], "Microsoft\Graph\Model\RequiredPasswordType")) {
                 return $this->_propDict["passwordRequiredType"];
             } else {
                 $this->_propDict["passwordRequiredType"] = new RequiredPasswordType($this->_propDict["passwordRequiredType"]);
@@ -452,7 +452,7 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
         }
         return null;
     }
-
+    
     /**
     * Sets the passwordRequiredType
     * The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
@@ -466,12 +466,12 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["passwordRequiredType"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the storageRequireEncryption
     * Require encryption on Mac OS devices.
     *
-    * @return bool|null The storageRequireEncryption
+    * @return bool The storageRequireEncryption
     */
     public function getStorageRequireEncryption()
     {
@@ -481,7 +481,7 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the storageRequireEncryption
     * Require encryption on Mac OS devices.
@@ -495,12 +495,12 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["storageRequireEncryption"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the systemIntegrityProtectionEnabled
     * Require that devices have enabled system integrity protection.
     *
-    * @return bool|null The systemIntegrityProtectionEnabled
+    * @return bool The systemIntegrityProtectionEnabled
     */
     public function getSystemIntegrityProtectionEnabled()
     {
@@ -510,7 +510,7 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the systemIntegrityProtectionEnabled
     * Require that devices have enabled system integrity protection.
@@ -524,5 +524,5 @@ class MacOSCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["systemIntegrityProtectionEnabled"] = boolval($val);
         return $this;
     }
-
+    
 }

@@ -26,14 +26,13 @@ class UnifiedRoleEligibilityScheduleInstance extends UnifiedRoleScheduleInstance
 {
     /**
     * Gets the endDateTime
-    * Time that the roleEligibilityScheduleInstance will expire.
     *
-    * @return \DateTime|null The endDateTime
+    * @return \DateTime The endDateTime
     */
     public function getEndDateTime()
     {
         if (array_key_exists("endDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["endDateTime"], "\DateTime") || is_null($this->_propDict["endDateTime"])) {
+            if (is_a($this->_propDict["endDateTime"], "\DateTime")) {
                 return $this->_propDict["endDateTime"];
             } else {
                 $this->_propDict["endDateTime"] = new \DateTime($this->_propDict["endDateTime"]);
@@ -42,10 +41,9 @@ class UnifiedRoleEligibilityScheduleInstance extends UnifiedRoleScheduleInstance
         }
         return null;
     }
-
+    
     /**
     * Sets the endDateTime
-    * Time that the roleEligibilityScheduleInstance will expire.
     *
     * @param \DateTime $val The endDateTime
     *
@@ -56,12 +54,11 @@ class UnifiedRoleEligibilityScheduleInstance extends UnifiedRoleScheduleInstance
         $this->_propDict["endDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the memberType
-    * Membership type of the assignment. It can either be Inherited, Direct, or Group.
     *
-    * @return string|null The memberType
+    * @return string The memberType
     */
     public function getMemberType()
     {
@@ -71,10 +68,9 @@ class UnifiedRoleEligibilityScheduleInstance extends UnifiedRoleScheduleInstance
             return null;
         }
     }
-
+    
     /**
     * Sets the memberType
-    * Membership type of the assignment. It can either be Inherited, Direct, or Group.
     *
     * @param string $val The memberType
     *
@@ -85,12 +81,11 @@ class UnifiedRoleEligibilityScheduleInstance extends UnifiedRoleScheduleInstance
         $this->_propDict["memberType"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the roleEligibilityScheduleId
-    * Identifier of the parent roleEligibilitySchedule for this instance.
     *
-    * @return string|null The roleEligibilityScheduleId
+    * @return string The roleEligibilityScheduleId
     */
     public function getRoleEligibilityScheduleId()
     {
@@ -100,10 +95,9 @@ class UnifiedRoleEligibilityScheduleInstance extends UnifiedRoleScheduleInstance
             return null;
         }
     }
-
+    
     /**
     * Sets the roleEligibilityScheduleId
-    * Identifier of the parent roleEligibilitySchedule for this instance.
     *
     * @param string $val The roleEligibilityScheduleId
     *
@@ -114,17 +108,16 @@ class UnifiedRoleEligibilityScheduleInstance extends UnifiedRoleScheduleInstance
         $this->_propDict["roleEligibilityScheduleId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the startDateTime
-    * Time that the roleEligibilityScheduleInstance will start.
     *
-    * @return \DateTime|null The startDateTime
+    * @return \DateTime The startDateTime
     */
     public function getStartDateTime()
     {
         if (array_key_exists("startDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["startDateTime"], "\DateTime") || is_null($this->_propDict["startDateTime"])) {
+            if (is_a($this->_propDict["startDateTime"], "\DateTime")) {
                 return $this->_propDict["startDateTime"];
             } else {
                 $this->_propDict["startDateTime"] = new \DateTime($this->_propDict["startDateTime"]);
@@ -133,10 +126,9 @@ class UnifiedRoleEligibilityScheduleInstance extends UnifiedRoleScheduleInstance
         }
         return null;
     }
-
+    
     /**
     * Sets the startDateTime
-    * Time that the roleEligibilityScheduleInstance will start.
     *
     * @param \DateTime $val The startDateTime
     *
@@ -147,5 +139,5 @@ class UnifiedRoleEligibilityScheduleInstance extends UnifiedRoleScheduleInstance
         $this->_propDict["startDateTime"] = $val;
         return $this;
     }
-
+    
 }

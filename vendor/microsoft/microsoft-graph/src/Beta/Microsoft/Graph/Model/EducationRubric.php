@@ -28,12 +28,12 @@ class EducationRubric extends Entity
     * Gets the createdBy
     * The user who created this resource.
     *
-    * @return IdentitySet|null The createdBy
+    * @return IdentitySet The createdBy
     */
     public function getCreatedBy()
     {
         if (array_key_exists("createdBy", $this->_propDict)) {
-            if (is_a($this->_propDict["createdBy"], "\Beta\Microsoft\Graph\Model\IdentitySet") || is_null($this->_propDict["createdBy"])) {
+            if (is_a($this->_propDict["createdBy"], "Beta\Microsoft\Graph\Model\IdentitySet")) {
                 return $this->_propDict["createdBy"];
             } else {
                 $this->_propDict["createdBy"] = new IdentitySet($this->_propDict["createdBy"]);
@@ -42,7 +42,7 @@ class EducationRubric extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the createdBy
     * The user who created this resource.
@@ -56,17 +56,17 @@ class EducationRubric extends Entity
         $this->_propDict["createdBy"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the createdDateTime
-    * The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    * The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
     *
-    * @return \DateTime|null The createdDateTime
+    * @return \DateTime The createdDateTime
     */
     public function getCreatedDateTime()
     {
         if (array_key_exists("createdDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["createdDateTime"], "\DateTime") || is_null($this->_propDict["createdDateTime"])) {
+            if (is_a($this->_propDict["createdDateTime"], "\DateTime")) {
                 return $this->_propDict["createdDateTime"];
             } else {
                 $this->_propDict["createdDateTime"] = new \DateTime($this->_propDict["createdDateTime"]);
@@ -75,10 +75,10 @@ class EducationRubric extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the createdDateTime
-    * The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    * The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
     *
     * @param \DateTime $val The createdDateTime
     *
@@ -89,17 +89,17 @@ class EducationRubric extends Entity
         $this->_propDict["createdDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the description
     * The description of this rubric.
     *
-    * @return EducationItemBody|null The description
+    * @return EducationItemBody The description
     */
     public function getDescription()
     {
         if (array_key_exists("description", $this->_propDict)) {
-            if (is_a($this->_propDict["description"], "\Beta\Microsoft\Graph\Model\EducationItemBody") || is_null($this->_propDict["description"])) {
+            if (is_a($this->_propDict["description"], "Beta\Microsoft\Graph\Model\EducationItemBody")) {
                 return $this->_propDict["description"];
             } else {
                 $this->_propDict["description"] = new EducationItemBody($this->_propDict["description"]);
@@ -108,7 +108,7 @@ class EducationRubric extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the description
     * The description of this rubric.
@@ -122,12 +122,12 @@ class EducationRubric extends Entity
         $this->_propDict["description"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the displayName
     * The name of this rubric.
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -137,7 +137,7 @@ class EducationRubric extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the displayName
     * The name of this rubric.
@@ -151,17 +151,17 @@ class EducationRubric extends Entity
         $this->_propDict["displayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the grading
     * The grading type of this rubric -- null for a no-points rubric, or educationAssignmentPointsGradeType for a points rubric.
     *
-    * @return EducationAssignmentGradeType|null The grading
+    * @return EducationAssignmentGradeType The grading
     */
     public function getGrading()
     {
         if (array_key_exists("grading", $this->_propDict)) {
-            if (is_a($this->_propDict["grading"], "\Beta\Microsoft\Graph\Model\EducationAssignmentGradeType") || is_null($this->_propDict["grading"])) {
+            if (is_a($this->_propDict["grading"], "Beta\Microsoft\Graph\Model\EducationAssignmentGradeType")) {
                 return $this->_propDict["grading"];
             } else {
                 $this->_propDict["grading"] = new EducationAssignmentGradeType($this->_propDict["grading"]);
@@ -170,7 +170,7 @@ class EducationRubric extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the grading
     * The grading type of this rubric -- null for a no-points rubric, or educationAssignmentPointsGradeType for a points rubric.
@@ -184,17 +184,17 @@ class EducationRubric extends Entity
         $this->_propDict["grading"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the lastModifiedBy
     * The last user to modify the resource.
     *
-    * @return IdentitySet|null The lastModifiedBy
+    * @return IdentitySet The lastModifiedBy
     */
     public function getLastModifiedBy()
     {
         if (array_key_exists("lastModifiedBy", $this->_propDict)) {
-            if (is_a($this->_propDict["lastModifiedBy"], "\Beta\Microsoft\Graph\Model\IdentitySet") || is_null($this->_propDict["lastModifiedBy"])) {
+            if (is_a($this->_propDict["lastModifiedBy"], "Beta\Microsoft\Graph\Model\IdentitySet")) {
                 return $this->_propDict["lastModifiedBy"];
             } else {
                 $this->_propDict["lastModifiedBy"] = new IdentitySet($this->_propDict["lastModifiedBy"]);
@@ -203,7 +203,7 @@ class EducationRubric extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastModifiedBy
     * The last user to modify the resource.
@@ -217,17 +217,17 @@ class EducationRubric extends Entity
         $this->_propDict["lastModifiedBy"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the lastModifiedDateTime
-    * Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    * Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
     *
-    * @return \DateTime|null The lastModifiedDateTime
+    * @return \DateTime The lastModifiedDateTime
     */
     public function getLastModifiedDateTime()
     {
         if (array_key_exists("lastModifiedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime") || is_null($this->_propDict["lastModifiedDateTime"])) {
+            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime")) {
                 return $this->_propDict["lastModifiedDateTime"];
             } else {
                 $this->_propDict["lastModifiedDateTime"] = new \DateTime($this->_propDict["lastModifiedDateTime"]);
@@ -236,10 +236,10 @@ class EducationRubric extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastModifiedDateTime
-    * Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    * Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
     *
     * @param \DateTime $val The lastModifiedDateTime
     *
@@ -250,13 +250,13 @@ class EducationRubric extends Entity
         $this->_propDict["lastModifiedDateTime"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the levels
     * The collection of levels making up this rubric.
      *
-     * @return array|null The levels
+     * @return array The levels
      */
     public function getLevels()
     {
@@ -266,27 +266,27 @@ class EducationRubric extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the levels
     * The collection of levels making up this rubric.
     *
-    * @param RubricLevel[] $val The levels
+    * @param RubricLevel $val The levels
     *
     * @return EducationRubric
     */
     public function setLevels($val)
     {
-        $this->_propDict["levels"] = $val;
+		$this->_propDict["levels"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the qualities
     * The collection of qualities making up this rubric.
      *
-     * @return array|null The qualities
+     * @return array The qualities
      */
     public function getQualities()
     {
@@ -296,19 +296,19 @@ class EducationRubric extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the qualities
     * The collection of qualities making up this rubric.
     *
-    * @param RubricQuality[] $val The qualities
+    * @param RubricQuality $val The qualities
     *
     * @return EducationRubric
     */
     public function setQualities($val)
     {
-        $this->_propDict["qualities"] = $val;
+		$this->_propDict["qualities"] = $val;
         return $this;
     }
-
+    
 }

@@ -28,12 +28,12 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
     * Gets the advancedThreatProtectionRequiredSecurityLevel
     * MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
     *
-    * @return DeviceThreatProtectionLevel|null The advancedThreatProtectionRequiredSecurityLevel
+    * @return DeviceThreatProtectionLevel The advancedThreatProtectionRequiredSecurityLevel
     */
     public function getAdvancedThreatProtectionRequiredSecurityLevel()
     {
         if (array_key_exists("advancedThreatProtectionRequiredSecurityLevel", $this->_propDict)) {
-            if (is_a($this->_propDict["advancedThreatProtectionRequiredSecurityLevel"], "\Beta\Microsoft\Graph\Model\DeviceThreatProtectionLevel") || is_null($this->_propDict["advancedThreatProtectionRequiredSecurityLevel"])) {
+            if (is_a($this->_propDict["advancedThreatProtectionRequiredSecurityLevel"], "Beta\Microsoft\Graph\Model\DeviceThreatProtectionLevel")) {
                 return $this->_propDict["advancedThreatProtectionRequiredSecurityLevel"];
             } else {
                 $this->_propDict["advancedThreatProtectionRequiredSecurityLevel"] = new DeviceThreatProtectionLevel($this->_propDict["advancedThreatProtectionRequiredSecurityLevel"]);
@@ -42,7 +42,7 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
         }
         return null;
     }
-
+    
     /**
     * Sets the advancedThreatProtectionRequiredSecurityLevel
     * MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
@@ -56,12 +56,12 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["advancedThreatProtectionRequiredSecurityLevel"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the deviceThreatProtectionEnabled
     * Require that devices have enabled device threat protection.
     *
-    * @return bool|null The deviceThreatProtectionEnabled
+    * @return bool The deviceThreatProtectionEnabled
     */
     public function getDeviceThreatProtectionEnabled()
     {
@@ -71,7 +71,7 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the deviceThreatProtectionEnabled
     * Require that devices have enabled device threat protection.
@@ -85,17 +85,17 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["deviceThreatProtectionEnabled"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the deviceThreatProtectionRequiredSecurityLevel
     * Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
     *
-    * @return DeviceThreatProtectionLevel|null The deviceThreatProtectionRequiredSecurityLevel
+    * @return DeviceThreatProtectionLevel The deviceThreatProtectionRequiredSecurityLevel
     */
     public function getDeviceThreatProtectionRequiredSecurityLevel()
     {
         if (array_key_exists("deviceThreatProtectionRequiredSecurityLevel", $this->_propDict)) {
-            if (is_a($this->_propDict["deviceThreatProtectionRequiredSecurityLevel"], "\Beta\Microsoft\Graph\Model\DeviceThreatProtectionLevel") || is_null($this->_propDict["deviceThreatProtectionRequiredSecurityLevel"])) {
+            if (is_a($this->_propDict["deviceThreatProtectionRequiredSecurityLevel"], "Beta\Microsoft\Graph\Model\DeviceThreatProtectionLevel")) {
                 return $this->_propDict["deviceThreatProtectionRequiredSecurityLevel"];
             } else {
                 $this->_propDict["deviceThreatProtectionRequiredSecurityLevel"] = new DeviceThreatProtectionLevel($this->_propDict["deviceThreatProtectionRequiredSecurityLevel"]);
@@ -104,7 +104,7 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
         }
         return null;
     }
-
+    
     /**
     * Sets the deviceThreatProtectionRequiredSecurityLevel
     * Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
@@ -118,12 +118,12 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["deviceThreatProtectionRequiredSecurityLevel"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the minAndroidSecurityPatchLevel
     * Minimum Android security patch level.
     *
-    * @return string|null The minAndroidSecurityPatchLevel
+    * @return string The minAndroidSecurityPatchLevel
     */
     public function getMinAndroidSecurityPatchLevel()
     {
@@ -133,7 +133,7 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the minAndroidSecurityPatchLevel
     * Minimum Android security patch level.
@@ -147,12 +147,12 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["minAndroidSecurityPatchLevel"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the osMaximumVersion
     * Maximum Android version.
     *
-    * @return string|null The osMaximumVersion
+    * @return string The osMaximumVersion
     */
     public function getOsMaximumVersion()
     {
@@ -162,7 +162,7 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the osMaximumVersion
     * Maximum Android version.
@@ -176,12 +176,12 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["osMaximumVersion"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the osMinimumVersion
     * Minimum Android version.
     *
-    * @return string|null The osMinimumVersion
+    * @return string The osMinimumVersion
     */
     public function getOsMinimumVersion()
     {
@@ -191,7 +191,7 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the osMinimumVersion
     * Minimum Android version.
@@ -205,12 +205,12 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["osMinimumVersion"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the passwordExpirationDays
     * Number of days before the password expires. Valid values 1 to 365
     *
-    * @return int|null The passwordExpirationDays
+    * @return int The passwordExpirationDays
     */
     public function getPasswordExpirationDays()
     {
@@ -220,7 +220,7 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordExpirationDays
     * Number of days before the password expires. Valid values 1 to 365
@@ -234,12 +234,12 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["passwordExpirationDays"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordMinimumLength
     * Minimum password length. Valid values 4 to 16
     *
-    * @return int|null The passwordMinimumLength
+    * @return int The passwordMinimumLength
     */
     public function getPasswordMinimumLength()
     {
@@ -249,7 +249,7 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordMinimumLength
     * Minimum password length. Valid values 4 to 16
@@ -263,12 +263,12 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["passwordMinimumLength"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordMinimumLetterCharacters
     * Indicates the minimum number of letter characters required for device password. Valid values 1 to 16
     *
-    * @return int|null The passwordMinimumLetterCharacters
+    * @return int The passwordMinimumLetterCharacters
     */
     public function getPasswordMinimumLetterCharacters()
     {
@@ -278,7 +278,7 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordMinimumLetterCharacters
     * Indicates the minimum number of letter characters required for device password. Valid values 1 to 16
@@ -292,12 +292,12 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["passwordMinimumLetterCharacters"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordMinimumLowerCaseCharacters
     * Indicates the minimum number of lower case characters required for device password. Valid values 1 to 16
     *
-    * @return int|null The passwordMinimumLowerCaseCharacters
+    * @return int The passwordMinimumLowerCaseCharacters
     */
     public function getPasswordMinimumLowerCaseCharacters()
     {
@@ -307,7 +307,7 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordMinimumLowerCaseCharacters
     * Indicates the minimum number of lower case characters required for device password. Valid values 1 to 16
@@ -321,12 +321,12 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["passwordMinimumLowerCaseCharacters"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordMinimumNonLetterCharacters
     * Indicates the minimum number of non-letter characters required for device password. Valid values 1 to 16
     *
-    * @return int|null The passwordMinimumNonLetterCharacters
+    * @return int The passwordMinimumNonLetterCharacters
     */
     public function getPasswordMinimumNonLetterCharacters()
     {
@@ -336,7 +336,7 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordMinimumNonLetterCharacters
     * Indicates the minimum number of non-letter characters required for device password. Valid values 1 to 16
@@ -350,12 +350,12 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["passwordMinimumNonLetterCharacters"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordMinimumNumericCharacters
     * Indicates the minimum number of numeric characters required for device password. Valid values 1 to 16
     *
-    * @return int|null The passwordMinimumNumericCharacters
+    * @return int The passwordMinimumNumericCharacters
     */
     public function getPasswordMinimumNumericCharacters()
     {
@@ -365,7 +365,7 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordMinimumNumericCharacters
     * Indicates the minimum number of numeric characters required for device password. Valid values 1 to 16
@@ -379,12 +379,12 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["passwordMinimumNumericCharacters"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordMinimumSymbolCharacters
     * Indicates the minimum number of symbol characters required for device password. Valid values 1 to 16
     *
-    * @return int|null The passwordMinimumSymbolCharacters
+    * @return int The passwordMinimumSymbolCharacters
     */
     public function getPasswordMinimumSymbolCharacters()
     {
@@ -394,7 +394,7 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordMinimumSymbolCharacters
     * Indicates the minimum number of symbol characters required for device password. Valid values 1 to 16
@@ -408,12 +408,12 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["passwordMinimumSymbolCharacters"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordMinimumUpperCaseCharacters
     * Indicates the minimum number of upper case letter characters required for device password. Valid values 1 to 16
     *
-    * @return int|null The passwordMinimumUpperCaseCharacters
+    * @return int The passwordMinimumUpperCaseCharacters
     */
     public function getPasswordMinimumUpperCaseCharacters()
     {
@@ -423,7 +423,7 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordMinimumUpperCaseCharacters
     * Indicates the minimum number of upper case letter characters required for device password. Valid values 1 to 16
@@ -437,12 +437,12 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["passwordMinimumUpperCaseCharacters"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordMinutesOfInactivityBeforeLock
     * Minutes of inactivity before a password is required.
     *
-    * @return int|null The passwordMinutesOfInactivityBeforeLock
+    * @return int The passwordMinutesOfInactivityBeforeLock
     */
     public function getPasswordMinutesOfInactivityBeforeLock()
     {
@@ -452,7 +452,7 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordMinutesOfInactivityBeforeLock
     * Minutes of inactivity before a password is required.
@@ -466,12 +466,12 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["passwordMinutesOfInactivityBeforeLock"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordPreviousPasswordCountToBlock
     * Number of previous passwords to block. Valid values 1 to 24
     *
-    * @return int|null The passwordPreviousPasswordCountToBlock
+    * @return int The passwordPreviousPasswordCountToBlock
     */
     public function getPasswordPreviousPasswordCountToBlock()
     {
@@ -481,7 +481,7 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordPreviousPasswordCountToBlock
     * Number of previous passwords to block. Valid values 1 to 24
@@ -495,12 +495,12 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["passwordPreviousPasswordCountToBlock"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordRequired
     * Require a password to unlock device.
     *
-    * @return bool|null The passwordRequired
+    * @return bool The passwordRequired
     */
     public function getPasswordRequired()
     {
@@ -510,7 +510,7 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordRequired
     * Require a password to unlock device.
@@ -524,17 +524,17 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["passwordRequired"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordRequiredType
     * Type of characters in password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
     *
-    * @return AndroidDeviceOwnerRequiredPasswordType|null The passwordRequiredType
+    * @return AndroidDeviceOwnerRequiredPasswordType The passwordRequiredType
     */
     public function getPasswordRequiredType()
     {
         if (array_key_exists("passwordRequiredType", $this->_propDict)) {
-            if (is_a($this->_propDict["passwordRequiredType"], "\Beta\Microsoft\Graph\Model\AndroidDeviceOwnerRequiredPasswordType") || is_null($this->_propDict["passwordRequiredType"])) {
+            if (is_a($this->_propDict["passwordRequiredType"], "Beta\Microsoft\Graph\Model\AndroidDeviceOwnerRequiredPasswordType")) {
                 return $this->_propDict["passwordRequiredType"];
             } else {
                 $this->_propDict["passwordRequiredType"] = new AndroidDeviceOwnerRequiredPasswordType($this->_propDict["passwordRequiredType"]);
@@ -543,7 +543,7 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
         }
         return null;
     }
-
+    
     /**
     * Sets the passwordRequiredType
     * Type of characters in password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
@@ -557,41 +557,12 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["passwordRequiredType"] = $val;
         return $this;
     }
-
-    /**
-    * Gets the securityRequireIntuneAppIntegrity
-    * If setting is set to true, checks that the Intune app installed on fully managed, dedicated, or corporate-owned work profile Android Enterprise enrolled devices, is the one provided by Microsoft from the Managed Google Playstore. If the check fails, the device will be reported as non-compliant.
-    *
-    * @return bool|null The securityRequireIntuneAppIntegrity
-    */
-    public function getSecurityRequireIntuneAppIntegrity()
-    {
-        if (array_key_exists("securityRequireIntuneAppIntegrity", $this->_propDict)) {
-            return $this->_propDict["securityRequireIntuneAppIntegrity"];
-        } else {
-            return null;
-        }
-    }
-
-    /**
-    * Sets the securityRequireIntuneAppIntegrity
-    * If setting is set to true, checks that the Intune app installed on fully managed, dedicated, or corporate-owned work profile Android Enterprise enrolled devices, is the one provided by Microsoft from the Managed Google Playstore. If the check fails, the device will be reported as non-compliant.
-    *
-    * @param bool $val The securityRequireIntuneAppIntegrity
-    *
-    * @return AndroidDeviceOwnerCompliancePolicy
-    */
-    public function setSecurityRequireIntuneAppIntegrity($val)
-    {
-        $this->_propDict["securityRequireIntuneAppIntegrity"] = boolval($val);
-        return $this;
-    }
-
+    
     /**
     * Gets the securityRequireSafetyNetAttestationBasicIntegrity
     * Require the device to pass the SafetyNet basic integrity check.
     *
-    * @return bool|null The securityRequireSafetyNetAttestationBasicIntegrity
+    * @return bool The securityRequireSafetyNetAttestationBasicIntegrity
     */
     public function getSecurityRequireSafetyNetAttestationBasicIntegrity()
     {
@@ -601,7 +572,7 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the securityRequireSafetyNetAttestationBasicIntegrity
     * Require the device to pass the SafetyNet basic integrity check.
@@ -615,12 +586,12 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["securityRequireSafetyNetAttestationBasicIntegrity"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the securityRequireSafetyNetAttestationCertifiedDevice
     * Require the device to pass the SafetyNet certified device check.
     *
-    * @return bool|null The securityRequireSafetyNetAttestationCertifiedDevice
+    * @return bool The securityRequireSafetyNetAttestationCertifiedDevice
     */
     public function getSecurityRequireSafetyNetAttestationCertifiedDevice()
     {
@@ -630,7 +601,7 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the securityRequireSafetyNetAttestationCertifiedDevice
     * Require the device to pass the SafetyNet certified device check.
@@ -644,12 +615,12 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["securityRequireSafetyNetAttestationCertifiedDevice"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the storageRequireEncryption
     * Require encryption on Android devices.
     *
-    * @return bool|null The storageRequireEncryption
+    * @return bool The storageRequireEncryption
     */
     public function getStorageRequireEncryption()
     {
@@ -659,7 +630,7 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
             return null;
         }
     }
-
+    
     /**
     * Sets the storageRequireEncryption
     * Require encryption on Android devices.
@@ -673,5 +644,5 @@ class AndroidDeviceOwnerCompliancePolicy extends DeviceCompliancePolicy
         $this->_propDict["storageRequireEncryption"] = boolval($val);
         return $this;
     }
-
+    
 }

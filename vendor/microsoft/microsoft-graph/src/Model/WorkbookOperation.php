@@ -28,12 +28,12 @@ class WorkbookOperation extends Entity
     * Gets the error
     * The error returned by the operation.
     *
-    * @return WorkbookOperationError|null The error
+    * @return WorkbookOperationError The error
     */
     public function getError()
     {
         if (array_key_exists("error", $this->_propDict)) {
-            if (is_a($this->_propDict["error"], "\Microsoft\Graph\Model\WorkbookOperationError") || is_null($this->_propDict["error"])) {
+            if (is_a($this->_propDict["error"], "Microsoft\Graph\Model\WorkbookOperationError")) {
                 return $this->_propDict["error"];
             } else {
                 $this->_propDict["error"] = new WorkbookOperationError($this->_propDict["error"]);
@@ -42,7 +42,7 @@ class WorkbookOperation extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the error
     * The error returned by the operation.
@@ -56,12 +56,12 @@ class WorkbookOperation extends Entity
         $this->_propDict["error"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the resourceLocation
     * The resource URI for the result.
     *
-    * @return string|null The resourceLocation
+    * @return string The resourceLocation
     */
     public function getResourceLocation()
     {
@@ -71,7 +71,7 @@ class WorkbookOperation extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the resourceLocation
     * The resource URI for the result.
@@ -85,17 +85,17 @@ class WorkbookOperation extends Entity
         $this->_propDict["resourceLocation"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the status
-    * The current status of the operation. Possible values are: NotStarted, Running, Completed, Failed.
+    * The current status of the operation. Possible values are: notStarted, running, succeeded, failed.
     *
-    * @return WorkbookOperationStatus|null The status
+    * @return WorkbookOperationStatus The status
     */
     public function getStatus()
     {
         if (array_key_exists("status", $this->_propDict)) {
-            if (is_a($this->_propDict["status"], "\Microsoft\Graph\Model\WorkbookOperationStatus") || is_null($this->_propDict["status"])) {
+            if (is_a($this->_propDict["status"], "Microsoft\Graph\Model\WorkbookOperationStatus")) {
                 return $this->_propDict["status"];
             } else {
                 $this->_propDict["status"] = new WorkbookOperationStatus($this->_propDict["status"]);
@@ -104,10 +104,10 @@ class WorkbookOperation extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the status
-    * The current status of the operation. Possible values are: NotStarted, Running, Completed, Failed.
+    * The current status of the operation. Possible values are: notStarted, running, succeeded, failed.
     *
     * @param WorkbookOperationStatus $val The status
     *
@@ -118,5 +118,5 @@ class WorkbookOperation extends Entity
         $this->_propDict["status"] = $val;
         return $this;
     }
-
+    
 }

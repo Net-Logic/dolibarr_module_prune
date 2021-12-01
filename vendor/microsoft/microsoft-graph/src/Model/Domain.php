@@ -26,9 +26,9 @@ class Domain extends Entity
 {
     /**
     * Gets the authenticationType
-    * Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. This property is read-only and is not nullable.
+    * Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication.Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. This propert is read-only and is not nullable.
     *
-    * @return string|null The authenticationType
+    * @return string The authenticationType
     */
     public function getAuthenticationType()
     {
@@ -38,10 +38,10 @@ class Domain extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the authenticationType
-    * Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. This property is read-only and is not nullable.
+    * Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication.Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. This propert is read-only and is not nullable.
     *
     * @param string $val The authenticationType
     *
@@ -52,12 +52,12 @@ class Domain extends Entity
         $this->_propDict["authenticationType"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the availabilityStatus
     * This property is always null except when the verify action is used. When the verify action is used, a domain entity is returned in the response. The availabilityStatus property of the domain entity in the response is either AvailableImmediately or EmailVerifiedDomainTakeoverScheduled.
     *
-    * @return string|null The availabilityStatus
+    * @return string The availabilityStatus
     */
     public function getAvailabilityStatus()
     {
@@ -67,7 +67,7 @@ class Domain extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the availabilityStatus
     * This property is always null except when the verify action is used. When the verify action is used, a domain entity is returned in the response. The availabilityStatus property of the domain entity in the response is either AvailableImmediately or EmailVerifiedDomainTakeoverScheduled.
@@ -81,12 +81,12 @@ class Domain extends Entity
         $this->_propDict["availabilityStatus"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the isAdminManaged
     * The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable
     *
-    * @return bool|null The isAdminManaged
+    * @return bool The isAdminManaged
     */
     public function getIsAdminManaged()
     {
@@ -96,7 +96,7 @@ class Domain extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the isAdminManaged
     * The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable
@@ -110,12 +110,12 @@ class Domain extends Entity
         $this->_propDict["isAdminManaged"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the isDefault
-    * true if this is the default domain that is used for user creation. There is only one default domain per company. Not nullable
+    * True if this is the default domain that is used for user creation. There is only one default domain per company. Not nullable
     *
-    * @return bool|null The isDefault
+    * @return bool The isDefault
     */
     public function getIsDefault()
     {
@@ -125,10 +125,10 @@ class Domain extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the isDefault
-    * true if this is the default domain that is used for user creation. There is only one default domain per company. Not nullable
+    * True if this is the default domain that is used for user creation. There is only one default domain per company. Not nullable
     *
     * @param bool $val The isDefault
     *
@@ -139,12 +139,12 @@ class Domain extends Entity
         $this->_propDict["isDefault"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the isInitial
-    * true if this is the initial domain created by Microsoft Online Services (companyname.onmicrosoft.com). There is only one initial domain per company. Not nullable
+    * True if this is the initial domain created by Microsoft Online Services (companyname.onmicrosoft.com). There is only one initial domain per company. Not nullable
     *
-    * @return bool|null The isInitial
+    * @return bool The isInitial
     */
     public function getIsInitial()
     {
@@ -154,10 +154,10 @@ class Domain extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the isInitial
-    * true if this is the initial domain created by Microsoft Online Services (companyname.onmicrosoft.com). There is only one initial domain per company. Not nullable
+    * True if this is the initial domain created by Microsoft Online Services (companyname.onmicrosoft.com). There is only one initial domain per company. Not nullable
     *
     * @param bool $val The isInitial
     *
@@ -168,12 +168,12 @@ class Domain extends Entity
         $this->_propDict["isInitial"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the isRoot
-    * true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable
+    * True if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable
     *
-    * @return bool|null The isRoot
+    * @return bool The isRoot
     */
     public function getIsRoot()
     {
@@ -183,10 +183,10 @@ class Domain extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the isRoot
-    * true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable
+    * True if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable
     *
     * @param bool $val The isRoot
     *
@@ -197,12 +197,12 @@ class Domain extends Entity
         $this->_propDict["isRoot"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the isVerified
-    * true if the domain has completed domain ownership verification. Not nullable
+    * True if the domain has completed domain ownership verification. Not nullable
     *
-    * @return bool|null The isVerified
+    * @return bool The isVerified
     */
     public function getIsVerified()
     {
@@ -212,10 +212,10 @@ class Domain extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the isVerified
-    * true if the domain has completed domain ownership verification. Not nullable
+    * True if the domain has completed domain ownership verification. Not nullable
     *
     * @param bool $val The isVerified
     *
@@ -226,11 +226,11 @@ class Domain extends Entity
         $this->_propDict["isVerified"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the manufacturer
     *
-    * @return string|null The manufacturer
+    * @return string The manufacturer
     */
     public function getManufacturer()
     {
@@ -240,7 +240,7 @@ class Domain extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the manufacturer
     *
@@ -253,11 +253,11 @@ class Domain extends Entity
         $this->_propDict["manufacturer"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the model
     *
-    * @return string|null The model
+    * @return string The model
     */
     public function getModel()
     {
@@ -267,7 +267,7 @@ class Domain extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the model
     *
@@ -280,12 +280,12 @@ class Domain extends Entity
         $this->_propDict["model"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the passwordNotificationWindowInDays
     * Specifies the number of days before a user receives notification that their password will expire. If the property is not set, a default value of 14 days will be used.
     *
-    * @return int|null The passwordNotificationWindowInDays
+    * @return int The passwordNotificationWindowInDays
     */
     public function getPasswordNotificationWindowInDays()
     {
@@ -295,7 +295,7 @@ class Domain extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordNotificationWindowInDays
     * Specifies the number of days before a user receives notification that their password will expire. If the property is not set, a default value of 14 days will be used.
@@ -309,12 +309,12 @@ class Domain extends Entity
         $this->_propDict["passwordNotificationWindowInDays"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordValidityPeriodInDays
     * Specifies the length of time that a password is valid before it must be changed. If the property is not set, a default value of 90 days will be used.
     *
-    * @return int|null The passwordValidityPeriodInDays
+    * @return int The passwordValidityPeriodInDays
     */
     public function getPasswordValidityPeriodInDays()
     {
@@ -324,7 +324,7 @@ class Domain extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordValidityPeriodInDays
     * Specifies the length of time that a password is valid before it must be changed. If the property is not set, a default value of 90 days will be used.
@@ -338,17 +338,17 @@ class Domain extends Entity
         $this->_propDict["passwordValidityPeriodInDays"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the state
     * Status of asynchronous operations scheduled for the domain.
     *
-    * @return DomainState|null The state
+    * @return DomainState The state
     */
     public function getState()
     {
         if (array_key_exists("state", $this->_propDict)) {
-            if (is_a($this->_propDict["state"], "\Microsoft\Graph\Model\DomainState") || is_null($this->_propDict["state"])) {
+            if (is_a($this->_propDict["state"], "Microsoft\Graph\Model\DomainState")) {
                 return $this->_propDict["state"];
             } else {
                 $this->_propDict["state"] = new DomainState($this->_propDict["state"]);
@@ -357,7 +357,7 @@ class Domain extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the state
     * Status of asynchronous operations scheduled for the domain.
@@ -371,12 +371,12 @@ class Domain extends Entity
         $this->_propDict["state"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the supportedServices
-    * The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable
+    * The capabilities assigned to the domain.Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, YammerNot nullable
     *
-    * @return string|null The supportedServices
+    * @return string The supportedServices
     */
     public function getSupportedServices()
     {
@@ -386,10 +386,10 @@ class Domain extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the supportedServices
-    * The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable
+    * The capabilities assigned to the domain.Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, YammerNot nullable
     *
     * @param string $val The supportedServices
     *
@@ -400,13 +400,13 @@ class Domain extends Entity
         $this->_propDict["supportedServices"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the domainNameReferences
     * Read-only, Nullable
      *
-     * @return array|null The domainNameReferences
+     * @return array The domainNameReferences
      */
     public function getDomainNameReferences()
     {
@@ -416,27 +416,27 @@ class Domain extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the domainNameReferences
     * Read-only, Nullable
     *
-    * @param DirectoryObject[] $val The domainNameReferences
+    * @param DirectoryObject $val The domainNameReferences
     *
     * @return Domain
     */
     public function setDomainNameReferences($val)
     {
-        $this->_propDict["domainNameReferences"] = $val;
+		$this->_propDict["domainNameReferences"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the serviceConfigurationRecords
-    * DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable
+    * DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services.Read-only, Nullable
      *
-     * @return array|null The serviceConfigurationRecords
+     * @return array The serviceConfigurationRecords
      */
     public function getServiceConfigurationRecords()
     {
@@ -446,27 +446,27 @@ class Domain extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the serviceConfigurationRecords
-    * DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable
+    * DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services.Read-only, Nullable
     *
-    * @param DomainDnsRecord[] $val The serviceConfigurationRecords
+    * @param DomainDnsRecord $val The serviceConfigurationRecords
     *
     * @return Domain
     */
     public function setServiceConfigurationRecords($val)
     {
-        $this->_propDict["serviceConfigurationRecords"] = $val;
+		$this->_propDict["serviceConfigurationRecords"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the verificationDnsRecords
-    * DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable
+    * DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD.Read-only, Nullable
      *
-     * @return array|null The verificationDnsRecords
+     * @return array The verificationDnsRecords
      */
     public function getVerificationDnsRecords()
     {
@@ -476,19 +476,19 @@ class Domain extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the verificationDnsRecords
-    * DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable
+    * DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD.Read-only, Nullable
     *
-    * @param DomainDnsRecord[] $val The verificationDnsRecords
+    * @param DomainDnsRecord $val The verificationDnsRecords
     *
     * @return Domain
     */
     public function setVerificationDnsRecords($val)
     {
-        $this->_propDict["verificationDnsRecords"] = $val;
+		$this->_propDict["verificationDnsRecords"] = $val;
         return $this;
     }
-
+    
 }

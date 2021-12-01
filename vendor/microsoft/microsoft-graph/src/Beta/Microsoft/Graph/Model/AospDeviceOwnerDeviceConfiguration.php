@@ -28,7 +28,7 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
     * Gets the appsAllowInstallFromUnknownSources
     * Indicates whether or not the user is allowed to enable to unknown sources setting.
     *
-    * @return bool|null The appsAllowInstallFromUnknownSources
+    * @return bool The appsAllowInstallFromUnknownSources
     */
     public function getAppsAllowInstallFromUnknownSources()
     {
@@ -38,7 +38,7 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the appsAllowInstallFromUnknownSources
     * Indicates whether or not the user is allowed to enable to unknown sources setting.
@@ -52,12 +52,12 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
         $this->_propDict["appsAllowInstallFromUnknownSources"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the backupBlocked
     * Indicates whether or not to block backup service.
     *
-    * @return bool|null The backupBlocked
+    * @return bool The backupBlocked
     */
     public function getBackupBlocked()
     {
@@ -67,7 +67,7 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the backupBlocked
     * Indicates whether or not to block backup service.
@@ -81,12 +81,12 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
         $this->_propDict["backupBlocked"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the bluetoothBlockConfiguration
     * Indicates whether or not to block a user from configuring bluetooth.
     *
-    * @return bool|null The bluetoothBlockConfiguration
+    * @return bool The bluetoothBlockConfiguration
     */
     public function getBluetoothBlockConfiguration()
     {
@@ -96,7 +96,7 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the bluetoothBlockConfiguration
     * Indicates whether or not to block a user from configuring bluetooth.
@@ -110,12 +110,12 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
         $this->_propDict["bluetoothBlockConfiguration"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the bluetoothBlockContactSharing
     * Indicates whether or not to block a user from sharing contacts via bluetooth.
     *
-    * @return bool|null The bluetoothBlockContactSharing
+    * @return bool The bluetoothBlockContactSharing
     */
     public function getBluetoothBlockContactSharing()
     {
@@ -125,7 +125,7 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the bluetoothBlockContactSharing
     * Indicates whether or not to block a user from sharing contacts via bluetooth.
@@ -139,12 +139,12 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
         $this->_propDict["bluetoothBlockContactSharing"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the bluetoothBlocked
     * Indicates whether or not to disable the use of bluetooth. When set to true, bluetooth cannot be enabled on the device.
     *
-    * @return bool|null The bluetoothBlocked
+    * @return bool The bluetoothBlocked
     */
     public function getBluetoothBlocked()
     {
@@ -154,7 +154,7 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the bluetoothBlocked
     * Indicates whether or not to disable the use of bluetooth. When set to true, bluetooth cannot be enabled on the device.
@@ -168,12 +168,12 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
         $this->_propDict["bluetoothBlocked"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the cameraBlocked
     * Indicates whether or not to disable the use of the camera.
     *
-    * @return bool|null The cameraBlocked
+    * @return bool The cameraBlocked
     */
     public function getCameraBlocked()
     {
@@ -183,7 +183,7 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the cameraBlocked
     * Indicates whether or not to disable the use of the camera.
@@ -197,12 +197,12 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
         $this->_propDict["cameraBlocked"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the cellularBlockWiFiTethering
     * Indicates whether or not to block Wi-Fi tethering.
     *
-    * @return bool|null The cellularBlockWiFiTethering
+    * @return bool The cellularBlockWiFiTethering
     */
     public function getCellularBlockWiFiTethering()
     {
@@ -212,7 +212,7 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the cellularBlockWiFiTethering
     * Indicates whether or not to block Wi-Fi tethering.
@@ -226,12 +226,12 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
         $this->_propDict["cellularBlockWiFiTethering"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the factoryResetBlocked
     * Indicates whether or not the factory reset option in settings is disabled.
     *
-    * @return bool|null The factoryResetBlocked
+    * @return bool The factoryResetBlocked
     */
     public function getFactoryResetBlocked()
     {
@@ -241,7 +241,7 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the factoryResetBlocked
     * Indicates whether or not the factory reset option in settings is disabled.
@@ -255,12 +255,12 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
         $this->_propDict["factoryResetBlocked"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordMinimumLength
     * Indicates the minimum length of the password required on the device. Valid values 4 to 16
     *
-    * @return int|null The passwordMinimumLength
+    * @return int The passwordMinimumLength
     */
     public function getPasswordMinimumLength()
     {
@@ -270,7 +270,7 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordMinimumLength
     * Indicates the minimum length of the password required on the device. Valid values 4 to 16
@@ -284,12 +284,12 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
         $this->_propDict["passwordMinimumLength"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordMinutesOfInactivityBeforeScreenTimeout
     * Minutes of inactivity before the screen times out.
     *
-    * @return int|null The passwordMinutesOfInactivityBeforeScreenTimeout
+    * @return int The passwordMinutesOfInactivityBeforeScreenTimeout
     */
     public function getPasswordMinutesOfInactivityBeforeScreenTimeout()
     {
@@ -299,7 +299,7 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordMinutesOfInactivityBeforeScreenTimeout
     * Minutes of inactivity before the screen times out.
@@ -313,17 +313,17 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
         $this->_propDict["passwordMinutesOfInactivityBeforeScreenTimeout"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordRequiredType
-    * Indicates the minimum password quality required on the device. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
+    * Indicates the minimum password quality required on the device.
     *
-    * @return AndroidDeviceOwnerRequiredPasswordType|null The passwordRequiredType
+    * @return AndroidDeviceOwnerRequiredPasswordType The passwordRequiredType
     */
     public function getPasswordRequiredType()
     {
         if (array_key_exists("passwordRequiredType", $this->_propDict)) {
-            if (is_a($this->_propDict["passwordRequiredType"], "\Beta\Microsoft\Graph\Model\AndroidDeviceOwnerRequiredPasswordType") || is_null($this->_propDict["passwordRequiredType"])) {
+            if (is_a($this->_propDict["passwordRequiredType"], "Beta\Microsoft\Graph\Model\AndroidDeviceOwnerRequiredPasswordType")) {
                 return $this->_propDict["passwordRequiredType"];
             } else {
                 $this->_propDict["passwordRequiredType"] = new AndroidDeviceOwnerRequiredPasswordType($this->_propDict["passwordRequiredType"]);
@@ -332,10 +332,10 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
         }
         return null;
     }
-
+    
     /**
     * Sets the passwordRequiredType
-    * Indicates the minimum password quality required on the device. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
+    * Indicates the minimum password quality required on the device.
     *
     * @param AndroidDeviceOwnerRequiredPasswordType $val The passwordRequiredType
     *
@@ -346,12 +346,12 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
         $this->_propDict["passwordRequiredType"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the passwordSignInFailureCountBeforeFactoryReset
     * Indicates the number of times a user can enter an incorrect password before the device is wiped. Valid values 4 to 11
     *
-    * @return int|null The passwordSignInFailureCountBeforeFactoryReset
+    * @return int The passwordSignInFailureCountBeforeFactoryReset
     */
     public function getPasswordSignInFailureCountBeforeFactoryReset()
     {
@@ -361,7 +361,7 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordSignInFailureCountBeforeFactoryReset
     * Indicates the number of times a user can enter an incorrect password before the device is wiped. Valid values 4 to 11
@@ -375,12 +375,12 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
         $this->_propDict["passwordSignInFailureCountBeforeFactoryReset"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the screenCaptureBlocked
     * Indicates whether or not to disable the capability to take screenshots.
     *
-    * @return bool|null The screenCaptureBlocked
+    * @return bool The screenCaptureBlocked
     */
     public function getScreenCaptureBlocked()
     {
@@ -390,7 +390,7 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the screenCaptureBlocked
     * Indicates whether or not to disable the capability to take screenshots.
@@ -404,12 +404,12 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
         $this->_propDict["screenCaptureBlocked"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the securityAllowDebuggingFeatures
     * Indicates whether or not to block the user from enabling debugging features on the device.
     *
-    * @return bool|null The securityAllowDebuggingFeatures
+    * @return bool The securityAllowDebuggingFeatures
     */
     public function getSecurityAllowDebuggingFeatures()
     {
@@ -419,7 +419,7 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the securityAllowDebuggingFeatures
     * Indicates whether or not to block the user from enabling debugging features on the device.
@@ -433,12 +433,12 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
         $this->_propDict["securityAllowDebuggingFeatures"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the storageAllowUsb
     * Indicates whether or not to block USB storage.
     *
-    * @return bool|null The storageAllowUsb
+    * @return bool The storageAllowUsb
     */
     public function getStorageAllowUsb()
     {
@@ -448,7 +448,7 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the storageAllowUsb
     * Indicates whether or not to block USB storage.
@@ -462,12 +462,12 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
         $this->_propDict["storageAllowUsb"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the storageBlockExternalMedia
     * Indicates whether or not to block external media.
     *
-    * @return bool|null The storageBlockExternalMedia
+    * @return bool The storageBlockExternalMedia
     */
     public function getStorageBlockExternalMedia()
     {
@@ -477,7 +477,7 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the storageBlockExternalMedia
     * Indicates whether or not to block external media.
@@ -491,12 +491,12 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
         $this->_propDict["storageBlockExternalMedia"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the storageBlockUsbFileTransfer
     * Indicates whether or not to block USB file transfer.
     *
-    * @return bool|null The storageBlockUsbFileTransfer
+    * @return bool The storageBlockUsbFileTransfer
     */
     public function getStorageBlockUsbFileTransfer()
     {
@@ -506,7 +506,7 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the storageBlockUsbFileTransfer
     * Indicates whether or not to block USB file transfer.
@@ -520,12 +520,12 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
         $this->_propDict["storageBlockUsbFileTransfer"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the wifiBlockEditConfigurations
     * Indicates whether or not to block the user from editing the wifi connection settings.
     *
-    * @return bool|null The wifiBlockEditConfigurations
+    * @return bool The wifiBlockEditConfigurations
     */
     public function getWifiBlockEditConfigurations()
     {
@@ -535,7 +535,7 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the wifiBlockEditConfigurations
     * Indicates whether or not to block the user from editing the wifi connection settings.
@@ -549,5 +549,5 @@ class AospDeviceOwnerDeviceConfiguration extends DeviceConfiguration
         $this->_propDict["wifiBlockEditConfigurations"] = boolval($val);
         return $this;
     }
-
+    
 }

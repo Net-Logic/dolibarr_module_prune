@@ -26,9 +26,9 @@ class AuthenticationFlowsPolicy extends Entity
 {
     /**
     * Gets the description
-    * Inherited property. A description of the policy. Optional. Read-only.
+    * Inherited property. A description of the policy. This property is not a key. Optional. Read-only.
     *
-    * @return string|null The description
+    * @return string The description
     */
     public function getDescription()
     {
@@ -38,10 +38,10 @@ class AuthenticationFlowsPolicy extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the description
-    * Inherited property. A description of the policy. Optional. Read-only.
+    * Inherited property. A description of the policy. This property is not a key. Optional. Read-only.
     *
     * @param string $val The description
     *
@@ -52,12 +52,12 @@ class AuthenticationFlowsPolicy extends Entity
         $this->_propDict["description"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the displayName
-    * Inherited property. The human-readable name of the policy. Optional. Read-only.
+    * Inherited property. The human-readable name of the policy. This property is not a key. Optional. Read-only.
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -67,10 +67,10 @@ class AuthenticationFlowsPolicy extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the displayName
-    * Inherited property. The human-readable name of the policy. Optional. Read-only.
+    * Inherited property. The human-readable name of the policy. This property is not a key. Optional. Read-only.
     *
     * @param string $val The displayName
     *
@@ -81,17 +81,17 @@ class AuthenticationFlowsPolicy extends Entity
         $this->_propDict["displayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the selfServiceSignUp
-    * Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. Optional. Read-only.
+    * Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. This property is not a key. Optional. Read-only.
     *
-    * @return SelfServiceSignUpAuthenticationFlowConfiguration|null The selfServiceSignUp
+    * @return SelfServiceSignUpAuthenticationFlowConfiguration The selfServiceSignUp
     */
     public function getSelfServiceSignUp()
     {
         if (array_key_exists("selfServiceSignUp", $this->_propDict)) {
-            if (is_a($this->_propDict["selfServiceSignUp"], "\Beta\Microsoft\Graph\Model\SelfServiceSignUpAuthenticationFlowConfiguration") || is_null($this->_propDict["selfServiceSignUp"])) {
+            if (is_a($this->_propDict["selfServiceSignUp"], "Beta\Microsoft\Graph\Model\SelfServiceSignUpAuthenticationFlowConfiguration")) {
                 return $this->_propDict["selfServiceSignUp"];
             } else {
                 $this->_propDict["selfServiceSignUp"] = new SelfServiceSignUpAuthenticationFlowConfiguration($this->_propDict["selfServiceSignUp"]);
@@ -100,10 +100,10 @@ class AuthenticationFlowsPolicy extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the selfServiceSignUp
-    * Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. Optional. Read-only.
+    * Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. This property is not a key. Optional. Read-only.
     *
     * @param SelfServiceSignUpAuthenticationFlowConfiguration $val The selfServiceSignUp
     *
@@ -114,5 +114,5 @@ class AuthenticationFlowsPolicy extends Entity
         $this->_propDict["selfServiceSignUp"] = $val;
         return $this;
     }
-
+    
 }

@@ -26,9 +26,9 @@ class ServicePrincipal extends DirectoryObject
 {
     /**
     * Gets the accountEnabled
-    * true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).
+    * true if the service principal account is enabled; otherwise, false.
     *
-    * @return bool|null The accountEnabled
+    * @return bool The accountEnabled
     */
     public function getAccountEnabled()
     {
@@ -38,10 +38,10 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the accountEnabled
-    * true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).
+    * true if the service principal account is enabled; otherwise, false.
     *
     * @param bool $val The accountEnabled
     *
@@ -52,13 +52,13 @@ class ServicePrincipal extends DirectoryObject
         $this->_propDict["accountEnabled"] = boolval($val);
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the addIns
     * Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
      *
-     * @return array|null The addIns
+     * @return array The addIns
      */
     public function getAddIns()
     {
@@ -68,26 +68,26 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the addIns
     * Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
     *
-    * @param AddIn[] $val The addIns
+    * @param AddIn $val The addIns
     *
     * @return ServicePrincipal
     */
     public function setAddIns($val)
     {
-        $this->_propDict["addIns"] = $val;
+		$this->_propDict["addIns"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the alternativeNames
-    * Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
+    * Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities.
     *
-    * @return string|null The alternativeNames
+    * @return string The alternativeNames
     */
     public function getAlternativeNames()
     {
@@ -97,10 +97,10 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the alternativeNames
-    * Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
+    * Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities.
     *
     * @param string $val The alternativeNames
     *
@@ -111,12 +111,12 @@ class ServicePrincipal extends DirectoryObject
         $this->_propDict["alternativeNames"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the appDescription
     * The description exposed by the associated application.
     *
-    * @return string|null The appDescription
+    * @return string The appDescription
     */
     public function getAppDescription()
     {
@@ -126,7 +126,7 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the appDescription
     * The description exposed by the associated application.
@@ -140,12 +140,12 @@ class ServicePrincipal extends DirectoryObject
         $this->_propDict["appDescription"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the appDisplayName
     * The display name exposed by the associated application.
     *
-    * @return string|null The appDisplayName
+    * @return string The appDisplayName
     */
     public function getAppDisplayName()
     {
@@ -155,7 +155,7 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the appDisplayName
     * The display name exposed by the associated application.
@@ -169,12 +169,12 @@ class ServicePrincipal extends DirectoryObject
         $this->_propDict["appDisplayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the appId
-    * The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
+    * The unique identifier for the associated application (its appId property).
     *
-    * @return string|null The appId
+    * @return string The appId
     */
     public function getAppId()
     {
@@ -184,10 +184,10 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the appId
-    * The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
+    * The unique identifier for the associated application (its appId property).
     *
     * @param string $val The appId
     *
@@ -198,12 +198,12 @@ class ServicePrincipal extends DirectoryObject
         $this->_propDict["appId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the applicationTemplateId
-    * Unique identifier of the applicationTemplate that the servicePrincipal was created from. Read-only. Supports $filter (eq, ne, NOT, startsWith).
+    * Unique identifier of the applicationTemplate that the servicePrincipal was created from. Read-only.
     *
-    * @return string|null The applicationTemplateId
+    * @return string The applicationTemplateId
     */
     public function getApplicationTemplateId()
     {
@@ -213,10 +213,10 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the applicationTemplateId
-    * Unique identifier of the applicationTemplate that the servicePrincipal was created from. Read-only. Supports $filter (eq, ne, NOT, startsWith).
+    * Unique identifier of the applicationTemplate that the servicePrincipal was created from. Read-only.
     *
     * @param string $val The applicationTemplateId
     *
@@ -227,12 +227,12 @@ class ServicePrincipal extends DirectoryObject
         $this->_propDict["applicationTemplateId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the appOwnerOrganizationId
-    * Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
+    * Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.
     *
-    * @return string|null The appOwnerOrganizationId
+    * @return string The appOwnerOrganizationId
     */
     public function getAppOwnerOrganizationId()
     {
@@ -242,10 +242,10 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the appOwnerOrganizationId
-    * Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
+    * Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.
     *
     * @param string $val The appOwnerOrganizationId
     *
@@ -256,12 +256,12 @@ class ServicePrincipal extends DirectoryObject
         $this->_propDict["appOwnerOrganizationId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the appRoleAssignmentRequired
-    * Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is false. Not nullable. Supports $filter (eq, ne, NOT).
+    * Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is false. Not nullable.
     *
-    * @return bool|null The appRoleAssignmentRequired
+    * @return bool The appRoleAssignmentRequired
     */
     public function getAppRoleAssignmentRequired()
     {
@@ -271,10 +271,10 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the appRoleAssignmentRequired
-    * Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is false. Not nullable. Supports $filter (eq, ne, NOT).
+    * Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is false. Not nullable.
     *
     * @param bool $val The appRoleAssignmentRequired
     *
@@ -285,13 +285,13 @@ class ServicePrincipal extends DirectoryObject
         $this->_propDict["appRoleAssignmentRequired"] = boolval($val);
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the appRoles
     * The roles exposed by the application which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
      *
-     * @return array|null The appRoles
+     * @return array The appRoles
      */
     public function getAppRoles()
     {
@@ -301,26 +301,26 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the appRoles
     * The roles exposed by the application which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
     *
-    * @param AppRole[] $val The appRoles
+    * @param AppRole $val The appRoles
     *
     * @return ServicePrincipal
     */
     public function setAppRoles($val)
     {
-        $this->_propDict["appRoles"] = $val;
+		$this->_propDict["appRoles"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the description
-    * Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+    * Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters.
     *
-    * @return string|null The description
+    * @return string The description
     */
     public function getDescription()
     {
@@ -330,10 +330,10 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the description
-    * Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+    * Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters.
     *
     * @param string $val The description
     *
@@ -344,41 +344,12 @@ class ServicePrincipal extends DirectoryObject
         $this->_propDict["description"] = $val;
         return $this;
     }
-
-    /**
-    * Gets the disabledByMicrosoftStatus
-    * Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
-    *
-    * @return string|null The disabledByMicrosoftStatus
-    */
-    public function getDisabledByMicrosoftStatus()
-    {
-        if (array_key_exists("disabledByMicrosoftStatus", $this->_propDict)) {
-            return $this->_propDict["disabledByMicrosoftStatus"];
-        } else {
-            return null;
-        }
-    }
-
-    /**
-    * Sets the disabledByMicrosoftStatus
-    * Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
-    *
-    * @param string $val The disabledByMicrosoftStatus
-    *
-    * @return ServicePrincipal
-    */
-    public function setDisabledByMicrosoftStatus($val)
-    {
-        $this->_propDict["disabledByMicrosoftStatus"] = $val;
-        return $this;
-    }
-
+    
     /**
     * Gets the displayName
-    * The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+    * The display name for the service principal.
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -388,10 +359,10 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the displayName
-    * The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+    * The display name for the service principal.
     *
     * @param string $val The displayName
     *
@@ -402,12 +373,12 @@ class ServicePrincipal extends DirectoryObject
         $this->_propDict["displayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the homepage
     * Home page or landing page of the application.
     *
-    * @return string|null The homepage
+    * @return string The homepage
     */
     public function getHomepage()
     {
@@ -417,7 +388,7 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the homepage
     * Home page or landing page of the application.
@@ -431,17 +402,17 @@ class ServicePrincipal extends DirectoryObject
         $this->_propDict["homepage"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the info
-    * Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
+    * Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps.
     *
-    * @return InformationalUrl|null The info
+    * @return InformationalUrl The info
     */
     public function getInfo()
     {
         if (array_key_exists("info", $this->_propDict)) {
-            if (is_a($this->_propDict["info"], "\Microsoft\Graph\Model\InformationalUrl") || is_null($this->_propDict["info"])) {
+            if (is_a($this->_propDict["info"], "Microsoft\Graph\Model\InformationalUrl")) {
                 return $this->_propDict["info"];
             } else {
                 $this->_propDict["info"] = new InformationalUrl($this->_propDict["info"]);
@@ -450,10 +421,10 @@ class ServicePrincipal extends DirectoryObject
         }
         return null;
     }
-
+    
     /**
     * Sets the info
-    * Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
+    * Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps.
     *
     * @param InformationalUrl $val The info
     *
@@ -464,13 +435,13 @@ class ServicePrincipal extends DirectoryObject
         $this->_propDict["info"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the keyCredentials
-    * The collection of key credentials associated with the service principal. Not nullable. Supports $filter (eq, not, ge, le).
+    * The collection of key credentials associated with the service principal. Not nullable.
      *
-     * @return array|null The keyCredentials
+     * @return array The keyCredentials
      */
     public function getKeyCredentials()
     {
@@ -480,26 +451,26 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the keyCredentials
-    * The collection of key credentials associated with the service principal. Not nullable. Supports $filter (eq, not, ge, le).
+    * The collection of key credentials associated with the service principal. Not nullable.
     *
-    * @param KeyCredential[] $val The keyCredentials
+    * @param KeyCredential $val The keyCredentials
     *
     * @return ServicePrincipal
     */
     public function setKeyCredentials($val)
     {
-        $this->_propDict["keyCredentials"] = $val;
+		$this->_propDict["keyCredentials"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the loginUrl
     * Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Microsoft 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Azure AD My Apps, or the Azure AD SSO URL.
     *
-    * @return string|null The loginUrl
+    * @return string The loginUrl
     */
     public function getLoginUrl()
     {
@@ -509,7 +480,7 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the loginUrl
     * Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Microsoft 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Azure AD My Apps, or the Azure AD SSO URL.
@@ -523,12 +494,12 @@ class ServicePrincipal extends DirectoryObject
         $this->_propDict["loginUrl"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the logoutUrl
     * Specifies the URL that will be used by Microsoft's authorization service to logout an user using OpenId Connect front-channel, back-channel or SAML logout protocols.
     *
-    * @return string|null The logoutUrl
+    * @return string The logoutUrl
     */
     public function getLogoutUrl()
     {
@@ -538,7 +509,7 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the logoutUrl
     * Specifies the URL that will be used by Microsoft's authorization service to logout an user using OpenId Connect front-channel, back-channel or SAML logout protocols.
@@ -552,12 +523,12 @@ class ServicePrincipal extends DirectoryObject
         $this->_propDict["logoutUrl"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the notes
     * Free text field to capture information about the service principal, typically used for operational purposes. Maximum allowed size is 1024 characters.
     *
-    * @return string|null The notes
+    * @return string The notes
     */
     public function getNotes()
     {
@@ -567,7 +538,7 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the notes
     * Free text field to capture information about the service principal, typically used for operational purposes. Maximum allowed size is 1024 characters.
@@ -581,12 +552,12 @@ class ServicePrincipal extends DirectoryObject
         $this->_propDict["notes"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the notificationEmailAddresses
     * Specifies the list of email addresses where Azure AD sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Azure AD Gallery applications.
     *
-    * @return string|null The notificationEmailAddresses
+    * @return string The notificationEmailAddresses
     */
     public function getNotificationEmailAddresses()
     {
@@ -596,7 +567,7 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the notificationEmailAddresses
     * Specifies the list of email addresses where Azure AD sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Azure AD Gallery applications.
@@ -610,13 +581,13 @@ class ServicePrincipal extends DirectoryObject
         $this->_propDict["notificationEmailAddresses"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the oauth2PermissionScopes
     * The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable.
      *
-     * @return array|null The oauth2PermissionScopes
+     * @return array The oauth2PermissionScopes
      */
     public function getOauth2PermissionScopes()
     {
@@ -626,27 +597,27 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the oauth2PermissionScopes
     * The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable.
     *
-    * @param PermissionScope[] $val The oauth2PermissionScopes
+    * @param PermissionScope $val The oauth2PermissionScopes
     *
     * @return ServicePrincipal
     */
     public function setOauth2PermissionScopes($val)
     {
-        $this->_propDict["oauth2PermissionScopes"] = $val;
+		$this->_propDict["oauth2PermissionScopes"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the passwordCredentials
-    * The collection of password credentials associated with the application. Not nullable.
+    * The collection of password credentials associated with the service principal. Not nullable.
      *
-     * @return array|null The passwordCredentials
+     * @return array The passwordCredentials
      */
     public function getPasswordCredentials()
     {
@@ -656,26 +627,26 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the passwordCredentials
-    * The collection of password credentials associated with the application. Not nullable.
+    * The collection of password credentials associated with the service principal. Not nullable.
     *
-    * @param PasswordCredential[] $val The passwordCredentials
+    * @param PasswordCredential $val The passwordCredentials
     *
     * @return ServicePrincipal
     */
     public function setPasswordCredentials($val)
     {
-        $this->_propDict["passwordCredentials"] = $val;
+		$this->_propDict["passwordCredentials"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the preferredSingleSignOnMode
     * Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.
     *
-    * @return string|null The preferredSingleSignOnMode
+    * @return string The preferredSingleSignOnMode
     */
     public function getPreferredSingleSignOnMode()
     {
@@ -685,7 +656,7 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the preferredSingleSignOnMode
     * Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.
@@ -699,12 +670,12 @@ class ServicePrincipal extends DirectoryObject
         $this->_propDict["preferredSingleSignOnMode"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the preferredTokenSigningKeyThumbprint
     * Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
     *
-    * @return string|null The preferredTokenSigningKeyThumbprint
+    * @return string The preferredTokenSigningKeyThumbprint
     */
     public function getPreferredTokenSigningKeyThumbprint()
     {
@@ -714,7 +685,7 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the preferredTokenSigningKeyThumbprint
     * Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
@@ -728,12 +699,12 @@ class ServicePrincipal extends DirectoryObject
         $this->_propDict["preferredTokenSigningKeyThumbprint"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the replyUrls
     * The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.
     *
-    * @return string|null The replyUrls
+    * @return string The replyUrls
     */
     public function getReplyUrls()
     {
@@ -743,7 +714,7 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the replyUrls
     * The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.
@@ -757,17 +728,17 @@ class ServicePrincipal extends DirectoryObject
         $this->_propDict["replyUrls"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the samlSingleSignOnSettings
     * The collection for settings related to saml single sign-on.
     *
-    * @return SamlSingleSignOnSettings|null The samlSingleSignOnSettings
+    * @return SamlSingleSignOnSettings The samlSingleSignOnSettings
     */
     public function getSamlSingleSignOnSettings()
     {
         if (array_key_exists("samlSingleSignOnSettings", $this->_propDict)) {
-            if (is_a($this->_propDict["samlSingleSignOnSettings"], "\Microsoft\Graph\Model\SamlSingleSignOnSettings") || is_null($this->_propDict["samlSingleSignOnSettings"])) {
+            if (is_a($this->_propDict["samlSingleSignOnSettings"], "Microsoft\Graph\Model\SamlSingleSignOnSettings")) {
                 return $this->_propDict["samlSingleSignOnSettings"];
             } else {
                 $this->_propDict["samlSingleSignOnSettings"] = new SamlSingleSignOnSettings($this->_propDict["samlSingleSignOnSettings"]);
@@ -776,7 +747,7 @@ class ServicePrincipal extends DirectoryObject
         }
         return null;
     }
-
+    
     /**
     * Sets the samlSingleSignOnSettings
     * The collection for settings related to saml single sign-on.
@@ -790,12 +761,12 @@ class ServicePrincipal extends DirectoryObject
         $this->_propDict["samlSingleSignOnSettings"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the servicePrincipalNames
-    * Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
+    * Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.
     *
-    * @return string|null The servicePrincipalNames
+    * @return string The servicePrincipalNames
     */
     public function getServicePrincipalNames()
     {
@@ -805,10 +776,10 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the servicePrincipalNames
-    * Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
+    * Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.
     *
     * @param string $val The servicePrincipalNames
     *
@@ -819,12 +790,12 @@ class ServicePrincipal extends DirectoryObject
         $this->_propDict["servicePrincipalNames"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the servicePrincipalType
-    * Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Azure AD internally. The servicePrincipalType property can be set to three different values: __Application - A service principal that represents an application or service. The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.__ManagedIdentity - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.__Legacy - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The appId value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.__SocialIdp - For internal use.
+    * Identifies if the service principal represents an application or a managed identity. This is set by Azure AD internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity.
     *
-    * @return string|null The servicePrincipalType
+    * @return string The servicePrincipalType
     */
     public function getServicePrincipalType()
     {
@@ -834,10 +805,10 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the servicePrincipalType
-    * Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Azure AD internally. The servicePrincipalType property can be set to three different values: __Application - A service principal that represents an application or service. The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.__ManagedIdentity - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.__Legacy - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The appId value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.__SocialIdp - For internal use.
+    * Identifies if the service principal represents an application or a managed identity. This is set by Azure AD internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity.
     *
     * @param string $val The servicePrincipalType
     *
@@ -848,12 +819,12 @@ class ServicePrincipal extends DirectoryObject
         $this->_propDict["servicePrincipalType"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the signInAudience
-    * Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+    * Specifies what Microsoft accounts are supported for the associated application. Read-only.
     *
-    * @return string|null The signInAudience
+    * @return string The signInAudience
     */
     public function getSignInAudience()
     {
@@ -863,10 +834,10 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the signInAudience
-    * Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+    * Specifies what Microsoft accounts are supported for the associated application. Read-only.
     *
     * @param string $val The signInAudience
     *
@@ -877,12 +848,12 @@ class ServicePrincipal extends DirectoryObject
         $this->_propDict["signInAudience"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the tags
-    * Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
+    * Custom strings that can be used to categorize and identify the service principal. Not nullable.
     *
-    * @return string|null The tags
+    * @return string The tags
     */
     public function getTags()
     {
@@ -892,10 +863,10 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the tags
-    * Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
+    * Custom strings that can be used to categorize and identify the service principal. Not nullable.
     *
     * @param string $val The tags
     *
@@ -906,12 +877,12 @@ class ServicePrincipal extends DirectoryObject
         $this->_propDict["tags"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the tokenEncryptionKeyId
     * Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
     *
-    * @return string|null The tokenEncryptionKeyId
+    * @return string The tokenEncryptionKeyId
     */
     public function getTokenEncryptionKeyId()
     {
@@ -921,7 +892,7 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the tokenEncryptionKeyId
     * Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
@@ -935,13 +906,13 @@ class ServicePrincipal extends DirectoryObject
         $this->_propDict["tokenEncryptionKeyId"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the appRoleAssignedTo
-    * App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
+    * App role assignments for this app or service, granted to users, groups, and other service principals.
      *
-     * @return array|null The appRoleAssignedTo
+     * @return array The appRoleAssignedTo
      */
     public function getAppRoleAssignedTo()
     {
@@ -951,27 +922,27 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the appRoleAssignedTo
-    * App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
+    * App role assignments for this app or service, granted to users, groups, and other service principals.
     *
-    * @param AppRoleAssignment[] $val The appRoleAssignedTo
+    * @param AppRoleAssignment $val The appRoleAssignedTo
     *
     * @return ServicePrincipal
     */
     public function setAppRoleAssignedTo($val)
     {
-        $this->_propDict["appRoleAssignedTo"] = $val;
+		$this->_propDict["appRoleAssignedTo"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the appRoleAssignments
-    * App role assignment for another app or service, granted to this service principal. Supports $expand.
+    * App role assignment for another app or service, granted to this service principal.
      *
-     * @return array|null The appRoleAssignments
+     * @return array The appRoleAssignments
      */
     public function getAppRoleAssignments()
     {
@@ -981,27 +952,27 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the appRoleAssignments
-    * App role assignment for another app or service, granted to this service principal. Supports $expand.
+    * App role assignment for another app or service, granted to this service principal.
     *
-    * @param AppRoleAssignment[] $val The appRoleAssignments
+    * @param AppRoleAssignment $val The appRoleAssignments
     *
     * @return ServicePrincipal
     */
     public function setAppRoleAssignments($val)
     {
-        $this->_propDict["appRoleAssignments"] = $val;
+		$this->_propDict["appRoleAssignments"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the claimsMappingPolicies
-    * The claimsMappingPolicies assigned to this service principal. Supports $expand.
+    * The claimsMappingPolicies assigned to this service principal.
      *
-     * @return array|null The claimsMappingPolicies
+     * @return array The claimsMappingPolicies
      */
     public function getClaimsMappingPolicies()
     {
@@ -1011,27 +982,27 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the claimsMappingPolicies
-    * The claimsMappingPolicies assigned to this service principal. Supports $expand.
+    * The claimsMappingPolicies assigned to this service principal.
     *
-    * @param ClaimsMappingPolicy[] $val The claimsMappingPolicies
+    * @param ClaimsMappingPolicy $val The claimsMappingPolicies
     *
     * @return ServicePrincipal
     */
     public function setClaimsMappingPolicies($val)
     {
-        $this->_propDict["claimsMappingPolicies"] = $val;
+		$this->_propDict["claimsMappingPolicies"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the createdObjects
     * Directory objects created by this service principal. Read-only. Nullable.
      *
-     * @return array|null The createdObjects
+     * @return array The createdObjects
      */
     public function getCreatedObjects()
     {
@@ -1041,27 +1012,27 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the createdObjects
     * Directory objects created by this service principal. Read-only. Nullable.
     *
-    * @param DirectoryObject[] $val The createdObjects
+    * @param DirectoryObject $val The createdObjects
     *
     * @return ServicePrincipal
     */
     public function setCreatedObjects($val)
     {
-        $this->_propDict["createdObjects"] = $val;
+		$this->_propDict["createdObjects"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the delegatedPermissionClassifications
-    * The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
+    * The permission classifications for delegated permissions exposed by the app that this service principal represents.
      *
-     * @return array|null The delegatedPermissionClassifications
+     * @return array The delegatedPermissionClassifications
      */
     public function getDelegatedPermissionClassifications()
     {
@@ -1071,27 +1042,27 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the delegatedPermissionClassifications
-    * The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
+    * The permission classifications for delegated permissions exposed by the app that this service principal represents.
     *
-    * @param DelegatedPermissionClassification[] $val The delegatedPermissionClassifications
+    * @param DelegatedPermissionClassification $val The delegatedPermissionClassifications
     *
     * @return ServicePrincipal
     */
     public function setDelegatedPermissionClassifications($val)
     {
-        $this->_propDict["delegatedPermissionClassifications"] = $val;
+		$this->_propDict["delegatedPermissionClassifications"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the endpoints
     * Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
      *
-     * @return array|null The endpoints
+     * @return array The endpoints
      */
     public function getEndpoints()
     {
@@ -1101,27 +1072,27 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the endpoints
     * Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
     *
-    * @param Endpoint[] $val The endpoints
+    * @param Endpoint $val The endpoints
     *
     * @return ServicePrincipal
     */
     public function setEndpoints($val)
     {
-        $this->_propDict["endpoints"] = $val;
+		$this->_propDict["endpoints"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the homeRealmDiscoveryPolicies
-    * The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
+    * The homeRealmDiscoveryPolicies assigned to this service principal.
      *
-     * @return array|null The homeRealmDiscoveryPolicies
+     * @return array The homeRealmDiscoveryPolicies
      */
     public function getHomeRealmDiscoveryPolicies()
     {
@@ -1131,27 +1102,27 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the homeRealmDiscoveryPolicies
-    * The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
+    * The homeRealmDiscoveryPolicies assigned to this service principal.
     *
-    * @param HomeRealmDiscoveryPolicy[] $val The homeRealmDiscoveryPolicies
+    * @param HomeRealmDiscoveryPolicy $val The homeRealmDiscoveryPolicies
     *
     * @return ServicePrincipal
     */
     public function setHomeRealmDiscoveryPolicies($val)
     {
-        $this->_propDict["homeRealmDiscoveryPolicies"] = $val;
+		$this->_propDict["homeRealmDiscoveryPolicies"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the memberOf
-    * Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
+    * Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable.
      *
-     * @return array|null The memberOf
+     * @return array The memberOf
      */
     public function getMemberOf()
     {
@@ -1161,27 +1132,27 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the memberOf
-    * Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
+    * Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable.
     *
-    * @param DirectoryObject[] $val The memberOf
+    * @param DirectoryObject $val The memberOf
     *
     * @return ServicePrincipal
     */
     public function setMemberOf($val)
     {
-        $this->_propDict["memberOf"] = $val;
+		$this->_propDict["memberOf"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the oauth2PermissionGrants
     * Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
      *
-     * @return array|null The oauth2PermissionGrants
+     * @return array The oauth2PermissionGrants
      */
     public function getOauth2PermissionGrants()
     {
@@ -1191,27 +1162,27 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the oauth2PermissionGrants
     * Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
     *
-    * @param OAuth2PermissionGrant[] $val The oauth2PermissionGrants
+    * @param OAuth2PermissionGrant $val The oauth2PermissionGrants
     *
     * @return ServicePrincipal
     */
     public function setOauth2PermissionGrants($val)
     {
-        $this->_propDict["oauth2PermissionGrants"] = $val;
+		$this->_propDict["oauth2PermissionGrants"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the ownedObjects
-    * Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
+    * Directory objects that are owned by this service principal. Read-only. Nullable.
      *
-     * @return array|null The ownedObjects
+     * @return array The ownedObjects
      */
     public function getOwnedObjects()
     {
@@ -1221,27 +1192,27 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the ownedObjects
-    * Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
+    * Directory objects that are owned by this service principal. Read-only. Nullable.
     *
-    * @param DirectoryObject[] $val The ownedObjects
+    * @param DirectoryObject $val The ownedObjects
     *
     * @return ServicePrincipal
     */
     public function setOwnedObjects($val)
     {
-        $this->_propDict["ownedObjects"] = $val;
+		$this->_propDict["ownedObjects"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the owners
-    * Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
+    * Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.
      *
-     * @return array|null The owners
+     * @return array The owners
      */
     public function getOwners()
     {
@@ -1251,27 +1222,27 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the owners
-    * Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
+    * Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.
     *
-    * @param DirectoryObject[] $val The owners
+    * @param DirectoryObject $val The owners
     *
     * @return ServicePrincipal
     */
     public function setOwners($val)
     {
-        $this->_propDict["owners"] = $val;
+		$this->_propDict["owners"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the tokenIssuancePolicies
     * The tokenIssuancePolicies assigned to this service principal.
      *
-     * @return array|null The tokenIssuancePolicies
+     * @return array The tokenIssuancePolicies
      */
     public function getTokenIssuancePolicies()
     {
@@ -1281,27 +1252,27 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the tokenIssuancePolicies
     * The tokenIssuancePolicies assigned to this service principal.
     *
-    * @param TokenIssuancePolicy[] $val The tokenIssuancePolicies
+    * @param TokenIssuancePolicy $val The tokenIssuancePolicies
     *
     * @return ServicePrincipal
     */
     public function setTokenIssuancePolicies($val)
     {
-        $this->_propDict["tokenIssuancePolicies"] = $val;
+		$this->_propDict["tokenIssuancePolicies"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the tokenLifetimePolicies
     * The tokenLifetimePolicies assigned to this service principal.
      *
-     * @return array|null The tokenLifetimePolicies
+     * @return array The tokenLifetimePolicies
      */
     public function getTokenLifetimePolicies()
     {
@@ -1311,26 +1282,26 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the tokenLifetimePolicies
     * The tokenLifetimePolicies assigned to this service principal.
     *
-    * @param TokenLifetimePolicy[] $val The tokenLifetimePolicies
+    * @param TokenLifetimePolicy $val The tokenLifetimePolicies
     *
     * @return ServicePrincipal
     */
     public function setTokenLifetimePolicies($val)
     {
-        $this->_propDict["tokenLifetimePolicies"] = $val;
+		$this->_propDict["tokenLifetimePolicies"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the transitiveMemberOf
      *
-     * @return array|null The transitiveMemberOf
+     * @return array The transitiveMemberOf
      */
     public function getTransitiveMemberOf()
     {
@@ -1340,18 +1311,18 @@ class ServicePrincipal extends DirectoryObject
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the transitiveMemberOf
     *
-    * @param DirectoryObject[] $val The transitiveMemberOf
+    * @param DirectoryObject $val The transitiveMemberOf
     *
     * @return ServicePrincipal
     */
     public function setTransitiveMemberOf($val)
     {
-        $this->_propDict["transitiveMemberOf"] = $val;
+		$this->_propDict["transitiveMemberOf"] = $val;
         return $this;
     }
-
+    
 }

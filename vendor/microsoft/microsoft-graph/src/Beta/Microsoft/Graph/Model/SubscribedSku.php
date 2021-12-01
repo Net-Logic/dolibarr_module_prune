@@ -28,7 +28,7 @@ class SubscribedSku extends Entity
     * Gets the appliesTo
     * For example, 'User' or 'Company'.
     *
-    * @return string|null The appliesTo
+    * @return string The appliesTo
     */
     public function getAppliesTo()
     {
@@ -38,7 +38,7 @@ class SubscribedSku extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the appliesTo
     * For example, 'User' or 'Company'.
@@ -52,12 +52,12 @@ class SubscribedSku extends Entity
         $this->_propDict["appliesTo"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the capabilityStatus
-    * Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut. The capabilityStatus is Enabled if the prepaidUnits property has at least 1 unit that is enabled, and LockedOut if the customer cancelled their subscription.
+    * Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut.
     *
-    * @return string|null The capabilityStatus
+    * @return string The capabilityStatus
     */
     public function getCapabilityStatus()
     {
@@ -67,10 +67,10 @@ class SubscribedSku extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the capabilityStatus
-    * Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut. The capabilityStatus is Enabled if the prepaidUnits property has at least 1 unit that is enabled, and LockedOut if the customer cancelled their subscription.
+    * Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut.
     *
     * @param string $val The capabilityStatus
     *
@@ -81,12 +81,12 @@ class SubscribedSku extends Entity
         $this->_propDict["capabilityStatus"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the consumedUnits
     * The number of licenses that have been assigned.
     *
-    * @return int|null The consumedUnits
+    * @return int The consumedUnits
     */
     public function getConsumedUnits()
     {
@@ -96,7 +96,7 @@ class SubscribedSku extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the consumedUnits
     * The number of licenses that have been assigned.
@@ -110,17 +110,17 @@ class SubscribedSku extends Entity
         $this->_propDict["consumedUnits"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the prepaidUnits
     * Information about the number and status of prepaid licenses.
     *
-    * @return LicenseUnitsDetail|null The prepaidUnits
+    * @return LicenseUnitsDetail The prepaidUnits
     */
     public function getPrepaidUnits()
     {
         if (array_key_exists("prepaidUnits", $this->_propDict)) {
-            if (is_a($this->_propDict["prepaidUnits"], "\Beta\Microsoft\Graph\Model\LicenseUnitsDetail") || is_null($this->_propDict["prepaidUnits"])) {
+            if (is_a($this->_propDict["prepaidUnits"], "Beta\Microsoft\Graph\Model\LicenseUnitsDetail")) {
                 return $this->_propDict["prepaidUnits"];
             } else {
                 $this->_propDict["prepaidUnits"] = new LicenseUnitsDetail($this->_propDict["prepaidUnits"]);
@@ -129,7 +129,7 @@ class SubscribedSku extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the prepaidUnits
     * Information about the number and status of prepaid licenses.
@@ -143,13 +143,13 @@ class SubscribedSku extends Entity
         $this->_propDict["prepaidUnits"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the servicePlans
     * Information about the service plans that are available with the SKU. Not nullable
      *
-     * @return array|null The servicePlans
+     * @return array The servicePlans
      */
     public function getServicePlans()
     {
@@ -159,26 +159,26 @@ class SubscribedSku extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the servicePlans
     * Information about the service plans that are available with the SKU. Not nullable
     *
-    * @param ServicePlanInfo[] $val The servicePlans
+    * @param ServicePlanInfo $val The servicePlans
     *
     * @return SubscribedSku
     */
     public function setServicePlans($val)
     {
-        $this->_propDict["servicePlans"] = $val;
+		$this->_propDict["servicePlans"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the skuId
     * The unique identifier (GUID) for the service SKU.
     *
-    * @return string|null The skuId
+    * @return string The skuId
     */
     public function getSkuId()
     {
@@ -188,7 +188,7 @@ class SubscribedSku extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the skuId
     * The unique identifier (GUID) for the service SKU.
@@ -202,12 +202,12 @@ class SubscribedSku extends Entity
         $this->_propDict["skuId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the skuPartNumber
     * The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
     *
-    * @return string|null The skuPartNumber
+    * @return string The skuPartNumber
     */
     public function getSkuPartNumber()
     {
@@ -217,7 +217,7 @@ class SubscribedSku extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the skuPartNumber
     * The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
@@ -231,5 +231,5 @@ class SubscribedSku extends Entity
         $this->_propDict["skuPartNumber"] = $val;
         return $this;
     }
-
+    
 }

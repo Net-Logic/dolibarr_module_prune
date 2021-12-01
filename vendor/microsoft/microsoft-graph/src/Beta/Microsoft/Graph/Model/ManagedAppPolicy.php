@@ -28,12 +28,12 @@ class ManagedAppPolicy extends Entity
     * Gets the createdDateTime
     * The date and time the policy was created.
     *
-    * @return \DateTime|null The createdDateTime
+    * @return \DateTime The createdDateTime
     */
     public function getCreatedDateTime()
     {
         if (array_key_exists("createdDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["createdDateTime"], "\DateTime") || is_null($this->_propDict["createdDateTime"])) {
+            if (is_a($this->_propDict["createdDateTime"], "\DateTime")) {
                 return $this->_propDict["createdDateTime"];
             } else {
                 $this->_propDict["createdDateTime"] = new \DateTime($this->_propDict["createdDateTime"]);
@@ -42,7 +42,7 @@ class ManagedAppPolicy extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the createdDateTime
     * The date and time the policy was created.
@@ -56,12 +56,12 @@ class ManagedAppPolicy extends Entity
         $this->_propDict["createdDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the description
     * The policy's description.
     *
-    * @return string|null The description
+    * @return string The description
     */
     public function getDescription()
     {
@@ -71,7 +71,7 @@ class ManagedAppPolicy extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the description
     * The policy's description.
@@ -85,12 +85,12 @@ class ManagedAppPolicy extends Entity
         $this->_propDict["description"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the displayName
     * Policy display name.
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -100,7 +100,7 @@ class ManagedAppPolicy extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the displayName
     * Policy display name.
@@ -114,17 +114,17 @@ class ManagedAppPolicy extends Entity
         $this->_propDict["displayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the lastModifiedDateTime
     * Last time the policy was modified.
     *
-    * @return \DateTime|null The lastModifiedDateTime
+    * @return \DateTime The lastModifiedDateTime
     */
     public function getLastModifiedDateTime()
     {
         if (array_key_exists("lastModifiedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime") || is_null($this->_propDict["lastModifiedDateTime"])) {
+            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime")) {
                 return $this->_propDict["lastModifiedDateTime"];
             } else {
                 $this->_propDict["lastModifiedDateTime"] = new \DateTime($this->_propDict["lastModifiedDateTime"]);
@@ -133,7 +133,7 @@ class ManagedAppPolicy extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastModifiedDateTime
     * Last time the policy was modified.
@@ -147,12 +147,12 @@ class ManagedAppPolicy extends Entity
         $this->_propDict["lastModifiedDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the roleScopeTagIds
     * List of Scope Tags for this Entity instance.
     *
-    * @return string|null The roleScopeTagIds
+    * @return string The roleScopeTagIds
     */
     public function getRoleScopeTagIds()
     {
@@ -162,7 +162,7 @@ class ManagedAppPolicy extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the roleScopeTagIds
     * List of Scope Tags for this Entity instance.
@@ -176,12 +176,12 @@ class ManagedAppPolicy extends Entity
         $this->_propDict["roleScopeTagIds"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the version
     * Version of the entity.
     *
-    * @return string|null The version
+    * @return string The version
     */
     public function getVersion()
     {
@@ -191,7 +191,7 @@ class ManagedAppPolicy extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the version
     * Version of the entity.
@@ -205,5 +205,5 @@ class ManagedAppPolicy extends Entity
         $this->_propDict["version"] = $val;
         return $this;
     }
-
+    
 }

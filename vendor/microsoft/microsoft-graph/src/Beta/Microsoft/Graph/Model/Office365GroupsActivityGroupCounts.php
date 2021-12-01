@@ -28,7 +28,7 @@ class Office365GroupsActivityGroupCounts extends Entity
     * Gets the active
     * The number of active groups. A group is considered active if any of the following occurred: group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
     *
-    * @return int|null The active
+    * @return int The active
     */
     public function getActive()
     {
@@ -38,7 +38,7 @@ class Office365GroupsActivityGroupCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the active
     * The number of active groups. A group is considered active if any of the following occurred: group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
@@ -52,17 +52,17 @@ class Office365GroupsActivityGroupCounts extends Entity
         $this->_propDict["active"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the reportDate
     * The date on which a number of groups were active.
     *
-    * @return \DateTime|null The reportDate
+    * @return \DateTime The reportDate
     */
     public function getReportDate()
     {
         if (array_key_exists("reportDate", $this->_propDict)) {
-            if (is_a($this->_propDict["reportDate"], "\DateTime") || is_null($this->_propDict["reportDate"])) {
+            if (is_a($this->_propDict["reportDate"], "\DateTime")) {
                 return $this->_propDict["reportDate"];
             } else {
                 $this->_propDict["reportDate"] = new \DateTime($this->_propDict["reportDate"]);
@@ -71,7 +71,7 @@ class Office365GroupsActivityGroupCounts extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the reportDate
     * The date on which a number of groups were active.
@@ -85,12 +85,12 @@ class Office365GroupsActivityGroupCounts extends Entity
         $this->_propDict["reportDate"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the reportPeriod
     * The number of days the report covers.
     *
-    * @return string|null The reportPeriod
+    * @return string The reportPeriod
     */
     public function getReportPeriod()
     {
@@ -100,7 +100,7 @@ class Office365GroupsActivityGroupCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the reportPeriod
     * The number of days the report covers.
@@ -114,17 +114,17 @@ class Office365GroupsActivityGroupCounts extends Entity
         $this->_propDict["reportPeriod"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the reportRefreshDate
     * The latest date of the content.
     *
-    * @return \DateTime|null The reportRefreshDate
+    * @return \DateTime The reportRefreshDate
     */
     public function getReportRefreshDate()
     {
         if (array_key_exists("reportRefreshDate", $this->_propDict)) {
-            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime") || is_null($this->_propDict["reportRefreshDate"])) {
+            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime")) {
                 return $this->_propDict["reportRefreshDate"];
             } else {
                 $this->_propDict["reportRefreshDate"] = new \DateTime($this->_propDict["reportRefreshDate"]);
@@ -133,7 +133,7 @@ class Office365GroupsActivityGroupCounts extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the reportRefreshDate
     * The latest date of the content.
@@ -147,12 +147,12 @@ class Office365GroupsActivityGroupCounts extends Entity
         $this->_propDict["reportRefreshDate"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the total
     * The total number of groups.
     *
-    * @return int|null The total
+    * @return int The total
     */
     public function getTotal()
     {
@@ -162,7 +162,7 @@ class Office365GroupsActivityGroupCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the total
     * The total number of groups.
@@ -176,5 +176,5 @@ class Office365GroupsActivityGroupCounts extends Entity
         $this->_propDict["total"] = intval($val);
         return $this;
     }
-
+    
 }

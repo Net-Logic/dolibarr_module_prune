@@ -26,11 +26,9 @@ class MacOsVppAppAssignmentSettings extends MobileAppAssignmentSettings
     /**
     * Set the @odata.type since this type is immediately descended from an abstract
     * type that is referenced as the type in an entity.
-    * @param array $propDict The property dictionary
     */
-    public function __construct($propDict = array())
+    public function __construct()
     {
-        parent::__construct($propDict);
         $this->setODataType("#microsoft.graph.macOsVppAppAssignmentSettings");
     }
 
@@ -38,7 +36,7 @@ class MacOsVppAppAssignmentSettings extends MobileAppAssignmentSettings
     * Gets the uninstallOnDeviceRemoval
     * Whether or not to uninstall the app when device is removed from Intune.
     *
-    * @return bool|null The uninstallOnDeviceRemoval
+    * @return bool The uninstallOnDeviceRemoval
     */
     public function getUninstallOnDeviceRemoval()
     {
@@ -66,7 +64,7 @@ class MacOsVppAppAssignmentSettings extends MobileAppAssignmentSettings
     * Gets the useDeviceLicensing
     * Whether or not to use device licensing.
     *
-    * @return bool|null The useDeviceLicensing
+    * @return bool The useDeviceLicensing
     */
     public function getUseDeviceLicensing()
     {

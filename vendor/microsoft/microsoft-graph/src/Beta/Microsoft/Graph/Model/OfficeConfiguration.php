@@ -28,10 +28,10 @@ class OfficeConfiguration implements \JsonSerializable
     * The array of properties available
     * to the model
     *
-    * @var array $_propDict
+    * @var array(string => string)
     */
     protected $_propDict;
-
+    
     /**
     * Construct a new OfficeConfiguration
     *
@@ -39,10 +39,7 @@ class OfficeConfiguration implements \JsonSerializable
     */
     function __construct($propDict = array())
     {
-        if (!is_array($propDict)) {
-           $propDict = array();
-        }
-        $this->_propDict = $propDict;
+		$this->_propDict = $propDict;
     }
 
     /**
@@ -54,13 +51,13 @@ class OfficeConfiguration implements \JsonSerializable
     {
         return $this->_propDict;
     }
+    
 
-
-     /**
+     /** 
      * Gets the tenantCheckinStatuses
     * List of office Client check-in status.
      *
-     * @return array|null The tenantCheckinStatuses
+     * @return array The tenantCheckinStatuses
      */
     public function getTenantCheckinStatuses()
     {
@@ -70,31 +67,31 @@ class OfficeConfiguration implements \JsonSerializable
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the tenantCheckinStatuses
     * List of office Client check-in status.
     *
-    * @param OfficeClientCheckinStatus[] $val The tenantCheckinStatuses
+    * @param OfficeClientCheckinStatus $val The tenantCheckinStatuses
     *
     * @return OfficeConfiguration
     */
     public function setTenantCheckinStatuses($val)
     {
-        $this->_propDict["tenantCheckinStatuses"] = $val;
+		$this->_propDict["tenantCheckinStatuses"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the tenantUserCheckinSummary
     * Entity that describes tenant check-in statues
     *
-    * @return OfficeUserCheckinSummary|null The tenantUserCheckinSummary
+    * @return OfficeUserCheckinSummary The tenantUserCheckinSummary
     */
     public function getTenantUserCheckinSummary()
     {
         if (array_key_exists("tenantUserCheckinSummary", $this->_propDict)) {
-            if (is_a($this->_propDict["tenantUserCheckinSummary"], "\Beta\Microsoft\Graph\Model\OfficeUserCheckinSummary") || is_null($this->_propDict["tenantUserCheckinSummary"])) {
+            if (is_a($this->_propDict["tenantUserCheckinSummary"], "Beta\Microsoft\Graph\Model\OfficeUserCheckinSummary")) {
                 return $this->_propDict["tenantUserCheckinSummary"];
             } else {
                 $this->_propDict["tenantUserCheckinSummary"] = new OfficeUserCheckinSummary($this->_propDict["tenantUserCheckinSummary"]);
@@ -103,7 +100,7 @@ class OfficeConfiguration implements \JsonSerializable
         }
         return null;
     }
-
+    
     /**
     * Sets the tenantUserCheckinSummary
     * Entity that describes tenant check-in statues
@@ -117,13 +114,13 @@ class OfficeConfiguration implements \JsonSerializable
         $this->_propDict["tenantUserCheckinSummary"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the clientConfigurations
     * List of office Client configuration.
      *
-     * @return array|null The clientConfigurations
+     * @return array The clientConfigurations
      */
     public function getClientConfigurations()
     {
@@ -133,50 +130,47 @@ class OfficeConfiguration implements \JsonSerializable
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the clientConfigurations
     * List of office Client configuration.
     *
-    * @param OfficeClientConfiguration[] $val The clientConfigurations
+    * @param OfficeClientConfiguration $val The clientConfigurations
     *
     * @return OfficeConfiguration
     */
     public function setClientConfigurations($val)
     {
-        $this->_propDict["clientConfigurations"] = $val;
+		$this->_propDict["clientConfigurations"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the ODataType
     *
-    * @return string|null The ODataType
+    * @return string The ODataType
     */
     public function getODataType()
     {
-        if (array_key_exists('@odata.type', $this->_propDict)) {
-            return $this->_propDict["@odata.type"];
-        }
-        return null;
+        return $this->_propDict["@odata.type"];
     }
-
+    
     /**
     * Sets the ODataType
     *
-    * @param string $val The ODataType
+    * @param string The ODataType
     *
-    * @return OfficeConfiguration
+    * @return Entity
     */
     public function setODataType($val)
     {
         $this->_propDict["@odata.type"] = $val;
         return $this;
     }
-
+    
     /**
     * Serializes the object by property array
-    * Manually serialize DateTime into RFC3339 format
+	* Manually serialize DateTime into RFC3339 format
     *
     * @return array The list of properties
     */
@@ -188,8 +182,6 @@ class OfficeConfiguration implements \JsonSerializable
                 $serializableProperties[$property] = $val->format(\DateTime::RFC3339);
             } else if (is_a($val, "\Microsoft\Graph\Core\Enum")) {
                 $serializableProperties[$property] = $val->value();
-            } else if (is_a($val, "\Entity")) {
-                $serializableProperties[$property] = $val->jsonSerialize();
             }
         }
         return $serializableProperties;

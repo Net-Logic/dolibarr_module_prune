@@ -27,7 +27,7 @@ class UnifiedRbacResourceScope extends Entity
     /**
     * Gets the displayName
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -37,7 +37,7 @@ class UnifiedRbacResourceScope extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the displayName
     *
@@ -50,11 +50,11 @@ class UnifiedRbacResourceScope extends Entity
         $this->_propDict["displayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the scope
     *
-    * @return string|null The scope
+    * @return string The scope
     */
     public function getScope()
     {
@@ -64,7 +64,7 @@ class UnifiedRbacResourceScope extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the scope
     *
@@ -77,11 +77,11 @@ class UnifiedRbacResourceScope extends Entity
         $this->_propDict["scope"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the type
     *
-    * @return string|null The type
+    * @return string The type
     */
     public function getType()
     {
@@ -91,7 +91,7 @@ class UnifiedRbacResourceScope extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the type
     *
@@ -104,5 +104,5 @@ class UnifiedRbacResourceScope extends Entity
         $this->_propDict["type"] = $val;
         return $this;
     }
-
+    
 }

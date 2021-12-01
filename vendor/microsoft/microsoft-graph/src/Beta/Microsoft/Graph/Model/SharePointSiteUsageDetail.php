@@ -27,7 +27,7 @@ class SharePointSiteUsageDetail extends Entity
     /**
     * Gets the activeFileCount
     *
-    * @return int|null The activeFileCount
+    * @return int The activeFileCount
     */
     public function getActiveFileCount()
     {
@@ -37,7 +37,7 @@ class SharePointSiteUsageDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the activeFileCount
     *
@@ -50,11 +50,11 @@ class SharePointSiteUsageDetail extends Entity
         $this->_propDict["activeFileCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the anonymousLinkCount
     *
-    * @return int|null The anonymousLinkCount
+    * @return int The anonymousLinkCount
     */
     public function getAnonymousLinkCount()
     {
@@ -64,7 +64,7 @@ class SharePointSiteUsageDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the anonymousLinkCount
     *
@@ -77,11 +77,11 @@ class SharePointSiteUsageDetail extends Entity
         $this->_propDict["anonymousLinkCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the companyLinkCount
     *
-    * @return int|null The companyLinkCount
+    * @return int The companyLinkCount
     */
     public function getCompanyLinkCount()
     {
@@ -91,7 +91,7 @@ class SharePointSiteUsageDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the companyLinkCount
     *
@@ -104,11 +104,11 @@ class SharePointSiteUsageDetail extends Entity
         $this->_propDict["companyLinkCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the externalSharing
     *
-    * @return bool|null The externalSharing
+    * @return bool The externalSharing
     */
     public function getExternalSharing()
     {
@@ -118,7 +118,7 @@ class SharePointSiteUsageDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the externalSharing
     *
@@ -131,11 +131,11 @@ class SharePointSiteUsageDetail extends Entity
         $this->_propDict["externalSharing"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the fileCount
     *
-    * @return int|null The fileCount
+    * @return int The fileCount
     */
     public function getFileCount()
     {
@@ -145,7 +145,7 @@ class SharePointSiteUsageDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the fileCount
     *
@@ -158,11 +158,11 @@ class SharePointSiteUsageDetail extends Entity
         $this->_propDict["fileCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the geolocation
     *
-    * @return string|null The geolocation
+    * @return string The geolocation
     */
     public function getGeolocation()
     {
@@ -172,7 +172,7 @@ class SharePointSiteUsageDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the geolocation
     *
@@ -185,11 +185,11 @@ class SharePointSiteUsageDetail extends Entity
         $this->_propDict["geolocation"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the isDeleted
     *
-    * @return bool|null The isDeleted
+    * @return bool The isDeleted
     */
     public function getIsDeleted()
     {
@@ -199,7 +199,7 @@ class SharePointSiteUsageDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the isDeleted
     *
@@ -212,16 +212,16 @@ class SharePointSiteUsageDetail extends Entity
         $this->_propDict["isDeleted"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the lastActivityDate
     *
-    * @return \DateTime|null The lastActivityDate
+    * @return \DateTime The lastActivityDate
     */
     public function getLastActivityDate()
     {
         if (array_key_exists("lastActivityDate", $this->_propDict)) {
-            if (is_a($this->_propDict["lastActivityDate"], "\DateTime") || is_null($this->_propDict["lastActivityDate"])) {
+            if (is_a($this->_propDict["lastActivityDate"], "\DateTime")) {
                 return $this->_propDict["lastActivityDate"];
             } else {
                 $this->_propDict["lastActivityDate"] = new \DateTime($this->_propDict["lastActivityDate"]);
@@ -230,7 +230,7 @@ class SharePointSiteUsageDetail extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastActivityDate
     *
@@ -243,11 +243,11 @@ class SharePointSiteUsageDetail extends Entity
         $this->_propDict["lastActivityDate"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the ownerDisplayName
     *
-    * @return string|null The ownerDisplayName
+    * @return string The ownerDisplayName
     */
     public function getOwnerDisplayName()
     {
@@ -257,7 +257,7 @@ class SharePointSiteUsageDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the ownerDisplayName
     *
@@ -270,11 +270,11 @@ class SharePointSiteUsageDetail extends Entity
         $this->_propDict["ownerDisplayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the ownerPrincipalName
     *
-    * @return string|null The ownerPrincipalName
+    * @return string The ownerPrincipalName
     */
     public function getOwnerPrincipalName()
     {
@@ -284,7 +284,7 @@ class SharePointSiteUsageDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the ownerPrincipalName
     *
@@ -297,11 +297,11 @@ class SharePointSiteUsageDetail extends Entity
         $this->_propDict["ownerPrincipalName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the pageViewCount
     *
-    * @return int|null The pageViewCount
+    * @return int The pageViewCount
     */
     public function getPageViewCount()
     {
@@ -311,7 +311,7 @@ class SharePointSiteUsageDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the pageViewCount
     *
@@ -324,11 +324,11 @@ class SharePointSiteUsageDetail extends Entity
         $this->_propDict["pageViewCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the reportPeriod
     *
-    * @return string|null The reportPeriod
+    * @return string The reportPeriod
     */
     public function getReportPeriod()
     {
@@ -338,7 +338,7 @@ class SharePointSiteUsageDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the reportPeriod
     *
@@ -351,16 +351,16 @@ class SharePointSiteUsageDetail extends Entity
         $this->_propDict["reportPeriod"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the reportRefreshDate
     *
-    * @return \DateTime|null The reportRefreshDate
+    * @return \DateTime The reportRefreshDate
     */
     public function getReportRefreshDate()
     {
         if (array_key_exists("reportRefreshDate", $this->_propDict)) {
-            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime") || is_null($this->_propDict["reportRefreshDate"])) {
+            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime")) {
                 return $this->_propDict["reportRefreshDate"];
             } else {
                 $this->_propDict["reportRefreshDate"] = new \DateTime($this->_propDict["reportRefreshDate"]);
@@ -369,7 +369,7 @@ class SharePointSiteUsageDetail extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the reportRefreshDate
     *
@@ -382,11 +382,11 @@ class SharePointSiteUsageDetail extends Entity
         $this->_propDict["reportRefreshDate"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the rootWebTemplate
     *
-    * @return string|null The rootWebTemplate
+    * @return string The rootWebTemplate
     */
     public function getRootWebTemplate()
     {
@@ -396,7 +396,7 @@ class SharePointSiteUsageDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the rootWebTemplate
     *
@@ -409,11 +409,11 @@ class SharePointSiteUsageDetail extends Entity
         $this->_propDict["rootWebTemplate"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the secureLinkForGuestCount
     *
-    * @return int|null The secureLinkForGuestCount
+    * @return int The secureLinkForGuestCount
     */
     public function getSecureLinkForGuestCount()
     {
@@ -423,7 +423,7 @@ class SharePointSiteUsageDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the secureLinkForGuestCount
     *
@@ -436,11 +436,11 @@ class SharePointSiteUsageDetail extends Entity
         $this->_propDict["secureLinkForGuestCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the secureLinkForMemberCount
     *
-    * @return int|null The secureLinkForMemberCount
+    * @return int The secureLinkForMemberCount
     */
     public function getSecureLinkForMemberCount()
     {
@@ -450,7 +450,7 @@ class SharePointSiteUsageDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the secureLinkForMemberCount
     *
@@ -463,11 +463,11 @@ class SharePointSiteUsageDetail extends Entity
         $this->_propDict["secureLinkForMemberCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the siteId
     *
-    * @return string|null The siteId
+    * @return string The siteId
     */
     public function getSiteId()
     {
@@ -477,7 +477,7 @@ class SharePointSiteUsageDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the siteId
     *
@@ -490,11 +490,11 @@ class SharePointSiteUsageDetail extends Entity
         $this->_propDict["siteId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the siteSensitivityLabelId
     *
-    * @return string|null The siteSensitivityLabelId
+    * @return string The siteSensitivityLabelId
     */
     public function getSiteSensitivityLabelId()
     {
@@ -504,7 +504,7 @@ class SharePointSiteUsageDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the siteSensitivityLabelId
     *
@@ -517,11 +517,11 @@ class SharePointSiteUsageDetail extends Entity
         $this->_propDict["siteSensitivityLabelId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the siteUrl
     *
-    * @return string|null The siteUrl
+    * @return string The siteUrl
     */
     public function getSiteUrl()
     {
@@ -531,7 +531,7 @@ class SharePointSiteUsageDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the siteUrl
     *
@@ -544,11 +544,11 @@ class SharePointSiteUsageDetail extends Entity
         $this->_propDict["siteUrl"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the storageAllocatedInBytes
     *
-    * @return int|null The storageAllocatedInBytes
+    * @return int The storageAllocatedInBytes
     */
     public function getStorageAllocatedInBytes()
     {
@@ -558,7 +558,7 @@ class SharePointSiteUsageDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the storageAllocatedInBytes
     *
@@ -571,11 +571,11 @@ class SharePointSiteUsageDetail extends Entity
         $this->_propDict["storageAllocatedInBytes"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the storageUsedInBytes
     *
-    * @return int|null The storageUsedInBytes
+    * @return int The storageUsedInBytes
     */
     public function getStorageUsedInBytes()
     {
@@ -585,7 +585,7 @@ class SharePointSiteUsageDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the storageUsedInBytes
     *
@@ -598,11 +598,11 @@ class SharePointSiteUsageDetail extends Entity
         $this->_propDict["storageUsedInBytes"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the unmanagedDevicePolicy
     *
-    * @return string|null The unmanagedDevicePolicy
+    * @return string The unmanagedDevicePolicy
     */
     public function getUnmanagedDevicePolicy()
     {
@@ -612,7 +612,7 @@ class SharePointSiteUsageDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the unmanagedDevicePolicy
     *
@@ -625,11 +625,11 @@ class SharePointSiteUsageDetail extends Entity
         $this->_propDict["unmanagedDevicePolicy"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the visitedPageCount
     *
-    * @return int|null The visitedPageCount
+    * @return int The visitedPageCount
     */
     public function getVisitedPageCount()
     {
@@ -639,7 +639,7 @@ class SharePointSiteUsageDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the visitedPageCount
     *
@@ -652,5 +652,5 @@ class SharePointSiteUsageDetail extends Entity
         $this->_propDict["visitedPageCount"] = intval($val);
         return $this;
     }
-
+    
 }

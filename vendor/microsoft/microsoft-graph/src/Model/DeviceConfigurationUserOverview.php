@@ -28,7 +28,7 @@ class DeviceConfigurationUserOverview extends Entity
     * Gets the configurationVersion
     * Version of the policy for that overview
     *
-    * @return int|null The configurationVersion
+    * @return int The configurationVersion
     */
     public function getConfigurationVersion()
     {
@@ -38,7 +38,7 @@ class DeviceConfigurationUserOverview extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the configurationVersion
     * Version of the policy for that overview
@@ -52,12 +52,12 @@ class DeviceConfigurationUserOverview extends Entity
         $this->_propDict["configurationVersion"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the errorCount
     * Number of error Users
     *
-    * @return int|null The errorCount
+    * @return int The errorCount
     */
     public function getErrorCount()
     {
@@ -67,7 +67,7 @@ class DeviceConfigurationUserOverview extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the errorCount
     * Number of error Users
@@ -81,12 +81,12 @@ class DeviceConfigurationUserOverview extends Entity
         $this->_propDict["errorCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the failedCount
     * Number of failed Users
     *
-    * @return int|null The failedCount
+    * @return int The failedCount
     */
     public function getFailedCount()
     {
@@ -96,7 +96,7 @@ class DeviceConfigurationUserOverview extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the failedCount
     * Number of failed Users
@@ -110,17 +110,17 @@ class DeviceConfigurationUserOverview extends Entity
         $this->_propDict["failedCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the lastUpdateDateTime
     * Last update time
     *
-    * @return \DateTime|null The lastUpdateDateTime
+    * @return \DateTime The lastUpdateDateTime
     */
     public function getLastUpdateDateTime()
     {
         if (array_key_exists("lastUpdateDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastUpdateDateTime"], "\DateTime") || is_null($this->_propDict["lastUpdateDateTime"])) {
+            if (is_a($this->_propDict["lastUpdateDateTime"], "\DateTime")) {
                 return $this->_propDict["lastUpdateDateTime"];
             } else {
                 $this->_propDict["lastUpdateDateTime"] = new \DateTime($this->_propDict["lastUpdateDateTime"]);
@@ -129,7 +129,7 @@ class DeviceConfigurationUserOverview extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastUpdateDateTime
     * Last update time
@@ -143,12 +143,12 @@ class DeviceConfigurationUserOverview extends Entity
         $this->_propDict["lastUpdateDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the notApplicableCount
     * Number of not applicable users
     *
-    * @return int|null The notApplicableCount
+    * @return int The notApplicableCount
     */
     public function getNotApplicableCount()
     {
@@ -158,7 +158,7 @@ class DeviceConfigurationUserOverview extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the notApplicableCount
     * Number of not applicable users
@@ -172,12 +172,12 @@ class DeviceConfigurationUserOverview extends Entity
         $this->_propDict["notApplicableCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the pendingCount
     * Number of pending Users
     *
-    * @return int|null The pendingCount
+    * @return int The pendingCount
     */
     public function getPendingCount()
     {
@@ -187,7 +187,7 @@ class DeviceConfigurationUserOverview extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the pendingCount
     * Number of pending Users
@@ -201,12 +201,12 @@ class DeviceConfigurationUserOverview extends Entity
         $this->_propDict["pendingCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the successCount
     * Number of succeeded Users
     *
-    * @return int|null The successCount
+    * @return int The successCount
     */
     public function getSuccessCount()
     {
@@ -216,7 +216,7 @@ class DeviceConfigurationUserOverview extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the successCount
     * Number of succeeded Users
@@ -230,5 +230,5 @@ class DeviceConfigurationUserOverview extends Entity
         $this->_propDict["successCount"] = intval($val);
         return $this;
     }
-
+    
 }

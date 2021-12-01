@@ -28,7 +28,7 @@ class UserFlowLanguageConfiguration extends Entity
     * Gets the displayName
     * The language name to display. This property is read-only.
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -38,7 +38,7 @@ class UserFlowLanguageConfiguration extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the displayName
     * The language name to display. This property is read-only.
@@ -52,12 +52,12 @@ class UserFlowLanguageConfiguration extends Entity
         $this->_propDict["displayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the isEnabled
     * Indicates whether the language is enabled within the user flow.
     *
-    * @return bool|null The isEnabled
+    * @return bool The isEnabled
     */
     public function getIsEnabled()
     {
@@ -67,7 +67,7 @@ class UserFlowLanguageConfiguration extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the isEnabled
     * Indicates whether the language is enabled within the user flow.
@@ -81,13 +81,13 @@ class UserFlowLanguageConfiguration extends Entity
         $this->_propDict["isEnabled"] = boolval($val);
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the defaultPages
     * Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
      *
-     * @return array|null The defaultPages
+     * @return array The defaultPages
      */
     public function getDefaultPages()
     {
@@ -97,27 +97,27 @@ class UserFlowLanguageConfiguration extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the defaultPages
     * Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
     *
-    * @param UserFlowLanguagePage[] $val The defaultPages
+    * @param UserFlowLanguagePage $val The defaultPages
     *
     * @return UserFlowLanguageConfiguration
     */
     public function setDefaultPages($val)
     {
-        $this->_propDict["defaultPages"] = $val;
+		$this->_propDict["defaultPages"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the overridesPages
     * Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
      *
-     * @return array|null The overridesPages
+     * @return array The overridesPages
      */
     public function getOverridesPages()
     {
@@ -127,19 +127,19 @@ class UserFlowLanguageConfiguration extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the overridesPages
     * Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
     *
-    * @param UserFlowLanguagePage[] $val The overridesPages
+    * @param UserFlowLanguagePage $val The overridesPages
     *
     * @return UserFlowLanguageConfiguration
     */
     public function setOverridesPages($val)
     {
-        $this->_propDict["overridesPages"] = $val;
+		$this->_propDict["overridesPages"] = $val;
         return $this;
     }
-
+    
 }

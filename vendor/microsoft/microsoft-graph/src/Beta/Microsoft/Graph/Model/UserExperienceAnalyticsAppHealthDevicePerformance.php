@@ -28,7 +28,7 @@ class UserExperienceAnalyticsAppHealthDevicePerformance extends Entity
     * Gets the appCrashCount
     * The number of app crashes for the device. Valid values -2147483648 to 2147483647
     *
-    * @return int|null The appCrashCount
+    * @return int The appCrashCount
     */
     public function getAppCrashCount()
     {
@@ -38,7 +38,7 @@ class UserExperienceAnalyticsAppHealthDevicePerformance extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the appCrashCount
     * The number of app crashes for the device. Valid values -2147483648 to 2147483647
@@ -52,12 +52,12 @@ class UserExperienceAnalyticsAppHealthDevicePerformance extends Entity
         $this->_propDict["appCrashCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the appHangCount
     * The number of app hangs for the device. Valid values -2147483648 to 2147483647
     *
-    * @return int|null The appHangCount
+    * @return int The appHangCount
     */
     public function getAppHangCount()
     {
@@ -67,7 +67,7 @@ class UserExperienceAnalyticsAppHealthDevicePerformance extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the appHangCount
     * The number of app hangs for the device. Valid values -2147483648 to 2147483647
@@ -81,12 +81,12 @@ class UserExperienceAnalyticsAppHealthDevicePerformance extends Entity
         $this->_propDict["appHangCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the crashedAppCount
     * The number of distinct app crashes for the device. Valid values -2147483648 to 2147483647
     *
-    * @return int|null The crashedAppCount
+    * @return int The crashedAppCount
     */
     public function getCrashedAppCount()
     {
@@ -96,7 +96,7 @@ class UserExperienceAnalyticsAppHealthDevicePerformance extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the crashedAppCount
     * The number of distinct app crashes for the device. Valid values -2147483648 to 2147483647
@@ -110,12 +110,12 @@ class UserExperienceAnalyticsAppHealthDevicePerformance extends Entity
         $this->_propDict["crashedAppCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the deviceAppHealthScore
     * The app health score of the device. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
     *
-    * @return float|null The deviceAppHealthScore
+    * @return float The deviceAppHealthScore
     */
     public function getDeviceAppHealthScore()
     {
@@ -125,7 +125,7 @@ class UserExperienceAnalyticsAppHealthDevicePerformance extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the deviceAppHealthScore
     * The app health score of the device. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
@@ -136,15 +136,15 @@ class UserExperienceAnalyticsAppHealthDevicePerformance extends Entity
     */
     public function setDeviceAppHealthScore($val)
     {
-        $this->_propDict["deviceAppHealthScore"] = floatval($val);
+        $this->_propDict["deviceAppHealthScore"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the deviceAppHealthStatus
     * The overall app health status of the device.
     *
-    * @return string|null The deviceAppHealthStatus
+    * @return string The deviceAppHealthStatus
     */
     public function getDeviceAppHealthStatus()
     {
@@ -154,7 +154,7 @@ class UserExperienceAnalyticsAppHealthDevicePerformance extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the deviceAppHealthStatus
     * The overall app health status of the device.
@@ -168,12 +168,12 @@ class UserExperienceAnalyticsAppHealthDevicePerformance extends Entity
         $this->_propDict["deviceAppHealthStatus"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the deviceDisplayName
     * The name of the device.
     *
-    * @return string|null The deviceDisplayName
+    * @return string The deviceDisplayName
     */
     public function getDeviceDisplayName()
     {
@@ -183,7 +183,7 @@ class UserExperienceAnalyticsAppHealthDevicePerformance extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the deviceDisplayName
     * The name of the device.
@@ -197,12 +197,12 @@ class UserExperienceAnalyticsAppHealthDevicePerformance extends Entity
         $this->_propDict["deviceDisplayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the deviceId
     * The id of the device.
     *
-    * @return string|null The deviceId
+    * @return string The deviceId
     */
     public function getDeviceId()
     {
@@ -212,7 +212,7 @@ class UserExperienceAnalyticsAppHealthDevicePerformance extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the deviceId
     * The id of the device.
@@ -226,12 +226,12 @@ class UserExperienceAnalyticsAppHealthDevicePerformance extends Entity
         $this->_propDict["deviceId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the deviceManufacturer
     * The manufacturer name of the device.
     *
-    * @return string|null The deviceManufacturer
+    * @return string The deviceManufacturer
     */
     public function getDeviceManufacturer()
     {
@@ -241,7 +241,7 @@ class UserExperienceAnalyticsAppHealthDevicePerformance extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the deviceManufacturer
     * The manufacturer name of the device.
@@ -255,12 +255,12 @@ class UserExperienceAnalyticsAppHealthDevicePerformance extends Entity
         $this->_propDict["deviceManufacturer"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the deviceModel
     * The model name of the device.
     *
-    * @return string|null The deviceModel
+    * @return string The deviceModel
     */
     public function getDeviceModel()
     {
@@ -270,7 +270,7 @@ class UserExperienceAnalyticsAppHealthDevicePerformance extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the deviceModel
     * The model name of the device.
@@ -284,12 +284,12 @@ class UserExperienceAnalyticsAppHealthDevicePerformance extends Entity
         $this->_propDict["deviceModel"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the meanTimeToFailureInMinutes
     * The mean time to failure for the device in minutes. Valid values -2147483648 to 2147483647
     *
-    * @return int|null The meanTimeToFailureInMinutes
+    * @return int The meanTimeToFailureInMinutes
     */
     public function getMeanTimeToFailureInMinutes()
     {
@@ -299,7 +299,7 @@ class UserExperienceAnalyticsAppHealthDevicePerformance extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the meanTimeToFailureInMinutes
     * The mean time to failure for the device in minutes. Valid values -2147483648 to 2147483647
@@ -313,38 +313,5 @@ class UserExperienceAnalyticsAppHealthDevicePerformance extends Entity
         $this->_propDict["meanTimeToFailureInMinutes"] = intval($val);
         return $this;
     }
-
-    /**
-    * Gets the processedDateTime
-    * The date and time when the statistics were last computed.
-    *
-    * @return \DateTime|null The processedDateTime
-    */
-    public function getProcessedDateTime()
-    {
-        if (array_key_exists("processedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["processedDateTime"], "\DateTime") || is_null($this->_propDict["processedDateTime"])) {
-                return $this->_propDict["processedDateTime"];
-            } else {
-                $this->_propDict["processedDateTime"] = new \DateTime($this->_propDict["processedDateTime"]);
-                return $this->_propDict["processedDateTime"];
-            }
-        }
-        return null;
-    }
-
-    /**
-    * Sets the processedDateTime
-    * The date and time when the statistics were last computed.
-    *
-    * @param \DateTime $val The processedDateTime
-    *
-    * @return UserExperienceAnalyticsAppHealthDevicePerformance
-    */
-    public function setProcessedDateTime($val)
-    {
-        $this->_propDict["processedDateTime"] = $val;
-        return $this;
-    }
-
+    
 }

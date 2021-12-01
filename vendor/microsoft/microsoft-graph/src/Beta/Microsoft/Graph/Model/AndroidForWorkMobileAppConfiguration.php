@@ -25,39 +25,10 @@ namespace Beta\Microsoft\Graph\Model;
 class AndroidForWorkMobileAppConfiguration extends ManagedDeviceMobileAppConfiguration
 {
     /**
-    * Gets the connectedAppsEnabled
-    * Setting to specify whether to allow ConnectedApps experience for this app.
-    *
-    * @return bool|null The connectedAppsEnabled
-    */
-    public function getConnectedAppsEnabled()
-    {
-        if (array_key_exists("connectedAppsEnabled", $this->_propDict)) {
-            return $this->_propDict["connectedAppsEnabled"];
-        } else {
-            return null;
-        }
-    }
-
-    /**
-    * Sets the connectedAppsEnabled
-    * Setting to specify whether to allow ConnectedApps experience for this app.
-    *
-    * @param bool $val The connectedAppsEnabled
-    *
-    * @return AndroidForWorkMobileAppConfiguration
-    */
-    public function setConnectedAppsEnabled($val)
-    {
-        $this->_propDict["connectedAppsEnabled"] = boolval($val);
-        return $this;
-    }
-
-    /**
     * Gets the packageId
     * Android For Work app configuration package id.
     *
-    * @return string|null The packageId
+    * @return string The packageId
     */
     public function getPackageId()
     {
@@ -67,7 +38,7 @@ class AndroidForWorkMobileAppConfiguration extends ManagedDeviceMobileAppConfigu
             return null;
         }
     }
-
+    
     /**
     * Sets the packageId
     * Android For Work app configuration package id.
@@ -81,12 +52,12 @@ class AndroidForWorkMobileAppConfiguration extends ManagedDeviceMobileAppConfigu
         $this->_propDict["packageId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the payloadJson
     * Android For Work app configuration JSON payload.
     *
-    * @return string|null The payloadJson
+    * @return string The payloadJson
     */
     public function getPayloadJson()
     {
@@ -96,7 +67,7 @@ class AndroidForWorkMobileAppConfiguration extends ManagedDeviceMobileAppConfigu
             return null;
         }
     }
-
+    
     /**
     * Sets the payloadJson
     * Android For Work app configuration JSON payload.
@@ -110,13 +81,13 @@ class AndroidForWorkMobileAppConfiguration extends ManagedDeviceMobileAppConfigu
         $this->_propDict["payloadJson"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the permissionActions
     * List of Android app permissions and corresponding permission actions.
      *
-     * @return array|null The permissionActions
+     * @return array The permissionActions
      */
     public function getPermissionActions()
     {
@@ -126,31 +97,31 @@ class AndroidForWorkMobileAppConfiguration extends ManagedDeviceMobileAppConfigu
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the permissionActions
     * List of Android app permissions and corresponding permission actions.
     *
-    * @param AndroidPermissionAction[] $val The permissionActions
+    * @param AndroidPermissionAction $val The permissionActions
     *
     * @return AndroidForWorkMobileAppConfiguration
     */
     public function setPermissionActions($val)
     {
-        $this->_propDict["permissionActions"] = $val;
+		$this->_propDict["permissionActions"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the profileApplicability
     * Android Enterprise profile applicability (AndroidWorkProfile, DeviceOwner, or default (applies to both)). Possible values are: default, androidWorkProfile, androidDeviceOwner.
     *
-    * @return AndroidProfileApplicability|null The profileApplicability
+    * @return AndroidProfileApplicability The profileApplicability
     */
     public function getProfileApplicability()
     {
         if (array_key_exists("profileApplicability", $this->_propDict)) {
-            if (is_a($this->_propDict["profileApplicability"], "\Beta\Microsoft\Graph\Model\AndroidProfileApplicability") || is_null($this->_propDict["profileApplicability"])) {
+            if (is_a($this->_propDict["profileApplicability"], "Beta\Microsoft\Graph\Model\AndroidProfileApplicability")) {
                 return $this->_propDict["profileApplicability"];
             } else {
                 $this->_propDict["profileApplicability"] = new AndroidProfileApplicability($this->_propDict["profileApplicability"]);
@@ -159,7 +130,7 @@ class AndroidForWorkMobileAppConfiguration extends ManagedDeviceMobileAppConfigu
         }
         return null;
     }
-
+    
     /**
     * Sets the profileApplicability
     * Android Enterprise profile applicability (AndroidWorkProfile, DeviceOwner, or default (applies to both)). Possible values are: default, androidWorkProfile, androidDeviceOwner.
@@ -173,5 +144,5 @@ class AndroidForWorkMobileAppConfiguration extends ManagedDeviceMobileAppConfigu
         $this->_propDict["profileApplicability"] = $val;
         return $this;
     }
-
+    
 }

@@ -28,7 +28,7 @@ class InformationProtectionLabel extends Entity
     * Gets the color
     * The color that the UI should display for the label, if configured.
     *
-    * @return string|null The color
+    * @return string The color
     */
     public function getColor()
     {
@@ -38,7 +38,7 @@ class InformationProtectionLabel extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the color
     * The color that the UI should display for the label, if configured.
@@ -52,12 +52,12 @@ class InformationProtectionLabel extends Entity
         $this->_propDict["color"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the description
     * The admin-defined description for the label.
     *
-    * @return string|null The description
+    * @return string The description
     */
     public function getDescription()
     {
@@ -67,7 +67,7 @@ class InformationProtectionLabel extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the description
     * The admin-defined description for the label.
@@ -81,12 +81,12 @@ class InformationProtectionLabel extends Entity
         $this->_propDict["description"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the isActive
     * Indicates whether the label is active or not. Active labels should be hidden or disabled in UI.
     *
-    * @return bool|null The isActive
+    * @return bool The isActive
     */
     public function getIsActive()
     {
@@ -96,7 +96,7 @@ class InformationProtectionLabel extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the isActive
     * Indicates whether the label is active or not. Active labels should be hidden or disabled in UI.
@@ -110,12 +110,12 @@ class InformationProtectionLabel extends Entity
         $this->_propDict["isActive"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the name
     * The plaintext name of the label.
     *
-    * @return string|null The name
+    * @return string The name
     */
     public function getName()
     {
@@ -125,7 +125,7 @@ class InformationProtectionLabel extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the name
     * The plaintext name of the label.
@@ -139,17 +139,16 @@ class InformationProtectionLabel extends Entity
         $this->_propDict["name"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the parent
-    * The parent label associated with a child label. Null if label has no parent.
     *
-    * @return ParentLabelDetails|null The parent
+    * @return ParentLabelDetails The parent
     */
     public function getParent()
     {
         if (array_key_exists("parent", $this->_propDict)) {
-            if (is_a($this->_propDict["parent"], "\Beta\Microsoft\Graph\Model\ParentLabelDetails") || is_null($this->_propDict["parent"])) {
+            if (is_a($this->_propDict["parent"], "Beta\Microsoft\Graph\Model\ParentLabelDetails")) {
                 return $this->_propDict["parent"];
             } else {
                 $this->_propDict["parent"] = new ParentLabelDetails($this->_propDict["parent"]);
@@ -158,10 +157,9 @@ class InformationProtectionLabel extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the parent
-    * The parent label associated with a child label. Null if label has no parent.
     *
     * @param ParentLabelDetails $val The parent
     *
@@ -172,12 +170,12 @@ class InformationProtectionLabel extends Entity
         $this->_propDict["parent"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the sensitivity
     * The sensitivity value of the label, where lower is less sensitive.
     *
-    * @return int|null The sensitivity
+    * @return int The sensitivity
     */
     public function getSensitivity()
     {
@@ -187,7 +185,7 @@ class InformationProtectionLabel extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the sensitivity
     * The sensitivity value of the label, where lower is less sensitive.
@@ -201,12 +199,12 @@ class InformationProtectionLabel extends Entity
         $this->_propDict["sensitivity"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the tooltip
     * The tooltip that should be displayed for the label in a UI.
     *
-    * @return string|null The tooltip
+    * @return string The tooltip
     */
     public function getTooltip()
     {
@@ -216,7 +214,7 @@ class InformationProtectionLabel extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the tooltip
     * The tooltip that should be displayed for the label in a UI.
@@ -230,5 +228,5 @@ class InformationProtectionLabel extends Entity
         $this->_propDict["tooltip"] = $val;
         return $this;
     }
-
+    
 }

@@ -27,7 +27,7 @@ class SkypeForBusinessParticipantActivityCounts extends Entity
     /**
     * Gets the appSharing
     *
-    * @return int|null The appSharing
+    * @return int The appSharing
     */
     public function getAppSharing()
     {
@@ -37,7 +37,7 @@ class SkypeForBusinessParticipantActivityCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the appSharing
     *
@@ -50,11 +50,11 @@ class SkypeForBusinessParticipantActivityCounts extends Entity
         $this->_propDict["appSharing"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the audioVideo
     *
-    * @return int|null The audioVideo
+    * @return int The audioVideo
     */
     public function getAudioVideo()
     {
@@ -64,7 +64,7 @@ class SkypeForBusinessParticipantActivityCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the audioVideo
     *
@@ -77,11 +77,11 @@ class SkypeForBusinessParticipantActivityCounts extends Entity
         $this->_propDict["audioVideo"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the dialInOut3rdParty
     *
-    * @return int|null The dialInOut3rdParty
+    * @return int The dialInOut3rdParty
     */
     public function getDialInOut3rdParty()
     {
@@ -91,7 +91,7 @@ class SkypeForBusinessParticipantActivityCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the dialInOut3rdParty
     *
@@ -104,11 +104,11 @@ class SkypeForBusinessParticipantActivityCounts extends Entity
         $this->_propDict["dialInOut3rdParty"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the im
     *
-    * @return int|null The im
+    * @return int The im
     */
     public function getIm()
     {
@@ -118,7 +118,7 @@ class SkypeForBusinessParticipantActivityCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the im
     *
@@ -131,16 +131,16 @@ class SkypeForBusinessParticipantActivityCounts extends Entity
         $this->_propDict["im"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the reportDate
     *
-    * @return \DateTime|null The reportDate
+    * @return \DateTime The reportDate
     */
     public function getReportDate()
     {
         if (array_key_exists("reportDate", $this->_propDict)) {
-            if (is_a($this->_propDict["reportDate"], "\DateTime") || is_null($this->_propDict["reportDate"])) {
+            if (is_a($this->_propDict["reportDate"], "\DateTime")) {
                 return $this->_propDict["reportDate"];
             } else {
                 $this->_propDict["reportDate"] = new \DateTime($this->_propDict["reportDate"]);
@@ -149,7 +149,7 @@ class SkypeForBusinessParticipantActivityCounts extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the reportDate
     *
@@ -162,11 +162,11 @@ class SkypeForBusinessParticipantActivityCounts extends Entity
         $this->_propDict["reportDate"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the reportPeriod
     *
-    * @return string|null The reportPeriod
+    * @return string The reportPeriod
     */
     public function getReportPeriod()
     {
@@ -176,7 +176,7 @@ class SkypeForBusinessParticipantActivityCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the reportPeriod
     *
@@ -189,16 +189,16 @@ class SkypeForBusinessParticipantActivityCounts extends Entity
         $this->_propDict["reportPeriod"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the reportRefreshDate
     *
-    * @return \DateTime|null The reportRefreshDate
+    * @return \DateTime The reportRefreshDate
     */
     public function getReportRefreshDate()
     {
         if (array_key_exists("reportRefreshDate", $this->_propDict)) {
-            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime") || is_null($this->_propDict["reportRefreshDate"])) {
+            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime")) {
                 return $this->_propDict["reportRefreshDate"];
             } else {
                 $this->_propDict["reportRefreshDate"] = new \DateTime($this->_propDict["reportRefreshDate"]);
@@ -207,7 +207,7 @@ class SkypeForBusinessParticipantActivityCounts extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the reportRefreshDate
     *
@@ -220,11 +220,11 @@ class SkypeForBusinessParticipantActivityCounts extends Entity
         $this->_propDict["reportRefreshDate"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the web
     *
-    * @return int|null The web
+    * @return int The web
     */
     public function getWeb()
     {
@@ -234,7 +234,7 @@ class SkypeForBusinessParticipantActivityCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the web
     *
@@ -247,5 +247,5 @@ class SkypeForBusinessParticipantActivityCounts extends Entity
         $this->_propDict["web"] = intval($val);
         return $this;
     }
-
+    
 }

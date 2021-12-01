@@ -27,7 +27,7 @@ class GeneralLedgerEntry extends Entity
     /**
     * Gets the accountId
     *
-    * @return string|null The accountId
+    * @return string The accountId
     */
     public function getAccountId()
     {
@@ -37,7 +37,7 @@ class GeneralLedgerEntry extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the accountId
     *
@@ -50,11 +50,11 @@ class GeneralLedgerEntry extends Entity
         $this->_propDict["accountId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the accountNumber
     *
-    * @return string|null The accountNumber
+    * @return string The accountNumber
     */
     public function getAccountNumber()
     {
@@ -64,7 +64,7 @@ class GeneralLedgerEntry extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the accountNumber
     *
@@ -77,16 +77,16 @@ class GeneralLedgerEntry extends Entity
         $this->_propDict["accountNumber"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the creditAmount
     *
-    * @return Decimal|null The creditAmount
+    * @return Decimal The creditAmount
     */
     public function getCreditAmount()
     {
         if (array_key_exists("creditAmount", $this->_propDict)) {
-            if (is_a($this->_propDict["creditAmount"], "\Beta\Microsoft\Graph\Model\Decimal") || is_null($this->_propDict["creditAmount"])) {
+            if (is_a($this->_propDict["creditAmount"], "Beta\Microsoft\Graph\Model\Decimal")) {
                 return $this->_propDict["creditAmount"];
             } else {
                 $this->_propDict["creditAmount"] = new Decimal($this->_propDict["creditAmount"]);
@@ -95,7 +95,7 @@ class GeneralLedgerEntry extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the creditAmount
     *
@@ -108,16 +108,16 @@ class GeneralLedgerEntry extends Entity
         $this->_propDict["creditAmount"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the debitAmount
     *
-    * @return Decimal|null The debitAmount
+    * @return Decimal The debitAmount
     */
     public function getDebitAmount()
     {
         if (array_key_exists("debitAmount", $this->_propDict)) {
-            if (is_a($this->_propDict["debitAmount"], "\Beta\Microsoft\Graph\Model\Decimal") || is_null($this->_propDict["debitAmount"])) {
+            if (is_a($this->_propDict["debitAmount"], "Beta\Microsoft\Graph\Model\Decimal")) {
                 return $this->_propDict["debitAmount"];
             } else {
                 $this->_propDict["debitAmount"] = new Decimal($this->_propDict["debitAmount"]);
@@ -126,7 +126,7 @@ class GeneralLedgerEntry extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the debitAmount
     *
@@ -139,11 +139,11 @@ class GeneralLedgerEntry extends Entity
         $this->_propDict["debitAmount"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the description
     *
-    * @return string|null The description
+    * @return string The description
     */
     public function getDescription()
     {
@@ -153,7 +153,7 @@ class GeneralLedgerEntry extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the description
     *
@@ -166,11 +166,11 @@ class GeneralLedgerEntry extends Entity
         $this->_propDict["description"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the documentNumber
     *
-    * @return string|null The documentNumber
+    * @return string The documentNumber
     */
     public function getDocumentNumber()
     {
@@ -180,7 +180,7 @@ class GeneralLedgerEntry extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the documentNumber
     *
@@ -193,11 +193,11 @@ class GeneralLedgerEntry extends Entity
         $this->_propDict["documentNumber"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the documentType
     *
-    * @return string|null The documentType
+    * @return string The documentType
     */
     public function getDocumentType()
     {
@@ -207,7 +207,7 @@ class GeneralLedgerEntry extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the documentType
     *
@@ -220,16 +220,16 @@ class GeneralLedgerEntry extends Entity
         $this->_propDict["documentType"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the lastModifiedDateTime
     *
-    * @return \DateTime|null The lastModifiedDateTime
+    * @return \DateTime The lastModifiedDateTime
     */
     public function getLastModifiedDateTime()
     {
         if (array_key_exists("lastModifiedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime") || is_null($this->_propDict["lastModifiedDateTime"])) {
+            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime")) {
                 return $this->_propDict["lastModifiedDateTime"];
             } else {
                 $this->_propDict["lastModifiedDateTime"] = new \DateTime($this->_propDict["lastModifiedDateTime"]);
@@ -238,7 +238,7 @@ class GeneralLedgerEntry extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastModifiedDateTime
     *
@@ -251,16 +251,16 @@ class GeneralLedgerEntry extends Entity
         $this->_propDict["lastModifiedDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the postingDate
     *
-    * @return \DateTime|null The postingDate
+    * @return \DateTime The postingDate
     */
     public function getPostingDate()
     {
         if (array_key_exists("postingDate", $this->_propDict)) {
-            if (is_a($this->_propDict["postingDate"], "\DateTime") || is_null($this->_propDict["postingDate"])) {
+            if (is_a($this->_propDict["postingDate"], "\DateTime")) {
                 return $this->_propDict["postingDate"];
             } else {
                 $this->_propDict["postingDate"] = new \DateTime($this->_propDict["postingDate"]);
@@ -269,7 +269,7 @@ class GeneralLedgerEntry extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the postingDate
     *
@@ -282,16 +282,16 @@ class GeneralLedgerEntry extends Entity
         $this->_propDict["postingDate"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the account
     *
-    * @return Account|null The account
+    * @return Account The account
     */
     public function getAccount()
     {
         if (array_key_exists("account", $this->_propDict)) {
-            if (is_a($this->_propDict["account"], "\Beta\Microsoft\Graph\Model\Account") || is_null($this->_propDict["account"])) {
+            if (is_a($this->_propDict["account"], "Beta\Microsoft\Graph\Model\Account")) {
                 return $this->_propDict["account"];
             } else {
                 $this->_propDict["account"] = new Account($this->_propDict["account"]);
@@ -300,7 +300,7 @@ class GeneralLedgerEntry extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the account
     *
@@ -313,5 +313,5 @@ class GeneralLedgerEntry extends Entity
         $this->_propDict["account"] = $val;
         return $this;
     }
-
+    
 }

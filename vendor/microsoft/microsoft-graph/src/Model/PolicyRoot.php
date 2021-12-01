@@ -26,14 +26,13 @@ class PolicyRoot extends Entity
 {
     /**
     * Gets the authenticationMethodsPolicy
-    * The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
     *
-    * @return AuthenticationMethodsPolicy|null The authenticationMethodsPolicy
+    * @return AuthenticationMethodsPolicy The authenticationMethodsPolicy
     */
     public function getAuthenticationMethodsPolicy()
     {
         if (array_key_exists("authenticationMethodsPolicy", $this->_propDict)) {
-            if (is_a($this->_propDict["authenticationMethodsPolicy"], "\Microsoft\Graph\Model\AuthenticationMethodsPolicy") || is_null($this->_propDict["authenticationMethodsPolicy"])) {
+            if (is_a($this->_propDict["authenticationMethodsPolicy"], "Microsoft\Graph\Model\AuthenticationMethodsPolicy")) {
                 return $this->_propDict["authenticationMethodsPolicy"];
             } else {
                 $this->_propDict["authenticationMethodsPolicy"] = new AuthenticationMethodsPolicy($this->_propDict["authenticationMethodsPolicy"]);
@@ -42,10 +41,9 @@ class PolicyRoot extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the authenticationMethodsPolicy
-    * The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
     *
     * @param AuthenticationMethodsPolicy $val The authenticationMethodsPolicy
     *
@@ -56,46 +54,12 @@ class PolicyRoot extends Entity
         $this->_propDict["authenticationMethodsPolicy"] = $val;
         return $this;
     }
+    
 
-    /**
-    * Gets the authenticationFlowsPolicy
-    * The policy configuration of the self-service sign-up experience of external users.
-    *
-    * @return AuthenticationFlowsPolicy|null The authenticationFlowsPolicy
-    */
-    public function getAuthenticationFlowsPolicy()
-    {
-        if (array_key_exists("authenticationFlowsPolicy", $this->_propDict)) {
-            if (is_a($this->_propDict["authenticationFlowsPolicy"], "\Microsoft\Graph\Model\AuthenticationFlowsPolicy") || is_null($this->_propDict["authenticationFlowsPolicy"])) {
-                return $this->_propDict["authenticationFlowsPolicy"];
-            } else {
-                $this->_propDict["authenticationFlowsPolicy"] = new AuthenticationFlowsPolicy($this->_propDict["authenticationFlowsPolicy"]);
-                return $this->_propDict["authenticationFlowsPolicy"];
-            }
-        }
-        return null;
-    }
-
-    /**
-    * Sets the authenticationFlowsPolicy
-    * The policy configuration of the self-service sign-up experience of external users.
-    *
-    * @param AuthenticationFlowsPolicy $val The authenticationFlowsPolicy
-    *
-    * @return PolicyRoot
-    */
-    public function setAuthenticationFlowsPolicy($val)
-    {
-        $this->_propDict["authenticationFlowsPolicy"] = $val;
-        return $this;
-    }
-
-
-     /**
+     /** 
      * Gets the activityBasedTimeoutPolicies
-    * The policy that controls the idle time out for web sessions for applications.
      *
-     * @return array|null The activityBasedTimeoutPolicies
+     * @return array The activityBasedTimeoutPolicies
      */
     public function getActivityBasedTimeoutPolicies()
     {
@@ -105,31 +69,29 @@ class PolicyRoot extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the activityBasedTimeoutPolicies
-    * The policy that controls the idle time out for web sessions for applications.
     *
-    * @param ActivityBasedTimeoutPolicy[] $val The activityBasedTimeoutPolicies
+    * @param ActivityBasedTimeoutPolicy $val The activityBasedTimeoutPolicies
     *
     * @return PolicyRoot
     */
     public function setActivityBasedTimeoutPolicies($val)
     {
-        $this->_propDict["activityBasedTimeoutPolicies"] = $val;
+		$this->_propDict["activityBasedTimeoutPolicies"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the authorizationPolicy
-    * The policy that controls Azure AD authorization settings.
     *
-    * @return AuthorizationPolicy|null The authorizationPolicy
+    * @return AuthorizationPolicy The authorizationPolicy
     */
     public function getAuthorizationPolicy()
     {
         if (array_key_exists("authorizationPolicy", $this->_propDict)) {
-            if (is_a($this->_propDict["authorizationPolicy"], "\Microsoft\Graph\Model\AuthorizationPolicy") || is_null($this->_propDict["authorizationPolicy"])) {
+            if (is_a($this->_propDict["authorizationPolicy"], "Microsoft\Graph\Model\AuthorizationPolicy")) {
                 return $this->_propDict["authorizationPolicy"];
             } else {
                 $this->_propDict["authorizationPolicy"] = new AuthorizationPolicy($this->_propDict["authorizationPolicy"]);
@@ -138,10 +100,9 @@ class PolicyRoot extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the authorizationPolicy
-    * The policy that controls Azure AD authorization settings.
     *
     * @param AuthorizationPolicy $val The authorizationPolicy
     *
@@ -152,13 +113,12 @@ class PolicyRoot extends Entity
         $this->_propDict["authorizationPolicy"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the claimsMappingPolicies
-    * The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
      *
-     * @return array|null The claimsMappingPolicies
+     * @return array The claimsMappingPolicies
      */
     public function getClaimsMappingPolicies()
     {
@@ -168,27 +128,25 @@ class PolicyRoot extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the claimsMappingPolicies
-    * The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
     *
-    * @param ClaimsMappingPolicy[] $val The claimsMappingPolicies
+    * @param ClaimsMappingPolicy $val The claimsMappingPolicies
     *
     * @return PolicyRoot
     */
     public function setClaimsMappingPolicies($val)
     {
-        $this->_propDict["claimsMappingPolicies"] = $val;
+		$this->_propDict["claimsMappingPolicies"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the homeRealmDiscoveryPolicies
-    * The policy to control Azure AD authentication behavior for federated users.
      *
-     * @return array|null The homeRealmDiscoveryPolicies
+     * @return array The homeRealmDiscoveryPolicies
      */
     public function getHomeRealmDiscoveryPolicies()
     {
@@ -198,27 +156,25 @@ class PolicyRoot extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the homeRealmDiscoveryPolicies
-    * The policy to control Azure AD authentication behavior for federated users.
     *
-    * @param HomeRealmDiscoveryPolicy[] $val The homeRealmDiscoveryPolicies
+    * @param HomeRealmDiscoveryPolicy $val The homeRealmDiscoveryPolicies
     *
     * @return PolicyRoot
     */
     public function setHomeRealmDiscoveryPolicies($val)
     {
-        $this->_propDict["homeRealmDiscoveryPolicies"] = $val;
+		$this->_propDict["homeRealmDiscoveryPolicies"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the permissionGrantPolicies
-    * The policy that specifies the conditions under which consent can be granted.
      *
-     * @return array|null The permissionGrantPolicies
+     * @return array The permissionGrantPolicies
      */
     public function getPermissionGrantPolicies()
     {
@@ -228,27 +184,25 @@ class PolicyRoot extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the permissionGrantPolicies
-    * The policy that specifies the conditions under which consent can be granted.
     *
-    * @param PermissionGrantPolicy[] $val The permissionGrantPolicies
+    * @param PermissionGrantPolicy $val The permissionGrantPolicies
     *
     * @return PolicyRoot
     */
     public function setPermissionGrantPolicies($val)
     {
-        $this->_propDict["permissionGrantPolicies"] = $val;
+		$this->_propDict["permissionGrantPolicies"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the tokenIssuancePolicies
-    * The policy that specifies the characteristics of SAML tokens issued by Azure AD.
      *
-     * @return array|null The tokenIssuancePolicies
+     * @return array The tokenIssuancePolicies
      */
     public function getTokenIssuancePolicies()
     {
@@ -258,27 +212,25 @@ class PolicyRoot extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the tokenIssuancePolicies
-    * The policy that specifies the characteristics of SAML tokens issued by Azure AD.
     *
-    * @param TokenIssuancePolicy[] $val The tokenIssuancePolicies
+    * @param TokenIssuancePolicy $val The tokenIssuancePolicies
     *
     * @return PolicyRoot
     */
     public function setTokenIssuancePolicies($val)
     {
-        $this->_propDict["tokenIssuancePolicies"] = $val;
+		$this->_propDict["tokenIssuancePolicies"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the tokenLifetimePolicies
-    * The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
      *
-     * @return array|null The tokenLifetimePolicies
+     * @return array The tokenLifetimePolicies
      */
     public function getTokenLifetimePolicies()
     {
@@ -288,27 +240,25 @@ class PolicyRoot extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the tokenLifetimePolicies
-    * The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
     *
-    * @param TokenLifetimePolicy[] $val The tokenLifetimePolicies
+    * @param TokenLifetimePolicy $val The tokenLifetimePolicies
     *
     * @return PolicyRoot
     */
     public function setTokenLifetimePolicies($val)
     {
-        $this->_propDict["tokenLifetimePolicies"] = $val;
+		$this->_propDict["tokenLifetimePolicies"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the featureRolloutPolicies
-    * The feature rollout policy associated with a directory object.
      *
-     * @return array|null The featureRolloutPolicies
+     * @return array The featureRolloutPolicies
      */
     public function getFeatureRolloutPolicies()
     {
@@ -318,60 +268,25 @@ class PolicyRoot extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the featureRolloutPolicies
-    * The feature rollout policy associated with a directory object.
     *
-    * @param FeatureRolloutPolicy[] $val The featureRolloutPolicies
+    * @param FeatureRolloutPolicy $val The featureRolloutPolicies
     *
     * @return PolicyRoot
     */
     public function setFeatureRolloutPolicies($val)
     {
-        $this->_propDict["featureRolloutPolicies"] = $val;
+		$this->_propDict["featureRolloutPolicies"] = $val;
         return $this;
     }
+    
 
-    /**
-    * Gets the adminConsentRequestPolicy
-    * The policy by which consent requests are created and managed for the entire tenant.
-    *
-    * @return AdminConsentRequestPolicy|null The adminConsentRequestPolicy
-    */
-    public function getAdminConsentRequestPolicy()
-    {
-        if (array_key_exists("adminConsentRequestPolicy", $this->_propDict)) {
-            if (is_a($this->_propDict["adminConsentRequestPolicy"], "\Microsoft\Graph\Model\AdminConsentRequestPolicy") || is_null($this->_propDict["adminConsentRequestPolicy"])) {
-                return $this->_propDict["adminConsentRequestPolicy"];
-            } else {
-                $this->_propDict["adminConsentRequestPolicy"] = new AdminConsentRequestPolicy($this->_propDict["adminConsentRequestPolicy"]);
-                return $this->_propDict["adminConsentRequestPolicy"];
-            }
-        }
-        return null;
-    }
-
-    /**
-    * Sets the adminConsentRequestPolicy
-    * The policy by which consent requests are created and managed for the entire tenant.
-    *
-    * @param AdminConsentRequestPolicy $val The adminConsentRequestPolicy
-    *
-    * @return PolicyRoot
-    */
-    public function setAdminConsentRequestPolicy($val)
-    {
-        $this->_propDict["adminConsentRequestPolicy"] = $val;
-        return $this;
-    }
-
-
-     /**
+     /** 
      * Gets the conditionalAccessPolicies
-    * The custom rules that define an access scenario.
      *
-     * @return array|null The conditionalAccessPolicies
+     * @return array The conditionalAccessPolicies
      */
     public function getConditionalAccessPolicies()
     {
@@ -381,31 +296,29 @@ class PolicyRoot extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the conditionalAccessPolicies
-    * The custom rules that define an access scenario.
     *
-    * @param ConditionalAccessPolicy[] $val The conditionalAccessPolicies
+    * @param ConditionalAccessPolicy $val The conditionalAccessPolicies
     *
     * @return PolicyRoot
     */
     public function setConditionalAccessPolicies($val)
     {
-        $this->_propDict["conditionalAccessPolicies"] = $val;
+		$this->_propDict["conditionalAccessPolicies"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the identitySecurityDefaultsEnforcementPolicy
-    * The policy that represents the security defaults that protect against common attacks.
     *
-    * @return IdentitySecurityDefaultsEnforcementPolicy|null The identitySecurityDefaultsEnforcementPolicy
+    * @return IdentitySecurityDefaultsEnforcementPolicy The identitySecurityDefaultsEnforcementPolicy
     */
     public function getIdentitySecurityDefaultsEnforcementPolicy()
     {
         if (array_key_exists("identitySecurityDefaultsEnforcementPolicy", $this->_propDict)) {
-            if (is_a($this->_propDict["identitySecurityDefaultsEnforcementPolicy"], "\Microsoft\Graph\Model\IdentitySecurityDefaultsEnforcementPolicy") || is_null($this->_propDict["identitySecurityDefaultsEnforcementPolicy"])) {
+            if (is_a($this->_propDict["identitySecurityDefaultsEnforcementPolicy"], "Microsoft\Graph\Model\IdentitySecurityDefaultsEnforcementPolicy")) {
                 return $this->_propDict["identitySecurityDefaultsEnforcementPolicy"];
             } else {
                 $this->_propDict["identitySecurityDefaultsEnforcementPolicy"] = new IdentitySecurityDefaultsEnforcementPolicy($this->_propDict["identitySecurityDefaultsEnforcementPolicy"]);
@@ -414,10 +327,9 @@ class PolicyRoot extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the identitySecurityDefaultsEnforcementPolicy
-    * The policy that represents the security defaults that protect against common attacks.
     *
     * @param IdentitySecurityDefaultsEnforcementPolicy $val The identitySecurityDefaultsEnforcementPolicy
     *
@@ -428,5 +340,5 @@ class PolicyRoot extends Entity
         $this->_propDict["identitySecurityDefaultsEnforcementPolicy"] = $val;
         return $this;
     }
-
+    
 }

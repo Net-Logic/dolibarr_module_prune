@@ -28,12 +28,12 @@ class MacOSVpnConfiguration extends AppleVpnConfiguration
     * Gets the identityCertificate
     * Identity certificate for client authentication when authentication method is certificate.
     *
-    * @return MacOSCertificateProfileBase|null The identityCertificate
+    * @return MacOSCertificateProfileBase The identityCertificate
     */
     public function getIdentityCertificate()
     {
         if (array_key_exists("identityCertificate", $this->_propDict)) {
-            if (is_a($this->_propDict["identityCertificate"], "\Beta\Microsoft\Graph\Model\MacOSCertificateProfileBase") || is_null($this->_propDict["identityCertificate"])) {
+            if (is_a($this->_propDict["identityCertificate"], "Beta\Microsoft\Graph\Model\MacOSCertificateProfileBase")) {
                 return $this->_propDict["identityCertificate"];
             } else {
                 $this->_propDict["identityCertificate"] = new MacOSCertificateProfileBase($this->_propDict["identityCertificate"]);
@@ -42,7 +42,7 @@ class MacOSVpnConfiguration extends AppleVpnConfiguration
         }
         return null;
     }
-
+    
     /**
     * Sets the identityCertificate
     * Identity certificate for client authentication when authentication method is certificate.
@@ -56,5 +56,5 @@ class MacOSVpnConfiguration extends AppleVpnConfiguration
         $this->_propDict["identityCertificate"] = $val;
         return $this;
     }
-
+    
 }

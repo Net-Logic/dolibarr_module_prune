@@ -27,7 +27,7 @@ class YammerGroupsActivityDetail extends Entity
     /**
     * Gets the groupDisplayName
     *
-    * @return string|null The groupDisplayName
+    * @return string The groupDisplayName
     */
     public function getGroupDisplayName()
     {
@@ -37,7 +37,7 @@ class YammerGroupsActivityDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the groupDisplayName
     *
@@ -50,11 +50,11 @@ class YammerGroupsActivityDetail extends Entity
         $this->_propDict["groupDisplayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the groupType
     *
-    * @return string|null The groupType
+    * @return string The groupType
     */
     public function getGroupType()
     {
@@ -64,7 +64,7 @@ class YammerGroupsActivityDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the groupType
     *
@@ -77,11 +77,11 @@ class YammerGroupsActivityDetail extends Entity
         $this->_propDict["groupType"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the isDeleted
     *
-    * @return bool|null The isDeleted
+    * @return bool The isDeleted
     */
     public function getIsDeleted()
     {
@@ -91,7 +91,7 @@ class YammerGroupsActivityDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the isDeleted
     *
@@ -104,16 +104,16 @@ class YammerGroupsActivityDetail extends Entity
         $this->_propDict["isDeleted"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the lastActivityDate
     *
-    * @return \DateTime|null The lastActivityDate
+    * @return \DateTime The lastActivityDate
     */
     public function getLastActivityDate()
     {
         if (array_key_exists("lastActivityDate", $this->_propDict)) {
-            if (is_a($this->_propDict["lastActivityDate"], "\DateTime") || is_null($this->_propDict["lastActivityDate"])) {
+            if (is_a($this->_propDict["lastActivityDate"], "\DateTime")) {
                 return $this->_propDict["lastActivityDate"];
             } else {
                 $this->_propDict["lastActivityDate"] = new \DateTime($this->_propDict["lastActivityDate"]);
@@ -122,7 +122,7 @@ class YammerGroupsActivityDetail extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastActivityDate
     *
@@ -135,11 +135,11 @@ class YammerGroupsActivityDetail extends Entity
         $this->_propDict["lastActivityDate"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the likedCount
     *
-    * @return int|null The likedCount
+    * @return int The likedCount
     */
     public function getLikedCount()
     {
@@ -149,7 +149,7 @@ class YammerGroupsActivityDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the likedCount
     *
@@ -162,11 +162,11 @@ class YammerGroupsActivityDetail extends Entity
         $this->_propDict["likedCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the memberCount
     *
-    * @return int|null The memberCount
+    * @return int The memberCount
     */
     public function getMemberCount()
     {
@@ -176,7 +176,7 @@ class YammerGroupsActivityDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the memberCount
     *
@@ -189,11 +189,11 @@ class YammerGroupsActivityDetail extends Entity
         $this->_propDict["memberCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the networkDisplayName
     *
-    * @return string|null The networkDisplayName
+    * @return string The networkDisplayName
     */
     public function getNetworkDisplayName()
     {
@@ -203,7 +203,7 @@ class YammerGroupsActivityDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the networkDisplayName
     *
@@ -216,11 +216,11 @@ class YammerGroupsActivityDetail extends Entity
         $this->_propDict["networkDisplayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the office365Connected
     *
-    * @return bool|null The office365Connected
+    * @return bool The office365Connected
     */
     public function getOffice365Connected()
     {
@@ -230,7 +230,7 @@ class YammerGroupsActivityDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the office365Connected
     *
@@ -243,11 +243,11 @@ class YammerGroupsActivityDetail extends Entity
         $this->_propDict["office365Connected"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the ownerPrincipalName
     *
-    * @return string|null The ownerPrincipalName
+    * @return string The ownerPrincipalName
     */
     public function getOwnerPrincipalName()
     {
@@ -257,7 +257,7 @@ class YammerGroupsActivityDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the ownerPrincipalName
     *
@@ -270,11 +270,11 @@ class YammerGroupsActivityDetail extends Entity
         $this->_propDict["ownerPrincipalName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the postedCount
     *
-    * @return int|null The postedCount
+    * @return int The postedCount
     */
     public function getPostedCount()
     {
@@ -284,7 +284,7 @@ class YammerGroupsActivityDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the postedCount
     *
@@ -297,11 +297,11 @@ class YammerGroupsActivityDetail extends Entity
         $this->_propDict["postedCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the readCount
     *
-    * @return int|null The readCount
+    * @return int The readCount
     */
     public function getReadCount()
     {
@@ -311,7 +311,7 @@ class YammerGroupsActivityDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the readCount
     *
@@ -324,11 +324,11 @@ class YammerGroupsActivityDetail extends Entity
         $this->_propDict["readCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the reportPeriod
     *
-    * @return string|null The reportPeriod
+    * @return string The reportPeriod
     */
     public function getReportPeriod()
     {
@@ -338,7 +338,7 @@ class YammerGroupsActivityDetail extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the reportPeriod
     *
@@ -351,16 +351,16 @@ class YammerGroupsActivityDetail extends Entity
         $this->_propDict["reportPeriod"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the reportRefreshDate
     *
-    * @return \DateTime|null The reportRefreshDate
+    * @return \DateTime The reportRefreshDate
     */
     public function getReportRefreshDate()
     {
         if (array_key_exists("reportRefreshDate", $this->_propDict)) {
-            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime") || is_null($this->_propDict["reportRefreshDate"])) {
+            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime")) {
                 return $this->_propDict["reportRefreshDate"];
             } else {
                 $this->_propDict["reportRefreshDate"] = new \DateTime($this->_propDict["reportRefreshDate"]);
@@ -369,7 +369,7 @@ class YammerGroupsActivityDetail extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the reportRefreshDate
     *
@@ -382,5 +382,5 @@ class YammerGroupsActivityDetail extends Entity
         $this->_propDict["reportRefreshDate"] = $val;
         return $this;
     }
-
+    
 }

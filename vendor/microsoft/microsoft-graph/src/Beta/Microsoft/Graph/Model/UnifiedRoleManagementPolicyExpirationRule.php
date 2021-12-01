@@ -26,9 +26,8 @@ class UnifiedRoleManagementPolicyExpirationRule extends UnifiedRoleManagementPol
 {
     /**
     * Gets the isExpirationRequired
-    * Indicates if expiration is required for eligibility or assignment.
     *
-    * @return bool|null The isExpirationRequired
+    * @return bool The isExpirationRequired
     */
     public function getIsExpirationRequired()
     {
@@ -38,10 +37,9 @@ class UnifiedRoleManagementPolicyExpirationRule extends UnifiedRoleManagementPol
             return null;
         }
     }
-
+    
     /**
     * Sets the isExpirationRequired
-    * Indicates if expiration is required for eligibility or assignment.
     *
     * @param bool $val The isExpirationRequired
     *
@@ -52,31 +50,29 @@ class UnifiedRoleManagementPolicyExpirationRule extends UnifiedRoleManagementPol
         $this->_propDict["isExpirationRequired"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the maximumDuration
-    * The maximum duration allowed for eligiblity or assignment which is not permanent.
     *
-    * @return \DateInterval|null The maximumDuration
+    * @return Duration The maximumDuration
     */
     public function getMaximumDuration()
     {
         if (array_key_exists("maximumDuration", $this->_propDict)) {
-            if (is_a($this->_propDict["maximumDuration"], "\DateInterval") || is_null($this->_propDict["maximumDuration"])) {
+            if (is_a($this->_propDict["maximumDuration"], "Beta\Microsoft\Graph\Model\Duration")) {
                 return $this->_propDict["maximumDuration"];
             } else {
-                $this->_propDict["maximumDuration"] = new \DateInterval($this->_propDict["maximumDuration"]);
+                $this->_propDict["maximumDuration"] = new Duration($this->_propDict["maximumDuration"]);
                 return $this->_propDict["maximumDuration"];
             }
         }
         return null;
     }
-
+    
     /**
     * Sets the maximumDuration
-    * The maximum duration allowed for eligiblity or assignment which is not permanent.
     *
-    * @param \DateInterval $val The maximumDuration
+    * @param Duration $val The maximumDuration
     *
     * @return UnifiedRoleManagementPolicyExpirationRule
     */
@@ -85,5 +81,5 @@ class UnifiedRoleManagementPolicyExpirationRule extends UnifiedRoleManagementPol
         $this->_propDict["maximumDuration"] = $val;
         return $this;
     }
-
+    
 }

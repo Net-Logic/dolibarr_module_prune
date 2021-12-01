@@ -28,12 +28,12 @@ class DeviceManagementConfigurationSetting extends Entity
     * Gets the settingInstance
     * Setting Instance
     *
-    * @return DeviceManagementConfigurationSettingInstance|null The settingInstance
+    * @return DeviceManagementConfigurationSettingInstance The settingInstance
     */
     public function getSettingInstance()
     {
         if (array_key_exists("settingInstance", $this->_propDict)) {
-            if (is_a($this->_propDict["settingInstance"], "\Beta\Microsoft\Graph\Model\DeviceManagementConfigurationSettingInstance") || is_null($this->_propDict["settingInstance"])) {
+            if (is_a($this->_propDict["settingInstance"], "Beta\Microsoft\Graph\Model\DeviceManagementConfigurationSettingInstance")) {
                 return $this->_propDict["settingInstance"];
             } else {
                 $this->_propDict["settingInstance"] = new DeviceManagementConfigurationSettingInstance($this->_propDict["settingInstance"]);
@@ -42,7 +42,7 @@ class DeviceManagementConfigurationSetting extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the settingInstance
     * Setting Instance
@@ -56,13 +56,13 @@ class DeviceManagementConfigurationSetting extends Entity
         $this->_propDict["settingInstance"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the settingDefinitions
-    * List of related Setting Definitions. This property is read-only.
+    * List of related Setting Definitions
      *
-     * @return array|null The settingDefinitions
+     * @return array The settingDefinitions
      */
     public function getSettingDefinitions()
     {
@@ -72,19 +72,19 @@ class DeviceManagementConfigurationSetting extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the settingDefinitions
-    * List of related Setting Definitions. This property is read-only.
+    * List of related Setting Definitions
     *
-    * @param DeviceManagementConfigurationSettingDefinition[] $val The settingDefinitions
+    * @param DeviceManagementConfigurationSettingDefinition $val The settingDefinitions
     *
     * @return DeviceManagementConfigurationSetting
     */
     public function setSettingDefinitions($val)
     {
-        $this->_propDict["settingDefinitions"] = $val;
+		$this->_propDict["settingDefinitions"] = $val;
         return $this;
     }
-
+    
 }

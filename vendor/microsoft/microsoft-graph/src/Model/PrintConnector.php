@@ -28,7 +28,7 @@ class PrintConnector extends Entity
     * Gets the appVersion
     * The connector's version.
     *
-    * @return string|null The appVersion
+    * @return string The appVersion
     */
     public function getAppVersion()
     {
@@ -38,7 +38,7 @@ class PrintConnector extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the appVersion
     * The connector's version.
@@ -52,12 +52,12 @@ class PrintConnector extends Entity
         $this->_propDict["appVersion"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the displayName
     * The name of the connector.
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -67,7 +67,7 @@ class PrintConnector extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the displayName
     * The name of the connector.
@@ -81,12 +81,12 @@ class PrintConnector extends Entity
         $this->_propDict["displayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the fullyQualifiedDomainName
     * The connector machine's hostname.
     *
-    * @return string|null The fullyQualifiedDomainName
+    * @return string The fullyQualifiedDomainName
     */
     public function getFullyQualifiedDomainName()
     {
@@ -96,7 +96,7 @@ class PrintConnector extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the fullyQualifiedDomainName
     * The connector machine's hostname.
@@ -110,17 +110,17 @@ class PrintConnector extends Entity
         $this->_propDict["fullyQualifiedDomainName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the location
     * The physical and/or organizational location of the connector.
     *
-    * @return PrinterLocation|null The location
+    * @return PrinterLocation The location
     */
     public function getLocation()
     {
         if (array_key_exists("location", $this->_propDict)) {
-            if (is_a($this->_propDict["location"], "\Microsoft\Graph\Model\PrinterLocation") || is_null($this->_propDict["location"])) {
+            if (is_a($this->_propDict["location"], "Microsoft\Graph\Model\PrinterLocation")) {
                 return $this->_propDict["location"];
             } else {
                 $this->_propDict["location"] = new PrinterLocation($this->_propDict["location"]);
@@ -129,7 +129,7 @@ class PrintConnector extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the location
     * The physical and/or organizational location of the connector.
@@ -143,12 +143,12 @@ class PrintConnector extends Entity
         $this->_propDict["location"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the operatingSystem
     * The connector machine's operating system version.
     *
-    * @return string|null The operatingSystem
+    * @return string The operatingSystem
     */
     public function getOperatingSystem()
     {
@@ -158,7 +158,7 @@ class PrintConnector extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the operatingSystem
     * The connector machine's operating system version.
@@ -172,17 +172,17 @@ class PrintConnector extends Entity
         $this->_propDict["operatingSystem"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the registeredDateTime
     * The DateTimeOffset when the connector was registered.
     *
-    * @return \DateTime|null The registeredDateTime
+    * @return \DateTime The registeredDateTime
     */
     public function getRegisteredDateTime()
     {
         if (array_key_exists("registeredDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["registeredDateTime"], "\DateTime") || is_null($this->_propDict["registeredDateTime"])) {
+            if (is_a($this->_propDict["registeredDateTime"], "\DateTime")) {
                 return $this->_propDict["registeredDateTime"];
             } else {
                 $this->_propDict["registeredDateTime"] = new \DateTime($this->_propDict["registeredDateTime"]);
@@ -191,7 +191,7 @@ class PrintConnector extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the registeredDateTime
     * The DateTimeOffset when the connector was registered.
@@ -205,5 +205,5 @@ class PrintConnector extends Entity
         $this->_propDict["registeredDateTime"] = $val;
         return $this;
     }
-
+    
 }

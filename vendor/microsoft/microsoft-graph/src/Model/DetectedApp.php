@@ -28,7 +28,7 @@ class DetectedApp extends Entity
     * Gets the deviceCount
     * The number of devices that have installed this application
     *
-    * @return int|null The deviceCount
+    * @return int The deviceCount
     */
     public function getDeviceCount()
     {
@@ -38,7 +38,7 @@ class DetectedApp extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the deviceCount
     * The number of devices that have installed this application
@@ -52,12 +52,12 @@ class DetectedApp extends Entity
         $this->_propDict["deviceCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the displayName
     * Name of the discovered application. Read-only
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -67,7 +67,7 @@ class DetectedApp extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the displayName
     * Name of the discovered application. Read-only
@@ -81,12 +81,12 @@ class DetectedApp extends Entity
         $this->_propDict["displayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the sizeInByte
     * Discovered application size in bytes. Read-only
     *
-    * @return int|null The sizeInByte
+    * @return int The sizeInByte
     */
     public function getSizeInByte()
     {
@@ -96,7 +96,7 @@ class DetectedApp extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the sizeInByte
     * Discovered application size in bytes. Read-only
@@ -110,12 +110,12 @@ class DetectedApp extends Entity
         $this->_propDict["sizeInByte"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the version
     * Version of the discovered application. Read-only
     *
-    * @return string|null The version
+    * @return string The version
     */
     public function getVersion()
     {
@@ -125,7 +125,7 @@ class DetectedApp extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the version
     * Version of the discovered application. Read-only
@@ -139,13 +139,13 @@ class DetectedApp extends Entity
         $this->_propDict["version"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the managedDevices
     * The devices that have the discovered application installed
      *
-     * @return array|null The managedDevices
+     * @return array The managedDevices
      */
     public function getManagedDevices()
     {
@@ -155,19 +155,19 @@ class DetectedApp extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the managedDevices
     * The devices that have the discovered application installed
     *
-    * @param ManagedDevice[] $val The managedDevices
+    * @param ManagedDevice $val The managedDevices
     *
     * @return DetectedApp
     */
     public function setManagedDevices($val)
     {
-        $this->_propDict["managedDevices"] = $val;
+		$this->_propDict["managedDevices"] = $val;
         return $this;
     }
-
+    
 }

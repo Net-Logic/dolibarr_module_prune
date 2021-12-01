@@ -26,9 +26,9 @@ class WorkbookComment extends Entity
 {
     /**
     * Gets the content
-    * The content of comment.
+    * The content of the comment.
     *
-    * @return string|null The content
+    * @return string The content
     */
     public function getContent()
     {
@@ -38,10 +38,10 @@ class WorkbookComment extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the content
-    * The content of comment.
+    * The content of the comment.
     *
     * @param string $val The content
     *
@@ -52,12 +52,12 @@ class WorkbookComment extends Entity
         $this->_propDict["content"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the contentType
     * Indicates the type for the comment.
     *
-    * @return string|null The contentType
+    * @return string The contentType
     */
     public function getContentType()
     {
@@ -67,7 +67,7 @@ class WorkbookComment extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the contentType
     * Indicates the type for the comment.
@@ -81,13 +81,13 @@ class WorkbookComment extends Entity
         $this->_propDict["contentType"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the replies
     * Read-only. Nullable.
      *
-     * @return array|null The replies
+     * @return array The replies
      */
     public function getReplies()
     {
@@ -97,19 +97,19 @@ class WorkbookComment extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the replies
     * Read-only. Nullable.
     *
-    * @param WorkbookCommentReply[] $val The replies
+    * @param WorkbookCommentReply $val The replies
     *
     * @return WorkbookComment
     */
     public function setReplies($val)
     {
-        $this->_propDict["replies"] = $val;
+		$this->_propDict["replies"] = $val;
         return $this;
     }
-
+    
 }

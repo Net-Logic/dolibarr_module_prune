@@ -28,12 +28,12 @@ class TodoTask extends Entity
     * Gets the body
     * The task body that typically contains information about the task.
     *
-    * @return ItemBody|null The body
+    * @return ItemBody The body
     */
     public function getBody()
     {
         if (array_key_exists("body", $this->_propDict)) {
-            if (is_a($this->_propDict["body"], "\Microsoft\Graph\Model\ItemBody") || is_null($this->_propDict["body"])) {
+            if (is_a($this->_propDict["body"], "Microsoft\Graph\Model\ItemBody")) {
                 return $this->_propDict["body"];
             } else {
                 $this->_propDict["body"] = new ItemBody($this->_propDict["body"]);
@@ -42,7 +42,7 @@ class TodoTask extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the body
     * The task body that typically contains information about the task.
@@ -56,17 +56,17 @@ class TodoTask extends Entity
         $this->_propDict["body"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the bodyLastModifiedDateTime
     * The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
     *
-    * @return \DateTime|null The bodyLastModifiedDateTime
+    * @return \DateTime The bodyLastModifiedDateTime
     */
     public function getBodyLastModifiedDateTime()
     {
         if (array_key_exists("bodyLastModifiedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["bodyLastModifiedDateTime"], "\DateTime") || is_null($this->_propDict["bodyLastModifiedDateTime"])) {
+            if (is_a($this->_propDict["bodyLastModifiedDateTime"], "\DateTime")) {
                 return $this->_propDict["bodyLastModifiedDateTime"];
             } else {
                 $this->_propDict["bodyLastModifiedDateTime"] = new \DateTime($this->_propDict["bodyLastModifiedDateTime"]);
@@ -75,7 +75,7 @@ class TodoTask extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the bodyLastModifiedDateTime
     * The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -89,17 +89,17 @@ class TodoTask extends Entity
         $this->_propDict["bodyLastModifiedDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the completedDateTime
     * The date in the specified time zone that the task was finished.
     *
-    * @return DateTimeTimeZone|null The completedDateTime
+    * @return DateTimeTimeZone The completedDateTime
     */
     public function getCompletedDateTime()
     {
         if (array_key_exists("completedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["completedDateTime"], "\Microsoft\Graph\Model\DateTimeTimeZone") || is_null($this->_propDict["completedDateTime"])) {
+            if (is_a($this->_propDict["completedDateTime"], "Microsoft\Graph\Model\DateTimeTimeZone")) {
                 return $this->_propDict["completedDateTime"];
             } else {
                 $this->_propDict["completedDateTime"] = new DateTimeTimeZone($this->_propDict["completedDateTime"]);
@@ -108,7 +108,7 @@ class TodoTask extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the completedDateTime
     * The date in the specified time zone that the task was finished.
@@ -122,17 +122,17 @@ class TodoTask extends Entity
         $this->_propDict["completedDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the createdDateTime
     * The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
     *
-    * @return \DateTime|null The createdDateTime
+    * @return \DateTime The createdDateTime
     */
     public function getCreatedDateTime()
     {
         if (array_key_exists("createdDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["createdDateTime"], "\DateTime") || is_null($this->_propDict["createdDateTime"])) {
+            if (is_a($this->_propDict["createdDateTime"], "\DateTime")) {
                 return $this->_propDict["createdDateTime"];
             } else {
                 $this->_propDict["createdDateTime"] = new \DateTime($this->_propDict["createdDateTime"]);
@@ -141,7 +141,7 @@ class TodoTask extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the createdDateTime
     * The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -155,17 +155,17 @@ class TodoTask extends Entity
         $this->_propDict["createdDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the dueDateTime
     * The date in the specified time zone that the task is to be finished.
     *
-    * @return DateTimeTimeZone|null The dueDateTime
+    * @return DateTimeTimeZone The dueDateTime
     */
     public function getDueDateTime()
     {
         if (array_key_exists("dueDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["dueDateTime"], "\Microsoft\Graph\Model\DateTimeTimeZone") || is_null($this->_propDict["dueDateTime"])) {
+            if (is_a($this->_propDict["dueDateTime"], "Microsoft\Graph\Model\DateTimeTimeZone")) {
                 return $this->_propDict["dueDateTime"];
             } else {
                 $this->_propDict["dueDateTime"] = new DateTimeTimeZone($this->_propDict["dueDateTime"]);
@@ -174,7 +174,7 @@ class TodoTask extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the dueDateTime
     * The date in the specified time zone that the task is to be finished.
@@ -188,17 +188,17 @@ class TodoTask extends Entity
         $this->_propDict["dueDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the importance
     * The importance of the task. Possible values are: low, normal, high.
     *
-    * @return Importance|null The importance
+    * @return Importance The importance
     */
     public function getImportance()
     {
         if (array_key_exists("importance", $this->_propDict)) {
-            if (is_a($this->_propDict["importance"], "\Microsoft\Graph\Model\Importance") || is_null($this->_propDict["importance"])) {
+            if (is_a($this->_propDict["importance"], "Microsoft\Graph\Model\Importance")) {
                 return $this->_propDict["importance"];
             } else {
                 $this->_propDict["importance"] = new Importance($this->_propDict["importance"]);
@@ -207,7 +207,7 @@ class TodoTask extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the importance
     * The importance of the task. Possible values are: low, normal, high.
@@ -221,12 +221,12 @@ class TodoTask extends Entity
         $this->_propDict["importance"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the isReminderOn
     * Set to true if an alert is set to remind the user of the task.
     *
-    * @return bool|null The isReminderOn
+    * @return bool The isReminderOn
     */
     public function getIsReminderOn()
     {
@@ -236,7 +236,7 @@ class TodoTask extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the isReminderOn
     * Set to true if an alert is set to remind the user of the task.
@@ -250,17 +250,17 @@ class TodoTask extends Entity
         $this->_propDict["isReminderOn"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the lastModifiedDateTime
     * The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
     *
-    * @return \DateTime|null The lastModifiedDateTime
+    * @return \DateTime The lastModifiedDateTime
     */
     public function getLastModifiedDateTime()
     {
         if (array_key_exists("lastModifiedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime") || is_null($this->_propDict["lastModifiedDateTime"])) {
+            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime")) {
                 return $this->_propDict["lastModifiedDateTime"];
             } else {
                 $this->_propDict["lastModifiedDateTime"] = new \DateTime($this->_propDict["lastModifiedDateTime"]);
@@ -269,7 +269,7 @@ class TodoTask extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastModifiedDateTime
     * The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -283,17 +283,17 @@ class TodoTask extends Entity
         $this->_propDict["lastModifiedDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the recurrence
     * The recurrence pattern for the task.
     *
-    * @return PatternedRecurrence|null The recurrence
+    * @return PatternedRecurrence The recurrence
     */
     public function getRecurrence()
     {
         if (array_key_exists("recurrence", $this->_propDict)) {
-            if (is_a($this->_propDict["recurrence"], "\Microsoft\Graph\Model\PatternedRecurrence") || is_null($this->_propDict["recurrence"])) {
+            if (is_a($this->_propDict["recurrence"], "Microsoft\Graph\Model\PatternedRecurrence")) {
                 return $this->_propDict["recurrence"];
             } else {
                 $this->_propDict["recurrence"] = new PatternedRecurrence($this->_propDict["recurrence"]);
@@ -302,7 +302,7 @@ class TodoTask extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the recurrence
     * The recurrence pattern for the task.
@@ -316,17 +316,17 @@ class TodoTask extends Entity
         $this->_propDict["recurrence"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the reminderDateTime
     * The date and time for a reminder alert of the task to occur.
     *
-    * @return DateTimeTimeZone|null The reminderDateTime
+    * @return DateTimeTimeZone The reminderDateTime
     */
     public function getReminderDateTime()
     {
         if (array_key_exists("reminderDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["reminderDateTime"], "\Microsoft\Graph\Model\DateTimeTimeZone") || is_null($this->_propDict["reminderDateTime"])) {
+            if (is_a($this->_propDict["reminderDateTime"], "Microsoft\Graph\Model\DateTimeTimeZone")) {
                 return $this->_propDict["reminderDateTime"];
             } else {
                 $this->_propDict["reminderDateTime"] = new DateTimeTimeZone($this->_propDict["reminderDateTime"]);
@@ -335,7 +335,7 @@ class TodoTask extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the reminderDateTime
     * The date and time for a reminder alert of the task to occur.
@@ -349,17 +349,17 @@ class TodoTask extends Entity
         $this->_propDict["reminderDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the status
     * Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.
     *
-    * @return TaskStatus|null The status
+    * @return TaskStatus The status
     */
     public function getStatus()
     {
         if (array_key_exists("status", $this->_propDict)) {
-            if (is_a($this->_propDict["status"], "\Microsoft\Graph\Model\TaskStatus") || is_null($this->_propDict["status"])) {
+            if (is_a($this->_propDict["status"], "Microsoft\Graph\Model\TaskStatus")) {
                 return $this->_propDict["status"];
             } else {
                 $this->_propDict["status"] = new TaskStatus($this->_propDict["status"]);
@@ -368,7 +368,7 @@ class TodoTask extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the status
     * Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.
@@ -382,12 +382,12 @@ class TodoTask extends Entity
         $this->_propDict["status"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the title
     * A brief description of the task.
     *
-    * @return string|null The title
+    * @return string The title
     */
     public function getTitle()
     {
@@ -397,7 +397,7 @@ class TodoTask extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the title
     * A brief description of the task.
@@ -411,13 +411,13 @@ class TodoTask extends Entity
         $this->_propDict["title"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the extensions
     * The collection of open extensions defined for the task. Nullable.
      *
-     * @return array|null The extensions
+     * @return array The extensions
      */
     public function getExtensions()
     {
@@ -427,27 +427,27 @@ class TodoTask extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the extensions
     * The collection of open extensions defined for the task. Nullable.
     *
-    * @param Extension[] $val The extensions
+    * @param Extension $val The extensions
     *
     * @return TodoTask
     */
     public function setExtensions($val)
     {
-        $this->_propDict["extensions"] = $val;
+		$this->_propDict["extensions"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the linkedResources
     * A collection of resources linked to the task.
      *
-     * @return array|null The linkedResources
+     * @return array The linkedResources
      */
     public function getLinkedResources()
     {
@@ -457,19 +457,19 @@ class TodoTask extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the linkedResources
     * A collection of resources linked to the task.
     *
-    * @param LinkedResource[] $val The linkedResources
+    * @param LinkedResource $val The linkedResources
     *
     * @return TodoTask
     */
     public function setLinkedResources($val)
     {
-        $this->_propDict["linkedResources"] = $val;
+		$this->_propDict["linkedResources"] = $val;
         return $this;
     }
-
+    
 }

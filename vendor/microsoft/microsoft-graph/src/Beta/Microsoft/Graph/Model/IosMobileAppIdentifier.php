@@ -26,11 +26,9 @@ class IosMobileAppIdentifier extends MobileAppIdentifier
     /**
     * Set the @odata.type since this type is immediately descended from an abstract
     * type that is referenced as the type in an entity.
-    * @param array $propDict The property dictionary
     */
-    public function __construct($propDict = array())
+    public function __construct()
     {
-        parent::__construct($propDict);
         $this->setODataType("#microsoft.graph.iosMobileAppIdentifier");
     }
 
@@ -38,7 +36,7 @@ class IosMobileAppIdentifier extends MobileAppIdentifier
     * Gets the bundleId
     * The identifier for an app, as specified in the app store.
     *
-    * @return string|null The bundleId
+    * @return string The bundleId
     */
     public function getBundleId()
     {

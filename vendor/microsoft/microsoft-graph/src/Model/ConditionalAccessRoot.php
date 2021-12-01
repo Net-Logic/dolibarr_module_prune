@@ -25,11 +25,10 @@ namespace Microsoft\Graph\Model;
 class ConditionalAccessRoot extends Entity
 {
 
-     /**
+     /** 
      * Gets the namedLocations
-    * Read-only. Nullable. Returns a collection of the specified named locations.
      *
-     * @return array|null The namedLocations
+     * @return array The namedLocations
      */
     public function getNamedLocations()
     {
@@ -39,27 +38,25 @@ class ConditionalAccessRoot extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the namedLocations
-    * Read-only. Nullable. Returns a collection of the specified named locations.
     *
-    * @param NamedLocation[] $val The namedLocations
+    * @param NamedLocation $val The namedLocations
     *
     * @return ConditionalAccessRoot
     */
     public function setNamedLocations($val)
     {
-        $this->_propDict["namedLocations"] = $val;
+		$this->_propDict["namedLocations"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the policies
-    * Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
      *
-     * @return array|null The policies
+     * @return array The policies
      */
     public function getPolicies()
     {
@@ -69,19 +66,18 @@ class ConditionalAccessRoot extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the policies
-    * Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
     *
-    * @param ConditionalAccessPolicy[] $val The policies
+    * @param ConditionalAccessPolicy $val The policies
     *
     * @return ConditionalAccessRoot
     */
     public function setPolicies($val)
     {
-        $this->_propDict["policies"] = $val;
+		$this->_propDict["policies"] = $val;
         return $this;
     }
-
+    
 }

@@ -28,7 +28,7 @@ class WorkbookRangeBorder extends Entity
     * Gets the color
     * HTML color code representing the color of the border line, of the form #RRGGBB (e.g. 'FFA500') or as a named HTML color (e.g. 'orange').
     *
-    * @return string|null The color
+    * @return string The color
     */
     public function getColor()
     {
@@ -38,7 +38,7 @@ class WorkbookRangeBorder extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the color
     * HTML color code representing the color of the border line, of the form #RRGGBB (e.g. 'FFA500') or as a named HTML color (e.g. 'orange').
@@ -52,12 +52,12 @@ class WorkbookRangeBorder extends Entity
         $this->_propDict["color"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the sideIndex
-    * Constant value that indicates the specific side of the border. The possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp. Read-only.
+    * Constant value that indicates the specific side of the border. Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp. Read-only.
     *
-    * @return string|null The sideIndex
+    * @return string The sideIndex
     */
     public function getSideIndex()
     {
@@ -67,10 +67,10 @@ class WorkbookRangeBorder extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the sideIndex
-    * Constant value that indicates the specific side of the border. The possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp. Read-only.
+    * Constant value that indicates the specific side of the border. Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp. Read-only.
     *
     * @param string $val The sideIndex
     *
@@ -81,12 +81,12 @@ class WorkbookRangeBorder extends Entity
         $this->_propDict["sideIndex"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the style
-    * One of the constants of line style specifying the line style for the border. The possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.
+    * One of the constants of line style specifying the line style for the border. Possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.
     *
-    * @return string|null The style
+    * @return string The style
     */
     public function getStyle()
     {
@@ -96,10 +96,10 @@ class WorkbookRangeBorder extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the style
-    * One of the constants of line style specifying the line style for the border. The possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.
+    * One of the constants of line style specifying the line style for the border. Possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.
     *
     * @param string $val The style
     *
@@ -110,12 +110,12 @@ class WorkbookRangeBorder extends Entity
         $this->_propDict["style"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the weight
-    * Specifies the weight of the border around a range. The possible values are: Hairline, Thin, Medium, Thick.
+    * Specifies the weight of the border around a range. Possible values are: Hairline, Thin, Medium, Thick.
     *
-    * @return string|null The weight
+    * @return string The weight
     */
     public function getWeight()
     {
@@ -125,10 +125,10 @@ class WorkbookRangeBorder extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the weight
-    * Specifies the weight of the border around a range. The possible values are: Hairline, Thin, Medium, Thick.
+    * Specifies the weight of the border around a range. Possible values are: Hairline, Thin, Medium, Thick.
     *
     * @param string $val The weight
     *
@@ -139,5 +139,5 @@ class WorkbookRangeBorder extends Entity
         $this->_propDict["weight"] = $val;
         return $this;
     }
-
+    
 }

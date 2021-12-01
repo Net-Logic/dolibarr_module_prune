@@ -28,12 +28,12 @@ class AndroidForWorkSettings extends Entity
     * Gets the bindStatus
     * Bind status of the tenant with the Google EMM API. Possible values are: notBound, bound, boundAndValidated, unbinding.
     *
-    * @return AndroidForWorkBindStatus|null The bindStatus
+    * @return AndroidForWorkBindStatus The bindStatus
     */
     public function getBindStatus()
     {
         if (array_key_exists("bindStatus", $this->_propDict)) {
-            if (is_a($this->_propDict["bindStatus"], "\Beta\Microsoft\Graph\Model\AndroidForWorkBindStatus") || is_null($this->_propDict["bindStatus"])) {
+            if (is_a($this->_propDict["bindStatus"], "Beta\Microsoft\Graph\Model\AndroidForWorkBindStatus")) {
                 return $this->_propDict["bindStatus"];
             } else {
                 $this->_propDict["bindStatus"] = new AndroidForWorkBindStatus($this->_propDict["bindStatus"]);
@@ -42,7 +42,7 @@ class AndroidForWorkSettings extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the bindStatus
     * Bind status of the tenant with the Google EMM API. Possible values are: notBound, bound, boundAndValidated, unbinding.
@@ -56,12 +56,12 @@ class AndroidForWorkSettings extends Entity
         $this->_propDict["bindStatus"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the deviceOwnerManagementEnabled
     * Indicates if this account is flighting for Android Device Owner Management with CloudDPC.
     *
-    * @return bool|null The deviceOwnerManagementEnabled
+    * @return bool The deviceOwnerManagementEnabled
     */
     public function getDeviceOwnerManagementEnabled()
     {
@@ -71,7 +71,7 @@ class AndroidForWorkSettings extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the deviceOwnerManagementEnabled
     * Indicates if this account is flighting for Android Device Owner Management with CloudDPC.
@@ -85,17 +85,17 @@ class AndroidForWorkSettings extends Entity
         $this->_propDict["deviceOwnerManagementEnabled"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the enrollmentTarget
     * Indicates which users can enroll devices in Android for Work device management. Possible values are: none, all, targeted, targetedAsEnrollmentRestrictions.
     *
-    * @return AndroidForWorkEnrollmentTarget|null The enrollmentTarget
+    * @return AndroidForWorkEnrollmentTarget The enrollmentTarget
     */
     public function getEnrollmentTarget()
     {
         if (array_key_exists("enrollmentTarget", $this->_propDict)) {
-            if (is_a($this->_propDict["enrollmentTarget"], "\Beta\Microsoft\Graph\Model\AndroidForWorkEnrollmentTarget") || is_null($this->_propDict["enrollmentTarget"])) {
+            if (is_a($this->_propDict["enrollmentTarget"], "Beta\Microsoft\Graph\Model\AndroidForWorkEnrollmentTarget")) {
                 return $this->_propDict["enrollmentTarget"];
             } else {
                 $this->_propDict["enrollmentTarget"] = new AndroidForWorkEnrollmentTarget($this->_propDict["enrollmentTarget"]);
@@ -104,7 +104,7 @@ class AndroidForWorkSettings extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the enrollmentTarget
     * Indicates which users can enroll devices in Android for Work device management. Possible values are: none, all, targeted, targetedAsEnrollmentRestrictions.
@@ -118,17 +118,17 @@ class AndroidForWorkSettings extends Entity
         $this->_propDict["enrollmentTarget"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the lastAppSyncDateTime
     * Last completion time for app sync
     *
-    * @return \DateTime|null The lastAppSyncDateTime
+    * @return \DateTime The lastAppSyncDateTime
     */
     public function getLastAppSyncDateTime()
     {
         if (array_key_exists("lastAppSyncDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastAppSyncDateTime"], "\DateTime") || is_null($this->_propDict["lastAppSyncDateTime"])) {
+            if (is_a($this->_propDict["lastAppSyncDateTime"], "\DateTime")) {
                 return $this->_propDict["lastAppSyncDateTime"];
             } else {
                 $this->_propDict["lastAppSyncDateTime"] = new \DateTime($this->_propDict["lastAppSyncDateTime"]);
@@ -137,7 +137,7 @@ class AndroidForWorkSettings extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastAppSyncDateTime
     * Last completion time for app sync
@@ -151,17 +151,17 @@ class AndroidForWorkSettings extends Entity
         $this->_propDict["lastAppSyncDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the lastAppSyncStatus
     * Last application sync result. Possible values are: success, credentialsNotValid, androidForWorkApiError, managementServiceError, unknownError, none.
     *
-    * @return AndroidForWorkSyncStatus|null The lastAppSyncStatus
+    * @return AndroidForWorkSyncStatus The lastAppSyncStatus
     */
     public function getLastAppSyncStatus()
     {
         if (array_key_exists("lastAppSyncStatus", $this->_propDict)) {
-            if (is_a($this->_propDict["lastAppSyncStatus"], "\Beta\Microsoft\Graph\Model\AndroidForWorkSyncStatus") || is_null($this->_propDict["lastAppSyncStatus"])) {
+            if (is_a($this->_propDict["lastAppSyncStatus"], "Beta\Microsoft\Graph\Model\AndroidForWorkSyncStatus")) {
                 return $this->_propDict["lastAppSyncStatus"];
             } else {
                 $this->_propDict["lastAppSyncStatus"] = new AndroidForWorkSyncStatus($this->_propDict["lastAppSyncStatus"]);
@@ -170,7 +170,7 @@ class AndroidForWorkSettings extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastAppSyncStatus
     * Last application sync result. Possible values are: success, credentialsNotValid, androidForWorkApiError, managementServiceError, unknownError, none.
@@ -184,17 +184,17 @@ class AndroidForWorkSettings extends Entity
         $this->_propDict["lastAppSyncStatus"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the lastModifiedDateTime
     * Last modification time for Android for Work settings
     *
-    * @return \DateTime|null The lastModifiedDateTime
+    * @return \DateTime The lastModifiedDateTime
     */
     public function getLastModifiedDateTime()
     {
         if (array_key_exists("lastModifiedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime") || is_null($this->_propDict["lastModifiedDateTime"])) {
+            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime")) {
                 return $this->_propDict["lastModifiedDateTime"];
             } else {
                 $this->_propDict["lastModifiedDateTime"] = new \DateTime($this->_propDict["lastModifiedDateTime"]);
@@ -203,7 +203,7 @@ class AndroidForWorkSettings extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastModifiedDateTime
     * Last modification time for Android for Work settings
@@ -217,12 +217,12 @@ class AndroidForWorkSettings extends Entity
         $this->_propDict["lastModifiedDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the ownerOrganizationName
     * Organization name used when onboarding Android for Work
     *
-    * @return string|null The ownerOrganizationName
+    * @return string The ownerOrganizationName
     */
     public function getOwnerOrganizationName()
     {
@@ -232,7 +232,7 @@ class AndroidForWorkSettings extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the ownerOrganizationName
     * Organization name used when onboarding Android for Work
@@ -246,12 +246,12 @@ class AndroidForWorkSettings extends Entity
         $this->_propDict["ownerOrganizationName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the ownerUserPrincipalName
     * Owner UPN that created the enterprise
     *
-    * @return string|null The ownerUserPrincipalName
+    * @return string The ownerUserPrincipalName
     */
     public function getOwnerUserPrincipalName()
     {
@@ -261,7 +261,7 @@ class AndroidForWorkSettings extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the ownerUserPrincipalName
     * Owner UPN that created the enterprise
@@ -275,12 +275,12 @@ class AndroidForWorkSettings extends Entity
         $this->_propDict["ownerUserPrincipalName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the targetGroupIds
     * Specifies which AAD groups can enroll devices in Android for Work device management if enrollmentTarget is set to 'Targeted'
     *
-    * @return string|null The targetGroupIds
+    * @return string The targetGroupIds
     */
     public function getTargetGroupIds()
     {
@@ -290,7 +290,7 @@ class AndroidForWorkSettings extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the targetGroupIds
     * Specifies which AAD groups can enroll devices in Android for Work device management if enrollmentTarget is set to 'Targeted'
@@ -304,5 +304,5 @@ class AndroidForWorkSettings extends Entity
         $this->_propDict["targetGroupIds"] = $val;
         return $this;
     }
-
+    
 }

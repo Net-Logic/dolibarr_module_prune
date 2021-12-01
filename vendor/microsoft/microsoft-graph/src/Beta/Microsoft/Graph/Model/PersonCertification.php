@@ -28,7 +28,7 @@ class PersonCertification extends ItemFacet
     * Gets the certificationId
     * The referenceable identifier for the certification.
     *
-    * @return string|null The certificationId
+    * @return string The certificationId
     */
     public function getCertificationId()
     {
@@ -38,7 +38,7 @@ class PersonCertification extends ItemFacet
             return null;
         }
     }
-
+    
     /**
     * Sets the certificationId
     * The referenceable identifier for the certification.
@@ -52,12 +52,12 @@ class PersonCertification extends ItemFacet
         $this->_propDict["certificationId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the description
     * Description of the certification.
     *
-    * @return string|null The description
+    * @return string The description
     */
     public function getDescription()
     {
@@ -67,7 +67,7 @@ class PersonCertification extends ItemFacet
             return null;
         }
     }
-
+    
     /**
     * Sets the description
     * Description of the certification.
@@ -81,12 +81,12 @@ class PersonCertification extends ItemFacet
         $this->_propDict["description"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the displayName
     * Title of the certification.
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -96,7 +96,7 @@ class PersonCertification extends ItemFacet
             return null;
         }
     }
-
+    
     /**
     * Sets the displayName
     * Title of the certification.
@@ -110,17 +110,17 @@ class PersonCertification extends ItemFacet
         $this->_propDict["displayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the endDate
     * The date that the certification expires.
     *
-    * @return \DateTime|null The endDate
+    * @return \DateTime The endDate
     */
     public function getEndDate()
     {
         if (array_key_exists("endDate", $this->_propDict)) {
-            if (is_a($this->_propDict["endDate"], "\DateTime") || is_null($this->_propDict["endDate"])) {
+            if (is_a($this->_propDict["endDate"], "\DateTime")) {
                 return $this->_propDict["endDate"];
             } else {
                 $this->_propDict["endDate"] = new \DateTime($this->_propDict["endDate"]);
@@ -129,7 +129,7 @@ class PersonCertification extends ItemFacet
         }
         return null;
     }
-
+    
     /**
     * Sets the endDate
     * The date that the certification expires.
@@ -143,17 +143,17 @@ class PersonCertification extends ItemFacet
         $this->_propDict["endDate"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the issuedDate
     * The date that the certification was issued.
     *
-    * @return \DateTime|null The issuedDate
+    * @return \DateTime The issuedDate
     */
     public function getIssuedDate()
     {
         if (array_key_exists("issuedDate", $this->_propDict)) {
-            if (is_a($this->_propDict["issuedDate"], "\DateTime") || is_null($this->_propDict["issuedDate"])) {
+            if (is_a($this->_propDict["issuedDate"], "\DateTime")) {
                 return $this->_propDict["issuedDate"];
             } else {
                 $this->_propDict["issuedDate"] = new \DateTime($this->_propDict["issuedDate"]);
@@ -162,7 +162,7 @@ class PersonCertification extends ItemFacet
         }
         return null;
     }
-
+    
     /**
     * Sets the issuedDate
     * The date that the certification was issued.
@@ -176,12 +176,12 @@ class PersonCertification extends ItemFacet
         $this->_propDict["issuedDate"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the issuingAuthority
     * Authority which granted the certification.
     *
-    * @return string|null The issuingAuthority
+    * @return string The issuingAuthority
     */
     public function getIssuingAuthority()
     {
@@ -191,7 +191,7 @@ class PersonCertification extends ItemFacet
             return null;
         }
     }
-
+    
     /**
     * Sets the issuingAuthority
     * Authority which granted the certification.
@@ -205,12 +205,12 @@ class PersonCertification extends ItemFacet
         $this->_propDict["issuingAuthority"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the issuingCompany
     * Company which granted the certification.
     *
-    * @return string|null The issuingCompany
+    * @return string The issuingCompany
     */
     public function getIssuingCompany()
     {
@@ -220,7 +220,7 @@ class PersonCertification extends ItemFacet
             return null;
         }
     }
-
+    
     /**
     * Sets the issuingCompany
     * Company which granted the certification.
@@ -234,17 +234,17 @@ class PersonCertification extends ItemFacet
         $this->_propDict["issuingCompany"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the startDate
     * The date that the certification became valid.
     *
-    * @return \DateTime|null The startDate
+    * @return \DateTime The startDate
     */
     public function getStartDate()
     {
         if (array_key_exists("startDate", $this->_propDict)) {
-            if (is_a($this->_propDict["startDate"], "\DateTime") || is_null($this->_propDict["startDate"])) {
+            if (is_a($this->_propDict["startDate"], "\DateTime")) {
                 return $this->_propDict["startDate"];
             } else {
                 $this->_propDict["startDate"] = new \DateTime($this->_propDict["startDate"]);
@@ -253,7 +253,7 @@ class PersonCertification extends ItemFacet
         }
         return null;
     }
-
+    
     /**
     * Sets the startDate
     * The date that the certification became valid.
@@ -267,12 +267,12 @@ class PersonCertification extends ItemFacet
         $this->_propDict["startDate"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the thumbnailUrl
     * URL referencing a thumbnail of the certification.
     *
-    * @return string|null The thumbnailUrl
+    * @return string The thumbnailUrl
     */
     public function getThumbnailUrl()
     {
@@ -282,7 +282,7 @@ class PersonCertification extends ItemFacet
             return null;
         }
     }
-
+    
     /**
     * Sets the thumbnailUrl
     * URL referencing a thumbnail of the certification.
@@ -296,12 +296,12 @@ class PersonCertification extends ItemFacet
         $this->_propDict["thumbnailUrl"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the webUrl
     * URL referencing the certification.
     *
-    * @return string|null The webUrl
+    * @return string The webUrl
     */
     public function getWebUrl()
     {
@@ -311,7 +311,7 @@ class PersonCertification extends ItemFacet
             return null;
         }
     }
-
+    
     /**
     * Sets the webUrl
     * URL referencing the certification.
@@ -325,5 +325,5 @@ class PersonCertification extends ItemFacet
         $this->_propDict["webUrl"] = $val;
         return $this;
     }
-
+    
 }

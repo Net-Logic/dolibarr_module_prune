@@ -28,21 +28,21 @@ class MacOSCustomConfiguration extends DeviceConfiguration
     * Gets the payload
     * Payload. (UTF8 encoded byte array)
     *
-    * @return \GuzzleHttp\Psr7\Stream|null The payload
+    * @return \GuzzleHttp\Psr7\Stream The payload
     */
     public function getPayload()
     {
         if (array_key_exists("payload", $this->_propDict)) {
-            if (is_a($this->_propDict["payload"], "\GuzzleHttp\Psr7\Stream") || is_null($this->_propDict["payload"])) {
+            if (is_a($this->_propDict["payload"], "\GuzzleHttp\Psr7\Stream")) {
                 return $this->_propDict["payload"];
             } else {
-                $this->_propDict["payload"] = \GuzzleHttp\Psr7\Utils::streamFor($this->_propDict["payload"]);
+                $this->_propDict["payload"] = \GuzzleHttp\Psr7\stream_for($this->_propDict["payload"]);
                 return $this->_propDict["payload"];
             }
         }
         return null;
     }
-
+    
     /**
     * Sets the payload
     * Payload. (UTF8 encoded byte array)
@@ -56,12 +56,12 @@ class MacOSCustomConfiguration extends DeviceConfiguration
         $this->_propDict["payload"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the payloadFileName
-    * Payload file name (.mobileconfig
+    * Payload file name (.mobileconfig | .xml).
     *
-    * @return string|null The payloadFileName
+    * @return string The payloadFileName
     */
     public function getPayloadFileName()
     {
@@ -71,10 +71,10 @@ class MacOSCustomConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the payloadFileName
-    * Payload file name (.mobileconfig
+    * Payload file name (.mobileconfig | .xml).
     *
     * @param string $val The payloadFileName
     *
@@ -85,12 +85,12 @@ class MacOSCustomConfiguration extends DeviceConfiguration
         $this->_propDict["payloadFileName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the payloadName
     * Name that is displayed to the user.
     *
-    * @return string|null The payloadName
+    * @return string The payloadName
     */
     public function getPayloadName()
     {
@@ -100,7 +100,7 @@ class MacOSCustomConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the payloadName
     * Name that is displayed to the user.
@@ -114,5 +114,5 @@ class MacOSCustomConfiguration extends DeviceConfiguration
         $this->_propDict["payloadName"] = $val;
         return $this;
     }
-
+    
 }

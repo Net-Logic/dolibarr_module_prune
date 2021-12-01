@@ -28,7 +28,7 @@ class MobileAppIntentAndState extends Entity
     * Gets the managedDeviceIdentifier
     * Device identifier created or collected by Intune.
     *
-    * @return string|null The managedDeviceIdentifier
+    * @return string The managedDeviceIdentifier
     */
     public function getManagedDeviceIdentifier()
     {
@@ -38,7 +38,7 @@ class MobileAppIntentAndState extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the managedDeviceIdentifier
     * Device identifier created or collected by Intune.
@@ -52,13 +52,13 @@ class MobileAppIntentAndState extends Entity
         $this->_propDict["managedDeviceIdentifier"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the mobileAppList
     * The list of payload intents and states for the tenant.
      *
-     * @return array|null The mobileAppList
+     * @return array The mobileAppList
      */
     public function getMobileAppList()
     {
@@ -68,26 +68,26 @@ class MobileAppIntentAndState extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the mobileAppList
     * The list of payload intents and states for the tenant.
     *
-    * @param MobileAppIntentAndStateDetail[] $val The mobileAppList
+    * @param MobileAppIntentAndStateDetail $val The mobileAppList
     *
     * @return MobileAppIntentAndState
     */
     public function setMobileAppList($val)
     {
-        $this->_propDict["mobileAppList"] = $val;
+		$this->_propDict["mobileAppList"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the userId
     * Identifier for the user that tried to enroll the device.
     *
-    * @return string|null The userId
+    * @return string The userId
     */
     public function getUserId()
     {
@@ -97,7 +97,7 @@ class MobileAppIntentAndState extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the userId
     * Identifier for the user that tried to enroll the device.
@@ -111,5 +111,5 @@ class MobileAppIntentAndState extends Entity
         $this->_propDict["userId"] = $val;
         return $this;
     }
-
+    
 }

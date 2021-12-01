@@ -25,10 +25,10 @@ namespace Beta\Microsoft\Graph\Model;
 class ReportRoot extends Entity
 {
 
-     /**
+     /** 
      * Gets the applicationSignInDetailedSummary
      *
-     * @return array|null The applicationSignInDetailedSummary
+     * @return array The applicationSignInDetailedSummary
      */
     public function getApplicationSignInDetailedSummary()
     {
@@ -38,29 +38,29 @@ class ReportRoot extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the applicationSignInDetailedSummary
     *
-    * @param ApplicationSignInDetailedSummary[] $val The applicationSignInDetailedSummary
+    * @param ApplicationSignInDetailedSummary $val The applicationSignInDetailedSummary
     *
     * @return ReportRoot
     */
     public function setApplicationSignInDetailedSummary($val)
     {
-        $this->_propDict["applicationSignInDetailedSummary"] = $val;
+		$this->_propDict["applicationSignInDetailedSummary"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the authenticationMethods
     *
-    * @return AuthenticationMethodsRoot|null The authenticationMethods
+    * @return AuthenticationMethodsRoot The authenticationMethods
     */
     public function getAuthenticationMethods()
     {
         if (array_key_exists("authenticationMethods", $this->_propDict)) {
-            if (is_a($this->_propDict["authenticationMethods"], "\Beta\Microsoft\Graph\Model\AuthenticationMethodsRoot") || is_null($this->_propDict["authenticationMethods"])) {
+            if (is_a($this->_propDict["authenticationMethods"], "Beta\Microsoft\Graph\Model\AuthenticationMethodsRoot")) {
                 return $this->_propDict["authenticationMethods"];
             } else {
                 $this->_propDict["authenticationMethods"] = new AuthenticationMethodsRoot($this->_propDict["authenticationMethods"]);
@@ -69,7 +69,7 @@ class ReportRoot extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the authenticationMethods
     *
@@ -82,12 +82,12 @@ class ReportRoot extends Entity
         $this->_propDict["authenticationMethods"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the credentialUserRegistrationDetails
      *
-     * @return array|null The credentialUserRegistrationDetails
+     * @return array The credentialUserRegistrationDetails
      */
     public function getCredentialUserRegistrationDetails()
     {
@@ -97,25 +97,25 @@ class ReportRoot extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the credentialUserRegistrationDetails
     *
-    * @param CredentialUserRegistrationDetails[] $val The credentialUserRegistrationDetails
+    * @param CredentialUserRegistrationDetails $val The credentialUserRegistrationDetails
     *
     * @return ReportRoot
     */
     public function setCredentialUserRegistrationDetails($val)
     {
-        $this->_propDict["credentialUserRegistrationDetails"] = $val;
+		$this->_propDict["credentialUserRegistrationDetails"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the userCredentialUsageDetails
      *
-     * @return array|null The userCredentialUsageDetails
+     * @return array The userCredentialUsageDetails
      */
     public function getUserCredentialUsageDetails()
     {
@@ -125,25 +125,25 @@ class ReportRoot extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the userCredentialUsageDetails
     *
-    * @param UserCredentialUsageDetails[] $val The userCredentialUsageDetails
+    * @param UserCredentialUsageDetails $val The userCredentialUsageDetails
     *
     * @return ReportRoot
     */
     public function setUserCredentialUsageDetails($val)
     {
-        $this->_propDict["userCredentialUsageDetails"] = $val;
+		$this->_propDict["userCredentialUsageDetails"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the dailyPrintUsageByPrinter
      *
-     * @return array|null The dailyPrintUsageByPrinter
+     * @return array The dailyPrintUsageByPrinter
      */
     public function getDailyPrintUsageByPrinter()
     {
@@ -153,25 +153,25 @@ class ReportRoot extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the dailyPrintUsageByPrinter
     *
-    * @param PrintUsageByPrinter[] $val The dailyPrintUsageByPrinter
+    * @param PrintUsageByPrinter $val The dailyPrintUsageByPrinter
     *
     * @return ReportRoot
     */
     public function setDailyPrintUsageByPrinter($val)
     {
-        $this->_propDict["dailyPrintUsageByPrinter"] = $val;
+		$this->_propDict["dailyPrintUsageByPrinter"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the dailyPrintUsageByUser
      *
-     * @return array|null The dailyPrintUsageByUser
+     * @return array The dailyPrintUsageByUser
      */
     public function getDailyPrintUsageByUser()
     {
@@ -181,25 +181,25 @@ class ReportRoot extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the dailyPrintUsageByUser
     *
-    * @param PrintUsageByUser[] $val The dailyPrintUsageByUser
+    * @param PrintUsageByUser $val The dailyPrintUsageByUser
     *
     * @return ReportRoot
     */
     public function setDailyPrintUsageByUser($val)
     {
-        $this->_propDict["dailyPrintUsageByUser"] = $val;
+		$this->_propDict["dailyPrintUsageByUser"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the dailyPrintUsageSummariesByPrinter
      *
-     * @return array|null The dailyPrintUsageSummariesByPrinter
+     * @return array The dailyPrintUsageSummariesByPrinter
      */
     public function getDailyPrintUsageSummariesByPrinter()
     {
@@ -209,25 +209,25 @@ class ReportRoot extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the dailyPrintUsageSummariesByPrinter
     *
-    * @param PrintUsageByPrinter[] $val The dailyPrintUsageSummariesByPrinter
+    * @param PrintUsageByPrinter $val The dailyPrintUsageSummariesByPrinter
     *
     * @return ReportRoot
     */
     public function setDailyPrintUsageSummariesByPrinter($val)
     {
-        $this->_propDict["dailyPrintUsageSummariesByPrinter"] = $val;
+		$this->_propDict["dailyPrintUsageSummariesByPrinter"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the dailyPrintUsageSummariesByUser
      *
-     * @return array|null The dailyPrintUsageSummariesByUser
+     * @return array The dailyPrintUsageSummariesByUser
      */
     public function getDailyPrintUsageSummariesByUser()
     {
@@ -237,25 +237,25 @@ class ReportRoot extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the dailyPrintUsageSummariesByUser
     *
-    * @param PrintUsageByUser[] $val The dailyPrintUsageSummariesByUser
+    * @param PrintUsageByUser $val The dailyPrintUsageSummariesByUser
     *
     * @return ReportRoot
     */
     public function setDailyPrintUsageSummariesByUser($val)
     {
-        $this->_propDict["dailyPrintUsageSummariesByUser"] = $val;
+		$this->_propDict["dailyPrintUsageSummariesByUser"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the monthlyPrintUsageByPrinter
      *
-     * @return array|null The monthlyPrintUsageByPrinter
+     * @return array The monthlyPrintUsageByPrinter
      */
     public function getMonthlyPrintUsageByPrinter()
     {
@@ -265,25 +265,25 @@ class ReportRoot extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the monthlyPrintUsageByPrinter
     *
-    * @param PrintUsageByPrinter[] $val The monthlyPrintUsageByPrinter
+    * @param PrintUsageByPrinter $val The monthlyPrintUsageByPrinter
     *
     * @return ReportRoot
     */
     public function setMonthlyPrintUsageByPrinter($val)
     {
-        $this->_propDict["monthlyPrintUsageByPrinter"] = $val;
+		$this->_propDict["monthlyPrintUsageByPrinter"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the monthlyPrintUsageByUser
      *
-     * @return array|null The monthlyPrintUsageByUser
+     * @return array The monthlyPrintUsageByUser
      */
     public function getMonthlyPrintUsageByUser()
     {
@@ -293,25 +293,25 @@ class ReportRoot extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the monthlyPrintUsageByUser
     *
-    * @param PrintUsageByUser[] $val The monthlyPrintUsageByUser
+    * @param PrintUsageByUser $val The monthlyPrintUsageByUser
     *
     * @return ReportRoot
     */
     public function setMonthlyPrintUsageByUser($val)
     {
-        $this->_propDict["monthlyPrintUsageByUser"] = $val;
+		$this->_propDict["monthlyPrintUsageByUser"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the monthlyPrintUsageSummariesByPrinter
      *
-     * @return array|null The monthlyPrintUsageSummariesByPrinter
+     * @return array The monthlyPrintUsageSummariesByPrinter
      */
     public function getMonthlyPrintUsageSummariesByPrinter()
     {
@@ -321,25 +321,25 @@ class ReportRoot extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the monthlyPrintUsageSummariesByPrinter
     *
-    * @param PrintUsageByPrinter[] $val The monthlyPrintUsageSummariesByPrinter
+    * @param PrintUsageByPrinter $val The monthlyPrintUsageSummariesByPrinter
     *
     * @return ReportRoot
     */
     public function setMonthlyPrintUsageSummariesByPrinter($val)
     {
-        $this->_propDict["monthlyPrintUsageSummariesByPrinter"] = $val;
+		$this->_propDict["monthlyPrintUsageSummariesByPrinter"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the monthlyPrintUsageSummariesByUser
      *
-     * @return array|null The monthlyPrintUsageSummariesByUser
+     * @return array The monthlyPrintUsageSummariesByUser
      */
     public function getMonthlyPrintUsageSummariesByUser()
     {
@@ -349,18 +349,18 @@ class ReportRoot extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the monthlyPrintUsageSummariesByUser
     *
-    * @param PrintUsageByUser[] $val The monthlyPrintUsageSummariesByUser
+    * @param PrintUsageByUser $val The monthlyPrintUsageSummariesByUser
     *
     * @return ReportRoot
     */
     public function setMonthlyPrintUsageSummariesByUser($val)
     {
-        $this->_propDict["monthlyPrintUsageSummariesByUser"] = $val;
+		$this->_propDict["monthlyPrintUsageSummariesByUser"] = $val;
         return $this;
     }
-
+    
 }

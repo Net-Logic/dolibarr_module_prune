@@ -28,7 +28,7 @@ class WindowsPhoneXAP extends MobileLobApp
     * Gets the identityVersion
     * The identity version.
     *
-    * @return string|null The identityVersion
+    * @return string The identityVersion
     */
     public function getIdentityVersion()
     {
@@ -38,7 +38,7 @@ class WindowsPhoneXAP extends MobileLobApp
             return null;
         }
     }
-
+    
     /**
     * Sets the identityVersion
     * The identity version.
@@ -52,17 +52,17 @@ class WindowsPhoneXAP extends MobileLobApp
         $this->_propDict["identityVersion"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the minimumSupportedOperatingSystem
     * The value for the minimum applicable operating system.
     *
-    * @return WindowsMinimumOperatingSystem|null The minimumSupportedOperatingSystem
+    * @return WindowsMinimumOperatingSystem The minimumSupportedOperatingSystem
     */
     public function getMinimumSupportedOperatingSystem()
     {
         if (array_key_exists("minimumSupportedOperatingSystem", $this->_propDict)) {
-            if (is_a($this->_propDict["minimumSupportedOperatingSystem"], "\Beta\Microsoft\Graph\Model\WindowsMinimumOperatingSystem") || is_null($this->_propDict["minimumSupportedOperatingSystem"])) {
+            if (is_a($this->_propDict["minimumSupportedOperatingSystem"], "Beta\Microsoft\Graph\Model\WindowsMinimumOperatingSystem")) {
                 return $this->_propDict["minimumSupportedOperatingSystem"];
             } else {
                 $this->_propDict["minimumSupportedOperatingSystem"] = new WindowsMinimumOperatingSystem($this->_propDict["minimumSupportedOperatingSystem"]);
@@ -71,7 +71,7 @@ class WindowsPhoneXAP extends MobileLobApp
         }
         return null;
     }
-
+    
     /**
     * Sets the minimumSupportedOperatingSystem
     * The value for the minimum applicable operating system.
@@ -85,12 +85,12 @@ class WindowsPhoneXAP extends MobileLobApp
         $this->_propDict["minimumSupportedOperatingSystem"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the productIdentifier
     * The Product Identifier.
     *
-    * @return string|null The productIdentifier
+    * @return string The productIdentifier
     */
     public function getProductIdentifier()
     {
@@ -100,7 +100,7 @@ class WindowsPhoneXAP extends MobileLobApp
             return null;
         }
     }
-
+    
     /**
     * Sets the productIdentifier
     * The Product Identifier.
@@ -114,5 +114,5 @@ class WindowsPhoneXAP extends MobileLobApp
         $this->_propDict["productIdentifier"] = $val;
         return $this;
     }
-
+    
 }

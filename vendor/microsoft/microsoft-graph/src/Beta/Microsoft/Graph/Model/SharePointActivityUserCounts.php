@@ -27,12 +27,12 @@ class SharePointActivityUserCounts extends Entity
     /**
     * Gets the reportDate
     *
-    * @return \DateTime|null The reportDate
+    * @return \DateTime The reportDate
     */
     public function getReportDate()
     {
         if (array_key_exists("reportDate", $this->_propDict)) {
-            if (is_a($this->_propDict["reportDate"], "\DateTime") || is_null($this->_propDict["reportDate"])) {
+            if (is_a($this->_propDict["reportDate"], "\DateTime")) {
                 return $this->_propDict["reportDate"];
             } else {
                 $this->_propDict["reportDate"] = new \DateTime($this->_propDict["reportDate"]);
@@ -41,7 +41,7 @@ class SharePointActivityUserCounts extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the reportDate
     *
@@ -54,11 +54,11 @@ class SharePointActivityUserCounts extends Entity
         $this->_propDict["reportDate"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the reportPeriod
     *
-    * @return string|null The reportPeriod
+    * @return string The reportPeriod
     */
     public function getReportPeriod()
     {
@@ -68,7 +68,7 @@ class SharePointActivityUserCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the reportPeriod
     *
@@ -81,16 +81,16 @@ class SharePointActivityUserCounts extends Entity
         $this->_propDict["reportPeriod"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the reportRefreshDate
     *
-    * @return \DateTime|null The reportRefreshDate
+    * @return \DateTime The reportRefreshDate
     */
     public function getReportRefreshDate()
     {
         if (array_key_exists("reportRefreshDate", $this->_propDict)) {
-            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime") || is_null($this->_propDict["reportRefreshDate"])) {
+            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime")) {
                 return $this->_propDict["reportRefreshDate"];
             } else {
                 $this->_propDict["reportRefreshDate"] = new \DateTime($this->_propDict["reportRefreshDate"]);
@@ -99,7 +99,7 @@ class SharePointActivityUserCounts extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the reportRefreshDate
     *
@@ -112,11 +112,11 @@ class SharePointActivityUserCounts extends Entity
         $this->_propDict["reportRefreshDate"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the sharedExternally
     *
-    * @return int|null The sharedExternally
+    * @return int The sharedExternally
     */
     public function getSharedExternally()
     {
@@ -126,7 +126,7 @@ class SharePointActivityUserCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the sharedExternally
     *
@@ -139,11 +139,11 @@ class SharePointActivityUserCounts extends Entity
         $this->_propDict["sharedExternally"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the sharedInternally
     *
-    * @return int|null The sharedInternally
+    * @return int The sharedInternally
     */
     public function getSharedInternally()
     {
@@ -153,7 +153,7 @@ class SharePointActivityUserCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the sharedInternally
     *
@@ -166,11 +166,11 @@ class SharePointActivityUserCounts extends Entity
         $this->_propDict["sharedInternally"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the synced
     *
-    * @return int|null The synced
+    * @return int The synced
     */
     public function getSynced()
     {
@@ -180,7 +180,7 @@ class SharePointActivityUserCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the synced
     *
@@ -193,11 +193,11 @@ class SharePointActivityUserCounts extends Entity
         $this->_propDict["synced"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the viewedOrEdited
     *
-    * @return int|null The viewedOrEdited
+    * @return int The viewedOrEdited
     */
     public function getViewedOrEdited()
     {
@@ -207,7 +207,7 @@ class SharePointActivityUserCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the viewedOrEdited
     *
@@ -220,11 +220,11 @@ class SharePointActivityUserCounts extends Entity
         $this->_propDict["viewedOrEdited"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the visitedPage
     *
-    * @return int|null The visitedPage
+    * @return int The visitedPage
     */
     public function getVisitedPage()
     {
@@ -234,7 +234,7 @@ class SharePointActivityUserCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the visitedPage
     *
@@ -247,5 +247,5 @@ class SharePointActivityUserCounts extends Entity
         $this->_propDict["visitedPage"] = intval($val);
         return $this;
     }
-
+    
 }

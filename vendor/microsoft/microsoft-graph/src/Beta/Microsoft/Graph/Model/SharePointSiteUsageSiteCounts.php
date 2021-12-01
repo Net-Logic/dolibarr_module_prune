@@ -27,7 +27,7 @@ class SharePointSiteUsageSiteCounts extends Entity
     /**
     * Gets the active
     *
-    * @return int|null The active
+    * @return int The active
     */
     public function getActive()
     {
@@ -37,7 +37,7 @@ class SharePointSiteUsageSiteCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the active
     *
@@ -50,16 +50,16 @@ class SharePointSiteUsageSiteCounts extends Entity
         $this->_propDict["active"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the reportDate
     *
-    * @return \DateTime|null The reportDate
+    * @return \DateTime The reportDate
     */
     public function getReportDate()
     {
         if (array_key_exists("reportDate", $this->_propDict)) {
-            if (is_a($this->_propDict["reportDate"], "\DateTime") || is_null($this->_propDict["reportDate"])) {
+            if (is_a($this->_propDict["reportDate"], "\DateTime")) {
                 return $this->_propDict["reportDate"];
             } else {
                 $this->_propDict["reportDate"] = new \DateTime($this->_propDict["reportDate"]);
@@ -68,7 +68,7 @@ class SharePointSiteUsageSiteCounts extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the reportDate
     *
@@ -81,11 +81,11 @@ class SharePointSiteUsageSiteCounts extends Entity
         $this->_propDict["reportDate"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the reportPeriod
     *
-    * @return string|null The reportPeriod
+    * @return string The reportPeriod
     */
     public function getReportPeriod()
     {
@@ -95,7 +95,7 @@ class SharePointSiteUsageSiteCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the reportPeriod
     *
@@ -108,16 +108,16 @@ class SharePointSiteUsageSiteCounts extends Entity
         $this->_propDict["reportPeriod"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the reportRefreshDate
     *
-    * @return \DateTime|null The reportRefreshDate
+    * @return \DateTime The reportRefreshDate
     */
     public function getReportRefreshDate()
     {
         if (array_key_exists("reportRefreshDate", $this->_propDict)) {
-            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime") || is_null($this->_propDict["reportRefreshDate"])) {
+            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime")) {
                 return $this->_propDict["reportRefreshDate"];
             } else {
                 $this->_propDict["reportRefreshDate"] = new \DateTime($this->_propDict["reportRefreshDate"]);
@@ -126,7 +126,7 @@ class SharePointSiteUsageSiteCounts extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the reportRefreshDate
     *
@@ -139,11 +139,11 @@ class SharePointSiteUsageSiteCounts extends Entity
         $this->_propDict["reportRefreshDate"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the siteType
     *
-    * @return string|null The siteType
+    * @return string The siteType
     */
     public function getSiteType()
     {
@@ -153,7 +153,7 @@ class SharePointSiteUsageSiteCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the siteType
     *
@@ -166,11 +166,11 @@ class SharePointSiteUsageSiteCounts extends Entity
         $this->_propDict["siteType"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the total
     *
-    * @return int|null The total
+    * @return int The total
     */
     public function getTotal()
     {
@@ -180,7 +180,7 @@ class SharePointSiteUsageSiteCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the total
     *
@@ -193,5 +193,5 @@ class SharePointSiteUsageSiteCounts extends Entity
         $this->_propDict["total"] = intval($val);
         return $this;
     }
-
+    
 }

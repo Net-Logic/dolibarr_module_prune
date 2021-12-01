@@ -28,7 +28,7 @@ class OnPremisesConditionalAccessSettings extends Entity
     * Gets the enabled
     * Indicates if on premises conditional access is enabled for this organization
     *
-    * @return bool|null The enabled
+    * @return bool The enabled
     */
     public function getEnabled()
     {
@@ -38,7 +38,7 @@ class OnPremisesConditionalAccessSettings extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the enabled
     * Indicates if on premises conditional access is enabled for this organization
@@ -52,12 +52,12 @@ class OnPremisesConditionalAccessSettings extends Entity
         $this->_propDict["enabled"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the excludedGroups
     * User groups that will be exempt by on premises conditional access. All users in these groups will be exempt from the conditional access policy.
     *
-    * @return string|null The excludedGroups
+    * @return string The excludedGroups
     */
     public function getExcludedGroups()
     {
@@ -67,7 +67,7 @@ class OnPremisesConditionalAccessSettings extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the excludedGroups
     * User groups that will be exempt by on premises conditional access. All users in these groups will be exempt from the conditional access policy.
@@ -81,12 +81,12 @@ class OnPremisesConditionalAccessSettings extends Entity
         $this->_propDict["excludedGroups"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the includedGroups
     * User groups that will be targeted by on premises conditional access. All users in these groups will be required to have mobile device managed and compliant for mail access.
     *
-    * @return string|null The includedGroups
+    * @return string The includedGroups
     */
     public function getIncludedGroups()
     {
@@ -96,7 +96,7 @@ class OnPremisesConditionalAccessSettings extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the includedGroups
     * User groups that will be targeted by on premises conditional access. All users in these groups will be required to have mobile device managed and compliant for mail access.
@@ -110,12 +110,12 @@ class OnPremisesConditionalAccessSettings extends Entity
         $this->_propDict["includedGroups"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the overrideDefaultRule
     * Override the default access rule when allowing a device to ensure access is granted.
     *
-    * @return bool|null The overrideDefaultRule
+    * @return bool The overrideDefaultRule
     */
     public function getOverrideDefaultRule()
     {
@@ -125,7 +125,7 @@ class OnPremisesConditionalAccessSettings extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the overrideDefaultRule
     * Override the default access rule when allowing a device to ensure access is granted.
@@ -139,5 +139,5 @@ class OnPremisesConditionalAccessSettings extends Entity
         $this->_propDict["overrideDefaultRule"] = boolval($val);
         return $this;
     }
-
+    
 }

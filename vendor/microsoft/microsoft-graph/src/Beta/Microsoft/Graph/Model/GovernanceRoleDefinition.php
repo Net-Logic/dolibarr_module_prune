@@ -28,7 +28,7 @@ class GovernanceRoleDefinition extends Entity
     * Gets the displayName
     * The display name of the role definition.
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -38,7 +38,7 @@ class GovernanceRoleDefinition extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the displayName
     * The display name of the role definition.
@@ -52,12 +52,12 @@ class GovernanceRoleDefinition extends Entity
         $this->_propDict["displayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the externalId
     * The external id of the role definition.
     *
-    * @return string|null The externalId
+    * @return string The externalId
     */
     public function getExternalId()
     {
@@ -67,7 +67,7 @@ class GovernanceRoleDefinition extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the externalId
     * The external id of the role definition.
@@ -81,12 +81,12 @@ class GovernanceRoleDefinition extends Entity
         $this->_propDict["externalId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the resourceId
     * Required. The id of the resource associated with the role definition.
     *
-    * @return string|null The resourceId
+    * @return string The resourceId
     */
     public function getResourceId()
     {
@@ -96,7 +96,7 @@ class GovernanceRoleDefinition extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the resourceId
     * Required. The id of the resource associated with the role definition.
@@ -110,11 +110,11 @@ class GovernanceRoleDefinition extends Entity
         $this->_propDict["resourceId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the templateId
     *
-    * @return string|null The templateId
+    * @return string The templateId
     */
     public function getTemplateId()
     {
@@ -124,7 +124,7 @@ class GovernanceRoleDefinition extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the templateId
     *
@@ -137,17 +137,17 @@ class GovernanceRoleDefinition extends Entity
         $this->_propDict["templateId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the resource
     * Read-only. The associated resource for the role definition.
     *
-    * @return GovernanceResource|null The resource
+    * @return GovernanceResource The resource
     */
     public function getResource()
     {
         if (array_key_exists("resource", $this->_propDict)) {
-            if (is_a($this->_propDict["resource"], "\Beta\Microsoft\Graph\Model\GovernanceResource") || is_null($this->_propDict["resource"])) {
+            if (is_a($this->_propDict["resource"], "Beta\Microsoft\Graph\Model\GovernanceResource")) {
                 return $this->_propDict["resource"];
             } else {
                 $this->_propDict["resource"] = new GovernanceResource($this->_propDict["resource"]);
@@ -156,7 +156,7 @@ class GovernanceRoleDefinition extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the resource
     * Read-only. The associated resource for the role definition.
@@ -170,17 +170,17 @@ class GovernanceRoleDefinition extends Entity
         $this->_propDict["resource"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the roleSetting
     * The associated role setting for the role definition.
     *
-    * @return GovernanceRoleSetting|null The roleSetting
+    * @return GovernanceRoleSetting The roleSetting
     */
     public function getRoleSetting()
     {
         if (array_key_exists("roleSetting", $this->_propDict)) {
-            if (is_a($this->_propDict["roleSetting"], "\Beta\Microsoft\Graph\Model\GovernanceRoleSetting") || is_null($this->_propDict["roleSetting"])) {
+            if (is_a($this->_propDict["roleSetting"], "Beta\Microsoft\Graph\Model\GovernanceRoleSetting")) {
                 return $this->_propDict["roleSetting"];
             } else {
                 $this->_propDict["roleSetting"] = new GovernanceRoleSetting($this->_propDict["roleSetting"]);
@@ -189,7 +189,7 @@ class GovernanceRoleDefinition extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the roleSetting
     * The associated role setting for the role definition.
@@ -203,5 +203,5 @@ class GovernanceRoleDefinition extends Entity
         $this->_propDict["roleSetting"] = $val;
         return $this;
     }
-
+    
 }

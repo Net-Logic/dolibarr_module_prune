@@ -28,7 +28,7 @@ class GroupSetting extends Entity
     * Gets the displayName
     * Display name of this group of settings, which comes from the associated template.
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -38,7 +38,7 @@ class GroupSetting extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the displayName
     * Display name of this group of settings, which comes from the associated template.
@@ -52,12 +52,12 @@ class GroupSetting extends Entity
         $this->_propDict["displayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the templateId
     * Unique identifier for the template used to create this group of settings. Read-only.
     *
-    * @return string|null The templateId
+    * @return string The templateId
     */
     public function getTemplateId()
     {
@@ -67,7 +67,7 @@ class GroupSetting extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the templateId
     * Unique identifier for the template used to create this group of settings. Read-only.
@@ -81,13 +81,13 @@ class GroupSetting extends Entity
         $this->_propDict["templateId"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the values
     * Collection of name value pairs. Must contain and set all the settings defined in the template.
      *
-     * @return array|null The values
+     * @return array The values
      */
     public function getValues()
     {
@@ -97,19 +97,19 @@ class GroupSetting extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the values
     * Collection of name value pairs. Must contain and set all the settings defined in the template.
     *
-    * @param SettingValue[] $val The values
+    * @param SettingValue $val The values
     *
     * @return GroupSetting
     */
     public function setValues($val)
     {
-        $this->_propDict["values"] = $val;
+		$this->_propDict["values"] = $val;
         return $this;
     }
-
+    
 }

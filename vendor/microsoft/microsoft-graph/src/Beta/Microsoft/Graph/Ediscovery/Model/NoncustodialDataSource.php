@@ -26,9 +26,8 @@ class NoncustodialDataSource extends DataSourceContainer
 {
     /**
     * Gets the applyHoldToSource
-    * Indicates if hold is applied to non-custodial data source (such as mailbox or site).
     *
-    * @return bool|null The applyHoldToSource
+    * @return bool The applyHoldToSource
     */
     public function getApplyHoldToSource()
     {
@@ -38,10 +37,9 @@ class NoncustodialDataSource extends DataSourceContainer
             return null;
         }
     }
-
+    
     /**
     * Sets the applyHoldToSource
-    * Indicates if hold is applied to non-custodial data source (such as mailbox or site).
     *
     * @param bool $val The applyHoldToSource
     *
@@ -52,17 +50,16 @@ class NoncustodialDataSource extends DataSourceContainer
         $this->_propDict["applyHoldToSource"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the dataSource
-    * User source or SharePoint site data source as non-custodial data source.
     *
-    * @return DataSource|null The dataSource
+    * @return DataSource The dataSource
     */
     public function getDataSource()
     {
         if (array_key_exists("dataSource", $this->_propDict)) {
-            if (is_a($this->_propDict["dataSource"], "\Beta\Microsoft\Graph\Ediscovery\Model\DataSource") || is_null($this->_propDict["dataSource"])) {
+            if (is_a($this->_propDict["dataSource"], "Beta\Microsoft\Graph\Ediscovery\Model\DataSource")) {
                 return $this->_propDict["dataSource"];
             } else {
                 $this->_propDict["dataSource"] = new DataSource($this->_propDict["dataSource"]);
@@ -71,10 +68,9 @@ class NoncustodialDataSource extends DataSourceContainer
         }
         return null;
     }
-
+    
     /**
     * Sets the dataSource
-    * User source or SharePoint site data source as non-custodial data source.
     *
     * @param DataSource $val The dataSource
     *
@@ -85,5 +81,5 @@ class NoncustodialDataSource extends DataSourceContainer
         $this->_propDict["dataSource"] = $val;
         return $this;
     }
-
+    
 }

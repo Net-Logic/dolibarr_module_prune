@@ -28,12 +28,12 @@ class AdvancedThreatProtectionOnboardingDeviceSettingState extends Entity
     * Gets the complianceGracePeriodExpirationDateTime
     * The DateTime when device compliance grace period expires
     *
-    * @return \DateTime|null The complianceGracePeriodExpirationDateTime
+    * @return \DateTime The complianceGracePeriodExpirationDateTime
     */
     public function getComplianceGracePeriodExpirationDateTime()
     {
         if (array_key_exists("complianceGracePeriodExpirationDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["complianceGracePeriodExpirationDateTime"], "\DateTime") || is_null($this->_propDict["complianceGracePeriodExpirationDateTime"])) {
+            if (is_a($this->_propDict["complianceGracePeriodExpirationDateTime"], "\DateTime")) {
                 return $this->_propDict["complianceGracePeriodExpirationDateTime"];
             } else {
                 $this->_propDict["complianceGracePeriodExpirationDateTime"] = new \DateTime($this->_propDict["complianceGracePeriodExpirationDateTime"]);
@@ -42,7 +42,7 @@ class AdvancedThreatProtectionOnboardingDeviceSettingState extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the complianceGracePeriodExpirationDateTime
     * The DateTime when device compliance grace period expires
@@ -56,12 +56,12 @@ class AdvancedThreatProtectionOnboardingDeviceSettingState extends Entity
         $this->_propDict["complianceGracePeriodExpirationDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the deviceId
     * The Device Id that is being reported
     *
-    * @return string|null The deviceId
+    * @return string The deviceId
     */
     public function getDeviceId()
     {
@@ -71,7 +71,7 @@ class AdvancedThreatProtectionOnboardingDeviceSettingState extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the deviceId
     * The Device Id that is being reported
@@ -85,12 +85,12 @@ class AdvancedThreatProtectionOnboardingDeviceSettingState extends Entity
         $this->_propDict["deviceId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the deviceModel
     * The device model that is being reported
     *
-    * @return string|null The deviceModel
+    * @return string The deviceModel
     */
     public function getDeviceModel()
     {
@@ -100,7 +100,7 @@ class AdvancedThreatProtectionOnboardingDeviceSettingState extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the deviceModel
     * The device model that is being reported
@@ -114,12 +114,12 @@ class AdvancedThreatProtectionOnboardingDeviceSettingState extends Entity
         $this->_propDict["deviceModel"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the deviceName
     * The Device Name that is being reported
     *
-    * @return string|null The deviceName
+    * @return string The deviceName
     */
     public function getDeviceName()
     {
@@ -129,7 +129,7 @@ class AdvancedThreatProtectionOnboardingDeviceSettingState extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the deviceName
     * The Device Name that is being reported
@@ -143,17 +143,17 @@ class AdvancedThreatProtectionOnboardingDeviceSettingState extends Entity
         $this->_propDict["deviceName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the platformType
     * Device platform type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, cloudPC, blackberry, palm, unknown.
     *
-    * @return DeviceType|null The platformType
+    * @return DeviceType The platformType
     */
     public function getPlatformType()
     {
         if (array_key_exists("platformType", $this->_propDict)) {
-            if (is_a($this->_propDict["platformType"], "\Beta\Microsoft\Graph\Model\DeviceType") || is_null($this->_propDict["platformType"])) {
+            if (is_a($this->_propDict["platformType"], "Beta\Microsoft\Graph\Model\DeviceType")) {
                 return $this->_propDict["platformType"];
             } else {
                 $this->_propDict["platformType"] = new DeviceType($this->_propDict["platformType"]);
@@ -162,7 +162,7 @@ class AdvancedThreatProtectionOnboardingDeviceSettingState extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the platformType
     * Device platform type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, cloudPC, blackberry, palm, unknown.
@@ -176,12 +176,12 @@ class AdvancedThreatProtectionOnboardingDeviceSettingState extends Entity
         $this->_propDict["platformType"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the setting
     * The setting class name and property name.
     *
-    * @return string|null The setting
+    * @return string The setting
     */
     public function getSetting()
     {
@@ -191,7 +191,7 @@ class AdvancedThreatProtectionOnboardingDeviceSettingState extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the setting
     * The setting class name and property name.
@@ -205,12 +205,12 @@ class AdvancedThreatProtectionOnboardingDeviceSettingState extends Entity
         $this->_propDict["setting"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the settingName
     * The Setting Name that is being reported
     *
-    * @return string|null The settingName
+    * @return string The settingName
     */
     public function getSettingName()
     {
@@ -220,7 +220,7 @@ class AdvancedThreatProtectionOnboardingDeviceSettingState extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the settingName
     * The Setting Name that is being reported
@@ -234,17 +234,17 @@ class AdvancedThreatProtectionOnboardingDeviceSettingState extends Entity
         $this->_propDict["settingName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the state
     * The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
     *
-    * @return ComplianceStatus|null The state
+    * @return ComplianceStatus The state
     */
     public function getState()
     {
         if (array_key_exists("state", $this->_propDict)) {
-            if (is_a($this->_propDict["state"], "\Beta\Microsoft\Graph\Model\ComplianceStatus") || is_null($this->_propDict["state"])) {
+            if (is_a($this->_propDict["state"], "Beta\Microsoft\Graph\Model\ComplianceStatus")) {
                 return $this->_propDict["state"];
             } else {
                 $this->_propDict["state"] = new ComplianceStatus($this->_propDict["state"]);
@@ -253,7 +253,7 @@ class AdvancedThreatProtectionOnboardingDeviceSettingState extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the state
     * The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
@@ -267,12 +267,12 @@ class AdvancedThreatProtectionOnboardingDeviceSettingState extends Entity
         $this->_propDict["state"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the userEmail
     * The User email address that is being reported
     *
-    * @return string|null The userEmail
+    * @return string The userEmail
     */
     public function getUserEmail()
     {
@@ -282,7 +282,7 @@ class AdvancedThreatProtectionOnboardingDeviceSettingState extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the userEmail
     * The User email address that is being reported
@@ -296,12 +296,12 @@ class AdvancedThreatProtectionOnboardingDeviceSettingState extends Entity
         $this->_propDict["userEmail"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the userId
     * The user Id that is being reported
     *
-    * @return string|null The userId
+    * @return string The userId
     */
     public function getUserId()
     {
@@ -311,7 +311,7 @@ class AdvancedThreatProtectionOnboardingDeviceSettingState extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the userId
     * The user Id that is being reported
@@ -325,12 +325,12 @@ class AdvancedThreatProtectionOnboardingDeviceSettingState extends Entity
         $this->_propDict["userId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the userName
     * The User Name that is being reported
     *
-    * @return string|null The userName
+    * @return string The userName
     */
     public function getUserName()
     {
@@ -340,7 +340,7 @@ class AdvancedThreatProtectionOnboardingDeviceSettingState extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the userName
     * The User Name that is being reported
@@ -354,12 +354,12 @@ class AdvancedThreatProtectionOnboardingDeviceSettingState extends Entity
         $this->_propDict["userName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the userPrincipalName
     * The User PrincipalName that is being reported
     *
-    * @return string|null The userPrincipalName
+    * @return string The userPrincipalName
     */
     public function getUserPrincipalName()
     {
@@ -369,7 +369,7 @@ class AdvancedThreatProtectionOnboardingDeviceSettingState extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the userPrincipalName
     * The User PrincipalName that is being reported
@@ -383,5 +383,5 @@ class AdvancedThreatProtectionOnboardingDeviceSettingState extends Entity
         $this->_propDict["userPrincipalName"] = $val;
         return $this;
     }
-
+    
 }

@@ -28,7 +28,7 @@ class Attachment extends Entity
     * Gets the contentType
     * The MIME type.
     *
-    * @return string|null The contentType
+    * @return string The contentType
     */
     public function getContentType()
     {
@@ -38,7 +38,7 @@ class Attachment extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the contentType
     * The MIME type.
@@ -52,12 +52,12 @@ class Attachment extends Entity
         $this->_propDict["contentType"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the isInline
     * true if the attachment is an inline attachment; otherwise, false.
     *
-    * @return bool|null The isInline
+    * @return bool The isInline
     */
     public function getIsInline()
     {
@@ -67,7 +67,7 @@ class Attachment extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the isInline
     * true if the attachment is an inline attachment; otherwise, false.
@@ -81,17 +81,17 @@ class Attachment extends Entity
         $this->_propDict["isInline"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the lastModifiedDateTime
-    * The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    * The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
     *
-    * @return \DateTime|null The lastModifiedDateTime
+    * @return \DateTime The lastModifiedDateTime
     */
     public function getLastModifiedDateTime()
     {
         if (array_key_exists("lastModifiedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime") || is_null($this->_propDict["lastModifiedDateTime"])) {
+            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime")) {
                 return $this->_propDict["lastModifiedDateTime"];
             } else {
                 $this->_propDict["lastModifiedDateTime"] = new \DateTime($this->_propDict["lastModifiedDateTime"]);
@@ -100,10 +100,10 @@ class Attachment extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastModifiedDateTime
-    * The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    * The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
     *
     * @param \DateTime $val The lastModifiedDateTime
     *
@@ -114,12 +114,12 @@ class Attachment extends Entity
         $this->_propDict["lastModifiedDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the name
-    * The attachment's file name.
+    * The display name of the attachment. This does not need to be the actual file name.
     *
-    * @return string|null The name
+    * @return string The name
     */
     public function getName()
     {
@@ -129,10 +129,10 @@ class Attachment extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the name
-    * The attachment's file name.
+    * The display name of the attachment. This does not need to be the actual file name.
     *
     * @param string $val The name
     *
@@ -143,12 +143,12 @@ class Attachment extends Entity
         $this->_propDict["name"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the size
     * The length of the attachment in bytes.
     *
-    * @return int|null The size
+    * @return int The size
     */
     public function getSize()
     {
@@ -158,7 +158,7 @@ class Attachment extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the size
     * The length of the attachment in bytes.
@@ -172,5 +172,5 @@ class Attachment extends Entity
         $this->_propDict["size"] = intval($val);
         return $this;
     }
-
+    
 }

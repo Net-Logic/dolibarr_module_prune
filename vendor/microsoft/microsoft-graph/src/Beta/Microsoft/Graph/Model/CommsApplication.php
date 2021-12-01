@@ -28,10 +28,10 @@ class CommsApplication implements \JsonSerializable
     * The array of properties available
     * to the model
     *
-    * @var array $_propDict
+    * @var array(string => string)
     */
     protected $_propDict;
-
+    
     /**
     * Construct a new CommsApplication
     *
@@ -39,10 +39,7 @@ class CommsApplication implements \JsonSerializable
     */
     function __construct($propDict = array())
     {
-        if (!is_array($propDict)) {
-           $propDict = array();
-        }
-        $this->_propDict = $propDict;
+		$this->_propDict = $propDict;
     }
 
     /**
@@ -54,12 +51,12 @@ class CommsApplication implements \JsonSerializable
     {
         return $this->_propDict;
     }
+    
 
-
-     /**
+     /** 
      * Gets the calls
      *
-     * @return array|null The calls
+     * @return array The calls
      */
     public function getCalls()
     {
@@ -69,25 +66,25 @@ class CommsApplication implements \JsonSerializable
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the calls
     *
-    * @param Call[] $val The calls
+    * @param Call $val The calls
     *
     * @return CommsApplication
     */
     public function setCalls($val)
     {
-        $this->_propDict["calls"] = $val;
+		$this->_propDict["calls"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the onlineMeetings
      *
-     * @return array|null The onlineMeetings
+     * @return array The onlineMeetings
      */
     public function getOnlineMeetings()
     {
@@ -97,49 +94,46 @@ class CommsApplication implements \JsonSerializable
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the onlineMeetings
     *
-    * @param OnlineMeeting[] $val The onlineMeetings
+    * @param OnlineMeeting $val The onlineMeetings
     *
     * @return CommsApplication
     */
     public function setOnlineMeetings($val)
     {
-        $this->_propDict["onlineMeetings"] = $val;
+		$this->_propDict["onlineMeetings"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the ODataType
     *
-    * @return string|null The ODataType
+    * @return string The ODataType
     */
     public function getODataType()
     {
-        if (array_key_exists('@odata.type', $this->_propDict)) {
-            return $this->_propDict["@odata.type"];
-        }
-        return null;
+        return $this->_propDict["@odata.type"];
     }
-
+    
     /**
     * Sets the ODataType
     *
-    * @param string $val The ODataType
+    * @param string The ODataType
     *
-    * @return CommsApplication
+    * @return Entity
     */
     public function setODataType($val)
     {
         $this->_propDict["@odata.type"] = $val;
         return $this;
     }
-
+    
     /**
     * Serializes the object by property array
-    * Manually serialize DateTime into RFC3339 format
+	* Manually serialize DateTime into RFC3339 format
     *
     * @return array The list of properties
     */
@@ -151,8 +145,6 @@ class CommsApplication implements \JsonSerializable
                 $serializableProperties[$property] = $val->format(\DateTime::RFC3339);
             } else if (is_a($val, "\Microsoft\Graph\Core\Enum")) {
                 $serializableProperties[$property] = $val->value();
-            } else if (is_a($val, "\Entity")) {
-                $serializableProperties[$property] = $val->jsonSerialize();
             }
         }
         return $serializableProperties;

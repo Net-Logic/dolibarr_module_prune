@@ -25,10 +25,10 @@ namespace Beta\Microsoft\Graph\Model;
 class AzureADUserFeatureUsage extends Entity
 {
 
-     /**
+     /** 
      * Gets the featureUsageDetails
      *
-     * @return array|null The featureUsageDetails
+     * @return array The featureUsageDetails
      */
     public function getFeatureUsageDetails()
     {
@@ -38,29 +38,29 @@ class AzureADUserFeatureUsage extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the featureUsageDetails
     *
-    * @param FeatureUsageDetail[] $val The featureUsageDetails
+    * @param FeatureUsageDetail $val The featureUsageDetails
     *
     * @return AzureADUserFeatureUsage
     */
     public function setFeatureUsageDetails($val)
     {
-        $this->_propDict["featureUsageDetails"] = $val;
+		$this->_propDict["featureUsageDetails"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the lastUpdatedDateTime
     *
-    * @return \DateTime|null The lastUpdatedDateTime
+    * @return \DateTime The lastUpdatedDateTime
     */
     public function getLastUpdatedDateTime()
     {
         if (array_key_exists("lastUpdatedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastUpdatedDateTime"], "\DateTime") || is_null($this->_propDict["lastUpdatedDateTime"])) {
+            if (is_a($this->_propDict["lastUpdatedDateTime"], "\DateTime")) {
                 return $this->_propDict["lastUpdatedDateTime"];
             } else {
                 $this->_propDict["lastUpdatedDateTime"] = new \DateTime($this->_propDict["lastUpdatedDateTime"]);
@@ -69,7 +69,7 @@ class AzureADUserFeatureUsage extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastUpdatedDateTime
     *
@@ -82,16 +82,16 @@ class AzureADUserFeatureUsage extends Entity
         $this->_propDict["lastUpdatedDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the licenseAssigned
     *
-    * @return AzureADLicenseType|null The licenseAssigned
+    * @return AzureADLicenseType The licenseAssigned
     */
     public function getLicenseAssigned()
     {
         if (array_key_exists("licenseAssigned", $this->_propDict)) {
-            if (is_a($this->_propDict["licenseAssigned"], "\Beta\Microsoft\Graph\Model\AzureADLicenseType") || is_null($this->_propDict["licenseAssigned"])) {
+            if (is_a($this->_propDict["licenseAssigned"], "Beta\Microsoft\Graph\Model\AzureADLicenseType")) {
                 return $this->_propDict["licenseAssigned"];
             } else {
                 $this->_propDict["licenseAssigned"] = new AzureADLicenseType($this->_propDict["licenseAssigned"]);
@@ -100,7 +100,7 @@ class AzureADUserFeatureUsage extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the licenseAssigned
     *
@@ -113,16 +113,16 @@ class AzureADUserFeatureUsage extends Entity
         $this->_propDict["licenseAssigned"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the licenseRecommended
     *
-    * @return AzureADLicenseType|null The licenseRecommended
+    * @return AzureADLicenseType The licenseRecommended
     */
     public function getLicenseRecommended()
     {
         if (array_key_exists("licenseRecommended", $this->_propDict)) {
-            if (is_a($this->_propDict["licenseRecommended"], "\Beta\Microsoft\Graph\Model\AzureADLicenseType") || is_null($this->_propDict["licenseRecommended"])) {
+            if (is_a($this->_propDict["licenseRecommended"], "Beta\Microsoft\Graph\Model\AzureADLicenseType")) {
                 return $this->_propDict["licenseRecommended"];
             } else {
                 $this->_propDict["licenseRecommended"] = new AzureADLicenseType($this->_propDict["licenseRecommended"]);
@@ -131,7 +131,7 @@ class AzureADUserFeatureUsage extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the licenseRecommended
     *
@@ -144,11 +144,11 @@ class AzureADUserFeatureUsage extends Entity
         $this->_propDict["licenseRecommended"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the userDisplayName
     *
-    * @return string|null The userDisplayName
+    * @return string The userDisplayName
     */
     public function getUserDisplayName()
     {
@@ -158,7 +158,7 @@ class AzureADUserFeatureUsage extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the userDisplayName
     *
@@ -171,11 +171,11 @@ class AzureADUserFeatureUsage extends Entity
         $this->_propDict["userDisplayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the userId
     *
-    * @return string|null The userId
+    * @return string The userId
     */
     public function getUserId()
     {
@@ -185,7 +185,7 @@ class AzureADUserFeatureUsage extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the userId
     *
@@ -198,11 +198,11 @@ class AzureADUserFeatureUsage extends Entity
         $this->_propDict["userId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the userPrincipalName
     *
-    * @return string|null The userPrincipalName
+    * @return string The userPrincipalName
     */
     public function getUserPrincipalName()
     {
@@ -212,7 +212,7 @@ class AzureADUserFeatureUsage extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the userPrincipalName
     *
@@ -225,5 +225,5 @@ class AzureADUserFeatureUsage extends Entity
         $this->_propDict["userPrincipalName"] = $val;
         return $this;
     }
-
+    
 }

@@ -26,13 +26,14 @@ class Acl extends Entity
 
     /**
     * Gets the accessType
+    * The access granted to the identity. Possible values are: grant, deny.
     *
-    * @return AccessType|null The accessType
+    * @return AccessType The accessType
     */
     public function getAccessType()
     {
         if (array_key_exists("accessType", $this->_propDict)) {
-            if (is_a($this->_propDict["accessType"], "\Beta\Microsoft\Graph\Model\AccessType") || is_null($this->_propDict["accessType"])) {
+            if (is_a($this->_propDict["accessType"], "Beta\Microsoft\Graph\Model\AccessType")) {
                 return $this->_propDict["accessType"];
             } else {
                 $this->_propDict["accessType"] = new AccessType($this->_propDict["accessType"]);
@@ -44,6 +45,7 @@ class Acl extends Entity
 
     /**
     * Sets the accessType
+    * The access granted to the identity. Possible values are: grant, deny.
     *
     * @param AccessType $val The value to assign to the accessType
     *
@@ -54,47 +56,45 @@ class Acl extends Entity
         $this->_propDict["accessType"] = $val;
          return $this;
     }
-
     /**
     * Gets the identitySource
+    * The source of identity. Possible values are azureActiveDirectory or external.
     *
-    * @return IdentitySourceType|null The identitySource
+    * @return string The identitySource
     */
     public function getIdentitySource()
     {
         if (array_key_exists("identitySource", $this->_propDict)) {
-            if (is_a($this->_propDict["identitySource"], "\Beta\Microsoft\Graph\Model\IdentitySourceType") || is_null($this->_propDict["identitySource"])) {
-                return $this->_propDict["identitySource"];
-            } else {
-                $this->_propDict["identitySource"] = new IdentitySourceType($this->_propDict["identitySource"]);
-                return $this->_propDict["identitySource"];
-            }
+            return $this->_propDict["identitySource"];
+        } else {
+            return null;
         }
-        return null;
     }
 
     /**
     * Sets the identitySource
+    * The source of identity. Possible values are azureActiveDirectory or external.
     *
-    * @param IdentitySourceType $val The value to assign to the identitySource
+    * @param string $val The value of the identitySource
     *
-    * @return Acl The Acl
+    * @return Acl
     */
     public function setIdentitySource($val)
     {
         $this->_propDict["identitySource"] = $val;
-         return $this;
+        return $this;
     }
 
     /**
     * Gets the type
+    * The type of identity. Possible values are: user, group, everyone, everyoneExceptGuests if the identitySource is azureActiveDirectory and just group if the identitySource is external.
     *
-    * @return AclType|null The type
+    * @return AclType The type
     */
     public function getType()
     {
         if (array_key_exists("type", $this->_propDict)) {
-            if (is_a($this->_propDict["type"], "\Beta\Microsoft\Graph\Model\AclType") || is_null($this->_propDict["type"])) {
+            if (is_a($this->_propDict["type"], "Beta\Microsoft\Graph\Model\AclType")) {
                 return $this->_propDict["type"];
             } else {
                 $this->_propDict["type"] = new AclType($this->_propDict["type"]);
@@ -106,6 +106,7 @@ class Acl extends Entity
 
     /**
     * Sets the type
+    * The type of identity. Possible values are: user, group, everyone, everyoneExceptGuests if the identitySource is azureActiveDirectory and just group if the identitySource is external.
     *
     * @param AclType $val The value to assign to the type
     *
@@ -118,8 +119,9 @@ class Acl extends Entity
     }
     /**
     * Gets the value
+    * The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup.
     *
-    * @return string|null The value
+    * @return string The value
     */
     public function getValue()
     {
@@ -132,6 +134,7 @@ class Acl extends Entity
 
     /**
     * Sets the value
+    * The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup.
     *
     * @param string $val The value of the value
     *

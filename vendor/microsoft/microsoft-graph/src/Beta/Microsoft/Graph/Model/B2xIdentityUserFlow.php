@@ -26,14 +26,14 @@ class B2xIdentityUserFlow extends IdentityUserFlow
 {
     /**
     * Gets the apiConnectorConfiguration
-    * Configuration for enabling an API connector for use as part of the self-service sign-up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
+    * Configuration for enabling an API connector for use as part of the user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
     *
-    * @return UserFlowApiConnectorConfiguration|null The apiConnectorConfiguration
+    * @return UserFlowApiConnectorConfiguration The apiConnectorConfiguration
     */
     public function getApiConnectorConfiguration()
     {
         if (array_key_exists("apiConnectorConfiguration", $this->_propDict)) {
-            if (is_a($this->_propDict["apiConnectorConfiguration"], "\Beta\Microsoft\Graph\Model\UserFlowApiConnectorConfiguration") || is_null($this->_propDict["apiConnectorConfiguration"])) {
+            if (is_a($this->_propDict["apiConnectorConfiguration"], "Beta\Microsoft\Graph\Model\UserFlowApiConnectorConfiguration")) {
                 return $this->_propDict["apiConnectorConfiguration"];
             } else {
                 $this->_propDict["apiConnectorConfiguration"] = new UserFlowApiConnectorConfiguration($this->_propDict["apiConnectorConfiguration"]);
@@ -42,10 +42,10 @@ class B2xIdentityUserFlow extends IdentityUserFlow
         }
         return null;
     }
-
+    
     /**
     * Sets the apiConnectorConfiguration
-    * Configuration for enabling an API connector for use as part of the self-service sign-up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
+    * Configuration for enabling an API connector for use as part of the user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
     *
     * @param UserFlowApiConnectorConfiguration $val The apiConnectorConfiguration
     *
@@ -56,13 +56,13 @@ class B2xIdentityUserFlow extends IdentityUserFlow
         $this->_propDict["apiConnectorConfiguration"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the identityProviders
     * The identity providers included in the user flow.
      *
-     * @return array|null The identityProviders
+     * @return array The identityProviders
      */
     public function getIdentityProviders()
     {
@@ -72,27 +72,27 @@ class B2xIdentityUserFlow extends IdentityUserFlow
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the identityProviders
     * The identity providers included in the user flow.
     *
-    * @param IdentityProvider[] $val The identityProviders
+    * @param IdentityProvider $val The identityProviders
     *
     * @return B2xIdentityUserFlow
     */
     public function setIdentityProviders($val)
     {
-        $this->_propDict["identityProviders"] = $val;
+		$this->_propDict["identityProviders"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the languages
-    * The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
+    * The languages supported for customization within the user flow. Language customization is enabled by default in B2X user flow. You cannot create custom languages in B2X user flows.
      *
-     * @return array|null The languages
+     * @return array The languages
      */
     public function getLanguages()
     {
@@ -102,27 +102,27 @@ class B2xIdentityUserFlow extends IdentityUserFlow
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the languages
-    * The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
+    * The languages supported for customization within the user flow. Language customization is enabled by default in B2X user flow. You cannot create custom languages in B2X user flows.
     *
-    * @param UserFlowLanguageConfiguration[] $val The languages
+    * @param UserFlowLanguageConfiguration $val The languages
     *
     * @return B2xIdentityUserFlow
     */
     public function setLanguages($val)
     {
-        $this->_propDict["languages"] = $val;
+		$this->_propDict["languages"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the userAttributeAssignments
     * The user attribute assignments included in the user flow.
      *
-     * @return array|null The userAttributeAssignments
+     * @return array The userAttributeAssignments
      */
     public function getUserAttributeAssignments()
     {
@@ -132,47 +132,19 @@ class B2xIdentityUserFlow extends IdentityUserFlow
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the userAttributeAssignments
     * The user attribute assignments included in the user flow.
     *
-    * @param IdentityUserFlowAttributeAssignment[] $val The userAttributeAssignments
+    * @param IdentityUserFlowAttributeAssignment $val The userAttributeAssignments
     *
     * @return B2xIdentityUserFlow
     */
     public function setUserAttributeAssignments($val)
     {
-        $this->_propDict["userAttributeAssignments"] = $val;
+		$this->_propDict["userAttributeAssignments"] = $val;
         return $this;
     }
-
-
-     /**
-     * Gets the userFlowIdentityProviders
-     *
-     * @return array|null The userFlowIdentityProviders
-     */
-    public function getUserFlowIdentityProviders()
-    {
-        if (array_key_exists("userFlowIdentityProviders", $this->_propDict)) {
-           return $this->_propDict["userFlowIdentityProviders"];
-        } else {
-            return null;
-        }
-    }
-
-    /**
-    * Sets the userFlowIdentityProviders
-    *
-    * @param IdentityProviderBase[] $val The userFlowIdentityProviders
-    *
-    * @return B2xIdentityUserFlow
-    */
-    public function setUserFlowIdentityProviders($val)
-    {
-        $this->_propDict["userFlowIdentityProviders"] = $val;
-        return $this;
-    }
-
+    
 }

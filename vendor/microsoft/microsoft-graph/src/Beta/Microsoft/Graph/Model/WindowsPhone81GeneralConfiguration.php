@@ -28,7 +28,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
     * Gets the applyOnlyToWindowsPhone81
     * Value indicating whether this policy only applies to Windows Phone 8.1. This property is read-only.
     *
-    * @return bool|null The applyOnlyToWindowsPhone81
+    * @return bool The applyOnlyToWindowsPhone81
     */
     public function getApplyOnlyToWindowsPhone81()
     {
@@ -38,7 +38,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the applyOnlyToWindowsPhone81
     * Value indicating whether this policy only applies to Windows Phone 8.1. This property is read-only.
@@ -52,12 +52,12 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["applyOnlyToWindowsPhone81"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the appsBlockCopyPaste
     * Indicates whether or not to block copy paste.
     *
-    * @return bool|null The appsBlockCopyPaste
+    * @return bool The appsBlockCopyPaste
     */
     public function getAppsBlockCopyPaste()
     {
@@ -67,7 +67,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the appsBlockCopyPaste
     * Indicates whether or not to block copy paste.
@@ -81,12 +81,12 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["appsBlockCopyPaste"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the bluetoothBlocked
     * Indicates whether or not to block bluetooth.
     *
-    * @return bool|null The bluetoothBlocked
+    * @return bool The bluetoothBlocked
     */
     public function getBluetoothBlocked()
     {
@@ -96,7 +96,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the bluetoothBlocked
     * Indicates whether or not to block bluetooth.
@@ -110,12 +110,12 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["bluetoothBlocked"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the cameraBlocked
     * Indicates whether or not to block camera.
     *
-    * @return bool|null The cameraBlocked
+    * @return bool The cameraBlocked
     */
     public function getCameraBlocked()
     {
@@ -125,7 +125,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the cameraBlocked
     * Indicates whether or not to block camera.
@@ -139,12 +139,12 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["cameraBlocked"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the cellularBlockWifiTethering
     * Indicates whether or not to block Wi-Fi tethering. Has no impact if Wi-Fi is blocked.
     *
-    * @return bool|null The cellularBlockWifiTethering
+    * @return bool The cellularBlockWifiTethering
     */
     public function getCellularBlockWifiTethering()
     {
@@ -154,7 +154,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the cellularBlockWifiTethering
     * Indicates whether or not to block Wi-Fi tethering. Has no impact if Wi-Fi is blocked.
@@ -168,17 +168,17 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["cellularBlockWifiTethering"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the compliantAppListType
     * List that is in the AppComplianceList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.
     *
-    * @return AppListType|null The compliantAppListType
+    * @return AppListType The compliantAppListType
     */
     public function getCompliantAppListType()
     {
         if (array_key_exists("compliantAppListType", $this->_propDict)) {
-            if (is_a($this->_propDict["compliantAppListType"], "\Beta\Microsoft\Graph\Model\AppListType") || is_null($this->_propDict["compliantAppListType"])) {
+            if (is_a($this->_propDict["compliantAppListType"], "Beta\Microsoft\Graph\Model\AppListType")) {
                 return $this->_propDict["compliantAppListType"];
             } else {
                 $this->_propDict["compliantAppListType"] = new AppListType($this->_propDict["compliantAppListType"]);
@@ -187,7 +187,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         }
         return null;
     }
-
+    
     /**
     * Sets the compliantAppListType
     * List that is in the AppComplianceList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.
@@ -201,13 +201,13 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["compliantAppListType"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the compliantAppsList
     * List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
      *
-     * @return array|null The compliantAppsList
+     * @return array The compliantAppsList
      */
     public function getCompliantAppsList()
     {
@@ -217,26 +217,26 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the compliantAppsList
     * List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
     *
-    * @param AppListItem[] $val The compliantAppsList
+    * @param AppListItem $val The compliantAppsList
     *
     * @return WindowsPhone81GeneralConfiguration
     */
     public function setCompliantAppsList($val)
     {
-        $this->_propDict["compliantAppsList"] = $val;
+		$this->_propDict["compliantAppsList"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the diagnosticDataBlockSubmission
     * Indicates whether or not to block diagnostic data submission.
     *
-    * @return bool|null The diagnosticDataBlockSubmission
+    * @return bool The diagnosticDataBlockSubmission
     */
     public function getDiagnosticDataBlockSubmission()
     {
@@ -246,7 +246,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the diagnosticDataBlockSubmission
     * Indicates whether or not to block diagnostic data submission.
@@ -260,12 +260,12 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["diagnosticDataBlockSubmission"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the emailBlockAddingAccounts
     * Indicates whether or not to block custom email accounts.
     *
-    * @return bool|null The emailBlockAddingAccounts
+    * @return bool The emailBlockAddingAccounts
     */
     public function getEmailBlockAddingAccounts()
     {
@@ -275,7 +275,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the emailBlockAddingAccounts
     * Indicates whether or not to block custom email accounts.
@@ -289,12 +289,12 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["emailBlockAddingAccounts"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the locationServicesBlocked
     * Indicates whether or not to block location services.
     *
-    * @return bool|null The locationServicesBlocked
+    * @return bool The locationServicesBlocked
     */
     public function getLocationServicesBlocked()
     {
@@ -304,7 +304,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the locationServicesBlocked
     * Indicates whether or not to block location services.
@@ -318,12 +318,12 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["locationServicesBlocked"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the microsoftAccountBlocked
     * Indicates whether or not to block using a Microsoft Account.
     *
-    * @return bool|null The microsoftAccountBlocked
+    * @return bool The microsoftAccountBlocked
     */
     public function getMicrosoftAccountBlocked()
     {
@@ -333,7 +333,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the microsoftAccountBlocked
     * Indicates whether or not to block using a Microsoft Account.
@@ -347,12 +347,12 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["microsoftAccountBlocked"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the nfcBlocked
     * Indicates whether or not to block Near-Field Communication.
     *
-    * @return bool|null The nfcBlocked
+    * @return bool The nfcBlocked
     */
     public function getNfcBlocked()
     {
@@ -362,7 +362,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the nfcBlocked
     * Indicates whether or not to block Near-Field Communication.
@@ -376,12 +376,12 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["nfcBlocked"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordBlockSimple
     * Indicates whether or not to block syncing the calendar.
     *
-    * @return bool|null The passwordBlockSimple
+    * @return bool The passwordBlockSimple
     */
     public function getPasswordBlockSimple()
     {
@@ -391,7 +391,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordBlockSimple
     * Indicates whether or not to block syncing the calendar.
@@ -405,12 +405,12 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["passwordBlockSimple"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordExpirationDays
     * Number of days before the password expires.
     *
-    * @return int|null The passwordExpirationDays
+    * @return int The passwordExpirationDays
     */
     public function getPasswordExpirationDays()
     {
@@ -420,7 +420,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordExpirationDays
     * Number of days before the password expires.
@@ -434,12 +434,12 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["passwordExpirationDays"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordMinimumCharacterSetCount
     * Number of character sets a password must contain.
     *
-    * @return int|null The passwordMinimumCharacterSetCount
+    * @return int The passwordMinimumCharacterSetCount
     */
     public function getPasswordMinimumCharacterSetCount()
     {
@@ -449,7 +449,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordMinimumCharacterSetCount
     * Number of character sets a password must contain.
@@ -463,12 +463,12 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["passwordMinimumCharacterSetCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordMinimumLength
     * Minimum length of passwords.
     *
-    * @return int|null The passwordMinimumLength
+    * @return int The passwordMinimumLength
     */
     public function getPasswordMinimumLength()
     {
@@ -478,7 +478,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordMinimumLength
     * Minimum length of passwords.
@@ -492,12 +492,12 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["passwordMinimumLength"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordMinutesOfInactivityBeforeScreenTimeout
     * Minutes of inactivity before screen timeout.
     *
-    * @return int|null The passwordMinutesOfInactivityBeforeScreenTimeout
+    * @return int The passwordMinutesOfInactivityBeforeScreenTimeout
     */
     public function getPasswordMinutesOfInactivityBeforeScreenTimeout()
     {
@@ -507,7 +507,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordMinutesOfInactivityBeforeScreenTimeout
     * Minutes of inactivity before screen timeout.
@@ -521,12 +521,12 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["passwordMinutesOfInactivityBeforeScreenTimeout"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordPreviousPasswordBlockCount
     * Number of previous passwords to block. Valid values 0 to 24
     *
-    * @return int|null The passwordPreviousPasswordBlockCount
+    * @return int The passwordPreviousPasswordBlockCount
     */
     public function getPasswordPreviousPasswordBlockCount()
     {
@@ -536,7 +536,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordPreviousPasswordBlockCount
     * Number of previous passwords to block. Valid values 0 to 24
@@ -550,12 +550,12 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["passwordPreviousPasswordBlockCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordRequired
     * Indicates whether or not to require a password.
     *
-    * @return bool|null The passwordRequired
+    * @return bool The passwordRequired
     */
     public function getPasswordRequired()
     {
@@ -565,7 +565,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordRequired
     * Indicates whether or not to require a password.
@@ -579,17 +579,17 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["passwordRequired"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the passwordRequiredType
     * Password type that is required. Possible values are: deviceDefault, alphanumeric, numeric.
     *
-    * @return RequiredPasswordType|null The passwordRequiredType
+    * @return RequiredPasswordType The passwordRequiredType
     */
     public function getPasswordRequiredType()
     {
         if (array_key_exists("passwordRequiredType", $this->_propDict)) {
-            if (is_a($this->_propDict["passwordRequiredType"], "\Beta\Microsoft\Graph\Model\RequiredPasswordType") || is_null($this->_propDict["passwordRequiredType"])) {
+            if (is_a($this->_propDict["passwordRequiredType"], "Beta\Microsoft\Graph\Model\RequiredPasswordType")) {
                 return $this->_propDict["passwordRequiredType"];
             } else {
                 $this->_propDict["passwordRequiredType"] = new RequiredPasswordType($this->_propDict["passwordRequiredType"]);
@@ -598,7 +598,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         }
         return null;
     }
-
+    
     /**
     * Sets the passwordRequiredType
     * Password type that is required. Possible values are: deviceDefault, alphanumeric, numeric.
@@ -612,12 +612,12 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["passwordRequiredType"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the passwordSignInFailureCountBeforeFactoryReset
     * Number of sign in failures allowed before factory reset.
     *
-    * @return int|null The passwordSignInFailureCountBeforeFactoryReset
+    * @return int The passwordSignInFailureCountBeforeFactoryReset
     */
     public function getPasswordSignInFailureCountBeforeFactoryReset()
     {
@@ -627,7 +627,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the passwordSignInFailureCountBeforeFactoryReset
     * Number of sign in failures allowed before factory reset.
@@ -641,12 +641,12 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["passwordSignInFailureCountBeforeFactoryReset"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the screenCaptureBlocked
     * Indicates whether or not to block screenshots.
     *
-    * @return bool|null The screenCaptureBlocked
+    * @return bool The screenCaptureBlocked
     */
     public function getScreenCaptureBlocked()
     {
@@ -656,7 +656,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the screenCaptureBlocked
     * Indicates whether or not to block screenshots.
@@ -670,12 +670,12 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["screenCaptureBlocked"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the storageBlockRemovableStorage
     * Indicates whether or not to block removable storage.
     *
-    * @return bool|null The storageBlockRemovableStorage
+    * @return bool The storageBlockRemovableStorage
     */
     public function getStorageBlockRemovableStorage()
     {
@@ -685,7 +685,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the storageBlockRemovableStorage
     * Indicates whether or not to block removable storage.
@@ -699,12 +699,12 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["storageBlockRemovableStorage"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the storageRequireEncryption
     * Indicates whether or not to require encryption.
     *
-    * @return bool|null The storageRequireEncryption
+    * @return bool The storageRequireEncryption
     */
     public function getStorageRequireEncryption()
     {
@@ -714,7 +714,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the storageRequireEncryption
     * Indicates whether or not to require encryption.
@@ -728,12 +728,12 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["storageRequireEncryption"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the webBrowserBlocked
     * Indicates whether or not to block the web browser.
     *
-    * @return bool|null The webBrowserBlocked
+    * @return bool The webBrowserBlocked
     */
     public function getWebBrowserBlocked()
     {
@@ -743,7 +743,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the webBrowserBlocked
     * Indicates whether or not to block the web browser.
@@ -757,12 +757,12 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["webBrowserBlocked"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the wifiBlockAutomaticConnectHotspots
     * Indicates whether or not to block automatically connecting to Wi-Fi hotspots. Has no impact if Wi-Fi is blocked.
     *
-    * @return bool|null The wifiBlockAutomaticConnectHotspots
+    * @return bool The wifiBlockAutomaticConnectHotspots
     */
     public function getWifiBlockAutomaticConnectHotspots()
     {
@@ -772,7 +772,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the wifiBlockAutomaticConnectHotspots
     * Indicates whether or not to block automatically connecting to Wi-Fi hotspots. Has no impact if Wi-Fi is blocked.
@@ -786,12 +786,12 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["wifiBlockAutomaticConnectHotspots"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the wifiBlocked
     * Indicates whether or not to block Wi-Fi.
     *
-    * @return bool|null The wifiBlocked
+    * @return bool The wifiBlocked
     */
     public function getWifiBlocked()
     {
@@ -801,7 +801,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the wifiBlocked
     * Indicates whether or not to block Wi-Fi.
@@ -815,12 +815,12 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["wifiBlocked"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the wifiBlockHotspotReporting
     * Indicates whether or not to block Wi-Fi hotspot reporting. Has no impact if Wi-Fi is blocked.
     *
-    * @return bool|null The wifiBlockHotspotReporting
+    * @return bool The wifiBlockHotspotReporting
     */
     public function getWifiBlockHotspotReporting()
     {
@@ -830,7 +830,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the wifiBlockHotspotReporting
     * Indicates whether or not to block Wi-Fi hotspot reporting. Has no impact if Wi-Fi is blocked.
@@ -844,12 +844,12 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["wifiBlockHotspotReporting"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the windowsStoreBlocked
     * Indicates whether or not to block the Windows Store.
     *
-    * @return bool|null The windowsStoreBlocked
+    * @return bool The windowsStoreBlocked
     */
     public function getWindowsStoreBlocked()
     {
@@ -859,7 +859,7 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
             return null;
         }
     }
-
+    
     /**
     * Sets the windowsStoreBlocked
     * Indicates whether or not to block the Windows Store.
@@ -873,5 +873,5 @@ class WindowsPhone81GeneralConfiguration extends DeviceConfiguration
         $this->_propDict["windowsStoreBlocked"] = boolval($val);
         return $this;
     }
-
+    
 }

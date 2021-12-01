@@ -28,12 +28,12 @@ class UserPFXCertificate extends Entity
     * Gets the createdDateTime
     * Date/time when this PFX certificate was imported.
     *
-    * @return \DateTime|null The createdDateTime
+    * @return \DateTime The createdDateTime
     */
     public function getCreatedDateTime()
     {
         if (array_key_exists("createdDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["createdDateTime"], "\DateTime") || is_null($this->_propDict["createdDateTime"])) {
+            if (is_a($this->_propDict["createdDateTime"], "\DateTime")) {
                 return $this->_propDict["createdDateTime"];
             } else {
                 $this->_propDict["createdDateTime"] = new \DateTime($this->_propDict["createdDateTime"]);
@@ -42,7 +42,7 @@ class UserPFXCertificate extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the createdDateTime
     * Date/time when this PFX certificate was imported.
@@ -56,26 +56,26 @@ class UserPFXCertificate extends Entity
         $this->_propDict["createdDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the encryptedPfxBlob
     * Encrypted PFX blob.
     *
-    * @return \GuzzleHttp\Psr7\Stream|null The encryptedPfxBlob
+    * @return \GuzzleHttp\Psr7\Stream The encryptedPfxBlob
     */
     public function getEncryptedPfxBlob()
     {
         if (array_key_exists("encryptedPfxBlob", $this->_propDict)) {
-            if (is_a($this->_propDict["encryptedPfxBlob"], "\GuzzleHttp\Psr7\Stream") || is_null($this->_propDict["encryptedPfxBlob"])) {
+            if (is_a($this->_propDict["encryptedPfxBlob"], "\GuzzleHttp\Psr7\Stream")) {
                 return $this->_propDict["encryptedPfxBlob"];
             } else {
-                $this->_propDict["encryptedPfxBlob"] = \GuzzleHttp\Psr7\Utils::streamFor($this->_propDict["encryptedPfxBlob"]);
+                $this->_propDict["encryptedPfxBlob"] = \GuzzleHttp\Psr7\stream_for($this->_propDict["encryptedPfxBlob"]);
                 return $this->_propDict["encryptedPfxBlob"];
             }
         }
         return null;
     }
-
+    
     /**
     * Sets the encryptedPfxBlob
     * Encrypted PFX blob.
@@ -89,12 +89,12 @@ class UserPFXCertificate extends Entity
         $this->_propDict["encryptedPfxBlob"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the encryptedPfxPassword
     * Encrypted PFX password.
     *
-    * @return string|null The encryptedPfxPassword
+    * @return string The encryptedPfxPassword
     */
     public function getEncryptedPfxPassword()
     {
@@ -104,7 +104,7 @@ class UserPFXCertificate extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the encryptedPfxPassword
     * Encrypted PFX password.
@@ -118,17 +118,17 @@ class UserPFXCertificate extends Entity
         $this->_propDict["encryptedPfxPassword"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the expirationDateTime
     * Certificate's validity expiration date/time.
     *
-    * @return \DateTime|null The expirationDateTime
+    * @return \DateTime The expirationDateTime
     */
     public function getExpirationDateTime()
     {
         if (array_key_exists("expirationDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["expirationDateTime"], "\DateTime") || is_null($this->_propDict["expirationDateTime"])) {
+            if (is_a($this->_propDict["expirationDateTime"], "\DateTime")) {
                 return $this->_propDict["expirationDateTime"];
             } else {
                 $this->_propDict["expirationDateTime"] = new \DateTime($this->_propDict["expirationDateTime"]);
@@ -137,7 +137,7 @@ class UserPFXCertificate extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the expirationDateTime
     * Certificate's validity expiration date/time.
@@ -151,17 +151,17 @@ class UserPFXCertificate extends Entity
         $this->_propDict["expirationDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the intendedPurpose
     * Certificate's intended purpose from the point-of-view of deployment. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.
     *
-    * @return UserPfxIntendedPurpose|null The intendedPurpose
+    * @return UserPfxIntendedPurpose The intendedPurpose
     */
     public function getIntendedPurpose()
     {
         if (array_key_exists("intendedPurpose", $this->_propDict)) {
-            if (is_a($this->_propDict["intendedPurpose"], "\Beta\Microsoft\Graph\Model\UserPfxIntendedPurpose") || is_null($this->_propDict["intendedPurpose"])) {
+            if (is_a($this->_propDict["intendedPurpose"], "Beta\Microsoft\Graph\Model\UserPfxIntendedPurpose")) {
                 return $this->_propDict["intendedPurpose"];
             } else {
                 $this->_propDict["intendedPurpose"] = new UserPfxIntendedPurpose($this->_propDict["intendedPurpose"]);
@@ -170,7 +170,7 @@ class UserPFXCertificate extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the intendedPurpose
     * Certificate's intended purpose from the point-of-view of deployment. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.
@@ -184,12 +184,12 @@ class UserPFXCertificate extends Entity
         $this->_propDict["intendedPurpose"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the keyName
     * Name of the key (within the provider) used to encrypt the blob.
     *
-    * @return string|null The keyName
+    * @return string The keyName
     */
     public function getKeyName()
     {
@@ -199,7 +199,7 @@ class UserPFXCertificate extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the keyName
     * Name of the key (within the provider) used to encrypt the blob.
@@ -213,17 +213,17 @@ class UserPFXCertificate extends Entity
         $this->_propDict["keyName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the lastModifiedDateTime
     * Date/time when this PFX certificate was last modified.
     *
-    * @return \DateTime|null The lastModifiedDateTime
+    * @return \DateTime The lastModifiedDateTime
     */
     public function getLastModifiedDateTime()
     {
         if (array_key_exists("lastModifiedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime") || is_null($this->_propDict["lastModifiedDateTime"])) {
+            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime")) {
                 return $this->_propDict["lastModifiedDateTime"];
             } else {
                 $this->_propDict["lastModifiedDateTime"] = new \DateTime($this->_propDict["lastModifiedDateTime"]);
@@ -232,7 +232,7 @@ class UserPFXCertificate extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastModifiedDateTime
     * Date/time when this PFX certificate was last modified.
@@ -246,17 +246,17 @@ class UserPFXCertificate extends Entity
         $this->_propDict["lastModifiedDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the paddingScheme
     * Padding scheme used by the provider during encryption/decryption. Possible values are: none, pkcs1, oaepSha1, oaepSha256, oaepSha384, oaepSha512.
     *
-    * @return UserPfxPaddingScheme|null The paddingScheme
+    * @return UserPfxPaddingScheme The paddingScheme
     */
     public function getPaddingScheme()
     {
         if (array_key_exists("paddingScheme", $this->_propDict)) {
-            if (is_a($this->_propDict["paddingScheme"], "\Beta\Microsoft\Graph\Model\UserPfxPaddingScheme") || is_null($this->_propDict["paddingScheme"])) {
+            if (is_a($this->_propDict["paddingScheme"], "Beta\Microsoft\Graph\Model\UserPfxPaddingScheme")) {
                 return $this->_propDict["paddingScheme"];
             } else {
                 $this->_propDict["paddingScheme"] = new UserPfxPaddingScheme($this->_propDict["paddingScheme"]);
@@ -265,7 +265,7 @@ class UserPFXCertificate extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the paddingScheme
     * Padding scheme used by the provider during encryption/decryption. Possible values are: none, pkcs1, oaepSha1, oaepSha256, oaepSha384, oaepSha512.
@@ -279,12 +279,12 @@ class UserPFXCertificate extends Entity
         $this->_propDict["paddingScheme"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the providerName
     * Crypto provider used to encrypt this blob.
     *
-    * @return string|null The providerName
+    * @return string The providerName
     */
     public function getProviderName()
     {
@@ -294,7 +294,7 @@ class UserPFXCertificate extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the providerName
     * Crypto provider used to encrypt this blob.
@@ -308,17 +308,17 @@ class UserPFXCertificate extends Entity
         $this->_propDict["providerName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the startDateTime
     * Certificate's validity start date/time.
     *
-    * @return \DateTime|null The startDateTime
+    * @return \DateTime The startDateTime
     */
     public function getStartDateTime()
     {
         if (array_key_exists("startDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["startDateTime"], "\DateTime") || is_null($this->_propDict["startDateTime"])) {
+            if (is_a($this->_propDict["startDateTime"], "\DateTime")) {
                 return $this->_propDict["startDateTime"];
             } else {
                 $this->_propDict["startDateTime"] = new \DateTime($this->_propDict["startDateTime"]);
@@ -327,7 +327,7 @@ class UserPFXCertificate extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the startDateTime
     * Certificate's validity start date/time.
@@ -341,12 +341,12 @@ class UserPFXCertificate extends Entity
         $this->_propDict["startDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the thumbprint
     * SHA-1 thumbprint of the PFX certificate.
     *
-    * @return string|null The thumbprint
+    * @return string The thumbprint
     */
     public function getThumbprint()
     {
@@ -356,7 +356,7 @@ class UserPFXCertificate extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the thumbprint
     * SHA-1 thumbprint of the PFX certificate.
@@ -370,12 +370,12 @@ class UserPFXCertificate extends Entity
         $this->_propDict["thumbprint"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the userPrincipalName
     * User Principal Name of the PFX certificate.
     *
-    * @return string|null The userPrincipalName
+    * @return string The userPrincipalName
     */
     public function getUserPrincipalName()
     {
@@ -385,7 +385,7 @@ class UserPFXCertificate extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the userPrincipalName
     * User Principal Name of the PFX certificate.
@@ -399,5 +399,5 @@ class UserPFXCertificate extends Entity
         $this->_propDict["userPrincipalName"] = $val;
         return $this;
     }
-
+    
 }

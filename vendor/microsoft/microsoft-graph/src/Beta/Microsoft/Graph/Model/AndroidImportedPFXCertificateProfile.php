@@ -28,12 +28,12 @@ class AndroidImportedPFXCertificateProfile extends AndroidCertificateProfileBase
     * Gets the intendedPurpose
     * Intended Purpose of the Certificate Profile - which could be Unassigned, SmimeEncryption, SmimeSigning etc. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.
     *
-    * @return IntendedPurpose|null The intendedPurpose
+    * @return IntendedPurpose The intendedPurpose
     */
     public function getIntendedPurpose()
     {
         if (array_key_exists("intendedPurpose", $this->_propDict)) {
-            if (is_a($this->_propDict["intendedPurpose"], "\Beta\Microsoft\Graph\Model\IntendedPurpose") || is_null($this->_propDict["intendedPurpose"])) {
+            if (is_a($this->_propDict["intendedPurpose"], "Beta\Microsoft\Graph\Model\IntendedPurpose")) {
                 return $this->_propDict["intendedPurpose"];
             } else {
                 $this->_propDict["intendedPurpose"] = new IntendedPurpose($this->_propDict["intendedPurpose"]);
@@ -42,7 +42,7 @@ class AndroidImportedPFXCertificateProfile extends AndroidCertificateProfileBase
         }
         return null;
     }
-
+    
     /**
     * Sets the intendedPurpose
     * Intended Purpose of the Certificate Profile - which could be Unassigned, SmimeEncryption, SmimeSigning etc. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.
@@ -56,13 +56,13 @@ class AndroidImportedPFXCertificateProfile extends AndroidCertificateProfileBase
         $this->_propDict["intendedPurpose"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the managedDeviceCertificateStates
-    * Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
+    * Certificate state for devices
      *
-     * @return array|null The managedDeviceCertificateStates
+     * @return array The managedDeviceCertificateStates
      */
     public function getManagedDeviceCertificateStates()
     {
@@ -72,19 +72,19 @@ class AndroidImportedPFXCertificateProfile extends AndroidCertificateProfileBase
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the managedDeviceCertificateStates
-    * Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
+    * Certificate state for devices
     *
-    * @param ManagedDeviceCertificateState[] $val The managedDeviceCertificateStates
+    * @param ManagedDeviceCertificateState $val The managedDeviceCertificateStates
     *
     * @return AndroidImportedPFXCertificateProfile
     */
     public function setManagedDeviceCertificateStates($val)
     {
-        $this->_propDict["managedDeviceCertificateStates"] = $val;
+		$this->_propDict["managedDeviceCertificateStates"] = $val;
         return $this;
     }
-
+    
 }

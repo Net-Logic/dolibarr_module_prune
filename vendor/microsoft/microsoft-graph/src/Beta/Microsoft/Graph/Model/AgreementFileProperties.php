@@ -27,12 +27,12 @@ class AgreementFileProperties extends Entity
     /**
     * Gets the createdDateTime
     *
-    * @return \DateTime|null The createdDateTime
+    * @return \DateTime The createdDateTime
     */
     public function getCreatedDateTime()
     {
         if (array_key_exists("createdDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["createdDateTime"], "\DateTime") || is_null($this->_propDict["createdDateTime"])) {
+            if (is_a($this->_propDict["createdDateTime"], "\DateTime")) {
                 return $this->_propDict["createdDateTime"];
             } else {
                 $this->_propDict["createdDateTime"] = new \DateTime($this->_propDict["createdDateTime"]);
@@ -41,7 +41,7 @@ class AgreementFileProperties extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the createdDateTime
     *
@@ -54,43 +54,16 @@ class AgreementFileProperties extends Entity
         $this->_propDict["createdDateTime"] = $val;
         return $this;
     }
-
-    /**
-    * Gets the displayName
-    *
-    * @return string|null The displayName
-    */
-    public function getDisplayName()
-    {
-        if (array_key_exists("displayName", $this->_propDict)) {
-            return $this->_propDict["displayName"];
-        } else {
-            return null;
-        }
-    }
-
-    /**
-    * Sets the displayName
-    *
-    * @param string $val The displayName
-    *
-    * @return AgreementFileProperties
-    */
-    public function setDisplayName($val)
-    {
-        $this->_propDict["displayName"] = $val;
-        return $this;
-    }
-
+    
     /**
     * Gets the fileData
     *
-    * @return AgreementFileData|null The fileData
+    * @return AgreementFileData The fileData
     */
     public function getFileData()
     {
         if (array_key_exists("fileData", $this->_propDict)) {
-            if (is_a($this->_propDict["fileData"], "\Beta\Microsoft\Graph\Model\AgreementFileData") || is_null($this->_propDict["fileData"])) {
+            if (is_a($this->_propDict["fileData"], "Beta\Microsoft\Graph\Model\AgreementFileData")) {
                 return $this->_propDict["fileData"];
             } else {
                 $this->_propDict["fileData"] = new AgreementFileData($this->_propDict["fileData"]);
@@ -99,7 +72,7 @@ class AgreementFileProperties extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the fileData
     *
@@ -112,11 +85,11 @@ class AgreementFileProperties extends Entity
         $this->_propDict["fileData"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the fileName
     *
-    * @return string|null The fileName
+    * @return string The fileName
     */
     public function getFileName()
     {
@@ -126,7 +99,7 @@ class AgreementFileProperties extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the fileName
     *
@@ -139,11 +112,11 @@ class AgreementFileProperties extends Entity
         $this->_propDict["fileName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the isDefault
     *
-    * @return bool|null The isDefault
+    * @return bool The isDefault
     */
     public function getIsDefault()
     {
@@ -153,7 +126,7 @@ class AgreementFileProperties extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the isDefault
     *
@@ -166,11 +139,11 @@ class AgreementFileProperties extends Entity
         $this->_propDict["isDefault"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the isMajorVersion
     *
-    * @return bool|null The isMajorVersion
+    * @return bool The isMajorVersion
     */
     public function getIsMajorVersion()
     {
@@ -180,7 +153,7 @@ class AgreementFileProperties extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the isMajorVersion
     *
@@ -193,11 +166,11 @@ class AgreementFileProperties extends Entity
         $this->_propDict["isMajorVersion"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the language
     *
-    * @return string|null The language
+    * @return string The language
     */
     public function getLanguage()
     {
@@ -207,7 +180,7 @@ class AgreementFileProperties extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the language
     *
@@ -220,5 +193,5 @@ class AgreementFileProperties extends Entity
         $this->_propDict["language"] = $val;
         return $this;
     }
-
+    
 }

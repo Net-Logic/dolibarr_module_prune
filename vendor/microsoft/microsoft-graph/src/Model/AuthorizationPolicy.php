@@ -28,7 +28,7 @@ class AuthorizationPolicy extends PolicyBase
     * Gets the allowedToSignUpEmailBasedSubscriptions
     * Indicates whether users can sign up for email based subscriptions.
     *
-    * @return bool|null The allowedToSignUpEmailBasedSubscriptions
+    * @return bool The allowedToSignUpEmailBasedSubscriptions
     */
     public function getAllowedToSignUpEmailBasedSubscriptions()
     {
@@ -38,7 +38,7 @@ class AuthorizationPolicy extends PolicyBase
             return null;
         }
     }
-
+    
     /**
     * Sets the allowedToSignUpEmailBasedSubscriptions
     * Indicates whether users can sign up for email based subscriptions.
@@ -52,12 +52,12 @@ class AuthorizationPolicy extends PolicyBase
         $this->_propDict["allowedToSignUpEmailBasedSubscriptions"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the allowedToUseSSPR
     * Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.
     *
-    * @return bool|null The allowedToUseSSPR
+    * @return bool The allowedToUseSSPR
     */
     public function getAllowedToUseSSPR()
     {
@@ -67,7 +67,7 @@ class AuthorizationPolicy extends PolicyBase
             return null;
         }
     }
-
+    
     /**
     * Sets the allowedToUseSSPR
     * Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.
@@ -81,12 +81,12 @@ class AuthorizationPolicy extends PolicyBase
         $this->_propDict["allowedToUseSSPR"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the allowEmailVerifiedUsersToJoinOrganization
     * Indicates whether a user can join the tenant by email validation.
     *
-    * @return bool|null The allowEmailVerifiedUsersToJoinOrganization
+    * @return bool The allowEmailVerifiedUsersToJoinOrganization
     */
     public function getAllowEmailVerifiedUsersToJoinOrganization()
     {
@@ -96,7 +96,7 @@ class AuthorizationPolicy extends PolicyBase
             return null;
         }
     }
-
+    
     /**
     * Sets the allowEmailVerifiedUsersToJoinOrganization
     * Indicates whether a user can join the tenant by email validation.
@@ -110,17 +110,17 @@ class AuthorizationPolicy extends PolicyBase
         $this->_propDict["allowEmailVerifiedUsersToJoinOrganization"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the allowInvitesFrom
-    * Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. See more in the table below.
+    * Indicates who can invite external users to the organization. Possible values are:none - Prevent everyone, including admins, from inviting external users. Default setting for US Government.adminsAndGuestInviters - Allow members of Global Administrators, User Administrators, and Guest Inviter roles to invite external users.adminsGuestInvitersAndAllMembers - Allow the above admin roles and all other User role members to invite external users.everyone - Allow everyone in the organization, including guest users, to invite external users. Default setting for all cloud environments except US Government.
     *
-    * @return AllowInvitesFrom|null The allowInvitesFrom
+    * @return AllowInvitesFrom The allowInvitesFrom
     */
     public function getAllowInvitesFrom()
     {
         if (array_key_exists("allowInvitesFrom", $this->_propDict)) {
-            if (is_a($this->_propDict["allowInvitesFrom"], "\Microsoft\Graph\Model\AllowInvitesFrom") || is_null($this->_propDict["allowInvitesFrom"])) {
+            if (is_a($this->_propDict["allowInvitesFrom"], "Microsoft\Graph\Model\AllowInvitesFrom")) {
                 return $this->_propDict["allowInvitesFrom"];
             } else {
                 $this->_propDict["allowInvitesFrom"] = new AllowInvitesFrom($this->_propDict["allowInvitesFrom"]);
@@ -129,10 +129,10 @@ class AuthorizationPolicy extends PolicyBase
         }
         return null;
     }
-
+    
     /**
     * Sets the allowInvitesFrom
-    * Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. See more in the table below.
+    * Indicates who can invite external users to the organization. Possible values are:none - Prevent everyone, including admins, from inviting external users. Default setting for US Government.adminsAndGuestInviters - Allow members of Global Administrators, User Administrators, and Guest Inviter roles to invite external users.adminsGuestInvitersAndAllMembers - Allow the above admin roles and all other User role members to invite external users.everyone - Allow everyone in the organization, including guest users, to invite external users. Default setting for all cloud environments except US Government.
     *
     * @param AllowInvitesFrom $val The allowInvitesFrom
     *
@@ -143,12 +143,12 @@ class AuthorizationPolicy extends PolicyBase
         $this->_propDict["allowInvitesFrom"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the blockMsolPowerShell
-    * To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
+    * To disable the use of MSOL PowerShell set this property to true. Setting to true will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
     *
-    * @return bool|null The blockMsolPowerShell
+    * @return bool The blockMsolPowerShell
     */
     public function getBlockMsolPowerShell()
     {
@@ -158,10 +158,10 @@ class AuthorizationPolicy extends PolicyBase
             return null;
         }
     }
-
+    
     /**
     * Sets the blockMsolPowerShell
-    * To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
+    * To disable the use of MSOL PowerShell set this property to true. Setting to true will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
     *
     * @param bool $val The blockMsolPowerShell
     *
@@ -172,17 +172,17 @@ class AuthorizationPolicy extends PolicyBase
         $this->_propDict["blockMsolPowerShell"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the defaultUserRolePermissions
     * Specifies certain customizable permissions for default user role.
     *
-    * @return DefaultUserRolePermissions|null The defaultUserRolePermissions
+    * @return DefaultUserRolePermissions The defaultUserRolePermissions
     */
     public function getDefaultUserRolePermissions()
     {
         if (array_key_exists("defaultUserRolePermissions", $this->_propDict)) {
-            if (is_a($this->_propDict["defaultUserRolePermissions"], "\Microsoft\Graph\Model\DefaultUserRolePermissions") || is_null($this->_propDict["defaultUserRolePermissions"])) {
+            if (is_a($this->_propDict["defaultUserRolePermissions"], "Microsoft\Graph\Model\DefaultUserRolePermissions")) {
                 return $this->_propDict["defaultUserRolePermissions"];
             } else {
                 $this->_propDict["defaultUserRolePermissions"] = new DefaultUserRolePermissions($this->_propDict["defaultUserRolePermissions"]);
@@ -191,7 +191,7 @@ class AuthorizationPolicy extends PolicyBase
         }
         return null;
     }
-
+    
     /**
     * Sets the defaultUserRolePermissions
     * Specifies certain customizable permissions for default user role.
@@ -205,34 +205,5 @@ class AuthorizationPolicy extends PolicyBase
         $this->_propDict["defaultUserRolePermissions"] = $val;
         return $this;
     }
-
-    /**
-    * Gets the guestUserRoleId
-    * Represents role templateId for the role that should be granted to guest user. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
-    *
-    * @return string|null The guestUserRoleId
-    */
-    public function getGuestUserRoleId()
-    {
-        if (array_key_exists("guestUserRoleId", $this->_propDict)) {
-            return $this->_propDict["guestUserRoleId"];
-        } else {
-            return null;
-        }
-    }
-
-    /**
-    * Sets the guestUserRoleId
-    * Represents role templateId for the role that should be granted to guest user. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
-    *
-    * @param string $val The guestUserRoleId
-    *
-    * @return AuthorizationPolicy
-    */
-    public function setGuestUserRoleId($val)
-    {
-        $this->_propDict["guestUserRoleId"] = $val;
-        return $this;
-    }
-
+    
 }

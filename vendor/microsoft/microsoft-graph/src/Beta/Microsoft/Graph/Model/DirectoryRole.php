@@ -28,7 +28,7 @@ class DirectoryRole extends DirectoryObject
     * Gets the description
     * The description for the directory role. Read-only.
     *
-    * @return string|null The description
+    * @return string The description
     */
     public function getDescription()
     {
@@ -38,7 +38,7 @@ class DirectoryRole extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the description
     * The description for the directory role. Read-only.
@@ -52,12 +52,12 @@ class DirectoryRole extends DirectoryObject
         $this->_propDict["description"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the displayName
     * The display name for the directory role. Read-only.
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -67,7 +67,7 @@ class DirectoryRole extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the displayName
     * The display name for the directory role. Read-only.
@@ -81,12 +81,12 @@ class DirectoryRole extends DirectoryObject
         $this->_propDict["displayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the roleTemplateId
     * The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only.
     *
-    * @return string|null The roleTemplateId
+    * @return string The roleTemplateId
     */
     public function getRoleTemplateId()
     {
@@ -96,7 +96,7 @@ class DirectoryRole extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the roleTemplateId
     * The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only.
@@ -110,13 +110,13 @@ class DirectoryRole extends DirectoryObject
         $this->_propDict["roleTemplateId"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the members
     * Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable.
      *
-     * @return array|null The members
+     * @return array The members
      */
     public function getMembers()
     {
@@ -126,27 +126,27 @@ class DirectoryRole extends DirectoryObject
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the members
     * Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable.
     *
-    * @param DirectoryObject[] $val The members
+    * @param DirectoryObject $val The members
     *
     * @return DirectoryRole
     */
     public function setMembers($val)
     {
-        $this->_propDict["members"] = $val;
+		$this->_propDict["members"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the scopedMembers
     * Members of this directory role that are scoped to administrative units. Read-only. Nullable.
      *
-     * @return array|null The scopedMembers
+     * @return array The scopedMembers
      */
     public function getScopedMembers()
     {
@@ -156,19 +156,19 @@ class DirectoryRole extends DirectoryObject
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the scopedMembers
     * Members of this directory role that are scoped to administrative units. Read-only. Nullable.
     *
-    * @param ScopedRoleMembership[] $val The scopedMembers
+    * @param ScopedRoleMembership $val The scopedMembers
     *
     * @return DirectoryRole
     */
     public function setScopedMembers($val)
     {
-        $this->_propDict["scopedMembers"] = $val;
+		$this->_propDict["scopedMembers"] = $val;
         return $this;
     }
-
+    
 }

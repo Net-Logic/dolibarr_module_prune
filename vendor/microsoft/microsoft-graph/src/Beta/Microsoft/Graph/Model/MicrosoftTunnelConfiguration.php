@@ -25,11 +25,11 @@ namespace Beta\Microsoft\Graph\Model;
 class MicrosoftTunnelConfiguration extends Entity
 {
 
-     /**
+     /** 
      * Gets the advancedSettings
     * Additional settings that may be applied to the server
      *
-     * @return array|null The advancedSettings
+     * @return array The advancedSettings
      */
     public function getAdvancedSettings()
     {
@@ -39,26 +39,26 @@ class MicrosoftTunnelConfiguration extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the advancedSettings
     * Additional settings that may be applied to the server
     *
-    * @param KeyValuePair[] $val The advancedSettings
+    * @param KeyValuePair $val The advancedSettings
     *
     * @return MicrosoftTunnelConfiguration
     */
     public function setAdvancedSettings($val)
     {
-        $this->_propDict["advancedSettings"] = $val;
+		$this->_propDict["advancedSettings"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the defaultDomainSuffix
     * The Default Domain appendix that will be used by the clients
     *
-    * @return string|null The defaultDomainSuffix
+    * @return string The defaultDomainSuffix
     */
     public function getDefaultDomainSuffix()
     {
@@ -68,7 +68,7 @@ class MicrosoftTunnelConfiguration extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the defaultDomainSuffix
     * The Default Domain appendix that will be used by the clients
@@ -82,12 +82,12 @@ class MicrosoftTunnelConfiguration extends Entity
         $this->_propDict["defaultDomainSuffix"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the description
     * The MicrosoftTunnelConfiguration's description
     *
-    * @return string|null The description
+    * @return string The description
     */
     public function getDescription()
     {
@@ -97,7 +97,7 @@ class MicrosoftTunnelConfiguration extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the description
     * The MicrosoftTunnelConfiguration's description
@@ -111,41 +111,12 @@ class MicrosoftTunnelConfiguration extends Entity
         $this->_propDict["description"] = $val;
         return $this;
     }
-
-    /**
-    * Gets the disableUDPConnections
-    * When DisableUDPConnections is set, the clients and VPN server will not use DTLS connctions to tansfer data.
-    *
-    * @return bool|null The disableUDPConnections
-    */
-    public function getDisableUDPConnections()
-    {
-        if (array_key_exists("disableUDPConnections", $this->_propDict)) {
-            return $this->_propDict["disableUDPConnections"];
-        } else {
-            return null;
-        }
-    }
-
-    /**
-    * Sets the disableUDPConnections
-    * When DisableUDPConnections is set, the clients and VPN server will not use DTLS connctions to tansfer data.
-    *
-    * @param bool $val The disableUDPConnections
-    *
-    * @return MicrosoftTunnelConfiguration
-    */
-    public function setDisableUDPConnections($val)
-    {
-        $this->_propDict["disableUDPConnections"] = boolval($val);
-        return $this;
-    }
-
+    
     /**
     * Gets the displayName
     * The MicrosoftTunnelConfiguration's display name
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -155,7 +126,7 @@ class MicrosoftTunnelConfiguration extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the displayName
     * The MicrosoftTunnelConfiguration's display name
@@ -169,12 +140,12 @@ class MicrosoftTunnelConfiguration extends Entity
         $this->_propDict["displayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the dnsServers
     * The DNS servers that will be used by the clients
     *
-    * @return string|null The dnsServers
+    * @return string The dnsServers
     */
     public function getDnsServers()
     {
@@ -184,7 +155,7 @@ class MicrosoftTunnelConfiguration extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the dnsServers
     * The DNS servers that will be used by the clients
@@ -198,17 +169,17 @@ class MicrosoftTunnelConfiguration extends Entity
         $this->_propDict["dnsServers"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the lastUpdateDateTime
     * When the MicrosoftTunnelConfiguration was last updated
     *
-    * @return \DateTime|null The lastUpdateDateTime
+    * @return \DateTime The lastUpdateDateTime
     */
     public function getLastUpdateDateTime()
     {
         if (array_key_exists("lastUpdateDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastUpdateDateTime"], "\DateTime") || is_null($this->_propDict["lastUpdateDateTime"])) {
+            if (is_a($this->_propDict["lastUpdateDateTime"], "\DateTime")) {
                 return $this->_propDict["lastUpdateDateTime"];
             } else {
                 $this->_propDict["lastUpdateDateTime"] = new \DateTime($this->_propDict["lastUpdateDateTime"]);
@@ -217,7 +188,7 @@ class MicrosoftTunnelConfiguration extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastUpdateDateTime
     * When the MicrosoftTunnelConfiguration was last updated
@@ -231,12 +202,12 @@ class MicrosoftTunnelConfiguration extends Entity
         $this->_propDict["lastUpdateDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the listenPort
     * The port that both TCP and UPD will listen over on the server
     *
-    * @return int|null The listenPort
+    * @return int The listenPort
     */
     public function getListenPort()
     {
@@ -246,7 +217,7 @@ class MicrosoftTunnelConfiguration extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the listenPort
     * The port that both TCP and UPD will listen over on the server
@@ -260,12 +231,12 @@ class MicrosoftTunnelConfiguration extends Entity
         $this->_propDict["listenPort"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the network
     * The subnet that will be used to allocate virtual address for the clients
     *
-    * @return string|null The network
+    * @return string The network
     */
     public function getNetwork()
     {
@@ -275,7 +246,7 @@ class MicrosoftTunnelConfiguration extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the network
     * The subnet that will be used to allocate virtual address for the clients
@@ -289,12 +260,12 @@ class MicrosoftTunnelConfiguration extends Entity
         $this->_propDict["network"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the roleScopeTagIds
     * List of Scope Tags for this Entity instance.
     *
-    * @return string|null The roleScopeTagIds
+    * @return string The roleScopeTagIds
     */
     public function getRoleScopeTagIds()
     {
@@ -304,7 +275,7 @@ class MicrosoftTunnelConfiguration extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the roleScopeTagIds
     * List of Scope Tags for this Entity instance.
@@ -318,12 +289,12 @@ class MicrosoftTunnelConfiguration extends Entity
         $this->_propDict["roleScopeTagIds"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the routesExclude
     * Subsets of the routes that will not be routed by the server
     *
-    * @return string|null The routesExclude
+    * @return string The routesExclude
     */
     public function getRoutesExclude()
     {
@@ -333,7 +304,7 @@ class MicrosoftTunnelConfiguration extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the routesExclude
     * Subsets of the routes that will not be routed by the server
@@ -347,12 +318,12 @@ class MicrosoftTunnelConfiguration extends Entity
         $this->_propDict["routesExclude"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the routesInclude
     * The routs that will be routed by the server
     *
-    * @return string|null The routesInclude
+    * @return string The routesInclude
     */
     public function getRoutesInclude()
     {
@@ -362,7 +333,7 @@ class MicrosoftTunnelConfiguration extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the routesInclude
     * The routs that will be routed by the server
@@ -376,12 +347,12 @@ class MicrosoftTunnelConfiguration extends Entity
         $this->_propDict["routesInclude"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the splitDNS
     * The domains that will be resolved using the provided dns servers
     *
-    * @return string|null The splitDNS
+    * @return string The splitDNS
     */
     public function getSplitDNS()
     {
@@ -391,7 +362,7 @@ class MicrosoftTunnelConfiguration extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the splitDNS
     * The domains that will be resolved using the provided dns servers
@@ -405,5 +376,5 @@ class MicrosoftTunnelConfiguration extends Entity
         $this->_propDict["splitDNS"] = $val;
         return $this;
     }
-
+    
 }

@@ -28,7 +28,7 @@ class WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary exten
     * Gets the deployedDeviceCount
     * Number of Devices that have successfully deployed this WindowsDefenderApplicationControl supplemental policy.
     *
-    * @return int|null The deployedDeviceCount
+    * @return int The deployedDeviceCount
     */
     public function getDeployedDeviceCount()
     {
@@ -38,7 +38,7 @@ class WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary exten
             return null;
         }
     }
-
+    
     /**
     * Sets the deployedDeviceCount
     * Number of Devices that have successfully deployed this WindowsDefenderApplicationControl supplemental policy.
@@ -52,12 +52,12 @@ class WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary exten
         $this->_propDict["deployedDeviceCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the failedDeviceCount
     * Number of Devices that have failed to deploy this WindowsDefenderApplicationControl supplemental policy.
     *
-    * @return int|null The failedDeviceCount
+    * @return int The failedDeviceCount
     */
     public function getFailedDeviceCount()
     {
@@ -67,7 +67,7 @@ class WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary exten
             return null;
         }
     }
-
+    
     /**
     * Sets the failedDeviceCount
     * Number of Devices that have failed to deploy this WindowsDefenderApplicationControl supplemental policy.
@@ -81,5 +81,5 @@ class WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary exten
         $this->_propDict["failedDeviceCount"] = intval($val);
         return $this;
     }
-
+    
 }

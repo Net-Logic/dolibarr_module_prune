@@ -28,7 +28,7 @@ class UserExperienceAnalyticsMetric extends Entity
     * Gets the unit
     * The unit of the user experience analytics metric.
     *
-    * @return string|null The unit
+    * @return string The unit
     */
     public function getUnit()
     {
@@ -38,7 +38,7 @@ class UserExperienceAnalyticsMetric extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the unit
     * The unit of the user experience analytics metric.
@@ -52,12 +52,12 @@ class UserExperienceAnalyticsMetric extends Entity
         $this->_propDict["unit"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the value
     * The value of the user experience analytics metric.
     *
-    * @return float|null The value
+    * @return float The value
     */
     public function getValue()
     {
@@ -67,7 +67,7 @@ class UserExperienceAnalyticsMetric extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the value
     * The value of the user experience analytics metric.
@@ -78,8 +78,8 @@ class UserExperienceAnalyticsMetric extends Entity
     */
     public function setValue($val)
     {
-        $this->_propDict["value"] = floatval($val);
+        $this->_propDict["value"] = $val;
         return $this;
     }
-
+    
 }

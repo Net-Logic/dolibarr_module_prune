@@ -28,7 +28,7 @@ class DeviceConfigurationDeviceStateSummary extends Entity
     * Gets the compliantDeviceCount
     * Number of compliant devices
     *
-    * @return int|null The compliantDeviceCount
+    * @return int The compliantDeviceCount
     */
     public function getCompliantDeviceCount()
     {
@@ -38,7 +38,7 @@ class DeviceConfigurationDeviceStateSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the compliantDeviceCount
     * Number of compliant devices
@@ -52,12 +52,12 @@ class DeviceConfigurationDeviceStateSummary extends Entity
         $this->_propDict["compliantDeviceCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the conflictDeviceCount
     * Number of conflict devices
     *
-    * @return int|null The conflictDeviceCount
+    * @return int The conflictDeviceCount
     */
     public function getConflictDeviceCount()
     {
@@ -67,7 +67,7 @@ class DeviceConfigurationDeviceStateSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the conflictDeviceCount
     * Number of conflict devices
@@ -81,12 +81,12 @@ class DeviceConfigurationDeviceStateSummary extends Entity
         $this->_propDict["conflictDeviceCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the errorDeviceCount
     * Number of error devices
     *
-    * @return int|null The errorDeviceCount
+    * @return int The errorDeviceCount
     */
     public function getErrorDeviceCount()
     {
@@ -96,7 +96,7 @@ class DeviceConfigurationDeviceStateSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the errorDeviceCount
     * Number of error devices
@@ -110,12 +110,12 @@ class DeviceConfigurationDeviceStateSummary extends Entity
         $this->_propDict["errorDeviceCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the nonCompliantDeviceCount
     * Number of NonCompliant devices
     *
-    * @return int|null The nonCompliantDeviceCount
+    * @return int The nonCompliantDeviceCount
     */
     public function getNonCompliantDeviceCount()
     {
@@ -125,7 +125,7 @@ class DeviceConfigurationDeviceStateSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the nonCompliantDeviceCount
     * Number of NonCompliant devices
@@ -139,12 +139,12 @@ class DeviceConfigurationDeviceStateSummary extends Entity
         $this->_propDict["nonCompliantDeviceCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the notApplicableDeviceCount
     * Number of not applicable devices
     *
-    * @return int|null The notApplicableDeviceCount
+    * @return int The notApplicableDeviceCount
     */
     public function getNotApplicableDeviceCount()
     {
@@ -154,7 +154,7 @@ class DeviceConfigurationDeviceStateSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the notApplicableDeviceCount
     * Number of not applicable devices
@@ -168,12 +168,12 @@ class DeviceConfigurationDeviceStateSummary extends Entity
         $this->_propDict["notApplicableDeviceCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the remediatedDeviceCount
     * Number of remediated devices
     *
-    * @return int|null The remediatedDeviceCount
+    * @return int The remediatedDeviceCount
     */
     public function getRemediatedDeviceCount()
     {
@@ -183,7 +183,7 @@ class DeviceConfigurationDeviceStateSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the remediatedDeviceCount
     * Number of remediated devices
@@ -197,12 +197,12 @@ class DeviceConfigurationDeviceStateSummary extends Entity
         $this->_propDict["remediatedDeviceCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the unknownDeviceCount
     * Number of unknown devices
     *
-    * @return int|null The unknownDeviceCount
+    * @return int The unknownDeviceCount
     */
     public function getUnknownDeviceCount()
     {
@@ -212,7 +212,7 @@ class DeviceConfigurationDeviceStateSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the unknownDeviceCount
     * Number of unknown devices
@@ -226,5 +226,5 @@ class DeviceConfigurationDeviceStateSummary extends Entity
         $this->_propDict["unknownDeviceCount"] = intval($val);
         return $this;
     }
-
+    
 }

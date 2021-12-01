@@ -26,14 +26,13 @@ class UnifiedRoleManagementPolicyApprovalRule extends UnifiedRoleManagementPolic
 {
     /**
     * Gets the setting
-    * The approval setting for the rule.
     *
-    * @return ApprovalSettings|null The setting
+    * @return ApprovalSettings The setting
     */
     public function getSetting()
     {
         if (array_key_exists("setting", $this->_propDict)) {
-            if (is_a($this->_propDict["setting"], "\Beta\Microsoft\Graph\Model\ApprovalSettings") || is_null($this->_propDict["setting"])) {
+            if (is_a($this->_propDict["setting"], "Beta\Microsoft\Graph\Model\ApprovalSettings")) {
                 return $this->_propDict["setting"];
             } else {
                 $this->_propDict["setting"] = new ApprovalSettings($this->_propDict["setting"]);
@@ -42,10 +41,9 @@ class UnifiedRoleManagementPolicyApprovalRule extends UnifiedRoleManagementPolic
         }
         return null;
     }
-
+    
     /**
     * Sets the setting
-    * The approval setting for the rule.
     *
     * @param ApprovalSettings $val The setting
     *
@@ -56,5 +54,5 @@ class UnifiedRoleManagementPolicyApprovalRule extends UnifiedRoleManagementPolic
         $this->_propDict["setting"] = $val;
         return $this;
     }
-
+    
 }

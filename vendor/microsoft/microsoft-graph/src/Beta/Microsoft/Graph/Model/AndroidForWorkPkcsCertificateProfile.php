@@ -28,7 +28,7 @@ class AndroidForWorkPkcsCertificateProfile extends AndroidForWorkCertificateProf
     * Gets the certificateTemplateName
     * PKCS Certificate Template Name
     *
-    * @return string|null The certificateTemplateName
+    * @return string The certificateTemplateName
     */
     public function getCertificateTemplateName()
     {
@@ -38,7 +38,7 @@ class AndroidForWorkPkcsCertificateProfile extends AndroidForWorkCertificateProf
             return null;
         }
     }
-
+    
     /**
     * Sets the certificateTemplateName
     * PKCS Certificate Template Name
@@ -52,12 +52,12 @@ class AndroidForWorkPkcsCertificateProfile extends AndroidForWorkCertificateProf
         $this->_propDict["certificateTemplateName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the certificationAuthority
     * PKCS Certification Authority
     *
-    * @return string|null The certificationAuthority
+    * @return string The certificationAuthority
     */
     public function getCertificationAuthority()
     {
@@ -67,7 +67,7 @@ class AndroidForWorkPkcsCertificateProfile extends AndroidForWorkCertificateProf
             return null;
         }
     }
-
+    
     /**
     * Sets the certificationAuthority
     * PKCS Certification Authority
@@ -81,12 +81,12 @@ class AndroidForWorkPkcsCertificateProfile extends AndroidForWorkCertificateProf
         $this->_propDict["certificationAuthority"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the certificationAuthorityName
     * PKCS Certification Authority Name
     *
-    * @return string|null The certificationAuthorityName
+    * @return string The certificationAuthorityName
     */
     public function getCertificationAuthorityName()
     {
@@ -96,7 +96,7 @@ class AndroidForWorkPkcsCertificateProfile extends AndroidForWorkCertificateProf
             return null;
         }
     }
-
+    
     /**
     * Sets the certificationAuthorityName
     * PKCS Certification Authority Name
@@ -110,12 +110,12 @@ class AndroidForWorkPkcsCertificateProfile extends AndroidForWorkCertificateProf
         $this->_propDict["certificationAuthorityName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the subjectAlternativeNameFormatString
     * Custom String that defines the AAD Attribute.
     *
-    * @return string|null The subjectAlternativeNameFormatString
+    * @return string The subjectAlternativeNameFormatString
     */
     public function getSubjectAlternativeNameFormatString()
     {
@@ -125,7 +125,7 @@ class AndroidForWorkPkcsCertificateProfile extends AndroidForWorkCertificateProf
             return null;
         }
     }
-
+    
     /**
     * Sets the subjectAlternativeNameFormatString
     * Custom String that defines the AAD Attribute.
@@ -139,13 +139,13 @@ class AndroidForWorkPkcsCertificateProfile extends AndroidForWorkCertificateProf
         $this->_propDict["subjectAlternativeNameFormatString"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the managedDeviceCertificateStates
-    * Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
+    * Certificate state for devices
      *
-     * @return array|null The managedDeviceCertificateStates
+     * @return array The managedDeviceCertificateStates
      */
     public function getManagedDeviceCertificateStates()
     {
@@ -155,19 +155,19 @@ class AndroidForWorkPkcsCertificateProfile extends AndroidForWorkCertificateProf
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the managedDeviceCertificateStates
-    * Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
+    * Certificate state for devices
     *
-    * @param ManagedDeviceCertificateState[] $val The managedDeviceCertificateStates
+    * @param ManagedDeviceCertificateState $val The managedDeviceCertificateStates
     *
     * @return AndroidForWorkPkcsCertificateProfile
     */
     public function setManagedDeviceCertificateStates($val)
     {
-        $this->_propDict["managedDeviceCertificateStates"] = $val;
+		$this->_propDict["managedDeviceCertificateStates"] = $val;
         return $this;
     }
-
+    
 }

@@ -26,8 +26,9 @@ class ProvisioningObjectSummary extends Entity
 {
     /**
     * Gets the action
+    * Indicates the activity name or the operation name (for example, Create user, Add member to group). For a list of activities logged, refer to Azure AD activity list.
     *
-    * @return string|null The action
+    * @return string The action
     */
     public function getAction()
     {
@@ -37,9 +38,10 @@ class ProvisioningObjectSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the action
+    * Indicates the activity name or the operation name (for example, Create user, Add member to group). For a list of activities logged, refer to Azure AD activity list.
     *
     * @param string $val The action
     *
@@ -50,17 +52,17 @@ class ProvisioningObjectSummary extends Entity
         $this->_propDict["action"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the activityDateTime
-    * The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    * The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
     *
-    * @return \DateTime|null The activityDateTime
+    * @return \DateTime The activityDateTime
     */
     public function getActivityDateTime()
     {
         if (array_key_exists("activityDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["activityDateTime"], "\DateTime") || is_null($this->_propDict["activityDateTime"])) {
+            if (is_a($this->_propDict["activityDateTime"], "\DateTime")) {
                 return $this->_propDict["activityDateTime"];
             } else {
                 $this->_propDict["activityDateTime"] = new \DateTime($this->_propDict["activityDateTime"]);
@@ -69,10 +71,10 @@ class ProvisioningObjectSummary extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the activityDateTime
-    * The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    * The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
     *
     * @param \DateTime $val The activityDateTime
     *
@@ -83,12 +85,12 @@ class ProvisioningObjectSummary extends Entity
         $this->_propDict["activityDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the changeId
     * Unique ID of this change in this cycle.
     *
-    * @return string|null The changeId
+    * @return string The changeId
     */
     public function getChangeId()
     {
@@ -98,7 +100,7 @@ class ProvisioningObjectSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the changeId
     * Unique ID of this change in this cycle.
@@ -112,12 +114,12 @@ class ProvisioningObjectSummary extends Entity
         $this->_propDict["changeId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the cycleId
     * Unique ID per job iteration.
     *
-    * @return string|null The cycleId
+    * @return string The cycleId
     */
     public function getCycleId()
     {
@@ -127,7 +129,7 @@ class ProvisioningObjectSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the cycleId
     * Unique ID per job iteration.
@@ -141,12 +143,12 @@ class ProvisioningObjectSummary extends Entity
         $this->_propDict["cycleId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the durationInMilliseconds
     * Indicates how long this provisioning action took to finish. Measured in milliseconds.
     *
-    * @return int|null The durationInMilliseconds
+    * @return int The durationInMilliseconds
     */
     public function getDurationInMilliseconds()
     {
@@ -156,7 +158,7 @@ class ProvisioningObjectSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the durationInMilliseconds
     * Indicates how long this provisioning action took to finish. Measured in milliseconds.
@@ -170,17 +172,17 @@ class ProvisioningObjectSummary extends Entity
         $this->_propDict["durationInMilliseconds"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the initiatedBy
     * Details of who initiated this provisioning.
     *
-    * @return Initiator|null The initiatedBy
+    * @return Initiator The initiatedBy
     */
     public function getInitiatedBy()
     {
         if (array_key_exists("initiatedBy", $this->_propDict)) {
-            if (is_a($this->_propDict["initiatedBy"], "\Beta\Microsoft\Graph\Model\Initiator") || is_null($this->_propDict["initiatedBy"])) {
+            if (is_a($this->_propDict["initiatedBy"], "Beta\Microsoft\Graph\Model\Initiator")) {
                 return $this->_propDict["initiatedBy"];
             } else {
                 $this->_propDict["initiatedBy"] = new Initiator($this->_propDict["initiatedBy"]);
@@ -189,7 +191,7 @@ class ProvisioningObjectSummary extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the initiatedBy
     * Details of who initiated this provisioning.
@@ -203,12 +205,12 @@ class ProvisioningObjectSummary extends Entity
         $this->_propDict["initiatedBy"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the jobId
     * The unique ID for the whole provisioning job.
     *
-    * @return string|null The jobId
+    * @return string The jobId
     */
     public function getJobId()
     {
@@ -218,7 +220,7 @@ class ProvisioningObjectSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the jobId
     * The unique ID for the whole provisioning job.
@@ -232,13 +234,13 @@ class ProvisioningObjectSummary extends Entity
         $this->_propDict["jobId"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the modifiedProperties
     * Details of each property that was modified in this provisioning action on this object.
      *
-     * @return array|null The modifiedProperties
+     * @return array The modifiedProperties
      */
     public function getModifiedProperties()
     {
@@ -248,93 +250,27 @@ class ProvisioningObjectSummary extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the modifiedProperties
     * Details of each property that was modified in this provisioning action on this object.
     *
-    * @param ModifiedProperty[] $val The modifiedProperties
+    * @param ModifiedProperty $val The modifiedProperties
     *
     * @return ProvisioningObjectSummary
     */
     public function setModifiedProperties($val)
     {
-        $this->_propDict["modifiedProperties"] = $val;
+		$this->_propDict["modifiedProperties"] = $val;
         return $this;
     }
+    
 
-    /**
-    * Gets the provisioningAction
-    * Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list.
-    *
-    * @return ProvisioningAction|null The provisioningAction
-    */
-    public function getProvisioningAction()
-    {
-        if (array_key_exists("provisioningAction", $this->_propDict)) {
-            if (is_a($this->_propDict["provisioningAction"], "\Beta\Microsoft\Graph\Model\ProvisioningAction") || is_null($this->_propDict["provisioningAction"])) {
-                return $this->_propDict["provisioningAction"];
-            } else {
-                $this->_propDict["provisioningAction"] = new ProvisioningAction($this->_propDict["provisioningAction"]);
-                return $this->_propDict["provisioningAction"];
-            }
-        }
-        return null;
-    }
-
-    /**
-    * Sets the provisioningAction
-    * Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list.
-    *
-    * @param ProvisioningAction $val The provisioningAction
-    *
-    * @return ProvisioningObjectSummary
-    */
-    public function setProvisioningAction($val)
-    {
-        $this->_propDict["provisioningAction"] = $val;
-        return $this;
-    }
-
-    /**
-    * Gets the provisioningStatusInfo
-    * Details of provisioning status.
-    *
-    * @return ProvisioningStatusInfo|null The provisioningStatusInfo
-    */
-    public function getProvisioningStatusInfo()
-    {
-        if (array_key_exists("provisioningStatusInfo", $this->_propDict)) {
-            if (is_a($this->_propDict["provisioningStatusInfo"], "\Beta\Microsoft\Graph\Model\ProvisioningStatusInfo") || is_null($this->_propDict["provisioningStatusInfo"])) {
-                return $this->_propDict["provisioningStatusInfo"];
-            } else {
-                $this->_propDict["provisioningStatusInfo"] = new ProvisioningStatusInfo($this->_propDict["provisioningStatusInfo"]);
-                return $this->_propDict["provisioningStatusInfo"];
-            }
-        }
-        return null;
-    }
-
-    /**
-    * Sets the provisioningStatusInfo
-    * Details of provisioning status.
-    *
-    * @param ProvisioningStatusInfo $val The provisioningStatusInfo
-    *
-    * @return ProvisioningObjectSummary
-    */
-    public function setProvisioningStatusInfo($val)
-    {
-        $this->_propDict["provisioningStatusInfo"] = $val;
-        return $this;
-    }
-
-
-     /**
+     /** 
      * Gets the provisioningSteps
     * Details of each step in provisioning.
      *
-     * @return array|null The provisioningSteps
+     * @return array The provisioningSteps
      */
     public function getProvisioningSteps()
     {
@@ -344,31 +280,31 @@ class ProvisioningObjectSummary extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the provisioningSteps
     * Details of each step in provisioning.
     *
-    * @param ProvisioningStep[] $val The provisioningSteps
+    * @param ProvisioningStep $val The provisioningSteps
     *
     * @return ProvisioningObjectSummary
     */
     public function setProvisioningSteps($val)
     {
-        $this->_propDict["provisioningSteps"] = $val;
+		$this->_propDict["provisioningSteps"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the servicePrincipal
     * Represents the service principal used for provisioning.
     *
-    * @return ProvisioningServicePrincipal|null The servicePrincipal
+    * @return ProvisioningServicePrincipal The servicePrincipal
     */
     public function getServicePrincipal()
     {
         if (array_key_exists("servicePrincipal", $this->_propDict)) {
-            if (is_a($this->_propDict["servicePrincipal"], "\Beta\Microsoft\Graph\Model\ProvisioningServicePrincipal") || is_null($this->_propDict["servicePrincipal"])) {
+            if (is_a($this->_propDict["servicePrincipal"], "Beta\Microsoft\Graph\Model\ProvisioningServicePrincipal")) {
                 return $this->_propDict["servicePrincipal"];
             } else {
                 $this->_propDict["servicePrincipal"] = new ProvisioningServicePrincipal($this->_propDict["servicePrincipal"]);
@@ -377,7 +313,7 @@ class ProvisioningObjectSummary extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the servicePrincipal
     * Represents the service principal used for provisioning.
@@ -391,17 +327,17 @@ class ProvisioningObjectSummary extends Entity
         $this->_propDict["servicePrincipal"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the sourceIdentity
     * Details of source object being provisioned.
     *
-    * @return ProvisionedIdentity|null The sourceIdentity
+    * @return ProvisionedIdentity The sourceIdentity
     */
     public function getSourceIdentity()
     {
         if (array_key_exists("sourceIdentity", $this->_propDict)) {
-            if (is_a($this->_propDict["sourceIdentity"], "\Beta\Microsoft\Graph\Model\ProvisionedIdentity") || is_null($this->_propDict["sourceIdentity"])) {
+            if (is_a($this->_propDict["sourceIdentity"], "Beta\Microsoft\Graph\Model\ProvisionedIdentity")) {
                 return $this->_propDict["sourceIdentity"];
             } else {
                 $this->_propDict["sourceIdentity"] = new ProvisionedIdentity($this->_propDict["sourceIdentity"]);
@@ -410,7 +346,7 @@ class ProvisioningObjectSummary extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the sourceIdentity
     * Details of source object being provisioned.
@@ -424,31 +360,31 @@ class ProvisioningObjectSummary extends Entity
         $this->_propDict["sourceIdentity"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the sourceSystem
     * Details of source system of the object being provisioned.
     *
-    * @return ProvisioningSystem|null The sourceSystem
+    * @return ProvisioningSystemDetails The sourceSystem
     */
     public function getSourceSystem()
     {
         if (array_key_exists("sourceSystem", $this->_propDict)) {
-            if (is_a($this->_propDict["sourceSystem"], "\Beta\Microsoft\Graph\Model\ProvisioningSystem") || is_null($this->_propDict["sourceSystem"])) {
+            if (is_a($this->_propDict["sourceSystem"], "Beta\Microsoft\Graph\Model\ProvisioningSystemDetails")) {
                 return $this->_propDict["sourceSystem"];
             } else {
-                $this->_propDict["sourceSystem"] = new ProvisioningSystem($this->_propDict["sourceSystem"]);
+                $this->_propDict["sourceSystem"] = new ProvisioningSystemDetails($this->_propDict["sourceSystem"]);
                 return $this->_propDict["sourceSystem"];
             }
         }
         return null;
     }
-
+    
     /**
     * Sets the sourceSystem
     * Details of source system of the object being provisioned.
     *
-    * @param ProvisioningSystem $val The sourceSystem
+    * @param ProvisioningSystemDetails $val The sourceSystem
     *
     * @return ProvisioningObjectSummary
     */
@@ -457,16 +393,17 @@ class ProvisioningObjectSummary extends Entity
         $this->_propDict["sourceSystem"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the statusInfo
+    * Details of provisioning status.
     *
-    * @return StatusBase|null The statusInfo
+    * @return StatusBase The statusInfo
     */
     public function getStatusInfo()
     {
         if (array_key_exists("statusInfo", $this->_propDict)) {
-            if (is_a($this->_propDict["statusInfo"], "\Beta\Microsoft\Graph\Model\StatusBase") || is_null($this->_propDict["statusInfo"])) {
+            if (is_a($this->_propDict["statusInfo"], "Beta\Microsoft\Graph\Model\StatusBase")) {
                 return $this->_propDict["statusInfo"];
             } else {
                 $this->_propDict["statusInfo"] = new StatusBase($this->_propDict["statusInfo"]);
@@ -475,9 +412,10 @@ class ProvisioningObjectSummary extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the statusInfo
+    * Details of provisioning status.
     *
     * @param StatusBase $val The statusInfo
     *
@@ -488,17 +426,17 @@ class ProvisioningObjectSummary extends Entity
         $this->_propDict["statusInfo"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the targetIdentity
     * Details of target object being provisioned.
     *
-    * @return ProvisionedIdentity|null The targetIdentity
+    * @return ProvisionedIdentity The targetIdentity
     */
     public function getTargetIdentity()
     {
         if (array_key_exists("targetIdentity", $this->_propDict)) {
-            if (is_a($this->_propDict["targetIdentity"], "\Beta\Microsoft\Graph\Model\ProvisionedIdentity") || is_null($this->_propDict["targetIdentity"])) {
+            if (is_a($this->_propDict["targetIdentity"], "Beta\Microsoft\Graph\Model\ProvisionedIdentity")) {
                 return $this->_propDict["targetIdentity"];
             } else {
                 $this->_propDict["targetIdentity"] = new ProvisionedIdentity($this->_propDict["targetIdentity"]);
@@ -507,7 +445,7 @@ class ProvisioningObjectSummary extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the targetIdentity
     * Details of target object being provisioned.
@@ -521,31 +459,31 @@ class ProvisioningObjectSummary extends Entity
         $this->_propDict["targetIdentity"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the targetSystem
     * Details of target system of the object being provisioned.
     *
-    * @return ProvisioningSystem|null The targetSystem
+    * @return ProvisioningSystemDetails The targetSystem
     */
     public function getTargetSystem()
     {
         if (array_key_exists("targetSystem", $this->_propDict)) {
-            if (is_a($this->_propDict["targetSystem"], "\Beta\Microsoft\Graph\Model\ProvisioningSystem") || is_null($this->_propDict["targetSystem"])) {
+            if (is_a($this->_propDict["targetSystem"], "Beta\Microsoft\Graph\Model\ProvisioningSystemDetails")) {
                 return $this->_propDict["targetSystem"];
             } else {
-                $this->_propDict["targetSystem"] = new ProvisioningSystem($this->_propDict["targetSystem"]);
+                $this->_propDict["targetSystem"] = new ProvisioningSystemDetails($this->_propDict["targetSystem"]);
                 return $this->_propDict["targetSystem"];
             }
         }
         return null;
     }
-
+    
     /**
     * Sets the targetSystem
     * Details of target system of the object being provisioned.
     *
-    * @param ProvisioningSystem $val The targetSystem
+    * @param ProvisioningSystemDetails $val The targetSystem
     *
     * @return ProvisioningObjectSummary
     */
@@ -554,12 +492,12 @@ class ProvisioningObjectSummary extends Entity
         $this->_propDict["targetSystem"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the tenantId
     * Unique Azure AD tenant ID.
     *
-    * @return string|null The tenantId
+    * @return string The tenantId
     */
     public function getTenantId()
     {
@@ -569,7 +507,7 @@ class ProvisioningObjectSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the tenantId
     * Unique Azure AD tenant ID.
@@ -583,5 +521,5 @@ class ProvisioningObjectSummary extends Entity
         $this->_propDict["tenantId"] = $val;
         return $this;
     }
-
+    
 }

@@ -28,7 +28,7 @@ class UserExperienceAnalyticsAppHealthApplicationPerformance extends Entity
     * Gets the activeDeviceCount
     * The number of devices where the app has been active. Valid values -2147483648 to 2147483647
     *
-    * @return int|null The activeDeviceCount
+    * @return int The activeDeviceCount
     */
     public function getActiveDeviceCount()
     {
@@ -38,7 +38,7 @@ class UserExperienceAnalyticsAppHealthApplicationPerformance extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the activeDeviceCount
     * The number of devices where the app has been active. Valid values -2147483648 to 2147483647
@@ -52,12 +52,12 @@ class UserExperienceAnalyticsAppHealthApplicationPerformance extends Entity
         $this->_propDict["activeDeviceCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the appCrashCount
     * The number of crashes for the app. Valid values -2147483648 to 2147483647
     *
-    * @return int|null The appCrashCount
+    * @return int The appCrashCount
     */
     public function getAppCrashCount()
     {
@@ -67,7 +67,7 @@ class UserExperienceAnalyticsAppHealthApplicationPerformance extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the appCrashCount
     * The number of crashes for the app. Valid values -2147483648 to 2147483647
@@ -81,12 +81,12 @@ class UserExperienceAnalyticsAppHealthApplicationPerformance extends Entity
         $this->_propDict["appCrashCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the appDisplayName
     * The friendly name of the application.
     *
-    * @return string|null The appDisplayName
+    * @return string The appDisplayName
     */
     public function getAppDisplayName()
     {
@@ -96,7 +96,7 @@ class UserExperienceAnalyticsAppHealthApplicationPerformance extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the appDisplayName
     * The friendly name of the application.
@@ -110,12 +110,12 @@ class UserExperienceAnalyticsAppHealthApplicationPerformance extends Entity
         $this->_propDict["appDisplayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the appHangCount
     * The number of hangs for the app. Valid values -2147483648 to 2147483647
     *
-    * @return int|null The appHangCount
+    * @return int The appHangCount
     */
     public function getAppHangCount()
     {
@@ -125,7 +125,7 @@ class UserExperienceAnalyticsAppHealthApplicationPerformance extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the appHangCount
     * The number of hangs for the app. Valid values -2147483648 to 2147483647
@@ -139,12 +139,12 @@ class UserExperienceAnalyticsAppHealthApplicationPerformance extends Entity
         $this->_propDict["appHangCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the appHealthScore
     * The health score of the app. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
     *
-    * @return float|null The appHealthScore
+    * @return float The appHealthScore
     */
     public function getAppHealthScore()
     {
@@ -154,7 +154,7 @@ class UserExperienceAnalyticsAppHealthApplicationPerformance extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the appHealthScore
     * The health score of the app. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
@@ -165,15 +165,15 @@ class UserExperienceAnalyticsAppHealthApplicationPerformance extends Entity
     */
     public function setAppHealthScore($val)
     {
-        $this->_propDict["appHealthScore"] = floatval($val);
+        $this->_propDict["appHealthScore"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the appHealthStatus
     * The overall health status of the app.
     *
-    * @return string|null The appHealthStatus
+    * @return string The appHealthStatus
     */
     public function getAppHealthStatus()
     {
@@ -183,7 +183,7 @@ class UserExperienceAnalyticsAppHealthApplicationPerformance extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the appHealthStatus
     * The overall health status of the app.
@@ -197,12 +197,12 @@ class UserExperienceAnalyticsAppHealthApplicationPerformance extends Entity
         $this->_propDict["appHealthStatus"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the appName
     * The name of the application.
     *
-    * @return string|null The appName
+    * @return string The appName
     */
     public function getAppName()
     {
@@ -212,7 +212,7 @@ class UserExperienceAnalyticsAppHealthApplicationPerformance extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the appName
     * The name of the application.
@@ -226,12 +226,12 @@ class UserExperienceAnalyticsAppHealthApplicationPerformance extends Entity
         $this->_propDict["appName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the appPublisher
     * The publisher of the application.
     *
-    * @return string|null The appPublisher
+    * @return string The appPublisher
     */
     public function getAppPublisher()
     {
@@ -241,7 +241,7 @@ class UserExperienceAnalyticsAppHealthApplicationPerformance extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the appPublisher
     * The publisher of the application.
@@ -255,12 +255,12 @@ class UserExperienceAnalyticsAppHealthApplicationPerformance extends Entity
         $this->_propDict["appPublisher"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the appUsageDuration
     * The total usage time of the application in minutes. Valid values -2147483648 to 2147483647
     *
-    * @return int|null The appUsageDuration
+    * @return int The appUsageDuration
     */
     public function getAppUsageDuration()
     {
@@ -270,7 +270,7 @@ class UserExperienceAnalyticsAppHealthApplicationPerformance extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the appUsageDuration
     * The total usage time of the application in minutes. Valid values -2147483648 to 2147483647
@@ -284,12 +284,12 @@ class UserExperienceAnalyticsAppHealthApplicationPerformance extends Entity
         $this->_propDict["appUsageDuration"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the meanTimeToFailureInMinutes
     * The mean time to failure for the app in minutes. Valid values -2147483648 to 2147483647
     *
-    * @return int|null The meanTimeToFailureInMinutes
+    * @return int The meanTimeToFailureInMinutes
     */
     public function getMeanTimeToFailureInMinutes()
     {
@@ -299,7 +299,7 @@ class UserExperienceAnalyticsAppHealthApplicationPerformance extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the meanTimeToFailureInMinutes
     * The mean time to failure for the app in minutes. Valid values -2147483648 to 2147483647
@@ -313,5 +313,5 @@ class UserExperienceAnalyticsAppHealthApplicationPerformance extends Entity
         $this->_propDict["meanTimeToFailureInMinutes"] = intval($val);
         return $this;
     }
-
+    
 }

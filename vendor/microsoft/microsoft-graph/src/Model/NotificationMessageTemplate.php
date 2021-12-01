@@ -26,14 +26,14 @@ class NotificationMessageTemplate extends Entity
 {
     /**
     * Gets the brandingOptions
-    * The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation.
+    * The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation, includeCompanyPortalLink.
     *
-    * @return NotificationTemplateBrandingOptions|null The brandingOptions
+    * @return NotificationTemplateBrandingOptions The brandingOptions
     */
     public function getBrandingOptions()
     {
         if (array_key_exists("brandingOptions", $this->_propDict)) {
-            if (is_a($this->_propDict["brandingOptions"], "\Microsoft\Graph\Model\NotificationTemplateBrandingOptions") || is_null($this->_propDict["brandingOptions"])) {
+            if (is_a($this->_propDict["brandingOptions"], "Microsoft\Graph\Model\NotificationTemplateBrandingOptions")) {
                 return $this->_propDict["brandingOptions"];
             } else {
                 $this->_propDict["brandingOptions"] = new NotificationTemplateBrandingOptions($this->_propDict["brandingOptions"]);
@@ -42,10 +42,10 @@ class NotificationMessageTemplate extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the brandingOptions
-    * The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation.
+    * The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation, includeCompanyPortalLink.
     *
     * @param NotificationTemplateBrandingOptions $val The brandingOptions
     *
@@ -56,12 +56,12 @@ class NotificationMessageTemplate extends Entity
         $this->_propDict["brandingOptions"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the defaultLocale
     * The default locale to fallback onto when the requested locale is not available.
     *
-    * @return string|null The defaultLocale
+    * @return string The defaultLocale
     */
     public function getDefaultLocale()
     {
@@ -71,7 +71,7 @@ class NotificationMessageTemplate extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the defaultLocale
     * The default locale to fallback onto when the requested locale is not available.
@@ -85,12 +85,12 @@ class NotificationMessageTemplate extends Entity
         $this->_propDict["defaultLocale"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the displayName
     * Display name for the Notification Message Template.
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -100,7 +100,7 @@ class NotificationMessageTemplate extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the displayName
     * Display name for the Notification Message Template.
@@ -114,17 +114,17 @@ class NotificationMessageTemplate extends Entity
         $this->_propDict["displayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the lastModifiedDateTime
     * DateTime the object was last modified.
     *
-    * @return \DateTime|null The lastModifiedDateTime
+    * @return \DateTime The lastModifiedDateTime
     */
     public function getLastModifiedDateTime()
     {
         if (array_key_exists("lastModifiedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime") || is_null($this->_propDict["lastModifiedDateTime"])) {
+            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime")) {
                 return $this->_propDict["lastModifiedDateTime"];
             } else {
                 $this->_propDict["lastModifiedDateTime"] = new \DateTime($this->_propDict["lastModifiedDateTime"]);
@@ -133,7 +133,7 @@ class NotificationMessageTemplate extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastModifiedDateTime
     * DateTime the object was last modified.
@@ -147,13 +147,13 @@ class NotificationMessageTemplate extends Entity
         $this->_propDict["lastModifiedDateTime"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the localizedNotificationMessages
     * The list of localized messages for this Notification Message Template.
      *
-     * @return array|null The localizedNotificationMessages
+     * @return array The localizedNotificationMessages
      */
     public function getLocalizedNotificationMessages()
     {
@@ -163,19 +163,19 @@ class NotificationMessageTemplate extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the localizedNotificationMessages
     * The list of localized messages for this Notification Message Template.
     *
-    * @param LocalizedNotificationMessage[] $val The localizedNotificationMessages
+    * @param LocalizedNotificationMessage $val The localizedNotificationMessages
     *
     * @return NotificationMessageTemplate
     */
     public function setLocalizedNotificationMessages($val)
     {
-        $this->_propDict["localizedNotificationMessages"] = $val;
+		$this->_propDict["localizedNotificationMessages"] = $val;
         return $this;
     }
-
+    
 }

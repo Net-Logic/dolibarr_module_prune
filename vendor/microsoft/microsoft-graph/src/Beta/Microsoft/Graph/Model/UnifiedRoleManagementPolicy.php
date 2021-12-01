@@ -26,9 +26,8 @@ class UnifiedRoleManagementPolicy extends Entity
 {
     /**
     * Gets the description
-    * Description for the policy.
     *
-    * @return string|null The description
+    * @return string The description
     */
     public function getDescription()
     {
@@ -38,10 +37,9 @@ class UnifiedRoleManagementPolicy extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the description
-    * Description for the policy.
     *
     * @param string $val The description
     *
@@ -52,12 +50,11 @@ class UnifiedRoleManagementPolicy extends Entity
         $this->_propDict["description"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the displayName
-    * Display name for the policy.
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -67,10 +64,9 @@ class UnifiedRoleManagementPolicy extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the displayName
-    * Display name for the policy.
     *
     * @param string $val The displayName
     *
@@ -81,12 +77,11 @@ class UnifiedRoleManagementPolicy extends Entity
         $this->_propDict["displayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the isOrganizationDefault
-    * This can only be set to true for a single tenant wide policy which will apply to all scopes and roles. Set the scopeId to '/' and scopeType to Directory.
     *
-    * @return bool|null The isOrganizationDefault
+    * @return bool The isOrganizationDefault
     */
     public function getIsOrganizationDefault()
     {
@@ -96,10 +91,9 @@ class UnifiedRoleManagementPolicy extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the isOrganizationDefault
-    * This can only be set to true for a single tenant wide policy which will apply to all scopes and roles. Set the scopeId to '/' and scopeType to Directory.
     *
     * @param bool $val The isOrganizationDefault
     *
@@ -110,17 +104,16 @@ class UnifiedRoleManagementPolicy extends Entity
         $this->_propDict["isOrganizationDefault"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the lastModifiedBy
-    * The identity who last modified the role setting.
     *
-    * @return Identity|null The lastModifiedBy
+    * @return Identity The lastModifiedBy
     */
     public function getLastModifiedBy()
     {
         if (array_key_exists("lastModifiedBy", $this->_propDict)) {
-            if (is_a($this->_propDict["lastModifiedBy"], "\Beta\Microsoft\Graph\Model\Identity") || is_null($this->_propDict["lastModifiedBy"])) {
+            if (is_a($this->_propDict["lastModifiedBy"], "Beta\Microsoft\Graph\Model\Identity")) {
                 return $this->_propDict["lastModifiedBy"];
             } else {
                 $this->_propDict["lastModifiedBy"] = new Identity($this->_propDict["lastModifiedBy"]);
@@ -129,10 +122,9 @@ class UnifiedRoleManagementPolicy extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastModifiedBy
-    * The identity who last modified the role setting.
     *
     * @param Identity $val The lastModifiedBy
     *
@@ -143,17 +135,16 @@ class UnifiedRoleManagementPolicy extends Entity
         $this->_propDict["lastModifiedBy"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the lastModifiedDateTime
-    * The time when the role setting was last modified.
     *
-    * @return \DateTime|null The lastModifiedDateTime
+    * @return \DateTime The lastModifiedDateTime
     */
     public function getLastModifiedDateTime()
     {
         if (array_key_exists("lastModifiedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime") || is_null($this->_propDict["lastModifiedDateTime"])) {
+            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime")) {
                 return $this->_propDict["lastModifiedDateTime"];
             } else {
                 $this->_propDict["lastModifiedDateTime"] = new \DateTime($this->_propDict["lastModifiedDateTime"]);
@@ -162,10 +153,9 @@ class UnifiedRoleManagementPolicy extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastModifiedDateTime
-    * The time when the role setting was last modified.
     *
     * @param \DateTime $val The lastModifiedDateTime
     *
@@ -176,12 +166,11 @@ class UnifiedRoleManagementPolicy extends Entity
         $this->_propDict["lastModifiedDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the scopeId
-    * The id of the scope where the policy is created. E.g. '/', groupId, etc.
     *
-    * @return string|null The scopeId
+    * @return string The scopeId
     */
     public function getScopeId()
     {
@@ -191,10 +180,9 @@ class UnifiedRoleManagementPolicy extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the scopeId
-    * The id of the scope where the policy is created. E.g. '/', groupId, etc.
     *
     * @param string $val The scopeId
     *
@@ -205,12 +193,11 @@ class UnifiedRoleManagementPolicy extends Entity
         $this->_propDict["scopeId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the scopeType
-    * The type of the scope where the policy is created. One of Directory, DirectoryRole, Group.
     *
-    * @return string|null The scopeType
+    * @return string The scopeType
     */
     public function getScopeType()
     {
@@ -220,10 +207,9 @@ class UnifiedRoleManagementPolicy extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the scopeType
-    * The type of the scope where the policy is created. One of Directory, DirectoryRole, Group.
     *
     * @param string $val The scopeType
     *
@@ -234,13 +220,12 @@ class UnifiedRoleManagementPolicy extends Entity
         $this->_propDict["scopeType"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the effectiveRules
-    * The list of effective rules like approval rule, expiration rule, etc. evaluated based on inherited referenced rules. E.g. If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.
      *
-     * @return array|null The effectiveRules
+     * @return array The effectiveRules
      */
     public function getEffectiveRules()
     {
@@ -250,27 +235,25 @@ class UnifiedRoleManagementPolicy extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the effectiveRules
-    * The list of effective rules like approval rule, expiration rule, etc. evaluated based on inherited referenced rules. E.g. If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.
     *
-    * @param UnifiedRoleManagementPolicyRule[] $val The effectiveRules
+    * @param UnifiedRoleManagementPolicyRule $val The effectiveRules
     *
     * @return UnifiedRoleManagementPolicy
     */
     public function setEffectiveRules($val)
     {
-        $this->_propDict["effectiveRules"] = $val;
+		$this->_propDict["effectiveRules"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the rules
-    * The collection of rules like approval rule, expiration rule, etc.
      *
-     * @return array|null The rules
+     * @return array The rules
      */
     public function getRules()
     {
@@ -280,19 +263,18 @@ class UnifiedRoleManagementPolicy extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the rules
-    * The collection of rules like approval rule, expiration rule, etc.
     *
-    * @param UnifiedRoleManagementPolicyRule[] $val The rules
+    * @param UnifiedRoleManagementPolicyRule $val The rules
     *
     * @return UnifiedRoleManagementPolicy
     */
     public function setRules($val)
     {
-        $this->_propDict["rules"] = $val;
+		$this->_propDict["rules"] = $val;
         return $this;
     }
-
+    
 }

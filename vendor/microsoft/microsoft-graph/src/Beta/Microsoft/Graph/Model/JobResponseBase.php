@@ -27,12 +27,12 @@ class JobResponseBase extends Entity
     /**
     * Gets the creationDateTime
     *
-    * @return \DateTime|null The creationDateTime
+    * @return \DateTime The creationDateTime
     */
     public function getCreationDateTime()
     {
         if (array_key_exists("creationDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["creationDateTime"], "\DateTime") || is_null($this->_propDict["creationDateTime"])) {
+            if (is_a($this->_propDict["creationDateTime"], "\DateTime")) {
                 return $this->_propDict["creationDateTime"];
             } else {
                 $this->_propDict["creationDateTime"] = new \DateTime($this->_propDict["creationDateTime"]);
@@ -41,7 +41,7 @@ class JobResponseBase extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the creationDateTime
     *
@@ -54,16 +54,16 @@ class JobResponseBase extends Entity
         $this->_propDict["creationDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the endDateTime
     *
-    * @return \DateTime|null The endDateTime
+    * @return \DateTime The endDateTime
     */
     public function getEndDateTime()
     {
         if (array_key_exists("endDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["endDateTime"], "\DateTime") || is_null($this->_propDict["endDateTime"])) {
+            if (is_a($this->_propDict["endDateTime"], "\DateTime")) {
                 return $this->_propDict["endDateTime"];
             } else {
                 $this->_propDict["endDateTime"] = new \DateTime($this->_propDict["endDateTime"]);
@@ -72,7 +72,7 @@ class JobResponseBase extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the endDateTime
     *
@@ -85,16 +85,16 @@ class JobResponseBase extends Entity
         $this->_propDict["endDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the error
     *
-    * @return ClassificationError|null The error
+    * @return ClassificationError The error
     */
     public function getError()
     {
         if (array_key_exists("error", $this->_propDict)) {
-            if (is_a($this->_propDict["error"], "\Beta\Microsoft\Graph\Model\ClassificationError") || is_null($this->_propDict["error"])) {
+            if (is_a($this->_propDict["error"], "Beta\Microsoft\Graph\Model\ClassificationError")) {
                 return $this->_propDict["error"];
             } else {
                 $this->_propDict["error"] = new ClassificationError($this->_propDict["error"]);
@@ -103,7 +103,7 @@ class JobResponseBase extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the error
     *
@@ -116,16 +116,16 @@ class JobResponseBase extends Entity
         $this->_propDict["error"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the startDateTime
     *
-    * @return \DateTime|null The startDateTime
+    * @return \DateTime The startDateTime
     */
     public function getStartDateTime()
     {
         if (array_key_exists("startDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["startDateTime"], "\DateTime") || is_null($this->_propDict["startDateTime"])) {
+            if (is_a($this->_propDict["startDateTime"], "\DateTime")) {
                 return $this->_propDict["startDateTime"];
             } else {
                 $this->_propDict["startDateTime"] = new \DateTime($this->_propDict["startDateTime"]);
@@ -134,7 +134,7 @@ class JobResponseBase extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the startDateTime
     *
@@ -147,11 +147,11 @@ class JobResponseBase extends Entity
         $this->_propDict["startDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the status
     *
-    * @return string|null The status
+    * @return string The status
     */
     public function getStatus()
     {
@@ -161,7 +161,7 @@ class JobResponseBase extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the status
     *
@@ -174,11 +174,11 @@ class JobResponseBase extends Entity
         $this->_propDict["status"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the tenantId
     *
-    * @return string|null The tenantId
+    * @return string The tenantId
     */
     public function getTenantId()
     {
@@ -188,7 +188,7 @@ class JobResponseBase extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the tenantId
     *
@@ -201,11 +201,11 @@ class JobResponseBase extends Entity
         $this->_propDict["tenantId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the type
     *
-    * @return string|null The type
+    * @return string The type
     */
     public function getType()
     {
@@ -215,7 +215,7 @@ class JobResponseBase extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the type
     *
@@ -228,5 +228,5 @@ class JobResponseBase extends Entity
         $this->_propDict["type"] = $val;
         return $this;
     }
-
+    
 }

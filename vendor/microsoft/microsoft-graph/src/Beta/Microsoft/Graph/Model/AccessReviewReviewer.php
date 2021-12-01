@@ -25,43 +25,9 @@ namespace Beta\Microsoft\Graph\Model;
 class AccessReviewReviewer extends Entity
 {
     /**
-    * Gets the createdDateTime
-    * The date when the reviewer was added for the access review.
-    *
-    * @return \DateTime|null The createdDateTime
-    */
-    public function getCreatedDateTime()
-    {
-        if (array_key_exists("createdDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["createdDateTime"], "\DateTime") || is_null($this->_propDict["createdDateTime"])) {
-                return $this->_propDict["createdDateTime"];
-            } else {
-                $this->_propDict["createdDateTime"] = new \DateTime($this->_propDict["createdDateTime"]);
-                return $this->_propDict["createdDateTime"];
-            }
-        }
-        return null;
-    }
-
-    /**
-    * Sets the createdDateTime
-    * The date when the reviewer was added for the access review.
-    *
-    * @param \DateTime $val The createdDateTime
-    *
-    * @return AccessReviewReviewer
-    */
-    public function setCreatedDateTime($val)
-    {
-        $this->_propDict["createdDateTime"] = $val;
-        return $this;
-    }
-
-    /**
     * Gets the displayName
-    * Name of reviewer.
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -71,10 +37,9 @@ class AccessReviewReviewer extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the displayName
-    * Name of reviewer.
     *
     * @param string $val The displayName
     *
@@ -85,12 +50,11 @@ class AccessReviewReviewer extends Entity
         $this->_propDict["displayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the userPrincipalName
-    * User principal name of the user.
     *
-    * @return string|null The userPrincipalName
+    * @return string The userPrincipalName
     */
     public function getUserPrincipalName()
     {
@@ -100,10 +64,9 @@ class AccessReviewReviewer extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the userPrincipalName
-    * User principal name of the user.
     *
     * @param string $val The userPrincipalName
     *
@@ -114,5 +77,5 @@ class AccessReviewReviewer extends Entity
         $this->_propDict["userPrincipalName"] = $val;
         return $this;
     }
-
+    
 }

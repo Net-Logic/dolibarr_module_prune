@@ -28,12 +28,12 @@ class MobileApp extends Entity
     * Gets the createdDateTime
     * The date and time the app was created.
     *
-    * @return \DateTime|null The createdDateTime
+    * @return \DateTime The createdDateTime
     */
     public function getCreatedDateTime()
     {
         if (array_key_exists("createdDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["createdDateTime"], "\DateTime") || is_null($this->_propDict["createdDateTime"])) {
+            if (is_a($this->_propDict["createdDateTime"], "\DateTime")) {
                 return $this->_propDict["createdDateTime"];
             } else {
                 $this->_propDict["createdDateTime"] = new \DateTime($this->_propDict["createdDateTime"]);
@@ -42,7 +42,7 @@ class MobileApp extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the createdDateTime
     * The date and time the app was created.
@@ -56,12 +56,12 @@ class MobileApp extends Entity
         $this->_propDict["createdDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the dependentAppCount
     * The total number of dependencies the child app has.
     *
-    * @return int|null The dependentAppCount
+    * @return int The dependentAppCount
     */
     public function getDependentAppCount()
     {
@@ -71,7 +71,7 @@ class MobileApp extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the dependentAppCount
     * The total number of dependencies the child app has.
@@ -85,12 +85,12 @@ class MobileApp extends Entity
         $this->_propDict["dependentAppCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the description
     * The description of the app.
     *
-    * @return string|null The description
+    * @return string The description
     */
     public function getDescription()
     {
@@ -100,7 +100,7 @@ class MobileApp extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the description
     * The description of the app.
@@ -114,12 +114,12 @@ class MobileApp extends Entity
         $this->_propDict["description"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the developer
     * The developer of the app.
     *
-    * @return string|null The developer
+    * @return string The developer
     */
     public function getDeveloper()
     {
@@ -129,7 +129,7 @@ class MobileApp extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the developer
     * The developer of the app.
@@ -143,12 +143,12 @@ class MobileApp extends Entity
         $this->_propDict["developer"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the displayName
     * The admin provided or imported title of the app.
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -158,7 +158,7 @@ class MobileApp extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the displayName
     * The admin provided or imported title of the app.
@@ -172,12 +172,12 @@ class MobileApp extends Entity
         $this->_propDict["displayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the informationUrl
     * The more information Url.
     *
-    * @return string|null The informationUrl
+    * @return string The informationUrl
     */
     public function getInformationUrl()
     {
@@ -187,7 +187,7 @@ class MobileApp extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the informationUrl
     * The more information Url.
@@ -201,12 +201,12 @@ class MobileApp extends Entity
         $this->_propDict["informationUrl"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the isAssigned
     * The value indicating whether the app is assigned to at least one group.
     *
-    * @return bool|null The isAssigned
+    * @return bool The isAssigned
     */
     public function getIsAssigned()
     {
@@ -216,7 +216,7 @@ class MobileApp extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the isAssigned
     * The value indicating whether the app is assigned to at least one group.
@@ -230,12 +230,12 @@ class MobileApp extends Entity
         $this->_propDict["isAssigned"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the isFeatured
     * The value indicating whether the app is marked as featured by the admin.
     *
-    * @return bool|null The isFeatured
+    * @return bool The isFeatured
     */
     public function getIsFeatured()
     {
@@ -245,7 +245,7 @@ class MobileApp extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the isFeatured
     * The value indicating whether the app is marked as featured by the admin.
@@ -259,17 +259,17 @@ class MobileApp extends Entity
         $this->_propDict["isFeatured"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the largeIcon
     * The large icon, to be displayed in the app details and used for upload of the icon.
     *
-    * @return MimeContent|null The largeIcon
+    * @return MimeContent The largeIcon
     */
     public function getLargeIcon()
     {
         if (array_key_exists("largeIcon", $this->_propDict)) {
-            if (is_a($this->_propDict["largeIcon"], "\Beta\Microsoft\Graph\Model\MimeContent") || is_null($this->_propDict["largeIcon"])) {
+            if (is_a($this->_propDict["largeIcon"], "Beta\Microsoft\Graph\Model\MimeContent")) {
                 return $this->_propDict["largeIcon"];
             } else {
                 $this->_propDict["largeIcon"] = new MimeContent($this->_propDict["largeIcon"]);
@@ -278,7 +278,7 @@ class MobileApp extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the largeIcon
     * The large icon, to be displayed in the app details and used for upload of the icon.
@@ -292,17 +292,17 @@ class MobileApp extends Entity
         $this->_propDict["largeIcon"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the lastModifiedDateTime
     * The date and time the app was last modified.
     *
-    * @return \DateTime|null The lastModifiedDateTime
+    * @return \DateTime The lastModifiedDateTime
     */
     public function getLastModifiedDateTime()
     {
         if (array_key_exists("lastModifiedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime") || is_null($this->_propDict["lastModifiedDateTime"])) {
+            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime")) {
                 return $this->_propDict["lastModifiedDateTime"];
             } else {
                 $this->_propDict["lastModifiedDateTime"] = new \DateTime($this->_propDict["lastModifiedDateTime"]);
@@ -311,7 +311,7 @@ class MobileApp extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastModifiedDateTime
     * The date and time the app was last modified.
@@ -325,12 +325,12 @@ class MobileApp extends Entity
         $this->_propDict["lastModifiedDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the notes
     * Notes for the app.
     *
-    * @return string|null The notes
+    * @return string The notes
     */
     public function getNotes()
     {
@@ -340,7 +340,7 @@ class MobileApp extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the notes
     * Notes for the app.
@@ -354,12 +354,12 @@ class MobileApp extends Entity
         $this->_propDict["notes"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the owner
     * The owner of the app.
     *
-    * @return string|null The owner
+    * @return string The owner
     */
     public function getOwner()
     {
@@ -369,7 +369,7 @@ class MobileApp extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the owner
     * The owner of the app.
@@ -383,12 +383,12 @@ class MobileApp extends Entity
         $this->_propDict["owner"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the privacyInformationUrl
     * The privacy statement Url.
     *
-    * @return string|null The privacyInformationUrl
+    * @return string The privacyInformationUrl
     */
     public function getPrivacyInformationUrl()
     {
@@ -398,7 +398,7 @@ class MobileApp extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the privacyInformationUrl
     * The privacy statement Url.
@@ -412,12 +412,12 @@ class MobileApp extends Entity
         $this->_propDict["privacyInformationUrl"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the publisher
     * The publisher of the app.
     *
-    * @return string|null The publisher
+    * @return string The publisher
     */
     public function getPublisher()
     {
@@ -427,7 +427,7 @@ class MobileApp extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the publisher
     * The publisher of the app.
@@ -441,17 +441,17 @@ class MobileApp extends Entity
         $this->_propDict["publisher"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the publishingState
     * The publishing state for the app. The app cannot be assigned unless the app is published. Possible values are: notPublished, processing, published.
     *
-    * @return MobileAppPublishingState|null The publishingState
+    * @return MobileAppPublishingState The publishingState
     */
     public function getPublishingState()
     {
         if (array_key_exists("publishingState", $this->_propDict)) {
-            if (is_a($this->_propDict["publishingState"], "\Beta\Microsoft\Graph\Model\MobileAppPublishingState") || is_null($this->_propDict["publishingState"])) {
+            if (is_a($this->_propDict["publishingState"], "Beta\Microsoft\Graph\Model\MobileAppPublishingState")) {
                 return $this->_propDict["publishingState"];
             } else {
                 $this->_propDict["publishingState"] = new MobileAppPublishingState($this->_propDict["publishingState"]);
@@ -460,7 +460,7 @@ class MobileApp extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the publishingState
     * The publishing state for the app. The app cannot be assigned unless the app is published. Possible values are: notPublished, processing, published.
@@ -474,12 +474,12 @@ class MobileApp extends Entity
         $this->_propDict["publishingState"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the roleScopeTagIds
     * List of scope tag ids for this mobile app.
     *
-    * @return string|null The roleScopeTagIds
+    * @return string The roleScopeTagIds
     */
     public function getRoleScopeTagIds()
     {
@@ -489,7 +489,7 @@ class MobileApp extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the roleScopeTagIds
     * List of scope tag ids for this mobile app.
@@ -503,12 +503,12 @@ class MobileApp extends Entity
         $this->_propDict["roleScopeTagIds"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the supersededAppCount
     * The total number of apps this app is directly or indirectly superseded by.
     *
-    * @return int|null The supersededAppCount
+    * @return int The supersededAppCount
     */
     public function getSupersededAppCount()
     {
@@ -518,7 +518,7 @@ class MobileApp extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the supersededAppCount
     * The total number of apps this app is directly or indirectly superseded by.
@@ -532,12 +532,12 @@ class MobileApp extends Entity
         $this->_propDict["supersededAppCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the supersedingAppCount
     * The total number of apps this app directly or indirectly supersedes.
     *
-    * @return int|null The supersedingAppCount
+    * @return int The supersedingAppCount
     */
     public function getSupersedingAppCount()
     {
@@ -547,7 +547,7 @@ class MobileApp extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the supersedingAppCount
     * The total number of apps this app directly or indirectly supersedes.
@@ -561,12 +561,12 @@ class MobileApp extends Entity
         $this->_propDict["supersedingAppCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the uploadState
     * The upload state.
     *
-    * @return int|null The uploadState
+    * @return int The uploadState
     */
     public function getUploadState()
     {
@@ -576,7 +576,7 @@ class MobileApp extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the uploadState
     * The upload state.
@@ -590,13 +590,13 @@ class MobileApp extends Entity
         $this->_propDict["uploadState"] = intval($val);
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the assignments
     * The list of group assignments for this mobile app.
      *
-     * @return array|null The assignments
+     * @return array The assignments
      */
     public function getAssignments()
     {
@@ -606,27 +606,27 @@ class MobileApp extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the assignments
     * The list of group assignments for this mobile app.
     *
-    * @param MobileAppAssignment[] $val The assignments
+    * @param MobileAppAssignment $val The assignments
     *
     * @return MobileApp
     */
     public function setAssignments($val)
     {
-        $this->_propDict["assignments"] = $val;
+		$this->_propDict["assignments"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the categories
     * The list of categories for this app.
      *
-     * @return array|null The categories
+     * @return array The categories
      */
     public function getCategories()
     {
@@ -636,27 +636,27 @@ class MobileApp extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the categories
     * The list of categories for this app.
     *
-    * @param MobileAppCategory[] $val The categories
+    * @param MobileAppCategory $val The categories
     *
     * @return MobileApp
     */
     public function setCategories($val)
     {
-        $this->_propDict["categories"] = $val;
+		$this->_propDict["categories"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the deviceStatuses
     * The list of installation states for this mobile app.
      *
-     * @return array|null The deviceStatuses
+     * @return array The deviceStatuses
      */
     public function getDeviceStatuses()
     {
@@ -666,31 +666,31 @@ class MobileApp extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the deviceStatuses
     * The list of installation states for this mobile app.
     *
-    * @param MobileAppInstallStatus[] $val The deviceStatuses
+    * @param MobileAppInstallStatus $val The deviceStatuses
     *
     * @return MobileApp
     */
     public function setDeviceStatuses($val)
     {
-        $this->_propDict["deviceStatuses"] = $val;
+		$this->_propDict["deviceStatuses"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the installSummary
     * Mobile App Install Summary.
     *
-    * @return MobileAppInstallSummary|null The installSummary
+    * @return MobileAppInstallSummary The installSummary
     */
     public function getInstallSummary()
     {
         if (array_key_exists("installSummary", $this->_propDict)) {
-            if (is_a($this->_propDict["installSummary"], "\Beta\Microsoft\Graph\Model\MobileAppInstallSummary") || is_null($this->_propDict["installSummary"])) {
+            if (is_a($this->_propDict["installSummary"], "Beta\Microsoft\Graph\Model\MobileAppInstallSummary")) {
                 return $this->_propDict["installSummary"];
             } else {
                 $this->_propDict["installSummary"] = new MobileAppInstallSummary($this->_propDict["installSummary"]);
@@ -699,7 +699,7 @@ class MobileApp extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the installSummary
     * Mobile App Install Summary.
@@ -713,13 +713,13 @@ class MobileApp extends Entity
         $this->_propDict["installSummary"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the relationships
     * List of relationships for this mobile app.
      *
-     * @return array|null The relationships
+     * @return array The relationships
      */
     public function getRelationships()
     {
@@ -729,27 +729,27 @@ class MobileApp extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the relationships
     * List of relationships for this mobile app.
     *
-    * @param MobileAppRelationship[] $val The relationships
+    * @param MobileAppRelationship $val The relationships
     *
     * @return MobileApp
     */
     public function setRelationships($val)
     {
-        $this->_propDict["relationships"] = $val;
+		$this->_propDict["relationships"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the userStatuses
     * The list of installation states for this mobile app.
      *
-     * @return array|null The userStatuses
+     * @return array The userStatuses
      */
     public function getUserStatuses()
     {
@@ -759,19 +759,19 @@ class MobileApp extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the userStatuses
     * The list of installation states for this mobile app.
     *
-    * @param UserAppInstallStatus[] $val The userStatuses
+    * @param UserAppInstallStatus $val The userStatuses
     *
     * @return MobileApp
     */
     public function setUserStatuses($val)
     {
-        $this->_propDict["userStatuses"] = $val;
+		$this->_propDict["userStatuses"] = $val;
         return $this;
     }
-
+    
 }

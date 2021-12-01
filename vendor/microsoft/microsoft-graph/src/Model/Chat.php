@@ -26,14 +26,14 @@ class Chat extends Entity
 {
     /**
     * Gets the chatType
-    * Specifies the type of chat. Possible values are: group, oneOnOne, meeting, unknownFutureValue.
+    * Specifies the type of chat. Possible values are:group, oneOnOne and meeting.
     *
-    * @return ChatType|null The chatType
+    * @return ChatType The chatType
     */
     public function getChatType()
     {
         if (array_key_exists("chatType", $this->_propDict)) {
-            if (is_a($this->_propDict["chatType"], "\Microsoft\Graph\Model\ChatType") || is_null($this->_propDict["chatType"])) {
+            if (is_a($this->_propDict["chatType"], "Microsoft\Graph\Model\ChatType")) {
                 return $this->_propDict["chatType"];
             } else {
                 $this->_propDict["chatType"] = new ChatType($this->_propDict["chatType"]);
@@ -42,10 +42,10 @@ class Chat extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the chatType
-    * Specifies the type of chat. Possible values are: group, oneOnOne, meeting, unknownFutureValue.
+    * Specifies the type of chat. Possible values are:group, oneOnOne and meeting.
     *
     * @param ChatType $val The chatType
     *
@@ -56,17 +56,17 @@ class Chat extends Entity
         $this->_propDict["chatType"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the createdDateTime
     * Date and time at which the chat was created. Read-only.
     *
-    * @return \DateTime|null The createdDateTime
+    * @return \DateTime The createdDateTime
     */
     public function getCreatedDateTime()
     {
         if (array_key_exists("createdDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["createdDateTime"], "\DateTime") || is_null($this->_propDict["createdDateTime"])) {
+            if (is_a($this->_propDict["createdDateTime"], "\DateTime")) {
                 return $this->_propDict["createdDateTime"];
             } else {
                 $this->_propDict["createdDateTime"] = new \DateTime($this->_propDict["createdDateTime"]);
@@ -75,7 +75,7 @@ class Chat extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the createdDateTime
     * Date and time at which the chat was created. Read-only.
@@ -89,17 +89,17 @@ class Chat extends Entity
         $this->_propDict["createdDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the lastUpdatedDateTime
     * Date and time at which the chat was renamed or list of members were last changed. Read-only.
     *
-    * @return \DateTime|null The lastUpdatedDateTime
+    * @return \DateTime The lastUpdatedDateTime
     */
     public function getLastUpdatedDateTime()
     {
         if (array_key_exists("lastUpdatedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastUpdatedDateTime"], "\DateTime") || is_null($this->_propDict["lastUpdatedDateTime"])) {
+            if (is_a($this->_propDict["lastUpdatedDateTime"], "\DateTime")) {
                 return $this->_propDict["lastUpdatedDateTime"];
             } else {
                 $this->_propDict["lastUpdatedDateTime"] = new \DateTime($this->_propDict["lastUpdatedDateTime"]);
@@ -108,7 +108,7 @@ class Chat extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastUpdatedDateTime
     * Date and time at which the chat was renamed or list of members were last changed. Read-only.
@@ -122,12 +122,12 @@ class Chat extends Entity
         $this->_propDict["lastUpdatedDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the topic
     * (Optional) Subject or topic for the chat. Only available for group chats.
     *
-    * @return string|null The topic
+    * @return string The topic
     */
     public function getTopic()
     {
@@ -137,7 +137,7 @@ class Chat extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the topic
     * (Optional) Subject or topic for the chat. Only available for group chats.
@@ -151,13 +151,13 @@ class Chat extends Entity
         $this->_propDict["topic"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the installedApps
     * A collection of all the apps in the chat. Nullable.
      *
-     * @return array|null The installedApps
+     * @return array The installedApps
      */
     public function getInstalledApps()
     {
@@ -167,27 +167,27 @@ class Chat extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the installedApps
     * A collection of all the apps in the chat. Nullable.
     *
-    * @param TeamsAppInstallation[] $val The installedApps
+    * @param TeamsAppInstallation $val The installedApps
     *
     * @return Chat
     */
     public function setInstalledApps($val)
     {
-        $this->_propDict["installedApps"] = $val;
+		$this->_propDict["installedApps"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the members
     * A collection of all the members in the chat. Nullable.
      *
-     * @return array|null The members
+     * @return array The members
      */
     public function getMembers()
     {
@@ -197,56 +197,26 @@ class Chat extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the members
     * A collection of all the members in the chat. Nullable.
     *
-    * @param ConversationMember[] $val The members
+    * @param ConversationMember $val The members
     *
     * @return Chat
     */
     public function setMembers($val)
     {
-        $this->_propDict["members"] = $val;
+		$this->_propDict["members"] = $val;
         return $this;
     }
+    
 
-
-     /**
-     * Gets the messages
-    * A collection of all the messages in the chat. Nullable.
-     *
-     * @return array|null The messages
-     */
-    public function getMessages()
-    {
-        if (array_key_exists("messages", $this->_propDict)) {
-           return $this->_propDict["messages"];
-        } else {
-            return null;
-        }
-    }
-
-    /**
-    * Sets the messages
-    * A collection of all the messages in the chat. Nullable.
-    *
-    * @param ChatMessage[] $val The messages
-    *
-    * @return Chat
-    */
-    public function setMessages($val)
-    {
-        $this->_propDict["messages"] = $val;
-        return $this;
-    }
-
-
-     /**
+     /** 
      * Gets the tabs
      *
-     * @return array|null The tabs
+     * @return array The tabs
      */
     public function getTabs()
     {
@@ -256,18 +226,18 @@ class Chat extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the tabs
     *
-    * @param TeamsTab[] $val The tabs
+    * @param TeamsTab $val The tabs
     *
     * @return Chat
     */
     public function setTabs($val)
     {
-        $this->_propDict["tabs"] = $val;
+		$this->_propDict["tabs"] = $val;
         return $this;
     }
-
+    
 }

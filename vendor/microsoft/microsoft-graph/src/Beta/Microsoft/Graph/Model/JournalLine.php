@@ -27,7 +27,7 @@ class JournalLine extends Entity
     /**
     * Gets the accountId
     *
-    * @return string|null The accountId
+    * @return string The accountId
     */
     public function getAccountId()
     {
@@ -37,7 +37,7 @@ class JournalLine extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the accountId
     *
@@ -50,11 +50,11 @@ class JournalLine extends Entity
         $this->_propDict["accountId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the accountNumber
     *
-    * @return string|null The accountNumber
+    * @return string The accountNumber
     */
     public function getAccountNumber()
     {
@@ -64,7 +64,7 @@ class JournalLine extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the accountNumber
     *
@@ -77,16 +77,16 @@ class JournalLine extends Entity
         $this->_propDict["accountNumber"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the amount
     *
-    * @return Decimal|null The amount
+    * @return Decimal The amount
     */
     public function getAmount()
     {
         if (array_key_exists("amount", $this->_propDict)) {
-            if (is_a($this->_propDict["amount"], "\Beta\Microsoft\Graph\Model\Decimal") || is_null($this->_propDict["amount"])) {
+            if (is_a($this->_propDict["amount"], "Beta\Microsoft\Graph\Model\Decimal")) {
                 return $this->_propDict["amount"];
             } else {
                 $this->_propDict["amount"] = new Decimal($this->_propDict["amount"]);
@@ -95,7 +95,7 @@ class JournalLine extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the amount
     *
@@ -108,11 +108,11 @@ class JournalLine extends Entity
         $this->_propDict["amount"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the comment
     *
-    * @return string|null The comment
+    * @return string The comment
     */
     public function getComment()
     {
@@ -122,7 +122,7 @@ class JournalLine extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the comment
     *
@@ -135,11 +135,11 @@ class JournalLine extends Entity
         $this->_propDict["comment"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the description
     *
-    * @return string|null The description
+    * @return string The description
     */
     public function getDescription()
     {
@@ -149,7 +149,7 @@ class JournalLine extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the description
     *
@@ -162,11 +162,11 @@ class JournalLine extends Entity
         $this->_propDict["description"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the documentNumber
     *
-    * @return string|null The documentNumber
+    * @return string The documentNumber
     */
     public function getDocumentNumber()
     {
@@ -176,7 +176,7 @@ class JournalLine extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the documentNumber
     *
@@ -189,11 +189,11 @@ class JournalLine extends Entity
         $this->_propDict["documentNumber"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the externalDocumentNumber
     *
-    * @return string|null The externalDocumentNumber
+    * @return string The externalDocumentNumber
     */
     public function getExternalDocumentNumber()
     {
@@ -203,7 +203,7 @@ class JournalLine extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the externalDocumentNumber
     *
@@ -216,11 +216,11 @@ class JournalLine extends Entity
         $this->_propDict["externalDocumentNumber"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the journalDisplayName
     *
-    * @return string|null The journalDisplayName
+    * @return string The journalDisplayName
     */
     public function getJournalDisplayName()
     {
@@ -230,7 +230,7 @@ class JournalLine extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the journalDisplayName
     *
@@ -243,16 +243,16 @@ class JournalLine extends Entity
         $this->_propDict["journalDisplayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the lastModifiedDateTime
     *
-    * @return \DateTime|null The lastModifiedDateTime
+    * @return \DateTime The lastModifiedDateTime
     */
     public function getLastModifiedDateTime()
     {
         if (array_key_exists("lastModifiedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime") || is_null($this->_propDict["lastModifiedDateTime"])) {
+            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime")) {
                 return $this->_propDict["lastModifiedDateTime"];
             } else {
                 $this->_propDict["lastModifiedDateTime"] = new \DateTime($this->_propDict["lastModifiedDateTime"]);
@@ -261,7 +261,7 @@ class JournalLine extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastModifiedDateTime
     *
@@ -274,11 +274,11 @@ class JournalLine extends Entity
         $this->_propDict["lastModifiedDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the lineNumber
     *
-    * @return int|null The lineNumber
+    * @return int The lineNumber
     */
     public function getLineNumber()
     {
@@ -288,7 +288,7 @@ class JournalLine extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the lineNumber
     *
@@ -301,16 +301,16 @@ class JournalLine extends Entity
         $this->_propDict["lineNumber"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the postingDate
     *
-    * @return \DateTime|null The postingDate
+    * @return \DateTime The postingDate
     */
     public function getPostingDate()
     {
         if (array_key_exists("postingDate", $this->_propDict)) {
-            if (is_a($this->_propDict["postingDate"], "\DateTime") || is_null($this->_propDict["postingDate"])) {
+            if (is_a($this->_propDict["postingDate"], "\DateTime")) {
                 return $this->_propDict["postingDate"];
             } else {
                 $this->_propDict["postingDate"] = new \DateTime($this->_propDict["postingDate"]);
@@ -319,7 +319,7 @@ class JournalLine extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the postingDate
     *
@@ -332,16 +332,16 @@ class JournalLine extends Entity
         $this->_propDict["postingDate"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the account
     *
-    * @return Account|null The account
+    * @return Account The account
     */
     public function getAccount()
     {
         if (array_key_exists("account", $this->_propDict)) {
-            if (is_a($this->_propDict["account"], "\Beta\Microsoft\Graph\Model\Account") || is_null($this->_propDict["account"])) {
+            if (is_a($this->_propDict["account"], "Beta\Microsoft\Graph\Model\Account")) {
                 return $this->_propDict["account"];
             } else {
                 $this->_propDict["account"] = new Account($this->_propDict["account"]);
@@ -350,7 +350,7 @@ class JournalLine extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the account
     *
@@ -363,5 +363,5 @@ class JournalLine extends Entity
         $this->_propDict["account"] = $val;
         return $this;
     }
-
+    
 }

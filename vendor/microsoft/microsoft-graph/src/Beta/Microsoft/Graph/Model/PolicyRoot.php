@@ -28,10 +28,10 @@ class PolicyRoot implements \JsonSerializable
     * The array of properties available
     * to the model
     *
-    * @var array $_propDict
+    * @var array(string => string)
     */
     protected $_propDict;
-
+    
     /**
     * Construct a new PolicyRoot
     *
@@ -39,10 +39,7 @@ class PolicyRoot implements \JsonSerializable
     */
     function __construct($propDict = array())
     {
-        if (!is_array($propDict)) {
-           $propDict = array();
-        }
-        $this->_propDict = $propDict;
+		$this->_propDict = $propDict;
     }
 
     /**
@@ -54,17 +51,16 @@ class PolicyRoot implements \JsonSerializable
     {
         return $this->_propDict;
     }
-
+    
     /**
     * Gets the authenticationMethodsPolicy
-    * The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
     *
-    * @return AuthenticationMethodsPolicy|null The authenticationMethodsPolicy
+    * @return AuthenticationMethodsPolicy The authenticationMethodsPolicy
     */
     public function getAuthenticationMethodsPolicy()
     {
         if (array_key_exists("authenticationMethodsPolicy", $this->_propDict)) {
-            if (is_a($this->_propDict["authenticationMethodsPolicy"], "\Beta\Microsoft\Graph\Model\AuthenticationMethodsPolicy") || is_null($this->_propDict["authenticationMethodsPolicy"])) {
+            if (is_a($this->_propDict["authenticationMethodsPolicy"], "Beta\Microsoft\Graph\Model\AuthenticationMethodsPolicy")) {
                 return $this->_propDict["authenticationMethodsPolicy"];
             } else {
                 $this->_propDict["authenticationMethodsPolicy"] = new AuthenticationMethodsPolicy($this->_propDict["authenticationMethodsPolicy"]);
@@ -73,10 +69,9 @@ class PolicyRoot implements \JsonSerializable
         }
         return null;
     }
-
+    
     /**
     * Sets the authenticationMethodsPolicy
-    * The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
     *
     * @param AuthenticationMethodsPolicy $val The authenticationMethodsPolicy
     *
@@ -87,17 +82,16 @@ class PolicyRoot implements \JsonSerializable
         $this->_propDict["authenticationMethodsPolicy"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the authenticationFlowsPolicy
-    * The policy configuration of the self-service sign-up experience of external users.
     *
-    * @return AuthenticationFlowsPolicy|null The authenticationFlowsPolicy
+    * @return AuthenticationFlowsPolicy The authenticationFlowsPolicy
     */
     public function getAuthenticationFlowsPolicy()
     {
         if (array_key_exists("authenticationFlowsPolicy", $this->_propDict)) {
-            if (is_a($this->_propDict["authenticationFlowsPolicy"], "\Beta\Microsoft\Graph\Model\AuthenticationFlowsPolicy") || is_null($this->_propDict["authenticationFlowsPolicy"])) {
+            if (is_a($this->_propDict["authenticationFlowsPolicy"], "Beta\Microsoft\Graph\Model\AuthenticationFlowsPolicy")) {
                 return $this->_propDict["authenticationFlowsPolicy"];
             } else {
                 $this->_propDict["authenticationFlowsPolicy"] = new AuthenticationFlowsPolicy($this->_propDict["authenticationFlowsPolicy"]);
@@ -106,10 +100,9 @@ class PolicyRoot implements \JsonSerializable
         }
         return null;
     }
-
+    
     /**
     * Sets the authenticationFlowsPolicy
-    * The policy configuration of the self-service sign-up experience of external users.
     *
     * @param AuthenticationFlowsPolicy $val The authenticationFlowsPolicy
     *
@@ -120,17 +113,16 @@ class PolicyRoot implements \JsonSerializable
         $this->_propDict["authenticationFlowsPolicy"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the b2cAuthenticationMethodsPolicy
-    * The Azure AD B2C policies that define how end users register via local accounts.
     *
-    * @return B2cAuthenticationMethodsPolicy|null The b2cAuthenticationMethodsPolicy
+    * @return B2cAuthenticationMethodsPolicy The b2cAuthenticationMethodsPolicy
     */
     public function getB2cAuthenticationMethodsPolicy()
     {
         if (array_key_exists("b2cAuthenticationMethodsPolicy", $this->_propDict)) {
-            if (is_a($this->_propDict["b2cAuthenticationMethodsPolicy"], "\Beta\Microsoft\Graph\Model\B2cAuthenticationMethodsPolicy") || is_null($this->_propDict["b2cAuthenticationMethodsPolicy"])) {
+            if (is_a($this->_propDict["b2cAuthenticationMethodsPolicy"], "Beta\Microsoft\Graph\Model\B2cAuthenticationMethodsPolicy")) {
                 return $this->_propDict["b2cAuthenticationMethodsPolicy"];
             } else {
                 $this->_propDict["b2cAuthenticationMethodsPolicy"] = new B2cAuthenticationMethodsPolicy($this->_propDict["b2cAuthenticationMethodsPolicy"]);
@@ -139,10 +131,9 @@ class PolicyRoot implements \JsonSerializable
         }
         return null;
     }
-
+    
     /**
     * Sets the b2cAuthenticationMethodsPolicy
-    * The Azure AD B2C policies that define how end users register via local accounts.
     *
     * @param B2cAuthenticationMethodsPolicy $val The b2cAuthenticationMethodsPolicy
     *
@@ -153,13 +144,12 @@ class PolicyRoot implements \JsonSerializable
         $this->_propDict["b2cAuthenticationMethodsPolicy"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the activityBasedTimeoutPolicies
-    * The policy that controls the idle time out for web sessions for applications.
      *
-     * @return array|null The activityBasedTimeoutPolicies
+     * @return array The activityBasedTimeoutPolicies
      */
     public function getActivityBasedTimeoutPolicies()
     {
@@ -169,57 +159,25 @@ class PolicyRoot implements \JsonSerializable
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the activityBasedTimeoutPolicies
-    * The policy that controls the idle time out for web sessions for applications.
     *
-    * @param ActivityBasedTimeoutPolicy[] $val The activityBasedTimeoutPolicies
+    * @param ActivityBasedTimeoutPolicy $val The activityBasedTimeoutPolicies
     *
     * @return PolicyRoot
     */
     public function setActivityBasedTimeoutPolicies($val)
     {
-        $this->_propDict["activityBasedTimeoutPolicies"] = $val;
+		$this->_propDict["activityBasedTimeoutPolicies"] = $val;
         return $this;
     }
+    
 
-
-     /**
-     * Gets the appManagementPolicies
-    * The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
-     *
-     * @return array|null The appManagementPolicies
-     */
-    public function getAppManagementPolicies()
-    {
-        if (array_key_exists("appManagementPolicies", $this->_propDict)) {
-           return $this->_propDict["appManagementPolicies"];
-        } else {
-            return null;
-        }
-    }
-
-    /**
-    * Sets the appManagementPolicies
-    * The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
-    *
-    * @param AppManagementPolicy[] $val The appManagementPolicies
-    *
-    * @return PolicyRoot
-    */
-    public function setAppManagementPolicies($val)
-    {
-        $this->_propDict["appManagementPolicies"] = $val;
-        return $this;
-    }
-
-
-     /**
+     /** 
      * Gets the authorizationPolicy
-    * The policy that controls Azure AD authorization settings.
      *
-     * @return array|null The authorizationPolicy
+     * @return array The authorizationPolicy
      */
     public function getAuthorizationPolicy()
     {
@@ -229,27 +187,25 @@ class PolicyRoot implements \JsonSerializable
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the authorizationPolicy
-    * The policy that controls Azure AD authorization settings.
     *
-    * @param AuthorizationPolicy[] $val The authorizationPolicy
+    * @param AuthorizationPolicy $val The authorizationPolicy
     *
     * @return PolicyRoot
     */
     public function setAuthorizationPolicy($val)
     {
-        $this->_propDict["authorizationPolicy"] = $val;
+		$this->_propDict["authorizationPolicy"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the claimsMappingPolicies
-    * The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
      *
-     * @return array|null The claimsMappingPolicies
+     * @return array The claimsMappingPolicies
      */
     public function getClaimsMappingPolicies()
     {
@@ -259,60 +215,25 @@ class PolicyRoot implements \JsonSerializable
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the claimsMappingPolicies
-    * The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
     *
-    * @param ClaimsMappingPolicy[] $val The claimsMappingPolicies
+    * @param ClaimsMappingPolicy $val The claimsMappingPolicies
     *
     * @return PolicyRoot
     */
     public function setClaimsMappingPolicies($val)
     {
-        $this->_propDict["claimsMappingPolicies"] = $val;
+		$this->_propDict["claimsMappingPolicies"] = $val;
         return $this;
     }
+    
 
-    /**
-    * Gets the defaultAppManagementPolicy
-    * The tenant-wide policy that enforces app management restrictions for all applications and service principals.
-    *
-    * @return TenantAppManagementPolicy|null The defaultAppManagementPolicy
-    */
-    public function getDefaultAppManagementPolicy()
-    {
-        if (array_key_exists("defaultAppManagementPolicy", $this->_propDict)) {
-            if (is_a($this->_propDict["defaultAppManagementPolicy"], "\Beta\Microsoft\Graph\Model\TenantAppManagementPolicy") || is_null($this->_propDict["defaultAppManagementPolicy"])) {
-                return $this->_propDict["defaultAppManagementPolicy"];
-            } else {
-                $this->_propDict["defaultAppManagementPolicy"] = new TenantAppManagementPolicy($this->_propDict["defaultAppManagementPolicy"]);
-                return $this->_propDict["defaultAppManagementPolicy"];
-            }
-        }
-        return null;
-    }
-
-    /**
-    * Sets the defaultAppManagementPolicy
-    * The tenant-wide policy that enforces app management restrictions for all applications and service principals.
-    *
-    * @param TenantAppManagementPolicy $val The defaultAppManagementPolicy
-    *
-    * @return PolicyRoot
-    */
-    public function setDefaultAppManagementPolicy($val)
-    {
-        $this->_propDict["defaultAppManagementPolicy"] = $val;
-        return $this;
-    }
-
-
-     /**
+     /** 
      * Gets the homeRealmDiscoveryPolicies
-    * The policy to control Azure AD authentication behavior for federated users.
      *
-     * @return array|null The homeRealmDiscoveryPolicies
+     * @return array The homeRealmDiscoveryPolicies
      */
     public function getHomeRealmDiscoveryPolicies()
     {
@@ -322,27 +243,25 @@ class PolicyRoot implements \JsonSerializable
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the homeRealmDiscoveryPolicies
-    * The policy to control Azure AD authentication behavior for federated users.
     *
-    * @param HomeRealmDiscoveryPolicy[] $val The homeRealmDiscoveryPolicies
+    * @param HomeRealmDiscoveryPolicy $val The homeRealmDiscoveryPolicies
     *
     * @return PolicyRoot
     */
     public function setHomeRealmDiscoveryPolicies($val)
     {
-        $this->_propDict["homeRealmDiscoveryPolicies"] = $val;
+		$this->_propDict["homeRealmDiscoveryPolicies"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the permissionGrantPolicies
-    * The policy that specifies the conditions under which consent can be granted.
      *
-     * @return array|null The permissionGrantPolicies
+     * @return array The permissionGrantPolicies
      */
     public function getPermissionGrantPolicies()
     {
@@ -352,55 +271,53 @@ class PolicyRoot implements \JsonSerializable
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the permissionGrantPolicies
-    * The policy that specifies the conditions under which consent can be granted.
     *
-    * @param PermissionGrantPolicy[] $val The permissionGrantPolicies
+    * @param PermissionGrantPolicy $val The permissionGrantPolicies
     *
     * @return PolicyRoot
     */
     public function setPermissionGrantPolicies($val)
     {
-        $this->_propDict["permissionGrantPolicies"] = $val;
+		$this->_propDict["permissionGrantPolicies"] = $val;
         return $this;
     }
+    
 
-
-     /**
-     * Gets the servicePrincipalCreationPolicies
+     /** 
+     * Gets the privateLinkResourcePolicies
      *
-     * @return array|null The servicePrincipalCreationPolicies
+     * @return array The privateLinkResourcePolicies
      */
-    public function getServicePrincipalCreationPolicies()
+    public function getPrivateLinkResourcePolicies()
     {
-        if (array_key_exists("servicePrincipalCreationPolicies", $this->_propDict)) {
-           return $this->_propDict["servicePrincipalCreationPolicies"];
+        if (array_key_exists("privateLinkResourcePolicies", $this->_propDict)) {
+           return $this->_propDict["privateLinkResourcePolicies"];
         } else {
             return null;
         }
     }
-
-    /**
-    * Sets the servicePrincipalCreationPolicies
+    
+    /** 
+    * Sets the privateLinkResourcePolicies
     *
-    * @param ServicePrincipalCreationPolicy[] $val The servicePrincipalCreationPolicies
+    * @param PrivateLinkResourcePolicy $val The privateLinkResourcePolicies
     *
     * @return PolicyRoot
     */
-    public function setServicePrincipalCreationPolicies($val)
+    public function setPrivateLinkResourcePolicies($val)
     {
-        $this->_propDict["servicePrincipalCreationPolicies"] = $val;
+		$this->_propDict["privateLinkResourcePolicies"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the tokenIssuancePolicies
-    * The policy that specifies the characteristics of SAML tokens issued by Azure AD.
      *
-     * @return array|null The tokenIssuancePolicies
+     * @return array The tokenIssuancePolicies
      */
     public function getTokenIssuancePolicies()
     {
@@ -410,27 +327,25 @@ class PolicyRoot implements \JsonSerializable
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the tokenIssuancePolicies
-    * The policy that specifies the characteristics of SAML tokens issued by Azure AD.
     *
-    * @param TokenIssuancePolicy[] $val The tokenIssuancePolicies
+    * @param TokenIssuancePolicy $val The tokenIssuancePolicies
     *
     * @return PolicyRoot
     */
     public function setTokenIssuancePolicies($val)
     {
-        $this->_propDict["tokenIssuancePolicies"] = $val;
+		$this->_propDict["tokenIssuancePolicies"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the tokenLifetimePolicies
-    * The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
      *
-     * @return array|null The tokenLifetimePolicies
+     * @return array The tokenLifetimePolicies
      */
     public function getTokenLifetimePolicies()
     {
@@ -440,94 +355,29 @@ class PolicyRoot implements \JsonSerializable
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the tokenLifetimePolicies
-    * The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
     *
-    * @param TokenLifetimePolicy[] $val The tokenLifetimePolicies
+    * @param TokenLifetimePolicy $val The tokenLifetimePolicies
     *
     * @return PolicyRoot
     */
     public function setTokenLifetimePolicies($val)
     {
-        $this->_propDict["tokenLifetimePolicies"] = $val;
+		$this->_propDict["tokenLifetimePolicies"] = $val;
         return $this;
     }
-
-
-     /**
-     * Gets the featureRolloutPolicies
-    * The feature rollout policy associated with a directory object.
-     *
-     * @return array|null The featureRolloutPolicies
-     */
-    public function getFeatureRolloutPolicies()
-    {
-        if (array_key_exists("featureRolloutPolicies", $this->_propDict)) {
-           return $this->_propDict["featureRolloutPolicies"];
-        } else {
-            return null;
-        }
-    }
-
-    /**
-    * Sets the featureRolloutPolicies
-    * The feature rollout policy associated with a directory object.
-    *
-    * @param FeatureRolloutPolicy[] $val The featureRolloutPolicies
-    *
-    * @return PolicyRoot
-    */
-    public function setFeatureRolloutPolicies($val)
-    {
-        $this->_propDict["featureRolloutPolicies"] = $val;
-        return $this;
-    }
-
-    /**
-    * Gets the accessReviewPolicy
-    * The policy that contains directory-level access review settings.
-    *
-    * @return AccessReviewPolicy|null The accessReviewPolicy
-    */
-    public function getAccessReviewPolicy()
-    {
-        if (array_key_exists("accessReviewPolicy", $this->_propDict)) {
-            if (is_a($this->_propDict["accessReviewPolicy"], "\Beta\Microsoft\Graph\Model\AccessReviewPolicy") || is_null($this->_propDict["accessReviewPolicy"])) {
-                return $this->_propDict["accessReviewPolicy"];
-            } else {
-                $this->_propDict["accessReviewPolicy"] = new AccessReviewPolicy($this->_propDict["accessReviewPolicy"]);
-                return $this->_propDict["accessReviewPolicy"];
-            }
-        }
-        return null;
-    }
-
-    /**
-    * Sets the accessReviewPolicy
-    * The policy that contains directory-level access review settings.
-    *
-    * @param AccessReviewPolicy $val The accessReviewPolicy
-    *
-    * @return PolicyRoot
-    */
-    public function setAccessReviewPolicy($val)
-    {
-        $this->_propDict["accessReviewPolicy"] = $val;
-        return $this;
-    }
-
+    
     /**
     * Gets the adminConsentRequestPolicy
-    * The policy by which consent requests are created and managed for the entire tenant.
     *
-    * @return AdminConsentRequestPolicy|null The adminConsentRequestPolicy
+    * @return AdminConsentRequestPolicy The adminConsentRequestPolicy
     */
     public function getAdminConsentRequestPolicy()
     {
         if (array_key_exists("adminConsentRequestPolicy", $this->_propDict)) {
-            if (is_a($this->_propDict["adminConsentRequestPolicy"], "\Beta\Microsoft\Graph\Model\AdminConsentRequestPolicy") || is_null($this->_propDict["adminConsentRequestPolicy"])) {
+            if (is_a($this->_propDict["adminConsentRequestPolicy"], "Beta\Microsoft\Graph\Model\AdminConsentRequestPolicy")) {
                 return $this->_propDict["adminConsentRequestPolicy"];
             } else {
                 $this->_propDict["adminConsentRequestPolicy"] = new AdminConsentRequestPolicy($this->_propDict["adminConsentRequestPolicy"]);
@@ -536,10 +386,9 @@ class PolicyRoot implements \JsonSerializable
         }
         return null;
     }
-
+    
     /**
     * Sets the adminConsentRequestPolicy
-    * The policy by which consent requests are created and managed for the entire tenant.
     *
     * @param AdminConsentRequestPolicy $val The adminConsentRequestPolicy
     *
@@ -550,16 +399,16 @@ class PolicyRoot implements \JsonSerializable
         $this->_propDict["adminConsentRequestPolicy"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the directoryRoleAccessReviewPolicy
     *
-    * @return DirectoryRoleAccessReviewPolicy|null The directoryRoleAccessReviewPolicy
+    * @return DirectoryRoleAccessReviewPolicy The directoryRoleAccessReviewPolicy
     */
     public function getDirectoryRoleAccessReviewPolicy()
     {
         if (array_key_exists("directoryRoleAccessReviewPolicy", $this->_propDict)) {
-            if (is_a($this->_propDict["directoryRoleAccessReviewPolicy"], "\Beta\Microsoft\Graph\Model\DirectoryRoleAccessReviewPolicy") || is_null($this->_propDict["directoryRoleAccessReviewPolicy"])) {
+            if (is_a($this->_propDict["directoryRoleAccessReviewPolicy"], "Beta\Microsoft\Graph\Model\DirectoryRoleAccessReviewPolicy")) {
                 return $this->_propDict["directoryRoleAccessReviewPolicy"];
             } else {
                 $this->_propDict["directoryRoleAccessReviewPolicy"] = new DirectoryRoleAccessReviewPolicy($this->_propDict["directoryRoleAccessReviewPolicy"]);
@@ -568,7 +417,7 @@ class PolicyRoot implements \JsonSerializable
         }
         return null;
     }
-
+    
     /**
     * Sets the directoryRoleAccessReviewPolicy
     *
@@ -581,13 +430,12 @@ class PolicyRoot implements \JsonSerializable
         $this->_propDict["directoryRoleAccessReviewPolicy"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the conditionalAccessPolicies
-    * The custom rules that define an access scenario.
      *
-     * @return array|null The conditionalAccessPolicies
+     * @return array The conditionalAccessPolicies
      */
     public function getConditionalAccessPolicies()
     {
@@ -597,31 +445,29 @@ class PolicyRoot implements \JsonSerializable
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the conditionalAccessPolicies
-    * The custom rules that define an access scenario.
     *
-    * @param ConditionalAccessPolicy[] $val The conditionalAccessPolicies
+    * @param ConditionalAccessPolicy $val The conditionalAccessPolicies
     *
     * @return PolicyRoot
     */
     public function setConditionalAccessPolicies($val)
     {
-        $this->_propDict["conditionalAccessPolicies"] = $val;
+		$this->_propDict["conditionalAccessPolicies"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the identitySecurityDefaultsEnforcementPolicy
-    * The policy that represents the security defaults that protect against common attacks.
     *
-    * @return IdentitySecurityDefaultsEnforcementPolicy|null The identitySecurityDefaultsEnforcementPolicy
+    * @return IdentitySecurityDefaultsEnforcementPolicy The identitySecurityDefaultsEnforcementPolicy
     */
     public function getIdentitySecurityDefaultsEnforcementPolicy()
     {
         if (array_key_exists("identitySecurityDefaultsEnforcementPolicy", $this->_propDict)) {
-            if (is_a($this->_propDict["identitySecurityDefaultsEnforcementPolicy"], "\Beta\Microsoft\Graph\Model\IdentitySecurityDefaultsEnforcementPolicy") || is_null($this->_propDict["identitySecurityDefaultsEnforcementPolicy"])) {
+            if (is_a($this->_propDict["identitySecurityDefaultsEnforcementPolicy"], "Beta\Microsoft\Graph\Model\IdentitySecurityDefaultsEnforcementPolicy")) {
                 return $this->_propDict["identitySecurityDefaultsEnforcementPolicy"];
             } else {
                 $this->_propDict["identitySecurityDefaultsEnforcementPolicy"] = new IdentitySecurityDefaultsEnforcementPolicy($this->_propDict["identitySecurityDefaultsEnforcementPolicy"]);
@@ -630,10 +476,9 @@ class PolicyRoot implements \JsonSerializable
         }
         return null;
     }
-
+    
     /**
     * Sets the identitySecurityDefaultsEnforcementPolicy
-    * The policy that represents the security defaults that protect against common attacks.
     *
     * @param IdentitySecurityDefaultsEnforcementPolicy $val The identitySecurityDefaultsEnforcementPolicy
     *
@@ -644,71 +489,12 @@ class PolicyRoot implements \JsonSerializable
         $this->_propDict["identitySecurityDefaultsEnforcementPolicy"] = $val;
         return $this;
     }
+    
 
-
-     /**
-     * Gets the mobileAppManagementPolicies
-    * The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
-     *
-     * @return array|null The mobileAppManagementPolicies
-     */
-    public function getMobileAppManagementPolicies()
-    {
-        if (array_key_exists("mobileAppManagementPolicies", $this->_propDict)) {
-           return $this->_propDict["mobileAppManagementPolicies"];
-        } else {
-            return null;
-        }
-    }
-
-    /**
-    * Sets the mobileAppManagementPolicies
-    * The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
-    *
-    * @param MobilityManagementPolicy[] $val The mobileAppManagementPolicies
-    *
-    * @return PolicyRoot
-    */
-    public function setMobileAppManagementPolicies($val)
-    {
-        $this->_propDict["mobileAppManagementPolicies"] = $val;
-        return $this;
-    }
-
-
-     /**
-     * Gets the mobileDeviceManagementPolicies
-     *
-     * @return array|null The mobileDeviceManagementPolicies
-     */
-    public function getMobileDeviceManagementPolicies()
-    {
-        if (array_key_exists("mobileDeviceManagementPolicies", $this->_propDict)) {
-           return $this->_propDict["mobileDeviceManagementPolicies"];
-        } else {
-            return null;
-        }
-    }
-
-    /**
-    * Sets the mobileDeviceManagementPolicies
-    *
-    * @param MobilityManagementPolicy[] $val The mobileDeviceManagementPolicies
-    *
-    * @return PolicyRoot
-    */
-    public function setMobileDeviceManagementPolicies($val)
-    {
-        $this->_propDict["mobileDeviceManagementPolicies"] = $val;
-        return $this;
-    }
-
-
-     /**
+     /** 
      * Gets the roleManagementPolicies
-    * Represents the role management policies.
      *
-     * @return array|null The roleManagementPolicies
+     * @return array The roleManagementPolicies
      */
     public function getRoleManagementPolicies()
     {
@@ -718,27 +504,25 @@ class PolicyRoot implements \JsonSerializable
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the roleManagementPolicies
-    * Represents the role management policies.
     *
-    * @param UnifiedRoleManagementPolicy[] $val The roleManagementPolicies
+    * @param UnifiedRoleManagementPolicy $val The roleManagementPolicies
     *
     * @return PolicyRoot
     */
     public function setRoleManagementPolicies($val)
     {
-        $this->_propDict["roleManagementPolicies"] = $val;
+		$this->_propDict["roleManagementPolicies"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the roleManagementPolicyAssignments
-    * Represents the role management policy assignments.
      *
-     * @return array|null The roleManagementPolicyAssignments
+     * @return array The roleManagementPolicyAssignments
      */
     public function getRoleManagementPolicyAssignments()
     {
@@ -748,50 +532,46 @@ class PolicyRoot implements \JsonSerializable
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the roleManagementPolicyAssignments
-    * Represents the role management policy assignments.
     *
-    * @param UnifiedRoleManagementPolicyAssignment[] $val The roleManagementPolicyAssignments
+    * @param UnifiedRoleManagementPolicyAssignment $val The roleManagementPolicyAssignments
     *
     * @return PolicyRoot
     */
     public function setRoleManagementPolicyAssignments($val)
     {
-        $this->_propDict["roleManagementPolicyAssignments"] = $val;
+		$this->_propDict["roleManagementPolicyAssignments"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the ODataType
     *
-    * @return string|null The ODataType
+    * @return string The ODataType
     */
     public function getODataType()
     {
-        if (array_key_exists('@odata.type', $this->_propDict)) {
-            return $this->_propDict["@odata.type"];
-        }
-        return null;
+        return $this->_propDict["@odata.type"];
     }
-
+    
     /**
     * Sets the ODataType
     *
-    * @param string $val The ODataType
+    * @param string The ODataType
     *
-    * @return PolicyRoot
+    * @return Entity
     */
     public function setODataType($val)
     {
         $this->_propDict["@odata.type"] = $val;
         return $this;
     }
-
+    
     /**
     * Serializes the object by property array
-    * Manually serialize DateTime into RFC3339 format
+	* Manually serialize DateTime into RFC3339 format
     *
     * @return array The list of properties
     */
@@ -803,8 +583,6 @@ class PolicyRoot implements \JsonSerializable
                 $serializableProperties[$property] = $val->format(\DateTime::RFC3339);
             } else if (is_a($val, "\Microsoft\Graph\Core\Enum")) {
                 $serializableProperties[$property] = $val->value();
-            } else if (is_a($val, "\Entity")) {
-                $serializableProperties[$property] = $val->jsonSerialize();
             }
         }
         return $serializableProperties;

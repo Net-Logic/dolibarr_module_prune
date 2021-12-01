@@ -28,10 +28,10 @@ class RoleManagement implements \JsonSerializable
     * The array of properties available
     * to the model
     *
-    * @var array $_propDict
+    * @var array(string => string)
     */
     protected $_propDict;
-
+    
     /**
     * Construct a new RoleManagement
     *
@@ -39,10 +39,7 @@ class RoleManagement implements \JsonSerializable
     */
     function __construct($propDict = array())
     {
-        if (!is_array($propDict)) {
-           $propDict = array();
-        }
-        $this->_propDict = $propDict;
+		$this->_propDict = $propDict;
     }
 
     /**
@@ -54,17 +51,16 @@ class RoleManagement implements \JsonSerializable
     {
         return $this->_propDict;
     }
-
+    
     /**
     * Gets the directory
-    * Read-only. Nullable.
     *
-    * @return RbacApplication|null The directory
+    * @return RbacApplication The directory
     */
     public function getDirectory()
     {
         if (array_key_exists("directory", $this->_propDict)) {
-            if (is_a($this->_propDict["directory"], "\Beta\Microsoft\Graph\Model\RbacApplication") || is_null($this->_propDict["directory"])) {
+            if (is_a($this->_propDict["directory"], "Beta\Microsoft\Graph\Model\RbacApplication")) {
                 return $this->_propDict["directory"];
             } else {
                 $this->_propDict["directory"] = new RbacApplication($this->_propDict["directory"]);
@@ -73,10 +69,9 @@ class RoleManagement implements \JsonSerializable
         }
         return null;
     }
-
+    
     /**
     * Sets the directory
-    * Read-only. Nullable.
     *
     * @param RbacApplication $val The directory
     *
@@ -87,48 +82,17 @@ class RoleManagement implements \JsonSerializable
         $this->_propDict["directory"] = $val;
         return $this;
     }
-
-    /**
-    * Gets the cloudPC
-    *
-    * @return RbacApplicationMultiple|null The cloudPC
-    */
-    public function getCloudPC()
-    {
-        if (array_key_exists("cloudPC", $this->_propDict)) {
-            if (is_a($this->_propDict["cloudPC"], "\Beta\Microsoft\Graph\Model\RbacApplicationMultiple") || is_null($this->_propDict["cloudPC"])) {
-                return $this->_propDict["cloudPC"];
-            } else {
-                $this->_propDict["cloudPC"] = new RbacApplicationMultiple($this->_propDict["cloudPC"]);
-                return $this->_propDict["cloudPC"];
-            }
-        }
-        return null;
-    }
-
-    /**
-    * Sets the cloudPC
-    *
-    * @param RbacApplicationMultiple $val The cloudPC
-    *
-    * @return RoleManagement
-    */
-    public function setCloudPC($val)
-    {
-        $this->_propDict["cloudPC"] = $val;
-        return $this;
-    }
-
+    
     /**
     * Gets the entitlementManagement
     * The RbacApplication for Entitlement Management
     *
-    * @return RbacApplication|null The entitlementManagement
+    * @return RbacApplication The entitlementManagement
     */
     public function getEntitlementManagement()
     {
         if (array_key_exists("entitlementManagement", $this->_propDict)) {
-            if (is_a($this->_propDict["entitlementManagement"], "\Beta\Microsoft\Graph\Model\RbacApplication") || is_null($this->_propDict["entitlementManagement"])) {
+            if (is_a($this->_propDict["entitlementManagement"], "Beta\Microsoft\Graph\Model\RbacApplication")) {
                 return $this->_propDict["entitlementManagement"];
             } else {
                 $this->_propDict["entitlementManagement"] = new RbacApplication($this->_propDict["entitlementManagement"]);
@@ -137,7 +101,7 @@ class RoleManagement implements \JsonSerializable
         }
         return null;
     }
-
+    
     /**
     * Sets the entitlementManagement
     * The RbacApplication for Entitlement Management
@@ -151,17 +115,17 @@ class RoleManagement implements \JsonSerializable
         $this->_propDict["entitlementManagement"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the deviceManagement
     * The RbacApplication for Device Management
     *
-    * @return RbacApplicationMultiple|null The deviceManagement
+    * @return RbacApplicationMultiple The deviceManagement
     */
     public function getDeviceManagement()
     {
         if (array_key_exists("deviceManagement", $this->_propDict)) {
-            if (is_a($this->_propDict["deviceManagement"], "\Beta\Microsoft\Graph\Model\RbacApplicationMultiple") || is_null($this->_propDict["deviceManagement"])) {
+            if (is_a($this->_propDict["deviceManagement"], "Beta\Microsoft\Graph\Model\RbacApplicationMultiple")) {
                 return $this->_propDict["deviceManagement"];
             } else {
                 $this->_propDict["deviceManagement"] = new RbacApplicationMultiple($this->_propDict["deviceManagement"]);
@@ -170,7 +134,7 @@ class RoleManagement implements \JsonSerializable
         }
         return null;
     }
-
+    
     /**
     * Sets the deviceManagement
     * The RbacApplication for Device Management
@@ -184,36 +148,33 @@ class RoleManagement implements \JsonSerializable
         $this->_propDict["deviceManagement"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the ODataType
     *
-    * @return string|null The ODataType
+    * @return string The ODataType
     */
     public function getODataType()
     {
-        if (array_key_exists('@odata.type', $this->_propDict)) {
-            return $this->_propDict["@odata.type"];
-        }
-        return null;
+        return $this->_propDict["@odata.type"];
     }
-
+    
     /**
     * Sets the ODataType
     *
-    * @param string $val The ODataType
+    * @param string The ODataType
     *
-    * @return RoleManagement
+    * @return Entity
     */
     public function setODataType($val)
     {
         $this->_propDict["@odata.type"] = $val;
         return $this;
     }
-
+    
     /**
     * Serializes the object by property array
-    * Manually serialize DateTime into RFC3339 format
+	* Manually serialize DateTime into RFC3339 format
     *
     * @return array The list of properties
     */
@@ -225,8 +186,6 @@ class RoleManagement implements \JsonSerializable
                 $serializableProperties[$property] = $val->format(\DateTime::RFC3339);
             } else if (is_a($val, "\Microsoft\Graph\Core\Enum")) {
                 $serializableProperties[$property] = $val->value();
-            } else if (is_a($val, "\Entity")) {
-                $serializableProperties[$property] = $val->jsonSerialize();
             }
         }
         return $serializableProperties;

@@ -28,12 +28,12 @@ class ManagedApp extends MobileApp
     * Gets the appAvailability
     * The Application's availability. Possible values are: global, lineOfBusiness.
     *
-    * @return ManagedAppAvailability|null The appAvailability
+    * @return ManagedAppAvailability The appAvailability
     */
     public function getAppAvailability()
     {
         if (array_key_exists("appAvailability", $this->_propDict)) {
-            if (is_a($this->_propDict["appAvailability"], "\Beta\Microsoft\Graph\Model\ManagedAppAvailability") || is_null($this->_propDict["appAvailability"])) {
+            if (is_a($this->_propDict["appAvailability"], "Beta\Microsoft\Graph\Model\ManagedAppAvailability")) {
                 return $this->_propDict["appAvailability"];
             } else {
                 $this->_propDict["appAvailability"] = new ManagedAppAvailability($this->_propDict["appAvailability"]);
@@ -42,7 +42,7 @@ class ManagedApp extends MobileApp
         }
         return null;
     }
-
+    
     /**
     * Sets the appAvailability
     * The Application's availability. Possible values are: global, lineOfBusiness.
@@ -56,12 +56,12 @@ class ManagedApp extends MobileApp
         $this->_propDict["appAvailability"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the version
     * The Application's version.
     *
-    * @return string|null The version
+    * @return string The version
     */
     public function getVersion()
     {
@@ -71,7 +71,7 @@ class ManagedApp extends MobileApp
             return null;
         }
     }
-
+    
     /**
     * Sets the version
     * The Application's version.
@@ -85,5 +85,5 @@ class ManagedApp extends MobileApp
         $this->_propDict["version"] = $val;
         return $this;
     }
-
+    
 }

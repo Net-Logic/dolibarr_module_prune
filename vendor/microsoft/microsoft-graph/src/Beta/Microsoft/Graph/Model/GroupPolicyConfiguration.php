@@ -28,12 +28,12 @@ class GroupPolicyConfiguration extends Entity
     * Gets the createdDateTime
     * The date and time the object was created.
     *
-    * @return \DateTime|null The createdDateTime
+    * @return \DateTime The createdDateTime
     */
     public function getCreatedDateTime()
     {
         if (array_key_exists("createdDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["createdDateTime"], "\DateTime") || is_null($this->_propDict["createdDateTime"])) {
+            if (is_a($this->_propDict["createdDateTime"], "\DateTime")) {
                 return $this->_propDict["createdDateTime"];
             } else {
                 $this->_propDict["createdDateTime"] = new \DateTime($this->_propDict["createdDateTime"]);
@@ -42,7 +42,7 @@ class GroupPolicyConfiguration extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the createdDateTime
     * The date and time the object was created.
@@ -56,12 +56,12 @@ class GroupPolicyConfiguration extends Entity
         $this->_propDict["createdDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the description
     * User provided description for the resource object.
     *
-    * @return string|null The description
+    * @return string The description
     */
     public function getDescription()
     {
@@ -71,7 +71,7 @@ class GroupPolicyConfiguration extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the description
     * User provided description for the resource object.
@@ -85,12 +85,12 @@ class GroupPolicyConfiguration extends Entity
         $this->_propDict["description"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the displayName
     * User provided name for the resource object.
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -100,7 +100,7 @@ class GroupPolicyConfiguration extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the displayName
     * User provided name for the resource object.
@@ -114,17 +114,17 @@ class GroupPolicyConfiguration extends Entity
         $this->_propDict["displayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the lastModifiedDateTime
     * The date and time the entity was last modified.
     *
-    * @return \DateTime|null The lastModifiedDateTime
+    * @return \DateTime The lastModifiedDateTime
     */
     public function getLastModifiedDateTime()
     {
         if (array_key_exists("lastModifiedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime") || is_null($this->_propDict["lastModifiedDateTime"])) {
+            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime")) {
                 return $this->_propDict["lastModifiedDateTime"];
             } else {
                 $this->_propDict["lastModifiedDateTime"] = new \DateTime($this->_propDict["lastModifiedDateTime"]);
@@ -133,7 +133,7 @@ class GroupPolicyConfiguration extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastModifiedDateTime
     * The date and time the entity was last modified.
@@ -147,12 +147,12 @@ class GroupPolicyConfiguration extends Entity
         $this->_propDict["lastModifiedDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the roleScopeTagIds
     * The list of scope tags for the configuration.
     *
-    * @return string|null The roleScopeTagIds
+    * @return string The roleScopeTagIds
     */
     public function getRoleScopeTagIds()
     {
@@ -162,7 +162,7 @@ class GroupPolicyConfiguration extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the roleScopeTagIds
     * The list of scope tags for the configuration.
@@ -176,13 +176,13 @@ class GroupPolicyConfiguration extends Entity
         $this->_propDict["roleScopeTagIds"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the assignments
     * The list of group assignments for the configuration.
      *
-     * @return array|null The assignments
+     * @return array The assignments
      */
     public function getAssignments()
     {
@@ -192,27 +192,27 @@ class GroupPolicyConfiguration extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the assignments
     * The list of group assignments for the configuration.
     *
-    * @param GroupPolicyConfigurationAssignment[] $val The assignments
+    * @param GroupPolicyConfigurationAssignment $val The assignments
     *
     * @return GroupPolicyConfiguration
     */
     public function setAssignments($val)
     {
-        $this->_propDict["assignments"] = $val;
+		$this->_propDict["assignments"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the definitionValues
     * The list of enabled or disabled group policy definition values for the configuration.
      *
-     * @return array|null The definitionValues
+     * @return array The definitionValues
      */
     public function getDefinitionValues()
     {
@@ -222,19 +222,19 @@ class GroupPolicyConfiguration extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the definitionValues
     * The list of enabled or disabled group policy definition values for the configuration.
     *
-    * @param GroupPolicyDefinitionValue[] $val The definitionValues
+    * @param GroupPolicyDefinitionValue $val The definitionValues
     *
     * @return GroupPolicyConfiguration
     */
     public function setDefinitionValues($val)
     {
-        $this->_propDict["definitionValues"] = $val;
+		$this->_propDict["definitionValues"] = $val;
         return $this;
     }
-
+    
 }

@@ -28,12 +28,12 @@ class EventMessage extends Message
     * Gets the endDateTime
     * The end time of the requested meeting.
     *
-    * @return DateTimeTimeZone|null The endDateTime
+    * @return DateTimeTimeZone The endDateTime
     */
     public function getEndDateTime()
     {
         if (array_key_exists("endDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["endDateTime"], "\Beta\Microsoft\Graph\Model\DateTimeTimeZone") || is_null($this->_propDict["endDateTime"])) {
+            if (is_a($this->_propDict["endDateTime"], "Beta\Microsoft\Graph\Model\DateTimeTimeZone")) {
                 return $this->_propDict["endDateTime"];
             } else {
                 $this->_propDict["endDateTime"] = new DateTimeTimeZone($this->_propDict["endDateTime"]);
@@ -42,7 +42,7 @@ class EventMessage extends Message
         }
         return null;
     }
-
+    
     /**
     * Sets the endDateTime
     * The end time of the requested meeting.
@@ -56,11 +56,11 @@ class EventMessage extends Message
         $this->_propDict["endDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the isAllDay
     *
-    * @return bool|null The isAllDay
+    * @return bool The isAllDay
     */
     public function getIsAllDay()
     {
@@ -70,7 +70,7 @@ class EventMessage extends Message
             return null;
         }
     }
-
+    
     /**
     * Sets the isAllDay
     *
@@ -83,11 +83,12 @@ class EventMessage extends Message
         $this->_propDict["isAllDay"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the isDelegated
+    * True if this meeting request is accessible to a delegate, false otherwise. Default is false.
     *
-    * @return bool|null The isDelegated
+    * @return bool The isDelegated
     */
     public function getIsDelegated()
     {
@@ -97,9 +98,10 @@ class EventMessage extends Message
             return null;
         }
     }
-
+    
     /**
     * Sets the isDelegated
+    * True if this meeting request is accessible to a delegate, false otherwise. Default is false.
     *
     * @param bool $val The isDelegated
     *
@@ -110,11 +112,11 @@ class EventMessage extends Message
         $this->_propDict["isDelegated"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the isOutOfDate
     *
-    * @return bool|null The isOutOfDate
+    * @return bool The isOutOfDate
     */
     public function getIsOutOfDate()
     {
@@ -124,7 +126,7 @@ class EventMessage extends Message
             return null;
         }
     }
-
+    
     /**
     * Sets the isOutOfDate
     *
@@ -137,16 +139,16 @@ class EventMessage extends Message
         $this->_propDict["isOutOfDate"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the location
     *
-    * @return Location|null The location
+    * @return Location The location
     */
     public function getLocation()
     {
         if (array_key_exists("location", $this->_propDict)) {
-            if (is_a($this->_propDict["location"], "\Beta\Microsoft\Graph\Model\Location") || is_null($this->_propDict["location"])) {
+            if (is_a($this->_propDict["location"], "Beta\Microsoft\Graph\Model\Location")) {
                 return $this->_propDict["location"];
             } else {
                 $this->_propDict["location"] = new Location($this->_propDict["location"]);
@@ -155,7 +157,7 @@ class EventMessage extends Message
         }
         return null;
     }
-
+    
     /**
     * Sets the location
     *
@@ -168,16 +170,17 @@ class EventMessage extends Message
         $this->_propDict["location"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the meetingMessageType
+    * The type of event message: none, meetingRequest, meetingCancelled, meetingAccepted, meetingTenativelyAccepted, meetingDeclined.
     *
-    * @return MeetingMessageType|null The meetingMessageType
+    * @return MeetingMessageType The meetingMessageType
     */
     public function getMeetingMessageType()
     {
         if (array_key_exists("meetingMessageType", $this->_propDict)) {
-            if (is_a($this->_propDict["meetingMessageType"], "\Beta\Microsoft\Graph\Model\MeetingMessageType") || is_null($this->_propDict["meetingMessageType"])) {
+            if (is_a($this->_propDict["meetingMessageType"], "Beta\Microsoft\Graph\Model\MeetingMessageType")) {
                 return $this->_propDict["meetingMessageType"];
             } else {
                 $this->_propDict["meetingMessageType"] = new MeetingMessageType($this->_propDict["meetingMessageType"]);
@@ -186,9 +189,10 @@ class EventMessage extends Message
         }
         return null;
     }
-
+    
     /**
     * Sets the meetingMessageType
+    * The type of event message: none, meetingRequest, meetingCancelled, meetingAccepted, meetingTenativelyAccepted, meetingDeclined.
     *
     * @param MeetingMessageType $val The meetingMessageType
     *
@@ -199,16 +203,16 @@ class EventMessage extends Message
         $this->_propDict["meetingMessageType"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the recurrence
     *
-    * @return PatternedRecurrence|null The recurrence
+    * @return PatternedRecurrence The recurrence
     */
     public function getRecurrence()
     {
         if (array_key_exists("recurrence", $this->_propDict)) {
-            if (is_a($this->_propDict["recurrence"], "\Beta\Microsoft\Graph\Model\PatternedRecurrence") || is_null($this->_propDict["recurrence"])) {
+            if (is_a($this->_propDict["recurrence"], "Beta\Microsoft\Graph\Model\PatternedRecurrence")) {
                 return $this->_propDict["recurrence"];
             } else {
                 $this->_propDict["recurrence"] = new PatternedRecurrence($this->_propDict["recurrence"]);
@@ -217,7 +221,7 @@ class EventMessage extends Message
         }
         return null;
     }
-
+    
     /**
     * Sets the recurrence
     *
@@ -230,16 +234,16 @@ class EventMessage extends Message
         $this->_propDict["recurrence"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the startDateTime
     *
-    * @return DateTimeTimeZone|null The startDateTime
+    * @return DateTimeTimeZone The startDateTime
     */
     public function getStartDateTime()
     {
         if (array_key_exists("startDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["startDateTime"], "\Beta\Microsoft\Graph\Model\DateTimeTimeZone") || is_null($this->_propDict["startDateTime"])) {
+            if (is_a($this->_propDict["startDateTime"], "Beta\Microsoft\Graph\Model\DateTimeTimeZone")) {
                 return $this->_propDict["startDateTime"];
             } else {
                 $this->_propDict["startDateTime"] = new DateTimeTimeZone($this->_propDict["startDateTime"]);
@@ -248,7 +252,7 @@ class EventMessage extends Message
         }
         return null;
     }
-
+    
     /**
     * Sets the startDateTime
     *
@@ -261,16 +265,16 @@ class EventMessage extends Message
         $this->_propDict["startDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the type
     *
-    * @return EventType|null The type
+    * @return EventType The type
     */
     public function getType()
     {
         if (array_key_exists("type", $this->_propDict)) {
-            if (is_a($this->_propDict["type"], "\Beta\Microsoft\Graph\Model\EventType") || is_null($this->_propDict["type"])) {
+            if (is_a($this->_propDict["type"], "Beta\Microsoft\Graph\Model\EventType")) {
                 return $this->_propDict["type"];
             } else {
                 $this->_propDict["type"] = new EventType($this->_propDict["type"]);
@@ -279,7 +283,7 @@ class EventMessage extends Message
         }
         return null;
     }
-
+    
     /**
     * Sets the type
     *
@@ -292,17 +296,17 @@ class EventMessage extends Message
         $this->_propDict["type"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the event
     * The event associated with the event message. The assumption for attendees or room resources is that the Calendar Attendant is set to automatically update the calendar with an event when meeting request event messages arrive. Navigation property.  Read-only.
     *
-    * @return Event|null The event
+    * @return Event The event
     */
     public function getEvent()
     {
         if (array_key_exists("event", $this->_propDict)) {
-            if (is_a($this->_propDict["event"], "\Beta\Microsoft\Graph\Model\Event") || is_null($this->_propDict["event"])) {
+            if (is_a($this->_propDict["event"], "Beta\Microsoft\Graph\Model\Event")) {
                 return $this->_propDict["event"];
             } else {
                 $this->_propDict["event"] = new Event($this->_propDict["event"]);
@@ -311,7 +315,7 @@ class EventMessage extends Message
         }
         return null;
     }
-
+    
     /**
     * Sets the event
     * The event associated with the event message. The assumption for attendees or room resources is that the Calendar Attendant is set to automatically update the calendar with an event when meeting request event messages arrive. Navigation property.  Read-only.
@@ -325,5 +329,5 @@ class EventMessage extends Message
         $this->_propDict["event"] = $val;
         return $this;
     }
-
+    
 }

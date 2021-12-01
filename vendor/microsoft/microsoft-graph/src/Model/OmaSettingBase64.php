@@ -26,19 +26,17 @@ class OmaSettingBase64 extends OmaSetting
     /**
     * Set the @odata.type since this type is immediately descended from an abstract
     * type that is referenced as the type in an entity.
-    * @param array $propDict The property dictionary
     */
-    public function __construct($propDict = array())
+    public function __construct()
     {
-        parent::__construct($propDict);
         $this->setODataType("#microsoft.graph.omaSettingBase64");
     }
 
     /**
     * Gets the fileName
-    * File name associated with the Value property (.cer
+    * File name associated with the Value property (.cer | .crt | .p7b | .bin).
     *
-    * @return string|null The fileName
+    * @return string The fileName
     */
     public function getFileName()
     {
@@ -51,7 +49,7 @@ class OmaSettingBase64 extends OmaSetting
 
     /**
     * Sets the fileName
-    * File name associated with the Value property (.cer
+    * File name associated with the Value property (.cer | .crt | .p7b | .bin).
     *
     * @param string $val The value of the fileName
     *
@@ -66,7 +64,7 @@ class OmaSettingBase64 extends OmaSetting
     * Gets the value
     * Value. (Base64 encoded string)
     *
-    * @return string|null The value
+    * @return string The value
     */
     public function getValue()
     {

@@ -26,14 +26,14 @@ class Term extends \Beta\Microsoft\Graph\Model\Entity
 {
     /**
     * Gets the createdDateTime
-    * Date and time of term creation. Read-only.
+    * Date and time of term creation. Read-only
     *
-    * @return \DateTime|null The createdDateTime
+    * @return \DateTime The createdDateTime
     */
     public function getCreatedDateTime()
     {
         if (array_key_exists("createdDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["createdDateTime"], "\DateTime") || is_null($this->_propDict["createdDateTime"])) {
+            if (is_a($this->_propDict["createdDateTime"], "\DateTime")) {
                 return $this->_propDict["createdDateTime"];
             } else {
                 $this->_propDict["createdDateTime"] = new \DateTime($this->_propDict["createdDateTime"]);
@@ -42,10 +42,10 @@ class Term extends \Beta\Microsoft\Graph\Model\Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the createdDateTime
-    * Date and time of term creation. Read-only.
+    * Date and time of term creation. Read-only
     *
     * @param \DateTime $val The createdDateTime
     *
@@ -56,13 +56,13 @@ class Term extends \Beta\Microsoft\Graph\Model\Entity
         $this->_propDict["createdDateTime"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the descriptions
-    * Description about term that is dependent on the languageTag.
+    * Description about term that is dependent on the languageTag
      *
-     * @return array|null The descriptions
+     * @return array The descriptions
      */
     public function getDescriptions()
     {
@@ -72,27 +72,26 @@ class Term extends \Beta\Microsoft\Graph\Model\Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the descriptions
-    * Description about term that is dependent on the languageTag.
+    * Description about term that is dependent on the languageTag
     *
-    * @param LocalizedDescription[] $val The descriptions
+    * @param LocalizedDescription $val The descriptions
     *
     * @return Term
     */
     public function setDescriptions($val)
     {
-        $this->_propDict["descriptions"] = $val;
+		$this->_propDict["descriptions"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the labels
-    * Label metadata for a term.
      *
-     * @return array|null The labels
+     * @return array The labels
      */
     public function getLabels()
     {
@@ -102,31 +101,30 @@ class Term extends \Beta\Microsoft\Graph\Model\Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the labels
-    * Label metadata for a term.
     *
-    * @param LocalizedLabel[] $val The labels
+    * @param LocalizedLabel $val The labels
     *
     * @return Term
     */
     public function setLabels($val)
     {
-        $this->_propDict["labels"] = $val;
+		$this->_propDict["labels"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the lastModifiedDateTime
-    * Last date and time of term modification. Read-only.
+    * Last date and time of term modification. Read-only
     *
-    * @return \DateTime|null The lastModifiedDateTime
+    * @return \DateTime The lastModifiedDateTime
     */
     public function getLastModifiedDateTime()
     {
         if (array_key_exists("lastModifiedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime") || is_null($this->_propDict["lastModifiedDateTime"])) {
+            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime")) {
                 return $this->_propDict["lastModifiedDateTime"];
             } else {
                 $this->_propDict["lastModifiedDateTime"] = new \DateTime($this->_propDict["lastModifiedDateTime"]);
@@ -135,10 +133,10 @@ class Term extends \Beta\Microsoft\Graph\Model\Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastModifiedDateTime
-    * Last date and time of term modification. Read-only.
+    * Last date and time of term modification. Read-only
     *
     * @param \DateTime $val The lastModifiedDateTime
     *
@@ -149,13 +147,13 @@ class Term extends \Beta\Microsoft\Graph\Model\Entity
         $this->_propDict["lastModifiedDateTime"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the termProperties
-    * Collection of properties on the term.
+    * Collection of properties on the term
      *
-     * @return array|null The termProperties
+     * @return array The termProperties
      */
     public function getTermProperties()
     {
@@ -165,27 +163,27 @@ class Term extends \Beta\Microsoft\Graph\Model\Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the termProperties
-    * Collection of properties on the term.
+    * Collection of properties on the term
     *
-    * @param \Beta\Microsoft\Graph\Model\KeyValue[] $val The termProperties
+    * @param Beta\Microsoft\Graph\Model\KeyValue $val The termProperties
     *
     * @return Term
     */
     public function setTermProperties($val)
     {
-        $this->_propDict["properties"] = $val;
+		$this->_propDict["properties"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the children
-    * Children of current term.
+    * Children of current term
      *
-     * @return array|null The children
+     * @return array The children
      */
     public function getChildren()
     {
@@ -195,27 +193,27 @@ class Term extends \Beta\Microsoft\Graph\Model\Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the children
-    * Children of current term.
+    * Children of current term
     *
-    * @param Term[] $val The children
+    * @param Term $val The children
     *
     * @return Term
     */
     public function setChildren($val)
     {
-        $this->_propDict["children"] = $val;
+		$this->_propDict["children"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the relations
-    * To indicate which terms are related to the current term as either pinned or reused.
+    * To indicate which terms are related to the current term as either pinned or reused
      *
-     * @return array|null The relations
+     * @return array The relations
      */
     public function getRelations()
     {
@@ -225,31 +223,31 @@ class Term extends \Beta\Microsoft\Graph\Model\Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the relations
-    * To indicate which terms are related to the current term as either pinned or reused.
+    * To indicate which terms are related to the current term as either pinned or reused
     *
-    * @param Relation[] $val The relations
+    * @param Relation $val The relations
     *
     * @return Term
     */
     public function setRelations($val)
     {
-        $this->_propDict["relations"] = $val;
+		$this->_propDict["relations"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the set
-    * The [set] in which the term is created.
+    * The [set] in which the term is created
     *
-    * @return Set|null The set
+    * @return Set The set
     */
     public function getSet()
     {
         if (array_key_exists("set", $this->_propDict)) {
-            if (is_a($this->_propDict["set"], "\Beta\Microsoft\Graph\TermStore\Model\Set") || is_null($this->_propDict["set"])) {
+            if (is_a($this->_propDict["set"], "Beta\Microsoft\Graph\TermStore\Model\Set")) {
                 return $this->_propDict["set"];
             } else {
                 $this->_propDict["set"] = new Set($this->_propDict["set"]);
@@ -258,10 +256,10 @@ class Term extends \Beta\Microsoft\Graph\Model\Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the set
-    * The [set] in which the term is created.
+    * The [set] in which the term is created
     *
     * @param Set $val The set
     *
@@ -272,5 +270,5 @@ class Term extends \Beta\Microsoft\Graph\Model\Entity
         $this->_propDict["set"] = $val;
         return $this;
     }
-
+    
 }

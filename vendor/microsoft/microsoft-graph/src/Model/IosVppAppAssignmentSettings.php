@@ -26,11 +26,9 @@ class IosVppAppAssignmentSettings extends MobileAppAssignmentSettings
     /**
     * Set the @odata.type since this type is immediately descended from an abstract
     * type that is referenced as the type in an entity.
-    * @param array $propDict The property dictionary
     */
-    public function __construct($propDict = array())
+    public function __construct()
     {
-        parent::__construct($propDict);
         $this->setODataType("#microsoft.graph.iosVppAppAssignmentSettings");
     }
 
@@ -38,7 +36,7 @@ class IosVppAppAssignmentSettings extends MobileAppAssignmentSettings
     * Gets the useDeviceLicensing
     * Whether or not to use device licensing.
     *
-    * @return bool|null The useDeviceLicensing
+    * @return bool The useDeviceLicensing
     */
     public function getUseDeviceLicensing()
     {
@@ -66,7 +64,7 @@ class IosVppAppAssignmentSettings extends MobileAppAssignmentSettings
     * Gets the vpnConfigurationId
     * The VPN Configuration Id to apply for this app.
     *
-    * @return string|null The vpnConfigurationId
+    * @return string The vpnConfigurationId
     */
     public function getVpnConfigurationId()
     {

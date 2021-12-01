@@ -27,7 +27,7 @@ class YammerGroupsActivityCounts extends Entity
     /**
     * Gets the liked
     *
-    * @return int|null The liked
+    * @return int The liked
     */
     public function getLiked()
     {
@@ -37,7 +37,7 @@ class YammerGroupsActivityCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the liked
     *
@@ -50,11 +50,11 @@ class YammerGroupsActivityCounts extends Entity
         $this->_propDict["liked"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the posted
     *
-    * @return int|null The posted
+    * @return int The posted
     */
     public function getPosted()
     {
@@ -64,7 +64,7 @@ class YammerGroupsActivityCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the posted
     *
@@ -77,11 +77,11 @@ class YammerGroupsActivityCounts extends Entity
         $this->_propDict["posted"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the read
     *
-    * @return int|null The read
+    * @return int The read
     */
     public function getRead()
     {
@@ -91,7 +91,7 @@ class YammerGroupsActivityCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the read
     *
@@ -104,16 +104,16 @@ class YammerGroupsActivityCounts extends Entity
         $this->_propDict["read"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the reportDate
     *
-    * @return \DateTime|null The reportDate
+    * @return \DateTime The reportDate
     */
     public function getReportDate()
     {
         if (array_key_exists("reportDate", $this->_propDict)) {
-            if (is_a($this->_propDict["reportDate"], "\DateTime") || is_null($this->_propDict["reportDate"])) {
+            if (is_a($this->_propDict["reportDate"], "\DateTime")) {
                 return $this->_propDict["reportDate"];
             } else {
                 $this->_propDict["reportDate"] = new \DateTime($this->_propDict["reportDate"]);
@@ -122,7 +122,7 @@ class YammerGroupsActivityCounts extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the reportDate
     *
@@ -135,11 +135,11 @@ class YammerGroupsActivityCounts extends Entity
         $this->_propDict["reportDate"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the reportPeriod
     *
-    * @return string|null The reportPeriod
+    * @return string The reportPeriod
     */
     public function getReportPeriod()
     {
@@ -149,7 +149,7 @@ class YammerGroupsActivityCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the reportPeriod
     *
@@ -162,16 +162,16 @@ class YammerGroupsActivityCounts extends Entity
         $this->_propDict["reportPeriod"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the reportRefreshDate
     *
-    * @return \DateTime|null The reportRefreshDate
+    * @return \DateTime The reportRefreshDate
     */
     public function getReportRefreshDate()
     {
         if (array_key_exists("reportRefreshDate", $this->_propDict)) {
-            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime") || is_null($this->_propDict["reportRefreshDate"])) {
+            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime")) {
                 return $this->_propDict["reportRefreshDate"];
             } else {
                 $this->_propDict["reportRefreshDate"] = new \DateTime($this->_propDict["reportRefreshDate"]);
@@ -180,7 +180,7 @@ class YammerGroupsActivityCounts extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the reportRefreshDate
     *
@@ -193,5 +193,5 @@ class YammerGroupsActivityCounts extends Entity
         $this->_propDict["reportRefreshDate"] = $val;
         return $this;
     }
-
+    
 }

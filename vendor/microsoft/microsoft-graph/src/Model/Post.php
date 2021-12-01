@@ -28,12 +28,12 @@ class Post extends OutlookItem
     * Gets the body
     * The contents of the post. This is a default property. This property can be null.
     *
-    * @return ItemBody|null The body
+    * @return ItemBody The body
     */
     public function getBody()
     {
         if (array_key_exists("body", $this->_propDict)) {
-            if (is_a($this->_propDict["body"], "\Microsoft\Graph\Model\ItemBody") || is_null($this->_propDict["body"])) {
+            if (is_a($this->_propDict["body"], "Microsoft\Graph\Model\ItemBody")) {
                 return $this->_propDict["body"];
             } else {
                 $this->_propDict["body"] = new ItemBody($this->_propDict["body"]);
@@ -42,7 +42,7 @@ class Post extends OutlookItem
         }
         return null;
     }
-
+    
     /**
     * Sets the body
     * The contents of the post. This is a default property. This property can be null.
@@ -56,12 +56,12 @@ class Post extends OutlookItem
         $this->_propDict["body"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the conversationId
     * Unique ID of the conversation. Read-only.
     *
-    * @return string|null The conversationId
+    * @return string The conversationId
     */
     public function getConversationId()
     {
@@ -71,7 +71,7 @@ class Post extends OutlookItem
             return null;
         }
     }
-
+    
     /**
     * Sets the conversationId
     * Unique ID of the conversation. Read-only.
@@ -85,12 +85,12 @@ class Post extends OutlookItem
         $this->_propDict["conversationId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the conversationThreadId
     * Unique ID of the conversation thread. Read-only.
     *
-    * @return string|null The conversationThreadId
+    * @return string The conversationThreadId
     */
     public function getConversationThreadId()
     {
@@ -100,7 +100,7 @@ class Post extends OutlookItem
             return null;
         }
     }
-
+    
     /**
     * Sets the conversationThreadId
     * Unique ID of the conversation thread. Read-only.
@@ -114,17 +114,17 @@ class Post extends OutlookItem
         $this->_propDict["conversationThreadId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the from
     * Used in delegate access scenarios. Indicates who posted the message on behalf of another user. This is a default property.
     *
-    * @return Recipient|null The from
+    * @return Recipient The from
     */
     public function getFrom()
     {
         if (array_key_exists("from", $this->_propDict)) {
-            if (is_a($this->_propDict["from"], "\Microsoft\Graph\Model\Recipient") || is_null($this->_propDict["from"])) {
+            if (is_a($this->_propDict["from"], "Microsoft\Graph\Model\Recipient")) {
                 return $this->_propDict["from"];
             } else {
                 $this->_propDict["from"] = new Recipient($this->_propDict["from"]);
@@ -133,7 +133,7 @@ class Post extends OutlookItem
         }
         return null;
     }
-
+    
     /**
     * Sets the from
     * Used in delegate access scenarios. Indicates who posted the message on behalf of another user. This is a default property.
@@ -147,12 +147,12 @@ class Post extends OutlookItem
         $this->_propDict["from"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the hasAttachments
     * Indicates whether the post has at least one attachment. This is a default property.
     *
-    * @return bool|null The hasAttachments
+    * @return bool The hasAttachments
     */
     public function getHasAttachments()
     {
@@ -162,7 +162,7 @@ class Post extends OutlookItem
             return null;
         }
     }
-
+    
     /**
     * Sets the hasAttachments
     * Indicates whether the post has at least one attachment. This is a default property.
@@ -176,13 +176,13 @@ class Post extends OutlookItem
         $this->_propDict["hasAttachments"] = boolval($val);
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the newParticipants
     * Conversation participants that were added to the thread as part of this post.
      *
-     * @return array|null The newParticipants
+     * @return array The newParticipants
      */
     public function getNewParticipants()
     {
@@ -192,31 +192,31 @@ class Post extends OutlookItem
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the newParticipants
     * Conversation participants that were added to the thread as part of this post.
     *
-    * @param Recipient[] $val The newParticipants
+    * @param Recipient $val The newParticipants
     *
     * @return Post
     */
     public function setNewParticipants($val)
     {
-        $this->_propDict["newParticipants"] = $val;
+		$this->_propDict["newParticipants"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the receivedDateTime
     * Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     *
-    * @return \DateTime|null The receivedDateTime
+    * @return \DateTime The receivedDateTime
     */
     public function getReceivedDateTime()
     {
         if (array_key_exists("receivedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["receivedDateTime"], "\DateTime") || is_null($this->_propDict["receivedDateTime"])) {
+            if (is_a($this->_propDict["receivedDateTime"], "\DateTime")) {
                 return $this->_propDict["receivedDateTime"];
             } else {
                 $this->_propDict["receivedDateTime"] = new \DateTime($this->_propDict["receivedDateTime"]);
@@ -225,7 +225,7 @@ class Post extends OutlookItem
         }
         return null;
     }
-
+    
     /**
     * Sets the receivedDateTime
     * Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -239,17 +239,17 @@ class Post extends OutlookItem
         $this->_propDict["receivedDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the sender
     * Contains the address of the sender. The value of Sender is assumed to be the address of the authenticated user in the case when Sender is not specified. This is a default property.
     *
-    * @return Recipient|null The sender
+    * @return Recipient The sender
     */
     public function getSender()
     {
         if (array_key_exists("sender", $this->_propDict)) {
-            if (is_a($this->_propDict["sender"], "\Microsoft\Graph\Model\Recipient") || is_null($this->_propDict["sender"])) {
+            if (is_a($this->_propDict["sender"], "Microsoft\Graph\Model\Recipient")) {
                 return $this->_propDict["sender"];
             } else {
                 $this->_propDict["sender"] = new Recipient($this->_propDict["sender"]);
@@ -258,7 +258,7 @@ class Post extends OutlookItem
         }
         return null;
     }
-
+    
     /**
     * Sets the sender
     * Contains the address of the sender. The value of Sender is assumed to be the address of the authenticated user in the case when Sender is not specified. This is a default property.
@@ -272,13 +272,13 @@ class Post extends OutlookItem
         $this->_propDict["sender"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the attachments
-    * Read-only. Nullable. Supports $expand.
+    * The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable.
      *
-     * @return array|null The attachments
+     * @return array The attachments
      */
     public function getAttachments()
     {
@@ -288,27 +288,27 @@ class Post extends OutlookItem
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the attachments
-    * Read-only. Nullable. Supports $expand.
+    * The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable.
     *
-    * @param Attachment[] $val The attachments
+    * @param Attachment $val The attachments
     *
     * @return Post
     */
     public function setAttachments($val)
     {
-        $this->_propDict["attachments"] = $val;
+		$this->_propDict["attachments"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the extensions
-    * The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
+    * The collection of open extensions defined for the post. Read-only. Nullable.
      *
-     * @return array|null The extensions
+     * @return array The extensions
      */
     public function getExtensions()
     {
@@ -318,31 +318,31 @@ class Post extends OutlookItem
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the extensions
-    * The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
+    * The collection of open extensions defined for the post. Read-only. Nullable.
     *
-    * @param Extension[] $val The extensions
+    * @param Extension $val The extensions
     *
     * @return Post
     */
     public function setExtensions($val)
     {
-        $this->_propDict["extensions"] = $val;
+		$this->_propDict["extensions"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the inReplyTo
-    * Read-only. Supports $expand.
+    * The earlier post that this post is replying to in the conversationThread. Read-only.
     *
-    * @return Post|null The inReplyTo
+    * @return Post The inReplyTo
     */
     public function getInReplyTo()
     {
         if (array_key_exists("inReplyTo", $this->_propDict)) {
-            if (is_a($this->_propDict["inReplyTo"], "\Microsoft\Graph\Model\Post") || is_null($this->_propDict["inReplyTo"])) {
+            if (is_a($this->_propDict["inReplyTo"], "Microsoft\Graph\Model\Post")) {
                 return $this->_propDict["inReplyTo"];
             } else {
                 $this->_propDict["inReplyTo"] = new Post($this->_propDict["inReplyTo"]);
@@ -351,10 +351,10 @@ class Post extends OutlookItem
         }
         return null;
     }
-
+    
     /**
     * Sets the inReplyTo
-    * Read-only. Supports $expand.
+    * The earlier post that this post is replying to in the conversationThread. Read-only.
     *
     * @param Post $val The inReplyTo
     *
@@ -365,13 +365,13 @@ class Post extends OutlookItem
         $this->_propDict["inReplyTo"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the multiValueExtendedProperties
     * The collection of multi-value extended properties defined for the post. Read-only. Nullable.
      *
-     * @return array|null The multiValueExtendedProperties
+     * @return array The multiValueExtendedProperties
      */
     public function getMultiValueExtendedProperties()
     {
@@ -381,27 +381,27 @@ class Post extends OutlookItem
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the multiValueExtendedProperties
     * The collection of multi-value extended properties defined for the post. Read-only. Nullable.
     *
-    * @param MultiValueLegacyExtendedProperty[] $val The multiValueExtendedProperties
+    * @param MultiValueLegacyExtendedProperty $val The multiValueExtendedProperties
     *
     * @return Post
     */
     public function setMultiValueExtendedProperties($val)
     {
-        $this->_propDict["multiValueExtendedProperties"] = $val;
+		$this->_propDict["multiValueExtendedProperties"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the singleValueExtendedProperties
     * The collection of single-value extended properties defined for the post. Read-only. Nullable.
      *
-     * @return array|null The singleValueExtendedProperties
+     * @return array The singleValueExtendedProperties
      */
     public function getSingleValueExtendedProperties()
     {
@@ -411,19 +411,19 @@ class Post extends OutlookItem
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the singleValueExtendedProperties
     * The collection of single-value extended properties defined for the post. Read-only. Nullable.
     *
-    * @param SingleValueLegacyExtendedProperty[] $val The singleValueExtendedProperties
+    * @param SingleValueLegacyExtendedProperty $val The singleValueExtendedProperties
     *
     * @return Post
     */
     public function setSingleValueExtendedProperties($val)
     {
-        $this->_propDict["singleValueExtendedProperties"] = $val;
+		$this->_propDict["singleValueExtendedProperties"] = $val;
         return $this;
     }
-
+    
 }

@@ -26,11 +26,9 @@ class AzureActiveDirectoryTenant extends IdentitySource
     /**
     * Set the @odata.type since this type is immediately descended from an abstract
     * type that is referenced as the type in an entity.
-    * @param array $propDict The property dictionary
     */
-    public function __construct($propDict = array())
+    public function __construct()
     {
-        parent::__construct($propDict);
         $this->setODataType("#microsoft.graph.azureActiveDirectoryTenant");
     }
 
@@ -38,7 +36,7 @@ class AzureActiveDirectoryTenant extends IdentitySource
     * Gets the displayName
     * The name of the Azure Active Directory tenant. Read only.
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -66,7 +64,7 @@ class AzureActiveDirectoryTenant extends IdentitySource
     * Gets the tenantId
     * The ID of the Azure Active Directory tenant. Read only.
     *
-    * @return string|null The tenantId
+    * @return string The tenantId
     */
     public function getTenantId()
     {

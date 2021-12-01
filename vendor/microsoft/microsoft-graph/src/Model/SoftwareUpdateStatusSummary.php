@@ -28,7 +28,7 @@ class SoftwareUpdateStatusSummary extends Entity
     * Gets the compliantDeviceCount
     * Number of compliant devices.
     *
-    * @return int|null The compliantDeviceCount
+    * @return int The compliantDeviceCount
     */
     public function getCompliantDeviceCount()
     {
@@ -38,7 +38,7 @@ class SoftwareUpdateStatusSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the compliantDeviceCount
     * Number of compliant devices.
@@ -52,12 +52,12 @@ class SoftwareUpdateStatusSummary extends Entity
         $this->_propDict["compliantDeviceCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the compliantUserCount
     * Number of compliant users.
     *
-    * @return int|null The compliantUserCount
+    * @return int The compliantUserCount
     */
     public function getCompliantUserCount()
     {
@@ -67,7 +67,7 @@ class SoftwareUpdateStatusSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the compliantUserCount
     * Number of compliant users.
@@ -81,12 +81,12 @@ class SoftwareUpdateStatusSummary extends Entity
         $this->_propDict["compliantUserCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the conflictDeviceCount
     * Number of conflict devices.
     *
-    * @return int|null The conflictDeviceCount
+    * @return int The conflictDeviceCount
     */
     public function getConflictDeviceCount()
     {
@@ -96,7 +96,7 @@ class SoftwareUpdateStatusSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the conflictDeviceCount
     * Number of conflict devices.
@@ -110,12 +110,12 @@ class SoftwareUpdateStatusSummary extends Entity
         $this->_propDict["conflictDeviceCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the conflictUserCount
     * Number of conflict users.
     *
-    * @return int|null The conflictUserCount
+    * @return int The conflictUserCount
     */
     public function getConflictUserCount()
     {
@@ -125,7 +125,7 @@ class SoftwareUpdateStatusSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the conflictUserCount
     * Number of conflict users.
@@ -139,12 +139,12 @@ class SoftwareUpdateStatusSummary extends Entity
         $this->_propDict["conflictUserCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the displayName
     * The name of the policy.
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -154,7 +154,7 @@ class SoftwareUpdateStatusSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the displayName
     * The name of the policy.
@@ -168,12 +168,12 @@ class SoftwareUpdateStatusSummary extends Entity
         $this->_propDict["displayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the errorDeviceCount
     * Number of devices had error.
     *
-    * @return int|null The errorDeviceCount
+    * @return int The errorDeviceCount
     */
     public function getErrorDeviceCount()
     {
@@ -183,7 +183,7 @@ class SoftwareUpdateStatusSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the errorDeviceCount
     * Number of devices had error.
@@ -197,12 +197,12 @@ class SoftwareUpdateStatusSummary extends Entity
         $this->_propDict["errorDeviceCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the errorUserCount
     * Number of users had error.
     *
-    * @return int|null The errorUserCount
+    * @return int The errorUserCount
     */
     public function getErrorUserCount()
     {
@@ -212,7 +212,7 @@ class SoftwareUpdateStatusSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the errorUserCount
     * Number of users had error.
@@ -226,12 +226,12 @@ class SoftwareUpdateStatusSummary extends Entity
         $this->_propDict["errorUserCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the nonCompliantDeviceCount
     * Number of non compliant devices.
     *
-    * @return int|null The nonCompliantDeviceCount
+    * @return int The nonCompliantDeviceCount
     */
     public function getNonCompliantDeviceCount()
     {
@@ -241,7 +241,7 @@ class SoftwareUpdateStatusSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the nonCompliantDeviceCount
     * Number of non compliant devices.
@@ -255,12 +255,12 @@ class SoftwareUpdateStatusSummary extends Entity
         $this->_propDict["nonCompliantDeviceCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the nonCompliantUserCount
     * Number of non compliant users.
     *
-    * @return int|null The nonCompliantUserCount
+    * @return int The nonCompliantUserCount
     */
     public function getNonCompliantUserCount()
     {
@@ -270,7 +270,7 @@ class SoftwareUpdateStatusSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the nonCompliantUserCount
     * Number of non compliant users.
@@ -284,12 +284,12 @@ class SoftwareUpdateStatusSummary extends Entity
         $this->_propDict["nonCompliantUserCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the notApplicableDeviceCount
     * Number of not applicable devices.
     *
-    * @return int|null The notApplicableDeviceCount
+    * @return int The notApplicableDeviceCount
     */
     public function getNotApplicableDeviceCount()
     {
@@ -299,7 +299,7 @@ class SoftwareUpdateStatusSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the notApplicableDeviceCount
     * Number of not applicable devices.
@@ -313,12 +313,12 @@ class SoftwareUpdateStatusSummary extends Entity
         $this->_propDict["notApplicableDeviceCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the notApplicableUserCount
     * Number of not applicable users.
     *
-    * @return int|null The notApplicableUserCount
+    * @return int The notApplicableUserCount
     */
     public function getNotApplicableUserCount()
     {
@@ -328,7 +328,7 @@ class SoftwareUpdateStatusSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the notApplicableUserCount
     * Number of not applicable users.
@@ -342,12 +342,12 @@ class SoftwareUpdateStatusSummary extends Entity
         $this->_propDict["notApplicableUserCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the remediatedDeviceCount
     * Number of remediated devices.
     *
-    * @return int|null The remediatedDeviceCount
+    * @return int The remediatedDeviceCount
     */
     public function getRemediatedDeviceCount()
     {
@@ -357,7 +357,7 @@ class SoftwareUpdateStatusSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the remediatedDeviceCount
     * Number of remediated devices.
@@ -371,12 +371,12 @@ class SoftwareUpdateStatusSummary extends Entity
         $this->_propDict["remediatedDeviceCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the remediatedUserCount
     * Number of remediated users.
     *
-    * @return int|null The remediatedUserCount
+    * @return int The remediatedUserCount
     */
     public function getRemediatedUserCount()
     {
@@ -386,7 +386,7 @@ class SoftwareUpdateStatusSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the remediatedUserCount
     * Number of remediated users.
@@ -400,12 +400,12 @@ class SoftwareUpdateStatusSummary extends Entity
         $this->_propDict["remediatedUserCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the unknownDeviceCount
     * Number of unknown devices.
     *
-    * @return int|null The unknownDeviceCount
+    * @return int The unknownDeviceCount
     */
     public function getUnknownDeviceCount()
     {
@@ -415,7 +415,7 @@ class SoftwareUpdateStatusSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the unknownDeviceCount
     * Number of unknown devices.
@@ -429,12 +429,12 @@ class SoftwareUpdateStatusSummary extends Entity
         $this->_propDict["unknownDeviceCount"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the unknownUserCount
     * Number of unknown users.
     *
-    * @return int|null The unknownUserCount
+    * @return int The unknownUserCount
     */
     public function getUnknownUserCount()
     {
@@ -444,7 +444,7 @@ class SoftwareUpdateStatusSummary extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the unknownUserCount
     * Number of unknown users.
@@ -458,5 +458,5 @@ class SoftwareUpdateStatusSummary extends Entity
         $this->_propDict["unknownUserCount"] = intval($val);
         return $this;
     }
-
+    
 }

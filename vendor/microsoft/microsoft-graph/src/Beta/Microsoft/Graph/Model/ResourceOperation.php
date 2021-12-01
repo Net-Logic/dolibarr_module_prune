@@ -28,7 +28,7 @@ class ResourceOperation extends Entity
     * Gets the actionName
     * Type of action this operation is going to perform. The actionName should be concise and limited to as few words as possible.
     *
-    * @return string|null The actionName
+    * @return string The actionName
     */
     public function getActionName()
     {
@@ -38,7 +38,7 @@ class ResourceOperation extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the actionName
     * Type of action this operation is going to perform. The actionName should be concise and limited to as few words as possible.
@@ -52,12 +52,12 @@ class ResourceOperation extends Entity
         $this->_propDict["actionName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the description
     * Description of the resource operation. The description is used in mouse-over text for the operation when shown in the Azure Portal.
     *
-    * @return string|null The description
+    * @return string The description
     */
     public function getDescription()
     {
@@ -67,7 +67,7 @@ class ResourceOperation extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the description
     * Description of the resource operation. The description is used in mouse-over text for the operation when shown in the Azure Portal.
@@ -81,12 +81,12 @@ class ResourceOperation extends Entity
         $this->_propDict["description"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the enabledForScopeValidation
-    * Determines whether the Permission is validated for Scopes defined per Role Assignment. This property is read-only.
+    * Determines whether the Permission is validated for Scopes defined per Role Assignment.
     *
-    * @return bool|null The enabledForScopeValidation
+    * @return bool The enabledForScopeValidation
     */
     public function getEnabledForScopeValidation()
     {
@@ -96,10 +96,10 @@ class ResourceOperation extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the enabledForScopeValidation
-    * Determines whether the Permission is validated for Scopes defined per Role Assignment. This property is read-only.
+    * Determines whether the Permission is validated for Scopes defined per Role Assignment.
     *
     * @param bool $val The enabledForScopeValidation
     *
@@ -110,12 +110,12 @@ class ResourceOperation extends Entity
         $this->_propDict["enabledForScopeValidation"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the resource
-    * Resource category to which this Operation belongs. This property is read-only.
+    * Resource category to which this Operation belongs.
     *
-    * @return string|null The resource
+    * @return string The resource
     */
     public function getResource()
     {
@@ -125,10 +125,10 @@ class ResourceOperation extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the resource
-    * Resource category to which this Operation belongs. This property is read-only.
+    * Resource category to which this Operation belongs.
     *
     * @param string $val The resource
     *
@@ -139,12 +139,12 @@ class ResourceOperation extends Entity
         $this->_propDict["resource"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the resourceName
     * Name of the Resource this operation is performed on.
     *
-    * @return string|null The resourceName
+    * @return string The resourceName
     */
     public function getResourceName()
     {
@@ -154,7 +154,7 @@ class ResourceOperation extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the resourceName
     * Name of the Resource this operation is performed on.
@@ -168,5 +168,5 @@ class ResourceOperation extends Entity
         $this->_propDict["resourceName"] = $val;
         return $this;
     }
-
+    
 }

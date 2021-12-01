@@ -26,14 +26,13 @@ class AddToReviewSetOperation extends CaseOperation
 {
     /**
     * Gets the reviewSet
-    * The review set to which items matching the source collection query are added to.
     *
-    * @return ReviewSet|null The reviewSet
+    * @return ReviewSet The reviewSet
     */
     public function getReviewSet()
     {
         if (array_key_exists("reviewSet", $this->_propDict)) {
-            if (is_a($this->_propDict["reviewSet"], "\Beta\Microsoft\Graph\Ediscovery\Model\ReviewSet") || is_null($this->_propDict["reviewSet"])) {
+            if (is_a($this->_propDict["reviewSet"], "Beta\Microsoft\Graph\Ediscovery\Model\ReviewSet")) {
                 return $this->_propDict["reviewSet"];
             } else {
                 $this->_propDict["reviewSet"] = new ReviewSet($this->_propDict["reviewSet"]);
@@ -42,10 +41,9 @@ class AddToReviewSetOperation extends CaseOperation
         }
         return null;
     }
-
+    
     /**
     * Sets the reviewSet
-    * The review set to which items matching the source collection query are added to.
     *
     * @param ReviewSet $val The reviewSet
     *
@@ -56,17 +54,16 @@ class AddToReviewSetOperation extends CaseOperation
         $this->_propDict["reviewSet"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the sourceCollection
-    * The sourceCollection that items are being added from.
     *
-    * @return SourceCollection|null The sourceCollection
+    * @return SourceCollection The sourceCollection
     */
     public function getSourceCollection()
     {
         if (array_key_exists("sourceCollection", $this->_propDict)) {
-            if (is_a($this->_propDict["sourceCollection"], "\Beta\Microsoft\Graph\Ediscovery\Model\SourceCollection") || is_null($this->_propDict["sourceCollection"])) {
+            if (is_a($this->_propDict["sourceCollection"], "Beta\Microsoft\Graph\Ediscovery\Model\SourceCollection")) {
                 return $this->_propDict["sourceCollection"];
             } else {
                 $this->_propDict["sourceCollection"] = new SourceCollection($this->_propDict["sourceCollection"]);
@@ -75,10 +72,9 @@ class AddToReviewSetOperation extends CaseOperation
         }
         return null;
     }
-
+    
     /**
     * Sets the sourceCollection
-    * The sourceCollection that items are being added from.
     *
     * @param SourceCollection $val The sourceCollection
     *
@@ -89,5 +85,5 @@ class AddToReviewSetOperation extends CaseOperation
         $this->_propDict["sourceCollection"] = $val;
         return $this;
     }
-
+    
 }

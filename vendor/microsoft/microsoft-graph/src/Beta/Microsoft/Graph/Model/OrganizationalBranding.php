@@ -25,11 +25,10 @@ namespace Beta\Microsoft\Graph\Model;
 class OrganizationalBranding extends OrganizationalBrandingProperties
 {
 
-     /**
+     /** 
      * Gets the localizations
-    * Add different branding based on a locale.
      *
-     * @return array|null The localizations
+     * @return array The localizations
      */
     public function getLocalizations()
     {
@@ -39,19 +38,18 @@ class OrganizationalBranding extends OrganizationalBrandingProperties
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the localizations
-    * Add different branding based on a locale.
     *
-    * @param OrganizationalBrandingLocalization[] $val The localizations
+    * @param OrganizationalBrandingLocalization $val The localizations
     *
     * @return OrganizationalBranding
     */
     public function setLocalizations($val)
     {
-        $this->_propDict["localizations"] = $val;
+		$this->_propDict["localizations"] = $val;
         return $this;
     }
-
+    
 }

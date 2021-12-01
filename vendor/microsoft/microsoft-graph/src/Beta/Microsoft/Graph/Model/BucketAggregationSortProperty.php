@@ -32,5 +32,4 @@ class BucketAggregationSortProperty extends Enum
     const COUNT = "count";
     const KEY_AS_STRING = "keyAsString";
     const KEY_AS_NUMBER = "keyAsNumber";
-    const UNKNOWN_FUTURE_VALUE = "unknownFutureValue";
 }

@@ -26,14 +26,13 @@ class EducationOutcome extends Entity
 {
     /**
     * Gets the lastModifiedBy
-    * The individual who updated the resource.
     *
-    * @return IdentitySet|null The lastModifiedBy
+    * @return IdentitySet The lastModifiedBy
     */
     public function getLastModifiedBy()
     {
         if (array_key_exists("lastModifiedBy", $this->_propDict)) {
-            if (is_a($this->_propDict["lastModifiedBy"], "\Beta\Microsoft\Graph\Model\IdentitySet") || is_null($this->_propDict["lastModifiedBy"])) {
+            if (is_a($this->_propDict["lastModifiedBy"], "Beta\Microsoft\Graph\Model\IdentitySet")) {
                 return $this->_propDict["lastModifiedBy"];
             } else {
                 $this->_propDict["lastModifiedBy"] = new IdentitySet($this->_propDict["lastModifiedBy"]);
@@ -42,10 +41,9 @@ class EducationOutcome extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastModifiedBy
-    * The individual who updated the resource.
     *
     * @param IdentitySet $val The lastModifiedBy
     *
@@ -56,17 +54,16 @@ class EducationOutcome extends Entity
         $this->_propDict["lastModifiedBy"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the lastModifiedDateTime
-    * Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z.
     *
-    * @return \DateTime|null The lastModifiedDateTime
+    * @return \DateTime The lastModifiedDateTime
     */
     public function getLastModifiedDateTime()
     {
         if (array_key_exists("lastModifiedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime") || is_null($this->_propDict["lastModifiedDateTime"])) {
+            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime")) {
                 return $this->_propDict["lastModifiedDateTime"];
             } else {
                 $this->_propDict["lastModifiedDateTime"] = new \DateTime($this->_propDict["lastModifiedDateTime"]);
@@ -75,10 +72,9 @@ class EducationOutcome extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastModifiedDateTime
-    * Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z.
     *
     * @param \DateTime $val The lastModifiedDateTime
     *
@@ -89,5 +85,5 @@ class EducationOutcome extends Entity
         $this->_propDict["lastModifiedDateTime"] = $val;
         return $this;
     }
-
+    
 }

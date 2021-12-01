@@ -28,7 +28,7 @@ class Office365ActivationsUserCounts extends Entity
     * Gets the activated
     * The number of users who have activated the product.
     *
-    * @return int|null The activated
+    * @return int The activated
     */
     public function getActivated()
     {
@@ -38,7 +38,7 @@ class Office365ActivationsUserCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the activated
     * The number of users who have activated the product.
@@ -52,12 +52,12 @@ class Office365ActivationsUserCounts extends Entity
         $this->_propDict["activated"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the assigned
     * The number of users have been assigned for the product license.
     *
-    * @return int|null The assigned
+    * @return int The assigned
     */
     public function getAssigned()
     {
@@ -67,7 +67,7 @@ class Office365ActivationsUserCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the assigned
     * The number of users have been assigned for the product license.
@@ -81,12 +81,12 @@ class Office365ActivationsUserCounts extends Entity
         $this->_propDict["assigned"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the productType
     * The product type such as 'Microsoft 365 ProPlus' or 'Project Client'.
     *
-    * @return string|null The productType
+    * @return string The productType
     */
     public function getProductType()
     {
@@ -96,7 +96,7 @@ class Office365ActivationsUserCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the productType
     * The product type such as 'Microsoft 365 ProPlus' or 'Project Client'.
@@ -110,17 +110,17 @@ class Office365ActivationsUserCounts extends Entity
         $this->_propDict["productType"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the reportRefreshDate
     * The latest date of the content.
     *
-    * @return \DateTime|null The reportRefreshDate
+    * @return \DateTime The reportRefreshDate
     */
     public function getReportRefreshDate()
     {
         if (array_key_exists("reportRefreshDate", $this->_propDict)) {
-            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime") || is_null($this->_propDict["reportRefreshDate"])) {
+            if (is_a($this->_propDict["reportRefreshDate"], "\DateTime")) {
                 return $this->_propDict["reportRefreshDate"];
             } else {
                 $this->_propDict["reportRefreshDate"] = new \DateTime($this->_propDict["reportRefreshDate"]);
@@ -129,7 +129,7 @@ class Office365ActivationsUserCounts extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the reportRefreshDate
     * The latest date of the content.
@@ -143,12 +143,12 @@ class Office365ActivationsUserCounts extends Entity
         $this->_propDict["reportRefreshDate"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the sharedComputerActivation
     * The number of users who have used the product on a shared computer.
     *
-    * @return int|null The sharedComputerActivation
+    * @return int The sharedComputerActivation
     */
     public function getSharedComputerActivation()
     {
@@ -158,7 +158,7 @@ class Office365ActivationsUserCounts extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the sharedComputerActivation
     * The number of users who have used the product on a shared computer.
@@ -172,5 +172,5 @@ class Office365ActivationsUserCounts extends Entity
         $this->_propDict["sharedComputerActivation"] = intval($val);
         return $this;
     }
-
+    
 }

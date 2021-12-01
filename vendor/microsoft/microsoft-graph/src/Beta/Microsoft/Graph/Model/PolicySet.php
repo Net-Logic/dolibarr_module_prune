@@ -28,12 +28,12 @@ class PolicySet extends Entity
     * Gets the createdDateTime
     * Creation time of the PolicySet.
     *
-    * @return \DateTime|null The createdDateTime
+    * @return \DateTime The createdDateTime
     */
     public function getCreatedDateTime()
     {
         if (array_key_exists("createdDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["createdDateTime"], "\DateTime") || is_null($this->_propDict["createdDateTime"])) {
+            if (is_a($this->_propDict["createdDateTime"], "\DateTime")) {
                 return $this->_propDict["createdDateTime"];
             } else {
                 $this->_propDict["createdDateTime"] = new \DateTime($this->_propDict["createdDateTime"]);
@@ -42,7 +42,7 @@ class PolicySet extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the createdDateTime
     * Creation time of the PolicySet.
@@ -56,12 +56,12 @@ class PolicySet extends Entity
         $this->_propDict["createdDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the description
     * Description of the PolicySet.
     *
-    * @return string|null The description
+    * @return string The description
     */
     public function getDescription()
     {
@@ -71,7 +71,7 @@ class PolicySet extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the description
     * Description of the PolicySet.
@@ -85,12 +85,12 @@ class PolicySet extends Entity
         $this->_propDict["description"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the displayName
     * DisplayName of the PolicySet.
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -100,7 +100,7 @@ class PolicySet extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the displayName
     * DisplayName of the PolicySet.
@@ -114,17 +114,17 @@ class PolicySet extends Entity
         $this->_propDict["displayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the errorCode
     * Error code if any occured. Possible values are: noError, unauthorized, notFound, deleted.
     *
-    * @return ErrorCode|null The errorCode
+    * @return ErrorCode The errorCode
     */
     public function getErrorCode()
     {
         if (array_key_exists("errorCode", $this->_propDict)) {
-            if (is_a($this->_propDict["errorCode"], "\Beta\Microsoft\Graph\Model\ErrorCode") || is_null($this->_propDict["errorCode"])) {
+            if (is_a($this->_propDict["errorCode"], "Beta\Microsoft\Graph\Model\ErrorCode")) {
                 return $this->_propDict["errorCode"];
             } else {
                 $this->_propDict["errorCode"] = new ErrorCode($this->_propDict["errorCode"]);
@@ -133,7 +133,7 @@ class PolicySet extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the errorCode
     * Error code if any occured. Possible values are: noError, unauthorized, notFound, deleted.
@@ -147,12 +147,12 @@ class PolicySet extends Entity
         $this->_propDict["errorCode"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the guidedDeploymentTags
     * Tags of the guided deployment
     *
-    * @return string|null The guidedDeploymentTags
+    * @return string The guidedDeploymentTags
     */
     public function getGuidedDeploymentTags()
     {
@@ -162,7 +162,7 @@ class PolicySet extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the guidedDeploymentTags
     * Tags of the guided deployment
@@ -176,17 +176,17 @@ class PolicySet extends Entity
         $this->_propDict["guidedDeploymentTags"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the lastModifiedDateTime
     * Last modified time of the PolicySet.
     *
-    * @return \DateTime|null The lastModifiedDateTime
+    * @return \DateTime The lastModifiedDateTime
     */
     public function getLastModifiedDateTime()
     {
         if (array_key_exists("lastModifiedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime") || is_null($this->_propDict["lastModifiedDateTime"])) {
+            if (is_a($this->_propDict["lastModifiedDateTime"], "\DateTime")) {
                 return $this->_propDict["lastModifiedDateTime"];
             } else {
                 $this->_propDict["lastModifiedDateTime"] = new \DateTime($this->_propDict["lastModifiedDateTime"]);
@@ -195,7 +195,7 @@ class PolicySet extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastModifiedDateTime
     * Last modified time of the PolicySet.
@@ -209,12 +209,12 @@ class PolicySet extends Entity
         $this->_propDict["lastModifiedDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the roleScopeTags
     * RoleScopeTags of the PolicySet
     *
-    * @return string|null The roleScopeTags
+    * @return string The roleScopeTags
     */
     public function getRoleScopeTags()
     {
@@ -224,7 +224,7 @@ class PolicySet extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the roleScopeTags
     * RoleScopeTags of the PolicySet
@@ -238,17 +238,17 @@ class PolicySet extends Entity
         $this->_propDict["roleScopeTags"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the status
     * Validation/assignment status of the PolicySet. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.
     *
-    * @return PolicySetStatus|null The status
+    * @return PolicySetStatus The status
     */
     public function getStatus()
     {
         if (array_key_exists("status", $this->_propDict)) {
-            if (is_a($this->_propDict["status"], "\Beta\Microsoft\Graph\Model\PolicySetStatus") || is_null($this->_propDict["status"])) {
+            if (is_a($this->_propDict["status"], "Beta\Microsoft\Graph\Model\PolicySetStatus")) {
                 return $this->_propDict["status"];
             } else {
                 $this->_propDict["status"] = new PolicySetStatus($this->_propDict["status"]);
@@ -257,7 +257,7 @@ class PolicySet extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the status
     * Validation/assignment status of the PolicySet. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.
@@ -271,13 +271,13 @@ class PolicySet extends Entity
         $this->_propDict["status"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the assignments
     * Assignments of the PolicySet.
      *
-     * @return array|null The assignments
+     * @return array The assignments
      */
     public function getAssignments()
     {
@@ -287,27 +287,27 @@ class PolicySet extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the assignments
     * Assignments of the PolicySet.
     *
-    * @param PolicySetAssignment[] $val The assignments
+    * @param PolicySetAssignment $val The assignments
     *
     * @return PolicySet
     */
     public function setAssignments($val)
     {
-        $this->_propDict["assignments"] = $val;
+		$this->_propDict["assignments"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the items
     * Items of the PolicySet with maximum count 100.
      *
-     * @return array|null The items
+     * @return array The items
      */
     public function getItems()
     {
@@ -317,19 +317,19 @@ class PolicySet extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the items
     * Items of the PolicySet with maximum count 100.
     *
-    * @param PolicySetItem[] $val The items
+    * @param PolicySetItem $val The items
     *
     * @return PolicySet
     */
     public function setItems($val)
     {
-        $this->_propDict["items"] = $val;
+		$this->_propDict["items"] = $val;
         return $this;
     }
-
+    
 }

@@ -28,12 +28,12 @@ class EmbeddedSIMDeviceState extends Entity
     * Gets the createdDateTime
     * The time the embedded SIM device status was created. Generated service side.
     *
-    * @return \DateTime|null The createdDateTime
+    * @return \DateTime The createdDateTime
     */
     public function getCreatedDateTime()
     {
         if (array_key_exists("createdDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["createdDateTime"], "\DateTime") || is_null($this->_propDict["createdDateTime"])) {
+            if (is_a($this->_propDict["createdDateTime"], "\DateTime")) {
                 return $this->_propDict["createdDateTime"];
             } else {
                 $this->_propDict["createdDateTime"] = new \DateTime($this->_propDict["createdDateTime"]);
@@ -42,7 +42,7 @@ class EmbeddedSIMDeviceState extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the createdDateTime
     * The time the embedded SIM device status was created. Generated service side.
@@ -56,12 +56,12 @@ class EmbeddedSIMDeviceState extends Entity
         $this->_propDict["createdDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the deviceName
     * Device name to which the subscription was provisioned e.g. DESKTOP-JOE
     *
-    * @return string|null The deviceName
+    * @return string The deviceName
     */
     public function getDeviceName()
     {
@@ -71,7 +71,7 @@ class EmbeddedSIMDeviceState extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the deviceName
     * Device name to which the subscription was provisioned e.g. DESKTOP-JOE
@@ -85,17 +85,17 @@ class EmbeddedSIMDeviceState extends Entity
         $this->_propDict["deviceName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the lastSyncDateTime
     * The time the embedded SIM device last checked in. Updated service side.
     *
-    * @return \DateTime|null The lastSyncDateTime
+    * @return \DateTime The lastSyncDateTime
     */
     public function getLastSyncDateTime()
     {
         if (array_key_exists("lastSyncDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastSyncDateTime"], "\DateTime") || is_null($this->_propDict["lastSyncDateTime"])) {
+            if (is_a($this->_propDict["lastSyncDateTime"], "\DateTime")) {
                 return $this->_propDict["lastSyncDateTime"];
             } else {
                 $this->_propDict["lastSyncDateTime"] = new \DateTime($this->_propDict["lastSyncDateTime"]);
@@ -104,7 +104,7 @@ class EmbeddedSIMDeviceState extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastSyncDateTime
     * The time the embedded SIM device last checked in. Updated service side.
@@ -118,17 +118,17 @@ class EmbeddedSIMDeviceState extends Entity
         $this->_propDict["lastSyncDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the modifiedDateTime
     * The time the embedded SIM device status was last modified. Updated service side.
     *
-    * @return \DateTime|null The modifiedDateTime
+    * @return \DateTime The modifiedDateTime
     */
     public function getModifiedDateTime()
     {
         if (array_key_exists("modifiedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["modifiedDateTime"], "\DateTime") || is_null($this->_propDict["modifiedDateTime"])) {
+            if (is_a($this->_propDict["modifiedDateTime"], "\DateTime")) {
                 return $this->_propDict["modifiedDateTime"];
             } else {
                 $this->_propDict["modifiedDateTime"] = new \DateTime($this->_propDict["modifiedDateTime"]);
@@ -137,7 +137,7 @@ class EmbeddedSIMDeviceState extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the modifiedDateTime
     * The time the embedded SIM device status was last modified. Updated service side.
@@ -151,17 +151,17 @@ class EmbeddedSIMDeviceState extends Entity
         $this->_propDict["modifiedDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the state
     * The state of the profile operation applied to the device. Possible values are: notEvaluated, failed, installing, installed, deleting, error, deleted, removedByUser.
     *
-    * @return EmbeddedSIMDeviceStateValue|null The state
+    * @return EmbeddedSIMDeviceStateValue The state
     */
     public function getState()
     {
         if (array_key_exists("state", $this->_propDict)) {
-            if (is_a($this->_propDict["state"], "\Beta\Microsoft\Graph\Model\EmbeddedSIMDeviceStateValue") || is_null($this->_propDict["state"])) {
+            if (is_a($this->_propDict["state"], "Beta\Microsoft\Graph\Model\EmbeddedSIMDeviceStateValue")) {
                 return $this->_propDict["state"];
             } else {
                 $this->_propDict["state"] = new EmbeddedSIMDeviceStateValue($this->_propDict["state"]);
@@ -170,7 +170,7 @@ class EmbeddedSIMDeviceState extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the state
     * The state of the profile operation applied to the device. Possible values are: notEvaluated, failed, installing, installed, deleting, error, deleted, removedByUser.
@@ -184,12 +184,12 @@ class EmbeddedSIMDeviceState extends Entity
         $this->_propDict["state"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the stateDetails
     * String description of the provisioning state.
     *
-    * @return string|null The stateDetails
+    * @return string The stateDetails
     */
     public function getStateDetails()
     {
@@ -199,7 +199,7 @@ class EmbeddedSIMDeviceState extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the stateDetails
     * String description of the provisioning state.
@@ -213,12 +213,12 @@ class EmbeddedSIMDeviceState extends Entity
         $this->_propDict["stateDetails"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the universalIntegratedCircuitCardIdentifier
     * The Universal Integrated Circuit Card Identifier (UICCID) identifying the hardware onto which a profile is to be deployed.
     *
-    * @return string|null The universalIntegratedCircuitCardIdentifier
+    * @return string The universalIntegratedCircuitCardIdentifier
     */
     public function getUniversalIntegratedCircuitCardIdentifier()
     {
@@ -228,7 +228,7 @@ class EmbeddedSIMDeviceState extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the universalIntegratedCircuitCardIdentifier
     * The Universal Integrated Circuit Card Identifier (UICCID) identifying the hardware onto which a profile is to be deployed.
@@ -242,12 +242,12 @@ class EmbeddedSIMDeviceState extends Entity
         $this->_propDict["universalIntegratedCircuitCardIdentifier"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the userName
     * Username which the subscription was provisioned to e.g. joe@contoso.com
     *
-    * @return string|null The userName
+    * @return string The userName
     */
     public function getUserName()
     {
@@ -257,7 +257,7 @@ class EmbeddedSIMDeviceState extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the userName
     * Username which the subscription was provisioned to e.g. joe@contoso.com
@@ -271,5 +271,5 @@ class EmbeddedSIMDeviceState extends Entity
         $this->_propDict["userName"] = $val;
         return $this;
     }
-
+    
 }

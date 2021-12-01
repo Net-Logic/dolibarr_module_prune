@@ -28,10 +28,10 @@ class IdentityProtectionRoot implements \JsonSerializable
     * The array of properties available
     * to the model
     *
-    * @var array $_propDict
+    * @var array(string => string)
     */
     protected $_propDict;
-
+    
     /**
     * Construct a new IdentityProtectionRoot
     *
@@ -39,10 +39,7 @@ class IdentityProtectionRoot implements \JsonSerializable
     */
     function __construct($propDict = array())
     {
-        if (!is_array($propDict)) {
-           $propDict = array();
-        }
-        $this->_propDict = $propDict;
+		$this->_propDict = $propDict;
     }
 
     /**
@@ -54,12 +51,12 @@ class IdentityProtectionRoot implements \JsonSerializable
     {
         return $this->_propDict;
     }
+    
 
-
-     /**
+     /** 
      * Gets the riskDetections
      *
-     * @return array|null The riskDetections
+     * @return array The riskDetections
      */
     public function getRiskDetections()
     {
@@ -69,25 +66,25 @@ class IdentityProtectionRoot implements \JsonSerializable
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the riskDetections
     *
-    * @param RiskDetection[] $val The riskDetections
+    * @param RiskDetection $val The riskDetections
     *
     * @return IdentityProtectionRoot
     */
     public function setRiskDetections($val)
     {
-        $this->_propDict["riskDetections"] = $val;
+		$this->_propDict["riskDetections"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the riskyUsers
      *
-     * @return array|null The riskyUsers
+     * @return array The riskyUsers
      */
     public function getRiskyUsers()
     {
@@ -97,49 +94,46 @@ class IdentityProtectionRoot implements \JsonSerializable
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the riskyUsers
     *
-    * @param RiskyUser[] $val The riskyUsers
+    * @param RiskyUser $val The riskyUsers
     *
     * @return IdentityProtectionRoot
     */
     public function setRiskyUsers($val)
     {
-        $this->_propDict["riskyUsers"] = $val;
+		$this->_propDict["riskyUsers"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the ODataType
     *
-    * @return string|null The ODataType
+    * @return string The ODataType
     */
     public function getODataType()
     {
-        if (array_key_exists('@odata.type', $this->_propDict)) {
-            return $this->_propDict["@odata.type"];
-        }
-        return null;
+        return $this->_propDict["@odata.type"];
     }
-
+    
     /**
     * Sets the ODataType
     *
-    * @param string $val The ODataType
+    * @param string The ODataType
     *
-    * @return IdentityProtectionRoot
+    * @return Entity
     */
     public function setODataType($val)
     {
         $this->_propDict["@odata.type"] = $val;
         return $this;
     }
-
+    
     /**
     * Serializes the object by property array
-    * Manually serialize DateTime into RFC3339 format
+	* Manually serialize DateTime into RFC3339 format
     *
     * @return array The list of properties
     */
@@ -151,8 +145,6 @@ class IdentityProtectionRoot implements \JsonSerializable
                 $serializableProperties[$property] = $val->format(\DateTime::RFC3339);
             } else if (is_a($val, "\Microsoft\Graph\Core\Enum")) {
                 $serializableProperties[$property] = $val->value();
-            } else if (is_a($val, "\Entity")) {
-                $serializableProperties[$property] = $val->jsonSerialize();
             }
         }
         return $serializableProperties;

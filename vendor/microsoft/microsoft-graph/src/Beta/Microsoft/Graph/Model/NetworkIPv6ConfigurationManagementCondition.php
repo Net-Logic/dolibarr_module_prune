@@ -28,7 +28,7 @@ class NetworkIPv6ConfigurationManagementCondition extends NetworkManagementCondi
     * Gets the dnsSuffixList
     * Valid DNS suffixes for the current network. e.g. seattle.contoso.com
     *
-    * @return string|null The dnsSuffixList
+    * @return string The dnsSuffixList
     */
     public function getDnsSuffixList()
     {
@@ -38,7 +38,7 @@ class NetworkIPv6ConfigurationManagementCondition extends NetworkManagementCondi
             return null;
         }
     }
-
+    
     /**
     * Sets the dnsSuffixList
     * Valid DNS suffixes for the current network. e.g. seattle.contoso.com
@@ -52,12 +52,12 @@ class NetworkIPv6ConfigurationManagementCondition extends NetworkManagementCondi
         $this->_propDict["dnsSuffixList"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the ipV6DNSServerList
     * An IPv6 DNS servers configured for the adapter.
     *
-    * @return string|null The ipV6DNSServerList
+    * @return string The ipV6DNSServerList
     */
     public function getIpV6DNSServerList()
     {
@@ -67,7 +67,7 @@ class NetworkIPv6ConfigurationManagementCondition extends NetworkManagementCondi
             return null;
         }
     }
-
+    
     /**
     * Sets the ipV6DNSServerList
     * An IPv6 DNS servers configured for the adapter.
@@ -81,12 +81,12 @@ class NetworkIPv6ConfigurationManagementCondition extends NetworkManagementCondi
         $this->_propDict["ipV6DNSServerList"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the ipV6Gateway
     * The IPv6 gateway address to. e.g 2001:db8::1
     *
-    * @return string|null The ipV6Gateway
+    * @return string The ipV6Gateway
     */
     public function getIpV6Gateway()
     {
@@ -96,7 +96,7 @@ class NetworkIPv6ConfigurationManagementCondition extends NetworkManagementCondi
             return null;
         }
     }
-
+    
     /**
     * Sets the ipV6Gateway
     * The IPv6 gateway address to. e.g 2001:db8::1
@@ -110,12 +110,12 @@ class NetworkIPv6ConfigurationManagementCondition extends NetworkManagementCondi
         $this->_propDict["ipV6Gateway"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the ipV6Prefix
     * The IPv6 subnet to be connected to. e.g. 2001:db8::/32
     *
-    * @return string|null The ipV6Prefix
+    * @return string The ipV6Prefix
     */
     public function getIpV6Prefix()
     {
@@ -125,7 +125,7 @@ class NetworkIPv6ConfigurationManagementCondition extends NetworkManagementCondi
             return null;
         }
     }
-
+    
     /**
     * Sets the ipV6Prefix
     * The IPv6 subnet to be connected to. e.g. 2001:db8::/32
@@ -139,5 +139,5 @@ class NetworkIPv6ConfigurationManagementCondition extends NetworkManagementCondi
         $this->_propDict["ipV6Prefix"] = $val;
         return $this;
     }
-
+    
 }

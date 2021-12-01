@@ -26,9 +26,9 @@ class Contract extends DirectoryObject
 {
     /**
     * Gets the contractType
-    * Type of contract. Possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.
+    * Type of contract.Possible values are: SyndicationPartner - Partner that exclusively resells and manages O365 and Intune for this customer. They resell and support their customers. BreadthPartner - Partner has the ability to provide administrative support for this customer. However, the partner is not allowed to resell to the customer.ResellerPartner - Partner that is similar to a syndication partner, except that the partner doesn’t have exclusive access to a tenant. In the syndication case, the customer cannot buy additional direct subscriptions from Microsoft or from other partners.
     *
-    * @return string|null The contractType
+    * @return string The contractType
     */
     public function getContractType()
     {
@@ -38,10 +38,10 @@ class Contract extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the contractType
-    * Type of contract. Possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.
+    * Type of contract.Possible values are: SyndicationPartner - Partner that exclusively resells and manages O365 and Intune for this customer. They resell and support their customers. BreadthPartner - Partner has the ability to provide administrative support for this customer. However, the partner is not allowed to resell to the customer.ResellerPartner - Partner that is similar to a syndication partner, except that the partner doesn’t have exclusive access to a tenant. In the syndication case, the customer cannot buy additional direct subscriptions from Microsoft or from other partners.
     *
     * @param string $val The contractType
     *
@@ -52,12 +52,12 @@ class Contract extends DirectoryObject
         $this->_propDict["contractType"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the customerId
     * The unique identifier for the customer tenant referenced by this partnership. Corresponds to the id property of the customer tenant's organization resource.
     *
-    * @return string|null The customerId
+    * @return string The customerId
     */
     public function getCustomerId()
     {
@@ -67,7 +67,7 @@ class Contract extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the customerId
     * The unique identifier for the customer tenant referenced by this partnership. Corresponds to the id property of the customer tenant's organization resource.
@@ -81,12 +81,12 @@ class Contract extends DirectoryObject
         $this->_propDict["customerId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the defaultDomainName
     * A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's default domain name changes.
     *
-    * @return string|null The defaultDomainName
+    * @return string The defaultDomainName
     */
     public function getDefaultDomainName()
     {
@@ -96,7 +96,7 @@ class Contract extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the defaultDomainName
     * A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's default domain name changes.
@@ -110,12 +110,12 @@ class Contract extends DirectoryObject
         $this->_propDict["defaultDomainName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the displayName
     * A copy of the customer tenant's display name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's display name changes.
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -125,7 +125,7 @@ class Contract extends DirectoryObject
             return null;
         }
     }
-
+    
     /**
     * Sets the displayName
     * A copy of the customer tenant's display name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's display name changes.
@@ -139,5 +139,5 @@ class Contract extends DirectoryObject
         $this->_propDict["displayName"] = $val;
         return $this;
     }
-
+    
 }

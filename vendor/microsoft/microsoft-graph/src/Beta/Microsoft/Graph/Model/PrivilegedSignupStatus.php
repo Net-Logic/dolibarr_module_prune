@@ -27,7 +27,7 @@ class PrivilegedSignupStatus extends Entity
     /**
     * Gets the isRegistered
     *
-    * @return bool|null The isRegistered
+    * @return bool The isRegistered
     */
     public function getIsRegistered()
     {
@@ -37,7 +37,7 @@ class PrivilegedSignupStatus extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the isRegistered
     *
@@ -50,16 +50,16 @@ class PrivilegedSignupStatus extends Entity
         $this->_propDict["isRegistered"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the status
     *
-    * @return SetupStatus|null The status
+    * @return SetupStatus The status
     */
     public function getStatus()
     {
         if (array_key_exists("status", $this->_propDict)) {
-            if (is_a($this->_propDict["status"], "\Beta\Microsoft\Graph\Model\SetupStatus") || is_null($this->_propDict["status"])) {
+            if (is_a($this->_propDict["status"], "Beta\Microsoft\Graph\Model\SetupStatus")) {
                 return $this->_propDict["status"];
             } else {
                 $this->_propDict["status"] = new SetupStatus($this->_propDict["status"]);
@@ -68,7 +68,7 @@ class PrivilegedSignupStatus extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the status
     *
@@ -81,5 +81,5 @@ class PrivilegedSignupStatus extends Entity
         $this->_propDict["status"] = $val;
         return $this;
     }
-
+    
 }

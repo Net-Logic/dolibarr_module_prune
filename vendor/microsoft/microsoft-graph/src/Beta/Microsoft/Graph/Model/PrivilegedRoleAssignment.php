@@ -28,12 +28,12 @@ class PrivilegedRoleAssignment extends Entity
     * Gets the expirationDateTime
     * The UTC DateTime when the temporary privileged role assignment will be expired. For permanent role assignment, the value is null.
     *
-    * @return \DateTime|null The expirationDateTime
+    * @return \DateTime The expirationDateTime
     */
     public function getExpirationDateTime()
     {
         if (array_key_exists("expirationDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["expirationDateTime"], "\DateTime") || is_null($this->_propDict["expirationDateTime"])) {
+            if (is_a($this->_propDict["expirationDateTime"], "\DateTime")) {
                 return $this->_propDict["expirationDateTime"];
             } else {
                 $this->_propDict["expirationDateTime"] = new \DateTime($this->_propDict["expirationDateTime"]);
@@ -42,7 +42,7 @@ class PrivilegedRoleAssignment extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the expirationDateTime
     * The UTC DateTime when the temporary privileged role assignment will be expired. For permanent role assignment, the value is null.
@@ -56,12 +56,12 @@ class PrivilegedRoleAssignment extends Entity
         $this->_propDict["expirationDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the isElevated
     * true if the role assignment is activated. false if the role assignment is deactivated.
     *
-    * @return bool|null The isElevated
+    * @return bool The isElevated
     */
     public function getIsElevated()
     {
@@ -71,7 +71,7 @@ class PrivilegedRoleAssignment extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the isElevated
     * true if the role assignment is activated. false if the role assignment is deactivated.
@@ -85,12 +85,12 @@ class PrivilegedRoleAssignment extends Entity
         $this->_propDict["isElevated"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the resultMessage
     * Result message set by the service.
     *
-    * @return string|null The resultMessage
+    * @return string The resultMessage
     */
     public function getResultMessage()
     {
@@ -100,7 +100,7 @@ class PrivilegedRoleAssignment extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the resultMessage
     * Result message set by the service.
@@ -114,12 +114,12 @@ class PrivilegedRoleAssignment extends Entity
         $this->_propDict["resultMessage"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the roleId
     * Role identifier. In GUID string format.
     *
-    * @return string|null The roleId
+    * @return string The roleId
     */
     public function getRoleId()
     {
@@ -129,7 +129,7 @@ class PrivilegedRoleAssignment extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the roleId
     * Role identifier. In GUID string format.
@@ -143,12 +143,12 @@ class PrivilegedRoleAssignment extends Entity
         $this->_propDict["roleId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the userId
     * User identifier. In GUID string format.
     *
-    * @return string|null The userId
+    * @return string The userId
     */
     public function getUserId()
     {
@@ -158,7 +158,7 @@ class PrivilegedRoleAssignment extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the userId
     * User identifier. In GUID string format.
@@ -172,17 +172,17 @@ class PrivilegedRoleAssignment extends Entity
         $this->_propDict["userId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the roleInfo
     * Read-only. Nullable. The associated role information.
     *
-    * @return PrivilegedRole|null The roleInfo
+    * @return PrivilegedRole The roleInfo
     */
     public function getRoleInfo()
     {
         if (array_key_exists("roleInfo", $this->_propDict)) {
-            if (is_a($this->_propDict["roleInfo"], "\Beta\Microsoft\Graph\Model\PrivilegedRole") || is_null($this->_propDict["roleInfo"])) {
+            if (is_a($this->_propDict["roleInfo"], "Beta\Microsoft\Graph\Model\PrivilegedRole")) {
                 return $this->_propDict["roleInfo"];
             } else {
                 $this->_propDict["roleInfo"] = new PrivilegedRole($this->_propDict["roleInfo"]);
@@ -191,7 +191,7 @@ class PrivilegedRoleAssignment extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the roleInfo
     * Read-only. Nullable. The associated role information.
@@ -205,5 +205,5 @@ class PrivilegedRoleAssignment extends Entity
         $this->_propDict["roleInfo"] = $val;
         return $this;
     }
-
+    
 }

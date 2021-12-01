@@ -28,7 +28,7 @@ class OnPremisesAgent extends Entity
     * Gets the externalIp
     * The external IP address as detected by the service for the agent machine. Read-only
     *
-    * @return string|null The externalIp
+    * @return string The externalIp
     */
     public function getExternalIp()
     {
@@ -38,7 +38,7 @@ class OnPremisesAgent extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the externalIp
     * The external IP address as detected by the service for the agent machine. Read-only
@@ -52,12 +52,12 @@ class OnPremisesAgent extends Entity
         $this->_propDict["externalIp"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the machineName
     * The name of the machine that the aggent is running on. Read-only
     *
-    * @return string|null The machineName
+    * @return string The machineName
     */
     public function getMachineName()
     {
@@ -67,7 +67,7 @@ class OnPremisesAgent extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the machineName
     * The name of the machine that the aggent is running on. Read-only
@@ -81,17 +81,17 @@ class OnPremisesAgent extends Entity
         $this->_propDict["machineName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the status
     * Possible values are: active, inactive.
     *
-    * @return AgentStatus|null The status
+    * @return AgentStatus The status
     */
     public function getStatus()
     {
         if (array_key_exists("status", $this->_propDict)) {
-            if (is_a($this->_propDict["status"], "\Beta\Microsoft\Graph\Model\AgentStatus") || is_null($this->_propDict["status"])) {
+            if (is_a($this->_propDict["status"], "Beta\Microsoft\Graph\Model\AgentStatus")) {
                 return $this->_propDict["status"];
             } else {
                 $this->_propDict["status"] = new AgentStatus($this->_propDict["status"]);
@@ -100,7 +100,7 @@ class OnPremisesAgent extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the status
     * Possible values are: active, inactive.
@@ -114,12 +114,12 @@ class OnPremisesAgent extends Entity
         $this->_propDict["status"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the supportedPublishingTypes
      *
-     * @return array|null The supportedPublishingTypes
+     * @return array The supportedPublishingTypes
      */
     public function getSupportedPublishingTypes()
     {
@@ -129,26 +129,26 @@ class OnPremisesAgent extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the supportedPublishingTypes
     *
-    * @param OnPremisesPublishingType[] $val The supportedPublishingTypes
+    * @param OnPremisesPublishingType $val The supportedPublishingTypes
     *
     * @return OnPremisesAgent
     */
     public function setSupportedPublishingTypes($val)
     {
-        $this->_propDict["supportedPublishingTypes"] = $val;
+		$this->_propDict["supportedPublishingTypes"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the agentGroups
     * List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
      *
-     * @return array|null The agentGroups
+     * @return array The agentGroups
      */
     public function getAgentGroups()
     {
@@ -158,19 +158,19 @@ class OnPremisesAgent extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the agentGroups
     * List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
     *
-    * @param OnPremisesAgentGroup[] $val The agentGroups
+    * @param OnPremisesAgentGroup $val The agentGroups
     *
     * @return OnPremisesAgent
     */
     public function setAgentGroups($val)
     {
-        $this->_propDict["agentGroups"] = $val;
+		$this->_propDict["agentGroups"] = $val;
         return $this;
     }
-
+    
 }

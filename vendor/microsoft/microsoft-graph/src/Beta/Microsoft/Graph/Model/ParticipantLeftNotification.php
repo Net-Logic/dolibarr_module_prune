@@ -26,9 +26,8 @@ class ParticipantLeftNotification extends Entity
 {
     /**
     * Gets the participantId
-    * ID of the participant under the policy who has left the meeting.
     *
-    * @return string|null The participantId
+    * @return string The participantId
     */
     public function getParticipantId()
     {
@@ -38,10 +37,9 @@ class ParticipantLeftNotification extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the participantId
-    * ID of the participant under the policy who has left the meeting.
     *
     * @param string $val The participantId
     *
@@ -52,16 +50,16 @@ class ParticipantLeftNotification extends Entity
         $this->_propDict["participantId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the call
     *
-    * @return Call|null The call
+    * @return Call The call
     */
     public function getCall()
     {
         if (array_key_exists("call", $this->_propDict)) {
-            if (is_a($this->_propDict["call"], "\Beta\Microsoft\Graph\Model\Call") || is_null($this->_propDict["call"])) {
+            if (is_a($this->_propDict["call"], "Beta\Microsoft\Graph\Model\Call")) {
                 return $this->_propDict["call"];
             } else {
                 $this->_propDict["call"] = new Call($this->_propDict["call"]);
@@ -70,7 +68,7 @@ class ParticipantLeftNotification extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the call
     *
@@ -83,5 +81,5 @@ class ParticipantLeftNotification extends Entity
         $this->_propDict["call"] = $val;
         return $this;
     }
-
+    
 }

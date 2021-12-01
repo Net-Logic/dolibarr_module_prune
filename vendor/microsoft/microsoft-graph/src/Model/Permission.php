@@ -28,12 +28,12 @@ class Permission extends Entity
     * Gets the expirationDateTime
     * A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
     *
-    * @return \DateTime|null The expirationDateTime
+    * @return \DateTime The expirationDateTime
     */
     public function getExpirationDateTime()
     {
         if (array_key_exists("expirationDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["expirationDateTime"], "\DateTime") || is_null($this->_propDict["expirationDateTime"])) {
+            if (is_a($this->_propDict["expirationDateTime"], "\DateTime")) {
                 return $this->_propDict["expirationDateTime"];
             } else {
                 $this->_propDict["expirationDateTime"] = new \DateTime($this->_propDict["expirationDateTime"]);
@@ -42,7 +42,7 @@ class Permission extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the expirationDateTime
     * A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
@@ -56,17 +56,17 @@ class Permission extends Entity
         $this->_propDict["expirationDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the grantedTo
     * For user type permissions, the details of the users &amp; applications for this permission. Read-only.
     *
-    * @return IdentitySet|null The grantedTo
+    * @return IdentitySet The grantedTo
     */
     public function getGrantedTo()
     {
         if (array_key_exists("grantedTo", $this->_propDict)) {
-            if (is_a($this->_propDict["grantedTo"], "\Microsoft\Graph\Model\IdentitySet") || is_null($this->_propDict["grantedTo"])) {
+            if (is_a($this->_propDict["grantedTo"], "Microsoft\Graph\Model\IdentitySet")) {
                 return $this->_propDict["grantedTo"];
             } else {
                 $this->_propDict["grantedTo"] = new IdentitySet($this->_propDict["grantedTo"]);
@@ -75,7 +75,7 @@ class Permission extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the grantedTo
     * For user type permissions, the details of the users &amp; applications for this permission. Read-only.
@@ -89,13 +89,13 @@ class Permission extends Entity
         $this->_propDict["grantedTo"] = $val;
         return $this;
     }
+    
 
-
-     /**
+     /** 
      * Gets the grantedToIdentities
     * For link type permissions, the details of the users to whom permission was granted. Read-only.
      *
-     * @return array|null The grantedToIdentities
+     * @return array The grantedToIdentities
      */
     public function getGrantedToIdentities()
     {
@@ -105,85 +105,26 @@ class Permission extends Entity
             return null;
         }
     }
-
-    /**
+    
+    /** 
     * Sets the grantedToIdentities
     * For link type permissions, the details of the users to whom permission was granted. Read-only.
     *
-    * @param IdentitySet[] $val The grantedToIdentities
+    * @param IdentitySet $val The grantedToIdentities
     *
     * @return Permission
     */
     public function setGrantedToIdentities($val)
     {
-        $this->_propDict["grantedToIdentities"] = $val;
+		$this->_propDict["grantedToIdentities"] = $val;
         return $this;
     }
-
-
-     /**
-     * Gets the grantedToIdentitiesV2
-     *
-     * @return array|null The grantedToIdentitiesV2
-     */
-    public function getGrantedToIdentitiesV2()
-    {
-        if (array_key_exists("grantedToIdentitiesV2", $this->_propDict)) {
-           return $this->_propDict["grantedToIdentitiesV2"];
-        } else {
-            return null;
-        }
-    }
-
-    /**
-    * Sets the grantedToIdentitiesV2
-    *
-    * @param SharePointIdentitySet[] $val The grantedToIdentitiesV2
-    *
-    * @return Permission
-    */
-    public function setGrantedToIdentitiesV2($val)
-    {
-        $this->_propDict["grantedToIdentitiesV2"] = $val;
-        return $this;
-    }
-
-    /**
-    * Gets the grantedToV2
-    *
-    * @return SharePointIdentitySet|null The grantedToV2
-    */
-    public function getGrantedToV2()
-    {
-        if (array_key_exists("grantedToV2", $this->_propDict)) {
-            if (is_a($this->_propDict["grantedToV2"], "\Microsoft\Graph\Model\SharePointIdentitySet") || is_null($this->_propDict["grantedToV2"])) {
-                return $this->_propDict["grantedToV2"];
-            } else {
-                $this->_propDict["grantedToV2"] = new SharePointIdentitySet($this->_propDict["grantedToV2"]);
-                return $this->_propDict["grantedToV2"];
-            }
-        }
-        return null;
-    }
-
-    /**
-    * Sets the grantedToV2
-    *
-    * @param SharePointIdentitySet $val The grantedToV2
-    *
-    * @return Permission
-    */
-    public function setGrantedToV2($val)
-    {
-        $this->_propDict["grantedToV2"] = $val;
-        return $this;
-    }
-
+    
     /**
     * Gets the hasPassword
     * This indicates whether password is set for this permission, it's only showing in response. Optional and Read-only and for OneDrive Personal only.
     *
-    * @return bool|null The hasPassword
+    * @return bool The hasPassword
     */
     public function getHasPassword()
     {
@@ -193,7 +134,7 @@ class Permission extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the hasPassword
     * This indicates whether password is set for this permission, it's only showing in response. Optional and Read-only and for OneDrive Personal only.
@@ -207,17 +148,17 @@ class Permission extends Entity
         $this->_propDict["hasPassword"] = boolval($val);
         return $this;
     }
-
+    
     /**
     * Gets the inheritedFrom
     * Provides a reference to the ancestor of the current permission, if it is inherited from an ancestor. Read-only.
     *
-    * @return ItemReference|null The inheritedFrom
+    * @return ItemReference The inheritedFrom
     */
     public function getInheritedFrom()
     {
         if (array_key_exists("inheritedFrom", $this->_propDict)) {
-            if (is_a($this->_propDict["inheritedFrom"], "\Microsoft\Graph\Model\ItemReference") || is_null($this->_propDict["inheritedFrom"])) {
+            if (is_a($this->_propDict["inheritedFrom"], "Microsoft\Graph\Model\ItemReference")) {
                 return $this->_propDict["inheritedFrom"];
             } else {
                 $this->_propDict["inheritedFrom"] = new ItemReference($this->_propDict["inheritedFrom"]);
@@ -226,7 +167,7 @@ class Permission extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the inheritedFrom
     * Provides a reference to the ancestor of the current permission, if it is inherited from an ancestor. Read-only.
@@ -240,17 +181,17 @@ class Permission extends Entity
         $this->_propDict["inheritedFrom"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the invitation
     * Details of any associated sharing invitation for this permission. Read-only.
     *
-    * @return SharingInvitation|null The invitation
+    * @return SharingInvitation The invitation
     */
     public function getInvitation()
     {
         if (array_key_exists("invitation", $this->_propDict)) {
-            if (is_a($this->_propDict["invitation"], "\Microsoft\Graph\Model\SharingInvitation") || is_null($this->_propDict["invitation"])) {
+            if (is_a($this->_propDict["invitation"], "Microsoft\Graph\Model\SharingInvitation")) {
                 return $this->_propDict["invitation"];
             } else {
                 $this->_propDict["invitation"] = new SharingInvitation($this->_propDict["invitation"]);
@@ -259,7 +200,7 @@ class Permission extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the invitation
     * Details of any associated sharing invitation for this permission. Read-only.
@@ -273,17 +214,17 @@ class Permission extends Entity
         $this->_propDict["invitation"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the link
     * Provides the link details of the current permission, if it is a link type permissions. Read-only.
     *
-    * @return SharingLink|null The link
+    * @return SharingLink The link
     */
     public function getLink()
     {
         if (array_key_exists("link", $this->_propDict)) {
-            if (is_a($this->_propDict["link"], "\Microsoft\Graph\Model\SharingLink") || is_null($this->_propDict["link"])) {
+            if (is_a($this->_propDict["link"], "Microsoft\Graph\Model\SharingLink")) {
                 return $this->_propDict["link"];
             } else {
                 $this->_propDict["link"] = new SharingLink($this->_propDict["link"]);
@@ -292,7 +233,7 @@ class Permission extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the link
     * Provides the link details of the current permission, if it is a link type permissions. Read-only.
@@ -306,12 +247,12 @@ class Permission extends Entity
         $this->_propDict["link"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the roles
     * The type of permission, e.g. read. See below for the full list of roles. Read-only.
     *
-    * @return string|null The roles
+    * @return string The roles
     */
     public function getRoles()
     {
@@ -321,7 +262,7 @@ class Permission extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the roles
     * The type of permission, e.g. read. See below for the full list of roles. Read-only.
@@ -335,12 +276,12 @@ class Permission extends Entity
         $this->_propDict["roles"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the shareId
-    * A unique token that can be used to access this shared item via the **shares** API. Read-only.
+    * A unique token that can be used to access this shared item via the [shares API][]. Read-only.
     *
-    * @return string|null The shareId
+    * @return string The shareId
     */
     public function getShareId()
     {
@@ -350,10 +291,10 @@ class Permission extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the shareId
-    * A unique token that can be used to access this shared item via the **shares** API. Read-only.
+    * A unique token that can be used to access this shared item via the [shares API][]. Read-only.
     *
     * @param string $val The shareId
     *
@@ -364,5 +305,5 @@ class Permission extends Entity
         $this->_propDict["shareId"] = $val;
         return $this;
     }
-
+    
 }

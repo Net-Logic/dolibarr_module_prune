@@ -28,7 +28,7 @@ class DeviceManagementScriptDeviceState extends Entity
     * Gets the errorCode
     * Error code corresponding to erroneous execution of the device management script.
     *
-    * @return int|null The errorCode
+    * @return int The errorCode
     */
     public function getErrorCode()
     {
@@ -38,7 +38,7 @@ class DeviceManagementScriptDeviceState extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the errorCode
     * Error code corresponding to erroneous execution of the device management script.
@@ -52,12 +52,12 @@ class DeviceManagementScriptDeviceState extends Entity
         $this->_propDict["errorCode"] = intval($val);
         return $this;
     }
-
+    
     /**
     * Gets the errorDescription
     * Error description corresponding to erroneous execution of the device management script.
     *
-    * @return string|null The errorDescription
+    * @return string The errorDescription
     */
     public function getErrorDescription()
     {
@@ -67,7 +67,7 @@ class DeviceManagementScriptDeviceState extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the errorDescription
     * Error description corresponding to erroneous execution of the device management script.
@@ -81,17 +81,17 @@ class DeviceManagementScriptDeviceState extends Entity
         $this->_propDict["errorDescription"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the lastStateUpdateDateTime
     * Latest time the device management script executes.
     *
-    * @return \DateTime|null The lastStateUpdateDateTime
+    * @return \DateTime The lastStateUpdateDateTime
     */
     public function getLastStateUpdateDateTime()
     {
         if (array_key_exists("lastStateUpdateDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastStateUpdateDateTime"], "\DateTime") || is_null($this->_propDict["lastStateUpdateDateTime"])) {
+            if (is_a($this->_propDict["lastStateUpdateDateTime"], "\DateTime")) {
                 return $this->_propDict["lastStateUpdateDateTime"];
             } else {
                 $this->_propDict["lastStateUpdateDateTime"] = new \DateTime($this->_propDict["lastStateUpdateDateTime"]);
@@ -100,7 +100,7 @@ class DeviceManagementScriptDeviceState extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastStateUpdateDateTime
     * Latest time the device management script executes.
@@ -114,12 +114,12 @@ class DeviceManagementScriptDeviceState extends Entity
         $this->_propDict["lastStateUpdateDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the resultMessage
     * Details of execution output.
     *
-    * @return string|null The resultMessage
+    * @return string The resultMessage
     */
     public function getResultMessage()
     {
@@ -129,7 +129,7 @@ class DeviceManagementScriptDeviceState extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the resultMessage
     * Details of execution output.
@@ -143,17 +143,17 @@ class DeviceManagementScriptDeviceState extends Entity
         $this->_propDict["resultMessage"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the runState
     * State of latest run of the device management script. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
     *
-    * @return RunState|null The runState
+    * @return RunState The runState
     */
     public function getRunState()
     {
         if (array_key_exists("runState", $this->_propDict)) {
-            if (is_a($this->_propDict["runState"], "\Beta\Microsoft\Graph\Model\RunState") || is_null($this->_propDict["runState"])) {
+            if (is_a($this->_propDict["runState"], "Beta\Microsoft\Graph\Model\RunState")) {
                 return $this->_propDict["runState"];
             } else {
                 $this->_propDict["runState"] = new RunState($this->_propDict["runState"]);
@@ -162,7 +162,7 @@ class DeviceManagementScriptDeviceState extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the runState
     * State of latest run of the device management script. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
@@ -176,17 +176,17 @@ class DeviceManagementScriptDeviceState extends Entity
         $this->_propDict["runState"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the managedDevice
     * The managed devices that executes the device management script.
     *
-    * @return ManagedDevice|null The managedDevice
+    * @return ManagedDevice The managedDevice
     */
     public function getManagedDevice()
     {
         if (array_key_exists("managedDevice", $this->_propDict)) {
-            if (is_a($this->_propDict["managedDevice"], "\Beta\Microsoft\Graph\Model\ManagedDevice") || is_null($this->_propDict["managedDevice"])) {
+            if (is_a($this->_propDict["managedDevice"], "Beta\Microsoft\Graph\Model\ManagedDevice")) {
                 return $this->_propDict["managedDevice"];
             } else {
                 $this->_propDict["managedDevice"] = new ManagedDevice($this->_propDict["managedDevice"]);
@@ -195,7 +195,7 @@ class DeviceManagementScriptDeviceState extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the managedDevice
     * The managed devices that executes the device management script.
@@ -209,5 +209,5 @@ class DeviceManagementScriptDeviceState extends Entity
         $this->_propDict["managedDevice"] = $val;
         return $this;
     }
-
+    
 }

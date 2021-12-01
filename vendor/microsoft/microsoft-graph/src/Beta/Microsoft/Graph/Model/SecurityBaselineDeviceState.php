@@ -28,7 +28,7 @@ class SecurityBaselineDeviceState extends Entity
     * Gets the deviceDisplayName
     * Display name of the device
     *
-    * @return string|null The deviceDisplayName
+    * @return string The deviceDisplayName
     */
     public function getDeviceDisplayName()
     {
@@ -38,7 +38,7 @@ class SecurityBaselineDeviceState extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the deviceDisplayName
     * Display name of the device
@@ -52,17 +52,17 @@ class SecurityBaselineDeviceState extends Entity
         $this->_propDict["deviceDisplayName"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the lastReportedDateTime
     * Last modified date time of the policy report
     *
-    * @return \DateTime|null The lastReportedDateTime
+    * @return \DateTime The lastReportedDateTime
     */
     public function getLastReportedDateTime()
     {
         if (array_key_exists("lastReportedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["lastReportedDateTime"], "\DateTime") || is_null($this->_propDict["lastReportedDateTime"])) {
+            if (is_a($this->_propDict["lastReportedDateTime"], "\DateTime")) {
                 return $this->_propDict["lastReportedDateTime"];
             } else {
                 $this->_propDict["lastReportedDateTime"] = new \DateTime($this->_propDict["lastReportedDateTime"]);
@@ -71,7 +71,7 @@ class SecurityBaselineDeviceState extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the lastReportedDateTime
     * Last modified date time of the policy report
@@ -85,12 +85,12 @@ class SecurityBaselineDeviceState extends Entity
         $this->_propDict["lastReportedDateTime"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the managedDeviceId
     * Intune device id
     *
-    * @return string|null The managedDeviceId
+    * @return string The managedDeviceId
     */
     public function getManagedDeviceId()
     {
@@ -100,7 +100,7 @@ class SecurityBaselineDeviceState extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the managedDeviceId
     * Intune device id
@@ -114,17 +114,17 @@ class SecurityBaselineDeviceState extends Entity
         $this->_propDict["managedDeviceId"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the state
     * Security baseline compliance state. Possible values are: unknown, secure, notApplicable, notSecure, error, conflict.
     *
-    * @return SecurityBaselineComplianceState|null The state
+    * @return SecurityBaselineComplianceState The state
     */
     public function getState()
     {
         if (array_key_exists("state", $this->_propDict)) {
-            if (is_a($this->_propDict["state"], "\Beta\Microsoft\Graph\Model\SecurityBaselineComplianceState") || is_null($this->_propDict["state"])) {
+            if (is_a($this->_propDict["state"], "Beta\Microsoft\Graph\Model\SecurityBaselineComplianceState")) {
                 return $this->_propDict["state"];
             } else {
                 $this->_propDict["state"] = new SecurityBaselineComplianceState($this->_propDict["state"]);
@@ -133,7 +133,7 @@ class SecurityBaselineDeviceState extends Entity
         }
         return null;
     }
-
+    
     /**
     * Sets the state
     * Security baseline compliance state. Possible values are: unknown, secure, notApplicable, notSecure, error, conflict.
@@ -147,12 +147,12 @@ class SecurityBaselineDeviceState extends Entity
         $this->_propDict["state"] = $val;
         return $this;
     }
-
+    
     /**
     * Gets the userPrincipalName
     * User Principal Name
     *
-    * @return string|null The userPrincipalName
+    * @return string The userPrincipalName
     */
     public function getUserPrincipalName()
     {
@@ -162,7 +162,7 @@ class SecurityBaselineDeviceState extends Entity
             return null;
         }
     }
-
+    
     /**
     * Sets the userPrincipalName
     * User Principal Name
@@ -176,5 +176,5 @@ class SecurityBaselineDeviceState extends Entity
         $this->_propDict["userPrincipalName"] = $val;
         return $this;
     }
-
+    
 }
