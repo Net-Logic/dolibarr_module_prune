@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'ICal' => array($vendorDir . '/johngrogg/ics-parser/src'),
+    'ComposerLockParser\\' => array($vendorDir . '/t4web/composer-lock-parser/src'),
 );

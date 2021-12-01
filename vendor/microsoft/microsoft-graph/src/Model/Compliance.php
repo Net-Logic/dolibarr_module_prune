@@ -31,7 +31,7 @@ class Compliance implements \JsonSerializable
     * @var array $_propDict
     */
     protected $_propDict;
-    
+
     /**
     * Construct a new Compliance
     *
@@ -54,38 +54,7 @@ class Compliance implements \JsonSerializable
     {
         return $this->_propDict;
     }
-    
-    /**
-    * Gets the ediscovery
-    *
-    * @return \Microsoft\Graph\Ediscovery\Model\Ediscoveryroot|null The ediscovery
-    */
-    public function getEdiscovery()
-    {
-        if (array_key_exists("ediscovery", $this->_propDict)) {
-            if (is_a($this->_propDict["ediscovery"], "\Microsoft\Graph\Ediscovery\Model\Ediscoveryroot") || is_null($this->_propDict["ediscovery"])) {
-                return $this->_propDict["ediscovery"];
-            } else {
-                $this->_propDict["ediscovery"] = new \Microsoft\Graph\Ediscovery\Model\Ediscoveryroot($this->_propDict["ediscovery"]);
-                return $this->_propDict["ediscovery"];
-            }
-        }
-        return null;
-    }
-    
-    /**
-    * Sets the ediscovery
-    *
-    * @param \Microsoft\Graph\Ediscovery\Model\Ediscoveryroot $val The ediscovery
-    *
-    * @return Compliance
-    */
-    public function setEdiscovery($val)
-    {
-        $this->_propDict["ediscovery"] = $val;
-        return $this;
-    }
-    
+
     /**
     * Gets the ODataType
     *
@@ -98,7 +67,7 @@ class Compliance implements \JsonSerializable
         }
         return null;
     }
-    
+
     /**
     * Sets the ODataType
     *
@@ -111,7 +80,7 @@ class Compliance implements \JsonSerializable
         $this->_propDict["@odata.type"] = $val;
         return $this;
     }
-    
+
     /**
     * Serializes the object by property array
     * Manually serialize DateTime into RFC3339 format

@@ -192,16 +192,16 @@ if ($action == 'edit') {
 	print '<div class="tabsAction">';
 	print '<a class="butAction" href="' . $_SERVER["PHP_SELF"] . '?action=edit">' . $langs->trans("Modify") . '</a>';
 	print '</div>';
-	print '<table class="noborder" width="100%">';
+	print '<table class="noborder centpercent>';
 	print '<tr class="liste_titre">';
 	print '<td>' . $langs->trans("Paramètres Divers") . '</td>';
-	print '<td align="center" width="100">' . $langs->trans("Action") . '</td>';
+	print '<td class="center centpercent">' . $langs->trans("Action") . '</td>';
 	print "</tr>\n";
 	// Modules
 	foreach ($modules as $const => $desc) {
 		print '<tr class="oddeven">';
 		print '<td>' . $langs->trans($desc) . '</td>';
-		print '<td align="center" width="100">';
+		print '<td class="center centpercent">';
 		$constante = 'PRUNE_' . $const;
 		$value = (isset($conf->global->$constante) ? $conf->global->$constante : 0);
 		if ($value == 0) {

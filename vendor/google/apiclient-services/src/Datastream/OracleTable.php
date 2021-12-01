@@ -22,7 +22,7 @@ class OracleTable extends \Google\Collection
   protected $collection_key = 'oracleColumns';
   protected $oracleColumnsType = OracleColumn::class;
   protected $oracleColumnsDataType = 'array';
-  public $tableName;
+  public $table;
 
   /**
    * @param OracleColumn[]
@@ -38,13 +38,13 @@ class OracleTable extends \Google\Collection
   {
     return $this->oracleColumns;
   }
-  public function setTableName($tableName)
+  public function setTable($table)
   {
-    $this->tableName = $tableName;
+    $this->table = $table;
   }
-  public function getTableName()
+  public function getTable()
   {
-    return $this->tableName;
+    return $this->table;
   }
 }
 
