@@ -13,7 +13,8 @@
         "league/oauth2-google": "^3.0.4",
         "sarhan/oauth2-docusign": "^2.0",
         "cache/filesystem-adapter": "^1.1",
-        "symfony/cache": "^4.4.0",
+        "symfony/cache": "4.4.*",
+        "symfony/service-contracts": "1.1.*",
         "johngrogg/ics-parser": "^3.0.0",
         "t4web/composer-lock-parser": "1.1.*"
     },
