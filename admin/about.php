@@ -76,9 +76,12 @@ $composerInfo = new ComposerLockParser\ComposerInfo('../composer.lock');
 $packages = $composerInfo->getPackages();
 print '<table class="noborder centpercent">';
 print '<tr class="liste_titre">';
-print '<td class="titlefield">' . $langs->trans("Library") . '</td><td>' . $langs->trans("Version") . '</td><td>' . $langs->trans("Namespace") . '</td>';
-print '<td>' . $langs->trans("SourceUrl") . '</td>';
-print '<td>' . $langs->trans("Homepage") . '</td>';
+print '<td class="titlefield">' . $langs->trans("Library") . '</td>';
+print '<td>' . $langs->trans("PruneVersion") . '</td>';
+print '<td>' . $langs->trans("PrunePHPVersion") . '</td>';
+print '<td>' . $langs->trans("PruneNamespace") . '</td>';
+print '<td>' . $langs->trans("PruneSourceUrl") . '</td>';
+print '<td>' . $langs->trans("PruneHomepage") . '</td>';
 print '</tr>';
 
 foreach ($packages as $package) {
