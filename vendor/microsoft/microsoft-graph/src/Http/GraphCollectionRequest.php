@@ -70,17 +70,16 @@ class GraphCollectionRequest extends GraphRequest
     /**
     * Constructs a new GraphCollectionRequest object
     *
-    * @param string $requestType  The HTTP verb for the
-    *                             request ("GET", "POST", "PUT", etc.)
-    * @param string $endpoint     The URI of the endpoint to hit
-    * @param string $accessToken  A valid access token
-    * @param string $baseUrl      The base URL of the request
-    * @param string $apiVersion   The version of the API to call
-    * @param string $proxyPort    The url where to proxy through
-    * @param bool $proxyVerifySSL Whether the proxy requests should perform SSL verification
+    * @param string $requestType The HTTP verb for the
+    *                            request ("GET", "POST", "PUT", etc.)
+    * @param string $endpoint    The URI of the endpoint to hit
+    * @param string $accessToken A valid access token
+    * @param string $baseUrl     The base URL of the request
+    * @param string $apiVersion  The version of the API to call
+    * @param string $proxyPort   The url where to proxy through
     * @throws GraphException when no access token is provided
     */
-    public function __construct($requestType, $endpoint, $accessToken, $baseUrl, $apiVersion, $proxyPort = null, $proxyVerifySSL = false)
+    public function __construct($requestType, $endpoint, $accessToken, $baseUrl, $apiVersion, $proxyPort = null)
     {
         parent::__construct(
             $requestType,
@@ -88,8 +87,7 @@ class GraphCollectionRequest extends GraphRequest
             $accessToken,
             $baseUrl,
             $apiVersion,
-            $proxyPort,
-            $proxyVerifySSL
+            $proxyPort
         );
         $this->end = false;
     }
@@ -99,7 +97,6 @@ class GraphCollectionRequest extends GraphRequest
 	 *
 	 * @return int the number of entries
 	 * @throws GraphException
-	 * @throws \GuzzleHttp\Exception\GuzzleException
 	 */
     public function count()
     {
@@ -145,8 +142,10 @@ class GraphCollectionRequest extends GraphRequest
 	/**
 	 * Gets the next page of results
 	 *
+	 * @param bool $prev When true, get the previous page
+	 *
 	 * @return array of objects of class $returnType
-	 * @throws \GuzzleHttp\Exception\GuzzleException
+	 * @throws GraphException
 	 */
     public function getPage()
     {
@@ -158,6 +157,8 @@ class GraphCollectionRequest extends GraphRequest
 
     /**
     * Sets the required query information to get a new page
+    *
+    * @param bool $prev Set to true for the previous page
     *
     * @return GraphCollectionRequest
     */
@@ -175,7 +176,8 @@ class GraphCollectionRequest extends GraphRequest
         }
 
         if ($this->nextLink) {
-            $this->endpoint = "/" . implode("/", array_slice(explode("/", $this->nextLink), 4));
+            $baseLength = strlen($this->baseUrl) + strlen($this->apiVersion);
+            $this->endpoint = substr($this->nextLink, $baseLength);
         } else {
             // This is the first request to the endpoint
             if ($this->pageSize) {

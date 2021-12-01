@@ -33,6 +33,5 @@ class NetworkType extends Enum
     const EXTRANET = "extranet";
     const NAMED_NETWORK = "namedNetwork";
     const TRUSTED = "trusted";
-    const TRUSTED_NAMED_LOCATION = "trustedNamedLocation";
     const UNKNOWN_FUTURE_VALUE = "unknownFutureValue";
 }

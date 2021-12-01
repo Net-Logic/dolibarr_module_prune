@@ -57,7 +57,7 @@ final class Instantiator
      *
      * @throws ExceptionInterface When the instance cannot be created
      */
-    public static function instantiate(string $class, array $properties = [], array $privateProperties = []): object
+    public static function instantiate(string $class, array $properties = [], array $privateProperties = [])
     {
         $reflector = Registry::$reflectors[$class] ?? Registry::getClassReflector($class);
 

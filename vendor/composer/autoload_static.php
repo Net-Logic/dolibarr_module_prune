@@ -277,6 +277,23 @@ class ComposerStaticInit06bd0d05e5a0c59887250eaee91f6911
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'I' => 
+        array (
+            'ICal' => 
+            array (
+                0 => __DIR__ . '/..' . '/johngrogg/ics-parser/src',
+            ),
+        ),
+        'C' => 
+        array (
+            'ComposerLockParser\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/t4web/composer-lock-parser/src',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Google_AccessToken_Revoke' => __DIR__ . '/..' . '/google/apiclient/src/aliases.php',
@@ -348,6 +365,7 @@ class ComposerStaticInit06bd0d05e5a0c59887250eaee91f6911
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit06bd0d05e5a0c59887250eaee91f6911::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit06bd0d05e5a0c59887250eaee91f6911::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit06bd0d05e5a0c59887250eaee91f6911::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit06bd0d05e5a0c59887250eaee91f6911::$classMap;
 
         }, null, ClassLoader::class);

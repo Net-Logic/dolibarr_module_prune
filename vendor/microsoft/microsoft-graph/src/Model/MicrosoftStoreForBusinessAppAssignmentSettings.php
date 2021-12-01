@@ -26,11 +26,9 @@ class MicrosoftStoreForBusinessAppAssignmentSettings extends MobileAppAssignment
     /**
     * Set the @odata.type since this type is immediately descended from an abstract
     * type that is referenced as the type in an entity.
-    * @param array $propDict The property dictionary
     */
-    public function __construct($propDict = array())
+    public function __construct()
     {
-        parent::__construct($propDict);
         $this->setODataType("#microsoft.graph.microsoftStoreForBusinessAppAssignmentSettings");
     }
 
@@ -38,7 +36,7 @@ class MicrosoftStoreForBusinessAppAssignmentSettings extends MobileAppAssignment
     * Gets the useDeviceContext
     * Whether or not to use device execution context for Microsoft Store for Business mobile app.
     *
-    * @return bool|null The useDeviceContext
+    * @return bool The useDeviceContext
     */
     public function getUseDeviceContext()
     {

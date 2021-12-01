@@ -34,6 +34,4 @@ class LobbyBypassScope extends Enum
     const ORGANIZATION_AND_FEDERATED = "organizationAndFederated";
     const EVERYONE = "everyone";
     const UNKNOWN_FUTURE_VALUE = "unknownFutureValue";
-    const INVITED = "invited";
-    const ORGANIZATION_EXCLUDING_GUESTS = "organizationExcludingGuests";
 }

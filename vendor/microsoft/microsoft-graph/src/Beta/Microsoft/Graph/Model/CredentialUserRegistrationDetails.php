@@ -27,9 +27,9 @@ class CredentialUserRegistrationDetails extends Entity
 
      /** 
      * Gets the authMethods
-    * Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.
+    * Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, and alternateMobilePhone (supported only in registration).
      *
-     * @return array|null The authMethods
+     * @return array The authMethods
      */
     public function getAuthMethods()
     {
@@ -42,7 +42,7 @@ class CredentialUserRegistrationDetails extends Entity
     
     /** 
     * Sets the authMethods
-    * Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.
+    * Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, and alternateMobilePhone (supported only in registration).
     *
     * @param RegistrationAuthMethod $val The authMethods
     *
@@ -50,7 +50,7 @@ class CredentialUserRegistrationDetails extends Entity
     */
     public function setAuthMethods($val)
     {
-        $this->_propDict["authMethods"] = $val;
+		$this->_propDict["authMethods"] = $val;
         return $this;
     }
     
@@ -58,7 +58,7 @@ class CredentialUserRegistrationDetails extends Entity
     * Gets the isCapable
     * Indicates whether the user is ready to perform self-service password reset or MFA.
     *
-    * @return bool|null The isCapable
+    * @return bool The isCapable
     */
     public function getIsCapable()
     {
@@ -85,9 +85,9 @@ class CredentialUserRegistrationDetails extends Entity
     
     /**
     * Gets the isEnabled
-    * Indicates whether the user enabled to perform self-service password reset.
+    * Indiciates whether the user enabled to perform self-service password reset.
     *
-    * @return bool|null The isEnabled
+    * @return bool The isEnabled
     */
     public function getIsEnabled()
     {
@@ -100,7 +100,7 @@ class CredentialUserRegistrationDetails extends Entity
     
     /**
     * Sets the isEnabled
-    * Indicates whether the user enabled to perform self-service password reset.
+    * Indiciates whether the user enabled to perform self-service password reset.
     *
     * @param bool $val The isEnabled
     *
@@ -114,9 +114,9 @@ class CredentialUserRegistrationDetails extends Entity
     
     /**
     * Gets the isMfaRegistered
-    * Indicates whether the user is registered for MFA.
+    * Indiciates whether the user is registered for MFA.
     *
-    * @return bool|null The isMfaRegistered
+    * @return bool The isMfaRegistered
     */
     public function getIsMfaRegistered()
     {
@@ -129,7 +129,7 @@ class CredentialUserRegistrationDetails extends Entity
     
     /**
     * Sets the isMfaRegistered
-    * Indicates whether the user is registered for MFA.
+    * Indiciates whether the user is registered for MFA.
     *
     * @param bool $val The isMfaRegistered
     *
@@ -145,7 +145,7 @@ class CredentialUserRegistrationDetails extends Entity
     * Gets the isRegistered
     * Indicates whether the user has registered any authentication methods for self-service password reset.
     *
-    * @return bool|null The isRegistered
+    * @return bool The isRegistered
     */
     public function getIsRegistered()
     {
@@ -174,7 +174,7 @@ class CredentialUserRegistrationDetails extends Entity
     * Gets the userDisplayName
     * Provides the user name of the corresponding user.
     *
-    * @return string|null The userDisplayName
+    * @return string The userDisplayName
     */
     public function getUserDisplayName()
     {
@@ -203,7 +203,7 @@ class CredentialUserRegistrationDetails extends Entity
     * Gets the userPrincipalName
     * Provides the user principal name of the corresponding user.
     *
-    * @return string|null The userPrincipalName
+    * @return string The userPrincipalName
     */
     public function getUserPrincipalName()
     {

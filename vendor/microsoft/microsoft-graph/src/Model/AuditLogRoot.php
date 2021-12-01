@@ -29,7 +29,7 @@ class AuditLogRoot extends Entity
      * Gets the directoryAudits
     * Read-only. Nullable.
      *
-     * @return array|null The directoryAudits
+     * @return array The directoryAudits
      */
     public function getDirectoryAudits()
     {
@@ -50,35 +50,7 @@ class AuditLogRoot extends Entity
     */
     public function setDirectoryAudits($val)
     {
-        $this->_propDict["directoryAudits"] = $val;
-        return $this;
-    }
-    
-
-     /** 
-     * Gets the provisioning
-     *
-     * @return array|null The provisioning
-     */
-    public function getProvisioning()
-    {
-        if (array_key_exists("provisioning", $this->_propDict)) {
-           return $this->_propDict["provisioning"];
-        } else {
-            return null;
-        }
-    }
-    
-    /** 
-    * Sets the provisioning
-    *
-    * @param ProvisioningObjectSummary $val The provisioning
-    *
-    * @return AuditLogRoot
-    */
-    public function setProvisioning($val)
-    {
-        $this->_propDict["provisioning"] = $val;
+		$this->_propDict["directoryAudits"] = $val;
         return $this;
     }
     
@@ -86,7 +58,7 @@ class AuditLogRoot extends Entity
      /** 
      * Gets the restrictedSignIns
      *
-     * @return array|null The restrictedSignIns
+     * @return array The restrictedSignIns
      */
     public function getRestrictedSignIns()
     {
@@ -106,7 +78,7 @@ class AuditLogRoot extends Entity
     */
     public function setRestrictedSignIns($val)
     {
-        $this->_propDict["restrictedSignIns"] = $val;
+		$this->_propDict["restrictedSignIns"] = $val;
         return $this;
     }
     
@@ -115,7 +87,7 @@ class AuditLogRoot extends Entity
      * Gets the signIns
     * Read-only. Nullable.
      *
-     * @return array|null The signIns
+     * @return array The signIns
      */
     public function getSignIns()
     {
@@ -136,7 +108,7 @@ class AuditLogRoot extends Entity
     */
     public function setSignIns($val)
     {
-        $this->_propDict["signIns"] = $val;
+		$this->_propDict["signIns"] = $val;
         return $this;
     }
     

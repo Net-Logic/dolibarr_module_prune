@@ -28,7 +28,7 @@ class WindowsUpdateCatalogItem extends Entity
     * Gets the displayName
     * The display name for the catalog item.
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -54,48 +54,15 @@ class WindowsUpdateCatalogItem extends Entity
     }
     
     /**
-    * Gets the endOfSupportDate
-    * The last supported date for a catalog item
-    *
-    * @return \DateTime|null The endOfSupportDate
-    */
-    public function getEndOfSupportDate()
-    {
-        if (array_key_exists("endOfSupportDate", $this->_propDict)) {
-            if (is_a($this->_propDict["endOfSupportDate"], "\DateTime") || is_null($this->_propDict["endOfSupportDate"])) {
-                return $this->_propDict["endOfSupportDate"];
-            } else {
-                $this->_propDict["endOfSupportDate"] = new \DateTime($this->_propDict["endOfSupportDate"]);
-                return $this->_propDict["endOfSupportDate"];
-            }
-        }
-        return null;
-    }
-    
-    /**
-    * Sets the endOfSupportDate
-    * The last supported date for a catalog item
-    *
-    * @param \DateTime $val The endOfSupportDate
-    *
-    * @return WindowsUpdateCatalogItem
-    */
-    public function setEndOfSupportDate($val)
-    {
-        $this->_propDict["endOfSupportDate"] = $val;
-        return $this;
-    }
-    
-    /**
     * Gets the releaseDateTime
     * The date the catalog item was released
     *
-    * @return \DateTime|null The releaseDateTime
+    * @return \DateTime The releaseDateTime
     */
     public function getReleaseDateTime()
     {
         if (array_key_exists("releaseDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["releaseDateTime"], "\DateTime") || is_null($this->_propDict["releaseDateTime"])) {
+            if (is_a($this->_propDict["releaseDateTime"], "\DateTime")) {
                 return $this->_propDict["releaseDateTime"];
             } else {
                 $this->_propDict["releaseDateTime"] = new \DateTime($this->_propDict["releaseDateTime"]);

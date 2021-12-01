@@ -26,11 +26,9 @@ class AndroidDeviceOwnerGlobalProxyDirect extends AndroidDeviceOwnerGlobalProxy
     /**
     * Set the @odata.type since this type is immediately descended from an abstract
     * type that is referenced as the type in an entity.
-    * @param array $propDict The property dictionary
     */
-    public function __construct($propDict = array())
+    public function __construct()
     {
-        parent::__construct($propDict);
         $this->setODataType("#microsoft.graph.androidDeviceOwnerGlobalProxyDirect");
     }
 
@@ -38,7 +36,7 @@ class AndroidDeviceOwnerGlobalProxyDirect extends AndroidDeviceOwnerGlobalProxy
     * Gets the excludedHosts
     * The excluded hosts
     *
-    * @return string|null The excludedHosts
+    * @return string The excludedHosts
     */
     public function getExcludedHosts()
     {
@@ -66,7 +64,7 @@ class AndroidDeviceOwnerGlobalProxyDirect extends AndroidDeviceOwnerGlobalProxy
     * Gets the host
     * The host name
     *
-    * @return string|null The host
+    * @return string The host
     */
     public function getHost()
     {
@@ -94,7 +92,7 @@ class AndroidDeviceOwnerGlobalProxyDirect extends AndroidDeviceOwnerGlobalProxy
     * Gets the port
     * The port
     *
-    * @return int|null The port
+    * @return int The port
     */
     public function getPort()
     {

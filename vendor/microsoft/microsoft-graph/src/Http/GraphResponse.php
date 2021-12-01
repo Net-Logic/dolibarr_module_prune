@@ -100,7 +100,7 @@ class GraphResponse
     /**
     * Get the undecoded body of the HTTP response
     *
-    * @return string|null The undecoded body
+    * @return array The undecoded body
     */
     public function getRawBody()
     {
@@ -110,7 +110,7 @@ class GraphResponse
     /**
     * Get the status of the HTTP response
     *
-    * @return string|null The HTTP status
+    * @return string The HTTP status
     */
     public function getStatus()
     {
@@ -120,7 +120,7 @@ class GraphResponse
     /**
     * Get the headers of the response
     *
-    * @return array|null The response headers
+    * @return array The response headers
     */
     public function getHeaders()
     {
@@ -160,7 +160,7 @@ class GraphResponse
     * Gets the next link of a response object from OData
     * If the nextLink is null, there are no more pages
     *
-    * @return string|null nextLink, if provided
+    * @return string nextLink, if provided
     */
     public function getNextLink()
     {

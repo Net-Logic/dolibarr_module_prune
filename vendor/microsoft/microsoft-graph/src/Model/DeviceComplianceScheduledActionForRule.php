@@ -26,9 +26,9 @@ class DeviceComplianceScheduledActionForRule extends Entity
 {
     /**
     * Gets the ruleName
-    * Name of the rule which this scheduled action applies to. Currently scheduled actions are created per policy instead of per rule, thus RuleName is always set to default value PasswordRequired.
+    * Name of the rule which this scheduled action applies to.
     *
-    * @return string|null The ruleName
+    * @return string The ruleName
     */
     public function getRuleName()
     {
@@ -41,7 +41,7 @@ class DeviceComplianceScheduledActionForRule extends Entity
     
     /**
     * Sets the ruleName
-    * Name of the rule which this scheduled action applies to. Currently scheduled actions are created per policy instead of per rule, thus RuleName is always set to default value PasswordRequired.
+    * Name of the rule which this scheduled action applies to.
     *
     * @param string $val The ruleName
     *
@@ -56,9 +56,9 @@ class DeviceComplianceScheduledActionForRule extends Entity
 
      /** 
      * Gets the scheduledActionConfigurations
-    * The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
+    * The list of scheduled action configurations for this compliance policy.
      *
-     * @return array|null The scheduledActionConfigurations
+     * @return array The scheduledActionConfigurations
      */
     public function getScheduledActionConfigurations()
     {
@@ -71,7 +71,7 @@ class DeviceComplianceScheduledActionForRule extends Entity
     
     /** 
     * Sets the scheduledActionConfigurations
-    * The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
+    * The list of scheduled action configurations for this compliance policy.
     *
     * @param DeviceComplianceActionItem $val The scheduledActionConfigurations
     *
@@ -79,7 +79,7 @@ class DeviceComplianceScheduledActionForRule extends Entity
     */
     public function setScheduledActionConfigurations($val)
     {
-        $this->_propDict["scheduledActionConfigurations"] = $val;
+		$this->_propDict["scheduledActionConfigurations"] = $val;
         return $this;
     }
     

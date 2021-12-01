@@ -28,7 +28,7 @@ class ContinuousAccessEvaluationPolicy extends Entity
     * Gets the description
     * Continuous access evaluation automatically blocks access to resources and applications in near real time when a user's access is removed or a client IP address changes. Read-only.
     *
-    * @return string|null The description
+    * @return string The description
     */
     public function getDescription()
     {
@@ -55,9 +55,9 @@ class ContinuousAccessEvaluationPolicy extends Entity
     
     /**
     * Gets the displayName
-    * The value is always Continuous Access Evaluation. Read-only.
+    * The value is always 'Continuous Access Evaluation'. Read-only.
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -70,7 +70,7 @@ class ContinuousAccessEvaluationPolicy extends Entity
     
     /**
     * Sets the displayName
-    * The value is always Continuous Access Evaluation. Read-only.
+    * The value is always 'Continuous Access Evaluation'. Read-only.
     *
     * @param string $val The displayName
     *
@@ -84,9 +84,9 @@ class ContinuousAccessEvaluationPolicy extends Entity
     
     /**
     * Gets the groups
-    * The collection of group identifiers in scope for evaluation. All groups are in scope when the collection is empty. Read-only.
+    * The collection of group identifiers in scope for evaluation. All groups are in scope when the collection is empty.
     *
-    * @return string|null The groups
+    * @return string The groups
     */
     public function getGroups()
     {
@@ -99,7 +99,7 @@ class ContinuousAccessEvaluationPolicy extends Entity
     
     /**
     * Sets the groups
-    * The collection of group identifiers in scope for evaluation. All groups are in scope when the collection is empty. Read-only.
+    * The collection of group identifiers in scope for evaluation. All groups are in scope when the collection is empty.
     *
     * @param string $val The groups
     *
@@ -113,9 +113,9 @@ class ContinuousAccessEvaluationPolicy extends Entity
     
     /**
     * Gets the isEnabled
-    * true to indicate whether continuous access evaluation should be performed; otherwise false. Read-only.
+    * true to indicate whether continuous access evaluation should be performed; otherwise false.
     *
-    * @return bool|null The isEnabled
+    * @return bool The isEnabled
     */
     public function getIsEnabled()
     {
@@ -128,7 +128,7 @@ class ContinuousAccessEvaluationPolicy extends Entity
     
     /**
     * Sets the isEnabled
-    * true to indicate whether continuous access evaluation should be performed; otherwise false. Read-only.
+    * true to indicate whether continuous access evaluation should be performed; otherwise false.
     *
     * @param bool $val The isEnabled
     *
@@ -141,39 +141,10 @@ class ContinuousAccessEvaluationPolicy extends Entity
     }
     
     /**
-    * Gets the migrate
-    * true to indicate that the continuous access evaluation policy settings should be or has been migrated to the conditional access policy.
-    *
-    * @return bool|null The migrate
-    */
-    public function getMigrate()
-    {
-        if (array_key_exists("migrate", $this->_propDict)) {
-            return $this->_propDict["migrate"];
-        } else {
-            return null;
-        }
-    }
-    
-    /**
-    * Sets the migrate
-    * true to indicate that the continuous access evaluation policy settings should be or has been migrated to the conditional access policy.
-    *
-    * @param bool $val The migrate
-    *
-    * @return ContinuousAccessEvaluationPolicy
-    */
-    public function setMigrate($val)
-    {
-        $this->_propDict["migrate"] = boolval($val);
-        return $this;
-    }
-    
-    /**
     * Gets the users
-    * The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty. Read-only.
+    * The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty.
     *
-    * @return string|null The users
+    * @return string The users
     */
     public function getUsers()
     {
@@ -186,7 +157,7 @@ class ContinuousAccessEvaluationPolicy extends Entity
     
     /**
     * Sets the users
-    * The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty. Read-only.
+    * The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty.
     *
     * @param string $val The users
     *

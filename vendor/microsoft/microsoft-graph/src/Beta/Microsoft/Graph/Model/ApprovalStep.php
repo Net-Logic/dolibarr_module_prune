@@ -25,39 +25,9 @@ namespace Beta\Microsoft\Graph\Model;
 class ApprovalStep extends Entity
 {
     /**
-    * Gets the assignedToMe
-    * Indicates whether the step is assigned to the calling user to review. Read-only.
-    *
-    * @return bool|null The assignedToMe
-    */
-    public function getAssignedToMe()
-    {
-        if (array_key_exists("assignedToMe", $this->_propDict)) {
-            return $this->_propDict["assignedToMe"];
-        } else {
-            return null;
-        }
-    }
-    
-    /**
-    * Sets the assignedToMe
-    * Indicates whether the step is assigned to the calling user to review. Read-only.
-    *
-    * @param bool $val The assignedToMe
-    *
-    * @return ApprovalStep
-    */
-    public function setAssignedToMe($val)
-    {
-        $this->_propDict["assignedToMe"] = boolval($val);
-        return $this;
-    }
-    
-    /**
     * Gets the displayName
-    * The label provided by the policy creator to identify an approval step. Read-only.
     *
-    * @return string|null The displayName
+    * @return string The displayName
     */
     public function getDisplayName()
     {
@@ -70,7 +40,6 @@ class ApprovalStep extends Entity
     
     /**
     * Sets the displayName
-    * The label provided by the policy creator to identify an approval step. Read-only.
     *
     * @param string $val The displayName
     *
@@ -84,9 +53,8 @@ class ApprovalStep extends Entity
     
     /**
     * Gets the justification
-    * The justification associated with the approval step decision.
     *
-    * @return string|null The justification
+    * @return string The justification
     */
     public function getJustification()
     {
@@ -99,7 +67,6 @@ class ApprovalStep extends Entity
     
     /**
     * Sets the justification
-    * The justification associated with the approval step decision.
     *
     * @param string $val The justification
     *
@@ -113,14 +80,13 @@ class ApprovalStep extends Entity
     
     /**
     * Gets the reviewedBy
-    * The identifier of the reviewer. Read-only.
     *
-    * @return Identity|null The reviewedBy
+    * @return Identity The reviewedBy
     */
     public function getReviewedBy()
     {
         if (array_key_exists("reviewedBy", $this->_propDict)) {
-            if (is_a($this->_propDict["reviewedBy"], "\Beta\Microsoft\Graph\Model\Identity") || is_null($this->_propDict["reviewedBy"])) {
+            if (is_a($this->_propDict["reviewedBy"], "Beta\Microsoft\Graph\Model\Identity")) {
                 return $this->_propDict["reviewedBy"];
             } else {
                 $this->_propDict["reviewedBy"] = new Identity($this->_propDict["reviewedBy"]);
@@ -132,7 +98,6 @@ class ApprovalStep extends Entity
     
     /**
     * Sets the reviewedBy
-    * The identifier of the reviewer. Read-only.
     *
     * @param Identity $val The reviewedBy
     *
@@ -146,14 +111,13 @@ class ApprovalStep extends Entity
     
     /**
     * Gets the reviewedDateTime
-    * The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     *
-    * @return \DateTime|null The reviewedDateTime
+    * @return \DateTime The reviewedDateTime
     */
     public function getReviewedDateTime()
     {
         if (array_key_exists("reviewedDateTime", $this->_propDict)) {
-            if (is_a($this->_propDict["reviewedDateTime"], "\DateTime") || is_null($this->_propDict["reviewedDateTime"])) {
+            if (is_a($this->_propDict["reviewedDateTime"], "\DateTime")) {
                 return $this->_propDict["reviewedDateTime"];
             } else {
                 $this->_propDict["reviewedDateTime"] = new \DateTime($this->_propDict["reviewedDateTime"]);
@@ -165,7 +129,6 @@ class ApprovalStep extends Entity
     
     /**
     * Sets the reviewedDateTime
-    * The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     *
     * @param \DateTime $val The reviewedDateTime
     *
@@ -179,9 +142,8 @@ class ApprovalStep extends Entity
     
     /**
     * Gets the reviewResult
-    * The result of this approval record. Possible values include: NotReviewed, Approved, Denied.
     *
-    * @return string|null The reviewResult
+    * @return string The reviewResult
     */
     public function getReviewResult()
     {
@@ -194,7 +156,6 @@ class ApprovalStep extends Entity
     
     /**
     * Sets the reviewResult
-    * The result of this approval record. Possible values include: NotReviewed, Approved, Denied.
     *
     * @param string $val The reviewResult
     *
@@ -203,35 +164,6 @@ class ApprovalStep extends Entity
     public function setReviewResult($val)
     {
         $this->_propDict["reviewResult"] = $val;
-        return $this;
-    }
-    
-    /**
-    * Gets the status
-    * The step status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.
-    *
-    * @return string|null The status
-    */
-    public function getStatus()
-    {
-        if (array_key_exists("status", $this->_propDict)) {
-            return $this->_propDict["status"];
-        } else {
-            return null;
-        }
-    }
-    
-    /**
-    * Sets the status
-    * The step status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.
-    *
-    * @param string $val The status
-    *
-    * @return ApprovalStep
-    */
-    public function setStatus($val)
-    {
-        $this->_propDict["status"] = $val;
         return $this;
     }
     

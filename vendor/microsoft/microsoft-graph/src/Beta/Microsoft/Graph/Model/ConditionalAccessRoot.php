@@ -27,9 +27,8 @@ class ConditionalAccessRoot extends Entity
 
      /** 
      * Gets the authenticationContextClassReferences
-    * Read-only. Nullable. Returns a collection of the specified authentication context class references.
      *
-     * @return array|null The authenticationContextClassReferences
+     * @return array The authenticationContextClassReferences
      */
     public function getAuthenticationContextClassReferences()
     {
@@ -42,7 +41,6 @@ class ConditionalAccessRoot extends Entity
     
     /** 
     * Sets the authenticationContextClassReferences
-    * Read-only. Nullable. Returns a collection of the specified authentication context class references.
     *
     * @param AuthenticationContextClassReference $val The authenticationContextClassReferences
     *
@@ -50,16 +48,15 @@ class ConditionalAccessRoot extends Entity
     */
     public function setAuthenticationContextClassReferences($val)
     {
-        $this->_propDict["authenticationContextClassReferences"] = $val;
+		$this->_propDict["authenticationContextClassReferences"] = $val;
         return $this;
     }
     
 
      /** 
      * Gets the namedLocations
-    * Read-only. Nullable. Returns a collection of the specified named locations.
      *
-     * @return array|null The namedLocations
+     * @return array The namedLocations
      */
     public function getNamedLocations()
     {
@@ -72,7 +69,6 @@ class ConditionalAccessRoot extends Entity
     
     /** 
     * Sets the namedLocations
-    * Read-only. Nullable. Returns a collection of the specified named locations.
     *
     * @param NamedLocation $val The namedLocations
     *
@@ -80,16 +76,15 @@ class ConditionalAccessRoot extends Entity
     */
     public function setNamedLocations($val)
     {
-        $this->_propDict["namedLocations"] = $val;
+		$this->_propDict["namedLocations"] = $val;
         return $this;
     }
     
 
      /** 
      * Gets the policies
-    * Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
      *
-     * @return array|null The policies
+     * @return array The policies
      */
     public function getPolicies()
     {
@@ -102,7 +97,6 @@ class ConditionalAccessRoot extends Entity
     
     /** 
     * Sets the policies
-    * Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
     *
     * @param ConditionalAccessPolicy $val The policies
     *
@@ -110,7 +104,7 @@ class ConditionalAccessRoot extends Entity
     */
     public function setPolicies($val)
     {
-        $this->_propDict["policies"] = $val;
+		$this->_propDict["policies"] = $val;
         return $this;
     }
     

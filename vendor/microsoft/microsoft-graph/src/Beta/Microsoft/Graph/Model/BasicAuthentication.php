@@ -26,11 +26,9 @@ class BasicAuthentication extends ApiAuthenticationConfigurationBase
     /**
     * Set the @odata.type since this type is immediately descended from an abstract
     * type that is referenced as the type in an entity.
-    * @param array $propDict The property dictionary
     */
-    public function __construct($propDict = array())
+    public function __construct()
     {
-        parent::__construct($propDict);
         $this->setODataType("#microsoft.graph.basicAuthentication");
     }
 
@@ -38,7 +36,7 @@ class BasicAuthentication extends ApiAuthenticationConfigurationBase
     * Gets the password
     * The password. It is not returned in the responses.
     *
-    * @return string|null The password
+    * @return string The password
     */
     public function getPassword()
     {
@@ -66,7 +64,7 @@ class BasicAuthentication extends ApiAuthenticationConfigurationBase
     * Gets the username
     * The username.
     *
-    * @return string|null The username
+    * @return string The username
     */
     public function getUsername()
     {

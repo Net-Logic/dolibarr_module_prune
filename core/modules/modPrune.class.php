@@ -63,7 +63,7 @@ class modPrune extends DolibarrModules
 		// Module description, used if translation string 'ModulePruneDesc' not found (Prune is name of module).
 		$this->description = "PruneDescription";
 		// Used only if file README.md and README-LL.md not found.
-		$this->descriptionlong = "Prune description (Long)";
+		$this->descriptionlong = "PruneDescriptionFull";
 
 		$this->editor_name = '<strong>Net Logic</strong>';
 		$this->editor_url = 'https://netlogic.fr';

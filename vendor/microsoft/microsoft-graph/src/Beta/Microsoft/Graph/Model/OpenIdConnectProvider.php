@@ -28,12 +28,12 @@ class OpenIdConnectProvider extends IdentityProvider
     * Gets the claimsMapping
     * After the OIDC provider sends an ID token back to Azure AD, Azure AD needs to be able to map the claims from the received token to the claims that Azure AD recognizes and uses. This complex type captures that mapping. It is a required property.
     *
-    * @return ClaimsMapping|null The claimsMapping
+    * @return ClaimsMapping The claimsMapping
     */
     public function getClaimsMapping()
     {
         if (array_key_exists("claimsMapping", $this->_propDict)) {
-            if (is_a($this->_propDict["claimsMapping"], "\Beta\Microsoft\Graph\Model\ClaimsMapping") || is_null($this->_propDict["claimsMapping"])) {
+            if (is_a($this->_propDict["claimsMapping"], "Beta\Microsoft\Graph\Model\ClaimsMapping")) {
                 return $this->_propDict["claimsMapping"];
             } else {
                 $this->_propDict["claimsMapping"] = new ClaimsMapping($this->_propDict["claimsMapping"]);
@@ -59,9 +59,9 @@ class OpenIdConnectProvider extends IdentityProvider
     
     /**
     * Gets the domainHint
-    * The domain hint can be used to skip directly to the sign-in page of the specified identity provider, instead of having the user make a selection among the list of available identity providers.
+    * The domain hint can be used to skip directly to the sign in page of the specified identity provider, instead of having the user make a selection among the list of available identity providers.
     *
-    * @return string|null The domainHint
+    * @return string The domainHint
     */
     public function getDomainHint()
     {
@@ -74,7 +74,7 @@ class OpenIdConnectProvider extends IdentityProvider
     
     /**
     * Sets the domainHint
-    * The domain hint can be used to skip directly to the sign-in page of the specified identity provider, instead of having the user make a selection among the list of available identity providers.
+    * The domain hint can be used to skip directly to the sign in page of the specified identity provider, instead of having the user make a selection among the list of available identity providers.
     *
     * @param string $val The domainHint
     *
@@ -90,7 +90,7 @@ class OpenIdConnectProvider extends IdentityProvider
     * Gets the metadataUrl
     * The URL for the metadata document of the OpenID Connect identity provider. Every OpenID Connect identity provider describes a metadata document that contains most of the information required to perform sign-in. This includes information such as the URLs to use and the location of the service's public signing keys. The OpenID Connect metadata document is always located at an endpoint that ends in .well-known/openid-configuration . For the OpenID Connect identity provider you are looking to add, you will need to provide the metadata URL. It is a required property and is read only after creation.
     *
-    * @return string|null The metadataUrl
+    * @return string The metadataUrl
     */
     public function getMetadataUrl()
     {
@@ -117,14 +117,14 @@ class OpenIdConnectProvider extends IdentityProvider
     
     /**
     * Gets the responseMode
-    * The response mode defines the method that should be used to send the data back from the custom identity provider to Azure AD B2C. The following response modes can be used: form_post, query. query response mode means the code or token is returned as a query parameter. form_post response mode is recommended for the best security. The response is transmitted via the HTTP POST method, with the code or token being encoded in the body using the application/x-www-form-urlencoded format. It is a required property.
+    * The response mode defines the method that should be used to send the data back from the custom identity provider to Azure AD B2C. The following response modes can be used: form_post : This response mode is recommended for best security. The response is transmitted via the HTTP POST method, with the code or token being encoded in the body using the application/x-www-form-urlencoded format.query : The code or token is returned as a query parameter. It is a required property.
     *
-    * @return OpenIdConnectResponseMode|null The responseMode
+    * @return OpenIdConnectResponseMode The responseMode
     */
     public function getResponseMode()
     {
         if (array_key_exists("responseMode", $this->_propDict)) {
-            if (is_a($this->_propDict["responseMode"], "\Beta\Microsoft\Graph\Model\OpenIdConnectResponseMode") || is_null($this->_propDict["responseMode"])) {
+            if (is_a($this->_propDict["responseMode"], "Beta\Microsoft\Graph\Model\OpenIdConnectResponseMode")) {
                 return $this->_propDict["responseMode"];
             } else {
                 $this->_propDict["responseMode"] = new OpenIdConnectResponseMode($this->_propDict["responseMode"]);
@@ -136,7 +136,7 @@ class OpenIdConnectProvider extends IdentityProvider
     
     /**
     * Sets the responseMode
-    * The response mode defines the method that should be used to send the data back from the custom identity provider to Azure AD B2C. The following response modes can be used: form_post, query. query response mode means the code or token is returned as a query parameter. form_post response mode is recommended for the best security. The response is transmitted via the HTTP POST method, with the code or token being encoded in the body using the application/x-www-form-urlencoded format. It is a required property.
+    * The response mode defines the method that should be used to send the data back from the custom identity provider to Azure AD B2C. The following response modes can be used: form_post : This response mode is recommended for best security. The response is transmitted via the HTTP POST method, with the code or token being encoded in the body using the application/x-www-form-urlencoded format.query : The code or token is returned as a query parameter. It is a required property.
     *
     * @param OpenIdConnectResponseMode $val The responseMode
     *
@@ -150,14 +150,14 @@ class OpenIdConnectProvider extends IdentityProvider
     
     /**
     * Gets the responseType
-    * response type describes what kind of information is sent back in the initial call to the authorization_endpoint of the custom identity provider. The following response types can be used: code , id_token , token. It is a required property.
+    * The response type describes what kind of information is sent back in the initial call to the authorization_endpoint of the custom identity provider. The following response types can be used: code : As per the authorization code flow, a code will be returned back to Azure AD B2C. Azure AD B2C proceeds to call the token_endpoint to exchange the code for the token. id_token : An ID token is returned back to Azure AD B2C from the custom identity provider. token : An access token is returned back to Azure AD B2C from the custom identity provider. (This value is not supported by Azure AD B2C at the moment) It is a required property.
     *
-    * @return OpenIdConnectResponseTypes|null The responseType
+    * @return OpenIdConnectResponseTypes The responseType
     */
     public function getResponseType()
     {
         if (array_key_exists("responseType", $this->_propDict)) {
-            if (is_a($this->_propDict["responseType"], "\Beta\Microsoft\Graph\Model\OpenIdConnectResponseTypes") || is_null($this->_propDict["responseType"])) {
+            if (is_a($this->_propDict["responseType"], "Beta\Microsoft\Graph\Model\OpenIdConnectResponseTypes")) {
                 return $this->_propDict["responseType"];
             } else {
                 $this->_propDict["responseType"] = new OpenIdConnectResponseTypes($this->_propDict["responseType"]);
@@ -169,7 +169,7 @@ class OpenIdConnectProvider extends IdentityProvider
     
     /**
     * Sets the responseType
-    * response type describes what kind of information is sent back in the initial call to the authorization_endpoint of the custom identity provider. The following response types can be used: code , id_token , token. It is a required property.
+    * The response type describes what kind of information is sent back in the initial call to the authorization_endpoint of the custom identity provider. The following response types can be used: code : As per the authorization code flow, a code will be returned back to Azure AD B2C. Azure AD B2C proceeds to call the token_endpoint to exchange the code for the token. id_token : An ID token is returned back to Azure AD B2C from the custom identity provider. token : An access token is returned back to Azure AD B2C from the custom identity provider. (This value is not supported by Azure AD B2C at the moment) It is a required property.
     *
     * @param OpenIdConnectResponseTypes $val The responseType
     *
@@ -185,7 +185,7 @@ class OpenIdConnectProvider extends IdentityProvider
     * Gets the scope
     * Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended separated by space. For more details about the scope limitations see RFC6749 Section 3.3. It is a required property.
     *
-    * @return string|null The scope
+    * @return string The scope
     */
     public function getScope()
     {

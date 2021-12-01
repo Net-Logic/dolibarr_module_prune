@@ -26,11 +26,9 @@ class IosStoreAppAssignmentSettings extends MobileAppAssignmentSettings
     /**
     * Set the @odata.type since this type is immediately descended from an abstract
     * type that is referenced as the type in an entity.
-    * @param array $propDict The property dictionary
     */
-    public function __construct($propDict = array())
+    public function __construct()
     {
-        parent::__construct($propDict);
         $this->setODataType("#microsoft.graph.iosStoreAppAssignmentSettings");
     }
 
@@ -38,7 +36,7 @@ class IosStoreAppAssignmentSettings extends MobileAppAssignmentSettings
     * Gets the isRemovable
     * Whether or not the app can be removed by the user.
     *
-    * @return bool|null The isRemovable
+    * @return bool The isRemovable
     */
     public function getIsRemovable()
     {
@@ -66,7 +64,7 @@ class IosStoreAppAssignmentSettings extends MobileAppAssignmentSettings
     * Gets the uninstallOnDeviceRemoval
     * Whether or not to uninstall the app when device is removed from Intune.
     *
-    * @return bool|null The uninstallOnDeviceRemoval
+    * @return bool The uninstallOnDeviceRemoval
     */
     public function getUninstallOnDeviceRemoval()
     {
@@ -94,7 +92,7 @@ class IosStoreAppAssignmentSettings extends MobileAppAssignmentSettings
     * Gets the vpnConfigurationId
     * The VPN Configuration Id to apply for this app.
     *
-    * @return string|null The vpnConfigurationId
+    * @return string The vpnConfigurationId
     */
     public function getVpnConfigurationId()
     {

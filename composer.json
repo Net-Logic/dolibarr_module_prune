@@ -1,7 +1,7 @@
 {
     "require": {
         "php": ">=7.1",
-        "microsoft/microsoft-graph": "^1.20",
+        "microsoft/microsoft-graph": "1.29.0",
         "google/apiclient": "^2.9",
         "ovh/ovh": "^2.0",
         "docusign/esign-client": "^5.7.0",
@@ -13,7 +13,12 @@
         "league/oauth2-google": "^3.0.4",
         "sarhan/oauth2-docusign": "^2.0",
         "cache/filesystem-adapter": "^1.1",
-        "symfony/cache": "^4.4.0"
+        "symfony/cache": "4.4.*",
+        "symfony/service-contracts": "1.1.*",
+        "psr/container": "2.0.1",
+        "symfony/var-exporter": "4.4.*",
+        "johngrogg/ics-parser": "^3.0.0",
+        "t4web/composer-lock-parser": "1.1.*"
     },
     "require-dev": {
         "php-parallel-lint/php-parallel-lint": "^1.3",
