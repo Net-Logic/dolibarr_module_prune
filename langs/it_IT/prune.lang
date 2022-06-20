@@ -1,0 +1,13 @@
+/*
+ * Language code: it_IT
+ * Generation date 2022-06-20 13:36:23
+ */
+
+// Reference language: fr_FR -> it_IT
+PruneDescriptionFull=Set di librerie per moduli aggiuntivi.
+PruneLibrary=Biblioteca
+PruneVersion=Versione
+PrunePHPVersion=Versione PHP
+PruneNamespace=spazio dei nomi
+PruneSourceUrl=URL
+PruneHomepage=Pagina iniziale
