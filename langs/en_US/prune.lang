@@ -1,0 +1,13 @@
+/*
+ * Language code: en_US
+ * Generation date 2022-06-20 13:35:05
+ */
+
+// Reference language: fr_FR -> en_US
+PruneDescriptionFull=Set of libraries for additional modules.
+PruneLibrary=Library
+PruneVersion=Version
+PrunePHPVersion=PHP version
+PruneNamespace=namespace
+PruneSourceUrl=URL
+PruneHomepage=Home page

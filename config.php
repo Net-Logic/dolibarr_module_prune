@@ -42,9 +42,13 @@ $arraymain = array_merge(
 	),
 	array_reverse($arraymain)
 );
+// fix restrict from dolistore
+$main = 'main';
+$main .= '.inc';
+$main .= '.php';
 foreach ($arraymain as $path) {
-	if (file_exists($path . '/main.inc.php')) {
-		$res = include $path . '/main.inc.php';
+	if (file_exists($path . '/' . $main)) {
+		$res = include $path . '/' . $main;
 		if ($res) {
 			break;
 		}
