@@ -65,7 +65,7 @@ class modPrune extends DolibarrModules
 		// Used only if file README.md and README-LL.md not found.
 		$this->descriptionlong = "PruneDescriptionFull";
 
-		$this->editor_name = '<strong>Net Logic</strong>';
+		$this->editor_name = 'Net Logic';
 		$this->editor_url = 'https://netlogic.fr';
 
 		// Possible values for version are: 'development', 'experimental', 'dolibarr',
@@ -73,7 +73,8 @@ class modPrune extends DolibarrModules
 		$this->version = '1.1.0';
 
 		// Url to the file with your last numberversion of this module
-		// $this->url_last_version = 'http://www.example.com/versionmodule.txt';
+		$this->url_last_version = 'https://wiki.netlogic.fr/versionmodule.php?module=prune';
+
 		// Key used in llx_const table to save module status enabled/disabled
 		// (where MYMODULE is value of property name of module in uppercase)
 		$this->const_name = 'MAIN_MODULE_' . strtoupper($this->name);
