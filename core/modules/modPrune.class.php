@@ -52,7 +52,7 @@ class modPrune extends DolibarrModules
 		// Family can be 'base' (core modules),'crm','financial','hr','projects',
 		// 'products','ecm','technic' (transverse modules),'interface' (link with external tools),'other','...'
 		// It is used to group modules by family in module setup page
-		$this->family = "Net-Logic";
+		$this->family = "Net Logic";
 		// Module position in the family on 2 digits ('01', '10', '20', ...)
 		$this->module_position = '01';
 		// Gives the possibility for the module, to provide his own family info and position
@@ -65,7 +65,7 @@ class modPrune extends DolibarrModules
 		// Used only if file README.md and README-LL.md not found.
 		$this->descriptionlong = "PruneDescriptionFull";
 
-		$this->editor_name = 'Net Logic';
+		$this->editor_name = "Net Logic";
 		$this->editor_url = 'https://netlogic.fr';
 
 		// Possible values for version are: 'development', 'experimental', 'dolibarr',
