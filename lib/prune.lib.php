@@ -130,6 +130,7 @@ function getCache($namespace = '', $defaultLifetime = 0)
 	}
 	return $cache;
 }
+
 /**
  * Function retrieveAccessToken
  *
