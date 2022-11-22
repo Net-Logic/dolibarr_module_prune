@@ -70,7 +70,7 @@ class modPrune extends DolibarrModules
 
 		// Possible values for version are: 'development', 'experimental', 'dolibarr',
 		// 'dolibarr_deprecated' or a version string like 'x.y.z'
-		$this->version = '1.1.0';
+		$this->version = '1.1.1';
 
 		// Url to the file with your last numberversion of this module
 		$this->url_last_version = 'https://wiki.netlogic.fr/versionmodule.php?module=prune';
@@ -211,6 +211,16 @@ class modPrune extends DolibarrModules
 			return -1;
 		}
 
+		$zip = new ZipArchive();
+		$res = $zip->open(dol_buildpath('/prune/vendor.zip', 0));
+		if ($res === true) {
+			for ($i = 0; $i < $zip->numFiles; $i++) {
+				$zip->extractTo(dol_buildpath('/prune/vendor', 0) . '/', array($zip->getNameIndex($i)));
+			}
+
+			$zip->close();
+		}
+
 		$sql = [];
 
 		return $this->_init($sql, $options);
@@ -227,6 +237,10 @@ class modPrune extends DolibarrModules
 	public function remove($options = '')
 	{
 		$sql = [];
+
+		// remove vendor content
+		$count = 0;
+		dol_delete_dir_recursive(dol_buildpath('/prune/vendor/', 0), 0, 0, 1, $count, 0, 1);
 
 		return $this->_remove($sql, $options);
 	}
