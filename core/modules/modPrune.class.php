@@ -213,9 +213,14 @@ class modPrune extends DolibarrModules
 
 		$zip = new ZipArchive();
 		$res = $zip->open(dol_buildpath('/prune/vendor.zip', 0));
+		// take care if vendor is also removed
+		$dir = dol_buildpath('/prune/', 0) . 'vendor';
+		if (!is_dir($dir)) {
+			dol_mkdir($dir);
+		}
 		if ($res === true) {
 			for ($i = 0; $i < $zip->numFiles; $i++) {
-				$zip->extractTo(dol_buildpath('/prune/vendor', 0) . '/', array($zip->getNameIndex($i)));
+				$zip->extractTo($dir . '/', array($zip->getNameIndex($i)));
 			}
 
 			$zip->close();
