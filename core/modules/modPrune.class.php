@@ -1,6 +1,6 @@
 <?php
 /* Copyright (C) 2004-2018  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2019-2021  Frédéric France         <frederic.france@netlogic.fr>
+ * Copyright (C) 2019-2022  Frédéric France         <frederic.france@netlogic.fr>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -126,7 +126,7 @@ class modPrune extends DolibarrModules
 					//'actioncard',
 					//'fileslib',
 				],
-				'entity' => '0',
+				'entity' => $conf->entity,
 			],
 			// Set this to 1 if feature of module are opened to external users
 			'moduleforexternal' => 0,
@@ -204,6 +204,9 @@ class modPrune extends DolibarrModules
 	 */
 	public function init($options = '')
 	{
+		// take care this alse remove vendor content
+		$this->remove($options);
+
 		$result = $this->_load_tables('/prune/sql/');
 		if ($result < 0) {
 			// Do not activate module if not allowed errors found on module SQL queries
