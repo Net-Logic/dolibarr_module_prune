@@ -1,0 +1,9 @@
+[main]
+host = https://www.transifex.com
+lang_map = uz: uz_UZ
+
+[microsoftgraph.microsoftgraph]
+file_filter = langs/<lang>/microsoftgraph.lang
+source_file = langs/en_US/microsoftgraph.lang
+source_lang = en_US
+type = MOZILLAPROPERTIES

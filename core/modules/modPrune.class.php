@@ -70,10 +70,11 @@ class modPrune extends DolibarrModules
 
 		// Possible values for version are: 'development', 'experimental', 'dolibarr',
 		// 'dolibarr_deprecated' or a version string like 'x.y.z'
-		$this->version = '1.1.1';
+		$this->version = '1.1.2';
 
 		// Url to the file with your last numberversion of this module
-		$this->url_last_version = 'https://wiki.netlogic.fr/versionmodule.php?module=prune';
+		$url = 'https://wiki.netlogic.fr/versionmodule.php?module=' . strtolower($this->name) . '&number=' . $this->numero . '&version=' . $this->version . '&dolversion=' . DOL_VERSION;
+		$this->url_last_version = $url;
 
 		// Key used in llx_const table to save module status enabled/disabled
 		// (where MYMODULE is value of property name of module in uppercase)
@@ -153,7 +154,7 @@ class modPrune extends DolibarrModules
 		$this->conflictwith = [];
 		$this->langfiles = ["prune@prune"];
 		// Minimum version of PHP required by module
-		$this->phpmin = [7, 0];
+		$this->phpmin = [7, 1];
 		// Minimum version of Dolibarr required by module
 		$this->need_dolibarr_version = [10, 0];
 		// Warning to show when we activate module. array('always'='text') or array('FR'='textfr','ES'='textes'...)
