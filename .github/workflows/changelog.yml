@@ -6,7 +6,7 @@ name: CHANGELOG
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ master ]
+    branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -51,10 +51,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO_OWNER: Net-Logic
-          RELEASE_BRANCH: master
-          MODULE: microsoftgraph
-          CLASSNAME: MicrosoftGraph
-          RELEASE_BRANCHES: master
+          RELEASE_BRANCH: main
+          MODULE: prune
+          CLASSNAME: Prune
+          RELEASE_BRANCHES: main
           DEFAULT_BUMP: none
           INITIAL_VERSION: v0.0.0
           VERBOSE: true
@@ -62,11 +62,11 @@ jobs:
         run: |
           ls -al
           mkdir build/htdocs
-          rsync -arv --exclude='.git/' --exclude='.github/' --exclude='.gitignore' --exclude='.tx/' --exclude='build/' --exclude='codesniffer/' . ./build/htdocs/microsoftgraph
+          rsync -arv --exclude='.git/' --exclude='.github/' --exclude='.gitignore' --exclude='.tx/' --exclude='build/' --exclude='codesniffer/' . ./build/htdocs/prune
       - name: Switch to Release Folder
         run: |
           cd build
-          zip -r module_microsoftgraph-${{ env.module_version }}.zip htdocs
+          zip -r module_prune-${{ env.module_version }}.zip htdocs
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Bump version #none
