@@ -1,0 +1,8 @@
+
+## v1.1.1 (2022-12-22)
+
+#### :rocket: Enhancement
+* [#10](https://github.com/Net-Logic/dolibarr_module_prune/pull/10) debug for prune liquor ([@frederic34](https://github.com/frederic34))
+
+#### Committers: 1
+- Frédéric FRANCE ([@frederic34](https://github.com/frederic34))
