@@ -86,7 +86,7 @@ function pruneAdminPrepareHead()
 }
 
 /**
- * getcache
+ * getPruneCache
  *
  * @param string $namespace     a string prefixed to the keys of the items stored in this cache
  * @param int $defaultLifetime  the default lifetime (in seconds) for cache items that do not define their
@@ -94,7 +94,7 @@ function pruneAdminPrepareHead()
  *                              until the files are deleted)
  * @return Symfony\Component\Cache\Adapter\AbstractAdapter
  */
-function getCache($namespace = '', $defaultLifetime = 0)
+function getPruneCache($namespace = '', $defaultLifetime = 0)
 {
 	$typeCache = getDolGlobalInt('PRUNE_CACHE_TYPE');
 	if ($typeCache == 2) {

@@ -1,6 +1,6 @@
 <?php
 /* Copyright (C) 2004-2017  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2019-2020  Frédéric France         <frederic.france@netlogic.fr>
+ * Copyright (C) 2019-2023  Frédéric France         <frederic.france@netlogic.fr>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -172,7 +172,7 @@ if ($action == 'edit') {
 	print '<td>' . $langs->trans("Value") . '</td></tr>';
 
 	foreach ($arrayofparameters as $key => $val) {
-		print '<tr class="oddeven"><td>';
+		print '<tr class="oddeven"><td class="nowrap">';
 		$tooltiphelp = (($langs->trans($key . 'Tooltip') != $key . 'Tooltip') ? $langs->trans($key . 'Tooltip') : '');
 		print $form->textwithpicto($langs->trans($key), $tooltiphelp);
 		print '</td><td>';
@@ -200,7 +200,7 @@ if ($action == 'edit') {
 	// Modules
 	foreach ($modules as $const => $desc) {
 		print '<tr class="oddeven">';
-		print '<td>' . $langs->trans($desc) . '</td>';
+		print '<td class="nowrap">' . $langs->trans($desc) . '</td>';
 		print '<td class="center centpercent">';
 		$constante = 'PRUNE_' . $const;
 		$value = (isset($conf->global->$constante) ? $conf->global->$constante : 0);
