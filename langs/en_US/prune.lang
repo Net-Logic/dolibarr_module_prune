@@ -11,3 +11,4 @@ PrunePHPVersion=PHP version
 PruneNamespace=namespace
 PruneSourceUrl=URL
 PruneHomepage=Home page
+PruneEnableDevelopperMode=Enable developer mode
