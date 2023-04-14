@@ -146,11 +146,12 @@ function retrieveAccessToken($service, $userid, $email = null)
 	dol_syslog("retrieveAccessToken service=" . $service);
 	$sql = "SELECT token, refreshtoken, email FROM " . MAIN_DB_PREFIX . "prune_oauth_token";
 	$sql .= " WHERE service='" . $db->escape($service) . "'";
-	$sql .= " AND entity=" . (int) $conf->entity;
 	$sql .= " AND fk_user=" . (int) $userid;
+
 	// if we don't have a userid, we use the email field (if not null)
 	if (!empty($email)) {
 		$sql .= " AND email='" . $db->escape($email) . "'";
+		$sql .= " AND entity IN (" . getEntity('user') . ")";
 	}
 
 	$resql = $db->query($sql);
@@ -178,7 +179,13 @@ function retrieveRefreshTokenBackup($service, $userid, $email = null)
 
 	$sql = "SELECT token, refreshtoken FROM " . MAIN_DB_PREFIX . "prune_oauth_token";
 	$sql .= " WHERE service='" . $db->escape($service) . "'";
-	$sql .= " AND fk_user=" . (int) $userid . " AND entity=" . (int) $conf->entity;
+	$sql .= " AND fk_user=" . (int) $userid;
+
+	// if we don't have a userid, we use the email field (if not null)
+	if (!empty($email)) {
+		$sql .= " AND email='" . $db->escape($email) . "'";
+		$sql .= " AND entity IN (" . getEntity('user') . ")";
+	}
 
 	$resql = $db->query($sql);
 	if (!$resql) {
@@ -209,10 +216,11 @@ function storeAccessToken($service, $token, $refreshtoken, $userid, $email = nul
 	$serializedToken = serialize($token);
 
 	$sql = "SELECT rowid FROM " . MAIN_DB_PREFIX . "prune_oauth_token";
-	$sql .= " WHERE service='" . $db->escape($service) . "' AND entity=" . (int) $conf->entity;
+	$sql .= " WHERE service='" . $db->escape($service) . "'";
 	$sql .=  " AND fk_user=" . (int) $userid;
 	if (!empty($email)) {
 		$sql .=  " AND email='" . $db->escape($email) . "'";
+		$sql .=  " AND entity IN (" . getEntity('user') . ")";
 	}
 	$resql = $db->query($sql);
 	if (!$resql) {
@@ -258,9 +266,10 @@ function clearToken($service, $userid, $email = null)
 
 	$sql = "DELETE FROM " . MAIN_DB_PREFIX . "prune_oauth_token";
 	$sql .= " WHERE service='" . $db->escape($service) . "'";
-	$sql .= " AND fk_user=" . (int) $userid . " AND entity=" . (int) $conf->entity;
+	$sql .= " AND fk_user=" . (int) $userid;
 	if (!empty($email)) {
 		$sql .= " AND email='" . $db->escape($email) . "'";
+		$sql .= " AND entity (" . getEntity('user') . ")";
 	}
 	$resql = $db->query($sql);
 	if (!$resql) {
