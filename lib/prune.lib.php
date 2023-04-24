@@ -22,6 +22,7 @@
  *      \brief      Dolibarr prune functions
  */
 
+require_once DOL_DOCUMENT_ROOT . '/core/lib/functions.lib.php';
 dol_include_once('/prune/vendor/autoload.php');
 
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
