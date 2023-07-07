@@ -61,12 +61,13 @@ jobs:
       - name: Zip Folder
         run: |
           ls -al
-          mkdir build/htdocs
-          rsync -arv --exclude='.git/' --exclude='.github/' --exclude='.gitignore' --exclude='.tx/' --exclude='build/' --exclude='codesniffer/' . ./build/htdocs/prune
+          mkdir build/prune
+          rsync -arv --exclude='.git/' --exclude='.github/' --exclude='.gitignore' --exclude='.tx/' --exclude='build/' --exclude='codesniffer/' . ./build/prune
       - name: Switch to Release Folder
         run: |
           cd build
-          zip -r module_prune-${{ env.module_version }}.zip htdocs
+          rm module_prune-${{ env.module_version }}.zip
+          zip -r module_prune-${{ env.module_version }}.zip prune
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Bump version #none
