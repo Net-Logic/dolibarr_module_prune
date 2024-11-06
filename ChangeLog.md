@@ -1,5 +1,5 @@
 
-## Unreleased (2023-07-07)
+## Unreleased (2024-11-06)
 
 #### :rocket: Enhancement
 * [#32](https://github.com/Net-Logic/dolibarr_module_prune/pull/32) rename getCache ([@frederic34](https://github.com/frederic34))
