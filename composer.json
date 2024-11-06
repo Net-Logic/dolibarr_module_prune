@@ -1,7 +1,7 @@
 {
     "require": {
         "php": ">=7.1",
-        "microsoft/microsoft-graph": "1.29.0",
+        "microsoft/microsoft-graph": "1.109.1",
         "google/apiclient": "^2.9",
         "ovh/ovh": "^2.0",
         "docusign/esign-client": "^5.7.0",
