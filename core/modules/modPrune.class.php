@@ -26,7 +26,7 @@
  */
 include_once DOL_DOCUMENT_ROOT . '/core/modules/DolibarrModules.class.php';
 
-// phpcs:disable Squiz.Classes.ValidClassName.NotCamelCaps
+// phpcs:disable
 /**
  *  Description and activation class for module Prune
  */
