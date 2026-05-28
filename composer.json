@@ -18,7 +18,7 @@
         "league/oauth2-google": "^3.0.4",
         "sarhan/oauth2-docusign": "^2.0",
         "cache/filesystem-adapter": "^1.1",
-        "symfony/cache": "4.4.*",
+        "symfony/cache": "5.4.*",
         "symfony/service-contracts": "1.1.*",
         "psr/container": "2.0.1",
         "symfony/var-exporter": "4.4.*",
