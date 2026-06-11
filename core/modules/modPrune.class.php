@@ -249,6 +249,7 @@ class modPrune extends DolibarrModules
 
 		// remove vendor content
 		$count = 0;
+		require_once DOL_DOCUMENT_ROOT.'/core/lib/files.lib.php';
 		dol_delete_dir_recursive(dol_buildpath('/prune/vendor/', 0), 0, 0, 1, $count, 0, 1);
 
 		return $this->_remove($sql, $options);
