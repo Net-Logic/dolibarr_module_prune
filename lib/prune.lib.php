@@ -152,7 +152,6 @@ function retrieveAccessToken($service, $userid, $email = null)
 	// if we don't have a userid, we use the email field (if not null)
 	if (!empty($email)) {
 		$sql .= " AND email='" . $db->escape($email) . "'";
-		$sql .= " AND entity IN (" . getEntity('user') . ")";
 	}
 
 	$resql = $db->query($sql);
@@ -185,7 +184,6 @@ function retrieveRefreshTokenBackup($service, $userid, $email = null)
 	// if we don't have a userid, we use the email field (if not null)
 	if (!empty($email)) {
 		$sql .= " AND email='" . $db->escape($email) . "'";
-		$sql .= " AND entity IN (" . getEntity('user') . ")";
 	}
 
 	$resql = $db->query($sql);
@@ -221,7 +219,6 @@ function storeAccessToken($service, $token, $refreshtoken, $userid, $email = nul
 	$sql .=  " AND fk_user=" . (int) $userid;
 	if (!empty($email)) {
 		$sql .=  " AND email='" . $db->escape($email) . "'";
-		$sql .=  " AND entity IN (" . getEntity('user') . ")";
 	}
 	$resql = $db->query($sql);
 	if (!$resql) {
@@ -270,7 +267,6 @@ function clearToken($service, $userid, $email = null)
 	$sql .= " AND fk_user=" . (int) $userid;
 	if (!empty($email)) {
 		$sql .= " AND email='" . $db->escape($email) . "'";
-		$sql .= " AND entity (" . getEntity('user') . ")";
 	}
 	$resql = $db->query($sql);
 	if (!$resql) {
