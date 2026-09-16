@@ -108,6 +108,15 @@ if ($action == 'update') {
 		$db->rollback();
 		setEventMessages($langs->trans("SetupNotSaved"), null, 'errors');
 	}
+} elseif ($action == 'clearcache') {
+	// Wipes the whole getPruneCache() pool (FilesystemAdapter/MemcachedAdapter,
+	// shared by every module that calls getPruneCache() without its own
+	// namespace, e.g. microsoftgraph) — everything regenerates on next use.
+	if (getPruneCache()->clear()) {
+		setEventMessages($langs->trans("PruneCacheCleared"), null, 'mesgs');
+	} else {
+		setEventMessages($langs->trans("PruneCacheClearError"), null, 'errors');
+	}
 }
 
 /*
@@ -191,6 +200,7 @@ if ($action == 'edit') {
 
 	print '<div class="tabsAction">';
 	print '<a class="butAction" href="' . $_SERVER["PHP_SELF"] . '?action=edit">' . $langs->trans("Modify") . '</a>';
+	print '<a class="butAction" href="' . $_SERVER['PHP_SELF'] . '?action=clearcache&token=' . newToken() . '">' . $langs->trans("PruneClearCache") . '</a>';
 	print '</div>';
 	print '<table class="noborder centpercent>';
 	print '<tr class="liste_titre">';

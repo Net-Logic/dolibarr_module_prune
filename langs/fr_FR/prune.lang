@@ -6,3 +6,6 @@ PruneNamespace=Espace de nom
 PruneSourceUrl=Url
 PruneHomepage=Homepage
 PruneEnableDevelopperMode=Activer le mode développeur
+PruneClearCache=Vider le cache
+PruneCacheCleared=Cache vidé
+PruneCacheClearError=Échec de la suppression du cache

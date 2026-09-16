@@ -12,3 +12,6 @@ PruneNamespace=namespace
 PruneSourceUrl=URL
 PruneHomepage=Home page
 PruneEnableDevelopperMode=Enable developer mode
+PruneClearCache=Clear cache
+PruneCacheCleared=Cache cleared
+PruneCacheClearError=Failed to clear cache
