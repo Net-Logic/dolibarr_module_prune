@@ -158,7 +158,7 @@ class modPrune extends DolibarrModules
 		$this->conflictwith = [];
 		$this->langfiles = ["prune@prune"];
 		// Minimum version of PHP required by module
-		$this->phpmin = [7, 1];
+		$this->phpmin = [7, 4];
 		// Minimum version of Dolibarr required by module
 		$this->need_dolibarr_version = [10, 0];
 		// Warning to show when we activate module. array('always'='text') or array('FR'='textfr','ES'='textes'...)
