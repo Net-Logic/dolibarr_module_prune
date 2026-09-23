@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,16 +17,7 @@
 
 namespace Google\Auth;
 
-/**
- * Describes a Credentials object which supports fetching the project ID.
- */
-interface ProjectIdProviderInterface
+interface ExternalAccountCredentialSourceInterface
 {
-    /**
-     * Get the project ID.
-     *
-     * @param callable $httpHandler Callback which delivers psr7 request
-     * @return string|null
-     */
-    public function getProjectId(?callable $httpHandler = null);
+    public function fetchSubjectToken(?callable $httpHandler = null): string;
 }
