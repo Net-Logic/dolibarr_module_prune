@@ -19,7 +19,7 @@ jobs:
           php-version: '7.4'
           tools: php-parallel-lint/php-var-dump-check, parallel-lint, cs2pr, phpcs
       - name: Run PHPCS
-        run: phpcs -q --report=checkstyle --standard=codesniffer/ruleset.xml --extensions=php --ignore=*/tx/*,*/vendor/* . | cs2pr --graceful-warnings
+        run: phpcs -q --report=checkstyle --standard=codesniffer/ruleset.xml --extensions=php --ignore=*/vendor/* . | cs2pr --graceful-warnings
       - name: Run Parallel Lint
         run: parallel-lint --exclude vendor/ .
       - name: Run VarDump Check
