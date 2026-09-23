@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,15 +18,18 @@
 namespace Google\Auth;
 
 /**
- * Describes a Credentials object which supports fetching the project ID.
+ * An interface implemented by objects that can get universe domain for Google Cloud APIs.
  */
-interface ProjectIdProviderInterface
+interface GetUniverseDomainInterface
 {
+    const DEFAULT_UNIVERSE_DOMAIN = 'googleapis.com';
+
     /**
-     * Get the project ID.
+     * Get the universe domain from the credential. This should always return
+     * a string, and default to "googleapis.com" if no universe domain is
+     * configured.
      *
-     * @param callable $httpHandler Callback which delivers psr7 request
-     * @return string|null
+     * @return string
      */
-    public function getProjectId(?callable $httpHandler = null);
+    public function getUniverseDomain(): string;
 }

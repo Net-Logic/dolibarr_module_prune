@@ -25,8 +25,19 @@
         "johngrogg/ics-parser": "^3.0.0",
         "t4web/composer-lock-parser": "1.1.*"
     },
+    "autoload": {
+        "exclude-from-classmap": [
+            "vendor/microsoft/microsoft-graph/src/Beta/"
+        ]
+    },
     "scripts": {
-        "post-update-cmd": "Google\\Task\\Composer::cleanup"
+        "post-install-cmd": [
+            "@php build/composer_cleanup.php"
+        ],
+        "post-update-cmd": [
+            "Google\\Task\\Composer::cleanup",
+            "@php build/composer_cleanup.php"
+        ]
     },
     "extra": {
         "google/apiclient-services": [
