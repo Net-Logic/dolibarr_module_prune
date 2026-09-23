@@ -70,7 +70,7 @@ class modPrune extends DolibarrModules
 
 		// Possible values for version are: 'development', 'experimental', 'dolibarr',
 		// 'dolibarr_deprecated' or a version string like 'x.y.z'
-		$this->version = '1.2.1';
+		$this->version = '2.0.0';
 
 		// Url to the file with your last numberversion of this module
 		$url = 'https://wiki.netlogic.fr/versionmodule.php?module=' . strtolower($this->name) . '&number=' . $this->numero . '&version=' . $this->version . '&dolversion=' . DOL_VERSION;
