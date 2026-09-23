@@ -1,6 +1,70 @@
 {
         "packages": [
                 {
+                        "name": "adhocore/jwt",
+                        "version": "v1.1.4",
+                        "version_normalized": "1.1.4.0",
+                        "source": {
+                                "type": "git",
+                                "url": "https://github.com/adhocore/php-jwt.git",
+                                "reference": "b7055ae9024a6627f19f9873b5db19b0f1dcc4e7"
+                        },
+                        "dist": {
+                                "type": "zip",
+                                "url": "https://api.github.com/repos/adhocore/php-jwt/zipball/b7055ae9024a6627f19f9873b5db19b0f1dcc4e7",
+                                "reference": "b7055ae9024a6627f19f9873b5db19b0f1dcc4e7",
+                                "shasum": ""
+                        },
+                        "require": {
+                                "php": "^7.0 || ^8.0"
+                        },
+                        "require-dev": {
+                                "phpunit/phpunit": "^7.5 || ^8.5"
+                        },
+                        "time": "2026-05-30T07:58:15+00:00",
+                        "type": "library",
+                        "installation-source": "dist",
+                        "autoload": {
+                                "psr-4": {
+                                        "Ahc\\Jwt\\": "src/"
+                                }
+                        },
+                        "notification-url": "https://packagist.org/downloads/",
+                        "license": [
+                                "MIT"
+                        ],
+                        "authors": [
+                                {
+                                        "name": "Jitendra Adhikari",
+                                        "email": "jiten.adhikary@gmail.com"
+                                }
+                        ],
+                        "description": "Ultra lightweight JSON web token (JWT) library for PHP5.5+.",
+                        "keywords": [
+                                "auth",
+                                "json-web-token",
+                                "jwt",
+                                "jwt-auth",
+                                "jwt-php",
+                                "token"
+                        ],
+                        "support": {
+                                "issues": "https://github.com/adhocore/php-jwt/issues",
+                                "source": "https://github.com/adhocore/php-jwt/tree/v1.1.4"
+                        },
+                        "funding": [
+                                {
+                                        "url": "https://paypal.me/ji10",
+                                        "type": "custom"
+                                },
+                                {
+                                        "url": "https://github.com/adhocore",
+                                        "type": "github"
+                                }
+                        ],
+                        "install-path": "../adhocore/jwt"
+                },
+                {
                         "name": "cache/adapter-common",
                         "version": "1.3.0",
                         "version_normalized": "1.3.0.0",
@@ -196,25 +260,25 @@
                 },
                 {
                         "name": "docusign/esign-client",
-                        "version": "v5.7.0",
-                        "version_normalized": "5.7.0.0",
+                        "version": "v8.8.1",
+                        "version_normalized": "8.8.1.0",
                         "source": {
                                 "type": "git",
                                 "url": "https://github.com/docusign/docusign-esign-php-client.git",
-                                "reference": "2743b1d1d82cba57b37042ac3a2be111625aa5dd"
+                                "reference": "d026fdcb41bec593ec152f5a223f2820324b5124"
                         },
                         "dist": {
                                 "type": "zip",
-                                "url": "https://api.github.com/repos/docusign/docusign-esign-php-client/zipball/2743b1d1d82cba57b37042ac3a2be111625aa5dd",
-                                "reference": "2743b1d1d82cba57b37042ac3a2be111625aa5dd",
+                                "url": "https://api.github.com/repos/docusign/docusign-esign-php-client/zipball/d026fdcb41bec593ec152f5a223f2820324b5124",
+                                "reference": "d026fdcb41bec593ec152f5a223f2820324b5124",
                                 "shasum": ""
                         },
                         "require": {
+                                "adhocore/jwt": "^1.1",
                                 "ext-curl": "*",
                                 "ext-json": "*",
                                 "ext-mbstring": "*",
-                                "firebase/php-jwt": "^5.0",
-                                "php": ">=5.4"
+                                "php": ">=7.4"
                         },
                         "require-dev": {
                                 "friendsofphp/php-cs-fixer": "*",
@@ -222,7 +286,7 @@
                                 "satooshi/php-coveralls": "~1.0",
                                 "squizlabs/php_codesniffer": "~2.6"
                         },
-                        "time": "2020-11-01T20:58:01+00:00",
+                        "time": "2026-05-27T12:50:12+00:00",
                         "type": "library",
                         "installation-source": "dist",
                         "autoload": {
@@ -240,7 +304,7 @@
                                         "homepage": "https://developers.docusign.com"
                                 }
                         ],
-                        "description": "The DocuSign PHP library makes integrating DocuSign into your websites a super fast and painless process. The library is open sourced on GitHub, look for the docusign-php-client repository. Join the eSign revolution!",
+                        "description": "The Docusign PHP library makes integrating Docusign into your apps and websites a super fast and painless process. The library is open sourced on GitHub, look for the docusign-esign-php-client repository. Join the eSign revolution!",
                         "homepage": "https://developers.docusign.com",
                         "keywords": [
                                 "agreement",
@@ -250,33 +314,43 @@
                                 "php",
                                 "sdk"
                         ],
+                        "support": {
+                                "issues": "https://github.com/docusign/docusign-esign-php-client/issues",
+                                "source": "https://github.com/docusign/docusign-esign-php-client/tree/v8.8.1"
+                        },
                         "install-path": "../docusign/esign-client"
                 },
                 {
                         "name": "firebase/php-jwt",
-                        "version": "v5.5.1",
-                        "version_normalized": "5.5.1.0",
+                        "version": "v6.10.0",
+                        "version_normalized": "6.10.0.0",
                         "source": {
                                 "type": "git",
-                                "url": "https://github.com/firebase/php-jwt.git",
-                                "reference": "83b609028194aa042ea33b5af2d41a7427de80e6"
+                                "url": "https://github.com/googleapis/php-jwt.git",
+                                "reference": "a49db6f0a5033aef5143295342f1c95521b075ff"
                         },
                         "dist": {
                                 "type": "zip",
-                                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/83b609028194aa042ea33b5af2d41a7427de80e6",
-                                "reference": "83b609028194aa042ea33b5af2d41a7427de80e6",
+                                "url": "https://api.github.com/repos/googleapis/php-jwt/zipball/a49db6f0a5033aef5143295342f1c95521b075ff",
+                                "reference": "a49db6f0a5033aef5143295342f1c95521b075ff",
                                 "shasum": ""
                         },
                         "require": {
-                                "php": ">=5.3.0"
+                                "php": "^7.4||^8.0"
                         },
                         "require-dev": {
-                                "phpunit/phpunit": ">=4.8 <=9"
+                                "guzzlehttp/guzzle": "^6.5||^7.4",
+                                "phpspec/prophecy-phpunit": "^2.0",
+                                "phpunit/phpunit": "^9.5",
+                                "psr/cache": "^1.0||^2.0",
+                                "psr/http-client": "^1.0",
+                                "psr/http-factory": "^1.0"
                         },
                         "suggest": {
+                                "ext-sodium": "Support EdDSA (Ed25519) signatures",
                                 "paragonie/sodium_compat": "Support EdDSA (Ed25519) signatures when libsodium is not present"
                         },
-                        "time": "2021-11-08T20:18:51+00:00",
+                        "time": "2023-12-01T16:26:39+00:00",
                         "type": "library",
                         "installation-source": "dist",
                         "autoload": {
@@ -306,6 +380,10 @@
                                 "jwt",
                                 "php"
                         ],
+                        "support": {
+                                "issues": "https://github.com/googleapis/php-jwt/issues",
+                                "source": "https://github.com/googleapis/php-jwt/tree/v6.10.0"
+                        },
                         "install-path": "../firebase/php-jwt"
                 },
                 {
@@ -491,39 +569,51 @@
                 },
                 {
                         "name": "guzzlehttp/guzzle",
-                        "version": "6.5.8",
-                        "version_normalized": "6.5.8.0",
+                        "version": "7.15.5",
+                        "version_normalized": "7.15.5.0",
                         "source": {
                                 "type": "git",
                                 "url": "https://github.com/guzzle/guzzle.git",
-                                "reference": "a52f0440530b54fa079ce76e8c5d196a42cad981"
+                                "reference": "ee80339fd9177ba44c49cdb653ff02a4d1106b9a"
                         },
                         "dist": {
                                 "type": "zip",
-                                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/a52f0440530b54fa079ce76e8c5d196a42cad981",
-                                "reference": "a52f0440530b54fa079ce76e8c5d196a42cad981",
+                                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/ee80339fd9177ba44c49cdb653ff02a4d1106b9a",
+                                "reference": "ee80339fd9177ba44c49cdb653ff02a4d1106b9a",
                                 "shasum": ""
                         },
                         "require": {
                                 "ext-json": "*",
-                                "guzzlehttp/promises": "^1.0",
-                                "guzzlehttp/psr7": "^1.9",
-                                "php": ">=5.5",
-                                "symfony/polyfill-intl-idn": "^1.17"
+                                "guzzlehttp/promises": "^2.5.3",
+                                "guzzlehttp/psr7": "^2.13.1",
+                                "php": "^7.2.5 || ^8.0",
+                                "psr/http-client": "^1.0",
+                                "symfony/deprecation-contracts": "^2.5 || ^3.0",
+                                "symfony/polyfill-php80": "^1.25"
+                        },
+                        "provide": {
+                                "psr/http-client-implementation": "1.0"
                         },
                         "require-dev": {
+                                "bamarni/composer-bin-plugin": "^1.8.2",
                                 "ext-curl": "*",
-                                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4 || ^7.0",
-                                "psr/log": "^1.1"
+                                "guzzle/client-integration-tests": "3.0.3",
+                                "guzzlehttp/test-server": "^0.7",
+                                "php-http/message-factory": "^1.1",
+                                "phpunit/phpunit": "^8.5.52 || ^9.6.34",
+                                "psr/log": "^1.1 || ^2.0 || ^3.0"
                         },
                         "suggest": {
+                                "ext-curl": "Required for CURL handler support",
+                                "ext-intl": "Required for Internationalized Domain Name (IDN) support",
                                 "psr/log": "Required for using the Log middleware"
                         },
-                        "time": "2022-06-20T22:16:07+00:00",
+                        "time": "2026-08-24T09:21:06+00:00",
                         "type": "library",
                         "extra": {
-                                "branch-alias": {
-                                        "dev-master": "6.5-dev"
+                                "bamarni-bin": {
+                                        "bin-links": true,
+                                        "forward-command": false
                                 }
                         },
                         "installation-source": "dist",
@@ -577,46 +667,70 @@
                                 }
                         ],
                         "description": "Guzzle is a PHP HTTP client library",
-                        "homepage": "http://guzzlephp.org/",
                         "keywords": [
                                 "client",
                                 "curl",
                                 "framework",
                                 "http",
                                 "http client",
+                                "psr-18",
+                                "psr-7",
                                 "rest",
                                 "web service"
+                        ],
+                        "support": {
+                                "issues": "https://github.com/guzzle/guzzle/issues",
+                                "source": "https://github.com/guzzle/guzzle/tree/7.15.5"
+                        },
+                        "funding": [
+                                {
+                                        "url": "https://github.com/GrahamCampbell",
+                                        "type": "github"
+                                },
+                                {
+                                        "url": "https://github.com/Nyholm",
+                                        "type": "github"
+                                },
+                                {
+                                        "url": "https://tidelift.com/funding/github/packagist/guzzlehttp/guzzle",
+                                        "type": "tidelift"
+                                }
                         ],
                         "install-path": "../guzzlehttp/guzzle"
                 },
                 {
                         "name": "guzzlehttp/promises",
-                        "version": "1.5.3",
-                        "version_normalized": "1.5.3.0",
+                        "version": "2.5.3",
+                        "version_normalized": "2.5.3.0",
                         "source": {
                                 "type": "git",
                                 "url": "https://github.com/guzzle/promises.git",
-                                "reference": "67ab6e18aaa14d753cc148911d273f6e6cb6721e"
+                                "reference": "cde49999552d185d64715fe9c1f77a2aadd2f9f1"
                         },
                         "dist": {
                                 "type": "zip",
-                                "url": "https://api.github.com/repos/guzzle/promises/zipball/67ab6e18aaa14d753cc148911d273f6e6cb6721e",
-                                "reference": "67ab6e18aaa14d753cc148911d273f6e6cb6721e",
+                                "url": "https://api.github.com/repos/guzzle/promises/zipball/cde49999552d185d64715fe9c1f77a2aadd2f9f1",
+                                "reference": "cde49999552d185d64715fe9c1f77a2aadd2f9f1",
                                 "shasum": ""
                         },
                         "require": {
-                                "php": ">=5.5"
+                                "php": "^7.2.5 || ^8.0",
+                                "symfony/deprecation-contracts": "^2.5 || ^3.0"
                         },
                         "require-dev": {
-                                "symfony/phpunit-bridge": "^4.4 || ^5.1"
+                                "bamarni/composer-bin-plugin": "^1.8.2",
+                                "phpunit/phpunit": "^8.5.52 || ^9.6.34"
                         },
-                        "time": "2023-05-21T12:31:43+00:00",
+                        "time": "2026-08-24T09:11:28+00:00",
                         "type": "library",
+                        "extra": {
+                                "bamarni-bin": {
+                                        "bin-links": true,
+                                        "forward-command": false
+                                }
+                        },
                         "installation-source": "dist",
                         "autoload": {
-                                "files": [
-                                        "src/functions_include.php"
-                                ],
                                 "psr-4": {
                                         "GuzzleHttp\\Promise\\": "src/"
                                 }
@@ -653,7 +767,7 @@
                         ],
                         "support": {
                                 "issues": "https://github.com/guzzle/promises/issues",
-                                "source": "https://github.com/guzzle/promises/tree/1.5.3"
+                                "source": "https://github.com/guzzle/promises/tree/2.5.3"
                         },
                         "funding": [
                                 {
@@ -673,41 +787,50 @@
                 },
                 {
                         "name": "guzzlehttp/psr7",
-                        "version": "1.9.1",
-                        "version_normalized": "1.9.1.0",
+                        "version": "2.13.1",
+                        "version_normalized": "2.13.1.0",
                         "source": {
                                 "type": "git",
                                 "url": "https://github.com/guzzle/psr7.git",
-                                "reference": "e4490cabc77465aaee90b20cfc9a770f8c04be6b"
+                                "reference": "95e7828100de18b4e269fb1703be530082d5166d"
                         },
                         "dist": {
                                 "type": "zip",
-                                "url": "https://api.github.com/repos/guzzle/psr7/zipball/e4490cabc77465aaee90b20cfc9a770f8c04be6b",
-                                "reference": "e4490cabc77465aaee90b20cfc9a770f8c04be6b",
+                                "url": "https://api.github.com/repos/guzzle/psr7/zipball/95e7828100de18b4e269fb1703be530082d5166d",
+                                "reference": "95e7828100de18b4e269fb1703be530082d5166d",
                                 "shasum": ""
                         },
                         "require": {
-                                "php": ">=5.4.0",
-                                "psr/http-message": "~1.0",
-                                "ralouphie/getallheaders": "^2.0.5 || ^3.0.0"
+                                "php": "^7.2.5 || ^8.0",
+                                "psr/http-factory": "^1.0",
+                                "psr/http-message": "^1.1 || ^2.0",
+                                "ralouphie/getallheaders": "^3.0",
+                                "symfony/deprecation-contracts": "^2.5 || ^3.0",
+                                "symfony/polyfill-php80": "^1.25"
                         },
                         "provide": {
+                                "psr/http-factory-implementation": "1.0",
                                 "psr/http-message-implementation": "1.0"
                         },
                         "require-dev": {
-                                "ext-zlib": "*",
-                                "phpunit/phpunit": "~4.8.36 || ^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.5.8 || ^9.3.10"
+                                "bamarni/composer-bin-plugin": "^1.8.2",
+                                "http-interop/http-factory-tests": "1.1.0",
+                                "jshttp/mime-db": "1.54.0.1",
+                                "phpunit/phpunit": "^8.5.52 || ^9.6.34"
                         },
                         "suggest": {
                                 "laminas/laminas-httphandlerrunner": "Emit PSR-7 responses"
                         },
-                        "time": "2023-04-17T16:00:37+00:00",
+                        "time": "2026-08-24T09:13:11+00:00",
                         "type": "library",
+                        "extra": {
+                                "bamarni-bin": {
+                                        "bin-links": true,
+                                        "forward-command": false
+                                }
+                        },
                         "installation-source": "dist",
                         "autoload": {
-                                "files": [
-                                        "src/functions_include.php"
-                                ],
                                 "psr-4": {
                                         "GuzzleHttp\\Psr7\\": "src/"
                                 }
@@ -746,6 +869,11 @@
                                         "name": "Tobias Schultze",
                                         "email": "webmaster@tubo-world.de",
                                         "homepage": "https://github.com/Tobion"
+                                },
+                                {
+                                        "name": "Márk Sági-Kazár",
+                                        "email": "mark.sagikazar@gmail.com",
+                                        "homepage": "https://sagikazarmark.hu"
                                 }
                         ],
                         "description": "PSR-7 message implementation that also provides common utility methods",
@@ -761,7 +889,7 @@
                         ],
                         "support": {
                                 "issues": "https://github.com/guzzle/psr7/issues",
-                                "source": "https://github.com/guzzle/psr7/tree/1.9.1"
+                                "source": "https://github.com/guzzle/psr7/tree/2.13.1"
                         },
                         "funding": [
                                 {
@@ -1107,22 +1235,23 @@
                 },
                 {
                         "name": "league/oauth2-client",
-                        "version": "2.9.0",
-                        "version_normalized": "2.9.0.0",
+                        "version": "2.9.1",
+                        "version_normalized": "2.9.1.0",
                         "source": {
                                 "type": "git",
                                 "url": "https://github.com/thephpleague/oauth2-client.git",
-                                "reference": "26e8c5da4f3d78cede7021e09b1330a0fc093d5e"
+                                "reference": "8cedfef9d01a8d1fd2ecfabb41734b17592c4b71"
                         },
                         "dist": {
                                 "type": "zip",
-                                "url": "https://api.github.com/repos/thephpleague/oauth2-client/zipball/26e8c5da4f3d78cede7021e09b1330a0fc093d5e",
-                                "reference": "26e8c5da4f3d78cede7021e09b1330a0fc093d5e",
+                                "url": "https://api.github.com/repos/thephpleague/oauth2-client/zipball/8cedfef9d01a8d1fd2ecfabb41734b17592c4b71",
+                                "reference": "8cedfef9d01a8d1fd2ecfabb41734b17592c4b71",
                                 "shasum": ""
                         },
                         "require": {
                                 "ext-json": "*",
-                                "guzzlehttp/guzzle": "^6.5.8 || ^7.4.5",
+                                "guzzlehttp/guzzle": "^6.5.8 || ^7.8.2 || ^8.0",
+                                "guzzlehttp/psr7": "^1.9.1 || ^2.6.3 || ^3.0",
                                 "php": "^7.1 || >=8.0.0 <8.6.0"
                         },
                         "require-dev": {
@@ -1131,7 +1260,7 @@
                                 "phpunit/phpunit": "^7 || ^8 || ^9 || ^10 || ^11",
                                 "squizlabs/php_codesniffer": "^3.11"
                         },
-                        "time": "2025-11-25T22:17:17+00:00",
+                        "time": "2026-09-16T13:14:31+00:00",
                         "type": "library",
                         "installation-source": "dist",
                         "autoload": {
@@ -1169,7 +1298,7 @@
                         ],
                         "support": {
                                 "issues": "https://github.com/thephpleague/oauth2-client/issues",
-                                "source": "https://github.com/thephpleague/oauth2-client/tree/2.9.0"
+                                "source": "https://github.com/thephpleague/oauth2-client/tree/2.9.1"
                         },
                         "install-path": "../league/oauth2-client"
                 },
@@ -1443,29 +1572,32 @@
                 },
                 {
                         "name": "ovh/ovh",
-                        "version": "v2.1.0",
-                        "version_normalized": "2.1.0.0",
+                        "version": "v3.5.0",
+                        "version_normalized": "3.5.0.0",
                         "source": {
                                 "type": "git",
                                 "url": "https://github.com/ovh/php-ovh.git",
-                                "reference": "c473b3d67e5757c188b10e3048aba1ec43133653"
+                                "reference": "917ae0332cb6e2559d3b5045ef9107b32e07cd2d"
                         },
                         "dist": {
                                 "type": "zip",
-                                "url": "https://api.github.com/repos/ovh/php-ovh/zipball/c473b3d67e5757c188b10e3048aba1ec43133653",
-                                "reference": "c473b3d67e5757c188b10e3048aba1ec43133653",
+                                "url": "https://api.github.com/repos/ovh/php-ovh/zipball/917ae0332cb6e2559d3b5045ef9107b32e07cd2d",
+                                "reference": "917ae0332cb6e2559d3b5045ef9107b32e07cd2d",
                                 "shasum": ""
                         },
                         "require": {
-                                "guzzlehttp/guzzle": "^6.0"
+                                "ext-json": "*",
+                                "guzzlehttp/guzzle": "^6.0||^7.0",
+                                "league/oauth2-client": "^2.7",
+                                "php": ">=7.4"
                         },
                         "require-dev": {
-                                "phing/phing": "^2.14",
-                                "phpdocumentor/phpdocumentor": "2.*",
-                                "phpunit/phpunit": "4.*",
-                                "squizlabs/php_codesniffer": "2.*"
+                                "php-parallel-lint/php-parallel-lint": "^1.3.1",
+                                "phpdocumentor/shim": "^3",
+                                "phpunit/phpunit": "^10.5",
+                                "squizlabs/php_codesniffer": "^3.6"
                         },
-                        "time": "2019-11-16T17:12:55+00:00",
+                        "time": "2025-01-02T16:09:40+00:00",
                         "type": "library",
                         "installation-source": "dist",
                         "autoload": {
@@ -1477,7 +1609,19 @@
                         "license": [
                                 "BSD-3-Clause"
                         ],
-                        "description": "Wrapper for OVH APIs",
+                        "description": "Wrapper for OVHcloud APIs",
+                        "keywords": [
+                                "api",
+                                "authorisation",
+                                "authorization",
+                                "client",
+                                "ovh",
+                                "ovhcloud"
+                        ],
+                        "support": {
+                                "issues": "https://github.com/ovh/php-ovh/issues",
+                                "source": "https://github.com/ovh/php-ovh/tree/v3.5.0"
+                        },
                         "install-path": "../ovh/ovh"
                 },
                 {
@@ -1813,6 +1957,119 @@
                         "install-path": "../psr/container"
                 },
                 {
+                        "name": "psr/http-client",
+                        "version": "1.0.3",
+                        "version_normalized": "1.0.3.0",
+                        "source": {
+                                "type": "git",
+                                "url": "https://github.com/php-fig/http-client.git",
+                                "reference": "bb5906edc1c324c9a05aa0873d40117941e5fa90"
+                        },
+                        "dist": {
+                                "type": "zip",
+                                "url": "https://api.github.com/repos/php-fig/http-client/zipball/bb5906edc1c324c9a05aa0873d40117941e5fa90",
+                                "reference": "bb5906edc1c324c9a05aa0873d40117941e5fa90",
+                                "shasum": ""
+                        },
+                        "require": {
+                                "php": "^7.0 || ^8.0",
+                                "psr/http-message": "^1.0 || ^2.0"
+                        },
+                        "time": "2023-09-23T14:17:50+00:00",
+                        "type": "library",
+                        "extra": {
+                                "branch-alias": {
+                                        "dev-master": "1.0.x-dev"
+                                }
+                        },
+                        "installation-source": "dist",
+                        "autoload": {
+                                "psr-4": {
+                                        "Psr\\Http\\Client\\": "src/"
+                                }
+                        },
+                        "notification-url": "https://packagist.org/downloads/",
+                        "license": [
+                                "MIT"
+                        ],
+                        "authors": [
+                                {
+                                        "name": "PHP-FIG",
+                                        "homepage": "https://www.php-fig.org/"
+                                }
+                        ],
+                        "description": "Common interface for HTTP clients",
+                        "homepage": "https://github.com/php-fig/http-client",
+                        "keywords": [
+                                "http",
+                                "http-client",
+                                "psr",
+                                "psr-18"
+                        ],
+                        "support": {
+                                "source": "https://github.com/php-fig/http-client"
+                        },
+                        "install-path": "../psr/http-client"
+                },
+                {
+                        "name": "psr/http-factory",
+                        "version": "1.1.0",
+                        "version_normalized": "1.1.0.0",
+                        "source": {
+                                "type": "git",
+                                "url": "https://github.com/php-fig/http-factory.git",
+                                "reference": "2b4765fddfe3b508ac62f829e852b1501d3f6e8a"
+                        },
+                        "dist": {
+                                "type": "zip",
+                                "url": "https://api.github.com/repos/php-fig/http-factory/zipball/2b4765fddfe3b508ac62f829e852b1501d3f6e8a",
+                                "reference": "2b4765fddfe3b508ac62f829e852b1501d3f6e8a",
+                                "shasum": ""
+                        },
+                        "require": {
+                                "php": ">=7.1",
+                                "psr/http-message": "^1.0 || ^2.0"
+                        },
+                        "time": "2024-04-15T12:06:14+00:00",
+                        "type": "library",
+                        "extra": {
+                                "branch-alias": {
+                                        "dev-master": "1.0.x-dev"
+                                }
+                        },
+                        "installation-source": "dist",
+                        "autoload": {
+                                "psr-4": {
+                                        "Psr\\Http\\Message\\": "src/"
+                                }
+                        },
+                        "notification-url": "https://packagist.org/downloads/",
+                        "license": [
+                                "MIT"
+                        ],
+                        "authors": [
+                                {
+                                        "name": "PHP-FIG",
+                                        "homepage": "https://www.php-fig.org/"
+                                }
+                        ],
+                        "description": "PSR-17: Common interfaces for PSR-7 HTTP message factories",
+                        "keywords": [
+                                "factory",
+                                "http",
+                                "message",
+                                "psr",
+                                "psr-17",
+                                "psr-7",
+                                "request",
+                                "response"
+                        ],
+                        "support": {
+                                "source": "https://github.com/php-fig/http-factory"
+                        },
+                        "install-path": "../psr/http-factory"
+                },
+                {
                         "name": "psr/http-message",
                         "version": "1.1",
                         "version_normalized": "1.1.0.0",
@@ -2121,33 +2378,34 @@
                 },
                 {
                         "name": "symfony/cache",
-                        "version": "v4.4.48",
-                        "version_normalized": "4.4.48.0",
+                        "version": "v5.4.53",
+                        "version_normalized": "5.4.53.0",
                         "source": {
                                 "type": "git",
                                 "url": "https://github.com/symfony/cache.git",
-                                "reference": "3b98ed664887ad197b8ede3da2432787212eb915"
+                                "reference": "bf581474737420d5c932ae80b868e253f465ee5b"
                         },
                         "dist": {
                                 "type": "zip",
-                                "url": "https://api.github.com/repos/symfony/cache/zipball/3b98ed664887ad197b8ede3da2432787212eb915",
-                                "reference": "3b98ed664887ad197b8ede3da2432787212eb915",
+                                "url": "https://api.github.com/repos/symfony/cache/zipball/bf581474737420d5c932ae80b868e253f465ee5b",
+                                "reference": "bf581474737420d5c932ae80b868e253f465ee5b",
                                 "shasum": ""
                         },
                         "require": {
-                                "php": ">=7.1.3",
+                                "php": ">=7.2.5",
                                 "psr/cache": "^1.0|^2.0",
-                                "psr/log": "^1|^2|^3",
+                                "psr/log": "^1.1|^2|^3",
                                 "symfony/cache-contracts": "^1.1.7|^2",
+                                "symfony/deprecation-contracts": "^2.1|^3",
                                 "symfony/polyfill-php73": "^1.9",
                                 "symfony/polyfill-php80": "^1.16",
-                                "symfony/service-contracts": "^1.1|^2",
-                                "symfony/var-exporter": "^4.2|^5.0"
+                                "symfony/service-contracts": "^1.1|^2|^3",
+                                "symfony/var-exporter": "^4.4|^5.0|^6.0"
                         },
                         "conflict": {
-                                "doctrine/dbal": "<2.7",
-                                "symfony/dependency-injection": "<3.4",
-                                "symfony/http-kernel": "<4.4|>=5.0",
+                                "doctrine/dbal": "<2.13.1",
+                                "symfony/dependency-injection": "<4.4",
+                                "symfony/http-kernel": "<4.4",
                                 "symfony/var-dumper": "<4.4"
                         },
                         "provide": {
@@ -2158,16 +2416,17 @@
                         "require-dev": {
                                 "cache/integration-tests": "dev-master",
                                 "doctrine/cache": "^1.6|^2.0",
-                                "doctrine/dbal": "^2.7|^3.0",
-                                "predis/predis": "^1.1",
+                                "doctrine/dbal": "^2.13.1|^3|^4",
+                                "predis/predis": "^1.1|^2.0",
                                 "psr/simple-cache": "^1.0|^2.0",
-                                "symfony/config": "^4.2|^5.0",
-                                "symfony/dependency-injection": "^3.4|^4.1|^5.0",
-                                "symfony/filesystem": "^4.4|^5.0",
-                                "symfony/http-kernel": "^4.4",
-                                "symfony/var-dumper": "^4.4|^5.0"
+                                "symfony/config": "^4.4|^5.0|^6.0",
+                                "symfony/dependency-injection": "^4.4|^5.0|^6.0",
+                                "symfony/filesystem": "^4.4|^5.0|^6.0",
+                                "symfony/http-kernel": "^4.4|^5.0|^6.0",
+                                "symfony/messenger": "^4.4|^5.0|^6.0",
+                                "symfony/var-dumper": "^4.4|^5.0|^6.0"
                         },
-                        "time": "2022-10-17T20:21:54+00:00",
+                        "time": "2026-05-24T08:41:21+00:00",
                         "type": "library",
                         "installation-source": "dist",
                         "autoload": {
@@ -2197,6 +2456,27 @@
                         "keywords": [
                                 "caching",
                                 "psr6"
+                        ],
+                        "support": {
+                                "source": "https://github.com/symfony/cache/tree/v5.4.53"
+                        },
+                        "funding": [
+                                {
+                                        "url": "https://symfony.com/sponsor",
+                                        "type": "custom"
+                                },
+                                {
+                                        "url": "https://github.com/fabpot",
+                                        "type": "github"
+                                },
+                                {
+                                        "url": "https://github.com/nicolas-grekas",
+                                        "type": "github"
+                                },
+                                {
+                                        "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                                        "type": "tidelift"
+                                }
                         ],
                         "install-path": "../symfony/cache"
                 },
@@ -2283,134 +2563,38 @@
                         "install-path": "../symfony/cache-contracts"
                 },
                 {
-                        "name": "symfony/polyfill-intl-idn",
-                        "version": "v1.42.0",
-                        "version_normalized": "1.42.0.0",
+                        "name": "symfony/deprecation-contracts",
+                        "version": "v2.5.4",
+                        "version_normalized": "2.5.4.0",
                         "source": {
                                 "type": "git",
-                                "url": "https://github.com/symfony/polyfill-intl-idn.git",
-                                "reference": "51b5ff5ba85452b31ec6f55490b08148612339d9"
+                                "url": "https://github.com/symfony/deprecation-contracts.git",
+                                "reference": "605389f2a7e5625f273b53960dc46aeaf9c62918"
                         },
                         "dist": {
                                 "type": "zip",
-                                "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/51b5ff5ba85452b31ec6f55490b08148612339d9",
-                                "reference": "51b5ff5ba85452b31ec6f55490b08148612339d9",
+                                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/605389f2a7e5625f273b53960dc46aeaf9c62918",
+                                "reference": "605389f2a7e5625f273b53960dc46aeaf9c62918",
                                 "shasum": ""
                         },
                         "require": {
-                                "php": ">=7.2",
-                                "symfony/polyfill-intl-normalizer": "^1.10"
+                                "php": ">=7.1"
                         },
-                        "suggest": {
-                                "ext-intl": "For best performance"
-                        },
-                        "time": "2026-08-24T10:51:20+00:00",
+                        "time": "2024-09-25T14:11:13+00:00",
                         "type": "library",
                         "extra": {
                                 "thanks": {
-                                        "url": "https://github.com/symfony/polyfill",
-                                        "name": "symfony/polyfill"
+                                        "url": "https://github.com/symfony/contracts",
+                                        "name": "symfony/contracts"
+                                },
+                                "branch-alias": {
+                                        "dev-main": "2.5-dev"
                                 }
                         },
                         "installation-source": "dist",
                         "autoload": {
                                 "files": [
-                                        "bootstrap.php"
-                                ],
-                                "psr-4": {
-                                        "Symfony\\Polyfill\\Intl\\Idn\\": ""
-                                }
-                        },
-                        "notification-url": "https://packagist.org/downloads/",
-                        "license": [
-                                "MIT"
-                        ],
-                        "authors": [
-                                {
-                                        "name": "Laurent Bassin",
-                                        "email": "laurent@bassin.info"
-                                },
-                                {
-                                        "name": "Trevor Rowbotham",
-                                        "email": "trevor.rowbotham@pm.me"
-                                },
-                                {
-                                        "name": "Symfony Community",
-                                        "homepage": "https://symfony.com/contributors"
-                                }
-                        ],
-                        "description": "Symfony polyfill for intl's idn_to_ascii and idn_to_utf8 functions",
-                        "homepage": "https://symfony.com",
-                        "keywords": [
-                                "compatibility",
-                                "idn",
-                                "intl",
-                                "polyfill",
-                                "portable",
-                                "shim"
-                        ],
-                        "support": {
-                                "source": "https://github.com/symfony/polyfill-intl-idn/tree/v1.42.0"
-                        },
-                        "funding": [
-                                {
-                                        "url": "https://symfony.com/sponsor",
-                                        "type": "custom"
-                                },
-                                {
-                                        "url": "https://github.com/fabpot",
-                                        "type": "github"
-                                },
-                                {
-                                        "url": "https://github.com/nicolas-grekas",
-                                        "type": "github"
-                                },
-                                {
-                                        "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                                        "type": "tidelift"
-                                }
-                        ],
-                        "install-path": "../symfony/polyfill-intl-idn"
-                },
-                {
-                        "name": "symfony/polyfill-intl-normalizer",
-                        "version": "v1.42.0",
-                        "version_normalized": "1.42.0.0",
-                        "source": {
-                                "type": "git",
-                                "url": "https://github.com/symfony/polyfill-intl-normalizer.git",
-                                "reference": "aa20edea75bd9c48cfecc8360922e5a6e5c44502"
-                        },
-                        "dist": {
-                                "type": "zip",
-                                "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/aa20edea75bd9c48cfecc8360922e5a6e5c44502",
-                                "reference": "aa20edea75bd9c48cfecc8360922e5a6e5c44502",
-                                "shasum": ""
-                        },
-                        "require": {
-                                "php": ">=7.2"
-                        },
-                        "suggest": {
-                                "ext-intl": "For best performance"
-                        },
-                        "time": "2026-08-07T06:33:24+00:00",
-                        "type": "library",
-                        "extra": {
-                                "thanks": {
-                                        "url": "https://github.com/symfony/polyfill",
-                                        "name": "symfony/polyfill"
-                                }
-                        },
-                        "installation-source": "dist",
-                        "autoload": {
-                                "files": [
-                                        "bootstrap.php"
-                                ],
-                                "psr-4": {
-                                        "Symfony\\Polyfill\\Intl\\Normalizer\\": ""
-                                },
-                                "classmap": [
-                                        "Resources/stubs"
+                                        "function.php"
                                 ]
                         },
                         "notification-url": "https://packagist.org/downloads/",
@@ -2427,18 +2611,10 @@
                                         "homepage": "https://symfony.com/contributors"
                                 }
                         ],
-                        "description": "Symfony polyfill for intl's Normalizer class and related functions",
+                        "description": "A generic function and convention to trigger deprecation notices",
                         "homepage": "https://symfony.com",
-                        "keywords": [
-                                "compatibility",
-                                "intl",
-                                "normalizer",
-                                "polyfill",
-                                "portable",
-                                "shim"
-                        ],
                         "support": {
-                                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.42.0"
+                                "source": "https://github.com/symfony/deprecation-contracts/tree/v2.5.4"
                         },
                         "funding": [
                                 {
@@ -2450,15 +2626,11 @@
                                         "type": "github"
                                 },
                                 {
-                                        "url": "https://github.com/nicolas-grekas",
-                                        "type": "github"
-                                },
-                                {
                                         "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                                         "type": "tidelift"
                                 }
                         ],
-                        "install-path": "../symfony/polyfill-intl-normalizer"
+                        "install-path": "../symfony/deprecation-contracts"
                 },
                 {
                         "name": "symfony/polyfill-php73",

@@ -1,80 +1,108 @@
-# The Official DocuSign PHP Client 
+# The Official Docusign eSignature PHP Client SDK
 
-[![Build status][travis-image]][travis-url]
+The Docusign SDK makes integrating Docusign into your apps and websites a seamless experience.
 
-## Requirements
+## Table of Contents
+- [Introduction](#introduction)
+- [Installation](#installation)
+	* [Version Information](#versionInformation)
+	* [Requirements](#requirements)
+	* [Compatibility](#compatibility)
+	* [Composer](#composer)
+	* [Manual Install](#manualInstall)
+- [Dependencies](#dependencies)
+- [API Reference](#apiReference)
+- [Code Examples](#codeExamples)
+- [OAuth Implementations](#oauthImplementations)
+- [Changelog](#changeLog)
+- [Support](#support)
+- [License](#license)
+- [Additional Resources](#additionalResources)
 
-- PHP 5.4+
-- Free [Developer Sandbox](https://go.docusign.com/sandbox/productshot/?elqCampaignId=16531)
+<a id="introduction"></a>
+## Introduction
+Integrate eSignatures into your application in minutes. The secure and award-winning Docusign eSignature API makes requesting signatures, automating forms, and tracking documents directly from your app easy.
 
-## Compatibility
-
-- PHP 5.4+
-
-## Note
-
-This open-source SDK is provided for cases where you would like to make additional changes that the SDK does not provide out-of-the-box. If you simply want to use the SDK with any of the examples shown in the [Developer Center](https://developers.docusign.com/esign-rest-api/code-examples), follow the installation instructions below.
-
+<a id="installation"></a>
 ## Installation
+This client SDK is provided as open source, which enables you to customize its functionality to suit your particular use case. To do so, download or clone the repository. If the SDK’s given functionality meets your integration needs, or if you’re working through our [code examples](https://developers.docusign.com/docs/esign-rest-api/how-to/) from the [Docusign Developer Center](https://developers.docusign.com/), you merely need to install it by following the instructions below.
 
+<a id="versionInformation"></a>
+### Version Information
+- **API version**: v2.1
+- **Latest SDK version**: 8.8.1
+
+<a id="requirements"></a>
+### Requirements
+*   PHP 7.4+
+*   Free [developer account](https://go.docusign.com/o/sandbox/?postActivateUrl=https://developers.docusign.com/)
+
+<a id="compatibility"></a>
+### Compatibility
+*   PHP 7.4+
+
+<a id="composer"></a>
 ### Composer:
+1. In your PHP console, type: **Composer require docusign/esign-client;**
+2. To use the package automatically, add to Composer's Autoload file: 
+`require_once('vendor/autoload.php');`
 
-1. In your **PHP console** , type:  
-   **Composer require docusign/esign-client;**
-2. To use the package automatically, add to Composer's **Autoload** file:  
-   **require_once('vendor/autoload.php');**
-
-### Manual install:
+<a id="manualInstall"></a>
+### Manual Install:
 
 <ol>
    <li>Download or clone this repository.</li>
    <li>Bind the PHP SDK to your server or place it in a static location.
        <ol style="list-style-type: lower-alpha simple">
            <li>To bind to your server, edit the <em>init.php</em> file. Add:<br>
-               <code>require_once('/path/to/docusign-esign-client/autoload.php');</code></li>
+               <code>require_once('/path/to/docusign-esign-php-client/autoload.php');</code></li>
            <li>To bind to single pages: In your PHP file that will utilize the PHP SDK, add:<br>
-                <code>`require_once('/path/to/docusign-esign-client/autoload.php');</code></li>
+                <code>require_once('/path/to/docusign-esign-php-client/autoload.php');</code></li>
        </ol>
    </li>
+   <li>If you are using Composer V2 and get the error 'namespace cannot be found', add the following class mapping in the composer.json file.</li>
+      <code>"autoload": { "classmap": [ "/path/to/docusign-esign-php-client/src" ] }</code></li>
 </ol>
 
-## Dependencies
-
+<a id="dependencies"></a>
+## SDK Dependencies
 This client has the following external dependencies:
+*   [PHP cURL extension](https://www.php.net/manual/en/intro.curl.php)
+*   [PHP JSON extension](https://php.net/manual/en/book.json.php)
+*   [PHP MBString extension](https://www.php.net/manual/en/intro.mbstring.php)
+*   adhocore/jwt v1.1+
 
-- [PHP cURL extension](https://www.php.net/manual/en/intro.curl.php)
-- [PHP JSON extension](https://php.net/manual/en/book.json.php)
+> **⚠ Deprecation Notice:** Support for PHP versions below 8.0 will be phased out in the coming months. A new SDK compatible with PHP 8.1 will be released, which replaces adhocore/jwt with firebase/php-jwt v7. We strongly recommend upgrading to PHP 8.1 or later to maintain compatibility with upcoming SDK releases.
 
-## Code Examples
+<a id="apiReference"></a>
+## API Reference
+You can refer to the API reference [here](https://developers.docusign.com/docs/esign-rest-api/reference/).
 
-### Launchers
+<a id="codeExamples"></a>
+## Code examples
+Explore our GitHub repository for the [Launcher](https://github.com/docusign/code-examples-php/), a self-executing package housing code examples for the eSignature PHP SDK. This package showcases several common use cases and their respective source files. Additionally, you can download a version preconfigured for your Docusign developer account from [Quickstart](https://developers.docusign.com/docs/esign-rest-api/quickstart/). These examples support both the [Authorization Code Grant](https://developers.docusign.com/platform/auth/authcode/) and [JSON Web Token (JWT)](https://developers.docusign.com/platform/auth/jwt/) authentication workflows.
 
-DocuSign provides a sample application code referred to as a [Launcher](https://github.com/docusign/code-examples-php). The Launcher contains a set of 31 common use cases and associated source files. These examples use either DocuSign&#39;s [Authorization Code Grant](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-code-grant) or [JSON Web Tokens (JWT)](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-jsonwebtoken) flows.
+<a id="oauthImplementations"></a>
+## OAuth implementations
+For details regarding which type of OAuth grant will work best for your Docusign integration, see [Choose OAuth Type](https://developers.docusign.com/platform/auth/choose/) in the [Docusign Developer Center](https://developers.docusign.com/).
 
-## Proof-of-concept applications
+For security purposes, Docusign recommends using the [Authorization Code Grant](https://developers.docusign.com/platform/auth/authcode/) flow.
 
-If your goal is to create a proof-of-concept application, DocuSign provides a set of [Quick Start](https://github.com/docusign/qs-php) examples. The Quick Startexamples are meant to be used with DocuSign's [OAuth Token Generator](https://developers.docusign.com/oauth-token-generator), which will allow you to generate tokens for the Demo/Sandbox environment only. These tokens last for eight hours and will enable you to build your proof-of-concept application without the need to fully implement an OAuth solution.
+<a id="changeLog"></a>
+## Changelog
+You can refer to the complete changelog [here](https://github.com/docusign/docusign-esign-php-client/blob/master/CHANGELOG.md).
 
-## OAuth Implementations
-
-For details regarding which type of OAuth grant will work best for your DocuSign integration, see the [REST API Authentication Overview](https://developers.docusign.com/esign-rest-api/guides/authentication) guide located on the [DocuSign Developer Center](https://developers.docusign.com/esign-rest-api/guides/authentication).
-
-For security purposes, DocuSign recommends using the [Authorization Code Grant](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-code-grant) flow.
-
-
+<a id="support"></a>
 ## Support
+Log issues against this client SDK through GitHub. You can also reach out to us through [Docusign Community](https://community.docusign.com/developer-59) and [Stack Overflow](https://stackoverflow.com/questions/tagged/docusignapi).
 
-Log issues against this client through GitHub. We also have an [active developer community on Stack Overflow](https://stackoverflow.com/questions/tagged/docusignapi).
-
+<a id="license"></a>
 ## License
+The Docusign eSignature PHP Client SDK is licensed under the [MIT License](https://github.com/docusign/docusign-esign-php-client/blob/master/LICENSE).
 
-The DocuSign PHP Client is licensed under the [MIT License](https://github.com/docusign/docusign-php-client/blob/master/LICENSE).
-
-[travis-image]: https://img.shields.io/travis/docusign/docusign-php-client.svg?style=flat
-[travis-url]: https://travis-ci.org/docusign/docusign-php-client
-
-### Additional Resources
-* [DocuSign Developer Center](https://developers.docusign.com)
-* [DocuSign API on Twitter](https://twitter.com/docusignapi)
-* [DocuSign For Developers on LinkedIn](https://www.linkedin.com/showcase/docusign-for-developers/)
-* [DocuSign For Developers on YouTube](https://www.youtube.com/channel/UCJSJ2kMs_qeQotmw4-lX2NQ)
+<a id="additionalResources"></a>
+### Additional resources
+*   [Docusign Developer Center](https://developers.docusign.com/)
+*   [Docusign API on Twitter](https://twitter.com/docusignapi)
+*   [Docusign For Developers on LinkedIn](https://www.linkedin.com/showcase/docusign-for-developers/)
+*   [Docusign For Developers on YouTube](https://www.youtube.com/channel/UCJSJ2kMs_qeQotmw4-lX2NQ)

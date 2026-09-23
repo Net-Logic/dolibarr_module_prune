@@ -57,7 +57,7 @@ trait ContractsTrait
         return $previousWrapper;
     }
 
-    private function doGet(AdapterInterface $pool, string $key, callable $callback, ?float $beta, array &$metadata = null)
+    private function doGet(AdapterInterface $pool, string $key, callable $callback, ?float $beta, ?array &$metadata = null)
     {
         if (0 > $beta = $beta ?? 1.0) {
             throw new InvalidArgumentException(sprintf('Argument "$beta" provided to "%s::get()" must be a positive number, %f given.', static::class, $beta));
@@ -65,7 +65,7 @@ trait ContractsTrait
 
         static $setMetadata;
 
-        $setMetadata = $setMetadata ?? \Closure::bind(
+        $setMetadata ?? $setMetadata = \Closure::bind(
             static function (CacheItem $item, float $startTime, ?array &$metadata) {
                 if ($item->expiry > $endTime = microtime(true)) {
                     $item->newMetadata[CacheItem::METADATA_EXPIRY] = $metadata[CacheItem::METADATA_EXPIRY] = $item->expiry;
