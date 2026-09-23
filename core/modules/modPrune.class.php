@@ -84,6 +84,10 @@ class modPrune extends DolibarrModules
 		// If file is in module/img directory under name object_pictovalue.png, use this->picto='pictovalue@module'
 		$this->picto = 'prune@prune';
 
+		// Can be enabled / disabled only in the main company with superadmin account: active in
+		// every entity, as googleapi and microsoftgraph (which depend on it) are
+		$this->core_enabled = 1;
+
 		// Define some features supported by module (triggers, login, substitutions, menus, css, etc...)
 		$this->module_parts = [
 			// Set this to 1 if module has its own trigger directory (core/triggers)
@@ -127,7 +131,7 @@ class modPrune extends DolibarrModules
 					//'actioncard',
 					//'fileslib',
 				],
-				'entity' => $conf->entity,
+				'entity' => '0',
 			],
 			// Set this to 1 if feature of module are opened to external users
 			'moduleforexternal' => 0,
@@ -205,29 +209,11 @@ class modPrune extends DolibarrModules
 	 */
 	public function init($options = '')
 	{
-		// take care this alse remove vendor content
-		$this->remove($options);
-
 		$result = $this->_load_tables('/prune/sql/');
 		if ($result < 0) {
 			// Do not activate module if not allowed errors found on module SQL queries
 			// (the _load_table run sql with run_sql with error allowed parameter to 'default')
 			return -1;
-		}
-
-		$zip = new ZipArchive();
-		$res = $zip->open(dol_buildpath('/prune/vendor.zip', 0));
-		// take care if vendor is also removed
-		$dir = dol_buildpath('/prune/', 0) . 'vendor';
-		if (!is_dir($dir)) {
-			dol_mkdir($dir);
-		}
-		if ($res === true) {
-			for ($i = 0; $i < $zip->numFiles; $i++) {
-				$zip->extractTo($dir . '/', array($zip->getNameIndex($i)));
-			}
-
-			$zip->close();
 		}
 
 		$sql = [];
@@ -246,11 +232,6 @@ class modPrune extends DolibarrModules
 	public function remove($options = '')
 	{
 		$sql = [];
-
-		// remove vendor content
-		$count = 0;
-		require_once DOL_DOCUMENT_ROOT.'/core/lib/files.lib.php';
-		dol_delete_dir_recursive(dol_buildpath('/prune/vendor/', 0), 0, 0, 1, $count, 0, 1);
 
 		return $this->_remove($sql, $options);
 	}

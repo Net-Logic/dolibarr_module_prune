@@ -138,28 +138,29 @@ function getPruneCache($namespace = '', $defaultLifetime = 0)
  * @param string $service service
  * @param string $userid user id
  * @param string $email email
- * @return Token
+ * @return Token|false
  */
 function retrieveAccessToken($service, $userid, $email = null)
 {
-	global $conf, $db;
+	global $db;
+	/** @var DoliDB $db */
 	// get from db
 	dol_syslog("retrieveAccessToken service=" . $service);
-	$sql = "SELECT token, refreshtoken, email FROM " . MAIN_DB_PREFIX . "prune_oauth_token";
-	$sql .= " WHERE service='" . $db->escape($service) . "'";
-	$sql .= " AND fk_user=" . (int) $userid;
+	$sql = "SELECT token, refreshtoken, fk_user, email FROM " . MAIN_DB_PREFIX . "prune_oauth_token";
+	$sql .= " WHERE service = '" . $db->escape($service) . "'";
+	$sql .= " AND fk_user = " . (int) $userid;
 
 	// if we don't have a userid, we use the email field (if not null)
 	if (!empty($email)) {
 		$sql .= " AND email='" . $db->escape($email) . "'";
 	}
 
-	$resql = $db->query($sql);
-	if (!$resql) {
+	$result = $db->getRow($sql);
+	if (!$result) {
 		dol_syslog("lib prune retrieveAccessToken error = " . $db->lasterror, LOG_ERR);
+		return false;
 	}
-	$result = $db->fetch_array($resql);
-	$token = unserialize($result['token']);
+	$token = unserialize($result->token);
 
 	return $token;
 }
