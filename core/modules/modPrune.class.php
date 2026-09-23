@@ -84,6 +84,10 @@ class modPrune extends DolibarrModules
 		// If file is in module/img directory under name object_pictovalue.png, use this->picto='pictovalue@module'
 		$this->picto = 'prune@prune';
 
+		// Can be enabled / disabled only in the main company with superadmin account: active in
+		// every entity, as googleapi and microsoftgraph (which depend on it) are
+		$this->core_enabled = 1;
+
 		// Define some features supported by module (triggers, login, substitutions, menus, css, etc...)
 		$this->module_parts = [
 			// Set this to 1 if module has its own trigger directory (core/triggers)
@@ -127,7 +131,7 @@ class modPrune extends DolibarrModules
 					//'actioncard',
 					//'fileslib',
 				],
-				'entity' => $conf->entity,
+				'entity' => '0',
 			],
 			// Set this to 1 if feature of module are opened to external users
 			'moduleforexternal' => 0,
