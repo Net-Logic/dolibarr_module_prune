@@ -28,36 +28,6 @@ dol_include_once('/prune/vendor/autoload.php');
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 use Symfony\Component\Cache\Adapter\MemcachedAdapter;
 
-if (!function_exists('getDolGlobalString')) {
-	/**
-	 * Return dolibarr global constant string value
-	 * @param string $key key to return value, return '' if not set
-	 * @param string $default value to return
-	 * @return string
-	 */
-	function getDolGlobalString($key, $default = '')
-	{
-		global $conf;
-		// return $conf->global->$key ?? $default;
-		return (string) ($conf->global->$key ?? $default);
-	}
-}
-
-if (!function_exists('getDolGlobalInt')) {
-	/**
-	 * Return dolibarr global constant int value
-	 * @param string $key key to return value, return 0 if not set
-	 * @param int $default value to return
-	 * @return int
-	 */
-	function getDolGlobalInt($key, $default = 0)
-	{
-		global $conf;
-		// return $conf->global->$key ?? $default;
-		return (int) ($conf->global->$key ?? $default);
-	}
-}
-
 /**
  * Prepare admin pages header
  *
@@ -160,7 +130,7 @@ function retrieveAccessToken($service, $userid, $email = null)
 		dol_syslog("lib prune retrieveAccessToken error = " . $db->lasterror, LOG_ERR);
 		return false;
 	}
-	$token = unserialize($result->token);
+	$token = unserialize(dolDecrypt($result->token));
 
 	return $token;
 }
@@ -192,7 +162,7 @@ function retrieveRefreshTokenBackup($service, $userid, $email = null)
 		dol_syslog("lib prune retrieveRefreshToken error = " . $db->lasterror, LOG_ERR);
 	}
 	$result = $db->fetch_array($resql);
-	$tokenrefreshbackup = $result['refreshtoken'] ?? '';
+	$tokenrefreshbackup = dolDecrypt($result['refreshtoken'] ?? '');
 
 	return $tokenrefreshbackup;
 }
@@ -213,7 +183,8 @@ function storeAccessToken($service, $token, $refreshtoken, $userid, $email = nul
 
 	dol_syslog("storeAccessToken");
 
-	$serializedToken = serialize($token);
+	$serializedToken = dolEncrypt(serialize($token));
+	$encryptedRefreshToken = dolEncrypt((string) $refreshtoken);
 
 	$sql = "SELECT rowid FROM " . MAIN_DB_PREFIX . "prune_oauth_token";
 	$sql .= " WHERE service='" . $db->escape($service) . "'";
@@ -230,7 +201,7 @@ function storeAccessToken($service, $token, $refreshtoken, $userid, $email = nul
 		// update
 		$sql = "UPDATE " . MAIN_DB_PREFIX . "prune_oauth_token";
 		$sql .= " SET token='" . $db->escape($serializedToken) . "'";
-		$sql .= ", refreshtoken='" . $db->escape($refreshtoken) . "'";
+		$sql .= ", refreshtoken='" . $db->escape($encryptedRefreshToken) . "'";
 		$sql .= " WHERE rowid='" . (int) $obj['rowid'] . "'";
 
 		$resql = $db->query($sql);
@@ -240,7 +211,7 @@ function storeAccessToken($service, $token, $refreshtoken, $userid, $email = nul
 	} else {
 		// save
 		$sql = "INSERT INTO " . MAIN_DB_PREFIX . "prune_oauth_token (service, token, refreshtoken, fk_user, email, entity)";
-		$sql .= " VALUES ('" . $db->escape($service) . "', '" . $db->escape($serializedToken) . "', '" . $db->escape($refreshtoken) . "', ";
+		$sql .= " VALUES ('" . $db->escape($service) . "', '" . $db->escape($serializedToken) . "', '" . $db->escape($encryptedRefreshToken) . "', ";
 		$sql .= (int) $userid . ", " . (empty($email) ? "null" : "'" . $db->escape($email) . "'") . ", " . (int) $conf->entity . ")";
 
 		$resql = $db->query($sql);
