@@ -24,3 +24,17 @@ jobs:
         run: parallel-lint --exclude vendor/ .
       - name: Run VarDump Check
         run: var-dump-check --extensions php --tracy --exclude vendor/ .
+
+  # Package the module in the Dolibarr distribution format (build/module_prune-<version>.zip)
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build the module package
+        run: build/makepack.sh
+      - name: Upload the package
+        uses: actions/upload-artifact@v4
+        with:
+          name: module_prune
+          path: build/module_prune-*.zip
+          if-no-files-found: error
