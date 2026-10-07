@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Build the module package in the Dolibarr distribution format:
-#   build/module_prune-<version>.zip, with the module files under htdocs/
+#   build/module_prune-<version>.zip, with the module files under <module>/ (accepted by admin/modules.php)
 # Usage: build/makepack.sh   (from anywhere, needs bash, rsync and zip)
 set -euo pipefail
 
@@ -16,7 +16,9 @@ if [ -z "$VERSION" ]; then
 	exit 1
 fi
 
-ZIPFILE="$ROOT/build/module_${MODULE}-${VERSION}.zip"
+# admin/modules.php takes the module name from the file name, and only accepts digits and dots in the version
+ZIPVERSION="${VERSION//-/.}"
+ZIPFILE="$ROOT/build/module_${MODULE}-${ZIPVERSION}.zip"
 STAGING="$(mktemp -d)"
 trap 'rm -rf "$STAGING"' EXIT
 
@@ -31,9 +33,9 @@ rsync -a \
 	--exclude='/build' \
 	--exclude='/codesniffer' \
 	--exclude='/node_modules' \
-	./ "$STAGING/htdocs/"
+	./ "$STAGING/$MODULE/"
 
 rm -f "$ZIPFILE"
-(cd "$STAGING" && zip -qr "$ZIPFILE" htdocs)
+(cd "$STAGING" && zip -qr "$ZIPFILE" "$MODULE")
 
 echo "Package built: build/$(basename "$ZIPFILE")"
