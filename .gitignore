@@ -1,1 +1,4 @@
 /build/prune
+
+# Packages built by build/makepack.sh
+/build/*.zip
