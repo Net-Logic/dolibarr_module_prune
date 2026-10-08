@@ -20,7 +20,7 @@
         "cache/filesystem-adapter": "^1.1",
         "symfony/cache": "5.4.*",
         "symfony/service-contracts": "1.1.*",
-        "psr/container": "2.0.1",
+        "psr/container": "2.0.2",
         "symfony/var-exporter": "4.4.*",
         "johngrogg/ics-parser": "^3.0.0",
         "t4web/composer-lock-parser": "1.1.*"
