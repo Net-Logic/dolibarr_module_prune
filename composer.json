@@ -23,7 +23,7 @@
         "psr/container": "2.0.2",
         "symfony/var-exporter": "4.4.*",
         "johngrogg/ics-parser": "^3.0.0",
-        "t4web/composer-lock-parser": "1.1.*"
+        "t4web/composer-lock-parser": "1.2.*"
     },
     "autoload": {
         "exclude-from-classmap": [

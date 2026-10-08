@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3b69c73998e549efeb86286dcbffb35a",
+    "content-hash": "2f5f94be130de43f79324bbaf6ecfb25",
     "packages": [
         {
             "name": "adhocore/jwt",
@@ -2892,16 +2892,16 @@
         },
         {
             "name": "t4web/composer-lock-parser",
-            "version": "1.1.1",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/t4web/ComposerLockParser.git",
-                "reference": "e0b6c19871b635bc673ff5859747d70c115f996a"
+                "reference": "b2e19cc128dbc97830d4a58e2428304a1d88c591"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/t4web/ComposerLockParser/zipball/e0b6c19871b635bc673ff5859747d70c115f996a",
-                "reference": "e0b6c19871b635bc673ff5859747d70c115f996a",
+                "url": "https://api.github.com/repos/t4web/ComposerLockParser/zipball/b2e19cc128dbc97830d4a58e2428304a1d88c591",
+                "reference": "b2e19cc128dbc97830d4a58e2428304a1d88c591",
                 "shasum": ""
             },
             "require": {
@@ -2934,9 +2934,9 @@
             ],
             "support": {
                 "issues": "https://github.com/t4web/ComposerLockParser/issues",
-                "source": "https://github.com/t4web/ComposerLockParser/tree/master"
+                "source": "https://github.com/t4web/ComposerLockParser/tree/1.2.0"
             },
-            "time": "2018-10-30T07:47:04+00:00"
+            "time": "2022-02-23T14:59:32+00:00"
         }
     ],
     "packages-dev": [],
