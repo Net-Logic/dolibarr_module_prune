@@ -19,6 +19,7 @@ class ICal
 
     const DATE_TIME_FORMAT        = 'Ymd\THis';
     const DATE_TIME_FORMAT_PRETTY = 'F Y H:i:s';
+    const DEFAULT_USER_AGENT      = 'Mozilla/5.0 (compatible; ICS-Parser; +https://github.com/u01jmg3/ics-parser)';
     const ICAL_DATE_TIME_TEMPLATE = 'TZID=%s:';
     const ISO_8601_WEEK_START     = 'MO';
     const RECURRENCE_EVENT        = 'Generated recurrence event';
@@ -254,7 +255,7 @@ class ICal
         '(UTC-03:00) Brasilia'                                          => 'America/Sao_Paulo',
         '(UTC-03:00) Cayenne, Fortaleza'                                => 'America/Cayenne',
         '(UTC-03:00) City of Buenos Aires'                              => 'America/Buenos_Aires',
-        '(UTC-03:00) Greenland'                                         => 'America/Godthab',
+        '(UTC-03:00) Greenland'                                         => 'America/Nuuk',
         '(UTC-03:00) Montevideo'                                        => 'America/Montevideo',
         '(UTC-03:00) Salvador'                                          => 'America/Bahia',
         '(UTC-02:00) Coordinated Universal Time-02'                     => 'Etc/GMT+2',
@@ -276,9 +277,10 @@ class ICal
         '(UTC+02:00) Chisinau'                                          => 'Europe/Chisinau',
         '(UTC+02:00) Damascus'                                          => 'Asia/Damascus',
         '(UTC+02:00) Harare, Pretoria'                                  => 'Africa/Johannesburg',
-        '(UTC+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius'     => 'Europe/Kiev',
+        '(UTC+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius'     => 'Europe/Helsinki',
         '(UTC+02:00) Jerusalem'                                         => 'Asia/Jerusalem',
         '(UTC+02:00) Kaliningrad'                                       => 'Europe/Kaliningrad',
+        '(UTC+02:00) Khartoum'                                          => 'Africa/Khartoum',
         '(UTC+02:00) Tripoli'                                           => 'Africa/Tripoli',
         '(UTC+02:00) Windhoek'                                          => 'Africa/Windhoek',
         '(UTC+03:00) Baghdad'                                           => 'Asia/Baghdad',
@@ -298,12 +300,12 @@ class ICal
         '(UTC+05:00) Ashgabat, Tashkent'                                => 'Asia/Tashkent',
         '(UTC+05:00) Ekaterinburg'                                      => 'Asia/Yekaterinburg',
         '(UTC+05:00) Islamabad, Karachi'                                => 'Asia/Karachi',
-        '(UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi'               => 'Asia/Calcutta',
+        '(UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi'               => 'Asia/Kolkata',
         '(UTC+05:30) Sri Jayawardenepura'                               => 'Asia/Colombo',
-        '(UTC+05:45) Kathmandu'                                         => 'Asia/Katmandu',
+        '(UTC+05:45) Kathmandu'                                         => 'Asia/Kathmandu',
         '(UTC+06:00) Astana'                                            => 'Asia/Almaty',
         '(UTC+06:00) Dhaka'                                             => 'Asia/Dhaka',
-        '(UTC+06:30) Yangon (Rangoon)'                                  => 'Asia/Rangoon',
+        '(UTC+06:30) Yangon (Rangoon)'                                  => 'Asia/Yangon',
         '(UTC+07:00) Bangkok, Hanoi, Jakarta'                           => 'Asia/Bangkok',
         '(UTC+07:00) Krasnoyarsk'                                       => 'Asia/Krasnoyarsk',
         '(UTC+07:00) Novosibirsk'                                       => 'Asia/Novosibirsk',
@@ -389,16 +391,16 @@ class ICal
         'Eastern Standard Time'           => 'America/New_York',
         'Egypt Standard Time'             => 'Africa/Cairo',
         'Ekaterinburg Standard Time'      => 'Asia/Yekaterinburg',
-        'FLE Standard Time'               => 'Europe/Kiev',
+        'FLE Standard Time'               => 'Europe/Helsinki',
         'Fiji Standard Time'              => 'Pacific/Fiji',
         'GMT Standard Time'               => 'Europe/London',
         'GTB Standard Time'               => 'Europe/Bucharest',
         'Georgian Standard Time'          => 'Asia/Tbilisi',
-        'Greenland Standard Time'         => 'America/Godthab',
+        'Greenland Standard Time'         => 'America/Nuuk',
         'Greenwich Standard Time'         => 'Atlantic/Reykjavik',
         'Haiti Standard Time'             => 'America/Port-au-Prince',
         'Hawaiian Standard Time'          => 'Pacific/Honolulu',
-        'India Standard Time'             => 'Asia/Calcutta',
+        'India Standard Time'             => 'Asia/Kolkata',
         'Iran Standard Time'              => 'Asia/Tehran',
         'Israel Standard Time'            => 'Asia/Jerusalem',
         'Jordan Standard Time'            => 'Asia/Amman',
@@ -416,10 +418,10 @@ class ICal
         'Morocco Standard Time'           => 'Africa/Casablanca',
         'Mountain Standard Time (Mexico)' => 'America/Chihuahua',
         'Mountain Standard Time'          => 'America/Denver',
-        'Myanmar Standard Time'           => 'Asia/Rangoon',
+        'Myanmar Standard Time'           => 'Asia/Yangon',
         'N. Central Asia Standard Time'   => 'Asia/Novosibirsk',
         'Namibia Standard Time'           => 'Africa/Windhoek',
-        'Nepal Standard Time'             => 'Asia/Katmandu',
+        'Nepal Standard Time'             => 'Asia/Kathmandu',
         'New Zealand Standard Time'       => 'Pacific/Auckland',
         'Newfoundland Standard Time'      => 'America/St_Johns',
         'Norfolk Standard Time'           => 'Pacific/Norfolk',
@@ -449,7 +451,7 @@ class ICal
         'Singapore Standard Time'         => 'Asia/Singapore',
         'South Africa Standard Time'      => 'Africa/Johannesburg',
         'Sri Lanka Standard Time'         => 'Asia/Colombo',
-        'Sudan Standard Time'             => 'Africa/Tripoli',
+        'Sudan Standard Time'             => 'Africa/Khartoum',
         'Syria Standard Time'             => 'Asia/Damascus',
         'Taipei Standard Time'            => 'Asia/Taipei',
         'Tasmania Standard Time'          => 'Australia/Hobart',
@@ -828,7 +830,8 @@ class ICal
             $lastIndex = count($events) - 1;
             $lastEvent = $events[$lastIndex];
 
-            if ((!isset($lastEvent['RRULE']) || $lastEvent['RRULE'] === '') && $this->doesEventStartOutsideWindow($lastEvent)) {
+            // Moved instances must suppress their original dates before the final window filter runs.
+            if (!isset($lastEvent['RECURRENCE-ID']) && (!isset($lastEvent['RRULE']) || $lastEvent['RRULE'] === '') && $this->doesEventStartOutsideWindow($lastEvent)) {
                 $this->eventCount--;
 
                 unset($events[$lastIndex]);
@@ -850,6 +853,8 @@ class ICal
         if ($events !== array()) {
             foreach ($events as $key => $anEvent) {
                 if ($anEvent === null) {
+                    $this->eventCount--;
+
                     unset($events[$key]);
 
                     continue;
@@ -958,6 +963,10 @@ class ICal
 
                 if (!isset($this->cal[$key1][$key2]["{$keyword}_array"])) {
                     $this->cal[$key1][$key2]["{$keyword}_array"] = array();
+                }
+
+                if (is_string($value) && $keyword === 'DTEND' && strtolower($value) === 'none') {
+                    break;
                 }
 
                 if (is_array($value)) {
@@ -1114,29 +1123,60 @@ class ICal
         // Indeed we only compare the characters , ; : = " which are on a single byte
         $arrayOfChar = str_split($line);
         $inDoubleQuotes = false;
+        $isPropertyValue = false;
+        $isEscaped = false;
 
         foreach ($arrayOfChar as $char) {
-            // Don't stop the word on ; , : = if it is enclosed in double quotes
+            // Handle escaped characters (e.g., \, or \;)
+            if ($isEscaped) {
+                $word .= $char;
+                $isEscaped = false;
+
+                continue;
+            }
+
+            if ($char === '\\') {
+                $word .= $char;
+                $isEscaped = true;
+
+                continue;
+            }
+
             if ($char === '"') {
-                if ($word !== '') {
-                    $words[] = $word;
+                if (!$isPropertyValue) {
+                    // Strip parameter-delimiting quotes (RFC 5545 3.2)
+                    $inDoubleQuotes = !$inDoubleQuotes;
+
+                    continue;
                 }
 
-                $word = '';
-                $inDoubleQuotes = !$inDoubleQuotes;
-            } elseif (!in_array($char, array(';', ':', ',', '=')) || $inDoubleQuotes) {
+                // Retain literal quotes in property values (Issue #355)
                 $word .= $char;
-            } else {
+            } elseif ($char === ':' && !$inDoubleQuotes && !$isPropertyValue) {
+                // Identify transition to Property Value (the first unquoted colon)
                 if ($word !== '') {
                     $words[] = $word;
                 }
 
                 $words[] = $char;
                 $word = '';
+                $isPropertyValue = true;
+            } elseif (!$inDoubleQuotes && in_array($char, array(';', ',', '='), true)) {
+                // Handle delimiters outside of quotes (Parameters section ONLY)
+                if ($word !== '') {
+                    $words[] = $word;
+                }
+
+                $words[] = $char;
+                $word = '';
+            } else {
+                $word .= $char;
             }
         }
 
-        $words[] = $word;
+        if ($word !== '') {
+            $words[] = $word;
+        }
 
         return $words;
     }
@@ -1388,7 +1428,7 @@ class ICal
             $rrules = array();
             foreach (array_filter(explode(';', $anEvent['RRULE'])) as $s) {
                 list($k, $v) = explode('=', $s);
-                if (in_array($k, array('BYSETPOS', 'BYDAY', 'BYMONTHDAY', 'BYMONTH', 'BYYEARDAY', 'BYWEEKNO'))) {
+                if (in_array($k, array('BYSETPOS', 'BYDAY', 'BYMONTHDAY', 'BYMONTH', 'BYYEARDAY', 'BYWEEKNO'), true)) {
                     $rrules[$k] = $v === '' ? array() : explode(',', $v);
                 } else {
                     $rrules[$k] = $v;
@@ -1413,7 +1453,7 @@ class ICal
                 $checkByDays = function ($carry, $weekday) {
                     return $carry && substr($weekday, -2) === $weekday;
                 };
-                if (!in_array($frequency, array('MONTHLY', 'YEARLY'))) {
+                if (!in_array($frequency, array('MONTHLY', 'YEARLY'), true)) {
                     if (is_array($rrules['BYDAY']) && !array_reduce($rrules['BYDAY'], $checkByDays, true)) {
                         trigger_error("ICal::processRecurrences: A {$frequency} RRULE may not contain BYDAY values with numeric prefixes", E_USER_NOTICE);
 
@@ -2151,7 +2191,7 @@ class ICal
 
         if ($events !== array()) {
             foreach ($events as $key => $anEvent) {
-                if (is_null($anEvent) || !$this->isValidDate($anEvent['DTSTART'])) {
+                if (is_null($anEvent) || !isset($anEvent['DTSTART']) || !$this->isValidDate($anEvent['DTSTART'])) {
                     unset($events[$key]);
                     $this->eventCount--;
 
@@ -2262,7 +2302,7 @@ class ICal
      */
     public function hasEvents()
     {
-        return ($this->events() !== array()) ?: false;
+        return $this->events() !== array();
     }
 
     /**
@@ -2367,9 +2407,7 @@ class ICal
 
         $dateInterval = \DateInterval::createFromDateString($interval);
 
-        if ($dateInterval instanceof \DateInterval) {
-            $rangeEnd->add($dateInterval);
-        }
+        $rangeEnd->add($dateInterval);
 
         return $this->eventsFromRange($rangeStart->format('Y-m-d'), $rangeEnd->format('Y-m-d'));
     }
@@ -2651,7 +2689,7 @@ class ICal
      */
     protected function isFileOrUrl($filename)
     {
-        return (file_exists($filename) || filter_var($filename, FILTER_VALIDATE_URL)) ?: false;
+        return file_exists($filename) || filter_var($filename, FILTER_VALIDATE_URL);
     }
 
     /**
@@ -2686,9 +2724,7 @@ class ICal
         }
 
         if (empty($this->httpUserAgent)) {
-            if (mb_stripos($filename, 'outlook.office365.com') !== false) {
-                $options['http']['header'][] = 'User-Agent: A User Agent';
-            }
+            $options['http']['header'][] = 'User-Agent: ' . self::DEFAULT_USER_AGENT;
         }
 
         if (!empty($this->httpProtocolVersion)) {

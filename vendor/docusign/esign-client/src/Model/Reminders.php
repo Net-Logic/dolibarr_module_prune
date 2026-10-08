@@ -63,7 +63,8 @@ class Reminders implements ModelInterface, ArrayAccess
         'maximum_reminder_count' => '?string',
         'reminder_delay' => '?string',
         'reminder_enabled' => '?string',
-        'reminder_frequency' => '?string'
+        'reminder_frequency' => '?string',
+        'smart_reminder_enabled' => '?string'
     ];
 
     /**
@@ -75,7 +76,8 @@ class Reminders implements ModelInterface, ArrayAccess
         'maximum_reminder_count' => null,
         'reminder_delay' => null,
         'reminder_enabled' => null,
-        'reminder_frequency' => null
+        'reminder_frequency' => null,
+        'smart_reminder_enabled' => null
     ];
 
     /**
@@ -108,7 +110,8 @@ class Reminders implements ModelInterface, ArrayAccess
         'maximum_reminder_count' => 'maximumReminderCount',
         'reminder_delay' => 'reminderDelay',
         'reminder_enabled' => 'reminderEnabled',
-        'reminder_frequency' => 'reminderFrequency'
+        'reminder_frequency' => 'reminderFrequency',
+        'smart_reminder_enabled' => 'smartReminderEnabled'
     ];
 
     /**
@@ -120,7 +123,8 @@ class Reminders implements ModelInterface, ArrayAccess
         'maximum_reminder_count' => 'setMaximumReminderCount',
         'reminder_delay' => 'setReminderDelay',
         'reminder_enabled' => 'setReminderEnabled',
-        'reminder_frequency' => 'setReminderFrequency'
+        'reminder_frequency' => 'setReminderFrequency',
+        'smart_reminder_enabled' => 'setSmartReminderEnabled'
     ];
 
     /**
@@ -132,7 +136,8 @@ class Reminders implements ModelInterface, ArrayAccess
         'maximum_reminder_count' => 'getMaximumReminderCount',
         'reminder_delay' => 'getReminderDelay',
         'reminder_enabled' => 'getReminderEnabled',
-        'reminder_frequency' => 'getReminderFrequency'
+        'reminder_frequency' => 'getReminderFrequency',
+        'smart_reminder_enabled' => 'getSmartReminderEnabled'
     ];
 
     /**
@@ -199,6 +204,7 @@ class Reminders implements ModelInterface, ArrayAccess
         $this->container['reminder_delay'] = isset($data['reminder_delay']) ? $data['reminder_delay'] : null;
         $this->container['reminder_enabled'] = isset($data['reminder_enabled']) ? $data['reminder_enabled'] : null;
         $this->container['reminder_frequency'] = isset($data['reminder_frequency']) ? $data['reminder_frequency'] : null;
+        $this->container['smart_reminder_enabled'] = isset($data['smart_reminder_enabled']) ? $data['smart_reminder_enabled'] : null;
     }
 
     /**
@@ -317,6 +323,30 @@ class Reminders implements ModelInterface, ArrayAccess
     public function setReminderFrequency($reminder_frequency)
     {
         $this->container['reminder_frequency'] = $reminder_frequency;
+
+        return $this;
+    }
+
+    /**
+     * Gets smart_reminder_enabled
+     *
+     * @return ?string
+     */
+    public function getSmartReminderEnabled()
+    {
+        return $this->container['smart_reminder_enabled'];
+    }
+
+    /**
+     * Sets smart_reminder_enabled
+     *
+     * @param ?string $smart_reminder_enabled 
+     *
+     * @return $this
+     */
+    public function setSmartReminderEnabled($smart_reminder_enabled)
+    {
+        $this->container['smart_reminder_enabled'] = $smart_reminder_enabled;
 
         return $this;
     }
