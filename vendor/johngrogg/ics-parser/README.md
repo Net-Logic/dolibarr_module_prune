@@ -19,7 +19,7 @@
     - Add the following dependency to `composer.json`
         - :warning: **Note with Composer the owner is `johngrogg` and not `u01jmg3`**
     - To access the latest stable branch (`v3`) use the following
-        - To access new features you can require [`dev-master`](https://getcomposer.org/doc/articles/aliases.md#branch-alias)
+        - To access new features you can require [`dev-main`](https://getcomposer.org/doc/articles/aliases.md#branch-alias)
 
             ```yaml
             { "require": { "johngrogg/ics-parser": "^3" } }
@@ -35,7 +35,7 @@ composer test
 
 ### How to instantiate the Parser
 
-- Using the example script as a guide, [refer to this code](https://github.com/u01jmg3/ics-parser/blob/master/examples/index.php#L1-L22)
+- Using the example script as a guide, [refer to this code](https://github.com/u01jmg3/ics-parser/blob/main/examples/index.php#L1-L23)
 
 #### What will the parser return?
 
@@ -118,6 +118,9 @@ memory consumption for large calendars. PHP by default does not allocate more th
 with `Fatal error: Allowed memory size of 134217728 bytes exhausted`. It goes without saying that recurring events first
 need to be evaluated before non-fitting events can be dropped.
 
+Recurrence overrides are also kept until expansion finishes, even when their new start is outside the window.
+This prevents a moved occurrence from reappearing at its original date when the new date is filtered out.
+
 ---
 
 ## API
@@ -198,7 +201,7 @@ need to be evaluated before non-fitting events can be dropped.
 | `processEvents`                                 | -                                                                                                                                                 | `protected` | Performs admin tasks on all events as read from the iCal file                                                                                                                                                                   |
 | `processRecurrences`                            | -                                                                                                                                                 | `protected` | Processes recurrence rules                                                                                                                                                                                                      |
 | `reduceEventsToMinMaxRange`                     |                                                                                                                                                   | `protected` | Reduces the number of events to the defined minimum and maximum range                                                                                                                                                           |
-| `removeLastEventIfOutsideWindowAndNonRecurring` |                                                                                                                                                   | `protected` | Removes the last event (i.e. most recently parsed) if its start date is outside the window spanned by `$windowMinTimestamp` / `$windowMaxTimestamp`                                                                             |
+| `removeLastEventIfOutsideWindowAndNonRecurring` |                                                                                                                                                   | `protected` | Removes the last event outside the date window, retaining recurrence rules and overrides until expansion.                                                                                                                       |
 | `removeUnprintableChars`                        | `$data`                                                                                                                                           | `protected` | Removes unprintable ASCII and UTF-8 characters                                                                                                                                                                                  |
 | `resolveIndicesOfRange`                         | `$indexes`, `$limit`                                                                                                                              | `protected` | Resolves values from indices of the range 1 -> `$limit`                                                                                                                                                                         |
 | `sortEventsWithOrder`                           | `$events`, `$sortOrder = SORT_ASC`                                                                                                                | `public`    | Sorts events based on a given sort order                                                                                                                                                                                        |

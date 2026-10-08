@@ -260,17 +260,17 @@
                 },
                 {
                         "name": "docusign/esign-client",
-                        "version": "v8.8.1",
-                        "version_normalized": "8.8.1.0",
+                        "version": "v9.0.0",
+                        "version_normalized": "9.0.0.0",
                         "source": {
                                 "type": "git",
                                 "url": "https://github.com/docusign/docusign-esign-php-client.git",
-                                "reference": "d026fdcb41bec593ec152f5a223f2820324b5124"
+                                "reference": "91bc7860cb0e18f816d86dabb6ea41522b226ff1"
                         },
                         "dist": {
                                 "type": "zip",
-                                "url": "https://api.github.com/repos/docusign/docusign-esign-php-client/zipball/d026fdcb41bec593ec152f5a223f2820324b5124",
-                                "reference": "d026fdcb41bec593ec152f5a223f2820324b5124",
+                                "url": "https://api.github.com/repos/docusign/docusign-esign-php-client/zipball/91bc7860cb0e18f816d86dabb6ea41522b226ff1",
+                                "reference": "91bc7860cb0e18f816d86dabb6ea41522b226ff1",
                                 "shasum": ""
                         },
                         "require": {
@@ -286,7 +286,7 @@
                                 "satooshi/php-coveralls": "~1.0",
                                 "squizlabs/php_codesniffer": "~2.6"
                         },
-                        "time": "2026-05-27T12:50:12+00:00",
+                        "time": "2026-07-16T14:21:44+00:00",
                         "type": "library",
                         "installation-source": "dist",
                         "autoload": {
@@ -316,7 +316,7 @@
                         ],
                         "support": {
                                 "issues": "https://github.com/docusign/docusign-esign-php-client/issues",
-                                "source": "https://github.com/docusign/docusign-esign-php-client/tree/v8.8.1"
+                                "source": "https://github.com/docusign/docusign-esign-php-client/tree/v9.0.0"
                         },
                         "install-path": "../docusign/esign-client"
                 },
@@ -908,17 +908,17 @@
                 },
                 {
                         "name": "johngrogg/ics-parser",
-                        "version": "v3.5.1",
-                        "version_normalized": "3.5.1.0",
+                        "version": "v3.6.0",
+                        "version_normalized": "3.6.0.0",
                         "source": {
                                 "type": "git",
                                 "url": "https://github.com/u01jmg3/ics-parser.git",
-                                "reference": "c622b4b29bce99ec63535ec6ad96c8cbea95abf2"
+                                "reference": "e9749984dcd795020ae5e7c403e92e8fec67782f"
                         },
                         "dist": {
                                 "type": "zip",
-                                "url": "https://api.github.com/repos/u01jmg3/ics-parser/zipball/c622b4b29bce99ec63535ec6ad96c8cbea95abf2",
-                                "reference": "c622b4b29bce99ec63535ec6ad96c8cbea95abf2",
+                                "url": "https://api.github.com/repos/u01jmg3/ics-parser/zipball/e9749984dcd795020ae5e7c403e92e8fec67782f",
+                                "reference": "e9749984dcd795020ae5e7c403e92e8fec67782f",
                                 "shasum": ""
                         },
                         "require": {
@@ -928,7 +928,7 @@
                         "require-dev": {
                                 "phpunit/phpunit": "^5|^9|^10"
                         },
-                        "time": "2026-01-23T13:01:48+00:00",
+                        "time": "2026-09-30T10:46:46+00:00",
                         "type": "library",
                         "installation-source": "dist",
                         "autoload": {
@@ -963,7 +963,7 @@
                         ],
                         "support": {
                                 "issues": "https://github.com/u01jmg3/ics-parser/issues",
-                                "source": "https://github.com/u01jmg3/ics-parser/tree/v3.5.1"
+                                "source": "https://github.com/u01jmg3/ics-parser/tree/v3.6.0"
                         },
                         "funding": [
                                 {
@@ -1905,23 +1905,23 @@
                 },
                 {
                         "name": "psr/container",
-                        "version": "2.0.1",
-                        "version_normalized": "2.0.1.0",
+                        "version": "2.0.2",
+                        "version_normalized": "2.0.2.0",
                         "source": {
                                 "type": "git",
                                 "url": "https://github.com/php-fig/container.git",
-                                "reference": "2ae37329ee82f91efadc282cc2d527fd6065a5ef"
+                                "reference": "c71ecc56dfe541dbd90c5360474fbc405f8d5963"
                         },
                         "dist": {
                                 "type": "zip",
-                                "url": "https://api.github.com/repos/php-fig/container/zipball/2ae37329ee82f91efadc282cc2d527fd6065a5ef",
-                                "reference": "2ae37329ee82f91efadc282cc2d527fd6065a5ef",
+                                "url": "https://api.github.com/repos/php-fig/container/zipball/c71ecc56dfe541dbd90c5360474fbc405f8d5963",
+                                "reference": "c71ecc56dfe541dbd90c5360474fbc405f8d5963",
                                 "shasum": ""
                         },
                         "require": {
-                                "php": ">=7.2.0"
+                                "php": ">=7.4.0"
                         },
-                        "time": "2021-03-24T13:40:57+00:00",
+                        "time": "2021-11-05T16:47:00+00:00",
                         "type": "library",
                         "extra": {
                                 "branch-alias": {
@@ -1953,6 +1953,10 @@
                                 "container-interop",
                                 "psr"
                         ],
+                        "support": {
+                                "issues": "https://github.com/php-fig/container/issues",
+                                "source": "https://github.com/php-fig/container/tree/2.0.2"
+                        },
                         "install-path": "../psr/container"
                 },
                 {
@@ -2923,17 +2927,17 @@
                 },
                 {
                         "name": "t4web/composer-lock-parser",
-                        "version": "1.1.1",
-                        "version_normalized": "1.1.1.0",
+                        "version": "1.2.0",
+                        "version_normalized": "1.2.0.0",
                         "source": {
                                 "type": "git",
                                 "url": "https://github.com/t4web/ComposerLockParser.git",
-                                "reference": "e0b6c19871b635bc673ff5859747d70c115f996a"
+                                "reference": "b2e19cc128dbc97830d4a58e2428304a1d88c591"
                         },
                         "dist": {
                                 "type": "zip",
-                                "url": "https://api.github.com/repos/t4web/ComposerLockParser/zipball/e0b6c19871b635bc673ff5859747d70c115f996a",
-                                "reference": "e0b6c19871b635bc673ff5859747d70c115f996a",
+                                "url": "https://api.github.com/repos/t4web/ComposerLockParser/zipball/b2e19cc128dbc97830d4a58e2428304a1d88c591",
+                                "reference": "b2e19cc128dbc97830d4a58e2428304a1d88c591",
                                 "shasum": ""
                         },
                         "require": {
@@ -2942,7 +2946,7 @@
                         "require-dev": {
                                 "codeception/codeception": "<2"
                         },
-                        "time": "2018-10-30T07:47:04+00:00",
+                        "time": "2022-02-23T14:59:32+00:00",
                         "type": "library",
                         "installation-source": "dist",
                         "autoload": {
@@ -2966,6 +2970,10 @@
                         "keywords": [
                                 "composer.lock reader"
                         ],
+                        "support": {
+                                "issues": "https://github.com/t4web/ComposerLockParser/issues",
+                                "source": "https://github.com/t4web/ComposerLockParser/tree/1.2.0"
+                        },
                         "install-path": "../t4web/composer-lock-parser"
                 }
         ],
