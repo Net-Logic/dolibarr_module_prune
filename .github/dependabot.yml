@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: "composer"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    ignore:
+      # The fixes need PHP >= 8.0 / 8.2, the module supports PHP >= 7.4 (see composer.json):
+      # firebase/php-jwt 7.x needs PHP 8.0 (pulled by google/apiclient and google/auth), and
+      # league/flysystem is pulled by cache/filesystem-adapter 1.x which needs flysystem ^1.0.
+      # To review when the minimum PHP version of the module is raised.
+      - dependency-name: "firebase/php-jwt"
+      - dependency-name: "league/flysystem"
