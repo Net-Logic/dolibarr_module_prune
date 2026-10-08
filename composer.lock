@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1b2576cf5aecc5f8bcb3e4e22b5a8e6f",
+    "content-hash": "f2226b9d4d131c4c5ab983a1312d54cf",
     "packages": [
         {
             "name": "adhocore/jwt",
@@ -264,16 +264,16 @@
         },
         {
             "name": "docusign/esign-client",
-            "version": "v8.8.1",
+            "version": "v9.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/docusign/docusign-esign-php-client.git",
-                "reference": "d026fdcb41bec593ec152f5a223f2820324b5124"
+                "reference": "91bc7860cb0e18f816d86dabb6ea41522b226ff1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/docusign/docusign-esign-php-client/zipball/d026fdcb41bec593ec152f5a223f2820324b5124",
-                "reference": "d026fdcb41bec593ec152f5a223f2820324b5124",
+                "url": "https://api.github.com/repos/docusign/docusign-esign-php-client/zipball/91bc7860cb0e18f816d86dabb6ea41522b226ff1",
+                "reference": "91bc7860cb0e18f816d86dabb6ea41522b226ff1",
                 "shasum": ""
             },
             "require": {
@@ -317,9 +317,9 @@
             ],
             "support": {
                 "issues": "https://github.com/docusign/docusign-esign-php-client/issues",
-                "source": "https://github.com/docusign/docusign-esign-php-client/tree/v8.8.1"
+                "source": "https://github.com/docusign/docusign-esign-php-client/tree/v9.0.0"
             },
-            "time": "2026-05-27T12:50:12+00:00"
+            "time": "2026-07-16T14:21:44+00:00"
         },
         {
             "name": "firebase/php-jwt",
@@ -2952,5 +2952,5 @@
     "platform-overrides": {
         "php": "7.4.0"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }

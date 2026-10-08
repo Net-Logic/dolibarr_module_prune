@@ -9,7 +9,7 @@
         "microsoft/microsoft-graph": "1.109.1",
         "google/apiclient": "^2.9",
         "ovh/ovh": "^3.5",
-        "docusign/esign-client": "^8.8",
+        "docusign/esign-client": "^9.0",
         "lcobucci/jwt": "^3.4.6",
         "lcobucci/clock": "1.1.0",
         "league/oauth2-client": "^2.6",
