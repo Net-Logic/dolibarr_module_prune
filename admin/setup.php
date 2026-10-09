@@ -155,7 +155,7 @@ if ($action == 'edit') {
 		print '</td>';
 		if ($type == 'select') {
 			print '<td><select name="' . $key . '" class="flat ' . ($val['css'] ?? 'minwidth200') . '">';
-			print '<option value="">--Please choose an option--</option>';
+			print '<option value="">' . $langs->trans("PruneChooseOption") . '</option>';
 			foreach ($val['choices'] as $keychoice => $valuechoice) {
 				print '<option value="' . $keychoice . '"' . ($value == $keychoice ? ' selected' : '') . '>' . $valuechoice . '</option>';
 			}

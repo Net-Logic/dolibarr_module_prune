@@ -12,3 +12,6 @@ PruneNamespace=spazio dei nomi
 PruneSourceUrl=URL
 PruneHomepage=Pagina iniziale
 PruneEnableDevelopperMode=Abilita la modalità sviluppatore
+PRUNE_CACHE_TYPE=Tipo di cache
+PruneEnableCache=Abilita la cache
+PruneChooseOption=-- Scegli un'opzione --

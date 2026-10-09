@@ -15,3 +15,6 @@ PruneEnableDevelopperMode=Enable developer mode
 PruneClearCache=Clear cache
 PruneCacheCleared=Cache cleared
 PruneCacheClearError=Failed to clear cache
+PRUNE_CACHE_TYPE=Cache type
+PruneEnableCache=Enable cache
+PruneChooseOption=-- Please choose an option --
