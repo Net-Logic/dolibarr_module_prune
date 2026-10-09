@@ -91,7 +91,7 @@ foreach ($packages as $package) {
 	print '</td><td>';
 	print $package->getVersion();
 	print '</td><td>';
-	print $package->getRequire()['php'];
+	print $package->getRequire()['php'] ?? '';
 	print '</td><td>';
 	print $package->getNamespace();
 	print '</td><td>';
