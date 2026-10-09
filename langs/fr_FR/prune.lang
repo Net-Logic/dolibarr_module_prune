@@ -9,3 +9,5 @@ PruneEnableDevelopperMode=Activer le mode développeur
 PruneClearCache=Vider le cache
 PruneCacheCleared=Cache vidé
 PruneCacheClearError=Échec de la suppression du cache
+PRUNE_CACHE_TYPE=Type de cache
+PruneEnableCache=Activer le cache
