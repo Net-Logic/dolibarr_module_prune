@@ -14,3 +14,4 @@ PruneHomepage=página de inicio
 PruneEnableDevelopperMode=Habilitar el modo desarrollador
 PRUNE_CACHE_TYPE=Tipo de caché
 PruneEnableCache=Activar la caché
+PruneChooseOption=-- Seleccione una opción --
