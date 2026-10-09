@@ -1,6 +1,6 @@
 <?php
 /* Copyright (C) 2004-2017  Laurent Destailleur     <eldy@users.sourceforge.net>
- * Copyright (C) 2019-2023  Frédéric France         <frederic.france@netlogic.fr>
+ * Copyright (C) 2019-2026  Frédéric France         <frederic.france@netlogic.fr>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,9 +24,11 @@
 
 // Load Dolibarr environment
 include '../config.php';
-
-global $langs, $user;
-
+/**
+ * @var DoliDB $db
+ * @var Translate $langs
+ * @var User $user
+ */
 // Libraries
 require_once DOL_DOCUMENT_ROOT . "/core/lib/admin.lib.php";
 //require_once DOL_DOCUMENT_ROOT.'/core/lib/oauth.lib.php';
