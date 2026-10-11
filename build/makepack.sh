@@ -32,6 +32,7 @@ rsync -a \
 	--exclude='/.tx' \
 	--exclude='/build' \
 	--exclude='/codesniffer' \
+	--exclude='/dolistore' \
 	--exclude='/node_modules' \
 	./ "$STAGING/$MODULE/"
 

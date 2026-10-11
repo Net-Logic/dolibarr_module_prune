@@ -48,3 +48,24 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh release upload "${{ github.event.release.tag_name }}" build/module_prune-*.zip --clobber
+
+  # Update the DoliStore product from dolistore/: dry run by hand, real submission on a published release
+  dolistore:
+    needs: package
+    if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: module_prune
+          path: build
+      - name: Find the package
+        run: echo "ZIP=$(ls build/module_prune-*.zip)" >> "$GITHUB_ENV"
+      - uses: Net-Logic/dolistore-sync@main
+        with:
+          descriptor: core/modules/modPrune.class.php
+          zip: ${{ env.ZIP }}
+          dry-run: ${{ github.event_name == 'release' && 'false' || 'true' }}
+          login: ${{ secrets.DOLISTORE_LOGIN }}
+          password: ${{ secrets.DOLISTORE_PASSWORD }}
