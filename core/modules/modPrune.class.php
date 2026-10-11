@@ -70,7 +70,7 @@ class modPrune extends DolibarrModules
 
 		// Possible values for version are: 'development', 'experimental', 'dolibarr',
 		// 'dolibarr_deprecated' or a version string like 'x.y.z'
-		$this->version = '2.0.3';
+		$this->version = '2.0.4';
 
 		// Url to the file with your last numberversion of this module
 		$url = 'https://wiki.netlogic.fr/versionmodule.php?module=' . strtolower($this->name) . '&number=' . $this->numero . '&version=' . $this->version . '&dolversion=' . DOL_VERSION;
@@ -160,7 +160,7 @@ class modPrune extends DolibarrModules
 		// Minimum version of PHP required by module
 		$this->phpmin = [7, 4];
 		// Minimum version of Dolibarr required by module
-		$this->need_dolibarr_version = [10, 0];
+		$this->need_dolibarr_version = [20, 0];
 		// Warning to show when we activate module. array('always'='text') or array('FR'='textfr','ES'='textes'...)
 		$this->warnings_activation = [];
 		// Warning to show when we activate an external module. array('always'='text') or array('FR'='textfr','ES'='textes'...)

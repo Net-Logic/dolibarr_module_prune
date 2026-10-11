@@ -1,8 +1,8 @@
 id: 646
-dolibarr: { min: V10, max: V24 }
+dolibarr: { min: V20, max: V24 }
 php: { min: "7.4", max: "8.5" }
 access_days: 365
 price: "0,00"
 support: dolibarr@netlogic.fr
 categories: [ "Modules/Plugins", "Outils systèmes", "Interfaçage externes" ]
-keywords: [ prune, autoload, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24 ]
+keywords: [ prune, autoload, v20, v21, v22, v23, v24 ]
