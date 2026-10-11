@@ -99,7 +99,7 @@ Manual `workflow_dispatch` runs default to `dry-run: true`. A real submission on
 
 ## Known risks
 
-1. **Automated login is untested.** The form may have a captcha or bot protection, which was not visible while manually logged in. First check is a `dry-run` from GitHub Actions. If blocked, the fallback is to run the same script locally by the maintainer (`node sync.mjs --module <path>`), logged in once by hand with a persisted browser profile. The data layout does not change.
+1. **Automated login is untested.** The maintainer confirmed there is no captcha on the login form, so a plain Playwright login should work. Other bot protections (rate limiting, IP filtering of GitHub runners) are not known: the first `dry-run` from GitHub Actions checks it. Fallback if GitHub runners are blocked: run the same script locally by the maintainer (`node sync.mjs --module <path>`); the data layout does not change.
 2. **Behaviour of updating an "Actif" product is unknown**: DoliStore may re-validate it. This is why the status is never changed and why the first real submission is done on the pilot and checked by hand.
 3. **Terms of service**: DoliStore does not forbid or document automation. Ask the DoliStore team (contactez-nous) before enabling it on every module.
 4. **The form is not an API**: field names can change without notice. The script fails closed (missing field = error, nothing submitted).
