@@ -33,6 +33,7 @@ rsync -a \
 	--exclude='/build' \
 	--exclude='/codesniffer' \
 	--exclude='/node_modules' \
+	--exclude='/docs' \
 	./ "$STAGING/$MODULE/"
 
 rm -f "$ZIPFILE"
