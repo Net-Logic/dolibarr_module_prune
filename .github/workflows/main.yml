@@ -89,7 +89,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       # Pinned to a tag: the action receives the wiki secrets, a moving ref (@main) would let any push to its main read them
-      - uses: Net-Logic/wiki-sync@v0.1.0
+      - uses: Net-Logic/wiki-sync@v0.2.1
         with:
           descriptor: core/modules/modPrune.class.php
           dry-run: ${{ github.event_name == 'release' && 'false' || 'true' }}
