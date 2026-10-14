@@ -1,3 +1,7 @@
+## 2.0.5
+
+#### Documentation
+* DoliStore page in the shared Net-Logic layout (dolistore-sync v0.4.3), now in English, French, German, Spanish and Italian. No code change.
 
 ## Unreleased (2024-11-06)
 

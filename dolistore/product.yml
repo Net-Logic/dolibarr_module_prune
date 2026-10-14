@@ -6,3 +6,5 @@ price: "0,00"
 support: dolibarr@netlogic.fr
 categories: [ "Modules/Plugins", "Outils systèmes", "Interfaçage externes" ]
 keywords: [ prune, autoload, v20, v21, v22, v23, v24 ]
+# Shared Net-Logic description layout of dolistore-sync (generated requirements, installation, support and related modules)
+layout: netlogic
