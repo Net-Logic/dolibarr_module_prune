@@ -43,6 +43,7 @@ jobs:
           name: module_prune
           path: build/module_prune-*.zip
           if-no-files-found: error
+          retention-days: 1
       - name: Attach the package to the release
         if: github.event_name == 'release'
         env:
