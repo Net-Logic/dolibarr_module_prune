@@ -1,3 +1,8 @@
+## 2.0.7
+
+#### Documentation
+* DoliStore page and wiki page: DocuSign® is written with its registered trademark symbol, and the wiki page links to Envelope Sign, the new page of the DocuSign® module. No code change.
+
 ## 2.0.6
 
 #### Documentation
