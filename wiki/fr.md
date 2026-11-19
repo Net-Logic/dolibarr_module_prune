@@ -6,7 +6,7 @@ Prune est gratuit et se télécharge sur DoliStore (lien dans l'encadré ci-dess
 
 # Fonctionnalités
 
-- **Librairies PHP fournies** : Microsoft Graph, client Google API, Docusign eSign, OVH, fournisseurs OAuth2 et un lecteur ICS, dans les versions avec lesquelles les modules Net-Logic sont testés.
+- **Librairies PHP fournies** : Microsoft Graph, client Google API, DocuSign® eSign, OVH, fournisseurs OAuth2 et un lecteur ICS, dans les versions avec lesquelles les modules Net-Logic sont testés.
 - **Jetons OAuth chiffrés** : les jetons d'accès et de rafraîchissement sont stockés en base, chiffrés avec le chiffrement de Dolibarr.
 - **Couche de cache** : système de fichiers ou Memcached, au choix dans la page de configuration, avec un bouton pour vider le cache.
 - **Liste des librairies** : la page de configuration liste chaque librairie fournie avec sa version, son espace de noms et sa page d'accueil.
