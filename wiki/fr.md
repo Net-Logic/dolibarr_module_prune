@@ -1,6 +1,6 @@
 # Présentation
 
-**Prune** est le module de librairies partagées des modules Net-Logic : installé une fois, il fournit aux modules qui en ont besoin ([Doli 365](<wiki:Doli 365>), [Docusign](wiki:Docusign), Google et d'autres) leurs librairies PHP, le stockage des jetons et le cache.
+**Prune** est le module de librairies partagées des modules Net-Logic : installé une fois, il fournit aux modules qui en ont besoin ([Doli 365](<wiki:Doli 365>), [Envelope Sign](<wiki:Envelope Sign>), Google et d'autres) leurs librairies PHP, le stockage des jetons et le cache.
 
 Prune est gratuit et se télécharge sur DoliStore (lien dans l'encadré ci-dessus).
 
